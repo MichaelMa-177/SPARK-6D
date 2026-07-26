@@ -1,3 +1,159 @@
+# fpBoost: Exact-Stable, High-FPS FoundationPose Tracking
+
+fpBoost is an engineering extension of
+[NVIDIA FoundationPose](https://github.com/NVlabs/FoundationPose) for faster
+model-based 6D object tracking. It combines adaptive SE(3) Kalman prediction
+with exact-equivalent GPU and pipeline optimizations. The expensive neural
+refiner is skipped only on low-risk frames; motion, uncertainty, correction,
+and optical-flow guards immediately restore refinement when needed.
+
+> 中文简介：fpBoost 在 FoundationPose 原版上加入 SE(3) 卡尔曼预测、自适应神经
+> 精修、光流保护和端到端异步 I/O，并对渲染、裁剪和张量传输热路径做等价优化。
+> 在仓库自带的 737 帧 YCB mustard demo 上，最终版本的跟踪结果与稳定版
+> Kalman 基准逐文件完全一致，同时 tracking FPS 从 31.35 提升到
+> 44.33–44.71。
+
+This is an independent fork, not an official NVIDIA release. The original
+FoundationPose authors, paper, license, setup instructions, and citations are
+retained below.
+
+## What changed from upstream FoundationPose
+
+### 1. Adaptive SE(3) Kalman tracking
+
+- Added a constant-body-velocity error-state filter in `pose_kalman.py`.
+- Translation and SO(3) rotation-vector residuals are filtered directly on
+  SE(3), avoiding Euler-angle wrapping and gimbal-lock artifacts.
+- A Joseph-form covariance update keeps the covariance numerically stable.
+- Refinement decisions use motion, covariance, correction, periodic refresh,
+  and image-observation gates instead of blindly skipping fixed frames.
+- A lightweight ROI optical-flow guard forces neural refinement whenever
+  observed image motion disagrees with the Kalman prediction.
+- Any high-motion or high-uncertainty frame falls back to the original neural
+  refiner; the default interval skips at most one refinement frame.
+
+### 2. Exact-equivalent tracking hot paths
+
+- Cached invariant camera, crop, mesh, depth-grid, homogeneous-coordinate,
+  and OpenGL transform data.
+- Removed redundant allocations, zero initialization, auxiliary network
+  outputs, normal/depth work, and host/device pose copies from the tracking
+  loop.
+- Added direct CUDA tensor paths between rendering, preprocessing, and pose
+  refinement.
+- Preserved cache invalidation across device changes and multi-GPU model
+  placement.
+- Determinism takes priority over a marginal benchmark gain:
+  `--cudnn_benchmark` is intentionally ignored in this path because it can
+  change the numerical result.
+
+### 3. End-to-end pipeline improvements
+
+- `--fast_io` prefetches image/depth input and grayscale preparation while the
+  GPU processes the current frame.
+- Pose text files and optional PNG debug renders use a bounded asynchronous
+  writer, so disk I/O does not stall tracking.
+- Same-size image resize work is avoided while array contiguity is preserved.
+- Debug rendering remains lossless; `--png_compression 1` reduces encoder
+  latency without changing decoded pixels.
+- Benchmark reports include decision counts, latency percentiles,
+  `tracking_fps`, and `end_to_end_fps`.
+
+### 4. Reproducibility and regression checks
+
+- Added unit tests for the Kalman model, SE(3) behavior, and covariance safety.
+- Added `tools/compare_pose_tracks.py` for frame-by-frame pose, temporal
+  stability, mode-decision, and timing comparisons.
+- `--require-exact` fails validation unless every output pose file is
+  byte-for-byte identical to the selected golden run.
+
+## Measured result
+
+Local benchmark on an NVIDIA GeForce RTX 3060 Laptop GPU with
+PyTorch 2.6.0+cu124, using the complete 737-frame bundled YCB mustard demo:
+
+| Configuration | Tracking FPS | End-to-end FPS | Result |
+| --- | ---: | ---: | --- |
+| Local always-refine baseline (Kalman off) | 23.11 | 14.58 | Neural refinement every tracking frame |
+| Stable adaptive-Kalman baseline | 31.35 | 18.12 | Golden stability/accuracy run |
+| **fpBoost final, run 1** | **44.33** | **29.94** | Exact match to golden poses |
+| **fpBoost final, run 2** | **44.71** | **30.39** | Exact match to golden poses |
+| fpBoost + all debug renders | 32.03 | 15.69 | 737 lossless PNGs and pose files saved |
+
+Compared with the stable adaptive-Kalman baseline, the final tracking loop is
+41.4–42.6% faster. Compared with the local always-refine baseline, it is
+91.8–93.4% faster on this machine.
+
+Regression-equivalence and temporal-stability checks on all 737 demo frames:
+
+- every saved pose text file is byte-for-byte identical to the stable
+  adaptive-Kalman golden run;
+- two final reruns have the same 736 frame decisions: 279 predicted, 454
+  refined, and 3 optical-flow-guard refinements;
+- translation deviation is 0 mm;
+- temporal translation/rotation acceleration metrics are unchanged;
+- all 737 decoded debug-render images are pixel-identical to the prior
+  rendering path.
+
+`tracking_fps` measures the `track_one` segment. `end_to_end_fps` additionally
+includes first-frame registration, input waits, and pose/render output flush,
+but excludes one-time model loading. Results above describe this specific
+hardware and demo, not a universal FPS or accuracy guarantee. On other
+cameras, objects, resolutions, or motion regimes, validate against an
+always-refine run before changing the stability-first defaults.
+
+## Run fpBoost
+
+Activate the requested Conda environment after completing the setup below:
+
+```bash
+conda activate foundationpose
+```
+
+Fast headless tracking:
+
+```bash
+python run_demo.py --use_kalman --fast_io --debug 0 --quiet --no_display \
+  --debug_dir debug/fpboost \
+  --benchmark_report debug/fpboost_report.json
+```
+
+Tracking while retaining every debug-render image:
+
+```bash
+python run_demo.py --use_kalman --fast_io --debug 1 --quiet --no_display \
+  --save_render --png_compression 1 \
+  --debug_dir debug/fpboost_rendered \
+  --benchmark_report debug/fpboost_rendered_report.json
+```
+
+Rendered PNGs are saved in `<debug_dir>/track_vis`, and poses are saved in
+`<debug_dir>/ob_in_cam`.
+
+Strictly compare a candidate run with a golden pose track:
+
+```bash
+python tools/compare_pose_tracks.py \
+  --baseline debug/kalman_golden/ob_in_cam \
+  --candidate debug/fpboost/ob_in_cam \
+  --baseline-timing debug/kalman_golden_report.json \
+  --candidate-timing debug/fpboost_report.json \
+  --require-exact
+```
+
+Run the regression tests:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The optimization was inspired by the adaptive prediction/refinement direction
+of [FoundationPose++](https://github.com/teal024/FoundationPose-plus-plus),
+while the implementation here was derived from and validated against
+FoundationPose's actual tracking, rendering, and I/O hot paths.
+
+---
+
 # FoundationPose: Unified 6D Pose Estimation and Tracking of Novel Objects
 [[Paper]](https://arxiv.org/abs/2312.08344) [[Website]](https://nvlabs.github.io/FoundationPose/)
 
@@ -133,7 +289,6 @@ The paths have been set in argparse by default. If you need to change the scene,
 ```
 python run_demo.py
 ```
-
 
 <img src="assets/demo.jpg" width="50%">
 

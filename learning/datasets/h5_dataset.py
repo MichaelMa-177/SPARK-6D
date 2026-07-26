@@ -79,12 +79,15 @@ class PairH5Dataset(torch.utils.data.Dataset):
   def transform_depth_to_xyzmap(self, batch:BatchPoseData, H_ori, W_ori, bound=1):
     bs = len(batch.rgbAs)
     H,W = batch.rgbAs.shape[-2:]
-    mesh_radius = batch.mesh_diameters.cuda()/2
-    tf_to_crops = batch.tf_to_crops.cuda()
-    crop_to_oris = batch.tf_to_crops.inverse().cuda()  #(B,3,3)
+    mesh_radius = (
+        batch.mesh_diameters.cuda()/2
+        if self.cfg['normalize_xyz'] else None)
+    crop_to_oris = None
+    if batch.xyz_mapAs is None or batch.xyz_mapBs is None:
+      tf_to_crops = batch.tf_to_crops.cuda()
+      crop_to_oris = batch.tf_to_crops.inverse().cuda()  #(B,3,3)
     batch.poseA = batch.poseA.cuda()
     batch.Ks = batch.Ks.cuda()
-
     if batch.xyz_mapAs is None:
       depthAs_ori = kornia.geometry.transform.warp_perspective(batch.depthAs.cuda().expand(bs,-1,-1,-1), crop_to_oris, dsize=(H_ori, W_ori), mode='nearest', align_corners=False)
       batch.xyz_mapAs = depth2xyzmap_batch(depthAs_ori[:,0], batch.Ks, zfar=np.inf).permute(0,3,1,2)  #(B,3,H,W)
@@ -217,4 +220,3 @@ class PoseRefinePairH5Dataset(PairH5Dataset):
 
     batch = self.transform_depth_to_xyzmap(batch, H_ori, W_ori, bound=bound)
     return batch
-

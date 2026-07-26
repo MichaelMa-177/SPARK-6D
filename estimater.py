@@ -12,7 +12,9 @@ from datareader import *
 import itertools
 from learning.training.predict_score import *
 from learning.training.predict_pose_refine import *
+from pose_kalman import SE3KalmanFilter
 import yaml
+from concurrent.futures import ThreadPoolExecutor
 
 
 class FoundationPose:
@@ -39,6 +41,24 @@ class FoundationPose:
       self.refiner = PoseRefinePredictor()
 
     self.pose_last = None   # Used for tracking; per the centered mesh
+    self.kalman_filter = None
+    self.kalman_refine_interval = 2
+    self.kalman_adaptive = True
+    self.kalman_track_count = 0
+    self.kalman_frames_since_refine = 0
+    self.kalman_force_refine = False
+    self.kalman_stats = {
+        'refined_frames': 0,
+        'predicted_frames': 0,
+        'flow_guard_frames': 0,
+    }
+    self.kalman_frame_modes = []
+    self.kalman_prev_gray = None
+    self.kalman_gray_executor = None
+    self.kalman_bbox_corners = None
+    self.kalman_flow_dilate_kernel = np.ones((7, 7), np.uint8)
+    self.track_K_key = None
+    self.track_K_tensor = None
 
 
   def reset_object(self, model_pts, model_normals, symmetry_tfs=None, mesh=None):
@@ -70,22 +90,243 @@ class FoundationPose:
       self.mesh.export(self.mesh_path)
     self.mesh_tensors = make_mesh_tensors(self.mesh)
 
+    self.tf_to_centered_mesh = torch.eye(
+        4, dtype=torch.float, device='cuda')
+    self.tf_to_centered_mesh[:3, 3] = -torch.as_tensor(
+        self.model_center, device='cuda', dtype=torch.float)
+
     if symmetry_tfs is None:
       self.symmetry_tfs = torch.eye(4).float().cuda()[None]
     else:
       self.symmetry_tfs = torch.as_tensor(symmetry_tfs, device='cuda', dtype=torch.float)
+
+    if getattr(self, 'kalman_filter', None) is not None:
+      logging.warning(
+          'reset_object invalidates the active Kalman state; re-enable it '
+          'after registering the new object')
+      self.disable_kalman()
 
     logging.info("reset done")
 
 
 
   def get_tf_to_centered_mesh(self):
-    tf_to_center = torch.eye(4, dtype=torch.float, device='cuda')
-    tf_to_center[:3,3] = -torch.as_tensor(self.model_center, device='cuda', dtype=torch.float)
-    return tf_to_center
+    return self.tf_to_centered_mesh
+
+
+  def enable_kalman(
+      self,
+      refine_interval=2,
+      adaptive=True,
+      process_translation=None,
+      process_rotation=np.deg2rad(0.35),
+      measurement_translation=None,
+      measurement_rotation=np.deg2rad(0.20),
+  ):
+    """Enable SE(3) Kalman prediction and adaptive FoundationPose refinement.
+
+    ``refine_interval=2`` skips at most one neural refinement in smooth
+    motion.  High motion, high uncertainty, or a large previous correction
+    automatically restores refinement on every frame.
+    """
+    if refine_interval < 1:
+      raise ValueError('refine_interval must be at least 1')
+    self.kalman_filter = SE3KalmanFilter(
+        object_diameter=self.diameter,
+        process_translation=process_translation,
+        process_rotation=process_rotation,
+        measurement_translation=measurement_translation,
+        measurement_rotation=measurement_rotation,
+    )
+    self.kalman_refine_interval = int(refine_interval)
+    self.kalman_adaptive = bool(adaptive)
+    self.kalman_track_count = 0
+    self.kalman_frames_since_refine = 0
+    self.kalman_force_refine = False
+    self.kalman_stats = {
+        'refined_frames': 0,
+        'predicted_frames': 0,
+        'flow_guard_frames': 0,
+    }
+    self.kalman_frame_modes = []
+    self.kalman_prev_gray = None
+    if self.kalman_gray_executor is None:
+      self.kalman_gray_executor = ThreadPoolExecutor(
+          max_workers=1, thread_name_prefix='foundationpose-gray')
+    self.kalman_bbox_corners = np.asarray(list(itertools.product(
+        [self.min_xyz[0], self.max_xyz[0]],
+        [self.min_xyz[1], self.max_xyz[1]],
+        [self.min_xyz[2], self.max_xyz[2]])), dtype=np.float64)
+    if self.pose_last is not None:
+      pose_np = self.pose_last.reshape(4, 4).detach().cpu().numpy()
+      self.kalman_filter.initialize(pose_np)
+
+
+  def disable_kalman(self):
+    self.kalman_filter = None
+    self.close()
+
+
+  def close(self):
+    if self.kalman_gray_executor is not None:
+      self.kalman_gray_executor.shutdown(wait=True)
+      self.kalman_gray_executor = None
+
+
+  def _kalman_should_refine(self):
+    # The first two tracking frames establish a reliable velocity estimate.
+    if self.kalman_track_count <= 2 or self.kalman_force_refine:
+      return True
+    if self.kalman_frames_since_refine + 1 >= self.kalman_refine_interval:
+      return True
+    if not self.kalman_adaptive:
+      return False
+
+    translation_motion, rotation_motion = self.kalman_filter.motion()
+    translation_uncertainty, rotation_uncertainty = (
+        self.kalman_filter.pose_uncertainty())
+    high_motion = (
+        translation_motion > self.diameter * 0.020
+        or rotation_motion > np.deg2rad(1.5))
+    high_uncertainty = (
+        translation_uncertainty > self.diameter * 0.025
+        or rotation_uncertainty > np.deg2rad(1.5))
+    return high_motion or high_uncertainty
+
+
+  def _pose_last_from_numpy(self, pose):
+    device = self.pts.device
+    self.pose_last = torch.as_tensor(
+        pose, device=device, dtype=torch.float32).reshape(4, 4)
+
+
+  def _kalman_gray(self, rgb):
+    if rgb.ndim == 2:
+      return np.ascontiguousarray(rgb.astype(np.uint8, copy=False))
+    return cv2.cvtColor(
+        np.ascontiguousarray(rgb.astype(np.uint8, copy=False)),
+        cv2.COLOR_RGB2GRAY)
+
+
+  def _kalman_project_bbox(self, pose, K, height, width):
+    corners = self.kalman_bbox_corners
+    if corners is None:
+      corners = np.asarray(list(itertools.product(
+          [self.min_xyz[0], self.max_xyz[0]],
+          [self.min_xyz[1], self.max_xyz[1]],
+          [self.min_xyz[2], self.max_xyz[2]])), dtype=np.float64)
+    points_cam = (
+        pose[:3, :3] @ corners.T + pose[:3, 3:4]).T
+    valid = points_cam[:, 2] > 1e-4
+    if valid.sum() < 3:
+      return None
+    projected = (K @ points_cam[valid].T).T
+    projected = projected[:, :2] / projected[:, 2:3]
+    projected[:, 0] = np.clip(projected[:, 0], 0, width - 1)
+    projected[:, 1] = np.clip(projected[:, 1], 0, height - 1)
+    hull = cv2.convexHull(
+        np.round(projected).astype(np.int32).reshape(-1, 1, 2))
+    if abs(cv2.contourArea(hull)) < 25:
+      return None
+    return hull
+
+
+  def _kalman_project_center(self, pose, K):
+    center_cam = pose[:3, 3]
+    if center_cam[2] <= 1e-4:
+      return None
+    projected = K @ center_cam
+    return projected[:2] / projected[2]
+
+
+  def _kalman_flow_requires_refine(
+      self, rgb, K, previous_pose, predicted_pose, current_gray=None):
+    """Detect unmodelled image motion before skipping neural refinement."""
+    if current_gray is None:
+      current_gray = self._kalman_gray(rgb)
+    if self.kalman_prev_gray is None:
+      return True, current_gray
+    if current_gray.shape != self.kalman_prev_gray.shape:
+      return True, current_gray
+
+    height, width = current_gray.shape
+    hull = self._kalman_project_bbox(
+        previous_pose, K, height, width)
+    previous_center = self._kalman_project_center(previous_pose, K)
+    predicted_center = self._kalman_project_center(predicted_pose, K)
+    if hull is None or previous_center is None or predicted_center is None:
+      return True, current_gray
+
+    mask = np.zeros_like(current_gray)
+    cv2.fillConvexPoly(mask, hull, 255)
+    mask = cv2.dilate(
+        mask, self.kalman_flow_dilate_kernel, iterations=1)
+    # goodFeaturesToTrack only evaluates pixels selected by ``mask``.  Give
+    # it the same mask plus the full detector halo in a tight ROI, then map
+    # the resulting integer-pixel corners back to full-image coordinates.
+    # LK remains full-frame, so its pyramid and border behaviour are intact.
+    x, y, roi_width, roi_height = cv2.boundingRect(mask)
+    detector_halo = 4
+    x0 = max(0, x - detector_halo)
+    y0 = max(0, y - detector_halo)
+    x1 = min(width, x + roi_width + detector_halo)
+    y1 = min(height, y + roi_height + detector_halo)
+    feature_image = self.kalman_prev_gray[y0:y1, x0:x1]
+    feature_mask = mask[y0:y1, x0:x1]
+    points = cv2.goodFeaturesToTrack(
+        feature_image,
+        maxCorners=80,
+        qualityLevel=0.01,
+        minDistance=5,
+        blockSize=5,
+        mask=feature_mask,
+    )
+    if points is None or len(points) < 6:
+      return True, current_gray
+    points += np.asarray([x0, y0], dtype=points.dtype)
+
+    tracked, status, error = cv2.calcOpticalFlowPyrLK(
+        self.kalman_prev_gray,
+        current_gray,
+        points,
+        None,
+        winSize=(21, 21),
+        maxLevel=3,
+        criteria=(
+            cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 20, 0.01),
+    )
+    if tracked is None or status is None:
+      return True, current_gray
+    valid = status.reshape(-1).astype(bool)
+    if error is not None:
+      valid &= error.reshape(-1) < 30.0
+    if valid.sum() < 6:
+      return True, current_gray
+
+    observed_flow = np.median(
+        tracked[valid, 0] - points[valid, 0], axis=0)
+    predicted_flow = predicted_center - previous_center
+    mismatch = np.linalg.norm(observed_flow - predicted_flow)
+    observed_motion = np.linalg.norm(observed_flow)
+    # A small amount of optical noise is harmless.  Larger disagreement
+    # indicates acceleration/occlusion that the constant-velocity state
+    # cannot safely extrapolate through.
+    requires_refine = mismatch > 1.5 and observed_motion > 1.0
+    return bool(requires_refine), current_gray
+
+
+  def get_kalman_stats(self):
+    stats = dict(self.kalman_stats)
+    stats['enabled'] = self.kalman_filter is not None
+    stats['frame_modes'] = list(self.kalman_frame_modes)
+    return stats
 
 
   def to_device(self, s='cuda:0'):
+    if str(s).startswith('cuda'):
+      cuda_device = torch.device(s)
+      if cuda_device.index is not None:
+        torch.cuda.set_device(cuda_device)
     for k in self.__dict__:
       self.__dict__[k] = self.__dict__[k]
       if torch.is_tensor(self.__dict__[k]) or isinstance(self.__dict__[k], nn.Module):
@@ -95,7 +336,10 @@ class FoundationPose:
       logging.info(f"Moving {k} to device {s}")
       self.mesh_tensors[k] = self.mesh_tensors[k].to(s)
     if self.refiner is not None:
-      self.refiner.model.to(s)
+      if hasattr(self.refiner, 'to_device'):
+        self.refiner.to_device(s)
+      else:
+        self.refiner.model.to(s)
     if self.scorer is not None:
       self.scorer.model.to(s)
     if self.glctx is not None:
@@ -156,7 +400,8 @@ class FoundationPose:
     return center.reshape(3)
 
 
-  def register(self, K, rgb, depth, ob_mask, ob_id=None, glctx=None, iteration=5):
+  def register(self, K, rgb, depth, ob_mask, ob_id=None, glctx=None,
+               iteration=5, gray=None):
     '''Copmute pose from given pts to self.pcd
     @pts: (N,3) np array, downsampled scene points
     '''
@@ -197,6 +442,11 @@ class FoundationPose:
 
     self.H, self.W = depth.shape[:2]
     self.K = K
+    K_array = np.asarray(K)
+    self.track_K_key = (
+        K_array.shape, K_array.dtype.str, K_array.tobytes())
+    self.track_K_tensor = torch.as_tensor(
+        K_array, dtype=torch.float, device='cuda')
     self.ob_id = ob_id
     self.ob_mask = ob_mask
 
@@ -237,6 +487,21 @@ class FoundationPose:
     self.poses = poses
     self.scores = scores
 
+    if self.kalman_filter is not None:
+      self.kalman_filter.initialize(
+          self.pose_last.reshape(4, 4).detach().cpu().numpy())
+      self.kalman_track_count = 0
+      self.kalman_frames_since_refine = 0
+      self.kalman_force_refine = False
+      self.kalman_stats = {
+          'refined_frames': 0,
+          'predicted_frames': 0,
+          'flow_guard_frames': 0,
+      }
+      self.kalman_frame_modes = []
+      self.kalman_prev_gray = (
+          gray if gray is not None else self._kalman_gray(rgb))
+
     return best_pose.data.cpu().numpy()
 
 
@@ -247,24 +512,97 @@ class FoundationPose:
     return -torch.ones(len(poses), device='cuda', dtype=torch.float)
 
 
-  def track_one(self, rgb, depth, K, iteration, extra={}):
+  def track_one(self, rgb, depth, K, iteration, extra={}, gray=None):
     if self.pose_last is None:
       logging.info("Please init pose by register first")
       raise RuntimeError
     logging.info("Welcome")
+
+    if self.kalman_filter is not None:
+      self.kalman_track_count += 1
+      previous_pose = self.kalman_filter.pose.copy()
+      predicted_pose = self.kalman_filter.predict()
+      should_refine = self._kalman_should_refine()
+      current_gray = gray
+      flow_guard_triggered = False
+      if not should_refine and self.kalman_adaptive:
+        should_refine, current_gray = self._kalman_flow_requires_refine(
+            rgb, K, previous_pose, predicted_pose,
+            current_gray=current_gray)
+        if should_refine:
+          flow_guard_triggered = True
+          self.kalman_stats['flow_guard_frames'] += 1
+      if not should_refine:
+        self._pose_last_from_numpy(predicted_pose)
+        self.kalman_frames_since_refine += 1
+        self.kalman_stats['predicted_frames'] += 1
+        self.kalman_frame_modes.append('predicted')
+        self.kalman_prev_gray = (
+            current_gray if current_gray is not None
+            else self._kalman_gray(rgb))
+        if self.debug>=2:
+          extra['vis'] = None
+        logging.info("pose predicted by SE(3) Kalman filter")
+        return (
+            self.pose_last @ self.get_tf_to_centered_mesh()
+        ).detach().cpu().numpy().reshape(4, 4)
+      # Keep the original FoundationPose convergence behaviour on measured
+      # frames.  A constant-velocity prediction is useful for a skipped
+      # frame, but can overshoot when an object stops abruptly; seeding the
+      # Refiner from the last confirmed pose preserves its original basin.
+      self._pose_last_from_numpy(previous_pose)
+
+    gray_future = None
+    if (self.kalman_filter is not None and current_gray is None
+        and self.kalman_gray_executor is not None):
+      # cvtColor releases the GIL, so it can overlap the CUDA refinement.
+      # Its byte-identical result is consumed only after refinement finishes.
+      gray_future = self.kalman_gray_executor.submit(
+          self._kalman_gray, rgb)
 
     depth = torch.as_tensor(depth, device='cuda', dtype=torch.float)
     depth = erode_depth(depth, radius=2, device='cuda')
     depth = bilateral_filter_depth(depth, radius=2, device='cuda')
     logging.info("depth processing done")
 
-    xyz_map = depth2xyzmap_batch(depth[None], torch.as_tensor(K, dtype=torch.float, device='cuda')[None], zfar=np.inf)[0]
+    K_array = np.asarray(K)
+    K_key = (K_array.shape, K_array.dtype.str, K_array.tobytes())
+    if K_key != self.track_K_key:
+      self.track_K_tensor = torch.as_tensor(
+          K_array, dtype=torch.float, device='cuda')
+      self.track_K_key = K_key
+    xyz_map = depth2xyzmap_batch(
+        depth[None], self.track_K_tensor[None], zfar=np.inf)[0]
 
-    pose, vis = self.refiner.predict(mesh=self.mesh, mesh_tensors=self.mesh_tensors, rgb=rgb, depth=depth, K=K, ob_in_cams=self.pose_last.reshape(1,4,4).data.cpu().numpy(), normal_map=None, xyz_map=xyz_map, mesh_diameter=self.diameter, glctx=self.glctx, iteration=iteration, get_vis=self.debug>=2)
+    # The Refiner already accepts tensors.  Keeping the seed pose on CUDA
+    # avoids a synchronous CUDA -> CPU -> CUDA round trip on every measured
+    # frame without changing a single pose value.
+    pose, vis = self.refiner.predict(mesh=self.mesh, mesh_tensors=self.mesh_tensors, rgb=rgb, depth=depth, K=K, ob_in_cams=self.pose_last.reshape(1,4,4), normal_map=None, xyz_map=xyz_map, mesh_diameter=self.diameter, glctx=self.glctx, iteration=iteration, get_vis=self.debug>=2)
     logging.info("pose done")
     if self.debug>=2:
       extra['vis'] = vis
+    if self.kalman_filter is not None:
+      measured_pose = pose.reshape(4, 4).detach().cpu().numpy()
+      update = self.kalman_filter.update(measured_pose)
+      self._pose_last_from_numpy(self.kalman_filter.pose)
+      self.kalman_frames_since_refine = 0
+      self.kalman_stats['refined_frames'] += 1
+      self.kalman_frame_modes.append(
+          'flow_refined' if flow_guard_triggered else 'refined')
+      # A surprising correction indicates unmodelled acceleration.  Refine
+      # the next frame rather than trusting a prediction through the change.
+      self.kalman_force_refine = (
+          update.translation_innovation > self.diameter * 0.02
+          or update.rotation_innovation > np.deg2rad(1.0))
+      if current_gray is not None:
+        self.kalman_prev_gray = current_gray
+      elif gray_future is not None:
+        self.kalman_prev_gray = gray_future.result()
+      else:
+        self.kalman_prev_gray = self._kalman_gray(rgb)
+      return (
+          self.pose_last @ self.get_tf_to_centered_mesh()
+      ).detach().cpu().numpy().reshape(4, 4)
+
     self.pose_last = pose
     return (pose@self.get_tf_to_centered_mesh()).data.cpu().numpy().reshape(4,4)
-
-

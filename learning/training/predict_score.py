@@ -43,7 +43,7 @@ def vis_batch_data_scores(pose_data, ids, scores, pad_margin=5):
     else:
       row = np.concatenate([rgbA_vis, pad, depthA_vis, pad, rgbB_vis, pad, depthB_vis], axis=1)
     s = 100/row.shape[0]
-    row = cv2.resize(row, fx=s, fy=s, dsize=None)
+    row = cv2.resize(row, fx=s, fy=s, dsize=None).clip(0, 255).astype(np.uint8)
     row = cv_draw_text(row, text=f'id:{id}, score:{scores[id]:.3f}', uv_top_left=(10,10), color=(0,255,0), fontScale=0.5)
     canvas.append(row)
     pad = np.ones((pad_margin, row.shape[1], 3))*255
@@ -76,7 +76,12 @@ def make_crop_data_batch(render_size, ob_in_cams, mesh, rgb, depth, K, crop_rati
 
   for b in range(0,len(ob_in_cams),bs):
     extra = {}
-    rgb_r, depth_r, normal_r = nvdiffrast_render(K=K, H=H, W=W, ob_in_cams=poseAs[b:b+bs], context='cuda', get_normal=cfg['use_normal'], glctx=glctx, mesh_tensors=mesh_tensors, output_size=cfg['input_resize'], bbox2d=bbox2d_ori[b:b+bs], use_light=True, extra=extra)
+    rgb_r, depth_r, normal_r = nvdiffrast_render(
+        K=K, H=H, W=W, ob_in_cams=poseAs[b:b+bs], context='cuda',
+        get_normal=cfg['use_normal'], glctx=glctx,
+        mesh_tensors=mesh_tensors, output_size=cfg['input_resize'],
+        bbox2d=bbox2d_ori[b:b+bs], use_light=True, extra=extra,
+        return_normal_for_lighting=cfg['use_normal'])
     rgb_rs.append(rgb_r)
     depth_rs.append(depth_r[...,None])
     xyz_map_rs.append(extra['xyz_map'])
@@ -214,8 +219,6 @@ class ScorePredictor:
     scores = scores_global
 
     logging.info(f'forward done')
-    torch.cuda.empty_cache()
-
     if get_vis:
       logging.info("get_vis...")
       canvas = []
@@ -224,4 +227,3 @@ class ScorePredictor:
       return scores, canvas
 
     return scores, None
-

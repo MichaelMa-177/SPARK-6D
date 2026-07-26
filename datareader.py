@@ -106,8 +106,10 @@ class YcbineoatReader:
 
   def get_color(self,i):
     color = imageio.imread(self.color_files[i])[...,:3]
-    color = cv2.resize(color, (self.W,self.H), interpolation=cv2.INTER_NEAREST)
-    return color
+    if color.shape[:2] != (self.H, self.W):
+      color = cv2.resize(
+          color, (self.W,self.H), interpolation=cv2.INTER_NEAREST)
+    return np.ascontiguousarray(color)
 
   def get_mask(self,i):
     mask = cv2.imread(self.color_files[i].replace('rgb','masks'),-1)
@@ -116,12 +118,17 @@ class YcbineoatReader:
         if mask[...,c].sum()>0:
           mask = mask[...,c]
           break
-    mask = cv2.resize(mask, (self.W,self.H), interpolation=cv2.INTER_NEAREST).astype(bool).astype(np.uint8)
+    if mask.shape[:2] != (self.H, self.W):
+      mask = cv2.resize(
+          mask, (self.W,self.H), interpolation=cv2.INTER_NEAREST)
+    mask = mask.astype(bool).astype(np.uint8)
     return mask
 
   def get_depth(self,i):
     depth = cv2.imread(self.color_files[i].replace('rgb','depth'),-1)/1e3
-    depth = cv2.resize(depth, (self.W,self.H), interpolation=cv2.INTER_NEAREST)
+    if depth.shape[:2] != (self.H, self.W):
+      depth = cv2.resize(
+          depth, (self.W,self.H), interpolation=cv2.INTER_NEAREST)
     depth[(depth<0.001) | (depth>=self.zfar)] = 0
     return depth
 
@@ -609,5 +616,3 @@ class TudlReader(BopBaseReader):
   def get_gt_mesh_file(self, ob_id):
     mesh_file = f'{self.base_dir}/../../../tudl_models/models/obj_{ob_id:06d}.ply'
     return mesh_file
-
-

@@ -129,10 +129,13 @@ def make_mesh_tensors(mesh, device='cuda', max_tex_size=None):
     'faces': torch.tensor(mesh.faces, device=device, dtype=torch.int),
     'vnormals': torch.tensor(mesh.vertex_normals, device=device, dtype=torch.float),
   })
+  mesh_tensors['pos_homo'] = to_homo_torch(mesh_tensors['pos'])
+  mesh_tensors['glcam_in_cvcam'] = torch.tensor(
+      glcam_in_cvcam, device=device, dtype=torch.float)
   return mesh_tensors
 
 
-def nvdiffrast_render(K=None, H=None, W=None, ob_in_cams=None, glctx=None, context='cuda', get_normal=False, mesh_tensors=None, mesh=None, projection_mat=None, bbox2d=None, output_size=None, use_light=False, light_color=None, light_dir=np.array([0,0,1]), light_pos=np.array([0,0,0]), w_ambient=0.8, w_diffuse=0.5, extra={}):
+def nvdiffrast_render(K=None, H=None, W=None, ob_in_cams=None, glctx=None, context='cuda', get_normal=False, mesh_tensors=None, mesh=None, projection_mat=None, bbox2d=None, output_size=None, use_light=False, light_color=None, light_dir=np.array([0,0,1]), light_pos=np.array([0,0,0]), w_ambient=0.8, w_diffuse=0.5, extra={}, return_depth=True, return_normal_for_lighting=True):
   '''Just plain rendering, not support any gradient
   @K: (3,3) np array
   @ob_in_cams: (N,4,4) torch tensor, openCV camera
@@ -158,7 +161,11 @@ def nvdiffrast_render(K=None, H=None, W=None, ob_in_cams=None, glctx=None, conte
   pos_idx = mesh_tensors['faces']
   has_tex = 'tex' in mesh_tensors
 
-  ob_in_glcams = torch.tensor(glcam_in_cvcam, device='cuda', dtype=torch.float)[None]@ob_in_cams
+  glcam_tf = mesh_tensors.get('glcam_in_cvcam')
+  if glcam_tf is None:
+    glcam_tf = torch.tensor(
+        glcam_in_cvcam, device=ob_in_cams.device, dtype=torch.float)
+  ob_in_glcams = glcam_tf[None]@ob_in_cams
   if projection_mat is None:
     projection_mat = projection_matrix_from_intrinsics(K, height=H, width=W, znear=0.001, zfar=100)
   projection_mat = torch.as_tensor(projection_mat.reshape(-1,4,4), device='cuda', dtype=torch.float)
@@ -168,7 +175,9 @@ def nvdiffrast_render(K=None, H=None, W=None, ob_in_cams=None, glctx=None, conte
     output_size = np.asarray([H,W])
 
   pts_cam = transform_pts(pos, ob_in_cams)
-  pos_homo = to_homo_torch(pos)
+  pos_homo = mesh_tensors.get('pos_homo')
+  if pos_homo is None:
+    pos_homo = to_homo_torch(pos)
   pos_clip = (mtx[:,None]@pos_homo[None,...,None])[...,0]
   if bbox2d is not None:
     l = bbox2d[:,0]
@@ -190,10 +199,10 @@ def nvdiffrast_render(K=None, H=None, W=None, ob_in_cams=None, glctx=None, conte
   else:
     color, _ = dr.interpolate(mesh_tensors['vertex_color'], rast_out, pos_idx)
 
-  if use_light:
-    get_normal = True
-  if get_normal:
+  if get_normal or use_light:
     vnormals_cam = transform_dirs(vnormals, ob_in_cams)
+  output_normal = get_normal or (use_light and return_normal_for_lighting)
+  if output_normal:
     normal_map, _ = dr.interpolate(vnormals_cam, rast_out, pos_idx)
     normal_map = F.normalize(normal_map, dim=-1)
     normal_map = torch.flip(normal_map, dims=[1])
@@ -216,7 +225,10 @@ def nvdiffrast_render(K=None, H=None, W=None, ob_in_cams=None, glctx=None, conte
   color = color.clip(0,1)
   color = color * torch.clamp(rast_out[..., -1:], 0, 1) # Mask out background using alpha
   color = torch.flip(color, dims=[1])   # Flip Y coordinates
-  depth = torch.flip(depth, dims=[1])
+  if return_depth:
+    depth = torch.flip(depth, dims=[1])
+  else:
+    depth = None
   extra['xyz_map'] = torch.flip(xyz_map, dims=[1])
   return color, depth, normal_map
 
@@ -349,7 +361,9 @@ if wp is not None:
       depth_wp = wp.array(depth, dtype=float, device=device)
     else:
       depth_wp = wp.from_torch(depth)
-    out_wp = wp.zeros(depth.shape, dtype=float, device=device)
+    # The kernel writes every output pixel (initializing each one to zero),
+    # so a separate device-wide zero fill is redundant.
+    out_wp = wp.empty(depth.shape, dtype=float, device=device)
     wp.launch(kernel=bilateral_filter_depth_kernel, device=device, dim=[depth.shape[0], depth.shape[1]], inputs=[depth_wp, out_wp, radius, zfar, sigmaD, sigmaR])
     depth_out = wp.to_torch(out_wp)
 
@@ -388,7 +402,8 @@ if wp is not None:
 
   def erode_depth(depth, radius=2, depth_diff_thres=0.001, ratio_thres=0.8, zfar=100, device='cuda'):
     depth_wp = wp.from_torch(torch.as_tensor(depth, dtype=torch.float, device=device))
-    out_wp = wp.zeros(depth.shape, dtype=float, device=device)
+    # Every thread assigns its output pixel on every control-flow path.
+    out_wp = wp.empty(depth.shape, dtype=float, device=device)
     wp.launch(kernel=erode_depth_kernel, device=device, dim=[depth.shape[0], depth.shape[1]], inputs=[depth_wp, out_wp, radius, depth_diff_thres, ratio_thres, zfar],)
     depth_out = wp.to_torch(out_wp)
 
@@ -419,6 +434,22 @@ def depth2xyzmap(depth, K, uvs=None):
   return xyz_map
 
 
+_DEPTH_PIXEL_GRID_CACHE = {}
+
+
+def _depth_pixel_grid(height, width, device, dtype):
+  key = (str(device), int(height), int(width), dtype)
+  cached = _DEPTH_PIXEL_GRID_CACHE.get(key)
+  if cached is None:
+    vs, us = torch.meshgrid(
+        torch.arange(height, device=device, dtype=dtype),
+        torch.arange(width, device=device, dtype=dtype),
+        indexing='ij')
+    cached = (vs.reshape(1, -1), us.reshape(1, -1))
+    _DEPTH_PIXEL_GRID_CACHE[key] = cached
+  return cached
+
+
 def depth2xyzmap_batch(depths, Ks, zfar):
   '''
   @depths: torch tensor (B,H,W)
@@ -427,9 +458,9 @@ def depth2xyzmap_batch(depths, Ks, zfar):
   bs = depths.shape[0]
   invalid_mask = (depths<0.001) | (depths>zfar)
   H,W = depths.shape[-2:]
-  vs,us = torch.meshgrid(torch.arange(0,H),torch.arange(0,W), indexing='ij')
-  vs = vs.reshape(-1).float().cuda()[None].expand(bs,-1)
-  us = us.reshape(-1).float().cuda()[None].expand(bs,-1)
+  vs,us = _depth_pixel_grid(H, W, depths.device, depths.dtype)
+  vs = vs.expand(bs,-1)
+  us = us.expand(bs,-1)
   zs = depths.reshape(bs,-1)
   Ks = Ks[:,None].expand(bs,zs.shape[-1],3,3)
   xs = (us-Ks[...,0,2])*zs/Ks[...,0,0]  #(B,N)
@@ -576,6 +607,9 @@ def compute_mesh_diameter(model_pts=None, mesh=None, n_sample=1000):
   return diameter
 
 
+_CROP_OFFSETS_CACHE = {}
+
+
 def compute_crop_window_tf_batch(pts=None, H=None, W=None, poses=None, K=None, crop_ratio=1.2, out_size=None, rgb=None, uvs=None, method='min_box', mesh_diameter=None):
   '''Project the points and find the cropping transform
   @pts: (N,3)
@@ -603,11 +637,16 @@ def compute_crop_window_tf_batch(pts=None, H=None, W=None, poses=None, K=None, c
   torch.set_default_tensor_type('torch.cuda.FloatTensor')
   if method=='box_3d':
     radius = mesh_diameter*crop_ratio/2
-    offsets = torch.tensor([0,0,0,
-                        radius,0,0,
-                        -radius,0,0,
-                        0,radius,0,
-                        0,-radius,0]).reshape(-1,3)
+    offsets_key = (
+        str(poses.device), type(radius).__name__, float(radius))
+    offsets = _CROP_OFFSETS_CACHE.get(offsets_key)
+    if offsets is None:
+      offsets = torch.tensor([0,0,0,
+                          radius,0,0,
+                          -radius,0,0,
+                          0,radius,0,
+                          0,-radius,0]).reshape(-1,3)
+      _CROP_OFFSETS_CACHE[offsets_key] = offsets
     pts = poses[:,:3,3].reshape(-1,1,3)+offsets.reshape(1,-1,3)
     K = torch.as_tensor(K)
     projected = (K@pts.reshape(-1,3).T).T
