@@ -22,6 +22,7 @@ from learning.models.score_network import *
 from learning.datasets.pose_dataset import *
 from Utils import *
 from datareader import *
+from stage_profiler import profile_stage
 
 
 def vis_batch_data_scores(pose_data, ids, scores, pad_margin=5):
@@ -60,7 +61,8 @@ def make_crop_data_batch(render_size, ob_in_cams, mesh, rgb, depth, K, crop_rati
 
   args = []
   method = 'box_3d'
-  tf_to_crops = compute_crop_window_tf_batch(pts=mesh.vertices, H=H, W=W, poses=ob_in_cams, K=K, crop_ratio=crop_ratio, out_size=(render_size[1], render_size[0]), method=method, mesh_diameter=mesh_diameter)
+  with profile_stage('score.crop_transform', cuda=True):
+    tf_to_crops = compute_crop_window_tf_batch(pts=mesh.vertices, H=H, W=W, poses=ob_in_cams, K=K, crop_ratio=crop_ratio, out_size=(render_size[1], render_size[0]), method=method, mesh_diameter=mesh_diameter)
   logging.info("make tf_to_crops done")
 
   B = len(ob_in_cams)
@@ -76,12 +78,14 @@ def make_crop_data_batch(render_size, ob_in_cams, mesh, rgb, depth, K, crop_rati
 
   for b in range(0,len(ob_in_cams),bs):
     extra = {}
-    rgb_r, depth_r, normal_r = nvdiffrast_render(
-        K=K, H=H, W=W, ob_in_cams=poseAs[b:b+bs], context='cuda',
-        get_normal=cfg['use_normal'], glctx=glctx,
-        mesh_tensors=mesh_tensors, output_size=cfg['input_resize'],
-        bbox2d=bbox2d_ori[b:b+bs], use_light=True, extra=extra,
-        return_normal_for_lighting=cfg['use_normal'])
+    with profile_stage(
+        'score.render', cuda=True, metadata={'batch_start': b}):
+      rgb_r, depth_r, normal_r = nvdiffrast_render(
+          K=K, H=H, W=W, ob_in_cams=poseAs[b:b+bs], context='cuda',
+          get_normal=cfg['use_normal'], glctx=glctx,
+          mesh_tensors=mesh_tensors, output_size=cfg['input_resize'],
+          bbox2d=bbox2d_ori[b:b+bs], use_light=True, extra=extra,
+          return_normal_for_lighting=cfg['use_normal'])
     rgb_rs.append(rgb_r)
     depth_rs.append(depth_r[...,None])
     xyz_map_rs.append(extra['xyz_map'])
@@ -91,28 +95,30 @@ def make_crop_data_batch(render_size, ob_in_cams, mesh, rgb, depth, K, crop_rati
   xyz_map_rs = torch.cat(xyz_map_rs, dim=0).permute(0,3,1,2)  #(B,3,H,W)
   logging.info("render done")
 
-  rgbBs = kornia.geometry.transform.warp_perspective(torch.as_tensor(rgb, dtype=torch.float, device='cuda').permute(2,0,1)[None].expand(B,-1,-1,-1), tf_to_crops, dsize=render_size, mode='bilinear', align_corners=False)
-  depthBs = kornia.geometry.transform.warp_perspective(torch.as_tensor(depth, dtype=torch.float, device='cuda')[None,None].expand(B,-1,-1,-1), tf_to_crops, dsize=render_size, mode='nearest', align_corners=False)
-  if rgb_rs.shape[-2:]!=cfg['input_resize']:
-    rgbAs = kornia.geometry.transform.warp_perspective(rgb_rs, tf_to_crops, dsize=render_size, mode='bilinear', align_corners=False)
-    depthAs = kornia.geometry.transform.warp_perspective(depth_rs, tf_to_crops, dsize=render_size, mode='nearest', align_corners=False)
-  else:
-    rgbAs = rgb_rs
-    depthAs = depth_rs
+  with profile_stage('score.warp_inputs', cuda=True):
+    rgbBs = kornia.geometry.transform.warp_perspective(torch.as_tensor(rgb, dtype=torch.float, device='cuda').permute(2,0,1)[None].expand(B,-1,-1,-1), tf_to_crops, dsize=render_size, mode='bilinear', align_corners=False)
+    depthBs = kornia.geometry.transform.warp_perspective(torch.as_tensor(depth, dtype=torch.float, device='cuda')[None,None].expand(B,-1,-1,-1), tf_to_crops, dsize=render_size, mode='nearest', align_corners=False)
+    if rgb_rs.shape[-2:]!=cfg['input_resize']:
+      rgbAs = kornia.geometry.transform.warp_perspective(rgb_rs, tf_to_crops, dsize=render_size, mode='bilinear', align_corners=False)
+      depthAs = kornia.geometry.transform.warp_perspective(depth_rs, tf_to_crops, dsize=render_size, mode='nearest', align_corners=False)
+    else:
+      rgbAs = rgb_rs
+      depthAs = depth_rs
 
-  if xyz_map_rs.shape[-2:]!=cfg['input_resize']:
-    xyz_mapAs = kornia.geometry.transform.warp_perspective(xyz_map_rs, tf_to_crops, dsize=render_size, mode='nearest', align_corners=False)
-  else:
-    xyz_mapAs = xyz_map_rs
+    if xyz_map_rs.shape[-2:]!=cfg['input_resize']:
+      xyz_mapAs = kornia.geometry.transform.warp_perspective(xyz_map_rs, tf_to_crops, dsize=render_size, mode='nearest', align_corners=False)
+    else:
+      xyz_mapAs = xyz_map_rs
 
-  normalAs = None
-  normalBs = None
+    normalAs = None
+    normalBs = None
 
   Ks = torch.as_tensor(K, dtype=torch.float).reshape(1,3,3).expand(len(rgbAs),3,3)
   mesh_diameters = torch.ones((len(rgbAs)), dtype=torch.float, device='cuda')*mesh_diameter
 
-  pose_data = BatchPoseData(rgbAs=rgbAs, rgbBs=rgbBs, depthAs=depthAs, depthBs=depthBs, normalAs=normalAs, normalBs=normalBs, poseA=poseAs, xyz_mapAs=xyz_mapAs, tf_to_crops=tf_to_crops, Ks=Ks, mesh_diameters=mesh_diameters)
-  pose_data = dataset.transform_batch(pose_data, H_ori=H, W_ori=W, bound=1)
+  with profile_stage('score.batch_transform', cuda=True):
+    pose_data = BatchPoseData(rgbAs=rgbAs, rgbBs=rgbBs, depthAs=depthAs, depthBs=depthBs, normalAs=normalAs, normalBs=normalBs, poseA=poseAs, xyz_mapAs=xyz_mapAs, tf_to_crops=tf_to_crops, Ks=Ks, mesh_diameters=mesh_diameters)
+    pose_data = dataset.transform_batch(pose_data, H_ori=H, W_ori=W, bound=1)
 
   logging.info("pose batch data done")
 
@@ -168,7 +174,8 @@ class ScorePredictor:
     @rgb: np array (H,W,3)
     '''
     logging.info(f"ob_in_cams:{ob_in_cams.shape}")
-    ob_in_cams = torch.as_tensor(ob_in_cams, dtype=torch.float, device='cuda')
+    with profile_stage('score.input_transfer', cuda=True):
+      ob_in_cams = torch.as_tensor(ob_in_cams, dtype=torch.float, device='cuda')
 
     logging.info(f'self.cfg.use_normal:{self.cfg.use_normal}')
     if not self.cfg.use_normal:
@@ -179,10 +186,12 @@ class ScorePredictor:
     if mesh_tensors is None:
       mesh_tensors = make_mesh_tensors(mesh)
 
-    rgb = torch.as_tensor(rgb, device='cuda', dtype=torch.float)
-    depth = torch.as_tensor(depth, device='cuda', dtype=torch.float)
+    with profile_stage('score.input_transfer', cuda=True):
+      rgb = torch.as_tensor(rgb, device='cuda', dtype=torch.float)
+      depth = torch.as_tensor(depth, device='cuda', dtype=torch.float)
 
-    pose_data = make_crop_data_batch(self.cfg.input_resize, ob_in_cams, mesh, rgb, depth, K, crop_ratio=self.cfg['crop_ratio'], glctx=glctx, mesh_tensors=mesh_tensors, dataset=self.dataset, cfg=self.cfg, mesh_diameter=mesh_diameter)
+    with profile_stage('score.crop_batch', cuda=True):
+      pose_data = make_crop_data_batch(self.cfg.input_resize, ob_in_cams, mesh, rgb, depth, K, crop_ratio=self.cfg['crop_ratio'], glctx=glctx, mesh_tensors=mesh_tensors, dataset=self.dataset, cfg=self.cfg, mesh_diameter=mesh_diameter)
 
     def find_best_among_pairs(pose_data:BatchPoseData):
       logging.info(f'pose_data.rgbAs.shape[0]: {pose_data.rgbAs.shape[0]}')
@@ -190,16 +199,22 @@ class ScorePredictor:
       scores = []
       bs = pose_data.rgbAs.shape[0]
       for b in range(0, pose_data.rgbAs.shape[0], bs):
-        A = torch.cat([pose_data.rgbAs[b:b+bs].cuda(), pose_data.xyz_mapAs[b:b+bs].cuda()], dim=1).float()
-        B = torch.cat([pose_data.rgbBs[b:b+bs].cuda(), pose_data.xyz_mapBs[b:b+bs].cuda()], dim=1).float()
-        if pose_data.normalAs is not None:
-          A = torch.cat([A, pose_data.normalAs.cuda().float()], dim=1)
-          B = torch.cat([B, pose_data.normalBs.cuda().float()], dim=1)
-        with torch.cuda.amp.autocast(enabled=self.amp):
-          output = self.model(A, B, L=len(A))
-        scores_cur = output["score_logit"].float().reshape(-1)
-        ids.append(scores_cur.argmax()+b)
-        scores.append(scores_cur)
+        with profile_stage(
+            'score.input_pack', cuda=True, metadata={'batch_start': b}):
+          A = torch.cat([pose_data.rgbAs[b:b+bs].cuda(), pose_data.xyz_mapAs[b:b+bs].cuda()], dim=1).float()
+          B = torch.cat([pose_data.rgbBs[b:b+bs].cuda(), pose_data.xyz_mapBs[b:b+bs].cuda()], dim=1).float()
+          if pose_data.normalAs is not None:
+            A = torch.cat([A, pose_data.normalAs.cuda().float()], dim=1)
+            B = torch.cat([B, pose_data.normalBs.cuda().float()], dim=1)
+        with profile_stage(
+            'score.network_forward', cuda=True,
+            metadata={'batch_start': b}):
+          with torch.cuda.amp.autocast(enabled=self.amp):
+            output = self.model(A, B, L=len(A))
+        with profile_stage('score.output_decode', cuda=True):
+          scores_cur = output["score_logit"].float().reshape(-1)
+          ids.append(scores_cur.argmax()+b)
+          scores.append(scores_cur)
       ids = torch.stack(ids, dim=0).reshape(-1)
       scores = torch.cat(scores, dim=0).reshape(-1)
       return ids, scores
@@ -208,13 +223,21 @@ class ScorePredictor:
     global_ids = torch.arange(len(ob_in_cams), device='cuda', dtype=torch.long)
     scores_global = torch.zeros((len(ob_in_cams)), dtype=torch.float, device='cuda')
 
+    selection_round = 0
     while 1:
-      ids, scores = find_best_among_pairs(pose_data_iter)
-      if len(ids)==1:
-        scores_global[global_ids] = scores + 100
-        break
-      global_ids = global_ids[ids]
-      pose_data_iter = pose_data.select_by_indices(global_ids)
+      with profile_stage(
+          'score.tournament_round', cuda=True,
+          metadata={
+              'round': selection_round,
+              'candidates': len(global_ids),
+          }):
+        ids, scores = find_best_among_pairs(pose_data_iter)
+        if len(ids)==1:
+          scores_global[global_ids] = scores + 100
+          break
+        global_ids = global_ids[ids]
+        pose_data_iter = pose_data.select_by_indices(global_ids)
+      selection_round += 1
 
     scores = scores_global
 

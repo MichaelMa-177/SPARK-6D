@@ -15,6 +15,7 @@ from learning.training.predict_pose_refine import *
 from pose_kalman import SE3KalmanFilter
 import yaml
 from concurrent.futures import ThreadPoolExecutor
+from stage_profiler import profile_stage
 
 
 class FoundationPose:
@@ -415,8 +416,10 @@ class FoundationPose:
       else:
         self.glctx = glctx
 
-    depth = erode_depth(depth, radius=2, device='cuda')
-    depth = bilateral_filter_depth(depth, radius=2, device='cuda')
+    with profile_stage('register.depth_erode', cuda=True):
+      depth = erode_depth(depth, radius=2, device='cuda')
+    with profile_stage('register.depth_bilateral', cuda=True):
+      depth = bilateral_filter_depth(depth, radius=2, device='cuda')
 
     if self.debug>=2:
       xyz_map = depth2xyzmap(depth, K)
@@ -450,57 +453,63 @@ class FoundationPose:
     self.ob_id = ob_id
     self.ob_mask = ob_mask
 
-    poses = self.generate_random_pose_hypo(K=K, rgb=rgb, depth=depth, mask=ob_mask, scene_pts=None)
-    poses = poses.data.cpu().numpy()
-    logging.info(f'poses:{poses.shape}')
-    center = self.guess_translation(depth=depth, mask=ob_mask, K=K)
+    with profile_stage('register.hypothesis_generation', cuda=True):
+      poses = self.generate_random_pose_hypo(K=K, rgb=rgb, depth=depth, mask=ob_mask, scene_pts=None)
+      poses = poses.data.cpu().numpy()
+      logging.info(f'poses:{poses.shape}')
+      center = self.guess_translation(depth=depth, mask=ob_mask, K=K)
 
-    poses = torch.as_tensor(poses, device='cuda', dtype=torch.float)
-    poses[:,:3,3] = torch.as_tensor(center.reshape(1,3), device='cuda')
+      poses = torch.as_tensor(poses, device='cuda', dtype=torch.float)
+      poses[:,:3,3] = torch.as_tensor(center.reshape(1,3), device='cuda')
 
-    add_errs = self.compute_add_err_to_gt_pose(poses)
-    logging.info(f"after viewpoint, add_errs min:{add_errs.min()}")
+      add_errs = self.compute_add_err_to_gt_pose(poses)
+      logging.info(f"after viewpoint, add_errs min:{add_errs.min()}")
 
-    xyz_map = depth2xyzmap(depth, K)
-    poses, vis = self.refiner.predict(mesh=self.mesh, mesh_tensors=self.mesh_tensors, rgb=rgb, depth=depth, K=K, ob_in_cams=poses.data.cpu().numpy(), normal_map=normal_map, xyz_map=xyz_map, glctx=self.glctx, mesh_diameter=self.diameter, iteration=iteration, get_vis=self.debug>=2)
+    with profile_stage('register.xyz_map', cuda=True):
+      xyz_map = depth2xyzmap(depth, K)
+    with profile_stage('register.refiner', cuda=True):
+      poses, vis = self.refiner.predict(mesh=self.mesh, mesh_tensors=self.mesh_tensors, rgb=rgb, depth=depth, K=K, ob_in_cams=poses.data.cpu().numpy(), normal_map=normal_map, xyz_map=xyz_map, glctx=self.glctx, mesh_diameter=self.diameter, iteration=iteration, get_vis=self.debug>=2)
     if vis is not None:
       imageio.imwrite(f'{self.debug_dir}/vis_refiner.png', vis)
 
-    scores, vis = self.scorer.predict(mesh=self.mesh, rgb=rgb, depth=depth, K=K, ob_in_cams=poses.data.cpu().numpy(), normal_map=normal_map, mesh_tensors=self.mesh_tensors, glctx=self.glctx, mesh_diameter=self.diameter, get_vis=self.debug>=2)
+    with profile_stage('register.scorer', cuda=True):
+      scores, vis = self.scorer.predict(mesh=self.mesh, rgb=rgb, depth=depth, K=K, ob_in_cams=poses.data.cpu().numpy(), normal_map=normal_map, mesh_tensors=self.mesh_tensors, glctx=self.glctx, mesh_diameter=self.diameter, get_vis=self.debug>=2)
     if vis is not None:
       imageio.imwrite(f'{self.debug_dir}/vis_score.png', vis)
 
-    add_errs = self.compute_add_err_to_gt_pose(poses)
-    logging.info(f"final, add_errs min:{add_errs.min()}")
+    with profile_stage('register.rank_and_select', cuda=True):
+      add_errs = self.compute_add_err_to_gt_pose(poses)
+      logging.info(f"final, add_errs min:{add_errs.min()}")
 
-    ids = torch.as_tensor(scores).argsort(descending=True)
-    logging.info(f'sort ids:{ids}')
-    scores = scores[ids]
-    poses = poses[ids]
+      ids = torch.as_tensor(scores).argsort(descending=True)
+      logging.info(f'sort ids:{ids}')
+      scores = scores[ids]
+      poses = poses[ids]
 
-    logging.info(f'sorted scores:{scores}')
+      logging.info(f'sorted scores:{scores}')
 
-    best_pose = poses[0]@self.get_tf_to_centered_mesh()
-    self.pose_last = poses[0]
-    self.best_id = ids[0]
+      best_pose = poses[0]@self.get_tf_to_centered_mesh()
+      self.pose_last = poses[0]
+      self.best_id = ids[0]
 
-    self.poses = poses
-    self.scores = scores
+      self.poses = poses
+      self.scores = scores
 
     if self.kalman_filter is not None:
-      self.kalman_filter.initialize(
-          self.pose_last.reshape(4, 4).detach().cpu().numpy())
-      self.kalman_track_count = 0
-      self.kalman_frames_since_refine = 0
-      self.kalman_force_refine = False
-      self.kalman_stats = {
-          'refined_frames': 0,
-          'predicted_frames': 0,
-          'flow_guard_frames': 0,
-      }
-      self.kalman_frame_modes = []
-      self.kalman_prev_gray = (
-          gray if gray is not None else self._kalman_gray(rgb))
+      with profile_stage('register.kalman_initialize'):
+        self.kalman_filter.initialize(
+            self.pose_last.reshape(4, 4).detach().cpu().numpy())
+        self.kalman_track_count = 0
+        self.kalman_frames_since_refine = 0
+        self.kalman_force_refine = False
+        self.kalman_stats = {
+            'refined_frames': 0,
+            'predicted_frames': 0,
+            'flow_guard_frames': 0,
+        }
+        self.kalman_frame_modes = []
+        self.kalman_prev_gray = (
+            gray if gray is not None else self._kalman_gray(rgb))
 
     return best_pose.data.cpu().numpy()
 
@@ -520,32 +529,36 @@ class FoundationPose:
 
     if self.kalman_filter is not None:
       self.kalman_track_count += 1
-      previous_pose = self.kalman_filter.pose.copy()
-      predicted_pose = self.kalman_filter.predict()
-      should_refine = self._kalman_should_refine()
+      with profile_stage('track.kalman_predict'):
+        previous_pose = self.kalman_filter.pose.copy()
+        predicted_pose = self.kalman_filter.predict()
+      with profile_stage('track.kalman_decision'):
+        should_refine = self._kalman_should_refine()
       current_gray = gray
       flow_guard_triggered = False
       if not should_refine and self.kalman_adaptive:
-        should_refine, current_gray = self._kalman_flow_requires_refine(
-            rgb, K, previous_pose, predicted_pose,
-            current_gray=current_gray)
+        with profile_stage('track.kalman_flow_guard'):
+          should_refine, current_gray = self._kalman_flow_requires_refine(
+              rgb, K, previous_pose, predicted_pose,
+              current_gray=current_gray)
         if should_refine:
           flow_guard_triggered = True
           self.kalman_stats['flow_guard_frames'] += 1
       if not should_refine:
-        self._pose_last_from_numpy(predicted_pose)
-        self.kalman_frames_since_refine += 1
-        self.kalman_stats['predicted_frames'] += 1
-        self.kalman_frame_modes.append('predicted')
-        self.kalman_prev_gray = (
-            current_gray if current_gray is not None
-            else self._kalman_gray(rgb))
-        if self.debug>=2:
-          extra['vis'] = None
-        logging.info("pose predicted by SE(3) Kalman filter")
-        return (
-            self.pose_last @ self.get_tf_to_centered_mesh()
-        ).detach().cpu().numpy().reshape(4, 4)
+        with profile_stage('track.kalman_prediction_output', cuda=True):
+          self._pose_last_from_numpy(predicted_pose)
+          self.kalman_frames_since_refine += 1
+          self.kalman_stats['predicted_frames'] += 1
+          self.kalman_frame_modes.append('predicted')
+          self.kalman_prev_gray = (
+              current_gray if current_gray is not None
+              else self._kalman_gray(rgb))
+          if self.debug>=2:
+            extra['vis'] = None
+          logging.info("pose predicted by SE(3) Kalman filter")
+          return (
+              self.pose_last @ self.get_tf_to_centered_mesh()
+          ).detach().cpu().numpy().reshape(4, 4)
       # Keep the original FoundationPose convergence behaviour on measured
       # frames.  A constant-velocity prediction is useful for a skipped
       # frame, but can overshoot when an object stops abruptly; seeding the
@@ -560,49 +573,56 @@ class FoundationPose:
       gray_future = self.kalman_gray_executor.submit(
           self._kalman_gray, rgb)
 
-    depth = torch.as_tensor(depth, device='cuda', dtype=torch.float)
-    depth = erode_depth(depth, radius=2, device='cuda')
-    depth = bilateral_filter_depth(depth, radius=2, device='cuda')
+    with profile_stage('track.host_to_device', cuda=True):
+      depth = torch.as_tensor(depth, device='cuda', dtype=torch.float)
+    with profile_stage('track.depth_erode', cuda=True):
+      depth = erode_depth(depth, radius=2, device='cuda')
+    with profile_stage('track.depth_bilateral', cuda=True):
+      depth = bilateral_filter_depth(depth, radius=2, device='cuda')
     logging.info("depth processing done")
 
-    K_array = np.asarray(K)
-    K_key = (K_array.shape, K_array.dtype.str, K_array.tobytes())
-    if K_key != self.track_K_key:
-      self.track_K_tensor = torch.as_tensor(
-          K_array, dtype=torch.float, device='cuda')
-      self.track_K_key = K_key
-    xyz_map = depth2xyzmap_batch(
-        depth[None], self.track_K_tensor[None], zfar=np.inf)[0]
+    with profile_stage('track.xyz_map', cuda=True):
+      K_array = np.asarray(K)
+      K_key = (K_array.shape, K_array.dtype.str, K_array.tobytes())
+      if K_key != self.track_K_key:
+        self.track_K_tensor = torch.as_tensor(
+            K_array, dtype=torch.float, device='cuda')
+        self.track_K_key = K_key
+      xyz_map = depth2xyzmap_batch(
+          depth[None], self.track_K_tensor[None], zfar=np.inf)[0]
 
     # The Refiner already accepts tensors.  Keeping the seed pose on CUDA
     # avoids a synchronous CUDA -> CPU -> CUDA round trip on every measured
     # frame without changing a single pose value.
-    pose, vis = self.refiner.predict(mesh=self.mesh, mesh_tensors=self.mesh_tensors, rgb=rgb, depth=depth, K=K, ob_in_cams=self.pose_last.reshape(1,4,4), normal_map=None, xyz_map=xyz_map, mesh_diameter=self.diameter, glctx=self.glctx, iteration=iteration, get_vis=self.debug>=2)
+    with profile_stage('track.refiner', cuda=True):
+      pose, vis = self.refiner.predict(mesh=self.mesh, mesh_tensors=self.mesh_tensors, rgb=rgb, depth=depth, K=K, ob_in_cams=self.pose_last.reshape(1,4,4), normal_map=None, xyz_map=xyz_map, mesh_diameter=self.diameter, glctx=self.glctx, iteration=iteration, get_vis=self.debug>=2)
     logging.info("pose done")
     if self.debug>=2:
       extra['vis'] = vis
     if self.kalman_filter is not None:
-      measured_pose = pose.reshape(4, 4).detach().cpu().numpy()
-      update = self.kalman_filter.update(measured_pose)
-      self._pose_last_from_numpy(self.kalman_filter.pose)
-      self.kalman_frames_since_refine = 0
-      self.kalman_stats['refined_frames'] += 1
-      self.kalman_frame_modes.append(
-          'flow_refined' if flow_guard_triggered else 'refined')
-      # A surprising correction indicates unmodelled acceleration.  Refine
-      # the next frame rather than trusting a prediction through the change.
-      self.kalman_force_refine = (
-          update.translation_innovation > self.diameter * 0.02
-          or update.rotation_innovation > np.deg2rad(1.0))
-      if current_gray is not None:
-        self.kalman_prev_gray = current_gray
-      elif gray_future is not None:
-        self.kalman_prev_gray = gray_future.result()
-      else:
-        self.kalman_prev_gray = self._kalman_gray(rgb)
-      return (
-          self.pose_last @ self.get_tf_to_centered_mesh()
-      ).detach().cpu().numpy().reshape(4, 4)
+      with profile_stage('track.kalman_update', cuda=True):
+        measured_pose = pose.reshape(4, 4).detach().cpu().numpy()
+        update = self.kalman_filter.update(measured_pose)
+        self._pose_last_from_numpy(self.kalman_filter.pose)
+        self.kalman_frames_since_refine = 0
+        self.kalman_stats['refined_frames'] += 1
+        self.kalman_frame_modes.append(
+            'flow_refined' if flow_guard_triggered else 'refined')
+        # A surprising correction indicates unmodelled acceleration.  Refine
+        # the next frame rather than trusting a prediction through the change.
+        self.kalman_force_refine = (
+            update.translation_innovation > self.diameter * 0.02
+            or update.rotation_innovation > np.deg2rad(1.0))
+        if current_gray is not None:
+          self.kalman_prev_gray = current_gray
+        elif gray_future is not None:
+          self.kalman_prev_gray = gray_future.result()
+        else:
+          self.kalman_prev_gray = self._kalman_gray(rgb)
+        return (
+            self.pose_last @ self.get_tf_to_centered_mesh()
+        ).detach().cpu().numpy().reshape(4, 4)
 
-    self.pose_last = pose
-    return (pose@self.get_tf_to_centered_mesh()).data.cpu().numpy().reshape(4,4)
+    with profile_stage('track.pose_output', cuda=True):
+      self.pose_last = pose
+      return (pose@self.get_tf_to_centered_mesh()).data.cpu().numpy().reshape(4,4)

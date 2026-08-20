@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use SPARK-6D, please cite this software and the upstream FoundationPose paper."
+title: "SPARK-6D: Selective Prediction and Adaptive Refinement with Kalman–Flow Gating for Real-Time 6D Object Tracking"
+type: software
+authors:
+  - family-names: Ma
+    given-names: Mingwei
+version: 0.1.0
+date-released: 2026-08-20

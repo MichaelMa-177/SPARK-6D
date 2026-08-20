@@ -1,13 +1,18 @@
-# fpBoost: Exact-Stable, High-FPS FoundationPose Tracking
+# SPARK-6D: Selective Prediction and Adaptive Refinement with Kalman–Flow Gating for Real-Time 6D Object Tracking
 
-fpBoost is an engineering extension of
+**Research and implementation:** Mingwei Ma
+([@MichaelMa-177](https://github.com/MichaelMa-177))
+
+## Abstract
+
+SPARK-6D is an engineering extension of
 [NVIDIA FoundationPose](https://github.com/NVlabs/FoundationPose) for faster
 model-based 6D object tracking. It combines adaptive SE(3) Kalman prediction
 with exact-equivalent GPU and pipeline optimizations. The expensive neural
 refiner is skipped only on low-risk frames; motion, uncertainty, correction,
 and optical-flow guards immediately restore refinement when needed.
 
-> 中文简介：fpBoost 在 FoundationPose 原版上加入 SE(3) 卡尔曼预测、自适应神经
+> 中文简介：SPARK-6D 在 FoundationPose 原版上加入 SE(3) 卡尔曼预测、自适应神经
 > 精修、光流保护和端到端异步 I/O，并对渲染、裁剪和张量传输热路径做等价优化。
 > 在仓库自带的 737 帧 YCB mustard demo 上，最终版本的跟踪结果与稳定版
 > Kalman 基准逐文件完全一致，同时 tracking FPS 从 31.35 提升到
@@ -16,6 +21,50 @@ and optical-flow guards immediately restore refinement when needed.
 This is an independent fork, not an official NVIDIA release. The original
 FoundationPose authors, paper, license, setup instructions, and citations are
 retained below.
+
+## Method overview
+
+SPARK-6D alternates between inexpensive SE(3) state prediction and learned
+FoundationPose refinement. A constant-body-velocity error-state Kalman filter
+provides the predicted pose, while motion magnitude, covariance, correction
+history, periodic refresh, and an ROI optical-flow consistency gate decide
+whether the neural refiner must run. Equivalent CUDA hot-path optimizations
+and bounded asynchronous RGB-D/output I/O reduce the cost of refinement and
+the surrounding pipeline without changing the selected golden-run outputs.
+
+The adaptive prediction/refinement direction was inspired by
+[FoundationPose++](https://github.com/teal024/FoundationPose-plus-plus). The
+implementation here is independently integrated into FoundationPose and uses
+a different SE(3) error-state filter, refinement policy, optical-flow safety
+gate, and optimized FoundationPose execution path.
+
+## Videos
+
+### Official / engineered official / SPARK-6D ablation
+
+[▶ Watch or download the 53.90 s comparison video](media/spark6d_official_engineering_comparison.mp4)
+
+This wall-clock-aligned video separates equivalent engineering improvements
+from adaptive Kalman prediction. On the local RTX 4070 SUPER evaluation,
+SPARK-6D improves steady-state throughput over Official FoundationPose from
+26.71 to 40.58 FPS on `mustard0` (+51.94%) and from 28.30 to 41.30 FPS on
+`driller` (+45.96%).
+
+### Official FoundationPose / SPARK-6D / FoundationPose++
+
+[▶ Watch or download the 74.27 s three-method comparison video](media/spark6d_foundationpose_realtime_comparison.mp4)
+
+With the same refinement iterations and wall-clock video protocol, the
+measured steady-state FPS values are:
+
+| Dataset | Official | SPARK-6D | FoundationPose++ |
+|---|---:|---:|---:|
+| mustard0 | 26.72 | **40.28** | 19.03 |
+| driller | 30.40 | **44.26** | 20.94 |
+
+These results measure throughput on the stated machine and configuration;
+they are not universal speed claims. Reported pairwise trajectory differences
+are method-to-method comparisons, not ground-truth pose accuracy.
 
 ## What changed from upstream FoundationPose
 
@@ -76,9 +125,9 @@ PyTorch 2.6.0+cu124, using the complete 737-frame bundled YCB mustard demo:
 | --- | ---: | ---: | --- |
 | Local always-refine baseline (Kalman off) | 23.11 | 14.58 | Neural refinement every tracking frame |
 | Stable adaptive-Kalman baseline | 31.35 | 18.12 | Golden stability/accuracy run |
-| **fpBoost final, run 1** | **44.33** | **29.94** | Exact match to golden poses |
-| **fpBoost final, run 2** | **44.71** | **30.39** | Exact match to golden poses |
-| fpBoost + all debug renders | 32.03 | 15.69 | 737 lossless PNGs and pose files saved |
+| **SPARK-6D final, run 1** | **44.33** | **29.94** | Exact match to golden poses |
+| **SPARK-6D final, run 2** | **44.71** | **30.39** | Exact match to golden poses |
+| SPARK-6D + all debug renders | 32.03 | 15.69 | 737 lossless PNGs and pose files saved |
 
 Compared with the stable adaptive-Kalman baseline, the final tracking loop is
 41.4–42.6% faster. Compared with the local always-refine baseline, it is
@@ -102,7 +151,7 @@ hardware and demo, not a universal FPS or accuracy guarantee. On other
 cameras, objects, resolutions, or motion regimes, validate against an
 always-refine run before changing the stability-first defaults.
 
-## Run fpBoost
+## Run SPARK-6D
 
 Activate the requested Conda environment after completing the setup below:
 
@@ -114,17 +163,39 @@ Fast headless tracking:
 
 ```bash
 python run_demo.py --use_kalman --fast_io --debug 0 --quiet --no_display \
-  --debug_dir debug/fpboost \
-  --benchmark_report debug/fpboost_report.json
+  --debug_dir debug/spark6d \
+  --benchmark_report debug/spark6d_report.json
 ```
+
+Display the annotated pose with a rolling real-time FPS counter:
+
+```bash
+python run_demo.py --use_kalman --fast_io --debug 1 --quiet \
+  --debug_dir debug/spark6d_display
+```
+
+Save the same annotated view as a 30 FPS MP4 without opening a window:
+
+```bash
+python run_demo.py --use_kalman --fast_io --debug 0 --quiet --no_display \
+  --save_video --video_fps 30 --fps_window 30 \
+  --video_path debug/spark6d_runtime.mp4 \
+  --debug_dir debug/spark6d_video \
+  --benchmark_report debug/spark6d_runtime_report.json
+```
+
+The video writer samples or repeats annotated frames against the wall-clock
+timeline, so its duration matches `run_seconds` within half of one output
+frame. Video metadata and the signed timing error are included in the JSON
+benchmark report.
 
 Tracking while retaining every debug-render image:
 
 ```bash
 python run_demo.py --use_kalman --fast_io --debug 1 --quiet --no_display \
   --save_render --png_compression 1 \
-  --debug_dir debug/fpboost_rendered \
-  --benchmark_report debug/fpboost_rendered_report.json
+  --debug_dir debug/spark6d_rendered \
+  --benchmark_report debug/spark6d_rendered_report.json
 ```
 
 Rendered PNGs are saved in `<debug_dir>/track_vis`, and poses are saved in
@@ -135,9 +206,9 @@ Strictly compare a candidate run with a golden pose track:
 ```bash
 python tools/compare_pose_tracks.py \
   --baseline debug/kalman_golden/ob_in_cam \
-  --candidate debug/fpboost/ob_in_cam \
+  --candidate debug/spark6d/ob_in_cam \
   --baseline-timing debug/kalman_golden_report.json \
-  --candidate-timing debug/fpboost_report.json \
+  --candidate-timing debug/spark6d_report.json \
   --require-exact
 ```
 
@@ -151,6 +222,17 @@ The optimization was inspired by the adaptive prediction/refinement direction
 of [FoundationPose++](https://github.com/teal024/FoundationPose-plus-plus),
 while the implementation here was derived from and validated against
 FoundationPose's actual tracking, rendering, and I/O hot paths.
+
+## Citation
+
+```bibtex
+@software{ma2026spark6d,
+  author = {Mingwei Ma},
+  title  = {{SPARK-6D}: Selective Prediction and Adaptive Refinement with
+            Kalman--Flow Gating for Real-Time 6D Object Tracking},
+  year   = {2026}
+}
+```
 
 ---
 

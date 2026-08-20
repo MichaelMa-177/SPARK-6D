@@ -156,3 +156,10 @@ data/
 logs/
 !BundleTrack/XMem/inference/data
 run_used.yml
+
+# Local multi-variant workspace (independent repositories and generated data)
+/variants/
+/results/
+/repro/plusplus/output/
+/repro/plusplus/full_mustard_output/
+/repro/plusplus/smoke_data/
