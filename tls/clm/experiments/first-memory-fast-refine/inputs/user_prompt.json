@@ -1,0 +1,42 @@
+{
+  "session_id": "drill-ycbv-scene59-frame000001-20261018",
+  "sequence": "YCB-V/test/000059",
+  "frame_id": "000001",
+  "rgb_sha256": "4649869573815ebd9d3b6c20f8240947d828cb69b6c1254d2cf333d6aaf06061",
+  "image_size_wh": [
+    640,
+    480
+  ],
+  "prompt_source": "human_interactive_click",
+  "point_coords": [
+    [
+      255.08,
+      146.95
+    ],
+    [
+      348.42,
+      123.84
+    ],
+    [
+      319.77,
+      244.91
+    ],
+    [
+      325.31,
+      179.29
+    ]
+  ],
+  "point_labels": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "model": "SAM 2.1 Hiera Small",
+  "config": "configs/sam2.1/sam2.1_hiera_s.yaml",
+  "checkpoint_sha256": "6d1aa6f30de5c92224f8172114de081d104bbd23dd9dc5c58996f0cad5dc4d38",
+  "selected_candidate": 1,
+  "candidate_selection": "user-confirmed live candidate",
+  "upstream_request_id": 51,
+  "confirmed_utc": "2026-10-18T13:15:54.182503+00:00"
+}

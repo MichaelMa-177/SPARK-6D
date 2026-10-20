@@ -1,0 +1,33 @@
+__pycache__/
+*.pyc
+
+# Model checkpoints
+checkpoints/
+
+# Installers and archives
+*.deb
+*.tar.gz
+*.zip
+Miniforge3-*
+
+# Gradio runtime
+.gradio/
+notebook/.gradio/
+
+# Third-party clones (managed separately)
+pytorch3d/
+facebookresearch_dinov2_main/
+thirdparty/
+
+# Misc runtime files
+*.ply
+splat.ply
+index.html
+monitor_gpu.sh
+requirements_local.txt
+sam3d_env.yaml
+src/
+tempolete/
+
+# Notebook outputs
+notebook/images/cup/

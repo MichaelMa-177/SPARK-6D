@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+WORK=/data/mmw/clm_disk/clm-mmw-20261020
+cd /home/mmw/tls/clm
+export CLM_DATA_ROOT="$WORK/data/bop/ycbv/test"
+export PYTHONDONTWRITEBYTECODE=1 PYTHONNOUSERSITE=1
+export TMPDIR="$WORK/tmp" XDG_CACHE_HOME="$WORK/cache"
+export MPLCONFIGDIR="$WORK/cache/matplotlib" TORCH_HOME="$WORK/cache/torch"
+export HF_HOME="$WORK/cache/huggingface" CUDA_CACHE_PATH="$WORK/cache/cuda"
+export TRITON_CACHE_DIR="$WORK/cache/triton"
+exec "$WORK/envs/clm/bin/python" -B "$@"

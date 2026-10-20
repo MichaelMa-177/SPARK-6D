@@ -1,0 +1,21 @@
+{
+  "cam_K": [
+    1066.778,
+    0.0,
+    312.9869,
+    0.0,
+    1067.487,
+    241.3109,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "depth_scale_m": 0.0001,
+  "coordinate_frame": "RGB camera: X right, Y down, Z forward",
+  "image_size_wh": [
+    640,
+    480
+  ],
+  "source": "/Users/nelson/Projects/Research/Language-Guided-Video-Understanding/experiments/2026-10-15-depth-encoding-6d/sources/test/000059/scene_camera.json",
+  "source_frame": "1"
+}

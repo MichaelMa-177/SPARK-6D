@@ -1,0 +1,22 @@
+{
+  "weighted_svd_max_error": 1.5497207641601562e-06,
+  "encoder_shape": [
+    1,
+    1024,
+    64
+  ],
+  "memory_shape": [
+    1,
+    352,
+    64
+  ],
+  "unique_observed_anchors": 140,
+  "gradient_l1": {
+    "rgb": 17838.90464782715,
+    "xyz": 11483.856353759766,
+    "prior": 149.95974826812744,
+    "member": 8.853783831000328
+  },
+  "validation_GT_loaded": false,
+  "tracking_accuracy_verified": false
+}

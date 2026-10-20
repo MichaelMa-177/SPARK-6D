@@ -1,0 +1,23 @@
+{
+  "scene": 54,
+  "frame": 1,
+  "mask_source": "training_GT_mask_only",
+  "rgb_sha256": "ca0ec6dae42fedbb881ece03fa46c89f0106f19b873a5046780836e79bc29b6e",
+  "human_mask_sha256": null,
+  "raw_latent_shape": [
+    1,
+    4096,
+    8
+  ],
+  "prior_points": 96,
+  "source": "fresh_SS1_DINO518",
+  "geometry": "predicted SS occupancy boundary, NOT measured backside/mesh/SLAT",
+  "model_load_ms": 36184.3793541193,
+  "rgbd_to_latent_ms": 217.7537977695465,
+  "fresh_inference": true,
+  "weight_sha256": {
+    "ss_generator.ckpt": "225f40479e4cff4f39d6fa14c55be3abad1475bf55b61af3bec1e19ed2f6c146",
+    "ss_decoder.ckpt": "6dac1cd7b7fda5a38e0614fadae441f1794f80e39ea2981f1ac8aff0a7e99340"
+  },
+  "file_sha256": "b8f7d941860360828f492f0c1fa09c0e9c462f77698e8170c27bba4a7da98c96"
+}
