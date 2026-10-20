@@ -1,0 +1,12 @@
+{
+  "image_size": 128,
+  "latent_side": 16,
+  "latent_channels": 8,
+  "memory_side": 8,
+  "observed_tokens": 256,
+  "width": 96,
+  "heads": 4,
+  "decoder_layers": 2,
+  "memory_mode": "spatial_latent",
+  "min_correspondences": 6
+}

@@ -1,0 +1,29 @@
+test_empty_and_collinear_rejected (test_framework.GeometryTests) ... ok
+test_exact_rigid_and_inverse (test_framework.GeometryTests) ... ok
+test_layout_row_vector_convention (test_framework.GeometryTests) ... ok
+test_permutation_and_weight_scale_invariant (test_framework.GeometryTests) ... ok
+test_planar_surface_accepted (test_framework.GeometryTests) ... ok
+test_symmetry_scoring (test_framework.GeometryTests) ... ok
+test_zero_weight_outliers_and_nan (test_framework.GeometryTests) ... ok
+test_backward_reaches_latent_and_image_adapters (test_framework.ModelTests) ... ok
+test_cache_guard_and_bad_latent_shape (test_framework.ModelTests) ... ok
+test_cached_equals_uncached_and_query_order_independent (test_framework.ModelTests) ... ok
+test_empty_reference_and_invalid_scale_rejected (test_framework.ModelTests) ... ok
+test_forward_shapes_and_memory_provenance (test_framework.ModelTests) ... ok
+test_geometry_only_ignores_latent_values (test_framework.ModelTests) ... ok
+test_invalid_query_depth_produces_explicit_failure (test_framework.ModelTests) ... ok
+test_memory_changes_with_latent (test_framework.ModelTests) ... ok
+test_observed_only_does_not_require_shape_keys (test_framework.ModelTests) ... ok
+test_symmetry_loss_uses_object_level_candidate (test_framework.ModelTests) ... ok
+test_default_cuda_forward_backward (test_framework.PipelineTests) ... ok
+test_train_cache_infer_and_label_isolation (test_framework.PipelineTests) ... {"epoch": 1, "steps": 1, "train_loss": 0.9477816224098206, "last_grad_norm": 6.332308769226074}
+{"epoch": 2, "steps": 2, "train_loss": 0.6269241571426392, "last_grad_norm": 5.092453479766846}
+ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.856s
+
+OK
+{"output": "/data/mmw/clm_disk/clm-mmw-20261020/tmp/latent-pose-test-s17rrdwn/memory.pt", "tokens": 24, "generated_tokens": 8}
+{"queries": 1, "output": "/data/mmw/clm_disk/clm-mmw-20261020/tmp/latent-pose-test-s17rrdwn/predictions", "accuracy_evaluated": false}
+{"samples": 2, "valid_pose_fraction": 1.0, "pass_10mm_5deg_all_queries": 0.0, "rotation_median_deg_valid_only": 38.95261764526367, "split": "development", "training_object_overlap": ["synthetic-test"], "GT_loaded_after_predictions": true, "previous_pose_used": false, "manifest_sha256": "943e832aebd4a4081bb85ad70869e2760287ebbffac4ffdb91da3f42586acb7c", "checkpoint_sha256": "0ba344bbe12e9de6c392959c5e32c1fbc23843529caba7e1431cf322e5819b66", "protocol": "fixed first-reference gauge; discrete symmetry-aware diagnostics, NOT official BOP AR"}

@@ -1,0 +1,6 @@
+# New runtime outputs stay on the project data disk.
+__pycache__/
+*.pyc
+.pytest_cache/
+latent_pose/outputs/
+latent_pose/checkpoints/

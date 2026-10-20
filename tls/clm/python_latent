@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+WORK="${CLM_WORK_ROOT:-/data/mmw/clm_disk/clm-mmw-20261020}"
+PYTHON="${CLM_PYTHON:-$WORK/envs/clm/bin/python}"
+# Never put run outputs or caches on an unmounted system-disk fallback.
+if [[ "$WORK" == /data/mmw/clm_disk/* ]]; then
+    test "$(findmnt -rn -T "$WORK" -o TARGET)" = /data/mmw/clm_disk || {
+        echo "Project data disk is not mounted: $WORK" >&2
+        exit 1
+    }
+fi
+test -x "$PYTHON"
+mkdir -p "$WORK/tmp" "$WORK/cache/matplotlib"
+export PYTHONDONTWRITEBYTECODE=1 PYTHONNOUSERSITE=1
+export TMPDIR="$WORK/tmp" XDG_CACHE_HOME="$WORK/cache"
+export MPLCONFIGDIR="$WORK/cache/matplotlib" TORCH_HOME="$WORK/cache/torch"
+export HF_HOME="$WORK/cache/huggingface" CUDA_CACHE_PATH="$WORK/cache/cuda"
+export TRITON_CACHE_DIR="$WORK/cache/triton"
+export PYTHONPATH="$ROOT${PYTHONPATH:+:$PYTHONPATH}"
+cd "$ROOT"
+exec "$PYTHON" -B "$@"

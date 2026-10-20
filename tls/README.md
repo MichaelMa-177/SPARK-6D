@@ -1,5 +1,9 @@
 # Server project snapshot
 
+The V1 spatial latent-memory framework is documented in
+[clm/latent_pose/README.md](clm/latent_pose/README.md). Its server checkout is
+`/home/mmw/mmw/tls/clm`; run it with `bash python_latent`.
+
 `clm/` contains the 2026-10-20 source snapshot of `/home/mmw/tls/clm`.
 The existing SPARK-6D repository remains at the repository root.
 

@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-20",
+  "status": "framework_checks_passed",
+  "formal_training_completed": false,
+  "accuracy_evaluated": false,
+  "unit_and_integration_tests": 19,
+  "test_command": "CUDA_VISIBLE_DEVICES=0 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 bash python_latent -m unittest discover -s latent_pose/tests -v",
+  "environment": {
+    "python": "3.10.12",
+    "torch": "2.8.0+cu128",
+    "numpy": "1.26.4",
+    "opencv": "4.10.0",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "gpu_smoke": {
+    "status": "wiring_smoke_passed",
+    "accuracy_evaluated": false,
+    "weights": "random initialization",
+    "device": "cuda",
+    "parameters": 651509,
+    "input_latent": [
+      1,
+      4096,
+      8
+    ],
+    "memory_tokens": [
+      1,
+      768,
+      96
+    ],
+    "query_tokens": 1024,
+    "measured_tokens": 256,
+    "generated_tokens": 512,
+    "all_decoder_outputs_finite": true,
+    "pose_solver_valid": true,
+    "single_cold_forward_ms": 109.29233697243035,
+    "previous_pose_used": false,
+    "GT_read": false
+  },
+  "independent_real_queries": {
+    "predictions": [
+      {
+        "query": "/data/mmw/clm_disk/clm-mmw-20261020/runs/spark6d-v1-validation/fixture/query_000029.npz",
+        "query_sha256": "5054fbe242d5cad70132083d5d67634c9ea97a557e0534de9726ea2d1fae6e25",
+        "pose_valid": true,
+        "residual_m": 0.433660626411438,
+        "model_ms": 315.073785954155,
+        "training_steps": 0
+      },
+      {
+        "query": "/data/mmw/clm_disk/clm-mmw-20261020/runs/spark6d-v1-validation/fixture/query_000037.npz",
+        "query_sha256": "0d1f7a3e910f9f6c44dca890583a9e892f8fcc83cb111dc6441f52777fece66b",
+        "pose_valid": true,
+        "residual_m": 0.45100072026252747,
+        "model_ms": 4.174945002887398,
+        "training_steps": 0
+      },
+      {
+        "query": "/data/mmw/clm_disk/clm-mmw-20261020/runs/spark6d-v1-validation/fixture/query_000055.npz",
+        "query_sha256": "4bd35bb5ff013a4c54af4cc4f2c9f5c1be48c24c6b7fbd89f45f007d74f21b39",
+        "pose_valid": true,
+        "residual_m": 0.4104796051979065,
+        "model_ms": 3.2153279753401875,
+        "training_steps": 0
+      }
+    ],
+    "checkpoint_sha256": "4bfe1ab82260f4c6fc0ad90a4f5a4ce6eab8d9f82b8e61928468101f1a8d7d39",
+    "GT_read": false,
+    "previous_pose_used": false,
+    "timing_scope": "ready device tensors -> output tensors; excludes loading, detection, I/O; no warmup",
+    "accuracy_evaluated": false
+  },
+  "source_sha256": {
+    "latent_pose/__init__.py": "67b7ad4b6ee15ba75fdec2c169e600b982a155bc7bd515622f6968fefc6d64af",
+    "latent_pose/cli.py": "1ac215d26406f72aa32449d63720fb18782ce23c3484eb0c1e36a38aacc29836",
+    "latent_pose/config.py": "43c5d395844325d0792e9af2a326055c03aaaae5d1e7ab59fcaadb75a3101587",
+    "latent_pose/data.py": "97f9eaa221aa946083c11aefb570933acd625f2f6679114b08451b8f29313783",
+    "latent_pose/evaluate.py": "819e3a02ad8e7d6439f40e6bb09b7684468bc474cadfe2d731d77b22afab57ab",
+    "latent_pose/export_reference.py": "4e380b1cb471a3503c196d4e6264d3745a07243b70dbec472044a7a215a06545",
+    "latent_pose/geometry.py": "d3a1db00ddc3e958f44e0efc68bef50706737f8846c02b57087d08d5324e86a0",
+    "latent_pose/losses.py": "95280e61e7f0dc33c638327c48007b7a60938dd5f180d8ee9349275c01ebd53a",
+    "latent_pose/model.py": "fe157770db7fe1aa05fd3ee3003de022ee94c69e8a96b128728b3a711679c7a1",
+    "latent_pose/smoke.py": "667e83d036cafe78d8c80cd375b7a0973a76b3cba335445ebd95b2eb9129f1fa",
+    "latent_pose/tests/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "latent_pose/tests/test_framework.py": "2fe1ddaa49ef2fe6b98fe2c7d4b358542888eddd72953dc123371ae54ef4c0d4",
+    "python_latent": "2bc8ecf3032a5a20de622abc5882ff24030b04bda941c6ff177d8bac4fffc7be"
+  },
+  "test_log_sha256": "68705fab9348c44712fdb05630d30ffcc77ec67b2bb262962af6cb2ab081c9b1",
+  "artifact_directory": "/data/mmw/clm_disk/clm-mmw-20261020/runs/spark6d-v1-validation"
+}

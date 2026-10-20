@@ -1,5 +1,9 @@
 # SPARK-6D: Selective Prediction and Adaptive Refinement with Kalman–Flow Gating for Real-Time 6D Object Tracking
 
+**V1 development:** the archived CLM project is in [`tls/clm`](tls/clm).
+The new spatial latent object-memory framework, training interface and tests are
+documented in [`tls/clm/latent_pose/README.md`](tls/clm/latent_pose/README.md).
+
 **Research and implementation:** Mingwei Ma
 ([@MichaelMa-177](https://github.com/MichaelMa-177))
 
