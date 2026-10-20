@@ -1,0 +1,98 @@
+{
+  "protocol": "same three real scene59 frames replayed in two independent sessions; not distinct-video evaluation",
+  "weights": "random; no benchmark accuracy established",
+  "training_steps": 0,
+  "accuracy_evaluated": false,
+  "temporal_stability_evaluated": false,
+  "GT_read": false,
+  "new_segmentation_run": false,
+  "previous_pose_used": false,
+  "reference_input_checksums_verified": true,
+  "shared_memory_tokens": [
+    1,
+    768,
+    96
+  ],
+  "memory_unchanged": true,
+  "max_session_replay_pose_difference": 0.0,
+  "checkpoint_sha256": "4bfe1ab82260f4c6fc0ad90a4f5a4ce6eab8d9f82b8e61928468101f1a8d7d39",
+  "records": [
+    {
+      "object_id": "development:scene59:drill",
+      "video_id": "replay-a",
+      "frame_index": 0,
+      "timestamp_s": 29.0,
+      "mode": "independent_localization",
+      "pose_valid": true,
+      "residual_m": 0.43366050720214844,
+      "effective_correspondences": 858.4199829101562
+    },
+    {
+      "object_id": "development:scene59:drill",
+      "video_id": "replay-b",
+      "frame_index": 0,
+      "timestamp_s": 29.0,
+      "mode": "independent_localization",
+      "pose_valid": true,
+      "residual_m": 0.43366050720214844,
+      "effective_correspondences": 858.4199829101562
+    },
+    {
+      "object_id": "development:scene59:drill",
+      "video_id": "replay-a",
+      "frame_index": 1,
+      "timestamp_s": 37.0,
+      "mode": "independent_localization",
+      "pose_valid": true,
+      "residual_m": 0.45100072026252747,
+      "effective_correspondences": 863.7508544921875
+    },
+    {
+      "object_id": "development:scene59:drill",
+      "video_id": "replay-b",
+      "frame_index": 1,
+      "timestamp_s": 37.0,
+      "mode": "independent_localization",
+      "pose_valid": true,
+      "residual_m": 0.45100072026252747,
+      "effective_correspondences": 863.7508544921875
+    },
+    {
+      "object_id": "development:scene59:drill",
+      "video_id": "replay-a",
+      "frame_index": 2,
+      "timestamp_s": 55.0,
+      "mode": "independent_localization",
+      "pose_valid": true,
+      "residual_m": 0.41047969460487366,
+      "effective_correspondences": 859.07568359375
+    },
+    {
+      "object_id": "development:scene59:drill",
+      "video_id": "replay-b",
+      "frame_index": 2,
+      "timestamp_s": 55.0,
+      "mode": "independent_localization",
+      "pose_valid": true,
+      "residual_m": 0.41047969460487366,
+      "effective_correspondences": 859.07568359375
+    }
+  ],
+  "source_sha256": {
+    "latent_pose/__init__.py": "67b7ad4b6ee15ba75fdec2c169e600b982a155bc7bd515622f6968fefc6d64af",
+    "latent_pose/cli.py": "1ac215d26406f72aa32449d63720fb18782ce23c3484eb0c1e36a38aacc29836",
+    "latent_pose/config.py": "43c5d395844325d0792e9af2a326055c03aaaae5d1e7ab59fcaadb75a3101587",
+    "latent_pose/data.py": "97f9eaa221aa946083c11aefb570933acd625f2f6679114b08451b8f29313783",
+    "latent_pose/evaluate.py": "819e3a02ad8e7d6439f40e6bb09b7684468bc474cadfe2d731d77b22afab57ab",
+    "latent_pose/export_reference.py": "4e380b1cb471a3503c196d4e6264d3745a07243b70dbec472044a7a215a06545",
+    "latent_pose/geometry.py": "d3a1db00ddc3e958f44e0efc68bef50706737f8846c02b57087d08d5324e86a0",
+    "latent_pose/losses.py": "95280e61e7f0dc33c638327c48007b7a60938dd5f180d8ee9349275c01ebd53a",
+    "latent_pose/model.py": "fe157770db7fe1aa05fd3ee3003de022ee94c69e8a96b128728b3a711679c7a1",
+    "latent_pose/rgbd.py": "db24403c38126640fe460da17b08233a4f05c5ec80d818e79cc83bbfe2da0a5c",
+    "latent_pose/runtime.py": "291fd6790a88737df5aaa69a96f3a5c784e64d6bfc92cce4137925a8d1599823",
+    "latent_pose/smoke.py": "667e83d036cafe78d8c80cd375b7a0973a76b3cba335445ebd95b2eb9129f1fa",
+    "latent_pose/tests/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "latent_pose/tests/test_framework.py": "2fe1ddaa49ef2fe6b98fe2c7d4b358542888eddd72953dc123371ae54ef4c0d4",
+    "latent_pose/tests/test_rgbd_runtime.py": "e2e49755ed9f725032be0beab780e544bbba99639a7fdc9b56077fdbc5d6de04"
+  }
+}

@@ -5,6 +5,9 @@
 当前版本提供训练、记忆序列化、独立查询、评测和测试入口；模型精度需要经过训练和独立评测验证。
 旧实验的 `last.pt` 与这个新架构不兼容，也不代表新模型的已训练权重。
 
+目标和验收协议见 [GOAL.md](GOAL.md)：同一个网络为未见物体从单帧建立记忆，
+在不同 RGB-D 视频中复用；精度、时序稳定和泛化分别验证。
+
 ## 架构
 
 ```text
@@ -61,6 +64,8 @@ X_query_camera = R @ (scale_m * X_memory_normalized) + t
 | `cli.py` | `train`、`cache`、`infer` |
 | `evaluate.py` | 先保存所有预测，再加载标签做固定坐标系评分 |
 | `export_reference.py` | 从已有人工首帧与 fresh prior 导出真实输入 |
+| `rgbd.py` | 已注册 RGB-D、mask、标定与深度单位到通用参考/查询输入 |
+| `runtime.py` | 一次登记物体、跨视频复用记忆、独立流时间戳与失败状态 |
 | `smoke.py` | 随机初始化模型的真实输入连通性检查 |
 | `tests/` | 几何、梯度、缓存、查询独立性、训练和序列化测试 |
 
@@ -81,6 +86,45 @@ bash python_latent -m unittest discover -s latent_pose/tests -v
 安装额外依赖。其他机器可通过 `CLM_WORK_ROOT`、`CLM_PYTHON` 指定环境和缓存目录。
 输出目录必须显式提供；训练、缓存及推理拒绝覆盖已有产物。
 旧 `python` 和 `scripts/` 保留历史行为，新框架通过 `python_latent` 启动。
+
+## 原始 RGB-D 与不同视频
+
+`PoseRuntime` 接收 HWC uint8 **RGB**、同分辨率注册深度、3×3 内参，以及
+显式的 `depth_scale_m`（如毫米整数深度填 `0.001`，米制浮点深度填 `1.0`）。
+输入需已去畸变，使用零 skew 针孔内参；每段视频使用自己的标定。
+
+```python
+from latent_pose.runtime import PoseRuntime
+
+runtime = PoseRuntime.from_checkpoint("/path/to/trained/last.pt", device="cuda")
+runtime.register_object(
+    "object_001", reference_rgb, reference_depth, supplied_mask,
+    reference_K, reference_depth_scale_m,
+    mask_source="record the actual mask source and saved prompt path",
+    shape_latent=shape_latent,       # [4096,8]，对应该参考帧的 SAM3D prior
+    latent_xyz_m=latent_xyz_m,       # [4096,3]，在参考 RGB 相机下的米制网格中心
+)
+
+video_a = runtime.start_video("video_a", "object_001")
+result_a = video_a.estimate(rgb_a, depth_a, K_a, scale_a, timestamp_s=0.0)
+video_b = runtime.start_video("video_b", "object_001")
+result_b = video_b.estimate(rgb_b, depth_b, K_b, scale_b, timestamp_s=0.0)
+```
+
+同一物体只登记一次；不同视频共享固定记忆、分别记录时间戳。
+`observed_only` 模型无需传入两个 shape 参数，可直接从原始 RGB-D＋mask 建忆。
+空间记忆模式显式要求已有生成 prior，当前运行时不启动 SAM/SAM3D。
+`mask_source` 保存调用方声明的来源；它不替代 SAM 交互流程的完整点击记录。
+
+查询默认整帧；`box=(x0,y0,x1,y1)` 可传入外部检测器提供的半开 ROI。
+先用原始内参反投影再裁剪，XYZ 始终保留在当前相机坐标。
+小物体在整帧缩至 128 后可能丢失细节，目标检索与多尺度定位属于后续工作。
+
+返回值包含 `pose`、`pose_valid`、`residual_m`、流 ID 和时间戳。
+几何无效时 `pose=None`，不将单位矩阵或上一帧位姿当作有效结果。
+`pose_valid` 当前只表示求解器通过几何检查，尚不是经校准的正确性置信度。
+现阶段所有帧独立定位；本接口未增加学习式时序细化、在线记忆写入或平滑。
+模型权重变化后需重建 runtime 和记忆，持久化的检查点绑定缓存使用下文 `cache` 命令。
 
 ## 复用 scene59 的已确认输入
 
