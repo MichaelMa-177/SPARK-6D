@@ -21,13 +21,18 @@ def read_packet(path, reference=False, labels=False):
     """Select only requested keys. Inference never opens pose/mask label arrays."""
     keys = ["rgb", "xyz", "valid"]
     if reference:
-        keys += ["mask", "origin_m", "scale_m", "shape_latent", "latent_xyz_m"]
+        keys += ["mask", "origin_m", "scale_m"]
     if labels:
         keys += ["pose", "target_mask"]
     with np.load(path, allow_pickle=False) as packet:
         if int(packet["schema_version"]) != 1 or str(packet["units"]) != "metres":
             raise ValueError("expected schema_version=1 and units='metres'")
         value = {k: torch.from_numpy(np.array(packet[k], dtype=np.float32, copy=True)) for k in keys}
+        for key in ("foundation_features", "shape_latent", "latent_xyz_m"):
+            if key in packet and (key == "foundation_features" or reference):
+                value[key] = torch.from_numpy(np.array(packet[key], dtype=np.float32, copy=True))
+        if reference and (("shape_latent" in value) != ("latent_xyz_m" in value)):
+            raise ValueError("shape latent and its coordinates must be provided together")
         if labels:
             sym = np.array(packet["symmetry_transforms"], dtype=np.float32) if "symmetry_transforms" in packet else np.eye(4, dtype=np.float32)[None]
             value["symmetry_transforms"] = torch.from_numpy(sym)
@@ -83,9 +88,13 @@ class PairDataset(Dataset):
         root = self.path.parent
         reference = read_packet(root / row["reference"], reference=True)
         packet = read_packet(root / row["query"], labels=True)
-        query = {k: packet[k] for k in ("rgb", "xyz", "valid")}
+        query = query_inputs(packet)
         target = {k: packet[k] for k in ("pose", "target_mask", "symmetry_transforms")}
         return reference, query, target
+
+
+def query_inputs(packet):
+    return {k: packet[k] for k in ("rgb", "xyz", "valid", "foundation_features") if k in packet}
 
 
 def collate_pairs(rows):

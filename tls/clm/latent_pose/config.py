@@ -13,6 +13,12 @@ class ModelConfig:
     decoder_layers: int = 2
     memory_mode: str = "spatial_latent"
     min_correspondences: int = 6
+    solver_mode: str = "weighted"
+    membership_threshold: float = .5
+    inlier_radius_m: float = .01
+    robust_iterations: int = 4
+    foundation_feature_dim: int = 0
+    coordinate_mode: str = "direct"
 
     def __post_init__(self):
         if self.heads < 1:
@@ -29,6 +35,16 @@ class ModelConfig:
             raise ValueError("unknown memory_mode")
         if self.min_correspondences < 3:
             raise ValueError("at least three correspondences are required")
+        if self.solver_mode not in {"weighted", "robust"}:
+            raise ValueError("unknown solver_mode")
+        if not 0 <= self.membership_threshold <= 1 or self.inlier_radius_m <= 0 or self.robust_iterations < 1:
+            raise ValueError("invalid robust solver settings")
+        if self.foundation_feature_dim < 0:
+            raise ValueError("foundation_feature_dim cannot be negative")
+        if self.coordinate_mode not in {"direct", "memory_residual"}:
+            raise ValueError("unknown coordinate_mode")
+        if self.coordinate_mode == "memory_residual" and not self.foundation_feature_dim:
+            raise ValueError("memory_residual requires frozen foundation descriptors")
 
     def to_dict(self):
         return asdict(self)

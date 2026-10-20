@@ -39,9 +39,12 @@ def coordinate_loss(output, pose, scale_m, target_mask, symmetry_transforms=None
     nll = (torch.exp(-uncertainty) * error + uncertainty)[foreground].mean()
     bce = F.binary_cross_entropy_with_logits(output["membership_logits"], mask.float(), reduction="none")
     membership = bce[valid].mean()
+    residual = output.get("coordinate_residual")
+    regularization = .01 * residual[foreground].square().mean() if residual is not None else coordinate * 0
     return {
-        "loss": coordinate + .1 * nll + .2 * membership,
+        "loss": coordinate + .1 * nll + .2 * membership + regularization,
         "coordinate": coordinate,
         "uncertainty": nll,
         "membership": membership,
+        "residual_regularization": regularization,
     }

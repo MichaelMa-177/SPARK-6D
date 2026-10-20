@@ -15,6 +15,7 @@ from learning.training.predict_pose_refine import *
 from pose_kalman import SE3KalmanFilter
 import yaml
 from concurrent.futures import ThreadPoolExecutor
+import tempfile
 from stage_profiler import profile_stage
 
 
@@ -87,7 +88,7 @@ class FoundationPose:
     self.mesh_path = None
     self.mesh = mesh
     if self.mesh is not None:
-      self.mesh_path = f'/tmp/{uuid.uuid4()}.obj'
+      self.mesh_path = os.path.join(tempfile.gettempdir(), f'{uuid.uuid4()}.obj')
       self.mesh.export(self.mesh_path)
     self.mesh_tensors = make_mesh_tensors(self.mesh)
 

@@ -65,3 +65,26 @@ def weighted_rigid(source, target, weights, min_points=6):
 def camera_to_memory(points, pose, scale):
     """Inverse rigid transform, followed by the fixed reference scale."""
     return ((points - pose[:, None, :3, 3]) @ pose[:, :3, :3]) / scale[:, None]
+
+
+def robust_rigid(source, target, weights, min_points=6, radius_m=.01, iterations=4):
+    """Cauchy IRLS followed by a measured residual inlier check.
+
+    All selection uses predicted weights and current geometry. No target mask,
+    known pose, previous frame, or randomness enters this solver.
+    """
+    if radius_m <= 0 or iterations < 1:
+        raise ValueError("positive inlier radius and iteration count required")
+    finite = torch.isfinite(source).all(-1) & torch.isfinite(target).all(-1) & torch.isfinite(weights)
+    base = torch.where(finite & (weights > 0), weights, 0).float()
+    a, b = torch.nan_to_num(source.float()), torch.nan_to_num(target.float())
+    result = weighted_rigid(a, b, base, min_points)
+    for _ in range(iterations):
+        residual = (transform_points(a, result["pose"]) - b).norm(dim=-1)
+        current = base / (1 + (residual / radius_m).square())
+        result = weighted_rigid(a, b, current, min_points)
+    residual = (transform_points(a, result["pose"]) - b).norm(dim=-1)
+    inliers = (residual <= radius_m) & (base > 0)
+    result = weighted_rigid(a, b, base * inliers, min_points)
+    result["inlier_count"] = inliers.sum(-1)
+    return result

@@ -104,7 +104,7 @@ def cache(args):
     model, checkpoint = load_model(args.checkpoint, args.device, args.allow_untrained)
     reference = to_device(read_packet(args.reference, reference=True), args.device, batch=True)
     memory = model.build_memory(reference)
-    tensors = {k: v.cpu() for k, v in asdict(memory).items() if k != "kv"}
+    tensors = {k: v.cpu() for k, v in asdict(memory).items() if k != "kv" and v is not None}
     save_new(args.output, {
         "schema_version": 1, "memory": tensors, "config": model.config.to_dict(),
         "checkpoint_sha256": sha256(args.checkpoint), "reference_sha256": sha256(args.reference),

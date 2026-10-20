@@ -50,6 +50,16 @@ def checked_box(box, shape):
     return x0, y0, x1, y1
 
 
+def reference_crop_box(mask, padding=.25):
+    y, x = np.where(mask)
+    if not len(x) or not np.isfinite(padding) or padding < 0:
+        raise ValueError("nonempty mask and nonnegative padding required")
+    pad = int(max(x.max() - x.min(), y.max() - y.min()) * padding) + 4
+    return (max(0, int(x.min()) - pad), max(0, int(y.min()) - pad),
+            min(mask.shape[1], int(x.max()) + pad + 1),
+            min(mask.shape[0], int(y.max()) + pad + 1))
+
+
 def prepare_query(rgb, depth, intrinsics, depth_scale_m, config, box=None):
     """No mask, previous pose, or GT is required; default input is the full frame."""
     rgb, xyz, valid = measured_geometry(rgb, depth, intrinsics, depth_scale_m)
@@ -77,11 +87,7 @@ def prepare_reference(rgb, depth, mask, intrinsics, depth_scale_m, config,
         raise ValueError("reference requires at least 12 valid masked depth pixels")
     origin = points.mean(0)
     scale = np.array([max(float(np.ptp(points, axis=0).max()), .01)], np.float32)
-    y, x = np.where(mask)
-    pad = int(max(x.max() - x.min(), y.max() - y.min()) * padding) + 4
-    box = (max(0, int(x.min()) - pad), max(0, int(y.min()) - pad),
-           min(rgb.shape[1], int(x.max()) + pad + 1),
-           min(rgb.shape[0], int(y.max()) + pad + 1))
+    box = reference_crop_box(mask, padding)
     packet = crop_packet(rgb, xyz, valid, box, config.image_size)
     x0, y0, x1, y1 = box
     packet["mask"] = cv2.resize(mask[y0:y1, x0:x1].astype(np.uint8),

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+WORK="${CLM_WORK_ROOT:-/data/mmw/clm_disk/clm-mmw-20261020}"
+PYTHON="${FP_PYTHON:-$WORK/envs/foundationpose/bin/python}"
+test "$(findmnt -rn -T "$WORK" -o TARGET)" = /data/mmw/clm_disk
+test -x "$PYTHON"
+mkdir -p "$WORK/tmp" "$WORK/cache/matplotlib" "$WORK/cache/torch_extensions"
+export PYTHONDONTWRITEBYTECODE=1 PYTHONNOUSERSITE=1
+export TMPDIR="$WORK/tmp" XDG_CACHE_HOME="$WORK/cache"
+export MPLCONFIGDIR="$WORK/cache/matplotlib" TORCH_HOME="$WORK/cache/torch"
+export TORCH_EXTENSIONS_DIR="$WORK/cache/torch_extensions"
+export CUDA_HOME="${CUDA_HOME:-/usr/local/cuda-12.1}"
+export PATH="$CUDA_HOME/bin:$PATH"
+export PYTHONPATH="$ROOT:$ROOT/tls/clm:$WORK/build/foundationpose-mycpp${PYTHONPATH:+:$PYTHONPATH}"
+cd "$ROOT"
+exec "$PYTHON" -B "$@"

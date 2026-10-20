@@ -7,7 +7,7 @@ import torch
 
 from .cli import load_model
 from .model import ObjectMemory
-from .rgbd import prepare_query, prepare_reference
+from .rgbd import checked_box, prepare_query, prepare_reference, reference_crop_box
 
 
 def tensor_packet(packet, device):
@@ -30,16 +30,25 @@ class PoseRuntime:
     guard. Training steps alone do not establish accuracy or generalization.
     """
 
-    def __init__(self, model):
+    def __init__(self, model, feature_extractor=None):
         if model.training:
             raise ValueError("runtime requires model.eval()")
         self.model = model
+        if model.config.foundation_feature_dim and feature_extractor is None:
+            raise ValueError("this checkpoint requires its frozen RGB feature extractor")
+        self.feature_extractor = feature_extractor
         self.objects = {}
 
     @classmethod
-    def from_checkpoint(cls, checkpoint, device="cpu", allow_untrained=False):
+    def from_checkpoint(cls, checkpoint, device="cpu", allow_untrained=False, feature_extractor=None):
         model, _ = load_model(checkpoint, device, allow_untrained)
-        return cls(model)
+        return cls(model, feature_extractor)
+
+    def add_features(self, packet, rgb, box):
+        if self.model.config.foundation_feature_dim:
+            x0, y0, x1, y1 = box
+            features = self.feature_extractor(rgb[y0:y1, x0:x1], self.model.config.image_size)
+            packet["foundation_features"] = torch.as_tensor(features).float()
 
     @property
     def device(self):
@@ -56,6 +65,7 @@ class PoseRuntime:
             raise ValueError("record the actual supplied mask source")
         packet = prepare_reference(rgb, depth, mask, intrinsics, depth_scale_m,
                                    self.model.config, shape_latent, latent_xyz_m)
+        self.add_features(packet, rgb, reference_crop_box(mask))
         memory = self.model.build_memory(tensor_packet(packet, self.device), cache=True)
         self.objects[object_id] = RegisteredObject(object_id, memory, mask_source)
         return self.objects[object_id]
@@ -92,6 +102,7 @@ class VideoSession:
         if model.training:
             raise ValueError("runtime requires model.eval(); rebuild memory after changing weights")
         query = prepare_query(rgb, depth, intrinsics, depth_scale_m, model.config, box)
+        self.runtime.add_features(query, rgb, checked_box(box, rgb.shape))
         result = model.decode(tensor_packet(query, self.runtime.device), self.registered.memory)
         valid = bool(result["pose_valid"][0])
         output = {

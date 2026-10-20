@@ -6,7 +6,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from .config import ModelConfig
-from .geometry import weighted_rigid
+from .geometry import robust_rigid, weighted_rigid
 
 
 def conv(a, b, stride=1):
@@ -21,22 +21,34 @@ class ObjectMemory:
     scale_m: torch.Tensor
     origin_m: torch.Tensor  # first-camera centroid; metadata, never a query pose prior
     kv: Optional[list] = None
+    observed_descriptors: Optional[torch.Tensor] = None
 
 
 class RGBDEncoder(nn.Module):
-    def __init__(self, width):
+    def __init__(self, width, foundation_dim=0):
         super().__init__()
         self.rgb = nn.Sequential(conv(3, width // 2, 2), conv(width // 2, width // 2, 2))
         self.xyz = nn.Sequential(conv(4, width // 2, 2), conv(width // 2, width // 2, 2))
         self.fuse = nn.Sequential(conv(width, width), nn.Conv2d(width, width, 1))
+        self.foundation_dim = foundation_dim
+        if foundation_dim:
+            self.foundation = nn.Sequential(nn.LayerNorm(foundation_dim), nn.Linear(foundation_dim, width))
 
-    def forward(self, rgb, xyz, valid, center, scale):
+    def forward(self, rgb, xyz, valid, center, scale, foundation_features=None):
         local = torch.where(valid, (xyz - center[..., None, None]) / scale[..., None, None], 0)
         features = self.fuse(torch.cat((
             self.rgb(rgb - .5),
             self.xyz(torch.cat((local.clamp(-4, 4), valid.float()), 1)),
         ), 1))
-        return features.flatten(2).transpose(1, 2)
+        features = features.flatten(2).transpose(1, 2)
+        if self.foundation_dim:
+            expected = (*features.shape[:2], self.foundation_dim)
+            if foundation_features is None or foundation_features.shape != expected:
+                raise ValueError(f"foundation_features must have shape {expected}")
+            if not torch.isfinite(foundation_features).all():
+                raise ValueError("foundation_features must be finite")
+            features = features + self.foundation(foundation_features)
+        return features
 
 
 class MemoryAttention(nn.Module):
@@ -78,7 +90,7 @@ class LatentPoseModel(nn.Module):
         super().__init__()
         self.config = config or ModelConfig()
         c = self.config
-        self.encoder = RGBDEncoder(c.width)
+        self.encoder = RGBDEncoder(c.width, c.foundation_feature_dim)
         self.shape_adapter = nn.Sequential(
             nn.Conv3d(c.latent_channels, c.width, 3, padding=1),
             nn.GroupNorm(8, c.width), nn.GELU(),
@@ -91,6 +103,13 @@ class LatentPoseModel(nn.Module):
                                              nn.GELU(), nn.Linear(c.width, 3))
         self.membership_head = nn.Linear(c.width, 1)
         self.uncertainty_head = nn.Linear(c.width, 1)
+        if c.coordinate_mode == "memory_residual":
+            self.match_query = nn.Linear(c.width, c.width)
+            self.match_key = nn.Linear(c.width, c.width)
+            nn.init.zeros_(self.match_query.weight)
+            nn.init.zeros_(self.match_query.bias)
+            nn.init.zeros_(self.coordinate_head[-1].weight)
+            nn.init.zeros_(self.coordinate_head[-1].bias)
 
     def _image(self, item):
         rgb, xyz, valid = item["rgb"], item["xyz"], item["valid"]
@@ -119,7 +138,7 @@ class LatentPoseModel(nn.Module):
             raise ValueError("reference scale must be positive and origin finite")
         if reference["mask"].shape != valid.shape:
             raise ValueError("reference mask shape mismatch")
-        encoded = self.encoder(rgb, xyz, valid, origin, scale)
+        encoded = self.encoder(rgb, xyz, valid, origin, scale, reference.get("foundation_features"))
         positions = (self._grid(xyz) - origin[:, None]) / scale[:, None]
         eligible = self._grid(valid & reference["mask"].bool()).squeeze(-1) > .5
         indices = []
@@ -154,6 +173,9 @@ class LatentPoseModel(nn.Module):
         kinds[:, c.observed_tokens:] = 1
         tokens = features + self.position(positions) + self.kind(kinds)
         memory = ObjectMemory(tokens, positions, kinds, scale, origin)
+        if c.coordinate_mode == "memory_residual":
+            memory.observed_descriptors = reference["foundation_features"].gather(
+                1, indices[..., None].expand(-1, -1, c.foundation_feature_dim))
         if cache:
             self.cache_memory(memory)
         return memory
@@ -170,12 +192,24 @@ class LatentPoseModel(nn.Module):
             raise ValueError("query and memory batch sizes must match")
         count = valid.sum((2, 3)).clamp_min(1)
         center = xyz.sum((2, 3)) / count
-        features = self.encoder(rgb, xyz, valid, center, memory.scale_m)
+        features = self.encoder(rgb, xyz, valid, center, memory.scale_m, query.get("foundation_features"))
         if self.training and memory.kv is not None:
             raise ValueError("cached inference memory cannot be used for training")
         for i, layer in enumerate(self.layers):
             features = layer(features, memory.tokens, None if memory.kv is None else memory.kv[i])
         coords = self.coordinate_head(features)
+        coordinate_residual = None
+        if self.config.coordinate_mode == "memory_residual":
+            # A coordinate must be read from this object's measured memory first.
+            # The learned residual can explain unseen surfaces, conditioned on
+            # the full memory (including generated cells when configured).
+            count = self.config.observed_tokens
+            appearance = F.normalize(query["foundation_features"], dim=-1) @ F.normalize(
+                memory.observed_descriptors, dim=-1).transpose(1, 2)
+            learned = self.match_query(features) @ self.match_key(memory.tokens[:, :count]).transpose(1, 2)
+            attention = (appearance / .05 + learned / self.config.width ** .5).softmax(-1)
+            coordinate_residual = coords
+            coords = attention @ memory.positions[:, :count] + coordinate_residual
         logits = self.membership_head(features).squeeze(-1)
         log_variance = self.uncertainty_head(features).squeeze(-1).clamp(-6, 6)
         query_xyz = self._grid(xyz)
@@ -183,11 +217,19 @@ class LatentPoseModel(nn.Module):
         weights = logits.sigmoid() * torch.exp(-log_variance) * query_valid
         output = dict(coordinates=coords, membership_logits=logits, log_variance=log_variance,
                       weights=weights, query_xyz_m=query_xyz, query_valid=query_valid)
+        if coordinate_residual is not None:
+            output["coordinate_residual"] = coordinate_residual
         if solve:
             # The solver does not backpropagate through potentially repeated singular values.
             with torch.no_grad():
-                output.update(weighted_rigid(coords * memory.scale_m[:, None], query_xyz, weights,
-                                             self.config.min_correspondences))
+                if self.config.solver_mode == "robust":
+                    selected = weights * (logits.sigmoid() >= self.config.membership_threshold)
+                    output.update(robust_rigid(coords * memory.scale_m[:, None], query_xyz, selected,
+                                               self.config.min_correspondences, self.config.inlier_radius_m,
+                                               self.config.robust_iterations))
+                else:
+                    output.update(weighted_rigid(coords * memory.scale_m[:, None], query_xyz, weights,
+                                                 self.config.min_correspondences))
         return output
 
     def forward(self, reference, query, solve=False):

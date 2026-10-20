@@ -1,0 +1,9 @@
+{
+  "memory_mode": "observed_only",
+  "foundation_feature_dim": 1024,
+  "coordinate_mode": "memory_residual",
+  "solver_mode": "robust",
+  "membership_threshold": 0.5,
+  "inlier_radius_m": 0.01,
+  "robust_iterations": 4
+}
