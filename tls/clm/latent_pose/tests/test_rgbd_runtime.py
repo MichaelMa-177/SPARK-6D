@@ -1,6 +1,8 @@
 import unittest
 from dataclasses import replace
+from unittest.mock import patch
 
+import cv2
 import numpy as np
 import torch
 
@@ -93,6 +95,32 @@ class RuntimeTests(unittest.TestCase):
             "synthetic:one", self.rgb, self.depth, self.mask, self.k, .001,
             mask_source="synthetic test rectangle",
         )
+
+    def test_raw_runtime_computes_coarse_and_crop_features(self):
+        config = replace(self.config, foundation_feature_dim=12, coordinate_mode="memory_residual",
+                         membership_mode="appearance_prior")
+        calls = []
+        def extractor(rgb, size):
+            calls.append(rgb.shape)
+            pixels = cv2.resize(rgb, (size//4, size//4)).reshape(-1, 3).astype(np.float32)/255
+            return np.tile(pixels, (1, 4))
+        runtime = PoseRuntime(LatentPoseModel(config).eval(), extractor, retrieve_region=True)
+        registered = runtime.register_object("roi", self.rgb, self.depth, self.mask,
+                                              self.k, .001, mask_source="synthetic test rectangle")
+        tokens = registered.memory.tokens.clone()
+        video = runtime.start_video("new-camera", "roi")
+        first = video.estimate(self.rgb, self.depth, self.k.tolist(), .001, 0.)
+        second = runtime.start_video("another-camera", "roi").estimate(
+            self.rgb, self.depth, self.k, .001, 0.)
+        self.assertEqual(first["mode"], "retrieval_then_localization")
+        self.assertEqual(first["query_box_xyxy"], second["query_box_xyxy"])
+        self.assertIsNotNone(first["region_proposal"])
+        self.assertGreaterEqual(len(calls), 5)
+        torch.testing.assert_close(registered.memory.tokens, tokens)
+        with patch("latent_pose.runtime.load_model", return_value=(runtime.model, {
+            "foundation_features": {"weights_sha256": "required-weight-hash"}})):
+            with self.assertRaisesRegex(ValueError, "weights differ"):
+                PoseRuntime.from_checkpoint("unused.pt", feature_extractor=extractor)
 
     def test_cross_video_memory_and_localization_independence(self):
         original = self.registered.memory.tokens.clone()

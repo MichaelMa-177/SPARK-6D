@@ -10,7 +10,7 @@ import torch
 from .cli import load_model, write_json
 from .data import read_packet, sha256, to_device
 from .evaluate import pose_errors
-from .geometry import robust_rigid, weighted_rigid
+from .geometry import consensus_rigid, robust_rigid, weighted_rigid
 
 
 @torch.inference_mode()
@@ -24,13 +24,14 @@ def main():
     torch.set_num_threads(4)
     manifest_path = Path(args.manifest)
     manifest = json.loads(manifest_path.read_text())
-    if manifest["split"] != "development":
-        raise ValueError("solver selection is restricted to a development manifest")
+    if manifest["split"] not in {"development", "validation"}:
+        raise ValueError("solver selection cannot use a test manifest")
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=False)
     model, _ = load_model(args.checkpoint, args.device)
-    variants = {"weighted": (None, False), "threshold_050": (.5, False),
-                "robust_025": (.25, True), "robust_050": (.5, True), "robust_075": (.75, True)}
+    variants = {"weighted": (None, weighted_rigid), "threshold_050": (.5, weighted_rigid),
+                "robust_025": (.25, robust_rigid), "robust_050": (.5, robust_rigid),
+                "robust_075": (.75, robust_rigid), "consensus_050": (.5, consensus_rigid)}
     predictions = {name: [] for name in variants}
     memory, last_reference = None, None
     for row in manifest["samples"]:
@@ -41,11 +42,10 @@ def main():
             last_reference = path
         query = to_device(read_packet(manifest_path.parent / row["query"]), args.device, batch=True)
         result = model.decode(query, memory, solve=False)
-        for name, (threshold, robust) in variants.items():
+        for name, (threshold, solver) in variants.items():
             w = result["weights"]
             if threshold is not None:
                 w = w * (result["membership_logits"].sigmoid() >= threshold)
-            solver = robust_rigid if robust else weighted_rigid
             solved = solver(result["coordinates"] * memory.scale_m[:, None], result["query_xyz_m"], w)
             predictions[name].append((solved["pose"][0].cpu().numpy(), bool(solved["pose_valid"][0])))
     # Persist the complete prediction set before reading any scoring labels.
@@ -65,9 +65,10 @@ def main():
             "translation_median_mm": float(np.median([r["translation_mm_at_best_rotation"] for r in valid])) if valid else None,
         }
     write_json(output/"report.json", {"checkpoint_sha256": sha256(args.checkpoint),
-                                     "manifest_sha256": sha256(args.manifest), "split": "development",
+                                     "manifest_sha256": sha256(args.manifest), "split": manifest["split"],
                                      "GT_loaded_after_predictions": True, "previous_pose_used": False,
-                                     "robust_radius_m": .01, "robust_iterations": 4, "variants": reports})
+                                     "robust_radius_m": .01, "robust_iterations": 4,
+                                     "consensus_trials": 256, "variants": reports})
     print(json.dumps(reports), flush=True)
 
 

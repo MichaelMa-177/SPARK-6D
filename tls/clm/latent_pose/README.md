@@ -1,12 +1,14 @@
 # SPARK-6D V1：空间 latent 物体记忆
 
-本目录实现**可训练的模型框架**：从首帧 RGB-D、人工确认 mask 和已有 SAM3D
+本目录实现**可训练的模型框架**：从首帧 RGB-D、已提供 mask 和 SAM3D
 粗形状 latent 建立固定物体记忆，独立解码当前帧的物体坐标，再求解 6D 位姿。
 当前版本提供训练、记忆序列化、独立查询、评测和测试入口；模型精度需要经过训练和独立评测验证。
 旧实验的 `last.pt` 与这个新架构不兼容，也不代表新模型的已训练权重。
 
 目标和验收协议见 [GOAL.md](GOAL.md)：同一个网络为未见物体从单帧建立记忆，
 在不同 RGB-D 视频中复用；精度、时序稳定和泛化分别验证。
+已执行的真实训练、教师校准、错误定位和未见物体开发结果见
+[EXPERIMENTS.md](EXPERIMENTS.md)。目标仍在进行中，尚未通过完整泛化与时序验收。
 
 ## 架构
 
@@ -31,9 +33,12 @@
   不确定性需要监督学习，几何求解成功不等价于位姿正确。
 - `build_memory()` 只需对一个参考帧执行一次；推理模式可以缓存每层 K/V。
   `decode()` 无上一帧位姿参数，查询之间不积累状态。
-- 当前图像编码器是可训练的轻量 RGB/XYZ CNN。DINO 参与已有 SAM3D 首帧生成，
-  当前帧编码器没有被标记为“已蒸馏 DINO”。
-- 本版使用已保存的 SS latent，不启动大模型重建，也不需要纹理或 mesh 解码。
+- 基础配置使用轻量 RGB/XYZ CNN；`dino-*.json` 增加冻结 DINOv2 特征，
+  这属于显式使用预训练 backbone，没有将其称为蒸馏。
+- `memory_residual` 从实测记忆读出坐标，再预测连续残差；`appearance_prior`
+  用参考前景/背景描述子对比约束目标归属。可选择 IRLS 稳健刚体求解。
+- `shape_prior.py` 可从一帧已提供 RGB-D/mask 生成并对齐 SS latent，
+  不输入 CAD 或物体位姿；不执行新的 SAM 分割，也不需要 SLAT/纹理网格。
 
 ## 坐标约定
 
@@ -68,6 +73,12 @@ X_query_camera = R @ (scale_m * X_memory_normalized) + t
 | `runtime.py` | 一次登记物体、跨视频复用记忆、独立流时间戳与失败状态 |
 | `smoke.py` | 随机初始化模型的真实输入连通性检查 |
 | `tests/` | 几何、梯度、缓存、查询独立性、训练和序列化测试 |
+| `experiment.py` | 固定步数训练、开发集选择、坐标/归属诊断与源代码快照 |
+| `features.py` / `retrieval.py` | 冻结视觉特征、无查询 GT 的目标区域定位 |
+| `shape_prior.py` | 通用单帧 SS latent 与米制布局生成 |
+| `foundationpose_teacher.py` | 连续帧教师推理后再加载 GT 校准 |
+| `teacher_validation.py` | 伪标签导出、学生/教师/GT 三方对照 |
+| `surface_evaluate.py` | 官方 BOP MSSD/MSPD 实现在开发子集上的评分 |
 
 服务器工作副本位于 `/home/mmw/mmw/tls/clm`。统一使用新启动器：
 
@@ -113,12 +124,32 @@ result_b = video_b.estimate(rgb_b, depth_b, K_b, scale_b, timestamp_s=0.0)
 
 同一物体只登记一次；不同视频共享固定记忆、分别记录时间戳。
 `observed_only` 模型无需传入两个 shape 参数，可直接从原始 RGB-D＋mask 建忆。
-空间记忆模式显式要求已有生成 prior，当前运行时不启动 SAM/SAM3D。
+空间记忆模式可传入已有生成 prior，或向 runtime 提供 `ShapePriorEncoder`，
+在登记物体时生成一次 prior。运行时不生成 SAM 点击或执行交互分割。
 `mask_source` 保存调用方声明的来源；它不替代 SAM 交互流程的完整点击记录。
 
 查询默认整帧；`box=(x0,y0,x1,y1)` 可传入外部检测器提供的半开 ROI。
 先用原始内参反投影再裁剪，XYZ 始终保留在当前相机坐标。
-小物体在整帧缩至 128 后可能丢失细节，目标检索与多尺度定位属于后续工作。
+带冻结特征的模型可设置 `retrieve_region=True`，先在整帧检索目标区域，再编码裁剪区域。
+检索只使用首帧记忆、当前 RGB-D 与内参；失败样本不从评测分母移除。
+
+```python
+from latent_pose.features import FrozenDINO
+from latent_pose.shape_prior import ShapePriorEncoder
+
+features = FrozenDINO("/path/to/local/dinov2", "/path/to/dino_weights.pth", "cuda")
+shape = ShapePriorEncoder("/path/to/sam-3d-objects", "/path/to/local/dinov2",
+                          "/path/to/sam3d_weights", "cuda", steps=1)
+runtime = PoseRuntime.from_checkpoint(
+    "/path/to/trained/spatial_checkpoint.pt", device="cuda",
+    feature_extractor=features, retrieve_region=True, shape_encoder=shape,
+)
+# register_object(...) 接收同一帧 RGB-D 和调用方已提供的 mask，
+# 此时可省略 shape_latent / latent_xyz_m。
+```
+
+`observed_only` 对照不需要实例化 `ShapePriorEncoder`。前处理与 DINO 计算计入
+runtime 的 `raw_frame_to_output_ms`；离线 NPZ 评测的网络时间不能当作完整系统延迟。
 
 返回值包含 `pose`、`pose_valid`、`residual_m`、流 ID 和时间戳。
 几何无效时 `pose=None`，不将单位矩阵或上一帧位姿当作有效结果。
@@ -164,6 +195,7 @@ CUDA_VISIBLE_DEVICES=0 bash python_latent -m latent_pose.smoke \
 | `rgb` | `3,H,W` | `[0,1]` RGB |
 | `xyz` | `3,H,W` | 相机坐标中的米制 XYZ，与 RGB 注册 |
 | `valid` | `1,H,W` | 有效深度 |
+| `foundation_features` | `(H/4)²,C` | 可选：与 XYZ 网格位置对齐的冻结 RGB 特征 |
 | `mask` | `1,H,W` | 仅参考包：已确认的目标 mask |
 | `origin_m` | `3` | 仅参考包：固定首帧质心 |
 | `scale_m` | `1` | 仅参考包：正的固定归一化尺寸 |
@@ -227,7 +259,9 @@ bash python_latent -m latent_pose.evaluate \
 
 评分器先持久化全部预测，再读取标签；无效位姿计入联合通过率的失败分母。
 该评分器提供固定坐标系下的平移/旋转和离散对称诊断，尚不是官方 BOP AR。
-正式论文实验还需接入 BOP、统一检测/分割前端，并计入前处理和目标定位耗时。
+`surface_evaluate.py` 已接入官方 BOP MSSD/MSPD 实现及对称离散化；
+当前已计算自定义开发子集的 VSD/MSSD/MSPD；它不等同于完整官方 BOP AR，正式独立协议仍需补齐。
+正式论文实验还需统一检测/分割前端，并计入前处理和目标定位耗时。
 计时报告明确区分冷调用、网络部分和完整系统，不能将 smoke 时间当作稳态速度。
 
 ## 建议的研究验证

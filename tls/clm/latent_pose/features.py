@@ -25,6 +25,7 @@ def geometry_sample_grid(width, height, image_size, device):
 class FrozenDINO:
     def __init__(self, repo, weights, device="cuda"):
         self.device = device
+        self.weights_sha256 = sha256(weights)
         self.model = torch.hub.load(str(repo), "dinov2_vitl14_reg", source="local", pretrained=False)
         self.model.load_state_dict(torch.load(weights, map_location="cpu", weights_only=True), strict=True)
         self.model.to(device).eval().requires_grad_(False)

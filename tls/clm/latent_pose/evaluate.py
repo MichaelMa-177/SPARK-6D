@@ -25,6 +25,16 @@ def pose_errors(predicted, truth, symmetries):
     }
 
 
+def summarize_errors(rows):
+    valid = [r for r in rows if r["pose_valid"]]
+    return {
+        "samples": len(rows), "valid_pose_fraction": len(valid)/len(rows),
+        "pass_10mm_5deg_all_queries": float(np.mean([r["pass_10mm_5deg"] for r in rows])),
+        "rotation_median_deg_valid_only": float(np.median([r["rotation_deg"] for r in valid])) if valid else None,
+        "translation_median_mm_valid_only": float(np.median([r["translation_mm_at_best_rotation"] for r in valid])) if valid else None,
+    }
+
+
 @torch.inference_mode()
 def main():
     p = argparse.ArgumentParser(description=__doc__)
@@ -32,6 +42,7 @@ def main():
     p.add_argument("--checkpoint", required=True)
     p.add_argument("--device", default="cpu")
     p.add_argument("--output", required=True)
+    p.add_argument("--solver", choices=["weighted", "robust", "consensus"])
     args = p.parse_args()
     torch.set_num_threads(4)
     path = Path(args.manifest)
@@ -41,7 +52,7 @@ def main():
     samples = document["samples"]
     if not samples:
         raise ValueError("empty evaluation manifest")
-    model, checkpoint = load_model(args.checkpoint, args.device)
+    model, checkpoint = load_model(args.checkpoint, args.device, solver_mode=args.solver)
     shared = set(checkpoint.get("training_object_ids", [])) & {str(s["object_id"]) for s in samples}
     if shared and document["split"] != "development":
         raise ValueError("held-out evaluation contains a training object")
@@ -68,17 +79,20 @@ def main():
         errors = pose_errors(pose, label["pose"].numpy(), label["symmetry_transforms"].numpy()) if ok else {
             "rotation_deg": None, "translation_mm_at_best_rotation": None, "pass_10mm_5deg": False,
         }
-        rows.append({"index": index, "object_id": row["object_id"], "pose_valid": ok, **errors})
+        rows.append({"index": index, "object_id": row["object_id"], "pose_valid": ok,
+                     "scene_id": row.get("scene_id"), "frame_id": row.get("frame_id"), **errors})
     write_json(output / "errors.json", rows)
     report = {
-        "samples": len(rows), "valid_pose_fraction": float(np.mean(valid)),
-        "pass_10mm_5deg_all_queries": float(np.mean([r["pass_10mm_5deg"] for r in rows])),
-        "rotation_median_deg_valid_only": float(np.median([r["rotation_deg"] for r in rows if r["pose_valid"]])) if any(valid) else None,
+        **summarize_errors(rows),
         "split": document["split"], "training_object_overlap": sorted(shared),
         "GT_loaded_after_predictions": True, "previous_pose_used": False,
         "manifest_sha256": sha256(path), "checkpoint_sha256": sha256(args.checkpoint),
+        "solver_override": args.solver, "inference_config": model.config.to_dict(),
         "protocol": "fixed first-reference gauge; discrete symmetry-aware diagnostics, NOT official BOP AR",
     }
+    for field in ("object_id", "scene_id"):
+        report["by_"+field] = {str(value): summarize_errors([r for r in rows if r[field] == value])
+                               for value in sorted({r[field] for r in rows if r[field] is not None})}
     write_json(output / "report.json", report)
     print(json.dumps(report))
 

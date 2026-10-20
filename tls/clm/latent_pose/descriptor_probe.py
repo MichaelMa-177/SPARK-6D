@@ -69,8 +69,8 @@ def main():
     torch.set_num_threads(4)
     path, output = Path(args.manifest), Path(args.output)
     document = json.loads(path.read_text())
-    if document["split"] != "development":
-        raise ValueError("descriptor probe is a development diagnostic")
+    if document["split"] not in {"development", "validation"}:
+        raise ValueError("descriptor probe cannot tune on a test manifest")
     output.mkdir(parents=True, exist_ok=False)
     generator = torch.Generator(device=args.device).manual_seed(args.seed)
     memories, predictions, records = {}, [], []
@@ -90,24 +90,27 @@ def main():
         metrics = pose_errors(pose, label["pose"].numpy(), label["symmetry_transforms"].numpy())
         metrics["pass_10mm_5deg"] &= record["pose_valid"]
         record.update(metrics)
-    by_scene = {}
-    for scene_id in sorted({r["scene_id"] for r in records}):
-        selected = [r for r in records if r["scene_id"] == scene_id]
-        valid = [r for r in selected if r["pose_valid"]]
-        by_scene[str(scene_id)] = {
-            "frames": len(selected), "valid_fraction": len(valid)/len(selected),
-            "pass_10mm_5deg": float(np.mean([r["pass_10mm_5deg"] for r in selected])),
-            "rotation_median_deg_valid": float(np.median([r["rotation_deg"] for r in valid])) if valid else None,
-            "translation_median_mm_valid": float(np.median([r["translation_mm_at_best_rotation"] for r in valid])) if valid else None,
-            "matches_median": float(np.median([r["matches"] for r in selected])),
-        }
+    grouped = {}
+    for field in ("scene_id", "object_id"):
+        by_group = {}
+        for group in sorted({r[field] for r in records}):
+            selected = [r for r in records if r[field] == group]
+            valid = [r for r in selected if r["pose_valid"]]
+            by_group[str(group)] = {
+                "frames": len(selected), "valid_fraction": len(valid)/len(selected),
+                "pass_10mm_5deg": float(np.mean([r["pass_10mm_5deg"] for r in selected])),
+                "rotation_median_deg_valid": float(np.median([r["rotation_deg"] for r in valid])) if valid else None,
+                "translation_median_mm_valid": float(np.median([r["translation_mm_at_best_rotation"] for r in valid])) if valid else None,
+                "matches_median": float(np.median([r["matches"] for r in selected])),
+            }
+        grouped[field] = by_group
     report = dict(protocol="frozen-DINO visible-surface diagnostic; no trained pose network",
                   GT_loaded_after_predictions=True, query_mask_used=False, previous_pose_used=False,
                   parameters=dict(trials=512, radius_m=.01, minimum_cosine=.5, seed=args.seed),
                   manifest_sha256=sha256(path), source_sha256=sha256(__file__),
-                  by_scene=by_scene, records=records)
+                  grouped=grouped, records=records)
     (output/"report.json").write_text(json.dumps(report, indent=2, allow_nan=False)+"\n")
-    print(json.dumps(by_scene), flush=True)
+    print(json.dumps(grouped), flush=True)
 
 
 if __name__ == "__main__":

@@ -19,6 +19,8 @@ class ModelConfig:
     robust_iterations: int = 4
     foundation_feature_dim: int = 0
     coordinate_mode: str = "direct"
+    membership_mode: str = "learned"
+    consensus_trials: int = 256
 
     def __post_init__(self):
         if self.heads < 1:
@@ -35,7 +37,7 @@ class ModelConfig:
             raise ValueError("unknown memory_mode")
         if self.min_correspondences < 3:
             raise ValueError("at least three correspondences are required")
-        if self.solver_mode not in {"weighted", "robust"}:
+        if self.solver_mode not in {"weighted", "robust", "consensus"}:
             raise ValueError("unknown solver_mode")
         if not 0 <= self.membership_threshold <= 1 or self.inlier_radius_m <= 0 or self.robust_iterations < 1:
             raise ValueError("invalid robust solver settings")
@@ -45,6 +47,12 @@ class ModelConfig:
             raise ValueError("unknown coordinate_mode")
         if self.coordinate_mode == "memory_residual" and not self.foundation_feature_dim:
             raise ValueError("memory_residual requires frozen foundation descriptors")
+        if self.membership_mode not in {"learned", "appearance_prior"}:
+            raise ValueError("unknown membership_mode")
+        if self.membership_mode == "appearance_prior" and self.coordinate_mode != "memory_residual":
+            raise ValueError("appearance_prior requires memory_residual coordinates")
+        if self.consensus_trials < 1:
+            raise ValueError("consensus_trials must be positive")
 
     def to_dict(self):
         return asdict(self)

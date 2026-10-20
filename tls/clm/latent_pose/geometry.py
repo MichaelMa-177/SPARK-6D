@@ -88,3 +88,39 @@ def robust_rigid(source, target, weights, min_points=6, radius_m=.01, iterations
     result = weighted_rigid(a, b, base * inliers, min_points)
     result["inlier_count"] = inliers.sum(-1)
     return result
+
+
+def consensus_rigid(source, target, weights, min_points=6, radius_m=.01, trials=256):
+    """Deterministic per-query RANSAC for heavy predicted-correspondence outliers."""
+    if source.ndim != 3 or source.shape != target.shape or source.shape[-1] != 3 or weights.shape != source.shape[:2]:
+        raise ValueError("expected matching [B,N,3] points and [B,N] weights")
+    if trials < 1 or radius_m <= 0:
+        raise ValueError("positive trials and radius required")
+    results = []
+    for original_a, original_b, original_w in zip(source, target, weights):
+        finite = torch.isfinite(original_a).all(-1) & torch.isfinite(original_b).all(-1)
+        finite &= torch.isfinite(original_w) & (original_w > 0)
+        a, b = torch.where(finite[:, None], original_a, 0).float(), torch.where(finite[:, None], original_b, 0).float()
+        w = torch.where(finite, original_w, 0).float()
+        if int(finite.sum()) < min_points:
+            result = weighted_rigid(a[None], b[None], torch.zeros_like(w)[None], min_points)
+            result["inlier_count"] = torch.zeros(1, device=a.device, dtype=torch.long)
+            results.append(result)
+            continue
+        generator = torch.Generator(device=a.device).manual_seed(0)
+        sample = torch.multinomial(w.sqrt(), trials * 3, replacement=True,
+                                   generator=generator).reshape(trials, 3)
+        hypotheses = weighted_rigid(a[sample], b[sample], torch.ones(trials, 3, device=a.device), 3)
+        residual = (transform_points(a[None], hypotheses["pose"]) - b[None]).norm(dim=-1)
+        inliers = (residual < radius_m) & finite[None] & hypotheses["pose_valid"][:, None]
+        count = inliers.sum(-1)
+        tie = (residual.clamp_max(radius_m)/radius_m).mean(-1)
+        selected = inliers[(count.float() - .001*tie).argmax()]
+        result = weighted_rigid(a[None], b[None], (w*selected)[None], min_points)
+        for _ in range(2):
+            residual = (transform_points(a[None], result["pose"]) - b[None]).norm(dim=-1)[0]
+            selected = (residual < radius_m) & finite & result["pose_valid"][0]
+            result = weighted_rigid(a[None], b[None], (w*selected)[None], min_points)
+        result["inlier_count"] = selected.sum()[None]
+        results.append(result)
+    return {key: torch.cat([result[key] for result in results]) for key in results[0]}

@@ -14,6 +14,7 @@ from .data import PairDataset, collate_pairs, query_inputs, read_packet, sha256,
 from .geometry import weighted_rigid
 from .losses import coordinate_loss
 from .model import LatentPoseModel
+from .augmentation import random_memory_basis
 
 
 def preload(dataset, device):
@@ -113,6 +114,14 @@ def run(args):
     config = ModelConfig.from_dict(json.loads(Path(args.config).read_text())) if args.config else ModelConfig()
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=False)
+    source_hashes = {}
+    source_root = Path(__file__).parent
+    for source in sorted(source_root.rglob("*.py")):
+        relative = source.relative_to(source_root)
+        saved_source = output/"source"/relative
+        saved_source.parent.mkdir(parents=True, exist_ok=True)
+        saved_source.write_bytes(source.read_bytes())
+        source_hashes[str(relative)] = sha256(saved_source)
     model = LatentPoseModel(config).to(args.device)
     inherited_objects = set()
     if args.initialize:
@@ -135,8 +144,10 @@ def run(args):
         "validation_object_overlap": sorted(shared),
         "protocol": "seen-object development" if shared else "object-disjoint validation",
         "initialization_sha256": sha256(args.initialize) if args.initialize else None,
-        "source_sha256": {str(p.relative_to(Path(__file__).parent)): sha256(p)
-                          for p in sorted(Path(__file__).parent.rglob("*.py"))},
+        "foundation_features": train_set.provenance.get("foundation_features", {
+            "weights_sha256": train_set.provenance.get("dino_weights_sha256")}),
+        "shape_prior": train_set.provenance.get("shape_prior"),
+        "source_sha256": source_hashes,
         "args": vars(args),
     }
     write_json(output / "run.json", provenance)
@@ -149,6 +160,8 @@ def run(args):
                 model.train()
                 indices = torch.randperm(n, device=args.device)[:args.batch_size]
                 ref, query, target = subset(train_data, indices)
+                if args.augment_memory_basis:
+                    ref, target = random_memory_basis(ref, target)
                 optimizer.zero_grad(set_to_none=True)
                 prediction = model(ref, query)
                 loss = coordinate_loss(prediction, target["pose"], ref["scale_m"],
@@ -196,6 +209,7 @@ def main():
     p.add_argument("--eval-every", type=int, default=100)
     p.add_argument("--batch-size", type=int, default=8)
     p.add_argument("--lr", type=float, default=3e-4)
+    p.add_argument("--augment-memory-basis", action="store_true")
     args = p.parse_args()
     if min(args.steps, args.eval_every, args.batch_size, args.lr) <= 0:
         p.error("steps, intervals, batch size and learning rate must be positive")

@@ -5,7 +5,7 @@ import torch
 
 from latent_pose.bop import annotation_pose, cad_from_memory
 from latent_pose.experiment import errors
-from latent_pose.geometry import robust_rigid, transform_points, weighted_rigid
+from latent_pose.geometry import consensus_rigid, robust_rigid, transform_points, weighted_rigid
 
 
 class BOPGaugeTests(unittest.TestCase):
@@ -56,6 +56,19 @@ class BOPGaugeTests(unittest.TestCase):
         self.assertGreater(float((baseline["pose"] - pose).abs().max()), .01)
         rejected = robust_rigid(source, target, torch.zeros_like(weights))
         self.assertFalse(rejected["pose_valid"].any())
+
+    def test_consensus_recovers_with_majority_outliers_and_no_stream_state(self):
+        torch.manual_seed(19)
+        source = torch.randn(2, 120, 3) * .08
+        pose = torch.eye(4)[None].repeat(2, 1, 1)
+        pose[:, :3, 3] = torch.tensor([[.02, -.03, .8], [-.1, .05, .9]])
+        target = transform_points(source, pose)
+        target[:, :80] += torch.randn(2, 80, 3) * .4
+        result = consensus_rigid(source, target, torch.ones(2, 120))
+        self.assertTrue(result["pose_valid"].all())
+        torch.testing.assert_close(result["pose"], pose, atol=2e-5, rtol=1e-5)
+        alone = consensus_rigid(source[1:], target[1:], torch.ones(1, 120))
+        torch.testing.assert_close(result["pose"][1:], alone["pose"], atol=1e-6, rtol=1e-5)
 
 
 if __name__ == "__main__":

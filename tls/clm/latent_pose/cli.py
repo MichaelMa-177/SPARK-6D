@@ -1,7 +1,7 @@
 """Train, cache an object memory, and independently estimate query poses."""
 
 import argparse
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from pathlib import Path
 import time
@@ -29,13 +29,16 @@ def save_new(path, payload):
         torch.save(payload, stream)
 
 
-def load_model(path, device, allow_untrained=False):
+def load_model(path, device, allow_untrained=False, solver_mode=None):
     checkpoint = torch.load(path, map_location="cpu", weights_only=True)
     if checkpoint.get("schema_version") != 1:
         raise ValueError("unsupported model checkpoint schema")
     if checkpoint.get("training_steps", 0) < 1 and not allow_untrained:
         raise ValueError("untrained checkpoint: use --allow-untrained only for a wiring smoke test")
-    model = LatentPoseModel(ModelConfig.from_dict(checkpoint["config"])).to(device).eval()
+    config = ModelConfig.from_dict(checkpoint["config"])
+    if solver_mode is not None:
+        config = replace(config, solver_mode=solver_mode)
+    model = LatentPoseModel(config).to(device).eval()
     model.load_state_dict(checkpoint["model"], strict=True)
     return model, checkpoint
 
@@ -101,7 +104,7 @@ def train(args):
 
 @torch.inference_mode()
 def cache(args):
-    model, checkpoint = load_model(args.checkpoint, args.device, args.allow_untrained)
+    model, checkpoint = load_model(args.checkpoint, args.device, args.allow_untrained, getattr(args, "solver", None))
     reference = to_device(read_packet(args.reference, reference=True), args.device, batch=True)
     memory = model.build_memory(reference)
     tensors = {k: v.cpu() for k, v in asdict(memory).items() if k != "kv" and v is not None}
@@ -117,7 +120,7 @@ def cache(args):
 
 @torch.inference_mode()
 def infer(args):
-    model, checkpoint = load_model(args.checkpoint, args.device, args.allow_untrained)
+    model, checkpoint = load_model(args.checkpoint, args.device, args.allow_untrained, getattr(args, "solver", None))
     saved = torch.load(args.memory, map_location=args.device, weights_only=True)
     if saved.get("schema_version") != 1 or saved["config"] != model.config.to_dict():
         raise ValueError("memory schema/config mismatch")
@@ -175,6 +178,7 @@ def parser():
         sub.add_argument("--device", default="cpu")
         sub.add_argument("--output", required=True)
         sub.add_argument("--allow-untrained", action="store_true")
+        sub.add_argument("--solver", choices=["weighted", "robust", "consensus"])
         if name == "cache":
             sub.add_argument("--reference", required=True)
         else:

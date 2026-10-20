@@ -6,7 +6,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from .config import ModelConfig
-from .geometry import robust_rigid, weighted_rigid
+from .geometry import consensus_rigid, robust_rigid, weighted_rigid
 
 
 def conv(a, b, stride=1):
@@ -22,6 +22,7 @@ class ObjectMemory:
     origin_m: torch.Tensor  # first-camera centroid; metadata, never a query pose prior
     kv: Optional[list] = None
     observed_descriptors: Optional[torch.Tensor] = None
+    background_descriptors: Optional[torch.Tensor] = None
 
 
 class RGBDEncoder(nn.Module):
@@ -110,6 +111,9 @@ class LatentPoseModel(nn.Module):
             nn.init.zeros_(self.match_query.bias)
             nn.init.zeros_(self.coordinate_head[-1].weight)
             nn.init.zeros_(self.coordinate_head[-1].bias)
+        if c.membership_mode == "appearance_prior":
+            nn.init.zeros_(self.membership_head.weight)
+            nn.init.zeros_(self.membership_head.bias)
 
     def _image(self, item):
         rgb, xyz, valid = item["rgb"], item["xyz"], item["valid"]
@@ -169,6 +173,14 @@ class LatentPoseModel(nn.Module):
             fs.append(features)
             ps.append(points)
         features, positions = torch.cat(fs, 1), torch.cat(ps, 1)
+        if "memory_basis" in reference:
+            basis = reference["memory_basis"]
+            if basis.shape != (b, 3, 3) or not torch.isfinite(basis).all():
+                raise ValueError("memory_basis must be finite [B,3,3]")
+            if not torch.allclose(basis.transpose(1, 2) @ basis,
+                                  torch.eye(3, device=basis.device).expand(b, -1, -1), atol=1e-4) or (torch.det(basis) < .999).any():
+                raise ValueError("memory_basis must contain proper rotations")
+            positions = positions @ basis.transpose(1, 2)
         kinds = torch.zeros(features.shape[:2], dtype=torch.long, device=rgb.device)
         kinds[:, c.observed_tokens:] = 1
         tokens = features + self.position(positions) + self.kind(kinds)
@@ -176,6 +188,17 @@ class LatentPoseModel(nn.Module):
         if c.coordinate_mode == "memory_residual":
             memory.observed_descriptors = reference["foundation_features"].gather(
                 1, indices[..., None].expand(-1, -1, c.foundation_feature_dim))
+        if c.membership_mode == "appearance_prior":
+            backgrounds = []
+            unmasked = (self._grid(valid).squeeze(-1) > .5) & ~eligible
+            for row, descriptors in zip(unmasked, reference["foundation_features"]):
+                ids = row.nonzero().flatten()
+                if len(ids):
+                    selected = ids[torch.linspace(0, len(ids)-1, c.observed_tokens, device=rgb.device).round().long()]
+                    backgrounds.append(descriptors[selected])
+                else:
+                    backgrounds.append(descriptors.new_zeros(c.observed_tokens, c.foundation_feature_dim))
+            memory.background_descriptors = torch.stack(backgrounds)
         if cache:
             self.cache_memory(memory)
         return memory
@@ -211,6 +234,16 @@ class LatentPoseModel(nn.Module):
             coordinate_residual = coords
             coords = attention @ memory.positions[:, :count] + coordinate_residual
         logits = self.membership_head(features).squeeze(-1)
+        membership_prior = None
+        if self.config.membership_mode == "appearance_prior":
+            background = F.normalize(query["foundation_features"], dim=-1) @ F.normalize(
+                memory.background_descriptors, dim=-1).transpose(1, 2)
+            positive = appearance.max(-1).values
+            negative = background.max(-1).values
+            membership_prior = 20 * (positive - negative) + 5 * (positive - .6)
+            # Bound the learned correction so the reference comparison remains
+            # relevant on unseen objects.
+            logits = membership_prior + 2 * logits.tanh()
         log_variance = self.uncertainty_head(features).squeeze(-1).clamp(-6, 6)
         query_xyz = self._grid(xyz)
         query_valid = self._grid(valid).squeeze(-1) > .5
@@ -219,14 +252,17 @@ class LatentPoseModel(nn.Module):
                       weights=weights, query_xyz_m=query_xyz, query_valid=query_valid)
         if coordinate_residual is not None:
             output["coordinate_residual"] = coordinate_residual
+        if membership_prior is not None:
+            output["membership_prior_logits"] = membership_prior
         if solve:
             # The solver does not backpropagate through potentially repeated singular values.
             with torch.no_grad():
-                if self.config.solver_mode == "robust":
+                if self.config.solver_mode != "weighted":
                     selected = weights * (logits.sigmoid() >= self.config.membership_threshold)
-                    output.update(robust_rigid(coords * memory.scale_m[:, None], query_xyz, selected,
-                                               self.config.min_correspondences, self.config.inlier_radius_m,
-                                               self.config.robust_iterations))
+                    solver = consensus_rigid if self.config.solver_mode == "consensus" else robust_rigid
+                    count = self.config.consensus_trials if self.config.solver_mode == "consensus" else self.config.robust_iterations
+                    output.update(solver(coords * memory.scale_m[:, None], query_xyz, selected,
+                                         self.config.min_correspondences, self.config.inlier_radius_m, count))
                 else:
                     output.update(weighted_rigid(coords * memory.scale_m[:, None], query_xyz, weights,
                                                  self.config.min_correspondences))

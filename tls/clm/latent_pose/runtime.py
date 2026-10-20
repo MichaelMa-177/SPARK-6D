@@ -2,12 +2,14 @@
 
 from dataclasses import dataclass
 import math
+import time
 
 import torch
 
 from .cli import load_model
 from .model import ObjectMemory
 from .rgbd import checked_box, prepare_query, prepare_reference, reference_crop_box
+from .retrieval import propose_region
 
 
 def tensor_packet(packet, device):
@@ -20,6 +22,8 @@ class RegisteredObject:
     object_id: str
     memory: ObjectMemory
     mask_source: str
+    retrieval_reference: dict | None = None
+    shape_provenance: dict | None = None
 
 
 class PoseRuntime:
@@ -30,19 +34,30 @@ class PoseRuntime:
     guard. Training steps alone do not establish accuracy or generalization.
     """
 
-    def __init__(self, model, feature_extractor=None):
+    def __init__(self, model, feature_extractor=None, retrieve_region=False, shape_encoder=None):
         if model.training:
             raise ValueError("runtime requires model.eval()")
         self.model = model
         if model.config.foundation_feature_dim and feature_extractor is None:
             raise ValueError("this checkpoint requires its frozen RGB feature extractor")
         self.feature_extractor = feature_extractor
+        if retrieve_region and not model.config.foundation_feature_dim:
+            raise ValueError("region retrieval requires a frozen feature extractor")
+        self.retrieve_region = retrieve_region
+        self.shape_encoder = shape_encoder
         self.objects = {}
 
     @classmethod
-    def from_checkpoint(cls, checkpoint, device="cpu", allow_untrained=False, feature_extractor=None):
-        model, _ = load_model(checkpoint, device, allow_untrained)
-        return cls(model, feature_extractor)
+    def from_checkpoint(cls, checkpoint, device="cpu", allow_untrained=False,
+                        feature_extractor=None, retrieve_region=False, shape_encoder=None, solver=None):
+        model, metadata = load_model(checkpoint, device, allow_untrained, solver_mode=solver)
+        expected = metadata.get("foundation_features", {}).get("weights_sha256")
+        if model.config.foundation_feature_dim and expected and expected != getattr(feature_extractor, "weights_sha256", None):
+            raise ValueError("feature extractor weights differ from the training features")
+        expected_shape = (metadata.get("shape_prior") or {}).get("weight_sha256")
+        if shape_encoder is not None and expected_shape and expected_shape != shape_encoder.provenance.get("weight_sha256"):
+            raise ValueError("shape encoder weights differ from training priors")
+        return cls(model, feature_extractor, retrieve_region, shape_encoder)
 
     def add_features(self, packet, rgb, box):
         if self.model.config.foundation_feature_dim:
@@ -63,11 +78,17 @@ class PoseRuntime:
             raise ValueError("object already registered; preserve its fixed reference frame")
         if not isinstance(mask_source, str) or not mask_source.strip():
             raise ValueError("record the actual supplied mask source")
+        shape_provenance = None
+        if self.model.config.memory_mode != "observed_only" and shape_latent is None and latent_xyz_m is None and self.shape_encoder is not None:
+            prior, shape_provenance = self.shape_encoder(rgb, depth, mask, intrinsics, depth_scale_m)
+            shape_latent, latent_xyz_m = prior["shape_latent"], prior["latent_xyz_m"]
         packet = prepare_reference(rgb, depth, mask, intrinsics, depth_scale_m,
                                    self.model.config, shape_latent, latent_xyz_m)
         self.add_features(packet, rgb, reference_crop_box(mask))
-        memory = self.model.build_memory(tensor_packet(packet, self.device), cache=True)
-        self.objects[object_id] = RegisteredObject(object_id, memory, mask_source)
+        tensors = tensor_packet(packet, self.device)
+        memory = self.model.build_memory(tensors, cache=True)
+        retrieval = {k: tensors[k] for k in ("valid", "mask", "foundation_features", "scale_m")} if self.retrieve_region else None
+        self.objects[object_id] = RegisteredObject(object_id, memory, mask_source, retrieval, shape_provenance)
         return self.objects[object_id]
 
     def start_video(self, video_id, object_id):
@@ -101,6 +122,14 @@ class VideoSession:
         model = self.runtime.model
         if model.training:
             raise ValueError("runtime requires model.eval(); rebuild memory after changing weights")
+        started = time.perf_counter()
+        proposal = None
+        if self.runtime.retrieve_region and box is None:
+            coarse = prepare_query(rgb, depth, intrinsics, depth_scale_m, model.config)
+            self.runtime.add_features(coarse, rgb, checked_box(None, rgb.shape))
+            box, proposal = propose_region(self.registered.retrieval_reference,
+                                           tensor_packet(coarse, self.runtime.device),
+                                           rgb.shape[:2], intrinsics)
         query = prepare_query(rgb, depth, intrinsics, depth_scale_m, model.config, box)
         self.runtime.add_features(query, rgb, checked_box(box, rgb.shape))
         result = model.decode(tensor_packet(query, self.runtime.device), self.registered.memory)
@@ -108,10 +137,14 @@ class VideoSession:
         output = {
             "object_id": self.registered.object_id, "video_id": self.video_id,
             "frame_index": self.frame_index, "timestamp_s": timestamp_s,
-            "mode": "independent_localization", "pose_valid": valid,
+            "mode": "retrieval_then_localization" if proposal is not None else "independent_localization",
+            "pose_valid": valid,
             "pose": result["pose"][0].cpu().numpy() if valid else None,
             "residual_m": float(result["residual_m"][0]) if valid else None,
             "effective_correspondences": float(result["effective_correspondences"][0]),
+            "query_box_xyxy": checked_box(box, rgb.shape),
+            "region_proposal": proposal,
+            "raw_frame_to_output_ms": (time.perf_counter() - started) * 1000,
         }
         self.frame_index += 1
         self.last_timestamp_s = timestamp_s

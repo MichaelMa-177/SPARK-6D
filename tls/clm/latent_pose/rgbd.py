@@ -51,6 +51,7 @@ def checked_box(box, shape):
 
 
 def reference_crop_box(mask, padding=.25):
+    mask = np.asarray(mask)
     y, x = np.where(mask)
     if not len(x) or not np.isfinite(padding) or padding < 0:
         raise ValueError("nonempty mask and nonnegative padding required")
