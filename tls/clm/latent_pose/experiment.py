@@ -17,6 +17,41 @@ from .model import LatentPoseModel
 from .augmentation import random_memory_basis
 
 
+class IndexedPairStore:
+    """Deduplicate reference/query tensors on CPU; transfer only each batch."""
+
+    def __init__(self, dataset, device):
+        self.device = device
+        self.references, self.queries, self.targets, self.rows = {}, {}, [], []
+        for row in dataset.samples:
+            ref_path = (dataset.path.parent/row["reference"]).resolve()
+            if ref_path not in self.references:
+                self.references[ref_path] = read_packet(ref_path, reference=True)
+            packet = read_packet(dataset.path.parent/row["query"], labels=True)
+            query = query_inputs(packet)
+            key = (row.get("rgb_sha256", row["query"]), tuple(row.get("box_xyxy", [])))
+            if key in self.queries:
+                cached = self.queries[key]
+                if cached.keys() != query.keys() or any(not torch.equal(cached[k], query[k]) for k in cached):
+                    raise ValueError("query cache key maps to different inference tensors")
+            else:
+                self.queries[key] = query
+            self.targets.append({k: packet[k] for k in ("pose", "target_mask", "symmetry_transforms")})
+            self.rows.append((ref_path, key))
+
+    def __len__(self):
+        return len(self.rows)
+
+    def batch(self, indices):
+        if isinstance(indices, slice):
+            indices = range(*indices.indices(len(self)))
+        elif isinstance(indices, torch.Tensor):
+            indices = indices.detach().cpu().tolist()
+        batch = [(self.references[self.rows[i][0]], self.queries[self.rows[i][1]], self.targets[i])
+                 for i in indices]
+        return [to_device(part, self.device) for part in collate_pairs(batch)]
+
+
 def preload(dataset, device):
     references, rows = {}, []
     for row in dataset.samples:
@@ -30,6 +65,8 @@ def preload(dataset, device):
 
 
 def subset(data, indices):
+    if isinstance(data, IndexedPairStore):
+        return data.batch(indices)
     return [{k: v[indices] for k, v in part.items()} for part in data]
 
 
@@ -50,18 +87,22 @@ def diagnose(model, data, batch_size):
     gathered = {k: [] for k in ("rotation", "translation", "joint", "valid", "oracle_rotation",
                                 "oracle_translation", "foreground_weight_fraction", "mask_iou")}
     losses = []
-    count = len(data[0]["rgb"])
+    generated_fractions = []
+    count = len(data) if isinstance(data, IndexedPairStore) else len(data[0]["rgb"])
     for start in range(0, count, batch_size):
         ref, query, target = subset(data, slice(start, start + batch_size))
         prediction = model(ref, query, solve=True)
         losses.append(float(coordinate_loss(prediction, target["pose"], ref["scale_m"],
-                                            target["target_mask"], target["symmetry_transforms"])["loss"]))
+                                            target["target_mask"], target["symmetry_transforms"],
+                                            model.config.rigidity_weight)["loss"]))
         rot, mm, joint = errors(prediction["pose"], prediction["pose_valid"], target["pose"],
                                 target["symmetry_transforms"])
         side = model.config.image_size // 4
         mask = F.interpolate(target["target_mask"].float(), (side, side),
                              mode="nearest").flatten(1) > .5
         mask = mask & prediction["query_valid"]
+        if "generated_coordinate_fraction" in prediction and mask.any():
+            generated_fractions.append(prediction["generated_coordinate_fraction"][mask].detach().cpu())
         predicted_mask = (prediction["membership_logits"] > 0) & prediction["query_valid"]
         # Diagnostic only: GT mask never modifies the reported model pose.
         oracle = weighted_rigid(prediction["coordinates"] * ref["scale_m"][:, None],
@@ -89,6 +130,8 @@ def diagnose(model, data, batch_size):
         "oracle_mask_translation_median_mm_diagnostic": median(values["oracle_translation"]),
         "foreground_weight_fraction_mean": float(values["foreground_weight_fraction"].mean()),
         "mask_iou_mean": float(values["mask_iou"].mean()),
+        "generated_coordinate_fraction_foreground_mean": float(torch.cat(generated_fractions).mean())
+            if generated_fractions else None,
     }
 
 
@@ -134,8 +177,13 @@ def run(args):
         if shared and not (args.allow_seen_object_development and val_set.split == "development"):
             raise ValueError("initialization checkpoint has seen validation objects")
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=.01)
-    train_data = preload(train_set, args.device)
+    train_data = IndexedPairStore(train_set, args.device) if args.cpu_unique_cache else preload(train_set, args.device)
     val_data = preload(val_set, args.device) if val_set else None
+    diagnostic_indices = None
+    diagnostic_data = train_data
+    if args.train_diagnostic_samples and args.train_diagnostic_samples < len(train_set):
+        diagnostic_indices = torch.linspace(0, len(train_set)-1, args.train_diagnostic_samples).round().long()
+        diagnostic_data = subset(train_data, diagnostic_indices)
     provenance = {
         "schema_version": 1, "config": config.to_dict(), "seed": args.seed,
         "training_object_ids": sorted(train_set.object_ids | inherited_objects),
@@ -148,11 +196,16 @@ def run(args):
             "weights_sha256": train_set.provenance.get("dino_weights_sha256")}),
         "shape_prior": train_set.provenance.get("shape_prior"),
         "source_sha256": source_hashes,
+        "sampling_protocol": "seed reset after initialization/preload; shared batch and basis draws",
+        "training_diagnostic_indices": diagnostic_indices.tolist() if diagnostic_indices is not None else "all",
         "args": vars(args),
     }
     write_json(output / "run.json", provenance)
     n = len(train_set)
     best = -1.
+    # Optional modules consume different amounts of RNG during construction.
+    # Keep batch order and basis augmentation matched across ablations.
+    torch.manual_seed(args.seed)
     start_time = time.perf_counter()
     with (output / "history.jsonl").open("x", buffering=1) as history:
         for step in range(args.steps + 1):
@@ -165,7 +218,8 @@ def run(args):
                 optimizer.zero_grad(set_to_none=True)
                 prediction = model(ref, query)
                 loss = coordinate_loss(prediction, target["pose"], ref["scale_m"],
-                                       target["target_mask"], target["symmetry_transforms"])["loss"]
+                                       target["target_mask"], target["symmetry_transforms"],
+                                       model.config.rigidity_weight)["loss"]
                 if not torch.isfinite(loss):
                     raise RuntimeError("non-finite loss")
                 loss.backward()
@@ -174,7 +228,7 @@ def run(args):
             if step % args.eval_every != 0 and step != args.steps:
                 continue
             row = {"step": step, "seconds": time.perf_counter() - start_time,
-                   "train": diagnose(model, train_data, args.batch_size),
+                   "train": diagnose(model, diagnostic_data, args.batch_size),
                    "validation": diagnose(model, val_data, args.batch_size) if val_data else None}
             history.write(json.dumps(row, allow_nan=False) + "\n")
             print(json.dumps(row, allow_nan=False), flush=True)
@@ -210,9 +264,15 @@ def main():
     p.add_argument("--batch-size", type=int, default=8)
     p.add_argument("--lr", type=float, default=3e-4)
     p.add_argument("--augment-memory-basis", action="store_true")
+    p.add_argument("--cpu-unique-cache", action="store_true",
+                   help="deduplicate large training datasets in host RAM; only transfer selected batches")
+    p.add_argument("--train-diagnostic-samples", type=int, default=0,
+                   help="fixed evenly spaced training diagnostics; 0 evaluates all training pairs")
     args = p.parse_args()
     if min(args.steps, args.eval_every, args.batch_size, args.lr) <= 0:
         p.error("steps, intervals, batch size and learning rate must be positive")
+    if args.train_diagnostic_samples < 0:
+        p.error("training diagnostic count cannot be negative")
     run(args)
 
 

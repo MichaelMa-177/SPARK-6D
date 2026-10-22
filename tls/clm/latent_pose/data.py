@@ -28,7 +28,7 @@ def read_packet(path, reference=False, labels=False):
         if int(packet["schema_version"]) != 1 or str(packet["units"]) != "metres":
             raise ValueError("expected schema_version=1 and units='metres'")
         value = {k: torch.from_numpy(np.array(packet[k], dtype=np.float32, copy=True)) for k in keys}
-        for key in ("foundation_features", "shape_latent", "latent_xyz_m"):
+        for key in ("foundation_features", "shape_latent", "latent_xyz_m", "shape_geometry"):
             if key in packet and (key == "foundation_features" or reference):
                 value[key] = torch.from_numpy(np.array(packet[key], dtype=np.float32, copy=True))
         if reference and (("shape_latent" in value) != ("latent_xyz_m" in value)):

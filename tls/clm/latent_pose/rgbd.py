@@ -69,7 +69,7 @@ def prepare_query(rgb, depth, intrinsics, depth_scale_m, config, box=None):
 
 
 def prepare_reference(rgb, depth, mask, intrinsics, depth_scale_m, config,
-                      shape_latent=None, latent_xyz_m=None, padding=.25):
+                      shape_latent=None, latent_xyz_m=None, padding=.25, shape_geometry=None):
     """Build a packet from ONE supplied mask and RGB-D observation.
 
     Spatial modes require the generated latent AND its cell centres, aligned
@@ -106,4 +106,11 @@ def prepare_reference(rgb, depth, mask, intrinsics, depth_scale_m, config,
         if not np.isfinite(z).all() or not np.isfinite(positions).all():
             raise ValueError("shape latent and positions must be finite")
         packet.update(shape_latent=z, latent_xyz_m=positions)
+        if config.shape_geometry_channels:
+            field = np.asarray(shape_geometry, dtype=np.float32)
+            if field.shape != (cells, config.shape_geometry_channels) or not np.isfinite(field).all():
+                raise ValueError("shape_geometry must match latent cells and configured channels")
+            if (field < 0).any() or (field > 1).any() or (field[:, 1] > field[:, 0]+1e-6).any():
+                raise ValueError("invalid occupancy/boundary fractions")
+            packet["shape_geometry"] = field
     return packet

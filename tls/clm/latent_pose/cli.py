@@ -66,7 +66,8 @@ def train(args):
             optimizer.zero_grad(set_to_none=True)
             prediction = model(ref, query, solve=False)
             losses = coordinate_loss(prediction, target["pose"], ref["scale_m"],
-                                     target["target_mask"], target["symmetry_transforms"])
+                                     target["target_mask"], target["symmetry_transforms"],
+                                     model.config.rigidity_weight)
             if not torch.isfinite(losses["loss"]):
                 raise RuntimeError("non-finite training loss")
             losses["loss"].backward()
@@ -85,7 +86,8 @@ def train(args):
                     ref, query, target = [to_device(x, args.device) for x in (ref, query, target)]
                     result = model(ref, query)
                     values.append(float(coordinate_loss(result, target["pose"], ref["scale_m"],
-                                                        target["target_mask"], target["symmetry_transforms"])["loss"]))
+                                                        target["target_mask"], target["symmetry_transforms"],
+                                                        model.config.rigidity_weight)["loss"]))
             row["validation_loss"] = float(np.mean(values))
         history.append(row)
         print(json.dumps(row), flush=True)

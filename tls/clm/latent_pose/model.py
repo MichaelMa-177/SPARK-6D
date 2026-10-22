@@ -23,6 +23,7 @@ class ObjectMemory:
     kv: Optional[list] = None
     observed_descriptors: Optional[torch.Tensor] = None
     background_descriptors: Optional[torch.Tensor] = None
+    token_valid: Optional[torch.Tensor] = None
 
 
 class RGBDEncoder(nn.Module):
@@ -70,10 +71,11 @@ class MemoryAttention(nn.Module):
         k, v = self.kv(self.norm_m(memory)).chunk(2, -1)
         return self.split(k), self.split(v)
 
-    def forward(self, query, memory, kv=None):
+    def forward(self, query, memory, kv=None, token_valid=None):
         k, v = self.prepare(memory) if kv is None else kv
         q = self.split(self.q(self.norm_q(query)))
-        context = F.scaled_dot_product_attention(q, k, v, dropout_p=0.)
+        mask = None if token_valid is None else token_valid[:, None, None, :]
+        context = F.scaled_dot_product_attention(q, k, v, attn_mask=mask, dropout_p=0.)
         context = context.transpose(1, 2).reshape_as(query)
         query = query + self.out(context)
         return query + self.ff(query)
@@ -104,7 +106,7 @@ class LatentPoseModel(nn.Module):
                                              nn.GELU(), nn.Linear(c.width, 3))
         self.membership_head = nn.Linear(c.width, 1)
         self.uncertainty_head = nn.Linear(c.width, 1)
-        if c.coordinate_mode == "memory_residual":
+        if c.coordinate_mode in {"memory_residual", "equivariant_memory"}:
             self.match_query = nn.Linear(c.width, c.width)
             self.match_key = nn.Linear(c.width, c.width)
             nn.init.zeros_(self.match_query.weight)
@@ -114,6 +116,20 @@ class LatentPoseModel(nn.Module):
         if c.membership_mode == "appearance_prior":
             nn.init.zeros_(self.membership_head.weight)
             nn.init.zeros_(self.membership_head.bias)
+        # Construct last so shared parameter initialization is identical across
+        # ablations with and without this optional field.
+        if c.shape_geometry_channels:
+            self.shape_geometry_adapter = nn.Sequential(
+                nn.Conv3d(c.shape_geometry_channels, c.width, 1), nn.GELU(),
+                nn.Conv3d(c.width, c.width, 1))
+        if c.coordinate_mode == "equivariant_memory" and c.memory_mode != "observed_only":
+            self.generated_gate = nn.Linear(c.width, 1)
+            nn.init.zeros_(self.generated_gate.weight)
+            nn.init.constant_(self.generated_gate.bias, -6.)
+        if c.contextual_features:
+            self.memory_context = MemoryAttention(c.width, c.heads)
+            self.query_context = nn.ModuleList(
+                [MemoryAttention(c.width, c.heads) for _ in range(c.decoder_layers)])
 
     def _image(self, item):
         rgb, xyz, valid = item["rgb"], item["xyz"], item["valid"]
@@ -155,6 +171,7 @@ class LatentPoseModel(nn.Module):
         observed_f = encoded.gather(1, indices[..., None].expand(-1, -1, c.width))
         observed_p = positions.gather(1, indices[..., None].expand(-1, -1, 3))
         fs, ps = [observed_f], [observed_p]
+        token_valid = None
         if c.memory_mode != "observed_only":
             z, zp = reference["shape_latent"], reference["latent_xyz_m"]
             cells = c.latent_side ** 3
@@ -166,6 +183,19 @@ class LatentPoseModel(nn.Module):
             features = self.shape_adapter(z)
             if c.memory_mode == "geometry_only":
                 features = features * 0  # same decoder/capacity, no latent feature information
+            if c.shape_geometry_channels:
+                field = reference.get("shape_geometry")
+                if field is None or field.shape != (b, cells, c.shape_geometry_channels):
+                    raise ValueError("shape_geometry must contain ordered occupancy/boundary fractions")
+                if not torch.isfinite(field).all() or (field < 0).any() or (field > 1).any():
+                    raise ValueError("shape_geometry fractions must lie in [0,1]")
+                if (field[..., 1] > field[..., 0] + 1e-6).any():
+                    raise ValueError("boundary fraction cannot exceed occupancy")
+                field = field.transpose(1, 2).reshape(b, 2, *([c.latent_side] * 3))
+                features = features + self.shape_geometry_adapter(field)
+                support = F.adaptive_max_pool3d(field[:, 1:2], c.memory_side).flatten(1) > 0
+                token_valid = torch.cat((torch.ones(b, c.observed_tokens, device=rgb.device,
+                                                   dtype=torch.bool), support), 1)
             features = F.adaptive_avg_pool3d(features, c.memory_side).flatten(2).transpose(1, 2)
             points = ((zp - origin[:, None]) / scale[:, None]).transpose(1, 2)
             points = points.reshape(b, 3, *([c.latent_side] * 3))
@@ -173,6 +203,7 @@ class LatentPoseModel(nn.Module):
             fs.append(features)
             ps.append(points)
         features, positions = torch.cat(fs, 1), torch.cat(ps, 1)
+        feature_positions = positions
         if "memory_basis" in reference:
             basis = reference["memory_basis"]
             if basis.shape != (b, 3, 3) or not torch.isfinite(basis).all():
@@ -183,9 +214,15 @@ class LatentPoseModel(nn.Module):
             positions = positions @ basis.transpose(1, 2)
         kinds = torch.zeros(features.shape[:2], dtype=torch.long, device=rgb.device)
         kinds[:, c.observed_tokens:] = 1
-        tokens = features + self.position(positions) + self.kind(kinds)
+        # In this mode, features describe the physical reference-camera layout;
+        # the optional memory gauge acts only on the coordinates being read out.
+        token_positions = feature_positions if c.coordinate_mode == "equivariant_memory" else positions
+        tokens = features + self.position(token_positions) + self.kind(kinds)
+        if c.contextual_features:
+            tokens = self.memory_context(tokens, tokens, token_valid=token_valid)
         memory = ObjectMemory(tokens, positions, kinds, scale, origin)
-        if c.coordinate_mode == "memory_residual":
+        memory.token_valid = token_valid
+        if c.coordinate_mode in {"memory_residual", "equivariant_memory"}:
             memory.observed_descriptors = reference["foundation_features"].gather(
                 1, indices[..., None].expand(-1, -1, c.foundation_feature_dim))
         if c.membership_mode == "appearance_prior":
@@ -219,10 +256,15 @@ class LatentPoseModel(nn.Module):
         if self.training and memory.kv is not None:
             raise ValueError("cached inference memory cannot be used for training")
         for i, layer in enumerate(self.layers):
-            features = layer(features, memory.tokens, None if memory.kv is None else memory.kv[i])
+            if self.config.contextual_features:
+                features = self.query_context[i](features, features,
+                                                  token_valid=self._grid(valid).squeeze(-1) > .5)
+            features = layer(features, memory.tokens, None if memory.kv is None else memory.kv[i],
+                             memory.token_valid)
         coords = self.coordinate_head(features)
         coordinate_residual = None
-        if self.config.coordinate_mode == "memory_residual":
+        generated_gate = None
+        if self.config.coordinate_mode in {"memory_residual", "equivariant_memory"}:
             # A coordinate must be read from this object's measured memory first.
             # The learned residual can explain unseen surfaces, conditioned on
             # the full memory (including generated cells when configured).
@@ -231,8 +273,23 @@ class LatentPoseModel(nn.Module):
                 memory.observed_descriptors, dim=-1).transpose(1, 2)
             learned = self.match_query(features) @ self.match_key(memory.tokens[:, :count]).transpose(1, 2)
             attention = (appearance / .05 + learned / self.config.width ** .5).softmax(-1)
-            coordinate_residual = coords
-            coords = attention @ memory.positions[:, :count] + coordinate_residual
+            if self.config.coordinate_mode == "memory_residual":
+                coordinate_residual = coords
+                coords = attention @ memory.positions[:, :count] + coordinate_residual
+            else:
+                coords = attention @ memory.positions[:, :count]
+                if self.config.memory_mode != "observed_only":
+                    generated_logits = self.match_query(features) @ self.match_key(
+                        memory.tokens[:, count:]).transpose(1, 2) / self.config.width ** .5
+                    available = torch.ones(len(features), 1, 1, device=features.device, dtype=torch.bool)
+                    if memory.token_valid is not None:
+                        support = memory.token_valid[:, count:]
+                        generated_logits = generated_logits.masked_fill(~support[:, None], -1e4)
+                        available = support.any(-1)[:, None, None]
+                    generated_attention = generated_logits.softmax(-1)
+                    generated_coordinates = generated_attention @ memory.positions[:, count:]
+                    generated_gate = self.generated_gate(features).sigmoid() * available
+                    coords = (1-generated_gate)*coords + generated_gate*generated_coordinates
         logits = self.membership_head(features).squeeze(-1)
         membership_prior = None
         if self.config.membership_mode == "appearance_prior":
@@ -254,6 +311,8 @@ class LatentPoseModel(nn.Module):
             output["coordinate_residual"] = coordinate_residual
         if membership_prior is not None:
             output["membership_prior_logits"] = membership_prior
+        if generated_gate is not None:
+            output["generated_coordinate_fraction"] = generated_gate.squeeze(-1)
         if solve:
             # The solver does not backpropagate through potentially repeated singular values.
             with torch.no_grad():

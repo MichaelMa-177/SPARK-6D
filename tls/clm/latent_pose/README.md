@@ -201,6 +201,7 @@ CUDA_VISIBLE_DEVICES=0 bash python_latent -m latent_pose.smoke \
 | `scale_m` | `1` | 仅参考包：正的固定归一化尺寸 |
 | `shape_latent` | `L³,8` | 仅参考包：按 XYZ 网格展开的 SS latent |
 | `latent_xyz_m` | `L³,3` | 仅参考包：网格中心在首帧 RGB 相机中的坐标 |
+| `shape_geometry` | `L³,2` | 可选参考字段：SS decoder 的占据/边界体素比例；不是概率 |
 | `pose` | `4,4` | 仅标注查询包：固定物体记忆坐标到查询相机的 GT |
 | `target_mask` | `1,H,W` | 仅标注查询包：用于监督，不作为模型查询输入 |
 | `symmetry_transforms` | `S,4,4` | 可选：同一物体记忆坐标系中的米制对称变换，须含单位矩阵 |
@@ -259,7 +260,7 @@ bash python_latent -m latent_pose.evaluate \
 
 评分器先持久化全部预测，再读取标签；无效位姿计入联合通过率的失败分母。
 该评分器提供固定坐标系下的平移/旋转和离散对称诊断，尚不是官方 BOP AR。
-`surface_evaluate.py` 已接入官方 BOP MSSD/MSPD 实现及对称离散化；
+`surface_evaluate.py` 已接入官方 BOP VSD/MSSD/MSPD 实现及对称离散化；
 当前已计算自定义开发子集的 VSD/MSSD/MSPD；它不等同于完整官方 BOP AR，正式独立协议仍需补齐。
 正式论文实验还需统一检测/分割前端，并计入前处理和目标定位耗时。
 计时报告明确区分冷调用、网络部分和完整系统，不能将 smoke 时间当作稳态速度。
@@ -275,5 +276,53 @@ bash python_latent -m latent_pose.evaluate \
 5. 随机查询顺序、跳帧和遮挡后重现，验证独立定位。
 6. 在输入、训练数据和计时口径一致的条件下，与 One2Any、PANY、Any6D 比较。
 
-本实现是一套检验这些假设的基础。尚未完成跨物体训练、RGB-only/PnP、
-SAM3D layout-only 条件生成、在线记忆更新或官方 BOP 基准评测。
+本实现已经完成开发用跨物体训练和单帧 SS 空间先验接入，失败及成功结果均记录于
+[EXPERIMENTS.md](EXPERIMENTS.md)。当前仍未达到高精度跨视频泛化，也尚未实现
+RGB-only/PnP、在线记忆更新和完整官方 BOP 基准评测。
+
+## 独立训练数据与连续视频诊断
+
+`download_ov9d.py` 从作者公开地址固定抽取 64 个训练类别、每类 2 个实例，
+排除作者指定的测试类别；下载核验 Content-MD5，记录 SHA256，安全解包。
+`ov9d_episodes.py` 在单帧参考上生成 DINO/SS 特征，使用其他视角的合成 GT 监督。
+它明确拒绝整数饱和深度，记录所有拒绝原因；参考 mask 来自数据集，没有执行 SAM。
+训练查询 crop 使用带确定性扰动的标注框；验证/推理仍使用预测区域。
+
+较大的离线特征数据使用去重 CPU 缓存，单批次转入 GPU：
+
+```bash
+bash python_latent -m latent_pose.experiment \
+  --train /path/to/ov9d-packets/train.json \
+  --validation /path/to/validation.json \
+  --config latent_pose/configs/dino-spatial-surface.json \
+  --cpu-unique-cache --train-diagnostic-samples 384 \
+  --augment-memory-basis --steps 10000 --eval-every 1000 \
+  --output /path/to/new-run --device cuda
+```
+
+训练诊断子集索引写入 `run.json`；全部验证查询继续参与检查点选择。
+`shape_geometry_channels=2` 时注意力屏蔽无边界支持的生成单元；
+`geometry_only` 保留这些几何比例，移除原始 SS latent 特征。
+不带该配置的旧检查点维持原来的体积网格行为。
+
+`equivariant_memory` 是另一个待训练验证的解码变体：输出由实测/生成坐标的
+标量加权和构成，改变记忆坐标轴时严格跟随旋转。这里保证的是记忆坐标约定的
+变换关系，不是对输入图像视角变化的精度保证。生成坐标比例单独记录，
+其泛化效果需要与原残差解码器实测比较。
+
+`video_evaluate.py` 对完整连续 RGB-D 执行真实运行路径，全部预测落盘后读取 GT，
+同时报告绝对误差、旋转增量误差、位移增量误差和延迟。当前模型逐帧独立，
+这些指标用于诊断已有不稳定性，不代表已实现时序改进。
+`correspondence_audit.py` 使用 GT 分析可见/未见表面的坐标误差，
+其 GT-mask 求解结果只用于诊断，不能替代实际推理成绩。
+
+`contextual_features=true` 增加记忆内部和查询内部注意力；
+`rigidity_weight=0.1` 增加前景点间距离保持约束，不通过 SVD 求导。
+两项开关默认关闭，旧检查点继续按原结构加载。对应的 context / context-rigid
+配置正在做相同数据和种子的独立训练对照，结构检查通过不代表已有精度增益。
+
+`generated_mesh.py` 导出同一单帧 SS 先验的米制网格，
+`generated_refine.py` 使用冻结 FoundationPose 做诊断精修。
+可选首帧锚定只使用已提供的参考 RGB-D；`refinement_seeds.py` 在核验参考输入和
+坐标原点后，将已有学生预测转为逐帧精修初值。此路径没有使用真实 CAD，
+但依赖外部冻结精修器，须与轻量 latent 网络独立报告。

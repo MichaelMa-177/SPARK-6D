@@ -71,7 +71,7 @@ class PoseRuntime:
 
     @torch.inference_mode()
     def register_object(self, object_id, rgb, depth, mask, intrinsics, depth_scale_m,
-                        *, mask_source, shape_latent=None, latent_xyz_m=None):
+                        *, mask_source, shape_latent=None, latent_xyz_m=None, shape_geometry=None):
         if not isinstance(object_id, str) or not object_id.strip():
             raise ValueError("object_id must be a nonempty string")
         if object_id in self.objects:
@@ -82,8 +82,10 @@ class PoseRuntime:
         if self.model.config.memory_mode != "observed_only" and shape_latent is None and latent_xyz_m is None and self.shape_encoder is not None:
             prior, shape_provenance = self.shape_encoder(rgb, depth, mask, intrinsics, depth_scale_m)
             shape_latent, latent_xyz_m = prior["shape_latent"], prior["latent_xyz_m"]
+            shape_geometry = prior.get("shape_geometry")
         packet = prepare_reference(rgb, depth, mask, intrinsics, depth_scale_m,
-                                   self.model.config, shape_latent, latent_xyz_m)
+                                   self.model.config, shape_latent, latent_xyz_m,
+                                   shape_geometry=shape_geometry)
         self.add_features(packet, rgb, reference_crop_box(mask))
         tensors = tensor_packet(packet, self.device)
         memory = self.model.build_memory(tensors, cache=True)

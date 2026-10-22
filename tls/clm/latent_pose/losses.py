@@ -4,7 +4,7 @@ from torch.nn import functional as F
 from .geometry import camera_to_memory
 
 
-def coordinate_loss(output, pose, scale_m, target_mask, symmetry_transforms=None):
+def coordinate_loss(output, pose, scale_m, target_mask, symmetry_transforms=None, rigidity_weight=0.):
     """Supervise memory-frame coordinates, target membership and uncertainty.
 
     symmetry_transforms: optional [B,S,4,4] metric rigid transforms expressed
@@ -40,10 +40,27 @@ def coordinate_loss(output, pose, scale_m, target_mask, symmetry_transforms=None
     membership = bce[valid].mean() if valid.any() else output["membership_logits"].sum() * 0
     residual = output.get("coordinate_residual")
     regularization = .01 * residual[foreground].square().mean() if residual is not None and foreground.any() else zero
+    rigidity = zero
+    if rigidity_weight:
+        # A rigid coordinate field preserves pair distances, including on unseen
+        # surfaces. This uses training foreground labels, without an SVD gradient.
+        # Fixed uniform grid sampling leaves the batch/augmentation RNG unchanged.
+        ids = torch.linspace(0, n-1, min(n, 256), device=foreground.device).round().long()
+        selected = foreground[:, ids]
+        pairs = selected[:, :, None] & selected[:, None, :]
+        pairs &= torch.ones(len(ids), len(ids), device=pairs.device, dtype=torch.bool).triu(1)[None]
+        predicted_distances = torch.cdist(output["coordinates"][:, ids], output["coordinates"][:, ids],
+                                          compute_mode="donot_use_mm_for_euclid_dist")
+        camera_points = output["query_xyz_m"][:, ids]/scale_m[:, None]
+        measured_distances = torch.cdist(camera_points, camera_points,
+                                         compute_mode="donot_use_mm_for_euclid_dist")
+        if pairs.any():
+            rigidity = F.smooth_l1_loss(predicted_distances[pairs], measured_distances[pairs], beta=.05)
     return {
-        "loss": coordinate + .1 * nll + .2 * membership + regularization,
+        "loss": coordinate + .1 * nll + .2 * membership + regularization + rigidity_weight*rigidity,
         "coordinate": coordinate,
         "uncertainty": nll,
         "membership": membership,
         "residual_regularization": regularization,
+        "rigidity": rigidity,
     }

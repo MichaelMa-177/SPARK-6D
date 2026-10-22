@@ -21,6 +21,9 @@ class ModelConfig:
     coordinate_mode: str = "direct"
     membership_mode: str = "learned"
     consensus_trials: int = 256
+    shape_geometry_channels: int = 0
+    contextual_features: bool = False
+    rigidity_weight: float = 0.
 
     def __post_init__(self):
         if self.heads < 1:
@@ -43,16 +46,24 @@ class ModelConfig:
             raise ValueError("invalid robust solver settings")
         if self.foundation_feature_dim < 0:
             raise ValueError("foundation_feature_dim cannot be negative")
-        if self.coordinate_mode not in {"direct", "memory_residual"}:
+        if self.coordinate_mode not in {"direct", "memory_residual", "equivariant_memory"}:
             raise ValueError("unknown coordinate_mode")
-        if self.coordinate_mode == "memory_residual" and not self.foundation_feature_dim:
-            raise ValueError("memory_residual requires frozen foundation descriptors")
+        if self.coordinate_mode in {"memory_residual", "equivariant_memory"} and not self.foundation_feature_dim:
+            raise ValueError("memory coordinate readout requires frozen foundation descriptors")
         if self.membership_mode not in {"learned", "appearance_prior"}:
             raise ValueError("unknown membership_mode")
-        if self.membership_mode == "appearance_prior" and self.coordinate_mode != "memory_residual":
-            raise ValueError("appearance_prior requires memory_residual coordinates")
+        if self.membership_mode == "appearance_prior" and self.coordinate_mode not in {"memory_residual", "equivariant_memory"}:
+            raise ValueError("appearance_prior requires memory coordinate readout")
         if self.consensus_trials < 1:
             raise ValueError("consensus_trials must be positive")
+        if self.shape_geometry_channels not in {0, 2}:
+            raise ValueError("shape_geometry_channels must be 0 or 2")
+        if self.shape_geometry_channels and self.memory_mode == "observed_only":
+            raise ValueError("shape geometry requires generated memory")
+        if not isinstance(self.contextual_features, bool):
+            raise ValueError("contextual_features must be boolean")
+        if not 0 <= self.rigidity_weight <= 1:
+            raise ValueError("rigidity_weight must lie in [0,1]")
 
     def to_dict(self):
         return asdict(self)

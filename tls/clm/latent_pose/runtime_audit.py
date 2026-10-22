@@ -57,7 +57,8 @@ def main():
             packet = read_packet(path.parent/ref_name, reference=True)
             shape = {}
             if runtime.model.config.memory_mode != "observed_only":
-                shape = {k: packet[k].numpy() for k in ("shape_latent", "latent_xyz_m")}
+                shape = {k: packet[k].numpy() for k in ("shape_latent", "latent_xyz_m", "shape_geometry")
+                         if k in packet}
             registered[ref_name] = runtime.register_object(
                 ref_name, ref_rgb, ref_depth, mask, np.array(camera["cam_K"]).reshape(3, 3),
                 camera["depth_scale"]/1000, mask_source="official BOP reference mask_visib", **shape)

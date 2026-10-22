@@ -1,0 +1,12 @@
+{
+  "memory_mode": "spatial_latent",
+  "foundation_feature_dim": 1024,
+  "coordinate_mode": "memory_residual",
+  "membership_mode": "appearance_prior",
+  "solver_mode": "robust",
+  "membership_threshold": 0.5,
+  "inlier_radius_m": 0.01,
+  "robust_iterations": 4,
+  "shape_geometry_channels": 2,
+  "contextual_features": true
+}

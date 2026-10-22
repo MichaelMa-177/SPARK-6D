@@ -1,5 +1,32 @@
 # 新服务器项目文件位置
 
+## SPARK-6D V1 当前开发副本（2026-10-20 更新）
+
+本轮通过 `ssh -p 81 mmw@10.129.160.49` 操作用户指定的独立 clone：
+`/home/mmw/mmw`，GitHub 分支为 `MichaelMa-177/SPARK-6D:V1`。
+原 `/home/mmw/tls/clm` 保留；下文原迁移记录中的 `CODE` 仍指原目录。
+
+| 当前路径 | 用途 |
+|---|---|
+| `/home/mmw/mmw/tls/clm/latent_pose` | 单帧 RGB-D 物体记忆、训练、运行和评测 |
+| `latent_pose/GOAL.md` | 输入输出、泛化与时序验收合同及当前不足 |
+| `latent_pose/EXPERIMENTS.md` | 已运行的训练、教师校准、开发结果与失败记录 |
+| `latent_pose/shape_prior.py` | 单帧 SS latent、米制单元位置、占据与边界比例 |
+| `latent_pose/runtime.py`、`retrieval.py` | 持久物体记忆与当前帧区域定位；尚无在线更新 |
+| `latent_pose/experiment.py` | 可追溯训练、独立验证、源代码快照、去重特征缓存 |
+| `latent_pose/video_evaluate.py` | 原始连续帧的精度、运动误差和延迟诊断 |
+| `latent_pose/download_ov9d.py`、`ov9d_episodes.py` | 作者数据下载核验、深度质量过滤、独立多物体配对 |
+| `latent_pose/one2any_evaluate.py` | 外部预训练方法的适配对照，不等同于作者完整基准 |
+| `latent_pose/generated_mesh.py`、`generated_refine.py` | 单帧生成几何及冻结精修器诊断 |
+| `latent_pose/surface_evaluate.py` | 调用官方 BOP VSD/MSSD/MSPD 实现 |
+| `/data/mmw/clm_disk/clm-mmw-20261020/runs/latent-goal` | 本轮数据包、检查点、预测和评测报告 |
+| `/data/mmw/clm_disk/clm-mmw-20261020/envs` | 分离的 latent、FoundationPose 和外部基线环境 |
+
+当前网络仍未达到高精度跨视频泛化。开发实验不等同于正式 BOP 基准，
+FoundationPose 输出保留为伪标签，并用独立 GT 校准。
+
+---
+
 核对时间：2026-10-20 14:17（北京时间）。以下为实际存在的目录，不是待创建的规划。
 
 服务器：`ssh mmw@8.210.184.25`，使用本地现有 SSH 配置连接。该机器不是 CLM2/CLM3。

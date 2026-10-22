@@ -11,11 +11,28 @@ import time
 import cv2
 import numpy as np
 import torch
+from torch.nn import functional as F
 
 from .bop import object_annotation
 from .data import sha256
 from .export_reference import sam3d_to_camera
 from .rgbd import measured_geometry
+
+
+def occupancy_fields(logits, side=16):
+    """Fraction of decoded occupied/boundary voxels in each latent cell.
+
+    These are geometric fractions, not calibrated occupancy probabilities.
+    XYZ ordering is the decoder's dense tensor ordering, matching raw SS cells.
+    """
+    if logits.ndim != 5 or logits.shape[1] != 1 or not torch.isfinite(logits).all():
+        raise ValueError("decoder must return finite [B,1,X,Y,Z] occupancy logits")
+    occupied = (logits > 0).float()
+    interior = F.avg_pool3d(occupied, 3, stride=1, padding=1,
+                           count_include_pad=True) >= 1
+    boundary = occupied * ~interior
+    fields = F.adaptive_avg_pool3d(torch.cat((occupied, boundary), 1), side)
+    return fields.flatten(2).transpose(1, 2)
 
 
 class ShapePriorEncoder:
@@ -46,6 +63,7 @@ class ShapePriorEncoder:
             "vendor_pipeline_sha256": sha256(source/"sam3d_objects/pipeline/inference_pipeline.py"),
             "GT_pose_or_CAD_input": False, "mask_is_supplied": True, "SAM_segmentation_executed": False,
             "geometry": "generated volume cells, not observed or exact CAD surfaces",
+            "shape_geometry": "decoded occupied and 26-neighbour boundary fractions; logits > 0",
         }
 
     @torch.no_grad()
@@ -76,6 +94,9 @@ class ShapePriorEncoder:
             shapes = {key: (1, value.pos_emb.shape[0], value.input_layer.in_features)
                       for key, value in generator.reverse_fn.backbone.latent_mapping.items()}
             raw = generator(shapes, self.device, *args, **kwargs)
+            occupancy = pipeline.models["ss_decoder"](
+                raw["shape"].permute(0, 2, 1).reshape(1, 8, 16, 16, 16))
+        geometry = occupancy_fields(occupancy).float().cpu().numpy()[0]
         layout = pipeline.pose_decoder(raw, scene_scale=item.get("pointmap_scale"),
                                         scene_shift=item.get("pointmap_shift"))
         latent = raw["shape"][0].float().cpu().numpy()
@@ -94,9 +115,11 @@ class ShapePriorEncoder:
         if error > 1e-5 or not np.isfinite(points).all():
             raise ValueError("generated latent coordinate alignment failed")
         torch.cuda.synchronize()
-        return dict(shape_latent=latent, latent_xyz_m=points), {
+        return dict(shape_latent=latent, latent_xyz_m=points, shape_geometry=geometry), {
             **self.provenance, "seconds": time.perf_counter()-started,
             "layout": {k: v.tolist() for k, v in fields.items()}, "max_transform_error_m": error,
+            "decoded_occupied_fraction": float((occupancy > 0).float().mean()),
+            "boundary_supported_cells": int((geometry[:, 1] > 0).sum()),
         }
 
 
