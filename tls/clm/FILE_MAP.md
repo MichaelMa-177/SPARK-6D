@@ -21,12 +21,17 @@
 | `latent_pose/generate_reference_mesh.py`、`geometry_audit.py` | 同参考 SS 步数对照及事后 GT/CAD 几何诊断 |
 | `latent_pose/local_features.py` | SIFT + 实测深度的独立低重叠对照 |
 | `latent_pose/observed_refine.py` | 实测表面投影精修诊断；低重叠失败，未作默认后处理 |
+| `latent_pose/generate_slat_mesh.py`、`slat_color_ablation.py` | 固定 SS 的完整 SLAT 特征/网格导出及颜色消融 |
 | `latent_pose/surface_evaluate.py` | 调用官方 BOP VSD/MSSD/MSPD 实现 |
 | `/data/mmw/clm_disk/clm-mmw-20261020/runs/latent-goal` | 本轮数据包、检查点、预测和评测报告 |
 | `/data/mmw/clm_disk/clm-mmw-20261020/envs` | 分离的 latent、FoundationPose 和外部基线环境 |
 
 当前网络仍未达到高精度跨视频泛化。开发实验不等同于正式 BOP 基准，
 FoundationPose 输出保留为伪标签，并用独立 GT 校准。
+2026-10-22 已从本机登录会话下载两项官方 SLAT 权重并上传到工作盘 `weights/sam3d/`，
+本机及服务器 SHA256 均通过；校验记录为该目录下 `slat-transfer-verified.json`。
+首个完整 SLAT 产物位于 `runs/latent-goal/generated-mesh-slat-ss25-v1/`，
+包含 `slat.npz`、`decoded_canonical.npz`、`generated.ply` 和来源报告。
 
 ---
 

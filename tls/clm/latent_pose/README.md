@@ -331,6 +331,9 @@ bash python_latent -m latent_pose.experiment \
 仅在事后使用 GT/CAD 诊断形状误差，不能进入推理路径。
 `local_features.py` 提供 SIFT、实测深度和 RANSAC 的低重叠对照。
 SS 25 步精修后的两个跨视频旋转中位误差仍为 6.42° / 7.78°；
-完整 SLAT 权重尚未就绪，不能将这些 SS 结果描述为 SLAT 效果。
+这些 SS 结果与完整 SLAT 实验分开报告。`generate_slat_mesh.py` 已接通官方 SLAT
+生成器和网格解码器：复用已固定的 SS 假设，保存稀疏坐标、8 通道特征和米制网格。
+`slat_color_ablation.py` 固定同一几何，比较实测投影颜色、生成颜色和混合颜色。
+完整 SLAT 已在 RTX 3090 跑通；当前学生网络仍使用 SS 输入，尚未训练 SLAT 特征适配器。
 `observed_refine.py` 用首帧实测点与当前深度做点到平面精修。它在 scene59 开发
 关键帧上达到 89.19%，但两个低重叠跨视频明显恶化，故只作为诊断模块保留。
