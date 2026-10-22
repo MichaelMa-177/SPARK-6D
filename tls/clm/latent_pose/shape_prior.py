@@ -67,7 +67,7 @@ class ShapePriorEncoder:
         }
 
     @torch.no_grad()
-    def __call__(self, rgb, depth, mask, intrinsics, depth_scale_m):
+    def __call__(self, rgb, depth, mask, intrinsics, depth_scale_m, *, return_dense=False):
         from pytorch3d.transforms import quaternion_to_matrix
         from sam3d_objects.data.dataset.tdfy.transforms_3d import compose_transform
         _, xyz, valid = measured_geometry(rgb, depth, intrinsics, depth_scale_m)
@@ -115,7 +115,10 @@ class ShapePriorEncoder:
         if error > 1e-5 or not np.isfinite(points).all():
             raise ValueError("generated latent coordinate alignment failed")
         torch.cuda.synchronize()
-        return dict(shape_latent=latent, latent_xyz_m=points, shape_geometry=geometry), {
+        result = dict(shape_latent=latent, latent_xyz_m=points, shape_geometry=geometry)
+        if return_dense:
+            result["occupancy_logits"] = occupancy.float().cpu().numpy()[0, 0]
+        return result, {
             **self.provenance, "seconds": time.perf_counter()-started,
             "layout": {k: v.tolist() for k, v in fields.items()}, "max_transform_error_m": error,
             "decoded_occupied_fraction": float((occupancy > 0).float().mean()),

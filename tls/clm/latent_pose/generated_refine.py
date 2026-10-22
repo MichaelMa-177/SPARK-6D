@@ -32,8 +32,10 @@ def main():
     p.add_argument("--initial-predictions", help="memory-frame poses and frame_ids NPZ; independent refinement")
     p.add_argument("--calibrate-reference", action="store_true",
                    help="anchor generated geometry using refinement on the supplied reference only")
+    p.add_argument("--calibration-rounds", type=int, default=1,
+                   help="reference-only refinement rounds before fixing the shared memory gauge")
     args = p.parse_args()
-    if args.iterations <= 0 or args.max_frames < 0 or args.max_frames in {1, 2}:
+    if args.iterations <= 0 or args.calibration_rounds < 1 or args.max_frames < 0 or args.max_frames in {1, 2}:
         p.error("positive iterations and at least three frames required")
     scene, reference_scene, mesh_directory, inputs, output = map(
         Path, (args.scene, args.reference_scene, args.mesh_directory, args.inputs, args.output))
@@ -113,12 +115,26 @@ def main():
                                first_pose, atol=1e-6)
     generated_from_memory = np.eye(4)
     calibrated_reference = first_pose.copy()
+    calibration_history = []
+    calibration_seconds = 0.
     if args.calibrate_reference:
         ref_rgb = cv2.cvtColor(cv2.imread(str(inputs/"first_frame.png")), cv2.COLOR_BGR2RGB)
         ref_depth = cv2.imread(str(inputs/"first_depth.png"), -1).astype(np.float32)*saved_camera["depth_scale_m"]
-        calibrated_reference = est.track_one(
-            rgb=ref_rgb, depth=ref_depth, K=np.asarray(saved_camera["cam_K"]).reshape(3, 3),
-            iteration=args.iterations)
+        torch.cuda.synchronize()
+        started = time.perf_counter()
+        for round_index in range(args.calibration_rounds):
+            previous = calibrated_reference.copy()
+            calibrated_reference = est.track_one(
+                rgb=ref_rgb, depth=ref_depth, K=np.asarray(saved_camera["cam_K"]).reshape(3, 3),
+                iteration=args.iterations)
+            relative_rotation = calibrated_reference[:3, :3] @ previous[:3, :3].T
+            calibration_history.append({
+                "round": round_index+1, "pose": calibrated_reference.tolist(),
+                "rotation_change_deg": float(np.rad2deg(np.arccos(np.clip((np.trace(relative_rotation)-1)/2, -1, 1)))),
+                "translation_change_mm": float(np.linalg.norm(calibrated_reference[:3, 3]-previous[:3, 3])*1000),
+            })
+        torch.cuda.synchronize()
+        calibration_seconds = time.perf_counter()-started
         generated_from_memory = np.linalg.inv(calibrated_reference) @ first_pose
         np.testing.assert_allclose(calibrated_reference @ generated_from_memory, first_pose, atol=1e-6)
     poses, rows = [], []
@@ -173,6 +189,8 @@ def main():
         "initial_predictions_sha256": sha256(args.initial_predictions) if seeds is not None else None,
         "reference_frame_excluded_from_metrics": seeds is None,
         "reference_calibration": args.calibrate_reference,
+        "reference_calibration_history": calibration_history,
+        "reference_calibration_seconds": calibration_seconds,
         "calibrated_first_camera_from_generated": calibrated_reference.tolist(),
         "generated_from_memory": generated_from_memory.tolist(),
         "mesh_report_sha256": sha256(mesh_directory/"report.json"), "mesh_sha256": sha256(mesh_path),

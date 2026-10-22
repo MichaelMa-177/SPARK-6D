@@ -1,6 +1,6 @@
 # 新服务器项目文件位置
 
-## SPARK-6D V1 当前开发副本（2026-10-20 更新）
+## SPARK-6D V1 当前开发副本（2026-10-22 更新）
 
 本轮通过 `ssh -p 81 mmw@10.129.160.49` 操作用户指定的独立 clone：
 `/home/mmw/mmw`，GitHub 分支为 `MichaelMa-177/SPARK-6D:V1`。
@@ -18,6 +18,9 @@
 | `latent_pose/download_ov9d.py`、`ov9d_episodes.py` | 作者数据下载核验、深度质量过滤、独立多物体配对 |
 | `latent_pose/one2any_evaluate.py` | 外部预训练方法的适配对照，不等同于作者完整基准 |
 | `latent_pose/generated_mesh.py`、`generated_refine.py` | 单帧生成几何及冻结精修器诊断 |
+| `latent_pose/generate_reference_mesh.py`、`geometry_audit.py` | 同参考 SS 步数对照及事后 GT/CAD 几何诊断 |
+| `latent_pose/local_features.py` | SIFT + 实测深度的独立低重叠对照 |
+| `latent_pose/observed_refine.py` | 实测表面投影精修诊断；低重叠失败，未作默认后处理 |
 | `latent_pose/surface_evaluate.py` | 调用官方 BOP VSD/MSSD/MSPD 实现 |
 | `/data/mmw/clm_disk/clm-mmw-20261020/runs/latent-goal` | 本轮数据包、检查点、预测和评测报告 |
 | `/data/mmw/clm_disk/clm-mmw-20261020/envs` | 分离的 latent、FoundationPose 和外部基线环境 |

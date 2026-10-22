@@ -319,10 +319,18 @@ bash python_latent -m latent_pose.experiment \
 `contextual_features=true` 增加记忆内部和查询内部注意力；
 `rigidity_weight=0.1` 增加前景点间距离保持约束，不通过 SVD 求导。
 两项开关默认关闭，旧检查点继续按原结构加载。对应的 context / context-rigid
-配置正在做相同数据和种子的独立训练对照，结构检查通过不代表已有精度增益。
+配置均已完成相同数据和种子的 10,000 步独立训练对照，95 帧 consensus 为
+70.53% / 66.32%；跨视频电钻 scene50/54 仍为 0%，尚无整体精度增益。
 
 `generated_mesh.py` 导出同一单帧 SS 先验的米制网格，
 `generated_refine.py` 使用冻结 FoundationPose 做诊断精修。
 可选首帧锚定只使用已提供的参考 RGB-D；`refinement_seeds.py` 在核验参考输入和
 坐标原点后，将已有学生预测转为逐帧精修初值。此路径没有使用真实 CAD，
 但依赖外部冻结精修器，须与轻量 latent 网络独立报告。
+`generate_reference_mesh.py` 比较同一参考的 SS 采样步数；`geometry_audit.py`
+仅在事后使用 GT/CAD 诊断形状误差，不能进入推理路径。
+`local_features.py` 提供 SIFT、实测深度和 RANSAC 的低重叠对照。
+SS 25 步精修后的两个跨视频旋转中位误差仍为 6.42° / 7.78°；
+完整 SLAT 权重尚未就绪，不能将这些 SS 结果描述为 SLAT 效果。
+`observed_refine.py` 用首帧实测点与当前深度做点到平面精修。它在 scene59 开发
+关键帧上达到 89.19%，但两个低重叠跨视频明显恶化，故只作为诊断模块保留。
