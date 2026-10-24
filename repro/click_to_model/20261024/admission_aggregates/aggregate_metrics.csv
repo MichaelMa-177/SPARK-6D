@@ -1,0 +1,9 @@
+dataset,scene_id,object_id,method,inputs,tracking_frames,missing_predictions,mssd_failure_frames,mssd_mean_mm,add_failure_frames,adi_failure_frames,official_tracking_frames,official_mssd_failure_frames,correct_pose_accepted,wrong_pose_accepted,correct_pose_unconfirmed,wrong_pose_unconfirmed,initialization_seconds,audit_inclusive_tracking_fps
+YCB-Video,50,5,legacy_adaptive_trusted_view_cv,1916,1915,0,1915,99.19794007820155,1915,0,75,75,0,1913,0,2,7.302454312999544,31.024022026972524
+YCB-Video,50,5,all_hypotheses_adaptive_trusted_view_cv,1916,1915,0,1915,99.17784491534412,1915,0,75,75,0,0,0,1915,9.106034851000004,59.51549736849917
+YCB-Video,49,13,legacy_adaptive_trusted_view_cv,2401,2400,0,0,5.367011494571279,2400,0,74,0,1012,0,1388,0,5.763884443000279,15.453740357719436
+YCB-Video,49,13,all_hypotheses_adaptive_trusted_view_cv,2401,2400,0,0,5.9864638902085225,2400,0,74,0,0,0,2400,0,36.24963447000118,27.146555601042103
+YCB-Video,55,16,legacy_adaptive_trusted_view_cv,1829,1828,0,0,8.596127000694777,0,0,75,0,1552,0,276,0,7.247308547001012,21.87281442385939
+YCB-Video,55,16,all_hypotheses_adaptive_trusted_view_cv,1829,1828,0,0,8.674308431016536,0,0,75,0,0,0,1828,0,12.651229645998683,38.39416675543694
+YCB-Video,48,19,legacy_adaptive_trusted_view_cv,2243,2242,0,1,11.167183587121826,0,0,74,0,2236,1,5,0,6.002466653999363,26.671385894852676
+YCB-Video,48,19,all_hypotheses_adaptive_trusted_view_cv,2243,2242,0,1,11.237049905849537,0,0,74,0,0,0,2241,1,7.328315243999896,39.82012444365185
