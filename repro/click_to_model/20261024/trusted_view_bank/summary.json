@@ -1,0 +1,798 @@
+{
+  "schema": "click_to_model_numeric_bank_stage/1",
+  "runs": [
+    {
+      "id": "none_adaptive_lk",
+      "protocol": "none",
+      "seed_backend": "lk",
+      "primary_add": {
+        "denominator": 736,
+        "failed_frames": 0,
+        "failure_rate": 0.0,
+        "auc_0_to_0_1m": 0.9637092391304348,
+        "undefined_or_invalid_predictions": 0,
+        "mean_mm": 3.634649928672857,
+        "median_mm": 3.399993967258621,
+        "p95_mm": 5.880605900337953,
+        "max_mm": 6.994746415274256
+      },
+      "recovery": null,
+      "exploratory_latency": {
+        "count": 736,
+        "mean_ms": 17.27602081929485,
+        "p95_ms": 22.370626999986598,
+        "exploratory_fps": 57.88369963545903
+      },
+      "segments": [
+        {
+          "segment": "all_tracking",
+          "input_range_half_open": [
+            1,
+            737
+          ],
+          "denominator": 736,
+          "failed_add": 0,
+          "accepted_flags": {
+            "observation_valid": 736,
+            "temporal_admitted": 736,
+            "memory_updated": 736,
+            "seed_admitted": 736,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 736,
+            "temporal_admitted": 736,
+            "memory_updated": 736,
+            "seed_admitted": 736,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 736
+          }
+        }
+      ],
+      "failed_input_intervals_inclusive": [],
+      "view_update_input_intervals_inclusive": [],
+      "recovery_seed_admitted_inputs": [],
+      "recovery_memory_commit_inputs": []
+    },
+    {
+      "id": "none_adaptive_trusted_view",
+      "protocol": "none",
+      "seed_backend": "trusted-view",
+      "primary_add": {
+        "denominator": 736,
+        "failed_frames": 0,
+        "failure_rate": 0.0,
+        "auc_0_to_0_1m": 0.9637092391304348,
+        "undefined_or_invalid_predictions": 0,
+        "mean_mm": 3.634649928672857,
+        "median_mm": 3.399993967258621,
+        "p95_mm": 5.880605900337953,
+        "max_mm": 6.994746415274256
+      },
+      "recovery": null,
+      "exploratory_latency": {
+        "count": 736,
+        "mean_ms": 24.848083701081197,
+        "p95_ms": 27.99118674994361,
+        "exploratory_fps": 40.24455213648881
+      },
+      "segments": [
+        {
+          "segment": "all_tracking",
+          "input_range_half_open": [
+            1,
+            737
+          ],
+          "denominator": 736,
+          "failed_add": 0,
+          "accepted_flags": {
+            "observation_valid": 736,
+            "temporal_admitted": 736,
+            "memory_updated": 736,
+            "seed_admitted": 736,
+            "view_updated": 736
+          },
+          "known_flags": {
+            "observation_valid": 736,
+            "temporal_admitted": 736,
+            "memory_updated": 736,
+            "seed_admitted": 736,
+            "view_updated": 736
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {
+            "verified_cad_view": 736
+          },
+          "seed_sources": {
+            "lk_rgbd": 736
+          }
+        }
+      ],
+      "failed_input_intervals_inclusive": [],
+      "view_update_input_intervals_inclusive": [
+        [
+          1,
+          736
+        ]
+      ],
+      "recovery_seed_admitted_inputs": [],
+      "recovery_memory_commit_inputs": []
+    },
+    {
+      "id": "stride4_adaptive_lk",
+      "protocol": "stride4",
+      "seed_backend": "lk",
+      "primary_add": {
+        "denominator": 184,
+        "failed_frames": 165,
+        "failure_rate": 0.8967391304347826,
+        "auc_0_to_0_1m": 0.10380434782608697,
+        "undefined_or_invalid_predictions": 0,
+        "mean_mm": 355.5932505687913,
+        "median_mm": 408.4926583075186,
+        "p95_mm": 574.2245128983828,
+        "max_mm": 609.3269901889989
+      },
+      "recovery": null,
+      "exploratory_latency": {
+        "count": 184,
+        "mean_ms": 22.30360684238952,
+        "p95_ms": 32.18605675009485,
+        "exploratory_fps": 44.83579750425981
+      },
+      "segments": [
+        {
+          "segment": "all_tracking",
+          "input_range_half_open": [
+            1,
+            185
+          ],
+          "denominator": 184,
+          "failed_add": 165,
+          "accepted_flags": {
+            "observation_valid": 94,
+            "temporal_admitted": 19,
+            "memory_updated": 19,
+            "seed_admitted": 19,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 184,
+            "temporal_admitted": 184,
+            "memory_updated": 184,
+            "seed_admitted": 184,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 75,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 184
+          }
+        }
+      ],
+      "failed_input_intervals_inclusive": [
+        [
+          20,
+          184
+        ]
+      ],
+      "view_update_input_intervals_inclusive": [],
+      "recovery_seed_admitted_inputs": [],
+      "recovery_memory_commit_inputs": []
+    },
+    {
+      "id": "stride4_adaptive_trusted_view",
+      "protocol": "stride4",
+      "seed_backend": "trusted-view",
+      "primary_add": {
+        "denominator": 184,
+        "failed_frames": 163,
+        "failure_rate": 0.8858695652173914,
+        "auc_0_to_0_1m": 0.11250000000000003,
+        "undefined_or_invalid_predictions": 0,
+        "mean_mm": 644.323775474435,
+        "median_mm": 774.0261605620611,
+        "p95_mm": 793.6890078557285,
+        "max_mm": 804.2967630233605
+      },
+      "recovery": null,
+      "exploratory_latency": {
+        "count": 184,
+        "mean_ms": 23.226965836948427,
+        "p95_ms": 24.2932531999827,
+        "exploratory_fps": 43.053406416487014
+      },
+      "segments": [
+        {
+          "segment": "all_tracking",
+          "input_range_half_open": [
+            1,
+            185
+          ],
+          "denominator": 184,
+          "failed_add": 163,
+          "accepted_flags": {
+            "observation_valid": 21,
+            "temporal_admitted": 21,
+            "memory_updated": 21,
+            "seed_admitted": 21,
+            "view_updated": 21
+          },
+          "known_flags": {
+            "observation_valid": 184,
+            "temporal_admitted": 184,
+            "memory_updated": 184,
+            "seed_admitted": 184,
+            "view_updated": 21
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 163,
+          "recovery_reasons": {
+            "unique_recovery_hypothesis": 1,
+            "insufficient_recovery_matches": 162
+          },
+          "view_reasons": {
+            "verified_cad_view": 21
+          },
+          "seed_sources": {
+            "lk_rgbd": 183,
+            "trusted_view_orb_rgbd": 1
+          }
+        }
+      ],
+      "failed_input_intervals_inclusive": [
+        [
+          22,
+          184
+        ]
+      ],
+      "view_update_input_intervals_inclusive": [
+        [
+          1,
+          21
+        ]
+      ],
+      "recovery_seed_admitted_inputs": [
+        20
+      ],
+      "recovery_memory_commit_inputs": [
+        20
+      ]
+    },
+    {
+      "id": "occlusion_100_130_adaptive_lk",
+      "protocol": "occlusion_100_130",
+      "seed_backend": "lk",
+      "primary_add": {
+        "denominator": 736,
+        "failed_frames": 636,
+        "failure_rate": 0.8641304347826086,
+        "auc_0_to_0_1m": 0.1354891304347826,
+        "undefined_or_invalid_predictions": 0,
+        "mean_mm": 300.0380949003354,
+        "median_mm": 395.49253264549657,
+        "p95_mm": 452.512611993757,
+        "max_mm": 586.9563435646916
+      },
+      "recovery": {
+        "corruption_selected_range": [
+          100,
+          130
+        ],
+        "first_reappearance_selected_input": 130,
+        "required_consecutive_successes": 3,
+        "first_recovered_selected_input": null,
+        "recovery_confirmed_selected_input": null,
+        "recovery_delay_selected_inputs": null,
+        "recovery_confirmation_delay_selected_inputs": null,
+        "right_censored": true,
+        "observed_post_event_inputs": 607,
+        "seconds": null,
+        "physical_visibility_annotations_used": false,
+        "first_reappearance_source_frame": 130,
+        "first_recovered_source_frame": null,
+        "recovery_confirmed_source_frame": null
+      },
+      "exploratory_latency": {
+        "count": 736,
+        "mean_ms": 22.513692802989553,
+        "p95_ms": 32.30661874994212,
+        "exploratory_fps": 44.41741338263316
+      },
+      "segments": [
+        {
+          "segment": "all_tracking",
+          "input_range_half_open": [
+            1,
+            737
+          ],
+          "denominator": 736,
+          "failed_add": 636,
+          "accepted_flags": {
+            "observation_valid": 452,
+            "temporal_admitted": 99,
+            "memory_updated": 99,
+            "seed_admitted": 99,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 736,
+            "temporal_admitted": 736,
+            "memory_updated": 736,
+            "seed_admitted": 736,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 353,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 736
+          }
+        },
+        {
+          "segment": "before_intervention",
+          "input_range_half_open": [
+            1,
+            100
+          ],
+          "denominator": 99,
+          "failed_add": 0,
+          "accepted_flags": {
+            "observation_valid": 99,
+            "temporal_admitted": 99,
+            "memory_updated": 99,
+            "seed_admitted": 99,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 99,
+            "temporal_admitted": 99,
+            "memory_updated": 99,
+            "seed_admitted": 99,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 99
+          }
+        },
+        {
+          "segment": "synthetic_occlusion",
+          "input_range_half_open": [
+            100,
+            130
+          ],
+          "denominator": 30,
+          "failed_add": 29,
+          "accepted_flags": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 30,
+            "temporal_admitted": 30,
+            "memory_updated": 30,
+            "seed_admitted": 30,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 30
+          }
+        },
+        {
+          "segment": "after_reappearance",
+          "input_range_half_open": [
+            130,
+            737
+          ],
+          "denominator": 607,
+          "failed_add": 607,
+          "accepted_flags": {
+            "observation_valid": 353,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 607,
+            "temporal_admitted": 607,
+            "memory_updated": 607,
+            "seed_admitted": 607,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 353,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 607
+          }
+        }
+      ],
+      "failed_input_intervals_inclusive": [
+        [
+          101,
+          736
+        ]
+      ],
+      "view_update_input_intervals_inclusive": [],
+      "recovery_seed_admitted_inputs": [],
+      "recovery_memory_commit_inputs": []
+    },
+    {
+      "id": "occlusion_100_130_adaptive_trusted_view",
+      "protocol": "occlusion_100_130",
+      "seed_backend": "trusted-view",
+      "primary_add": {
+        "denominator": 736,
+        "failed_frames": 636,
+        "failure_rate": 0.8641304347826086,
+        "auc_0_to_0_1m": 0.1354891304347826,
+        "undefined_or_invalid_predictions": 0,
+        "mean_mm": 300.0380949003354,
+        "median_mm": 395.49253264549657,
+        "p95_mm": 452.512611993757,
+        "max_mm": 586.9563435646916
+      },
+      "recovery": {
+        "corruption_selected_range": [
+          100,
+          130
+        ],
+        "first_reappearance_selected_input": 130,
+        "required_consecutive_successes": 3,
+        "first_recovered_selected_input": null,
+        "recovery_confirmed_selected_input": null,
+        "recovery_delay_selected_inputs": null,
+        "recovery_confirmation_delay_selected_inputs": null,
+        "right_censored": true,
+        "observed_post_event_inputs": 607,
+        "seconds": null,
+        "physical_visibility_annotations_used": false,
+        "first_reappearance_source_frame": 130,
+        "first_recovered_source_frame": null,
+        "recovery_confirmed_source_frame": null
+      },
+      "exploratory_latency": {
+        "count": 736,
+        "mean_ms": 29.75637701630549,
+        "p95_ms": 39.96923950001019,
+        "exploratory_fps": 33.60624176296845
+      },
+      "segments": [
+        {
+          "segment": "all_tracking",
+          "input_range_half_open": [
+            1,
+            737
+          ],
+          "denominator": 736,
+          "failed_add": 636,
+          "accepted_flags": {
+            "observation_valid": 452,
+            "temporal_admitted": 99,
+            "memory_updated": 99,
+            "seed_admitted": 99,
+            "view_updated": 99
+          },
+          "known_flags": {
+            "observation_valid": 736,
+            "temporal_admitted": 736,
+            "memory_updated": 736,
+            "seed_admitted": 736,
+            "view_updated": 99
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 353,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 637,
+          "recovery_reasons": {
+            "insufficient_recovery_matches": 637
+          },
+          "view_reasons": {
+            "verified_cad_view": 99
+          },
+          "seed_sources": {
+            "lk_rgbd": 736
+          }
+        },
+        {
+          "segment": "before_intervention",
+          "input_range_half_open": [
+            1,
+            100
+          ],
+          "denominator": 99,
+          "failed_add": 0,
+          "accepted_flags": {
+            "observation_valid": 99,
+            "temporal_admitted": 99,
+            "memory_updated": 99,
+            "seed_admitted": 99,
+            "view_updated": 99
+          },
+          "known_flags": {
+            "observation_valid": 99,
+            "temporal_admitted": 99,
+            "memory_updated": 99,
+            "seed_admitted": 99,
+            "view_updated": 99
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 0,
+          "recovery_reasons": {},
+          "view_reasons": {
+            "verified_cad_view": 99
+          },
+          "seed_sources": {
+            "lk_rgbd": 99
+          }
+        },
+        {
+          "segment": "synthetic_occlusion",
+          "input_range_half_open": [
+            100,
+            130
+          ],
+          "denominator": 30,
+          "failed_add": 29,
+          "accepted_flags": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 30,
+            "temporal_admitted": 30,
+            "memory_updated": 30,
+            "seed_admitted": 30,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 0,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 30,
+          "recovery_reasons": {
+            "insufficient_recovery_matches": 30
+          },
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 30
+          }
+        },
+        {
+          "segment": "after_reappearance",
+          "input_range_half_open": [
+            130,
+            737
+          ],
+          "denominator": 607,
+          "failed_add": 607,
+          "accepted_flags": {
+            "observation_valid": 353,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "known_flags": {
+            "observation_valid": 607,
+            "temporal_admitted": 607,
+            "memory_updated": 607,
+            "seed_admitted": 607,
+            "view_updated": 0
+          },
+          "flags_on_gt_bad_poses": {
+            "observation_valid": 353,
+            "temporal_admitted": 0,
+            "memory_updated": 0,
+            "seed_admitted": 0,
+            "view_updated": 0
+          },
+          "recovery_attempts": 607,
+          "recovery_reasons": {
+            "insufficient_recovery_matches": 607
+          },
+          "view_reasons": {},
+          "seed_sources": {
+            "lk_rgbd": 607
+          }
+        }
+      ],
+      "failed_input_intervals_inclusive": [
+        [
+          101,
+          736
+        ]
+      ],
+      "view_update_input_intervals_inclusive": [
+        [
+          1,
+          99
+        ]
+      ],
+      "recovery_seed_admitted_inputs": [],
+      "recovery_memory_commit_inputs": []
+    }
+  ],
+  "exports": {
+    "none_adaptive_lk_metrics": {
+      "rows": 737,
+      "parts": 1
+    },
+    "none_adaptive_lk_poses": {
+      "rows": 737,
+      "parts": 4
+    },
+    "none_adaptive_lk_iterations": {
+      "rows": 736,
+      "parts": 4
+    },
+    "none_adaptive_trusted_view_metrics": {
+      "rows": 737,
+      "parts": 1
+    },
+    "none_adaptive_trusted_view_poses": {
+      "rows": 737,
+      "parts": 4
+    },
+    "none_adaptive_trusted_view_iterations": {
+      "rows": 736,
+      "parts": 4
+    },
+    "stride4_adaptive_lk_metrics": {
+      "rows": 185,
+      "parts": 1
+    },
+    "stride4_adaptive_lk_poses": {
+      "rows": 185,
+      "parts": 1
+    },
+    "stride4_adaptive_lk_iterations": {
+      "rows": 281,
+      "parts": 2
+    },
+    "stride4_adaptive_trusted_view_metrics": {
+      "rows": 185,
+      "parts": 1
+    },
+    "stride4_adaptive_trusted_view_poses": {
+      "rows": 185,
+      "parts": 1
+    },
+    "stride4_adaptive_trusted_view_iterations": {
+      "rows": 184,
+      "parts": 1
+    },
+    "occlusion_100_130_adaptive_lk_metrics": {
+      "rows": 737,
+      "parts": 1
+    },
+    "occlusion_100_130_adaptive_lk_poses": {
+      "rows": 737,
+      "parts": 3
+    },
+    "occlusion_100_130_adaptive_lk_iterations": {
+      "rows": 1183,
+      "parts": 5
+    },
+    "occlusion_100_130_adaptive_trusted_view_metrics": {
+      "rows": 737,
+      "parts": 1
+    },
+    "occlusion_100_130_adaptive_trusted_view_poses": {
+      "rows": 737,
+      "parts": 3
+    },
+    "occlusion_100_130_adaptive_trusted_view_iterations": {
+      "rows": 1183,
+      "parts": 5
+    },
+    "all_original_candidate_proposals": {
+      "rows": 184,
+      "parts": 1
+    },
+    "quarantined_candidate_chain_22": {
+      "rows": 4,
+      "parts": 1
+    }
+  },
+  "all_selected_gt_defined_tracking_frames_retained": true,
+  "repeats_per_cell": 1,
+  "raw_pose_coordinates": "original CAD to camera, metres",
+  "raw_iteration_and_candidate_coordinates": "centered CAD to camera, metres",
+  "original_cad_center_m": [
+    -0.0012394999999999975,
+    -0.0024565000000000003,
+    0.011843
+  ],
+  "candidate_chain_new_neural_inference": false,
+  "candidate_chain_trusted_memory_updated": false,
+  "conclusion": "The bank rescued two selected stride frames, but mean ADD became worse; both methods failed all 607 post-occlusion reappearance frames. Candidate-chain accuracy is a diagnostic, not completed recovery."
+}
