@@ -1,0 +1,19 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "matrix_rows",
+  "arrays": {
+    "values": {
+      "dtype": "<f8",
+      "shape": [
+        1214,
+        4,
+        4
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

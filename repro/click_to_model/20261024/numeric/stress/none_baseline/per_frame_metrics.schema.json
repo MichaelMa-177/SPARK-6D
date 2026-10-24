@@ -1,0 +1,49 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "flat_values",
+  "arrays": {
+    "source_frame_indices": {
+      "dtype": "<i8",
+      "shape": [
+        737
+      ]
+    },
+    "raw_poses": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "gt_defined": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "evaluated_tracking": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "add_m": {
+      "dtype": "<f8",
+      "shape": [
+        737
+      ]
+    },
+    "corrupted": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

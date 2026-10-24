@@ -1,0 +1,85 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "flat_values",
+  "arrays": {
+    "source_frame_ids": {
+      "dtype": "<i8",
+      "shape": [
+        1214
+      ]
+    },
+    "gt_defined": {
+      "dtype": "|b1",
+      "shape": [
+        1214
+      ]
+    },
+    "tracking_evaluated": {
+      "dtype": "|b1",
+      "shape": [
+        1214
+      ]
+    },
+    "prediction_present": {
+      "dtype": "|b1",
+      "shape": [
+        1214
+      ]
+    },
+    "prediction_valid": {
+      "dtype": "|b1",
+      "shape": [
+        1214
+      ]
+    },
+    "raw_prediction": {
+      "dtype": "<f8",
+      "shape": [
+        1214,
+        4,
+        4
+      ]
+    },
+    "add_errors_m": {
+      "dtype": "<f8",
+      "shape": [
+        1214
+      ]
+    },
+    "add_s_errors_m": {
+      "dtype": "<f8",
+      "shape": [
+        1214
+      ]
+    },
+    "mssd_errors_m": {
+      "dtype": "<f8",
+      "shape": [
+        1214
+      ]
+    },
+    "geometry_support": {
+      "dtype": "|i1",
+      "shape": [
+        1214
+      ]
+    },
+    "temporal_admission": {
+      "dtype": "|i1",
+      "shape": [
+        1214
+      ]
+    },
+    "memory_commit": {
+      "dtype": "|i1",
+      "shape": [
+        1214
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

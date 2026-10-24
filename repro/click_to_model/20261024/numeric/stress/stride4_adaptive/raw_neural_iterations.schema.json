@@ -1,0 +1,1483 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "matrix_rows",
+  "arrays": {
+    "frame_000001": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000002": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000003": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000004": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000005": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000006": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000007": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000008": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000009": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000010": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000011": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000012": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000013": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000014": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000015": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000016": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000017": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000018": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000019": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000020": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000021": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000022": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000023": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000024": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000025": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000026": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000027": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000028": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000029": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000030": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000031": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000032": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000033": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000034": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000035": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000036": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000037": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000038": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000039": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000040": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000041": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000042": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000043": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000044": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000045": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000046": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000047": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000048": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000049": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000050": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000051": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000052": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000053": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000054": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000055": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000056": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000057": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000058": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000059": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000060": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000061": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000062": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000063": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000064": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000065": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000066": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000067": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000068": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000069": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000070": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000071": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000072": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000073": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000074": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000075": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000076": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000077": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000078": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000079": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000080": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000081": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000082": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000083": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000084": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000085": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000086": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000087": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000088": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000089": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000090": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000091": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000092": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000093": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000094": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000095": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000096": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000097": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000098": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000099": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000100": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000101": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000102": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000103": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000104": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000105": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000106": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000107": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000108": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000109": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000110": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000111": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000112": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000113": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000114": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000115": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000116": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000117": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000118": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000119": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000120": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000121": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000122": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000123": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000124": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000125": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000126": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000127": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000128": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000129": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000130": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000131": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000132": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000133": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000134": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000135": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000136": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000137": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000138": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000139": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000140": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000141": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000142": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000143": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000144": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000145": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000146": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000147": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000148": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000149": {
+      "dtype": "<f8",
+      "shape": [
+        1,
+        4,
+        4
+      ]
+    },
+    "frame_000150": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000151": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000152": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000153": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000154": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000155": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000156": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000157": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000158": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000159": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000160": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000161": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000162": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000163": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000164": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000165": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000166": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000167": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000168": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000169": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000170": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000171": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000172": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000173": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000174": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000175": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000176": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000177": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000178": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000179": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000180": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000181": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000182": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    },
+    "frame_000183": {
+      "dtype": "<f8",
+      "shape": [
+        2,
+        4,
+        4
+      ]
+    },
+    "frame_000184": {
+      "dtype": "<f8",
+      "shape": [
+        3,
+        4,
+        4
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}
