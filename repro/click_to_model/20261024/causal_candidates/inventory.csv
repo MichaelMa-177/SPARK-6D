@@ -1,0 +1,13 @@
+label,arrays,values,string_arrays_excluded_count,csv_parts,round_trip_verified
+cracker_clean/raw_observations,5,26080,0,12,True
+cracker_clean/initial_queries,3,372,0,1,True
+cracker_clean/per_frame_metrics,10,4400,2,2,True
+cracker_stress/raw_observations,5,26080,0,12,True
+cracker_stress/initial_queries,3,372,0,1,True
+cracker_stress/per_frame_metrics,10,4400,2,2,True
+mustard_occlusion/raw_observations,5,122342,0,51,True
+mustard_occlusion/initial_queries,5,286,0,1,True
+mustard_occlusion/per_frame_metrics,10,40535,2,11,True
+mustard_stride4/raw_observations,5,30710,0,13,True
+mustard_stride4/initial_queries,5,286,0,1,True
+mustard_stride4/per_frame_metrics,10,10175,2,3,True

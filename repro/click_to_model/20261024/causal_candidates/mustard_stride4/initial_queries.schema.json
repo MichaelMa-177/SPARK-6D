@@ -1,0 +1,45 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "flat_values",
+  "arrays": {
+    "pixels_xy": {
+      "dtype": "<f8",
+      "shape": [
+        30,
+        2
+      ]
+    },
+    "query_ids": {
+      "dtype": "<i8",
+      "shape": [
+        30
+      ]
+    },
+    "first_camera_anchors": {
+      "dtype": "<f8",
+      "shape": [
+        30,
+        3
+      ]
+    },
+    "object_anchors": {
+      "dtype": "<f8",
+      "shape": [
+        30,
+        3
+      ]
+    },
+    "initial_pose": {
+      "dtype": "<f8",
+      "shape": [
+        4,
+        4
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

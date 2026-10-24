@@ -1,0 +1,17 @@
+probe,metric_scope,runtime_inputs,original_source_inputs,full_original_sequence,declared_selected_stream_complete,raw_original_CAD_coordinates_bound,tracking_denominator,failed_frames,failure_fraction,undefined_or_invalid_candidates,mean_mm,median_mm,p95_mm,max_mm,auc_0_to_0_1m,source_valid,end_to_end_tracking,identity_accuracy_measured
+cracker_clean,all_tracking_motion_ADD,80,375,False,False,False,79,0,0.0,0,5.279568949530079,5.112142513595467,6.339738645565739,7.562689510095136,0.9471518987341773,True,False,False
+cracker_clean,unhidden_tracking_motion_ADD_secondary,80,375,False,False,False,79,0,0.0,0,5.279568949530079,5.112142513595467,6.339738645565739,7.562689510095136,0.9471518987341773,True,False,False
+cracker_clean,post_occlusion_motion_ADD_secondary,80,375,False,False,False,0,0,,0,,,,,,True,False,False
+cracker_stress,all_tracking_motion_ADD,80,375,False,False,False,79,20,0.25316455696202533,20,,,,,0.7062658227848101,True,False,False
+cracker_stress,unhidden_tracking_motion_ADD_secondary,80,375,False,False,False,59,0,0.0,0,5.402622380381664,5.238416179802834,6.607127772107343,7.704638089799291,0.9456779661016951,True,False,False
+cracker_stress,post_occlusion_motion_ADD_secondary,80,375,False,False,False,40,0,0.0,0,5.596307121552638,5.3354864495779,6.6469802523097625,7.704638089799291,0.94325,True,False,False
+mustard_occlusion,all_tracking_motion_ADD,737,737,True,True,True,736,639,0.8682065217391305,639,,,,,0.12593070652173916,True,False,False
+mustard_occlusion,unhidden_tracking_motion_ADD_secondary,737,737,True,True,True,706,609,0.8626062322946175,609,,,,,0.1312818696883853,True,False,False
+mustard_occlusion,post_occlusion_motion_ADD_secondary,737,737,True,True,True,607,607,1.0,607,,,,,0.0,True,False,False
+mustard_occlusion,all_tracking_raw_ADD,737,737,True,True,True,736,639,0.8682065217391305,639,,,,,0.12595788043478265,True,False,False
+mustard_occlusion,post_occlusion_raw_ADD_secondary,737,737,True,True,True,607,607,1.0,607,,,,,0.0,True,False,False
+mustard_stride4,all_tracking_motion_ADD,185,737,False,True,True,184,157,0.8532608695652174,157,,,,,0.14013586956521737,True,False,False
+mustard_stride4,unhidden_tracking_motion_ADD_secondary,185,737,False,True,True,184,157,0.8532608695652174,157,,,,,0.14013586956521737,True,False,False
+mustard_stride4,post_occlusion_motion_ADD_secondary,185,737,False,True,True,0,0,,0,,,,,,True,False,False
+mustard_stride4,all_tracking_raw_ADD,185,737,False,True,True,184,157,0.8532608695652174,157,,,,,0.1399728260869565,True,False,False
+mustard_stride4,post_occlusion_raw_ADD_secondary,185,737,False,True,True,0,0,,0,,,,,,True,False,False

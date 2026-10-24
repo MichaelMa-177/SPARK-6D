@@ -1,0 +1,3 @@
+probe,reappearance_input,consecutive_correct_candidates_required,first_recovered_candidate_input,confirmation_input,recovery_delay_inputs,right_censored,criterion,end_to_end_recovery
+cracker_stress,40,5,40,44,0,False,raw_ADD_if_original_CAD_gauge_bound_else_motion_ADD,False
+mustard_occlusion,130,5,,,,True,raw_ADD_if_original_CAD_gauge_bound_else_motion_ADD,False
