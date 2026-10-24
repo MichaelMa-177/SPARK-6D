@@ -1,0 +1,4 @@
+component,bias,sigma_MAD,sigma_floor,train_start_inclusive,train_end_exclusive,holdout_start_inclusive,holdout_end_exclusive,GT_used,train_count,holdout_count
+u_pixels,-1.1486610708598164,1.1524583474031491,0.5,1,70,70,100,False,2866,2239
+v_pixels,-1.160614561407101,1.234935987061005,0.5,1,70,70,100,False,2866,2239
+z_metres,-0.0011358476208710444,0.003117293562973794,0.001,1,70,70,100,False,2866,2239

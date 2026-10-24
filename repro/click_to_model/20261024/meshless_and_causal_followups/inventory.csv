@@ -1,0 +1,10 @@
+label,arrays,values,string_arrays_excluded_count,csv_parts,round_trip_verified
+meshless_full375/per_frame_metrics,11,20641,2,10,True
+meshless_full375/raw_neural_iterations,374,8400,0,2,True
+meshless_full375/latency_seconds,1,374,0,1,True
+cohort_replay/per_frame_metrics,10,40535,2,11,True
+cohort_replay/query_observations_and_evidence,19,1611789,0,153,True
+cohort_replay/reconstructed_anchors,8,984,0,1,True
+resolution480/raw_observations,5,122342,0,51,True
+resolution480/initial_queries,5,286,0,1,True
+resolution480/per_frame_metrics,10,40535,2,11,True

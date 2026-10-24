@@ -1,0 +1,4 @@
+experiment,input_frames,tracking_denominator,postocclusion_denominator,runtime_GT_used,controlled_replay,primary_first_frame_GT_gauge,absolute_CAD_pose_bound,controller_tracking,controller_uncertain_or_lost,FPS
+meshless_full375,375,374,0,False,False,True,False,208,166,43.08856944541946
+cohort_replay,737,736,607,False,True,False,True,,,13.83905297733012
+resolution480,737,736,607,False,False,False,True,,,22.041840983710006

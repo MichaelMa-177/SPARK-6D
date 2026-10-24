@@ -1,0 +1,12 @@
+experiment,metric,denominator,failed_frames,failure_rate,auc_0_to_0_1m,undefined_or_invalid_predictions,mean_mm,median_mm,p95_mm,max_mm
+meshless_full375,first_frame_aligned_motion_ADD,374,0,0.0,0.9205882352941177,0,8.007719237851497,7.37879847831437,12.827480584832115,18.13997978462135
+cohort_replay,all_tracking_motion_ADD,736,637,0.8654891304347826,0.1305298913043478,631,,,,
+cohort_replay,unhidden_tracking_motion_ADD_secondary,706,607,0.8597733711048159,0.1360764872521246,601,,,,
+cohort_replay,post_occlusion_motion_ADD_secondary,607,607,1.0,0.0021828665568369033,601,,,,
+cohort_replay,all_tracking_raw_ADD,736,637,0.8654891304347826,0.13130434782608694,631,,,,
+cohort_replay,post_occlusion_raw_ADD_secondary,607,607,1.0,0.0021828665568369033,601,,,,
+resolution480,all_tracking_motion_ADD,736,637,0.8654891304347826,0.13055027173913047,637,,,,
+resolution480,unhidden_tracking_motion_ADD_secondary,706,607,0.8597733711048159,0.13609773371104814,607,,,,
+resolution480,post_occlusion_motion_ADD_secondary,607,607,1.0,0.0,607,,,,
+resolution480,all_tracking_raw_ADD,736,637,0.8654891304347826,0.1295720108695652,637,,,,
+resolution480,post_occlusion_raw_ADD_secondary,607,607,1.0,0.0,607,,,,

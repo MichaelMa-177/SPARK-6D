@@ -1,0 +1,125 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "aligned_vectors",
+  "arrays": {
+    "frame_id": {
+      "dtype": "<i8",
+      "shape": [
+        84831
+      ]
+    },
+    "query_id": {
+      "dtype": "<i8",
+      "shape": [
+        84831
+      ]
+    },
+    "cohort_id": {
+      "dtype": "<i8",
+      "shape": [
+        84831
+      ]
+    },
+    "pixel_x": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "pixel_y": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "visibility_probability": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "active": {
+      "dtype": "|b1",
+      "shape": [
+        84831
+      ]
+    },
+    "learned_visible": {
+      "dtype": "|b1",
+      "shape": [
+        84831
+      ]
+    },
+    "valid_depth": {
+      "dtype": "|b1",
+      "shape": [
+        84831
+      ]
+    },
+    "gt_pixel_error": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "expected_support8": {
+      "dtype": "|b1",
+      "shape": [
+        84831
+      ]
+    },
+    "expected_support20": {
+      "dtype": "|b1",
+      "shape": [
+        84831
+      ]
+    },
+    "front_facing": {
+      "dtype": "|b1",
+      "shape": [
+        84831
+      ]
+    },
+    "gt_dx_m": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "gt_dy_m": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "gt_dz_m": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "review_du_px": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "review_dv_px": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    },
+    "review_dz_m": {
+      "dtype": "<f8",
+      "shape": [
+        84831
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

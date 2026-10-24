@@ -1,0 +1,77 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "flat_values",
+  "arrays": {
+    "tracking": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "synthetic_hidden": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "post_occlusion": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "raw_add_m": {
+      "dtype": "<f8",
+      "shape": [
+        737
+      ]
+    },
+    "motion_add_m": {
+      "dtype": "<f8",
+      "shape": [
+        737
+      ]
+    },
+    "prediction_valid": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "aligned_poses": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "raw_poses": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "raw_gt_poses": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "source_frame_indices": {
+      "dtype": "<i8",
+      "shape": [
+        737
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

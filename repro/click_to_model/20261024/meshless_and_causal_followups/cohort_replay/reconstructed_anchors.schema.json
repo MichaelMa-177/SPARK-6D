@@ -1,0 +1,59 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "aligned_vectors",
+  "arrays": {
+    "query_id": {
+      "dtype": "<i8",
+      "shape": [
+        123
+      ]
+    },
+    "cad_ids": {
+      "dtype": "<i8",
+      "shape": [
+        123
+      ]
+    },
+    "cohort_ids": {
+      "dtype": "<i8",
+      "shape": [
+        123
+      ]
+    },
+    "birth_frames": {
+      "dtype": "<i8",
+      "shape": [
+        123
+      ]
+    },
+    "active_from": {
+      "dtype": "<i8",
+      "shape": [
+        123
+      ]
+    },
+    "anchor_x_m": {
+      "dtype": "<f8",
+      "shape": [
+        123
+      ]
+    },
+    "anchor_y_m": {
+      "dtype": "<f8",
+      "shape": [
+        123
+      ]
+    },
+    "anchor_z_m": {
+      "dtype": "<f8",
+      "shape": [
+        123
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}
