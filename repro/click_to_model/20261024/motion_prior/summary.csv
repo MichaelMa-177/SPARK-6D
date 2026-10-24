@@ -1,0 +1,7 @@
+run,input_frames,tracking_frames,final_add_failed_frames,final_add_mean_mm,exploratory_fps,candidate_add_failed_frames,candidate_add_mean_mm,candidate_absent_frames,candidate_invalid_present_frames,no_prediction_frames,two_reference_eligible_frames,seed_admissions,seed_false_accept,seed_false_reject,memory_updates,memory_candidate_false_accept,memory_candidate_false_reject,temporal_translation_bound_m,temporal_rotation_bound_rad,candidate_failure_threshold_m,old0_cv0,old0_cv1,old1_cv0,old1_cv1
+none_adaptive_trusted_view,737,736,0,3.634649928672857,40.587829871691554,0,4.332288582787428,0,0,736,0,736,0,0,736,0,0,0.06876214029824114,0.8,0.019646325799497474,0,0,0,0
+none_adaptive_trusted_view_cv,737,736,0,3.634649928672857,40.25431237654045,0,4.332288582787428,0,0,2,734,736,0,0,736,0,0,0.06876214029824114,0.8,0.019646325799497474,0,0,0,734
+stride4_adaptive_trusted_view,185,184,163,644.323775474435,43.670576761158756,162,,162,0,184,0,21,0,1,21,0,1,0.06876214029824114,0.8,0.019646325799497474,0,0,0,0
+stride4_adaptive_trusted_view_cv,185,184,0,3.63474518982875,39.218582389602865,0,4.441991152665458,0,0,2,182,184,0,0,184,0,0,0.06876214029824114,0.8,0.019646325799497474,0,1,0,181
+occlusion_100_130_adaptive_trusted_view,737,736,636,300.0380949003354,33.39401585908558,637,,637,0,736,0,99,0,0,99,0,0,0.06876214029824114,0.8,0.019646325799497474,0,0,0,0
+occlusion_100_130_adaptive_trusted_view_cv,737,736,636,300.0380949003354,33.51322022380143,637,,637,0,639,97,99,0,0,99,0,0,0.06876214029824114,0.8,0.019646325799497474,0,0,0,97

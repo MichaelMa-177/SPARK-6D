@@ -1,0 +1,147 @@
+{
+  "schema": "click_to_model_csv/1",
+  "layout": "flat_values",
+  "arrays": {
+    "source_frame_indices": {
+      "dtype": "<i8",
+      "shape": [
+        737
+      ]
+    },
+    "candidate_centered_pose": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "candidate_original_pose": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "predicted_reference_centered": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "raw_final_pose": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        4,
+        4
+      ]
+    },
+    "candidate_present": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "candidate_valid": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "diagnostics_present": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "gt_defined": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "tracking": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "applied_gate": {
+      "dtype": "|i1",
+      "shape": [
+        737
+      ]
+    },
+    "old_gate": {
+      "dtype": "|i1",
+      "shape": [
+        737
+      ]
+    },
+    "seed_admitted": {
+      "dtype": "|i1",
+      "shape": [
+        737
+      ]
+    },
+    "memory_updated": {
+      "dtype": "|i1",
+      "shape": [
+        737
+      ]
+    },
+    "cv_active": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "two_reference_eligible": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    },
+    "applied_innovation": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        2
+      ]
+    },
+    "old_innovation": {
+      "dtype": "<f8",
+      "shape": [
+        737,
+        2
+      ]
+    },
+    "candidate_add_m": {
+      "dtype": "<f8",
+      "shape": [
+        737
+      ]
+    },
+    "final_add_m": {
+      "dtype": "<f8",
+      "shape": [
+        737
+      ]
+    },
+    "evaluated_tracking": {
+      "dtype": "|b1",
+      "shape": [
+        737
+      ]
+    }
+  },
+  "order": "C",
+  "float_encoding": "17 significant decimal digits for float64; unique representation for extended precision",
+  "round_trip_verified": true,
+  "nan_payload_note": "NaN positions preserved in CSV; original archive retains exact NaN payload bits",
+  "string_arrays_excluded": true
+}

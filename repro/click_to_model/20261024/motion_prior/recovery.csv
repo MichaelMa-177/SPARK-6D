@@ -1,0 +1,3 @@
+run,reappearance_input,post_event_inputs,required_consecutive_successes,recovery_delay_inputs,confirmation_delay_inputs,right_censored
+occlusion_100_130_adaptive_trusted_view,130,607,3,,,1
+occlusion_100_130_adaptive_trusted_view_cv,130,607,3,,,1
