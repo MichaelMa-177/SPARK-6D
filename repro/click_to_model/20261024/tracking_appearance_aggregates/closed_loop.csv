@@ -1,0 +1,10 @@
+case,arm,tracking_frames,failed_frames,failure_rate,mean_mm,initial_failed,missing_frames,invalid_frames,finite_wrong_frames,post_intervention_frames,post_intervention_failed,recovery_delay_inputs,neural_relative_failed,complete_tracking_slot_fps,exact_paired_initialization,source_valid
+cracker_occlusion,control,374,24,0.06417112299465241,11.129746723964171,0,0,0,24,335,6,6,24,37.2947445194422,True,True
+cracker_occlusion,bootstapir,374,18,0.0481283422459893,9.635365002797482,0,0,0,18,335,0,0,18,19.747819031948342,True,True
+cracker_occlusion,tapnextpp,374,18,0.0481283422459893,9.61351688751477,0,0,0,18,335,0,0,18,14.576431304667892,True,True
+mustard_occlusion,control,736,636,0.8641304347826086,354.49615685504926,0,0,0,636,607,607,,636,57.947743156494006,True,True
+mustard_occlusion,bootstapir,736,636,0.8641304347826086,325.82885185023923,0,0,0,636,607,607,,636,25.39249724913823,True,True
+mustard_occlusion,tapnextpp,736,237,0.3220108695652174,121.90833329958556,0,0,0,237,607,208,208,237,15.7762465447223,True,True
+mustard_stride4,control,184,166,0.9021739130434783,365.62717643477686,0,0,0,166,0,0,,166,57.36465519518687,True,True
+mustard_stride4,bootstapir,184,1,0.005434782608695652,3.8325293570930534,0,0,0,1,0,0,,1,24.99937221341807,True,True
+mustard_stride4,tapnextpp,184,0,0.0,3.6927008037027873,0,0,0,0,0,0,,0,15.364366402279641,True,True

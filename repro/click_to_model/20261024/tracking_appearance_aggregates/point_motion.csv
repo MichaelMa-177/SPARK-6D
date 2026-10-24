@@ -1,0 +1,7 @@
+case,backend,tracking_frames,failed_frames,failure_rate,mean_mm,missing_frames,invalid_frames,finite_wrong_frames,post_intervention_frames,post_intervention_failed,recovery_delay_inputs,complete_tracking_slot_fps,source_valid
+cracker_occlusion,bootstapir,374,177,0.4732620320855615,,177,0,0,335,157,0,32.90121435256308,True
+cracker_occlusion,tapnextpp,374,155,0.4144385026737968,,155,0,0,335,135,0,20.749936754190077,True
+mustard_occlusion,bootstapir,736,637,0.8654891304347826,,637,0,0,607,607,,33.485704049837416,True
+mustard_occlusion,tapnextpp,736,579,0.7866847826086957,,578,0,1,607,549,208,19.529734945677973,True
+mustard_stride4,bootstapir,184,150,0.8152173913043478,,150,0,0,0,0,,32.88244539386733,True
+mustard_stride4,tapnextpp,184,16,0.08695652173913043,,16,0,0,0,0,,18.4970000122945,True
