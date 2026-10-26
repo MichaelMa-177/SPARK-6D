@@ -1,0 +1,91 @@
+{
+  "schema": "product_integration_public_summary/1",
+  "purpose": "Software integration on a reused mustard development sequence; no new accuracy study",
+  "actual_gpu_completed_inputs": 737,
+  "tracking_inputs": 736,
+  "initial_mask": "supplied first-frame mask",
+  "fresh_click_or_camera_test": false,
+  "cpu": {
+    "tests": 1609,
+    "skips": 0,
+    "seconds": 34.403,
+    "source_unchanged": true
+  },
+  "delivered_pose": {
+    "counts": {
+      "delivered_actual_dtype_shape_bytes_exact": 737,
+      "core_centered_dtype_shape_bytes_exact": 737,
+      "core_derived_original_dtype_shape_bytes_exact": 736,
+      "core_derived_vs_actual_bytes_exact": 616
+    },
+    "max_abs_differences": {
+      "delivered_vs_reference_actual_max_abs": 0.0,
+      "core_centered_max_abs": 0.0,
+      "core_derived_reference_max_abs": 0.0,
+      "core_derived_vs_actual_max_abs": 5.960464477539063e-08
+    },
+    "actual_pose_exact": 737,
+    "actual_pose_max_abs_difference": 0,
+    "unknown": 0,
+    "semantics": "Actual original-coordinate public outputs compared with actual old outputs, not derived substitutes",
+    "derived_reference_count": 736,
+    "initial_derived_reference": "not recorded; not reconstructed"
+  },
+  "neural": {
+    "status": "paired_exact",
+    "checks": {
+      "exact": 5910
+    },
+    "predictor_calls": 738,
+    "network_returns": 742,
+    "scope": "Actual predictor pose inputs and exposed model/predictor returns; internal cropped tensors were not saved"
+  },
+  "pipeline": {
+    "status": "paired_with_differences",
+    "prerequisite_pairing": "paired",
+    "gates": {
+      "exact": 22363
+    },
+    "comparisons": {
+      "exact": 138365,
+      "different": 1472
+    },
+    "representation_differences": 1472,
+    "representation_explanation": "736 callback and 736 immediate public records preserve float32[1,4,4]; the old probe stored float32[4,4]. Explicit single-pose values match. Differences remain counted."
+  },
+  "trust_flags": {
+    "verified": false,
+    "identity_verified": false,
+    "initial_orientation_resolved": false,
+    "absolute_orientation_resolved": false,
+    "trusted_memory_updated": false,
+    "memory_updated": false,
+    "seed_admitted": false
+  },
+  "instrumented_timing": {
+    "parent_seconds": 143.49783889799983,
+    "child_seconds": 141.2487071329997,
+    "product_initialization_seconds": 14.30253316100061,
+    "product_tracking_fps": 6.120274742570636,
+    "scope": "Instrumentation, copies, compression and evidence writes included; parent includes final inventory checks but excludes preflight before timer; not deployment FPS or a speed comparison"
+  },
+  "source_receipt_sha256": {
+    "20261026_product_integration_cpu_full_v5/regression.json": "d319754da218caa30e93823e4596ceb90e8564be8df2bd5f73fc48d8f9173582",
+    "20261026_product_v3_neural_compare_v1/receipt.json": "0f5c8427fac5b7bcf3a395cf60c5c45d09b0e3b8a72c665dc1c33e783895b135",
+    "20261026_product_v3_frozen_compare_v2/receipt.json": "1d9bd3e920552094cae1112d370767eca98dd79c44872e7b25964e481d49e7d2",
+    "20261026_product_v3_delivered_pose_independent_review_v1/receipt.json": "ee7649d6dcadad479b414a6a4c8c8fd4c68d697171b2e177860610ddc8ec80a9",
+    "20261026_product_v3_frozen_compare_v2/comparisons.json": "c11c0d9a159e64ffe2c39621b2ec1edcb1c55bc9903327de59259a966a95d25c",
+    "20261026_product_integration_cpu_full_v5/console.log": "c836606229a5500080d072da238dcd7a8c2949035308c51c57dd84782e29a742",
+    "20261026_product_mustard_instrumented_v1/execution.json": "78936eb5dd26aae224ae0b563dbb3d8d834b5c3534a9286b2c6470cf93dcc841",
+    "20261026_product_mustard_instrumented_v1/child_receipt.json": "7e6a1b56d8bf614f1c45ea41ec93edc6563d4396835e2d310d0300ff7741737a",
+    "20261026_product_mustard_instrumented_v1/coverage.json": "8aa8c0020e5f84896c2aab73cc18a0cd6aa82ef2154fb4d3e22e5bba94b7d802",
+    "20261026_product_mustard_instrumented_v2/execution.json": "e48113b63ee78d2b1e4739dfc10d479c0a7d0eb687cef43c0ea7743f6dc8bfac",
+    "20261026_product_mustard_instrumented_v2/child_receipt.json": "47144764acf0a556f388d2e55dc6bb384246dadba18f9d3d4ea42ddb35c82905",
+    "20261026_product_mustard_instrumented_v2/coverage.json": "0b60c99168ac496a694c82ee394a9c8d6ba26ae29ee4687a07852e63c33a3eec",
+    "20261026_product_mustard_instrumented_v3/execution.json": "7b284fdece1f11bd3d101adea401abb1b190b1d3f661e6f607bb57dc86d8114c",
+    "20261026_product_mustard_instrumented_v3/child_receipt.json": "a2d60433f759bdd6ad3096099316c8b366cf4ec5ca9ea731532815f9b9cf2dd7",
+    "20261026_product_mustard_instrumented_v3/coverage.json": "1299177034268db0600cae3e730e0cbacef1007553304f437b4130843624cbde",
+    "20261026_product_mustard_instrumented_v3/product/report.json": "f3f135f65b6f8a9f7275245484b64343ca3797c6151b8298343fa4c031a391ca",
+    "20261026_product_v3_delivered_pose_independent_review_v1/frames.csv": "6752ee1b6107bba09f5b9a38e90df5cd9e74ee51aededc3bbaea7307c53db2cd"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "public_aggregate_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 2464,
+      "sha256": "066705fe48e96926838efdb5d48e2fe6b71a3f7a47c655e4448c5fe7004b4cc5"
+    },
+    "attempts.csv": {
+      "bytes": 779,
+      "sha256": "6bf1ab8ece789eec393ff31eaf77240c10efbe3262a8779295b018e56c8b5d69"
+    },
+    "comparison_groups.csv": {
+      "bytes": 853,
+      "sha256": "57df70b2e261eccf1fcc040d85be77aa2a960c519543a18afeaeaeee51ed9303"
+    },
+    "final_pose_comparison.csv": {
+      "bytes": 234636,
+      "sha256": "eb658a4f927b14fc1c52b17338f7f3d6041b20a0163783a634506055b6f0294f"
+    },
+    "summary.json": {
+      "bytes": 4912,
+      "sha256": "1cf491ca6a76d0d57e65ea318442a5aa661e9a238517e03eb133084d9adf3afd"
+    }
+  }
+}

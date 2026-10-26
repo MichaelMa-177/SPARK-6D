@@ -1,0 +1,4 @@
+attempt,status,stage,planned_inputs,tracking_denominator,completed,failed,interrupted_unknown,not_executed,observed_inputs,GT_read,parent_wall_seconds,child_wall_seconds,execution_sha256
+1,failed,instrumentation origin check before input/model,737,736,0,0,0,737,0,False,8.243936458000462,6.159721006999462,78936eb5dd26aae224ae0b563dbb3d8d834b5c3534a9286b2c6470cf93dcc841
+2,failed,first tracking callback singleton-batch interface,737,736,1,1,0,735,2,False,23.147686225000143,20.93446100300025,e48113b63ee78d2b1e4739dfc10d479c0a7d0eb687cef43c0ea7743f6dc8bfac
+3,completed_software_execution_pending_independent_pairing,complete product invocation,737,736,737,0,0,0,737,False,143.49783889799983,141.2487071329997,7b284fdece1f11bd3d101adea401abb1b190b1d3f661e6f607bb57dc86d8114c
