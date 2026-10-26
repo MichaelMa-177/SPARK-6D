@@ -1,0 +1,26 @@
+{
+  "schema": "numeric_public_package_manifest/1",
+  "target": "repro/click_to_model/20261027/mask_selection_aggregates/",
+  "files": {
+    "README.md": {
+      "bytes": 3035,
+      "sha256": "2230df5be05a88158f34ff6890a2c5e71494ffcf4744adaac6716eb2dc52d7de"
+    },
+    "per_trial.csv": {
+      "bytes": 4083,
+      "sha256": "1fef52b40e3a3ee3b8d81308c37923bc6ae5d845d48c9de352dce47de5664c5d"
+    },
+    "summary.json": {
+      "bytes": 6464,
+      "sha256": "35cff8d1ff3de145e30cb0f7ee0a02ac3aee2f73310705ece4f2abf37b16334d"
+    },
+    "threshold_counts.csv": {
+      "bytes": 1696,
+      "sha256": "798353697f7ffe9c5a572bff862c17d1489fa0b952d30801189214299fbecc05"
+    }
+  },
+  "manifest_self_excluded": true,
+  "allowed_total_file_count": 5,
+  "scope": "Aggregate and per-slot numeric errors only; no raw poses/GT/images/masks/models/logs/source/local paths.",
+  "source_receipt_sha256": "51c8d3e7777c444b4b8609459a0932aa65251902d5f2001176ade2746fcc382d"
+}

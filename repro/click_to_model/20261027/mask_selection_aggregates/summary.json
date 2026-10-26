@@ -1,0 +1,170 @@
+{
+  "schema": "mask_selection_public_aggregates/1",
+  "status": "independently_evaluated_offline_counterfactual",
+  "publication_target": "repro/click_to_model/20261027/mask_selection_aggregates/",
+  "rule": {
+    "selection": "Among original SAM masks with strictly positive pixel count, choose maximum original SAM score; exact ties choose earliest original mask index. Return that mask actual recorded FP top1 public original-coordinate pose unchanged.",
+    "exclusions": "No depth-support, click-distance, geometry-supported/admission, mask-area threshold or cross-mask FP-score filter. No per-case exception.",
+    "missing": "Keep originally unavailable slots and any empty-all or missing selected-return case unknown; never substitute a different image/click or mask based on GT.",
+    "SAM_score_is_identity_confidence": false
+  },
+  "scope": {
+    "known_development_data": true,
+    "held_out": false,
+    "new_tracking_result": false,
+    "new_neural_inference": false,
+    "production_pipeline_modified": false,
+    "actual_FP_returns_reused_unchanged": true,
+    "selected_pose_conversion_performed": false
+  },
+  "denominators": {
+    "planned_slots": 13,
+    "actual_return_outputs": 11,
+    "changed_mask": 8,
+    "unchanged_mask": 3,
+    "unavailable": 2,
+    "TLESS_planned": 12,
+    "TLESS_computed": 8,
+    "TLESS_unknown_click": 2,
+    "TLESS_unavailable": 2,
+    "mustard_initialization": 1,
+    "planned_candidate_slots": 9828,
+    "actual_candidate_rows": 8316,
+    "unavailable_candidate_slots": 1512
+  },
+  "TLESS": {
+    "metric_vertex_source": "All original models_eval PLY rows, mm to m once; no subsampling or deduplication.",
+    "symmetry": "GT @ declared symmetry; continuous 315-angle finite approximation.",
+    "MSPD_normalization": "raw pixels * 640/720",
+    "threshold_comparison": "strict <",
+    "MSSD_0p1D": {
+      "old_correct": 6,
+      "old_wrong": 2,
+      "unknown": 4,
+      "new_correct": 8,
+      "new_wrong": 0,
+      "denominator": 12
+    },
+    "MSPD_normalized_5px": {
+      "old_correct": 6,
+      "old_wrong": 2,
+      "unknown": 4,
+      "new_correct": 8,
+      "new_wrong": 0,
+      "denominator": 12
+    },
+    "pilot_mean_threshold_recall": {
+      "MSSD_over_diameter": {
+        "old": 0.4916666666666667,
+        "new": 0.6666666666666667
+      },
+      "MSPD_640px": {
+        "old": 0.5,
+        "new": 0.6666666666666667
+      }
+    },
+    "BOP_leaderboard_score": false,
+    "independent_samples": false
+  },
+  "mustard_initialization": {
+    "old_ADD_m": 0.001934131561572044,
+    "new_ADD_m": 0.0021859279764197058,
+    "threshold_m": 0.01964632579949747,
+    "comparison_operator": "<=",
+    "old_correct": true,
+    "new_correct": true,
+    "vertex_rows": 10983,
+    "vertex_weighting": "Frozen process=False trimesh loader rows including UV-split multiplicity; raw original GT frame zero, no GT0 alignment.",
+    "new_tracking_claim": false
+  },
+  "admissions": {
+    "original_accepted": 0,
+    "new_accepted": 0,
+    "trust_upgraded": false,
+    "risk_among_accepted": null,
+    "risk_null_reason": "No admitted outputs; null is not zero."
+  },
+  "observed_tradeoffs": [
+    "TLESS trials 08 and 09 change from incorrect to correct under every frozen MSSD/MSPD threshold.",
+    "TLESS trial 01 improves symmetry-aware MSSD/MSPD while ordinary ADD increases; axis symmetry makes these diagnostics distinct.",
+    "TLESS trials 10 and 11 have slightly larger errors but retain correct labels.",
+    "Mustard init ADD increases slightly, retaining its original correct label. No new trajectory was evaluated."
+  ],
+  "supplementary_development_diagnostics": {
+    "fixed_hard_click_gate": {
+      "status": "not_deployed",
+      "primary_threshold_success_gain": 0,
+      "receipt_sha256": "f51786134632aa73a23dc0c220b466514e6398099984a32a59c1a4e4d8cfefba"
+    },
+    "candidate_ceiling": {
+      "candidate_rows": 1512,
+      "correct_candidates_per_trial": [
+        26,
+        26
+      ],
+      "click_gate_retained_correct_candidates": [
+        0,
+        26
+      ],
+      "receipt_sha256": "7029e3100acfb3ec94d6aac441efbdffc8fadd77b46f2b878f940311fea4e011",
+      "scope": "GT oracle diagnosis only; never a runtime selection rule."
+    }
+  },
+  "files": {
+    "per_trial": "per_trial.csv",
+    "threshold_counts": "threshold_counts.csv"
+  },
+  "source_hashes": {
+    "independent_evaluation_receipt": {
+      "sha256": "51c8d3e7777c444b4b8609459a0932aa65251902d5f2001176ade2746fcc382d",
+      "bytes": 39734
+    },
+    "frozen_evaluation_plan": {
+      "sha256": "27e9da9fe1f25c36ae8429b267d1c053fbc8a33074274586b3b7d7fcf2a3d033",
+      "bytes": 2950
+    },
+    "sealed_selection": {
+      "sha256": "c24a4fcbfc392a680850c116286f584cbe1b092ef4ca210f88fa6818e8321b43",
+      "bytes": 111964
+    },
+    "sealed_selection_rule": {
+      "sha256": "a4a8091b2c97774620233fe2ad3b23fae9816d2798197945c5911ec256d644eb",
+      "bytes": 2448
+    },
+    "independent_rule_review": {
+      "sha256": "48aa0954316e371b6ac8d45c98ddb419e492156a4aa9f10ee64fb38dd5246141",
+      "bytes": 3551
+    },
+    "independent_per_slot_metrics": {
+      "sha256": "d9f8485d0ec5efa337965aae3feac6660bf3263793ab5664a4a25559729f5cba",
+      "bytes": 3561
+    },
+    "independent_new_TLESS_thresholds": {
+      "sha256": "ea5f1aea4c57c7b4d560a0610c75786c9af3b1f5b6fa5c83fa2907e927536514",
+      "bytes": 21991
+    },
+    "frozen_original_TLESS_comparison": {
+      "sha256": "8556ceef584c542d7ed4698f680bd319b921bffc8996bae88f98878dd81c2244",
+      "bytes": 35047
+    },
+    "fixed_click_negative_result_receipt": {
+      "sha256": "f51786134632aa73a23dc0c220b466514e6398099984a32a59c1a4e4d8cfefba",
+      "bytes": 11732
+    },
+    "candidate_ceiling_receipt": {
+      "sha256": "7029e3100acfb3ec94d6aac441efbdffc8fadd77b46f2b878f940311fea4e011",
+      "bytes": 7958
+    },
+    "selected_pose_archive_not_published": {
+      "sha256": "9131b2563489b812a09fd3a3b98f7d94f56d8b3409c24df71ca3f0249e45e617",
+      "bytes": 3189
+    }
+  },
+  "official_prior_usage": {
+    "reference": "https://github.com/facebookresearch/sam2/blob/main/sam2/sam2_image_predictor.py",
+    "local_verified_source_sha256": "f13e5f9d94e5c8d9d2c3622dab20c8f334c089ef2ee5ea8e199da7d332b029ba",
+    "documented_behavior": "Single-click multimask outputs may use predicted mask quality to choose a mask.",
+    "novel_method_claim": false,
+    "score_semantics": "predicted mask quality; neither pose confidence nor identity probability"
+  }
+}
