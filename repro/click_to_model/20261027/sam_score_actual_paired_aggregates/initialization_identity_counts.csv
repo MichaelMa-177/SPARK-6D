@@ -1,0 +1,17 @@
+case,available,status,input_asset_pairing,old_selected_mask,new_selected_mask,old_selected_backend_index,new_selected_backend_index,old_initial_queries,new_initial_queries,numeric_checks,numeric_exact,numeric_different
+bowl,True,initialization_arrays_have_differences,paired,2,0,0,0,62,64,29,28,1
+wood,True,initialization_arrays_have_differences,paired,2,1,0,0,61,63,29,28,1
+bleach0,True,exact_initialization_arrays,paired,1,1,0,0,43,43,29,29,0
+mustard,True,initialization_arrays_have_differences,paired,2,1,0,0,,9,29,28,1
+tless_00,True,exact_initialization_arrays,paired,1,1,0,0,,50,29,29,0
+tless_01,True,initialization_arrays_have_differences,paired,0,1,0,0,,50,29,28,1
+tless_02,True,initialization_arrays_have_differences,paired,0,1,0,0,,59,29,28,1
+tless_03,True,initialization_arrays_have_differences,paired,0,1,0,0,,59,29,28,1
+tless_04,True,exact_initialization_arrays,paired,1,1,0,0,,63,29,29,0
+tless_05,True,exact_initialization_arrays,paired,1,1,0,0,,63,29,29,0
+tless_06,False,unavailable,,,,,,,,,,
+tless_07,False,unavailable,,,,,,,,,,
+tless_08,True,initialization_arrays_have_differences,paired,2,1,0,0,,41,29,28,1
+tless_09,True,initialization_arrays_have_differences,paired,2,1,0,0,,41,29,28,1
+tless_10,True,initialization_arrays_have_differences,paired,0,1,0,0,,32,29,28,1
+tless_11,True,initialization_arrays_have_differences,paired,0,1,0,0,,31,29,28,1

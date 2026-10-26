@@ -1,0 +1,36 @@
+{
+  "schema": "numeric_public_package_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 2507,
+      "sha256": "c6a977ebba1ad3ccd1efcf86539baab4c9db38e7c5625d12dd46f106594f61c6"
+    },
+    "initialization_identity_counts.csv": {
+      "bytes": 1381,
+      "sha256": "778b966044818541e51522594e0a3d8d7a91912697192a93af46821141a3941f"
+    },
+    "paired_threshold_counts.csv": {
+      "bytes": 18397,
+      "sha256": "ed679f967d4faebc0db1360293004fd8fc39112e61fdce5c5cf04fcc054fa90a"
+    },
+    "per_case.csv": {
+      "bytes": 2162,
+      "sha256": "ab54225a4cb0409043f94f6781b7ea545fcb4014c456d1c1f51b9c86b4969cc9"
+    },
+    "sequence_timing.csv": {
+      "bytes": 1659,
+      "sha256": "49d6b498b6683e40c72d9b9d1fff251046e05a3d50291b0debea921d0bbd695c"
+    },
+    "sources.json": {
+      "bytes": 6056,
+      "sha256": "654c21ea26ece45a22a8e1ab5c533a2c99e019b232c446ccac3af094fbb9742a"
+    },
+    "summary.json": {
+      "bytes": 46324,
+      "sha256": "e22b44dcd277d33b7d5543f7e5a5b01edd28c71ce6e3f162950b4d21a51eba94"
+    }
+  },
+  "manifest_self_excluded": true,
+  "file_count": 8,
+  "scope": "Aggregate numeric whitelist only; no raw matrices or local paths."
+}

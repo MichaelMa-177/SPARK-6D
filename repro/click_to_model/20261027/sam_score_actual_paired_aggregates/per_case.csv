@@ -1,0 +1,17 @@
+case,kind,available,input_denominator,tracking_denominator,runtime_state,input_asset_pairing,posthoc_case_wall_seconds,fixed_GT_association_unknown_reason,admission_accepted,admission_reason,all_seven_report_trust_flags_false,physical_identity_verified
+bowl,continuous,True,2401,2400,qualified_actual_output,paired,99.88275600699853,,False,assessment_timeout,True,False
+wood,continuous,True,1829,1828,qualified_actual_output,paired,4.881610611999349,,False,ambiguous_supported_set,True,False
+bleach0,continuous,True,663,662,qualified_actual_output,paired,0.37968826499854913,,False,ambiguous_supported_set,True,False
+mustard,mustard,True,737,736,qualified_actual_output,paired,0.27428585199959343,,False,ambiguous_supported_set,True,False
+tless_00,tless,True,1,0,qualified_actual_output,paired,0.1780655949987704,,False,assessment_timeout,True,False
+tless_01,tless,True,1,0,qualified_actual_output,paired,0.15843653399861068,,False,assessment_timeout,True,False
+tless_02,tless,True,1,0,qualified_actual_output,paired,0.01868923599977279,no_visible_instance_hit,False,assessment_timeout,True,False
+tless_03,tless,True,1,0,qualified_actual_output,paired,0.01869236100174021,no_visible_instance_hit,False,assessment_timeout,True,False
+tless_04,tless,True,1,0,qualified_actual_output,paired,0.08224601199981407,,False,ambiguous_supported_set,True,False
+tless_05,tless,True,1,0,qualified_actual_output,paired,0.07366302499940502,,False,ambiguous_supported_set,True,False
+tless_06,tless,False,1,0,unavailable,unknown_not_compared,0.00020636000044760294,unavailable,,,,False
+tless_07,tless,False,1,0,unavailable,unknown_not_compared,0.006613009998545749,unavailable,,,,False
+tless_08,tless,True,1,0,qualified_actual_output,paired,0.10443983200093498,,False,equivalence_budget_exhausted,True,False
+tless_09,tless,True,1,0,qualified_actual_output,paired,0.12285502200029441,,False,equivalence_budget_exhausted,True,False
+tless_10,tless,True,1,0,qualified_actual_output,paired,0.0821183519983606,,False,ambiguous_supported_set,True,False
+tless_11,tless,True,1,0,qualified_actual_output,paired,0.07729883099818835,,False,ambiguous_supported_set,True,False
