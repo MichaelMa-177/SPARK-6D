@@ -1,0 +1,38 @@
+{
+  "schema": "aggregate_only_public_artifact_manifest/1",
+  "payload_file_count": 7,
+  "payload_bytes": 841679,
+  "files": {
+    "README.md": {
+      "bytes": 6843,
+      "sha256": "0e7dabb9c4eda2ec6bbf79399a46ddd36f1940c3ea2469c8d8b76c6874a19b1f"
+    },
+    "per_observation.csv": {
+      "bytes": 26646,
+      "sha256": "c1205948a735c032811e186f84b54d587a449a545d8cab70e9b4d638866441ce"
+    },
+    "risk_coverage.csv": {
+      "bytes": 387158,
+      "sha256": "9028f41896ba155146d82336146811f24740e7479184ff9bcfec7d2b5e2694f3"
+    },
+    "risk_coverage_development.pdf": {
+      "bytes": 27093,
+      "sha256": "e0530dcbc3933e41c543d6b00cab3d08158306048ed09183f8979868ebffe262"
+    },
+    "risk_coverage_development.png": {
+      "bytes": 248579,
+      "sha256": "b40a2955955bf5eb8fe69b85350ae1e6785bb96d621064e48baa73784afab571"
+    },
+    "risk_coverage_development.svg": {
+      "bytes": 142328,
+      "sha256": "10b40a4c3bc05ca4204a48c513b3016ff32d4fbee4fc6b4f84e0c768e0f59750"
+    },
+    "source_hashes.json": {
+      "bytes": 3032,
+      "sha256": "e35f6fadea3f98290316e7feb42d6b0d7b080a7e27e1ceed63208cd8645dc076"
+    }
+  },
+  "independent_q_and_counts_review_sha256": "e980f661874dba98f01a4c5e4e71412e7422f603f4265999c71fe8e53d4cde57",
+  "independent_public_mapping_review_sha256": "abc9622229868303536b0e06f09dfdbaee265d67d81c6002b5f649a802667c35",
+  "raw_pose_source_images_models_weights_code_included": false
+}

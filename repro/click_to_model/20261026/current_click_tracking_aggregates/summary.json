@@ -1,0 +1,105 @@
+{
+  "schema": "current_click_public_aggregates/1",
+  "scope": "One reused development video with one assistant RGB-only click and an existing mesh",
+  "input_frames": 737,
+  "tracking_frames": 736,
+  "click_xy": [
+    139,
+    306
+  ],
+  "initialization": "SAM2.1 small, all three masks assessed; geometry selects mask 2",
+  "candidate_count": 756,
+  "metrics": {
+    "tracking": {
+      "denominator": 736,
+      "failed_frames": 29,
+      "failure_rate": 0.03940217391304348,
+      "auc_0_to_0_1m": 0.9286752717391306,
+      "undefined_or_invalid_predictions": 0,
+      "mean_mm": 9.738703171736136,
+      "median_mm": 3.538671324083016,
+      "p95_mm": 7.218655055426226,
+      "max_mm": 219.86234970860056
+    },
+    "initialization": {
+      "denominator": 1,
+      "failed_frames": 0,
+      "failure_rate": 0.0,
+      "auc_0_to_0_1m": 0.985,
+      "undefined_or_invalid_predictions": 0,
+      "mean_mm": 1.9341315615720447,
+      "median_mm": 1.9341315615720447,
+      "p95_mm": 1.9341315615720447,
+      "max_mm": 1.9341315615720447
+    },
+    "unhidden_tracking_secondary": {
+      "denominator": 706,
+      "failed_frames": 0,
+      "failure_rate": 0.0,
+      "auc_0_to_0_1m": 0.9632436260623229,
+      "undefined_or_invalid_predictions": 0,
+      "mean_mm": 3.699741118328548,
+      "median_mm": 3.4631504985912773,
+      "p95_mm": 6.579838269921064,
+      "max_mm": 10.849913832671715
+    },
+    "post_intervention_secondary": {
+      "denominator": 607,
+      "failed_frames": 0,
+      "failure_rate": 0.0,
+      "auc_0_to_0_1m": 0.9614250411861615,
+      "undefined_or_invalid_predictions": 0,
+      "mean_mm": 3.8785181457287363,
+      "median_mm": 3.616610266799408,
+      "p95_mm": 6.63767611494958,
+      "max_mm": 10.849913832671715
+    },
+    "missing_pose_tracking": 0,
+    "invalid_available_tracking": 0,
+    "finite_wrong_tracking": 29,
+    "recovery": {
+      "first_selected_frame": 130,
+      "confirmed_selected_frame": 134,
+      "inputs_after_reappearance": 0,
+      "consecutive_inputs": 5
+    },
+    "threshold_m": 0.019646325799497474,
+    "diameter_m": 0.19646325799497472,
+    "all_original_CAD_vertices": 10983
+  },
+  "initialization_admission_accepted": false,
+  "initialization_admission_reason": "ambiguous_supported_set",
+  "all_seven_trust_flags_false": true,
+  "timing": {
+    "parent_wall_seconds": 149.44353024200063,
+    "initialization_seconds": 20.922320993999165,
+    "tracking_seconds": 119.18088356901535,
+    "instrumented_frame_tracking_fps": 6.175487024089703,
+    "scope": "Instrumented single run; not deployment FPS or a speed comparison"
+  },
+  "raw_independent_audit": "passed",
+  "metric_independent_audit": {
+    "status": "passed",
+    "receipt_sha256": "4a2e421db26968469c1ebf5599f694c4a5c828865b0c55c3dad341d273b5efc1",
+    "all_frames_checked": 737,
+    "max_ADD_absolute_difference_m": 5.551115123125783e-17,
+    "failure_labels_exact": true,
+    "summary_and_AUC_recomputed": true,
+    "producer_metric_functions_imported": false
+  },
+  "no_same_input_comparison_to_supplied_mask": true,
+  "no_physical_instance_identity_claim": true,
+  "source_sha256": {
+    "20261026_product_current_click_instrumented_v2/execution.json": "a08f6720c2bdb2829db39a492cd74d9fb19488e2833b0c0417f51f40b5e34439",
+    "20261026_product_current_click_instrumented_v2/coverage.json": "7e9b4e0705917f60c89436568c4fe4ec2f3e2018775b66ce58ae35751326c052",
+    "20261026_product_current_click_instrumented_v2/product/report.json": "7250fd39db897a1e4051cf3a577bda4d7397915620e81100d07defd77241f165",
+    "20261026_product_current_click_instrumented_v1/execution.json": "9d96fbcaef0af19281a30df83ab03188545baa82116cb2b6b1e766e3cbedaa0a",
+    "20261026_product_current_click_instrumented_v1/coverage.json": "17d6d08acc7abe747fbd5694783a65ea31fc2a737a6ef061168691a3c353001a",
+    "20261026_current_click_posthoc_v1/evaluation_v1/summary.json": "dba0361dc293eb342e02cb5ccc1f3ae512f4000ef3d3d34b6a998650bf72d21f",
+    "20261026_current_click_posthoc_v1/evaluation_v1/per_frame.npz": "523bba83493beb8e3865f0800653d9019f03da0b8da579813fe50671fe04aad6",
+    "20261026_current_click_posthoc_v1/evaluation_v1/receipt.json": "d040cc949ef0bfffce2867bf551018593003870fd431621f88563330b30296af",
+    "20261026_current_click_actual_independent_review_v1/receipt.json": "440b05f40696c1ed3a32b9abb08c64a1d1229de4d7ec4bfb152d162b76379b73",
+    "metric_independent_review_receipt": "4a2e421db26968469c1ebf5599f694c4a5c828865b0c55c3dad341d273b5efc1",
+    "public_aggregate_builder": "1befe75b8730158877dc9f87090f80fe48b885b0071eaa01aa5c65816d7bef31"
+  }
+}

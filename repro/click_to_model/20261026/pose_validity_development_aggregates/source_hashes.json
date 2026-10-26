@@ -1,0 +1,56 @@
+{
+  "schema": "working_pose_development_public_provenance/1",
+  "scientific_scope": "GT-seen development exploration; finite bank; no identity/global uniqueness guarantee",
+  "observations": 96,
+  "planned_candidate_slots": 24192,
+  "overlapping_groups": 39,
+  "scan_thresholds": 51,
+  "complete_grouped_csv_rows": 4290,
+  "analysis_slot_states": {
+    "completed": 96
+  },
+  "threshold_selected_for_deployment": null,
+  "deployment_authorized": false,
+  "risk_calibrated": false,
+  "identity_verified": false,
+  "production_modified": false,
+  "independent_numerical_review": {
+    "status": "passed",
+    "q_exact_count": 96,
+    "q_max_absolute_difference": 0.0,
+    "direct_neighborhoods_exact": 96,
+    "aggregate_rows_exact": 4290,
+    "CSV_rows_exact": 4290,
+    "original_GT_pose_metrics_recomputed": false,
+    "producer_functions_imported": false,
+    "receipt_sha256": "e980f661874dba98f01a4c5e4e71412e7422f603f4265999c71fe8e53d4cde57",
+    "review_source_sha256": "e665c7706202ed1780f0f7bdba7187a5ed20e2956d804fa8afc224df78363c60"
+  },
+  "independent_public_mapping_review": {
+    "status": "passed",
+    "receipt_sha256": "abc9622229868303536b0e06f09dfdbaee265d67d81c6002b5f649a802667c35"
+  },
+  "source_sha256": {
+    "frozen_plan": "edb6ac507c636ec96f418f6dfc344db7581f3dfe2834ae09c5e1320bb0a91aa4",
+    "execution": "f748527832ff65732ce90fd03a28bf8f937b35f2cfe4647573a0ebe29a74afae",
+    "original_observation_output": "daf6e9d4345e4982401cec77709d6aed1a20eaa5e80fc1ccc74e7fdc807c05b8",
+    "original_grouped_curve_json": "af5ea348cd0ab23aaaef600416fb24cf89ff7637bd3684be5fc1011b383545ed",
+    "original_grouped_curve_csv": "9028f41896ba155146d82336146811f24740e7479184ff9bcfec7d2b5e2694f3",
+    "existing_TUDL_posthoc_labels": "3e0828a06aa7a9126ab8a9e2736e897a4e33a719df7d5380e27cfe10589bd883",
+    "existing_independent_ADD_MSSD_audit": "e5b706fd19af93acbd46481190c07036c4d92e9fdae3fef4c34827a840b16ee5",
+    "author_28_CPU_test_receipt": "8656819ab11ecd53bf4e327f996275614a4c5573767194379e424c3c12ffaabe",
+    "root_tie_counterexample_after": "df45e1c09495dc74d26cf4fc2c6a2d4910da173335690fe1728555891b89a0f4",
+    "prototype_gate": "9bc58c24c97de8f938cec9562b28108be063eb1743ba77b774dc276209987d1c",
+    "prototype_analysis": "c0e2913fa5df8117e3d1f148a28021122553e5e67320a535745599095955ea51",
+    "prototype_protocol": "7a5acf656dd89f7e19a177116eed2845f66a70226cf776a9adc1ea34e66b12d2",
+    "plot_and_export_builder": "404e217514d5a73fd8ad9cf46061e44a105491fbeeef321f509130d42d87bd10",
+    "header_semantic_fix_receipt": "95b6c0fdf39be68ad922ae47f6ddcd51bc8d31d6de85e9c2432d87e961199900",
+    "package_sealer": "ba8c8cf28b7514492939c6c1eed93787a6ec7445249b4ad0a55b55916026177a"
+  },
+  "analysis_wall_seconds": 2.105897740000728,
+  "timing_scope": "CPU saved-artifact analysis, not inference/deployment FPS",
+  "raw_GT_pose_images_models_weights_source_code_included": false,
+  "absolute_local_paths_included": false,
+  "root_visually_reviewed_png": true,
+  "figure_zero_acceptance_risk_points_plotted": false
+}

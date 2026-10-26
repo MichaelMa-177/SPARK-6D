@@ -1,0 +1,49 @@
+{
+  "schema": "aggregate_publication_manifest/1",
+  "package": "current_click_tracking_aggregates",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2442,
+      "sha256": "88b478c2c1cde8267a331526feef30f78e1809308bda6628135ee940f2c1d54a"
+    },
+    {
+      "path": "add_trace.pdf",
+      "bytes": 35905,
+      "sha256": "afe734e49d2aecace8ad243ef2cfcce41bd8bac44051767734e8ff54aa7141c8"
+    },
+    {
+      "path": "add_trace.png",
+      "bytes": 174469,
+      "sha256": "436635e1aa6b8e7fedf449f1dc69f0876ab6a3b905b6d8f3c9086eedfe85eee9"
+    },
+    {
+      "path": "add_trace.svg",
+      "bytes": 109965,
+      "sha256": "836d0eec2ca0c456f20131d0c5d4c6cce6363029c1eef6fd453601b3e09d3c3f"
+    },
+    {
+      "path": "attempts.csv",
+      "bytes": 685,
+      "sha256": "865b105abb7d7cf2ca4766412046712c0e637b2ea98d018eed2a37b5917ddfcd"
+    },
+    {
+      "path": "initialization_masks.csv",
+      "bytes": 491,
+      "sha256": "d0fa89af5996c226c74571940e9f14ca3746447bb4448214a4ace5665e5cb308"
+    },
+    {
+      "path": "per_frame_errors.csv",
+      "bytes": 57846,
+      "sha256": "886432d9085f2a9b708cb3a9f07842286f73ea1a760c2e36ce410185514e8a01"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 4572,
+      "sha256": "a0ed128dce6896590b897e92bab63a8af37989a410829b5ce1f0c66bd5f8ffe9"
+    }
+  ],
+  "payload_file_count": 8,
+  "payload_bytes": 386375,
+  "manifest_self_excluded": true
+}

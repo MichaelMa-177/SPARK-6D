@@ -1,0 +1,4 @@
+mask_id,mask_pixels,sam_score,candidate_count,score_count,finite_bank,observation_valid,selected,selected_backend_index,raw_bank_sha256
+0,251,0.15430410206317902,252,252,True,False,False,0,c3cbe5d1babcadcda068abcba5611a0de087c51489475e410c262dc8c60bfd65
+1,672,0.4374537467956543,252,252,True,False,False,0,59ab9ea6a8c792222d19f9d51a18a70b01ef84d25340a129f3735fef57db4776
+2,3185,0.2883175015449524,252,252,True,True,True,0,4eeb4190497bf502cc924e1670783b0a98208ea4c78b879181b5678854ef393d
