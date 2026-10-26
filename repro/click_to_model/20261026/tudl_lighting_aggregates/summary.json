@@ -1,0 +1,3485 @@
+{
+  "schema": "tudl_public_aggregate/1",
+  "status": "independent_primary_metrics_verified_aggregate_package",
+  "scope": {
+    "static_observations": 96,
+    "objects": 3,
+    "recorded_lighting_labels": 8,
+    "cells": 24,
+    "observations_per_cell": 4,
+    "temporal_video_claim": false,
+    "causal_lighting_claim": false,
+    "identity_verification_claim": false,
+    "independent_samples_are_candidate_pairs": false,
+    "click_author": "assistant",
+    "development_pilot": true
+  },
+  "denominators": {
+    "observations": 96,
+    "original_candidates": 24192,
+    "candidates_per_observation": 252,
+    "phase2_requests": 384,
+    "appearance_requests": 192,
+    "replay_requests": 192,
+    "source_qualified_requests": 383,
+    "interrupted_replay_requests": 1,
+    "interrupted_pair_slots_per_channel_per_metric": 31626,
+    "pair_slots_per_variant_per_channel_per_metric": 6072192
+  },
+  "metrics": {
+    "primary": "add",
+    "separate": "mssd_identity",
+    "threshold_diameter_fraction": 0.1,
+    "symmetry": "identity only",
+    "vertices": "all original supplied CAD vertex rows; mm to m once",
+    "no_raw_rotation_repair": true,
+    "accepted_accuracy_is_undefined_when_accepted_count_zero": true
+  },
+  "independent_numerical_audit": {
+    "status": "passed",
+    "audited_metrics": [
+      "add",
+      "mssd_identity"
+    ],
+    "ADI_numerically_audited": false,
+    "receipt_sha256": "e5b706fd19af93acbd46481190c07036c4d92e9fdae3fef4c34827a840b16ee5",
+    "audit_tool_sha256": "e6325e544d1035250ea15cdb24478dc87ba2306240e22764a6964a187630c998",
+    "observations": 96,
+    "candidate_slots": 24192,
+    "actual_top1_slots": 96,
+    "metric_pair_state_slots": 48577536,
+    "exact_pair_array_elements": 242887680,
+    "transition_slots": 24288768,
+    "CAD_vertex_row_counts": {
+      "1": 32456,
+      "2": 52204,
+      "3": 3471
+    },
+    "maximum_absolute_numeric_difference_m": 4.440892098500626e-16,
+    "source_and_input_bindings_unchanged": true,
+    "posthoc_GT_used": true,
+    "NN_called": false,
+    "audit_wall_seconds": 469.52747846199964,
+    "audit_time_is_not_experiment_or_inference_latency": true
+  },
+  "primary_initialization_aggregates": {
+    "full": {
+      "denominator": 96,
+      "known_labels": 96,
+      "accepted": 0,
+      "raw_acceptances": 0,
+      "metrics": {
+        "add": {
+          "baseline_success": 95,
+          "baseline_accuracy_full": 0.9895833333333334,
+          "baseline_status_counts": {
+            "correct": 95,
+            "wrong": 1
+          },
+          "baseline_known_label_success": 95,
+          "baseline_known_label_denominator": 96,
+          "admitted_success": 0,
+          "candidate_recall": 95,
+          "candidate_recall_fraction_full": 0.9895833333333334,
+          "confusion": {
+            "false_reject": 95,
+            "true_reject": 1
+          },
+          "accepted_accuracy_full": null,
+          "accepted_known_label_denominator": 0,
+          "accepted_accuracy_known": null,
+          "all_input_false_accept_fraction": 0.0,
+          "correct_candidates_contradicted": 16,
+          "recoverable_bank_rejections": 95
+        },
+        "mssd_identity": {
+          "baseline_success": 95,
+          "baseline_accuracy_full": 0.9895833333333334,
+          "baseline_status_counts": {
+            "correct": 95,
+            "wrong": 1
+          },
+          "baseline_known_label_success": 95,
+          "baseline_known_label_denominator": 96,
+          "admitted_success": 0,
+          "candidate_recall": 95,
+          "candidate_recall_fraction_full": 0.9895833333333334,
+          "confusion": {
+            "false_reject": 95,
+            "true_reject": 1
+          },
+          "accepted_accuracy_full": null,
+          "accepted_known_label_denominator": 0,
+          "accepted_accuracy_known": null,
+          "all_input_false_accept_fraction": 0.0,
+          "correct_candidates_contradicted": 4,
+          "recoverable_bank_rejections": 95
+        }
+      },
+      "admission_coverage_full": 0.0
+    },
+    "cells": [
+      {
+        "cad_id": 1,
+        "light_id": 1,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 3,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 2,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 3,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 4,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 2,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 5,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 6,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 3,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 7,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 3,
+            "baseline_accuracy_full": 0.75,
+            "baseline_status_counts": {
+              "correct": 3,
+              "wrong": 1
+            },
+            "baseline_known_label_success": 3,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 3,
+            "candidate_recall_fraction_full": 0.75,
+            "confusion": {
+              "false_reject": 3,
+              "true_reject": 1
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 3
+          },
+          "mssd_identity": {
+            "baseline_success": 3,
+            "baseline_accuracy_full": 0.75,
+            "baseline_status_counts": {
+              "correct": 3,
+              "wrong": 1
+            },
+            "baseline_known_label_success": 3,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 3,
+            "candidate_recall_fraction_full": 0.75,
+            "confusion": {
+              "false_reject": 3,
+              "true_reject": 1
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 3
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 1,
+        "light_id": 8,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 2,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 2,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 1,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 2,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 3,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 4,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 5,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 6,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 7,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 2,
+        "light_id": 8,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 1,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 2,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 3,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 4,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 5,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 6,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 7,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      {
+        "cad_id": 3,
+        "light_id": 8,
+        "denominator": 4,
+        "known_labels": 4,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          },
+          "mssd_identity": {
+            "baseline_success": 4,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 4
+            },
+            "baseline_known_label_success": 4,
+            "baseline_known_label_denominator": 4,
+            "admitted_success": 0,
+            "candidate_recall": 4,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 4
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 4
+          }
+        },
+        "admission_coverage_full": 0.0
+      }
+    ],
+    "per_object": {
+      "1": {
+        "denominator": 32,
+        "known_labels": 32,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 31,
+            "baseline_accuracy_full": 0.96875,
+            "baseline_status_counts": {
+              "correct": 31,
+              "wrong": 1
+            },
+            "baseline_known_label_success": 31,
+            "baseline_known_label_denominator": 32,
+            "admitted_success": 0,
+            "candidate_recall": 31,
+            "candidate_recall_fraction_full": 0.96875,
+            "confusion": {
+              "false_reject": 31,
+              "true_reject": 1
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 13,
+            "recoverable_bank_rejections": 31
+          },
+          "mssd_identity": {
+            "baseline_success": 31,
+            "baseline_accuracy_full": 0.96875,
+            "baseline_status_counts": {
+              "correct": 31,
+              "wrong": 1
+            },
+            "baseline_known_label_success": 31,
+            "baseline_known_label_denominator": 32,
+            "admitted_success": 0,
+            "candidate_recall": 31,
+            "candidate_recall_fraction_full": 0.96875,
+            "confusion": {
+              "false_reject": 31,
+              "true_reject": 1
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 3,
+            "recoverable_bank_rejections": 31
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "2": {
+        "denominator": 32,
+        "known_labels": 32,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 32,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 32
+            },
+            "baseline_known_label_success": 32,
+            "baseline_known_label_denominator": 32,
+            "admitted_success": 0,
+            "candidate_recall": 32,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 32
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 32
+          },
+          "mssd_identity": {
+            "baseline_success": 32,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 32
+            },
+            "baseline_known_label_success": 32,
+            "baseline_known_label_denominator": 32,
+            "admitted_success": 0,
+            "candidate_recall": 32,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 32
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 32
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "3": {
+        "denominator": 32,
+        "known_labels": 32,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 32,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 32
+            },
+            "baseline_known_label_success": 32,
+            "baseline_known_label_denominator": 32,
+            "admitted_success": 0,
+            "candidate_recall": 32,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 32
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 3,
+            "recoverable_bank_rejections": 32
+          },
+          "mssd_identity": {
+            "baseline_success": 32,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 32
+            },
+            "baseline_known_label_success": 32,
+            "baseline_known_label_denominator": 32,
+            "admitted_success": 0,
+            "candidate_recall": 32,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 32
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 32
+          }
+        },
+        "admission_coverage_full": 0.0
+      }
+    },
+    "per_light": {
+      "1": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 4,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "2": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "3": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "4": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 2,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "5": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 1,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "6": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 4,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "7": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 11,
+            "baseline_accuracy_full": 0.9166666666666666,
+            "baseline_status_counts": {
+              "correct": 11,
+              "wrong": 1
+            },
+            "baseline_known_label_success": 11,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 11,
+            "candidate_recall_fraction_full": 0.9166666666666666,
+            "confusion": {
+              "false_reject": 11,
+              "true_reject": 1
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 11
+          },
+          "mssd_identity": {
+            "baseline_success": 11,
+            "baseline_accuracy_full": 0.9166666666666666,
+            "baseline_status_counts": {
+              "correct": 11,
+              "wrong": 1
+            },
+            "baseline_known_label_success": 11,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 11,
+            "candidate_recall_fraction_full": 0.9166666666666666,
+            "confusion": {
+              "false_reject": 11,
+              "true_reject": 1
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 0,
+            "recoverable_bank_rejections": 11
+          }
+        },
+        "admission_coverage_full": 0.0
+      },
+      "8": {
+        "denominator": 12,
+        "known_labels": 12,
+        "accepted": 0,
+        "raw_acceptances": 0,
+        "metrics": {
+          "add": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 3,
+            "recoverable_bank_rejections": 12
+          },
+          "mssd_identity": {
+            "baseline_success": 12,
+            "baseline_accuracy_full": 1.0,
+            "baseline_status_counts": {
+              "correct": 12
+            },
+            "baseline_known_label_success": 12,
+            "baseline_known_label_denominator": 12,
+            "admitted_success": 0,
+            "candidate_recall": 12,
+            "candidate_recall_fraction_full": 1.0,
+            "confusion": {
+              "false_reject": 12
+            },
+            "accepted_accuracy_full": null,
+            "accepted_known_label_denominator": 0,
+            "accepted_accuracy_known": null,
+            "all_input_false_accept_fraction": 0.0,
+            "correct_candidates_contradicted": 3,
+            "recoverable_bank_rejections": 12
+          }
+        },
+        "admission_coverage_full": 0.0
+      }
+    },
+    "macro_cell_baseline_accuracy": {
+      "add": 0.9895833333333334,
+      "mssd_identity": 0.9895833333333334
+    }
+  },
+  "models": [
+    {
+      "cad_id": 1,
+      "source_mesh_sha256": "8004fa3b60c978489171633ac4e3723770b1a19b2ccb9de132d832c5c6f043b6",
+      "official_diameter_m": 0.43031
+    },
+    {
+      "cad_id": 2,
+      "source_mesh_sha256": "04158be4ff42e82b5169e1c9b05a1b6dd545b716ae4e21cd452643b3c98f3cee",
+      "official_diameter_m": 0.175704
+    },
+    {
+      "cad_id": 3,
+      "source_mesh_sha256": "fbf111ea9685f1fb933516fafb122108efa56689321f54f33860054d80141b19",
+      "official_diameter_m": 0.352356
+    }
+  ],
+  "unqualified_requests": [
+    {
+      "request_id": "obs000_fixed_light",
+      "variant": "replay",
+      "pair_denominator": 31626
+    }
+  ],
+  "auxiliary_ADI": {
+    "independently_numerically_audited": false,
+    "status": "producer_only_auxiliary",
+    "full_initialization_counts": {
+      "baseline_success": 95,
+      "baseline_accuracy_full": 0.9895833333333334,
+      "baseline_status_counts": {
+        "correct": 95,
+        "wrong": 1
+      },
+      "baseline_known_label_success": 95,
+      "baseline_known_label_denominator": 96,
+      "admitted_success": 0,
+      "candidate_recall": 96,
+      "candidate_recall_fraction_full": 1.0,
+      "confusion": {
+        "false_reject": 95,
+        "true_reject": 1
+      },
+      "accepted_accuracy_full": null,
+      "accepted_known_label_denominator": 0,
+      "accepted_accuracy_known": null,
+      "all_input_false_accept_fraction": 0.0,
+      "correct_candidates_contradicted": 2512,
+      "recoverable_bank_rejections": 96
+    }
+  },
+  "pair_counts": [
+    {
+      "variant": "appearance",
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "request_denominator": 192,
+      "qualified_requests": 192,
+      "unqualified_requests": 0,
+      "pair_denominator": 6072192,
+      "left": 36324,
+      "right": 12758,
+      "tie": 99,
+      "fold_disagree": 28508,
+      "invalid": 0,
+      "unknown": 5994503,
+      "unknown_fraction_full": 0.9872057734669787,
+      "decisive_pair_fraction_full": 0.008083077741942283,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 749312,
+      "informative_correct_wins": 24273,
+      "informative_wrong_wins": 3225,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 12204,
+      "informative_invalid": 0,
+      "informative_unknown": 709610,
+      "informative_decisive_coverage": 0.03669766399043389,
+      "conditional_error_among_decisive_informative_pairs": 0.11728125681867772,
+      "correct_wins_fraction_full_informative": 0.03239371583532627,
+      "wrong_wins_fraction_full_informative": 0.004303948155107619
+    },
+    {
+      "variant": "appearance",
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "request_denominator": 192,
+      "qualified_requests": 192,
+      "unqualified_requests": 0,
+      "pair_denominator": 6072192,
+      "left": 36324,
+      "right": 12758,
+      "tie": 99,
+      "fold_disagree": 28508,
+      "invalid": 0,
+      "unknown": 5994503,
+      "unknown_fraction_full": 0.9872057734669787,
+      "decisive_pair_fraction_full": 0.008083077741942283,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 702308,
+      "informative_correct_wins": 24306,
+      "informative_wrong_wins": 3302,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 12299,
+      "informative_invalid": 0,
+      "informative_unknown": 662401,
+      "informative_decisive_coverage": 0.03931038803487928,
+      "conditional_error_among_decisive_informative_pairs": 0.1196030136192408,
+      "correct_wins_fraction_full_informative": 0.034608747159365974,
+      "wrong_wins_fraction_full_informative": 0.004701640875513308
+    },
+    {
+      "variant": "appearance",
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "request_denominator": 192,
+      "qualified_requests": 192,
+      "unqualified_requests": 0,
+      "pair_denominator": 6072192,
+      "left": 1434,
+      "right": 967,
+      "tie": 0,
+      "fold_disagree": 853,
+      "invalid": 0,
+      "unknown": 6068938,
+      "unknown_fraction_full": 0.9994641144417041,
+      "decisive_pair_fraction_full": 0.00039540910432344696,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 749312,
+      "informative_correct_wins": 42,
+      "informative_wrong_wins": 13,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 21,
+      "informative_invalid": 0,
+      "informative_unknown": 749236,
+      "informative_decisive_coverage": 7.340066621113768e-05,
+      "conditional_error_among_decisive_informative_pairs": 0.23636363636363636,
+      "correct_wins_fraction_full_informative": 5.605141783395969e-05,
+      "wrong_wins_fraction_full_informative": 1.7349248377178e-05
+    },
+    {
+      "variant": "appearance",
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "request_denominator": 192,
+      "qualified_requests": 192,
+      "unqualified_requests": 0,
+      "pair_denominator": 6072192,
+      "left": 1434,
+      "right": 967,
+      "tie": 0,
+      "fold_disagree": 853,
+      "invalid": 0,
+      "unknown": 6068938,
+      "unknown_fraction_full": 0.9994641144417041,
+      "decisive_pair_fraction_full": 0.00039540910432344696,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 702308,
+      "informative_correct_wins": 91,
+      "informative_wrong_wins": 14,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 39,
+      "informative_invalid": 0,
+      "informative_unknown": 702164,
+      "informative_decisive_coverage": 0.00014950705388518996,
+      "conditional_error_among_decisive_informative_pairs": 0.13333333333333333,
+      "correct_wins_fraction_full_informative": 0.0001295727800338313,
+      "wrong_wins_fraction_full_informative": 1.9934273851358663e-05
+    },
+    {
+      "variant": "appearance",
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 21559,
+      "right": 6847,
+      "tie": 0,
+      "fold_disagree": 15345,
+      "invalid": 0,
+      "unknown": 2992345,
+      "unknown_fraction_full": 0.9855897178481839,
+      "decisive_pair_fraction_full": 0.009356094141950716,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 14766,
+      "informative_wrong_wins": 1644,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 6619,
+      "informative_invalid": 0,
+      "informative_unknown": 351627,
+      "informative_decisive_coverage": 0.04380017936453707,
+      "conditional_error_among_decisive_informative_pairs": 0.10018281535648994,
+      "correct_wins_fraction_full_informative": 0.03941215408267851,
+      "wrong_wins_fraction_full_informative": 0.0043880252818585585
+    },
+    {
+      "variant": "appearance",
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 21559,
+      "right": 6847,
+      "tie": 0,
+      "fold_disagree": 15345,
+      "invalid": 0,
+      "unknown": 2992345,
+      "unknown_fraction_full": 0.9855897178481839,
+      "decisive_pair_fraction_full": 0.009356094141950716,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 14725,
+      "informative_wrong_wins": 1662,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 6682,
+      "informative_invalid": 0,
+      "informative_unknown": 328085,
+      "informative_decisive_coverage": 0.04666613508603063,
+      "conditional_error_among_decisive_informative_pairs": 0.10142185879050467,
+      "correct_wins_fraction_full_informative": 0.04193316892303662,
+      "wrong_wins_fraction_full_informative": 0.004732966162994014
+    },
+    {
+      "variant": "appearance",
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 786,
+      "right": 539,
+      "tie": 0,
+      "fold_disagree": 491,
+      "invalid": 0,
+      "unknown": 3034280,
+      "unknown_fraction_full": 0.9994018634456882,
+      "decisive_pair_fraction_full": 0.00043641571281013514,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 22,
+      "informative_wrong_wins": 11,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 4,
+      "informative_invalid": 0,
+      "informative_unknown": 374619,
+      "informative_decisive_coverage": 8.808079945336523e-05,
+      "conditional_error_among_decisive_informative_pairs": 0.3333333333333333,
+      "correct_wins_fraction_full_informative": 5.872053296891015e-05,
+      "wrong_wins_fraction_full_informative": 2.9360266484455074e-05
+    },
+    {
+      "variant": "appearance",
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 786,
+      "right": 539,
+      "tie": 0,
+      "fold_disagree": 491,
+      "invalid": 0,
+      "unknown": 3034280,
+      "unknown_fraction_full": 0.9994018634456882,
+      "decisive_pair_fraction_full": 0.00043641571281013514,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 41,
+      "informative_wrong_wins": 11,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 17,
+      "informative_invalid": 0,
+      "informative_unknown": 351085,
+      "informative_decisive_coverage": 0.0001480831771815215,
+      "conditional_error_among_decisive_informative_pairs": 0.21153846153846154,
+      "correct_wins_fraction_full_informative": 0.00011675788970081502,
+      "wrong_wins_fraction_full_informative": 3.132528748070647e-05
+    },
+    {
+      "variant": "appearance",
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 14765,
+      "right": 5911,
+      "tie": 99,
+      "fold_disagree": 13163,
+      "invalid": 0,
+      "unknown": 3002158,
+      "unknown_fraction_full": 0.9888218290857733,
+      "decisive_pair_fraction_full": 0.006810061341933852,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 9507,
+      "informative_wrong_wins": 1581,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 5585,
+      "informative_invalid": 0,
+      "informative_unknown": 357983,
+      "informative_decisive_coverage": 0.029595148616330714,
+      "conditional_error_among_decisive_informative_pairs": 0.1425865800865801,
+      "correct_wins_fraction_full_informative": 0.025375277587974036,
+      "wrong_wins_fraction_full_informative": 0.004219871028356679
+    },
+    {
+      "variant": "appearance",
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 14765,
+      "right": 5911,
+      "tie": 99,
+      "fold_disagree": 13163,
+      "invalid": 0,
+      "unknown": 3002158,
+      "unknown_fraction_full": 0.9888218290857733,
+      "decisive_pair_fraction_full": 0.006810061341933852,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 9581,
+      "informative_wrong_wins": 1640,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 5617,
+      "informative_invalid": 0,
+      "informative_unknown": 334316,
+      "informative_decisive_coverage": 0.03195464098372794,
+      "conditional_error_among_decisive_informative_pairs": 0.1461545316816683,
+      "correct_wins_fraction_full_informative": 0.027284325395695336,
+      "wrong_wins_fraction_full_informative": 0.004670315588032601
+    },
+    {
+      "variant": "appearance",
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 648,
+      "right": 428,
+      "tie": 0,
+      "fold_disagree": 362,
+      "invalid": 0,
+      "unknown": 3034658,
+      "unknown_fraction_full": 0.99952636543772,
+      "decisive_pair_fraction_full": 0.0003544024958367588,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 20,
+      "informative_wrong_wins": 2,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 17,
+      "informative_invalid": 0,
+      "informative_unknown": 374617,
+      "informative_decisive_coverage": 5.872053296891015e-05,
+      "conditional_error_among_decisive_informative_pairs": 0.09090909090909091,
+      "correct_wins_fraction_full_informative": 5.338230269900923e-05,
+      "wrong_wins_fraction_full_informative": 5.3382302699009224e-06
+    },
+    {
+      "variant": "appearance",
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 648,
+      "right": 428,
+      "tie": 0,
+      "fold_disagree": 362,
+      "invalid": 0,
+      "unknown": 3034658,
+      "unknown_fraction_full": 0.99952636543772,
+      "decisive_pair_fraction_full": 0.0003544024958367588,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 50,
+      "informative_wrong_wins": 3,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 22,
+      "informative_invalid": 0,
+      "informative_unknown": 351079,
+      "informative_decisive_coverage": 0.00015093093058885846,
+      "conditional_error_among_decisive_informative_pairs": 0.05660377358490566,
+      "correct_wins_fraction_full_informative": 0.0001423876703668476,
+      "wrong_wins_fraction_full_informative": 8.543260222010856e-06
+    },
+    {
+      "variant": "replay",
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "request_denominator": 192,
+      "qualified_requests": 191,
+      "unqualified_requests": 1,
+      "pair_denominator": 6072192,
+      "left": 36310,
+      "right": 12724,
+      "tie": 99,
+      "fold_disagree": 28432,
+      "invalid": 0,
+      "unknown": 5994627,
+      "unknown_fraction_full": 0.9872261944286347,
+      "decisive_pair_fraction_full": 0.008075172853559309,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 749312,
+      "informative_correct_wins": 24273,
+      "informative_wrong_wins": 3225,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 12204,
+      "informative_invalid": 0,
+      "informative_unknown": 709610,
+      "informative_decisive_coverage": 0.03669766399043389,
+      "conditional_error_among_decisive_informative_pairs": 0.11728125681867772,
+      "correct_wins_fraction_full_informative": 0.03239371583532627,
+      "wrong_wins_fraction_full_informative": 0.004303948155107619
+    },
+    {
+      "variant": "replay",
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "request_denominator": 192,
+      "qualified_requests": 191,
+      "unqualified_requests": 1,
+      "pair_denominator": 6072192,
+      "left": 36310,
+      "right": 12724,
+      "tie": 99,
+      "fold_disagree": 28432,
+      "invalid": 0,
+      "unknown": 5994627,
+      "unknown_fraction_full": 0.9872261944286347,
+      "decisive_pair_fraction_full": 0.008075172853559309,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 702308,
+      "informative_correct_wins": 24306,
+      "informative_wrong_wins": 3302,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 12299,
+      "informative_invalid": 0,
+      "informative_unknown": 662401,
+      "informative_decisive_coverage": 0.03931038803487928,
+      "conditional_error_among_decisive_informative_pairs": 0.1196030136192408,
+      "correct_wins_fraction_full_informative": 0.034608747159365974,
+      "wrong_wins_fraction_full_informative": 0.004701640875513308
+    },
+    {
+      "variant": "replay",
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "request_denominator": 192,
+      "qualified_requests": 191,
+      "unqualified_requests": 1,
+      "pair_denominator": 6072192,
+      "left": 1427,
+      "right": 963,
+      "tie": 0,
+      "fold_disagree": 829,
+      "invalid": 0,
+      "unknown": 6068973,
+      "unknown_fraction_full": 0.9994698784228166,
+      "decisive_pair_fraction_full": 0.0003935975674023483,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 749312,
+      "informative_correct_wins": 42,
+      "informative_wrong_wins": 13,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 21,
+      "informative_invalid": 0,
+      "informative_unknown": 749236,
+      "informative_decisive_coverage": 7.340066621113768e-05,
+      "conditional_error_among_decisive_informative_pairs": 0.23636363636363636,
+      "correct_wins_fraction_full_informative": 5.605141783395969e-05,
+      "wrong_wins_fraction_full_informative": 1.7349248377178e-05
+    },
+    {
+      "variant": "replay",
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "request_denominator": 192,
+      "qualified_requests": 191,
+      "unqualified_requests": 1,
+      "pair_denominator": 6072192,
+      "left": 1427,
+      "right": 963,
+      "tie": 0,
+      "fold_disagree": 829,
+      "invalid": 0,
+      "unknown": 6068973,
+      "unknown_fraction_full": 0.9994698784228166,
+      "decisive_pair_fraction_full": 0.0003935975674023483,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 702308,
+      "informative_correct_wins": 91,
+      "informative_wrong_wins": 14,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 39,
+      "informative_invalid": 0,
+      "informative_unknown": 702164,
+      "informative_decisive_coverage": 0.00014950705388518996,
+      "conditional_error_among_decisive_informative_pairs": 0.13333333333333333,
+      "correct_wins_fraction_full_informative": 0.0001295727800338313,
+      "wrong_wins_fraction_full_informative": 1.9934273851358663e-05
+    },
+    {
+      "variant": "replay",
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 21559,
+      "right": 6847,
+      "tie": 0,
+      "fold_disagree": 15345,
+      "invalid": 0,
+      "unknown": 2992345,
+      "unknown_fraction_full": 0.9855897178481839,
+      "decisive_pair_fraction_full": 0.009356094141950716,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 14766,
+      "informative_wrong_wins": 1644,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 6619,
+      "informative_invalid": 0,
+      "informative_unknown": 351627,
+      "informative_decisive_coverage": 0.04380017936453707,
+      "conditional_error_among_decisive_informative_pairs": 0.10018281535648994,
+      "correct_wins_fraction_full_informative": 0.03941215408267851,
+      "wrong_wins_fraction_full_informative": 0.0043880252818585585
+    },
+    {
+      "variant": "replay",
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 21559,
+      "right": 6847,
+      "tie": 0,
+      "fold_disagree": 15345,
+      "invalid": 0,
+      "unknown": 2992345,
+      "unknown_fraction_full": 0.9855897178481839,
+      "decisive_pair_fraction_full": 0.009356094141950716,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 14725,
+      "informative_wrong_wins": 1662,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 6682,
+      "informative_invalid": 0,
+      "informative_unknown": 328085,
+      "informative_decisive_coverage": 0.04666613508603063,
+      "conditional_error_among_decisive_informative_pairs": 0.10142185879050467,
+      "correct_wins_fraction_full_informative": 0.04193316892303662,
+      "wrong_wins_fraction_full_informative": 0.004732966162994014
+    },
+    {
+      "variant": "replay",
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 786,
+      "right": 539,
+      "tie": 0,
+      "fold_disagree": 491,
+      "invalid": 0,
+      "unknown": 3034280,
+      "unknown_fraction_full": 0.9994018634456882,
+      "decisive_pair_fraction_full": 0.00043641571281013514,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 22,
+      "informative_wrong_wins": 11,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 4,
+      "informative_invalid": 0,
+      "informative_unknown": 374619,
+      "informative_decisive_coverage": 8.808079945336523e-05,
+      "conditional_error_among_decisive_informative_pairs": 0.3333333333333333,
+      "correct_wins_fraction_full_informative": 5.872053296891015e-05,
+      "wrong_wins_fraction_full_informative": 2.9360266484455074e-05
+    },
+    {
+      "variant": "replay",
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 96,
+      "unqualified_requests": 0,
+      "pair_denominator": 3036096,
+      "left": 786,
+      "right": 539,
+      "tie": 0,
+      "fold_disagree": 491,
+      "invalid": 0,
+      "unknown": 3034280,
+      "unknown_fraction_full": 0.9994018634456882,
+      "decisive_pair_fraction_full": 0.00043641571281013514,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 41,
+      "informative_wrong_wins": 11,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 17,
+      "informative_invalid": 0,
+      "informative_unknown": 351085,
+      "informative_decisive_coverage": 0.0001480831771815215,
+      "conditional_error_among_decisive_informative_pairs": 0.21153846153846154,
+      "correct_wins_fraction_full_informative": 0.00011675788970081502,
+      "wrong_wins_fraction_full_informative": 3.132528748070647e-05
+    },
+    {
+      "variant": "replay",
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 95,
+      "unqualified_requests": 1,
+      "pair_denominator": 3036096,
+      "left": 14751,
+      "right": 5877,
+      "tie": 99,
+      "fold_disagree": 13087,
+      "invalid": 0,
+      "unknown": 3002282,
+      "unknown_fraction_full": 0.9888626710090853,
+      "decisive_pair_fraction_full": 0.0067942515651679,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 9507,
+      "informative_wrong_wins": 1581,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 5585,
+      "informative_invalid": 0,
+      "informative_unknown": 357983,
+      "informative_decisive_coverage": 0.029595148616330714,
+      "conditional_error_among_decisive_informative_pairs": 0.1425865800865801,
+      "correct_wins_fraction_full_informative": 0.025375277587974036,
+      "wrong_wins_fraction_full_informative": 0.004219871028356679
+    },
+    {
+      "variant": "replay",
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 95,
+      "unqualified_requests": 1,
+      "pair_denominator": 3036096,
+      "left": 14751,
+      "right": 5877,
+      "tie": 99,
+      "fold_disagree": 13087,
+      "invalid": 0,
+      "unknown": 3002282,
+      "unknown_fraction_full": 0.9888626710090853,
+      "decisive_pair_fraction_full": 0.0067942515651679,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 9581,
+      "informative_wrong_wins": 1640,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 5617,
+      "informative_invalid": 0,
+      "informative_unknown": 334316,
+      "informative_decisive_coverage": 0.03195464098372794,
+      "conditional_error_among_decisive_informative_pairs": 0.1461545316816683,
+      "correct_wins_fraction_full_informative": 0.027284325395695336,
+      "wrong_wins_fraction_full_informative": 0.004670315588032601
+    },
+    {
+      "variant": "replay",
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "request_denominator": 96,
+      "qualified_requests": 95,
+      "unqualified_requests": 1,
+      "pair_denominator": 3036096,
+      "left": 641,
+      "right": 424,
+      "tie": 0,
+      "fold_disagree": 338,
+      "invalid": 0,
+      "unknown": 3034693,
+      "unknown_fraction_full": 0.9995378933999451,
+      "decisive_pair_fraction_full": 0.00035077942199456143,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 374656,
+      "informative_correct_wins": 20,
+      "informative_wrong_wins": 2,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 17,
+      "informative_invalid": 0,
+      "informative_unknown": 374617,
+      "informative_decisive_coverage": 5.872053296891015e-05,
+      "conditional_error_among_decisive_informative_pairs": 0.09090909090909091,
+      "correct_wins_fraction_full_informative": 5.338230269900923e-05,
+      "wrong_wins_fraction_full_informative": 5.3382302699009224e-06
+    },
+    {
+      "variant": "replay",
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "request_denominator": 96,
+      "qualified_requests": 95,
+      "unqualified_requests": 1,
+      "pair_denominator": 3036096,
+      "left": 641,
+      "right": 424,
+      "tie": 0,
+      "fold_disagree": 338,
+      "invalid": 0,
+      "unknown": 3034693,
+      "unknown_fraction_full": 0.9995378933999451,
+      "decisive_pair_fraction_full": 0.00035077942199456143,
+      "unknown_label_pairs": 0,
+      "known_label_informative_pair_denominator": 351154,
+      "informative_correct_wins": 50,
+      "informative_wrong_wins": 3,
+      "informative_ties": 0,
+      "informative_fold_disagreements": 22,
+      "informative_invalid": 0,
+      "informative_unknown": 351079,
+      "informative_decisive_coverage": 0.00015093093058885846,
+      "conditional_error_among_decisive_informative_pairs": 0.05660377358490566,
+      "correct_wins_fraction_full_informative": 0.0001423876703668476,
+      "wrong_wins_fraction_full_informative": 8.543260222010856e-06
+    }
+  ],
+  "pair_state_transitions": [
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 28432,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 76,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 36310,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 14,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 12724,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 34,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "tie",
+      "replay_state": "tie",
+      "count": 99,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 5994503,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 28432,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 76,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 36310,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 14,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 12724,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 34,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "tie",
+      "replay_state": "tie",
+      "count": 99,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 5994503,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 829,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 24,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 1427,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 7,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 963,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 4,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 6068938,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 829,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 24,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 1427,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 7,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 963,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 4,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "all",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 6068938,
+      "pair_denominator": 6072192
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 15345,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 21559,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 6847,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 2992345,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 15345,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 21559,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 6847,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 2992345,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 491,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 786,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 539,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 3034280,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 491,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 786,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 539,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "albedo",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 3034280,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 13087,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 76,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 14751,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 14,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 5877,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 34,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "tie",
+      "replay_state": "tie",
+      "count": 99,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "add",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 3002158,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 13087,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 76,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 14751,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 14,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 5877,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 34,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "tie",
+      "replay_state": "tie",
+      "count": 99,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "gradient",
+      "metric": "mssd_identity",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 3002158,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 338,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 24,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 641,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 7,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 424,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 4,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "add",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 3034658,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "disagree",
+      "count": 338,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "disagree",
+      "replay_state": "unknown",
+      "count": 24,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "left",
+      "count": 641,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "left",
+      "replay_state": "unknown",
+      "count": 7,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "right",
+      "count": 424,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "right",
+      "replay_state": "unknown",
+      "count": 4,
+      "pair_denominator": 3036096
+    },
+    {
+      "rendering": "fixed_light",
+      "channel": "affine",
+      "metric": "mssd_identity",
+      "appearance_state": "unknown",
+      "replay_state": "unknown",
+      "count": 3034658,
+      "pair_denominator": 3036096
+    }
+  ],
+  "interpretation": {
+    "useful_admission_coverage_failed": true,
+    "zero_false_accept_is_not_success": true,
+    "pairwise_classifier_is_not_a_reranking_or_admission_policy": true,
+    "conditional_pair_errors_must_be_shown_with_full_coverage": true,
+    "unavailable_and_interrupted_slots_retained": true
+  },
+  "execution_scope": {
+    "pause_recovery_amendment": true,
+    "interrupted_replay_not_retried": true,
+    "newly_started_replays_after_pause": 190,
+    "previously_completed_appearance_replays_not_rerun": true,
+    "original_continuous_wall_seconds": null,
+    "deployment_FPS_claim": false
+  },
+  "source_sha256": {
+    "comparison": "3e0828a06aa7a9126ab8a9e2736e897a4e33a719df7d5380e27cfe10589bd883",
+    "posthoc_plan": "fa135ab09124eca0665adc89c1c795a7f7f9044297fb0ef29d82094c3ef9c3d7",
+    "raw_audit": "1de86bf61727790e9eab1a48307e0d2996fced268a510c88ad7275d003d530df",
+    "frozen_plot_tool": "55f3313d7ad9317fb1d5cd5b62f8bb71ad217f20ca7bd47cc0b1267792e5bbd2",
+    "independent_metric_audit_receipt": "e5b706fd19af93acbd46481190c07036c4d92e9fdae3fef4c34827a840b16ee5",
+    "independent_metric_audit_tool": "e6325e544d1035250ea15cdb24478dc87ba2306240e22764a6964a187630c998",
+    "plot_receipt": "131199b7ab5dc78535234b3dd6d164260e6d74ccd3812e1b1e13489dbf221efc",
+    "aggregate_preparer": "66ca4b9cdd02578188dbe635ec0fb420367ac32028613b60b288e76c1459d936",
+    "package_builder": "f8a18633ac5cebf06d2506e9f0f92aab100cb0bf6e9852177732793c757acbe4",
+    "previous_package_manifest": "e10919cfa1537ef96f2dd04a0b62f58120ce41e58f675c2cd9d808a75fcda1ac",
+    "final_whitelist_packager": "b7951e61edd8dc468f886bf02ba4f1bdc6985638f24e685e662e7dbdeef5a534"
+  },
+  "artifact_scope": {
+    "aggregates_and_generated_figures_only": true,
+    "raw_GT_poses_included": false,
+    "raw_predictions_included": false,
+    "raw_images_included": false,
+    "models_or_weights_included": false,
+    "source_code_included": false,
+    "absolute_local_paths_included": false,
+    "package_builder_read_GT_pose_files": false,
+    "publishing_handled_separately": true,
+    "generated_figures": 6,
+    "figure_formats": [
+      "png",
+      "svg",
+      "pdf"
+    ],
+    "initialization_cell_csv_rows": 48,
+    "initialization_cell_csv_row_scope": "24 object/light cells x 2 audited metrics; measures occupy columns",
+    "internal_plot_count_csv_rows": 144,
+    "internal_plot_count_csv_row_scope": "24 object/light cells x 2 metrics x 3 plotted measures; not included as a duplicate payload"
+  }
+}

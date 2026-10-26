@@ -1,0 +1,60 @@
+{
+  "schema": "aggregate_only_artifact_manifest/1",
+  "payload_files": {
+    "README.md": {
+      "bytes": 5114,
+      "sha256": "e2d1faea2a8d9bb257bfde4049aa903e8b1295c4cf04a533a07a826d9f993728"
+    },
+    "add_full_initialization_cells.pdf": {
+      "bytes": 28400,
+      "sha256": "60c2c59025d8d2a43bcc494a8aa8d45078f802413149d0bca6a0c4fa8665d4dd"
+    },
+    "add_full_initialization_cells.png": {
+      "bytes": 183826,
+      "sha256": "77184d83b7ae59a244e54493a84d2255124ef9eca56af1bccefbd974b10be2fa"
+    },
+    "add_full_initialization_cells.svg": {
+      "bytes": 133205,
+      "sha256": "aca3215135a076d516822fb7685e905289e572833e785cf19c34cbd2a88a746f"
+    },
+    "initialization_cells.csv": {
+      "bytes": 1700,
+      "sha256": "bdf9d4110636335ef27aeb4044e89e8b29bcc0a3517f23290501435b023152f3"
+    },
+    "mssd_identity_full_initialization_cells.pdf": {
+      "bytes": 28824,
+      "sha256": "75e54a783e21591ecd289e588ef9fe35b14c4546d96394a99ca834b002cc6dd2"
+    },
+    "mssd_identity_full_initialization_cells.png": {
+      "bytes": 189203,
+      "sha256": "8484ae5e49a3c577630fe79583b3136ec7b73d0b89202e97cdc898e8789cd0ef"
+    },
+    "mssd_identity_full_initialization_cells.svg": {
+      "bytes": 134707,
+      "sha256": "63552203159aa3745365fd542f9ded85bf0cc607af0f1d9a722421fbd8bd4998"
+    },
+    "pair_counts.csv": {
+      "bytes": 6204,
+      "sha256": "d02b2a99674545a2a3f856ddab7671f1c835b17c17c7d0441c216c3606102e5a"
+    },
+    "pair_transitions.csv": {
+      "bytes": 4057,
+      "sha256": "6a6a9170c87be5560d8627eab6c0d60d9e6e15ccbde1b88c7080f9d540ca5b2b"
+    },
+    "summary.json": {
+      "bytes": 114212,
+      "sha256": "8fddb4dda26ff6fc90a7eabeb5ddb0b96caf2befa75edacbbdcb8e5cff3f58bf"
+    }
+  },
+  "payload_file_count": 11,
+  "payload_bytes": 829452,
+  "verified_numeric_metrics": [
+    "add",
+    "mssd_identity"
+  ],
+  "producer_only_auxiliary_metrics": [
+    "adi"
+  ],
+  "comparison_sha256": "3e0828a06aa7a9126ab8a9e2736e897a4e33a719df7d5380e27cfe10589bd883",
+  "metric_audit_sha256": "e5b706fd19af93acbd46481190c07036c4d92e9fdae3fef4c34827a840b16ee5"
+}
