@@ -1,0 +1,44 @@
+{
+  "schema": "aggregate_publication_manifest/1",
+  "package": "tless_static_click_aggregates",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5987,
+      "sha256": "de3ba2e5f3499816c6c70202f6b2df0429b25c1d620b77ecb6311a4b52cc18bc"
+    },
+    {
+      "path": "per_trial.csv",
+      "bytes": 2784,
+      "sha256": "da92d8429361731422eef846771a0f41d52d4406907341d517fb40e8a94e8d1b"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 40145,
+      "sha256": "ddffd75c4e819dea2a36cf9a10776eecf802e398031fb0e065a8c6368a94249b"
+    },
+    {
+      "path": "threshold_accuracy.pdf",
+      "bytes": 30851,
+      "sha256": "36dce2261bd84ba92f1f7bd204838aa0485e396454afadf6bd9b5111831e0bed"
+    },
+    {
+      "path": "threshold_accuracy.png",
+      "bytes": 163970,
+      "sha256": "d1cf3e5e7eef5e39aa8be15d9f9fbc4e8e62e82a8de640403fadbebd529750ac"
+    },
+    {
+      "path": "threshold_accuracy.svg",
+      "bytes": 105761,
+      "sha256": "f79bcab8cf4f39dcab2c0cab5e02f20df1cc8826c3953790a751eae2aaa7ee48"
+    },
+    {
+      "path": "threshold_counts.csv",
+      "bytes": 4240,
+      "sha256": "548172cc8b296d1ac175490d58b3f40a269d5d1c59b50375e2a9c07902614529"
+    }
+  ],
+  "payload_file_count": 7,
+  "payload_bytes": 353738,
+  "manifest_self_excluded": true
+}
