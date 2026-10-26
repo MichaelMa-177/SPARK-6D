@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "call_denominator": 42,
+  "completed_calls": 42,
+  "actual_raw_returns": 42,
+  "independent_exact_comparisons": 21,
+  "parameters_buffers_unchanged": true,
+  "load_seconds": 7.540841494999995,
+  "wall_seconds": 24.666165536000108,
+  "device": "NVIDIA GeForce RTX 4070 SUPER",
+  "timing_scope": "whole run includes frozen-source/checkpoint verification, import, CUDA, load, all calls, state/model CPU hashes and artifact writes; excludes final report write",
+  "GT_read": false,
+  "accuracy_claim": false,
+  "tracking_FPS_claim": false,
+  "schema": "tapnext_shared_smoke_public_aggregate/1",
+  "input_scope": "12 synthetic 96x160 RGB frames; frames6/7 black; original8 queries from0, secondary13 queries from3; independent12+9 then interleaved21",
+  "precision": "float32; matmul TF32 false; cuDNN TF32 true",
+  "memory_after": {
+    "cpu_peak_rss_bytes": 3944943616,
+    "cpu_current_rss_bytes": 1303867392,
+    "cuda_initialized": true,
+    "cuda_allocated_bytes": 986658304,
+    "cuda_reserved_bytes": 1992294400,
+    "cuda_peak_allocated_bytes": 1632684032,
+    "cuda_peak_reserved_bytes": 1992294400
+  },
+  "source_and_inputs_unchanged": true,
+  "independent_saved_checks": {
+    "slots": 42,
+    "raw_returns": 42,
+    "independent_rollout_comparisons": 21,
+    "compared_numeric_elements": 111612,
+    "saved_state_tensor_hashes": 1050,
+    "artifact_count": 45,
+    "artifacts_unchanged": true,
+    "scope": "actual saved raw arrays, pixel/visibility conversion, state hash equality and inactive/model hash records; no independent model rerun or reconstruction of unavailable full state tensors"
+  },
+  "provenance_sha256": {
+    "plan": "51ea0cfa513e17604ec84fde7fd2d730df0512ab5f18209a637c3c0d96d4b5f5",
+    "run_report": "c3c95ab333951f65969d8497bfcebfd9ca9e1d98c1cbbf1efcfd029b895fb400",
+    "independent_saved_review": "c7313329e44a7cf1d0a5319e91b748ada184da221a4f8b1349c995571ae8029a",
+    "tool": "e62387a6c1eefc61300ad8d3f95fa6253c9c369a5993e7b08295821cf2736fd9"
+  },
+  "limitations": [
+    "Finite synthetic runtime check, no accuracy or recovery result.",
+    "Full state trees and registered model parameter/buffer values checked; not every arbitrary Python attribute.",
+    "Audit-heavy wall time is not tracking FPS.",
+    "Independent saved review does not rerun the model or recover full state tensors from hashes."
+  ]
+}
