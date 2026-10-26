@@ -1,0 +1,3297 @@
+{
+  "all_states_tentative": true,
+  "arms": {
+    "tapnext_preloss": {
+      "failed_frames": 47,
+      "failure_rate": 0.03632148377125193,
+      "input_frames_including_initialization": 1297,
+      "manager_state_tracking": {
+        "disabled": 0,
+        "idle": 294,
+        "missing": 0,
+        "pending": 9,
+        "ready": 991,
+        "retired": 0
+      },
+      "missing_or_invalid_frames": 0,
+      "pooled_child_all_input_throughput": 4.525120661831141,
+      "pooled_parent_all_input_throughput": 4.250055933143737,
+      "pooled_tracking_frame_fps": 9.699211295861353,
+      "selected_seed_source_tracking": {
+        "conflict": 6,
+        "fallback": 650,
+        "initialization": 0,
+        "missing": 0,
+        "original": 539,
+        "secondary": 99
+      },
+      "summed_tracking_frame_wall_seconds": 133.41290961999653,
+      "tracking_frames": 1294
+    },
+    "tapnext_single": {
+      "failed_frames": 255,
+      "failure_rate": 0.19706336939721794,
+      "input_frames_including_initialization": 1297,
+      "manager_state_tracking": {
+        "disabled": 1294,
+        "idle": 0,
+        "missing": 0,
+        "pending": 0,
+        "ready": 0,
+        "retired": 0
+      },
+      "missing_or_invalid_frames": 0,
+      "pooled_child_all_input_throughput": 6.214499878768645,
+      "pooled_parent_all_input_throughput": 5.750377179340702,
+      "pooled_tracking_frame_fps": 15.307703521564676,
+      "selected_seed_source_tracking": {
+        "conflict": 0,
+        "fallback": 749,
+        "initialization": 0,
+        "missing": 0,
+        "original": 545,
+        "secondary": 0
+      },
+      "summed_tracking_frame_wall_seconds": 84.5326013909978,
+      "tracking_frames": 1294
+    }
+  },
+  "cases": [
+    {
+      "case_id": "cracker_occlusion",
+      "input_frames": 375,
+      "intervention": "Whole RGB and depth set to zero on selected inputs [20, 40).",
+      "occlusion_selected_interval_half_open": [
+        20,
+        40
+      ],
+      "source_stride": 1,
+      "tracking_frames": 374
+    },
+    {
+      "case_id": "mustard_occlusion",
+      "input_frames": 737,
+      "intervention": "Existing foreground-occlusion input bytes (RGB=32, depth=0.25 m) on selected inputs [100, 130).",
+      "occlusion_selected_interval_half_open": [
+        100,
+        130
+      ],
+      "source_stride": 1,
+      "tracking_frames": 736
+    },
+    {
+      "case_id": "mustard_stride4",
+      "input_frames": 185,
+      "intervention": "Every fourth original source frame; no added occlusion.",
+      "occlusion_selected_interval_half_open": [
+        0,
+        0
+      ],
+      "source_stride": 4,
+      "tracking_frames": 184
+    }
+  ],
+  "claims": {
+    "all_observed_failure_count_improvement_from_mustard_occlusion": true,
+    "cracker_remaining_failed_frames": 18,
+    "failures_preloss": 47,
+    "failures_single": 255,
+    "full_tracking_denominator_per_arm": 1294,
+    "mustard_five_consecutive_recovery_delay_inputs_preloss": 0,
+    "mustard_five_consecutive_recovery_delay_inputs_single": 208,
+    "mustard_remaining_failed_frames": 29,
+    "other_two_cases_failure_count_change": 0
+  },
+  "coverage": {
+    "initial_candidate_slots": 1512,
+    "input_slots": 2594,
+    "original_point_slots": 2594,
+    "runs": 6,
+    "tracking_slots": 2588
+  },
+  "development_data": true,
+  "evaluation_policy": {
+    "all_six_terminal_before_GT": true,
+    "development_sequences": true,
+    "diagnostics": [
+      "original-only D @ raw_GT0",
+      "secondary cohort D @ raw_GT0; same immutable first-camera gauge"
+    ],
+    "external_pinned_raw_audit_before_GT": true,
+    "frame_zero": "separate initialization, excluded from tracking",
+    "mismatched_pair": "retain individual full metrics; disable paired delta and attribution",
+    "missing_or_invalid": "infinity in full denominator",
+    "no_GT_repair": true,
+    "no_accuracy_denominator_filtering": true,
+    "no_alignment": true,
+    "no_birth_realignment": true,
+    "no_scale_fit": true,
+    "no_symmetry_minimization": true,
+    "pairing": "exact actual initialization/input arrays plus all original TAP/raw motion arrays and records",
+    "prepare_before_any_inference": true,
+    "primary": "Absolute ordinary ADD over the frozen trimesh.load(process=False) CAD vertex samples, preserving UV-split coordinate multiplicity",
+    "raw_audit_schema": "preloss_motion_refinement_raw_audit/1",
+    "recovery_consecutive_inputs": 5,
+    "secondary": [
+      "selected first-camera D @ raw_GT0",
+      "actual_Pt @ inverse(actual_P0) @ raw_GT0"
+    ],
+    "seed_statistics": "policy selection outcome, not identity admission or guaranteed accepted neural output",
+    "source_invalid": "all primary slots missing; preserve raw diagnostics",
+    "threshold_diameter_fraction": 0.1,
+    "total_tracking_frames": 2588,
+    "tracking_frames_per_arm": 1294,
+    "trust_flags_must_be_false": true
+  },
+  "held_out_evaluation": false,
+  "identity_certified": false,
+  "independent_repeated_trials": 0,
+  "limitations": [
+    "Reused development sequences; one observed run per case and arm. No held-out generalization or significance claim.",
+    "Absolute ordinary ADD over frozen loader vertex samples including UV-split multiplicities; no alignment, scale fit, GT repair or symmetry minimization.",
+    "Five-consecutive-input recovery is a retrospective GT-based metric, not online correctness or identity verification.",
+    "Seed-source counts record policy selection, not identity admission or guaranteed neural acceptance.",
+    "The two mustard cases share the same original sequence; three cases are not three independent captures.",
+    "Accuracy improvement is confined to one occlusion case; both other failure counts stay unchanged and their mean ADD slightly increases.",
+    "Pre-loss anchors reduce measured tracking throughput in all three cases.",
+    "This package contains numeric summaries and plots only; GT-derived ADD error curves appear in plots, but no raw poses, GT arrays, input images, models, weights or source code."
+  ],
+  "metric_vertex_representation": {
+    "cracker": {
+      "loader_vertex_samples": 8291,
+      "raw_OBJ_unique_coordinates": 7866,
+      "raw_OBJ_vertex_records": 8291
+    },
+    "explanation": "Frozen primary metric uses all mesh-loader vertices, including duplicate coordinates introduced at UV seams. The legacy all_original_CAD_vertices field in source summaries counts loader samples, not raw OBJ unique coordinates.",
+    "mustard": {
+      "loader_vertex_samples": 10983,
+      "raw_OBJ_unique_coordinates": 7866,
+      "raw_OBJ_vertex_records": 7866
+    },
+    "sensitivity": "Raw OBJ vertex weighting is a subsequent diagnostic and does not replace the preregistered frozen primary result."
+  },
+  "paired_deltas": [
+    {
+      "case_id": "cracker_occlusion",
+      "failure_count_delta_preloss_minus_single": 0,
+      "qualified": true
+    },
+    {
+      "case_id": "mustard_occlusion",
+      "failure_count_delta_preloss_minus_single": -208,
+      "qualified": true
+    },
+    {
+      "case_id": "mustard_stride4",
+      "failure_count_delta_preloss_minus_single": 0,
+      "qualified": true
+    }
+  ],
+  "paired_initializations": [
+    {
+      "GT_read": false,
+      "case_id": "cracker_occlusion",
+      "initial_arrays": {
+        "centered_from_original": true,
+        "pose_last_centered": true,
+        "poses_centered": true,
+        "returned_pose_original": true,
+        "scores": true
+      },
+      "input_arrays": {
+        "K": true,
+        "depth_m": true,
+        "mask": true,
+        "rgb": true
+      },
+      "required_input_arrays_present": true,
+      "selected_index_equal": true,
+      "status": "paired"
+    },
+    {
+      "GT_read": false,
+      "case_id": "mustard_occlusion",
+      "initial_arrays": {
+        "centered_from_original": true,
+        "pose_last_centered": true,
+        "poses_centered": true,
+        "returned_pose_original": true,
+        "scores": true
+      },
+      "input_arrays": {
+        "K": true,
+        "depth_m": true,
+        "mask": true,
+        "rgb": true
+      },
+      "required_input_arrays_present": true,
+      "selected_index_equal": true,
+      "status": "paired"
+    },
+    {
+      "GT_read": false,
+      "case_id": "mustard_stride4",
+      "initial_arrays": {
+        "centered_from_original": true,
+        "pose_last_centered": true,
+        "poses_centered": true,
+        "returned_pose_original": true,
+        "scores": true
+      },
+      "input_arrays": {
+        "K": true,
+        "depth_m": true,
+        "mask": true,
+        "rgb": true
+      },
+      "required_input_arrays_present": true,
+      "selected_index_equal": true,
+      "status": "paired"
+    }
+  ],
+  "paired_original_streams": [
+    {
+      "GT_read": false,
+      "case_id": "cracker_occlusion",
+      "exact_inputs": 375,
+      "input_denominator": 375,
+      "mismatched_inputs": 0,
+      "status": "paired",
+      "tracking_denominator": 374,
+      "unknown_inputs": 0
+    },
+    {
+      "GT_read": false,
+      "case_id": "mustard_occlusion",
+      "exact_inputs": 737,
+      "input_denominator": 737,
+      "mismatched_inputs": 0,
+      "status": "paired",
+      "tracking_denominator": 736,
+      "unknown_inputs": 0
+    },
+    {
+      "GT_read": false,
+      "case_id": "mustard_stride4",
+      "exact_inputs": 185,
+      "input_denominator": 185,
+      "mismatched_inputs": 0,
+      "status": "paired",
+      "tracking_denominator": 184,
+      "unknown_inputs": 0
+    }
+  ],
+  "provenance": {
+    "builder_sha256": "01d73568b16e35b93f6a0bb509d31f2661853bc72f1ec8aa0acdc5016e6769e5",
+    "comparison_sha256": "af5bf1ae591ba8629540d02b505063fad9c2fefa1c4059a19719f650e1036c26",
+    "evaluation_plan_sha256": "4b8ab06433cc631a7a2c443161ca4e681b36a31ca46168b4c77c7a5523909115",
+    "independent_raw_audit_sha256": "28a3cae58f649388f004a6b24077d55f1b7f82c44aae6a1cb00afc9d82ecd3c5",
+    "inference_execution_sha256": "8be0160518818c932cbf1d1e693093e1086cc0294f3d9f6a0e8122fd40ee7792",
+    "inference_plan_sha256": "554eb58b44a1aa085dae2602c30cf9e12e545227fce48bd5e65b26d4a191122c"
+  },
+  "raw_OBJ_vertex_row_sensitivity": {
+    "aggregate_csv_sha256": "daefb6d4d10e4a0ff5c59ff82439d47f79ec95ea611fe705acc7db6db84970ac",
+    "description": "Average every original OBJ vertex row, preserving any duplicates already present in OBJ. This changes loader-induced UV multiplicity for mustard; it does not deduplicate cracker OBJ rows. No pose, threshold, GT, frame denominator or recovery rule changes.",
+    "runs": [
+      {
+        "all_five_metric_summaries": {
+          "absolute": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0005378135914363633,
+              "add_m": 0.027495113591436367,
+              "frame_id": 22,
+              "source_frame_id": 22,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 18,
+              "initialization": {
+                "auc_0_to_0_1m": 0.945,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 5.18559866111252,
+                "mean_mm": 5.18559866111252,
+                "median_mm": 5.18559866111252,
+                "p95_mm": 5.18559866111252,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.9496268656716419,
+                "denominator": 335,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 15.434305567494286,
+                "mean_mm": 5.089079314794733,
+                "median_mm": 5.647491894305147,
+                "p95_mm": 8.751975432616463,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9128743315508014,
+                "denominator": 374,
+                "failed_frames": 18,
+                "failure_rate": 0.0481283422459893,
+                "max_mm": 170.77232623388463,
+                "mean_mm": 9.613516887514912,
+                "median_mm": 5.649367881045765,
+                "p95_mm": 16.393176565502518,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9493785310734465,
+                "denominator": 354,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 15.434305567494286,
+                "mean_mm": 5.100110340159067,
+                "median_mm": 5.631360628619731,
+                "p95_mm": 8.654130377556244,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "cohort_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": null,
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 374,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 335,
+                "failed_frames": 335,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 335
+              },
+              "recovery": null,
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 374,
+                "failed_frames": 374,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 374
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 354,
+                "failed_frames": 354,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 354
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "neural_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.003559712636491099,
+              "add_m": 0.030517012636491102,
+              "frame_id": 22,
+              "source_frame_id": 22,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 18,
+              "initialization": {
+                "auc_0_to_0_1m": 0.995,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 1.697271819051902e-13,
+                "mean_mm": 1.697271819051902e-13,
+                "median_mm": 1.697271819051902e-13,
+                "p95_mm": 1.697271819051902e-13,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.9305223880597016,
+                "denominator": 335,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 19.067688794282617,
+                "mean_mm": 6.9945581701938,
+                "median_mm": 6.524931321432051,
+                "p95_mm": 11.643105851003586,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.8950935828876997,
+                "denominator": 374,
+                "failed_frames": 18,
+                "failure_rate": 0.0481283422459893,
+                "max_mm": 170.8229900954045,
+                "mean_mm": 11.415971290588743,
+                "median_mm": 6.5259373504031375,
+                "p95_mm": 19.84211430171997,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9312994350282485,
+                "denominator": 354,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 19.067688794282617,
+                "mean_mm": 6.923022250490031,
+                "median_mm": 6.477206710668388,
+                "p95_mm": 11.547390977782642,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "original_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0044094524726957345,
+              "add_m": 0.02254784752730427,
+              "frame_id": 237,
+              "source_frame_id": 237,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 155,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.550716417910447,
+                "denominator": 335,
+                "failed_frames": 135,
+                "failure_rate": 0.40298507462686567,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 135
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.5412967914438509,
+                "denominator": 374,
+                "failed_frames": 155,
+                "failure_rate": 0.4144385026737968,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 155
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.5718785310734459,
+                "denominator": 354,
+                "failed_frames": 135,
+                "failure_rate": 0.3813559322033898,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 135
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "point_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0044094524726957345,
+              "add_m": 0.02254784752730427,
+              "frame_id": 237,
+              "source_frame_id": 237,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 155,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.550716417910447,
+                "denominator": 335,
+                "failed_frames": 135,
+                "failure_rate": 0.40298507462686567,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 135
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.5412967914438509,
+                "denominator": 374,
+                "failed_frames": 155,
+                "failure_rate": 0.4144385026737968,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 155
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.5718785310734459,
+                "denominator": 354,
+                "failed_frames": 135,
+                "failure_rate": 0.3813559322033898,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 135
+              }
+            },
+            "tracking_classification_difference_count": 0
+          }
+        },
+        "geometry_representation": {
+          "all_raw_OBJ_vertices_represented": true,
+          "frozen_metric_vertices": 8291,
+          "max_difference_from_bound_geometry_m": 4.984138102237523e-13,
+          "mode": "all raw OBJ vertices, original order",
+          "no_new_coordinate": true,
+          "one_raw_coordinate_to_one_or_more_runtime_indices": true,
+          "raw_OBJ_coordinate_multiplicity_histogram": {
+            "1": 7447,
+            "2": 413,
+            "3": 6
+          },
+          "raw_OBJ_unique_coordinates": 7866,
+          "raw_OBJ_vertices": 8291,
+          "raw_vertex_row_multiplicity_histogram": {
+            "1": 8291
+          },
+          "reconstructed_vertices_equal_trimesh_process_false": true,
+          "runtime_coordinate_multiplicity_histogram": {
+            "1": 7447,
+            "2": 413,
+            "3": 6
+          },
+          "runtime_to_raw_vertex_index_sha256": "db19cfc059dd033d91ef7be5cd6ac6e501a49cec051eecbabd1e2d67c0f392c8"
+        },
+        "run_id": "cracker_occlusion_tapnext_single"
+      },
+      {
+        "all_five_metric_summaries": {
+          "absolute": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0005378135914363633,
+              "add_m": 0.027495113591436367,
+              "frame_id": 22,
+              "source_frame_id": 22,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 18,
+              "initialization": {
+                "auc_0_to_0_1m": 0.945,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 5.18559866111252,
+                "mean_mm": 5.18559866111252,
+                "median_mm": 5.18559866111252,
+                "p95_mm": 5.18559866111252,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.9496567164179104,
+                "denominator": 335,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 16.57214119776071,
+                "mean_mm": 5.090556764958604,
+                "median_mm": 5.647491894305147,
+                "p95_mm": 8.894573858173537,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9129010695187159,
+                "denominator": 374,
+                "failed_frames": 18,
+                "failure_rate": 0.0481283422459893,
+                "max_mm": 170.77232623388463,
+                "mean_mm": 9.614840272019984,
+                "median_mm": 5.649367881045765,
+                "p95_mm": 17.132769725175734,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9494067796610169,
+                "denominator": 354,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 16.57214119776071,
+                "mean_mm": 5.101508492150302,
+                "median_mm": 5.631360628619731,
+                "p95_mm": 8.725429590334773,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "cohort_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.014192080746592235,
+              "add_m": 0.012765219253407768,
+              "frame_id": 211,
+              "source_frame_id": 211,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 355,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.05132835820895514,
+                "denominator": 335,
+                "failed_frames": 316,
+                "failure_rate": 0.9432835820895522,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 316
+              },
+              "recovery": {
+                "confirmed_selected_frame": 200,
+                "confirmed_source_frame": 200,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 196,
+                "first_source_frame": 196,
+                "inputs_after_reappearance": 156
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.045975935828876976,
+                "denominator": 374,
+                "failed_frames": 355,
+                "failure_rate": 0.9491978609625669,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 355
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.048573446327683546,
+                "denominator": 354,
+                "failed_frames": 335,
+                "failure_rate": 0.9463276836158192,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 335
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "neural_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.003559712636491099,
+              "add_m": 0.030517012636491102,
+              "frame_id": 22,
+              "source_frame_id": 22,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 18,
+              "initialization": {
+                "auc_0_to_0_1m": 0.995,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 1.697271819051902e-13,
+                "mean_mm": 1.697271819051902e-13,
+                "median_mm": 1.697271819051902e-13,
+                "p95_mm": 1.697271819051902e-13,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.9305223880597016,
+                "denominator": 335,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 20.337943117438492,
+                "mean_mm": 6.996269270479714,
+                "median_mm": 6.524931321432051,
+                "p95_mm": 11.595435155675787,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.8950935828876997,
+                "denominator": 374,
+                "failed_frames": 18,
+                "failure_rate": 0.0481283422459893,
+                "max_mm": 170.8229900954045,
+                "mean_mm": 11.41750396063094,
+                "median_mm": 6.5259373504031375,
+                "p95_mm": 20.667779611771333,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9312994350282485,
+                "denominator": 354,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 20.337943117438492,
+                "mean_mm": 6.9246415120600355,
+                "median_mm": 6.477206710668388,
+                "p95_mm": 11.538878300886207,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "original_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0044094524726957345,
+              "add_m": 0.02254784752730427,
+              "frame_id": 237,
+              "source_frame_id": 237,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 155,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.550716417910447,
+                "denominator": 335,
+                "failed_frames": 135,
+                "failure_rate": 0.40298507462686567,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 135
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.5412967914438509,
+                "denominator": 374,
+                "failed_frames": 155,
+                "failure_rate": 0.4144385026737968,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 155
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.5718785310734459,
+                "denominator": 354,
+                "failed_frames": 135,
+                "failure_rate": 0.3813559322033898,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 135
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "point_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0044094524726957345,
+              "add_m": 0.02254784752730427,
+              "frame_id": 237,
+              "source_frame_id": 237,
+              "threshold_m": 0.026957300000000003
+            },
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 8291,
+              "diameter_m": 0.269573,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 154,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.5533880597014933,
+                "denominator": 335,
+                "failed_frames": 134,
+                "failure_rate": 0.4,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 134
+              },
+              "recovery": {
+                "confirmed_selected_frame": 44,
+                "confirmed_source_frame": 44,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 40,
+                "first_source_frame": 40,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.026957300000000003,
+              "tracking": {
+                "auc_0_to_0_1m": 0.5436898395721919,
+                "denominator": 374,
+                "failed_frames": 154,
+                "failure_rate": 0.4117647058823529,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 154
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.5744067796610176,
+                "denominator": 354,
+                "failed_frames": 134,
+                "failure_rate": 0.3785310734463277,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 134
+              }
+            },
+            "tracking_classification_difference_count": 0
+          }
+        },
+        "geometry_representation": {
+          "all_raw_OBJ_vertices_represented": true,
+          "frozen_metric_vertices": 8291,
+          "max_difference_from_bound_geometry_m": 4.984138102237523e-13,
+          "mode": "all raw OBJ vertices, original order",
+          "no_new_coordinate": true,
+          "one_raw_coordinate_to_one_or_more_runtime_indices": true,
+          "raw_OBJ_coordinate_multiplicity_histogram": {
+            "1": 7447,
+            "2": 413,
+            "3": 6
+          },
+          "raw_OBJ_unique_coordinates": 7866,
+          "raw_OBJ_vertices": 8291,
+          "raw_vertex_row_multiplicity_histogram": {
+            "1": 8291
+          },
+          "reconstructed_vertices_equal_trimesh_process_false": true,
+          "runtime_coordinate_multiplicity_histogram": {
+            "1": 7447,
+            "2": 413,
+            "3": 6
+          },
+          "runtime_to_raw_vertex_index_sha256": "db19cfc059dd033d91ef7be5cd6ac6e501a49cec051eecbabd1e2d67c0f392c8"
+        },
+        "run_id": "cracker_occlusion_tapnext_preloss"
+      },
+      {
+        "all_five_metric_summaries": {
+          "absolute": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.006036246735236155,
+              "add_m": 0.013610079064261319,
+              "frame_id": 100,
+              "source_frame_id": 100,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.00475203779416461,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 237,
+              "initialization": {
+                "auc_0_to_0_1m": 0.975,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 2.1397587088858714,
+                "mean_mm": 2.1397587088858714,
+                "median_mm": 2.1397587088858714,
+                "p95_mm": 2.1397587088858714,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.6300906095551887,
+                "denominator": 607,
+                "failed_frames": 208,
+                "failure_rate": 0.342668863261944,
+                "max_mm": 593.6045896407512,
+                "mean_mm": 139.8218290256112,
+                "median_mm": 5.050945928810032,
+                "p95_mm": 471.72100378882607,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 342,
+                "confirmed_source_frame": 342,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 338,
+                "first_source_frame": 338,
+                "inputs_after_reappearance": 208
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.6551834239130427,
+                "denominator": 736,
+                "failed_frames": 237,
+                "failure_rate": 0.3220108695652174,
+                "max_mm": 593.6045896407512,
+                "mean_mm": 121.9177314337338,
+                "median_mm": 4.70413039402813,
+                "p95_mm": 452.51237732169614,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.6781444759206796,
+                "denominator": 706,
+                "failed_frames": 208,
+                "failure_rate": 0.29461756373937675,
+                "max_mm": 593.6045896407512,
+                "mean_mm": 120.59618742694808,
+                "median_mm": 4.5579435167025455,
+                "p95_mm": 457.7880210402858,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "cohort_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": null,
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 736,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 607,
+                "failed_frames": 607,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 607
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 736,
+                "failed_frames": 736,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 736
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 706,
+                "failed_frames": 706,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 706
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "neural_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.004908551216916624,
+              "add_m": 0.01473777458258085,
+              "frame_id": 100,
+              "source_frame_id": 100,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.004841309118964188,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 237,
+              "initialization": {
+                "auc_0_to_0_1m": 0.995,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.09876093604304e-14,
+                "mean_mm": 6.09876093604304e-14,
+                "median_mm": 6.09876093604304e-14,
+                "p95_mm": 6.09876093604304e-14,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.6198270181219103,
+                "denominator": 607,
+                "failed_frames": 208,
+                "failure_rate": 0.342668863261944,
+                "max_mm": 594.2283289470394,
+                "mean_mm": 140.76292496868888,
+                "median_mm": 6.888305923159262,
+                "p95_mm": 471.6658730376832,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 342,
+                "confirmed_source_frame": 342,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 338,
+                "first_source_frame": 338,
+                "inputs_after_reappearance": 208
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.6474524456521732,
+                "denominator": 736,
+                "failed_frames": 237,
+                "failure_rate": 0.3220108695652174,
+                "max_mm": 594.2283289470394,
+                "mean_mm": 122.66453550341764,
+                "median_mm": 6.409020157563045,
+                "p95_mm": 452.4003950772796,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.6701841359773366,
+                "denominator": 706,
+                "failed_frames": 208,
+                "failure_rate": 0.29461756373937675,
+                "max_mm": 594.2283289470394,
+                "mean_mm": 121.31257703456359,
+                "median_mm": 6.193416287893574,
+                "p95_mm": 457.79278574851816,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "original_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0036523657206196034,
+              "add_m": 0.01599396007887787,
+              "frame_id": 498,
+              "source_frame_id": 498,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0010419205930128801,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 1,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 578,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.0865815485996705,
+                "denominator": 607,
+                "failed_frames": 549,
+                "failure_rate": 0.9044481054365733,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 548
+              },
+              "recovery": {
+                "confirmed_selected_frame": 342,
+                "confirmed_source_frame": 342,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 338,
+                "first_source_frame": 338,
+                "inputs_after_reappearance": 208
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.20164402173913054,
+                "denominator": 736,
+                "failed_frames": 579,
+                "failure_rate": 0.7866847826086957,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 578
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.2102124645892351,
+                "denominator": 706,
+                "failed_frames": 549,
+                "failure_rate": 0.7776203966005666,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 548
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "point_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0036523657206196034,
+              "add_m": 0.01599396007887787,
+              "frame_id": 498,
+              "source_frame_id": 498,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0010419205930128801,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 1,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 578,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.0865815485996705,
+                "denominator": 607,
+                "failed_frames": 549,
+                "failure_rate": 0.9044481054365733,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 548
+              },
+              "recovery": {
+                "confirmed_selected_frame": 342,
+                "confirmed_source_frame": 342,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 338,
+                "first_source_frame": 338,
+                "inputs_after_reappearance": 208
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.20164402173913054,
+                "denominator": 736,
+                "failed_frames": 579,
+                "failure_rate": 0.7866847826086957,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 578
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.2102124645892351,
+                "denominator": 706,
+                "failed_frames": 549,
+                "failure_rate": 0.7776203966005666,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 548
+              }
+            },
+            "tracking_classification_difference_count": 0
+          }
+        },
+        "geometry_representation": {
+          "all_raw_OBJ_vertices_represented": true,
+          "frozen_metric_vertices": 10983,
+          "max_difference_from_bound_geometry_m": 0.0,
+          "mode": "all runtime CAD vertices including frozen UV seam multiplicity; coordinates rebuilt from raw OBJ",
+          "no_new_coordinate": true,
+          "one_raw_coordinate_to_one_or_more_runtime_indices": true,
+          "raw_OBJ_coordinate_multiplicity_histogram": {
+            "1": 7866
+          },
+          "raw_OBJ_unique_coordinates": 7866,
+          "raw_OBJ_vertices": 7866,
+          "raw_vertex_row_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "reconstructed_vertices_equal_trimesh_process_false": true,
+          "runtime_coordinate_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "runtime_to_raw_vertex_index_sha256": "1eb919dcc97736789651579b605cb6fe341f61f3e122fdf2955495679ae449cb"
+        },
+        "run_id": "mustard_occlusion_tapnext_single"
+      },
+      {
+        "all_five_metric_summaries": {
+          "absolute": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.006036246735236155,
+              "add_m": 0.013610079064261319,
+              "frame_id": 100,
+              "source_frame_id": 100,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0014786950072916416,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 29,
+              "initialization": {
+                "auc_0_to_0_1m": 0.975,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 2.1397587088858714,
+                "mean_mm": 2.1397587088858714,
+                "median_mm": 2.1397587088858714,
+                "p95_mm": 2.1397587088858714,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.9606507413509061,
+                "denominator": 607,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 12.574949261044328,
+                "mean_mm": 3.9376509216452256,
+                "median_mm": 3.6271860697966103,
+                "p95_mm": 6.517683777790336,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 134,
+                "confirmed_source_frame": 134,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 130,
+                "first_source_frame": 130,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9278057065217393,
+                "denominator": 736,
+                "failed_frames": 29,
+                "failure_rate": 0.03940217391304348,
+                "max_mm": 222.4458630330023,
+                "mean_mm": 9.85020954635968,
+                "median_mm": 3.593647912101293,
+                "p95_mm": 7.200690928894327,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9623512747875353,
+                "denominator": 706,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 12.574949261044328,
+                "mean_mm": 3.7665895386940362,
+                "median_mm": 3.5422966749064027,
+                "p95_mm": 6.352531172159682,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "cohort_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0005054066309192612,
+              "add_m": 0.019140919168578213,
+              "frame_id": 590,
+              "source_frame_id": 590,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.00043340500065445,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 43,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 627,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.12592257001647433,
+                "denominator": 607,
+                "failed_frames": 555,
+                "failure_rate": 0.914332784184514,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 512
+              },
+              "recovery": {
+                "confirmed_selected_frame": 539,
+                "confirmed_source_frame": 539,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 535,
+                "first_source_frame": 535,
+                "inputs_after_reappearance": 405
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.12166440217391315,
+                "denominator": 736,
+                "failed_frames": 670,
+                "failure_rate": 0.9103260869565217,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 627
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.12683427762039642,
+                "denominator": 706,
+                "failed_frames": 640,
+                "failure_rate": 0.9065155807365439,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 597
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "neural_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.004908551216916624,
+              "add_m": 0.01473777458258085,
+              "frame_id": 100,
+              "source_frame_id": 100,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0015565846359385516,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 29,
+              "initialization": {
+                "auc_0_to_0_1m": 0.995,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.09876093604304e-14,
+                "mean_mm": 6.09876093604304e-14,
+                "median_mm": 6.09876093604304e-14,
+                "p95_mm": 6.09876093604304e-14,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.9474382207578255,
+                "denominator": 607,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 12.000954913749677,
+                "mean_mm": 5.251531708198263,
+                "median_mm": 5.015419350958962,
+                "p95_mm": 8.045194861983994,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": {
+                "confirmed_selected_frame": 134,
+                "confirmed_source_frame": 134,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 130,
+                "first_source_frame": 130,
+                "inputs_after_reappearance": 0
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9176426630434784,
+                "denominator": 736,
+                "failed_frames": 29,
+                "failure_rate": 0.03940217391304348,
+                "max_mm": 224.098496896261,
+                "mean_mm": 10.904459811681477,
+                "median_mm": 4.736340070456149,
+                "p95_mm": 8.55994316723184,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9518555240793203,
+                "denominator": 706,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 12.000954913749677,
+                "mean_mm": 4.803489627881161,
+                "median_mm": 4.6039861860467255,
+                "p95_mm": 7.973823303193533,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "original_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0036523657206196034,
+              "add_m": 0.01599396007887787,
+              "frame_id": 498,
+              "source_frame_id": 498,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0010419205930128801,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 1,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 578,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.0865815485996705,
+                "denominator": 607,
+                "failed_frames": 549,
+                "failure_rate": 0.9044481054365733,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 548
+              },
+              "recovery": {
+                "confirmed_selected_frame": 342,
+                "confirmed_source_frame": 342,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 338,
+                "first_source_frame": 338,
+                "inputs_after_reappearance": 208
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.20164402173913054,
+                "denominator": 736,
+                "failed_frames": 579,
+                "failure_rate": 0.7866847826086957,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 578
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.2102124645892351,
+                "denominator": 706,
+                "failed_frames": 549,
+                "failure_rate": 0.7776203966005666,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 548
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "point_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0007691197521432214,
+              "add_m": 0.018877206047354253,
+              "frame_id": 532,
+              "source_frame_id": 532,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0010419205930128801,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 44,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 500,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": 0.1878665568369028,
+                "denominator": 607,
+                "failed_frames": 514,
+                "failure_rate": 0.8467874794069192,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 470
+              },
+              "recovery": {
+                "confirmed_selected_frame": 342,
+                "confirmed_source_frame": 342,
+                "consecutive_inputs": 5,
+                "first_selected_frame": 338,
+                "first_source_frame": 338,
+                "inputs_after_reappearance": 208
+              },
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.28517663043478286,
+                "denominator": 736,
+                "failed_frames": 544,
+                "failure_rate": 0.7391304347826086,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 500
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.2972946175637389,
+                "denominator": 706,
+                "failed_frames": 514,
+                "failure_rate": 0.7280453257790368,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 470
+              }
+            },
+            "tracking_classification_difference_count": 0
+          }
+        },
+        "geometry_representation": {
+          "all_raw_OBJ_vertices_represented": true,
+          "frozen_metric_vertices": 10983,
+          "max_difference_from_bound_geometry_m": 0.0,
+          "mode": "all runtime CAD vertices including frozen UV seam multiplicity; coordinates rebuilt from raw OBJ",
+          "no_new_coordinate": true,
+          "one_raw_coordinate_to_one_or_more_runtime_indices": true,
+          "raw_OBJ_coordinate_multiplicity_histogram": {
+            "1": 7866
+          },
+          "raw_OBJ_unique_coordinates": 7866,
+          "raw_OBJ_vertices": 7866,
+          "raw_vertex_row_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "reconstructed_vertices_equal_trimesh_process_false": true,
+          "runtime_coordinate_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "runtime_to_raw_vertex_index_sha256": "1eb919dcc97736789651579b605cb6fe341f61f3e122fdf2955495679ae449cb"
+        },
+        "run_id": "mustard_occlusion_tapnext_preloss"
+      },
+      {
+        "all_five_metric_summaries": {
+          "absolute": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.012761077310065358,
+              "add_m": 0.0068852484894321156,
+              "frame_id": 168,
+              "source_frame_id": 672,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0003584693865611756,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "initialization": {
+                "auc_0_to_0_1m": 0.975,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 2.1397587088858714,
+                "mean_mm": 2.1397587088858714,
+                "median_mm": 2.1397587088858714,
+                "p95_mm": 2.1397587088858714,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.962445652173913,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.885248489432116,
+                "mean_mm": 3.7684388556114867,
+                "median_mm": 3.5699632803341776,
+                "p95_mm": 5.814289716655896,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.962445652173913,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.885248489432116,
+                "mean_mm": 3.7684388556114867,
+                "median_mm": 3.5699632803341776,
+                "p95_mm": 5.814289716655896,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "cohort_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": null,
+            "max_finite_ADD_difference_m": 0.0,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 184,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 184,
+                "failed_frames": 184,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 184
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.0,
+                "denominator": 184,
+                "failed_frames": 184,
+                "failure_rate": 1.0,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 184
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "neural_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.010964388137471201,
+              "add_m": 0.008681937662026273,
+              "frame_id": 168,
+              "source_frame_id": 672,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0004538360988228093,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "initialization": {
+                "auc_0_to_0_1m": 0.995,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.09876093604304e-14,
+                "mean_mm": 6.09876093604304e-14,
+                "median_mm": 6.09876093604304e-14,
+                "p95_mm": 6.09876093604304e-14,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9507608695652175,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 8.681937662026273,
+                "mean_mm": 4.88062131575138,
+                "median_mm": 4.773808247329554,
+                "p95_mm": 7.6180638373372735,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9507608695652175,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 8.681937662026273,
+                "mean_mm": 4.88062131575138,
+                "median_mm": 4.773808247329554,
+                "p95_mm": 7.6180638373372735,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "original_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.004759919104200044,
+              "add_m": 0.01488640669529743,
+              "frame_id": 169,
+              "source_frame_id": 676,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0006925625585872501,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 16,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.8450543478260856,
+                "denominator": 184,
+                "failed_frames": 16,
+                "failure_rate": 0.08695652173913043,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 16
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.8450543478260856,
+                "denominator": 184,
+                "failed_frames": 16,
+                "failure_rate": 0.08695652173913043,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 16
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "point_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.004759919104200044,
+              "add_m": 0.01488640669529743,
+              "frame_id": 169,
+              "source_frame_id": 676,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0006925625585872501,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 16,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.8450543478260856,
+                "denominator": 184,
+                "failed_frames": 16,
+                "failure_rate": 0.08695652173913043,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 16
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.8450543478260856,
+                "denominator": 184,
+                "failed_frames": 16,
+                "failure_rate": 0.08695652173913043,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 16
+              }
+            },
+            "tracking_classification_difference_count": 0
+          }
+        },
+        "geometry_representation": {
+          "all_raw_OBJ_vertices_represented": true,
+          "frozen_metric_vertices": 10983,
+          "max_difference_from_bound_geometry_m": 0.0,
+          "mode": "all runtime CAD vertices including frozen UV seam multiplicity; coordinates rebuilt from raw OBJ",
+          "no_new_coordinate": true,
+          "one_raw_coordinate_to_one_or_more_runtime_indices": true,
+          "raw_OBJ_coordinate_multiplicity_histogram": {
+            "1": 7866
+          },
+          "raw_OBJ_unique_coordinates": 7866,
+          "raw_OBJ_vertices": 7866,
+          "raw_vertex_row_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "reconstructed_vertices_equal_trimesh_process_false": true,
+          "runtime_coordinate_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "runtime_to_raw_vertex_index_sha256": "1eb919dcc97736789651579b605cb6fe341f61f3e122fdf2955495679ae449cb"
+        },
+        "run_id": "mustard_stride4_tapnext_single"
+      },
+      {
+        "all_five_metric_summaries": {
+          "absolute": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.012761077310065358,
+              "add_m": 0.0068852484894321156,
+              "frame_id": 168,
+              "source_frame_id": 672,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0003584693865611756,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "initialization": {
+                "auc_0_to_0_1m": 0.975,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 2.1397587088858714,
+                "mean_mm": 2.1397587088858714,
+                "median_mm": 2.1397587088858714,
+                "p95_mm": 2.1397587088858714,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9621739130434783,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.885248489432116,
+                "mean_mm": 3.7945908385305924,
+                "median_mm": 3.4910029163915217,
+                "p95_mm": 5.910952319706695,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9621739130434783,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.885248489432116,
+                "mean_mm": 3.7945908385305924,
+                "median_mm": 3.4910029163915217,
+                "p95_mm": 5.910952319706695,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "cohort_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0021217853406300356,
+              "add_m": 0.01752454045886744,
+              "frame_id": 183,
+              "source_frame_id": 732,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0004572818491722372,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 23,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.7949728260869565,
+                "denominator": 184,
+                "failed_frames": 23,
+                "failure_rate": 0.125,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 23
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.7949728260869565,
+                "denominator": 184,
+                "failed_frames": 23,
+                "failure_rate": 0.125,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 23
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "neural_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.010964388137471201,
+              "add_m": 0.008681937662026273,
+              "frame_id": 168,
+              "source_frame_id": 672,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0004538360988228093,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "initialization": {
+                "auc_0_to_0_1m": 0.995,
+                "denominator": 1,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 6.09876093604304e-14,
+                "mean_mm": 6.09876093604304e-14,
+                "median_mm": 6.09876093604304e-14,
+                "p95_mm": 6.09876093604304e-14,
+                "undefined_or_invalid_predictions": 0
+              },
+              "invalid_available_tracking": 0,
+              "missing_pose_tracking": 0,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9505434782608696,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 8.681937662026273,
+                "mean_mm": 4.920556425709414,
+                "median_mm": 4.758654611713621,
+                "p95_mm": 7.8177901448276685,
+                "undefined_or_invalid_predictions": 0
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9505434782608696,
+                "denominator": 184,
+                "failed_frames": 0,
+                "failure_rate": 0.0,
+                "max_mm": 8.681937662026273,
+                "mean_mm": 4.920556425709414,
+                "median_mm": 4.758654611713621,
+                "p95_mm": 7.8177901448276685,
+                "undefined_or_invalid_predictions": 0
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "original_point_relative_diagnostic": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.004759919104200044,
+              "add_m": 0.01488640669529743,
+              "frame_id": 169,
+              "source_frame_id": 676,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0006925625585872501,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 16,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.8450543478260856,
+                "denominator": 184,
+                "failed_frames": 16,
+                "failure_rate": 0.08695652173913043,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 16
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.8450543478260856,
+                "denominator": 184,
+                "failed_frames": 16,
+                "failure_rate": 0.08695652173913043,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 16
+              }
+            },
+            "tracking_classification_difference_count": 0
+          },
+          "point_relative_secondary": {
+            "closest_to_threshold_tracking": {
+              "absolute_margin_m": 0.0034135336914477878,
+              "add_m": 0.016232792108049687,
+              "frame_id": 178,
+              "source_frame_id": 712,
+              "threshold_m": 0.019646325799497474
+            },
+            "max_finite_ADD_difference_m": 0.0006925625585872501,
+            "metrics": {
+              "all_original_CAD_vertices": 7866,
+              "diameter_m": 0.19646325799497472,
+              "finite_wrong_tracking": 0,
+              "invalid_available_tracking": 0,
+              "missing_motion_tracking": 2,
+              "post_intervention_secondary": {
+                "auc_0_to_0_1m": null,
+                "denominator": 0,
+                "failed_frames": 0,
+                "failure_rate": null,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 0
+              },
+              "recovery": null,
+              "threshold_m": 0.019646325799497474,
+              "tracking": {
+                "auc_0_to_0_1m": 0.9128804347826073,
+                "denominator": 184,
+                "failed_frames": 2,
+                "failure_rate": 0.010869565217391304,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 2
+              },
+              "unhidden_tracking_secondary": {
+                "auc_0_to_0_1m": 0.9128804347826073,
+                "denominator": 184,
+                "failed_frames": 2,
+                "failure_rate": 0.010869565217391304,
+                "max_mm": null,
+                "mean_mm": null,
+                "median_mm": null,
+                "p95_mm": null,
+                "undefined_or_invalid_predictions": 2
+              }
+            },
+            "tracking_classification_difference_count": 0
+          }
+        },
+        "geometry_representation": {
+          "all_raw_OBJ_vertices_represented": true,
+          "frozen_metric_vertices": 10983,
+          "max_difference_from_bound_geometry_m": 0.0,
+          "mode": "all runtime CAD vertices including frozen UV seam multiplicity; coordinates rebuilt from raw OBJ",
+          "no_new_coordinate": true,
+          "one_raw_coordinate_to_one_or_more_runtime_indices": true,
+          "raw_OBJ_coordinate_multiplicity_histogram": {
+            "1": 7866
+          },
+          "raw_OBJ_unique_coordinates": 7866,
+          "raw_OBJ_vertices": 7866,
+          "raw_vertex_row_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "reconstructed_vertices_equal_trimesh_process_false": true,
+          "runtime_coordinate_multiplicity_histogram": {
+            "1": 5650,
+            "2": 1565,
+            "3": 455,
+            "4": 148,
+            "5": 43,
+            "6": 4,
+            "7": 1
+          },
+          "runtime_to_raw_vertex_index_sha256": "1eb919dcc97736789651579b605cb6fe341f61f3e122fdf2955495679ae449cb"
+        },
+        "run_id": "mustard_stride4_tapnext_preloss"
+      }
+    ],
+    "source_receipt_sha256": "bba4c635f79187a1d246092ddc11002c7b2c77c12f6592701b91ea7a00759e07",
+    "status": "subsequent_diagnostic_not_preregistered_primary"
+  },
+  "runs": [
+    {
+      "arm": "tapnext_single",
+      "case_id": "cracker_occlusion",
+      "event_statistics": {
+        "all_qualified_states_tentative": true,
+        "availability_is_not_accuracy": true,
+        "birth_attempt_count": 0,
+        "birth_attempts": [],
+        "identity_certified": false,
+        "input_denominator": 375,
+        "manager_state_tracking": {
+          "disabled": 374,
+          "idle": 0,
+          "missing": 0,
+          "pending": 0,
+          "ready": 0,
+          "retired": 0
+        },
+        "original_motion_availability": {
+          "first_post_intervention_available_frame": 40,
+          "post_intervention_denominator": 335,
+          "tracking_available": 219,
+          "tracking_denominator": 374
+        },
+        "ready_transitions": [],
+        "retirements": [],
+        "secondary_calls": {},
+        "secondary_motion_availability": {
+          "first_post_intervention_available_frame": null,
+          "post_intervention_denominator": 335,
+          "tracking_available": 0,
+          "tracking_denominator": 374
+        },
+        "secondary_raw_capture_states": {},
+        "secondary_raw_return_records": 0,
+        "selected_seed_source_tracking": {
+          "conflict": 0,
+          "fallback": 155,
+          "initialization": 0,
+          "missing": 0,
+          "original": 219,
+          "secondary": 0
+        },
+        "source_valid": true,
+        "tracking_denominator": 374
+      },
+      "input_frames": 375,
+      "intervention_failed_tracking_frames": 18,
+      "neural_returns_by_tracking_slot": {
+        "1": 58,
+        "2": 262,
+        "3": 54
+      },
+      "outside_intervention_failed_tracking_frames": 0,
+      "paired_initialization_status": "paired",
+      "paired_original_stream_status": "paired",
+      "primary_absolute_ADD": {
+        "all_original_CAD_vertices": 8291,
+        "diameter_m": 0.269573,
+        "finite_wrong_tracking": 18,
+        "initialization": {
+          "auc_0_to_0_1m": 0.945,
+          "denominator": 1,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 5.18559866111259,
+          "mean_mm": 5.18559866111259,
+          "median_mm": 5.18559866111259,
+          "p95_mm": 5.18559866111259,
+          "undefined_or_invalid_predictions": 0
+        },
+        "invalid_available_tracking": 0,
+        "missing_pose_tracking": 0,
+        "post_intervention_secondary": {
+          "auc_0_to_0_1m": 0.9496268656716419,
+          "denominator": 335,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 15.434305567494649,
+          "mean_mm": 5.089079314794703,
+          "median_mm": 5.647491894304942,
+          "p95_mm": 8.751975432616636,
+          "undefined_or_invalid_predictions": 0
+        },
+        "recovery": {
+          "confirmed_selected_frame": 44,
+          "confirmed_source_frame": 44,
+          "consecutive_inputs": 5,
+          "first_selected_frame": 40,
+          "first_source_frame": 40,
+          "inputs_after_reappearance": 0
+        },
+        "threshold_m": 0.026957300000000003,
+        "tracking": {
+          "auc_0_to_0_1m": 0.9128743315508022,
+          "denominator": 374,
+          "failed_frames": 18,
+          "failure_rate": 0.0481283422459893,
+          "max_mm": 170.7723262338814,
+          "mean_mm": 9.61351688751477,
+          "median_mm": 5.649367881045683,
+          "p95_mm": 16.3931765655027,
+          "undefined_or_invalid_predictions": 0
+        },
+        "unhidden_tracking_secondary": {
+          "auc_0_to_0_1m": 0.9493785310734463,
+          "denominator": 354,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 15.434305567494649,
+          "mean_mm": 5.10011034015903,
+          "median_mm": 5.631360628619755,
+          "p95_mm": 8.654130377556308,
+          "undefined_or_invalid_predictions": 0
+        }
+      },
+      "run_id": "cracker_occlusion_tapnext_single",
+      "runtime_status": "completed",
+      "source_sha256": {
+        "per_frame": "58f4d494d25de8e82a6120e45818b1de723711469e34cb47161823176d606772",
+        "runtime_report": "d636d0ac6aac8f2d8a5aa3a9aaaeb5e7cab242fdf408bc4fba35893ecad860d6"
+      },
+      "source_valid": true,
+      "timing": {
+        "FP_load_seconds": 20.449315842000033,
+        "boundary": "Measured tracking frame wall: decode, synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes the frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization.",
+        "child_all_input_throughput": 5.07662985533754,
+        "child_boundary": "validation/import/load/registration/all frames/neural audit/whole-file hashes; excludes final report write",
+        "child_inputs_including_initialization": 375,
+        "child_wall_seconds": 73.86790266100002,
+        "complete_tracking_slots": 374,
+        "cuda_peak_allocated_bytes": 4557859840,
+        "cuda_peak_reserved_bytes": 6069157888,
+        "first_input_frame_wall_seconds": 4.761459499000011,
+        "first_input_frontend_call_seconds": 4.746371153000155,
+        "full_tracking_fps": 14.408854611567909,
+        "parent_all_input_throughput": 4.66145026638709,
+        "parent_inputs_including_initialization": 375,
+        "parent_wall_seconds": 80.44706659300005,
+        "point_backend_object_construction_seconds": 4.810599989468756e-05,
+        "registration_seconds": 5.538700195000047,
+        "source_reported_boundary": "decode, synchronized original and actual secondary point calls, observed-depth fitting, CAD support proposal, preloss transitions, adaptive FP and per-frame evidence; registration/load separate; final frames journal rewrite excluded from per-frame wall",
+        "summed_complete_slot_wall_seconds": 25.956261623997534,
+        "timing_diagnostic_only": false,
+        "tracking_frame_wall_median_ms": 68.17820449998635,
+        "tracking_frame_wall_p95_ms": 79.97160949997806
+      },
+      "tracking_frames": 374
+    },
+    {
+      "arm": "tapnext_preloss",
+      "case_id": "cracker_occlusion",
+      "event_statistics": {
+        "all_qualified_states_tentative": true,
+        "availability_is_not_accuracy": true,
+        "birth_attempt_count": 1,
+        "birth_attempts": [
+          {
+            "attempt_index": 0,
+            "backend_called": true,
+            "frame_id": 193,
+            "query_count": 64,
+            "source_frame_id": 193,
+            "status": "pending"
+          }
+        ],
+        "identity_certified": false,
+        "input_denominator": 375,
+        "manager_state_tracking": {
+          "disabled": 0,
+          "idle": 192,
+          "missing": 0,
+          "pending": 3,
+          "ready": 179,
+          "retired": 0
+        },
+        "original_motion_availability": {
+          "first_post_intervention_available_frame": 40,
+          "post_intervention_denominator": 335,
+          "tracking_available": 219,
+          "tracking_denominator": 374
+        },
+        "ready_transitions": [
+          {
+            "cohort_id": 0,
+            "frame_id": 196,
+            "source_frame_id": 196
+          }
+        ],
+        "retirements": [],
+        "secondary_calls": {
+          "advance": 181,
+          "start": 1
+        },
+        "secondary_motion_availability": {
+          "first_post_intervention_available_frame": 196,
+          "post_intervention_denominator": 335,
+          "tracking_available": 19,
+          "tracking_denominator": 374
+        },
+        "secondary_raw_capture_states": {
+          "captured_current_return": 182
+        },
+        "secondary_raw_return_records": 182,
+        "selected_seed_source_tracking": {
+          "conflict": 0,
+          "fallback": 154,
+          "initialization": 0,
+          "missing": 0,
+          "original": 219,
+          "secondary": 1
+        },
+        "source_valid": true,
+        "tracking_denominator": 374
+      },
+      "input_frames": 375,
+      "intervention_failed_tracking_frames": 18,
+      "neural_returns_by_tracking_slot": {
+        "1": 59,
+        "2": 258,
+        "3": 57
+      },
+      "outside_intervention_failed_tracking_frames": 0,
+      "paired_initialization_status": "paired",
+      "paired_original_stream_status": "paired",
+      "primary_absolute_ADD": {
+        "all_original_CAD_vertices": 8291,
+        "diameter_m": 0.269573,
+        "finite_wrong_tracking": 18,
+        "initialization": {
+          "auc_0_to_0_1m": 0.945,
+          "denominator": 1,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 5.18559866111259,
+          "mean_mm": 5.18559866111259,
+          "median_mm": 5.18559866111259,
+          "p95_mm": 5.18559866111259,
+          "undefined_or_invalid_predictions": 0
+        },
+        "invalid_available_tracking": 0,
+        "missing_pose_tracking": 0,
+        "post_intervention_secondary": {
+          "auc_0_to_0_1m": 0.9496567164179105,
+          "denominator": 335,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 16.572141197761127,
+          "mean_mm": 5.090556764958574,
+          "median_mm": 5.647491894304942,
+          "p95_mm": 8.894573858173832,
+          "undefined_or_invalid_predictions": 0
+        },
+        "recovery": {
+          "confirmed_selected_frame": 44,
+          "confirmed_source_frame": 44,
+          "consecutive_inputs": 5,
+          "first_selected_frame": 40,
+          "first_source_frame": 40,
+          "inputs_after_reappearance": 0
+        },
+        "threshold_m": 0.026957300000000003,
+        "tracking": {
+          "auc_0_to_0_1m": 0.9129010695187167,
+          "denominator": 374,
+          "failed_frames": 18,
+          "failure_rate": 0.0481283422459893,
+          "max_mm": 170.7723262338814,
+          "mean_mm": 9.614840272019842,
+          "median_mm": 5.649367881045683,
+          "p95_mm": 17.132769725175947,
+          "undefined_or_invalid_predictions": 0
+        },
+        "unhidden_tracking_secondary": {
+          "auc_0_to_0_1m": 0.9494067796610169,
+          "denominator": 354,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 16.572141197761127,
+          "mean_mm": 5.1015084921502645,
+          "median_mm": 5.631360628619755,
+          "p95_mm": 8.725429590334901,
+          "undefined_or_invalid_predictions": 0
+        }
+      },
+      "run_id": "cracker_occlusion_tapnext_preloss",
+      "runtime_status": "completed",
+      "source_sha256": {
+        "per_frame": "543892608409f4bcba107c9f0412833beab02566b1e229d54245e99049719566",
+        "runtime_report": "d6a784e79c838901db1422640a569e5dcc5912b1bd21761ede6e76ee5ac411a7"
+      },
+      "source_valid": true,
+      "timing": {
+        "FP_load_seconds": 7.003326187000084,
+        "boundary": "Measured tracking frame wall: decode, synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes the frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization.",
+        "child_all_input_throughput": 5.130020372286409,
+        "child_boundary": "validation/import/load/registration/all frames/neural audit/whole-file hashes; excludes final report write",
+        "child_inputs_including_initialization": 375,
+        "child_wall_seconds": 73.0991249130002,
+        "complete_tracking_slots": 374,
+        "cuda_peak_allocated_bytes": 4557859840,
+        "cuda_peak_reserved_bytes": 6069157888,
+        "first_input_frame_wall_seconds": 4.179602098000032,
+        "first_input_frontend_call_seconds": 4.163723554999933,
+        "full_tracking_fps": 10.74349460059335,
+        "parent_all_input_throughput": 4.7379576152507585,
+        "parent_inputs_including_initialization": 375,
+        "parent_wall_seconds": 79.14802757899997,
+        "point_backend_object_construction_seconds": 0.002691688000140857,
+        "registration_seconds": 1.768404959999998,
+        "source_reported_boundary": "decode, synchronized original and actual secondary point calls, observed-depth fitting, CAD support proposal, preloss transitions, adaptive FP and per-frame evidence; registration/load separate; final frames journal rewrite excluded from per-frame wall",
+        "summed_complete_slot_wall_seconds": 34.81176413299863,
+        "timing_diagnostic_only": false,
+        "tracking_frame_wall_median_ms": 82.82558450002853,
+        "tracking_frame_wall_p95_ms": 123.27290274994311
+      },
+      "tracking_frames": 374
+    },
+    {
+      "arm": "tapnext_single",
+      "case_id": "mustard_occlusion",
+      "event_statistics": {
+        "all_qualified_states_tentative": true,
+        "availability_is_not_accuracy": true,
+        "birth_attempt_count": 0,
+        "birth_attempts": [],
+        "identity_certified": false,
+        "input_denominator": 737,
+        "manager_state_tracking": {
+          "disabled": 736,
+          "idle": 0,
+          "missing": 0,
+          "pending": 0,
+          "ready": 0,
+          "retired": 0
+        },
+        "original_motion_availability": {
+          "first_post_intervention_available_frame": 338,
+          "post_intervention_denominator": 607,
+          "tracking_available": 158,
+          "tracking_denominator": 736
+        },
+        "ready_transitions": [],
+        "retirements": [],
+        "secondary_calls": {},
+        "secondary_motion_availability": {
+          "first_post_intervention_available_frame": null,
+          "post_intervention_denominator": 607,
+          "tracking_available": 0,
+          "tracking_denominator": 736
+        },
+        "secondary_raw_capture_states": {},
+        "secondary_raw_return_records": 0,
+        "selected_seed_source_tracking": {
+          "conflict": 0,
+          "fallback": 578,
+          "initialization": 0,
+          "missing": 0,
+          "original": 158,
+          "secondary": 0
+        },
+        "source_valid": true,
+        "tracking_denominator": 736
+      },
+      "input_frames": 737,
+      "intervention_failed_tracking_frames": 29,
+      "neural_returns_by_tracking_slot": {
+        "1": 640,
+        "2": 68,
+        "3": 28
+      },
+      "outside_intervention_failed_tracking_frames": 208,
+      "paired_initialization_status": "paired",
+      "paired_original_stream_status": "paired",
+      "primary_absolute_ADD": {
+        "all_original_CAD_vertices": 10983,
+        "diameter_m": 0.19646325799497472,
+        "finite_wrong_tracking": 237,
+        "initialization": {
+          "auc_0_to_0_1m": 0.975,
+          "denominator": 1,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 2.0466405196915063,
+          "mean_mm": 2.0466405196915063,
+          "median_mm": 2.0466405196915063,
+          "p95_mm": 2.0466405196915063,
+          "undefined_or_invalid_predictions": 0
+        },
+        "invalid_available_tracking": 0,
+        "missing_pose_tracking": 0,
+        "post_intervention_secondary": {
+          "auc_0_to_0_1m": 0.6300576606260295,
+          "denominator": 607,
+          "failed_frames": 208,
+          "failure_rate": 0.342668863261944,
+          "max_mm": 590.8864404907697,
+          "mean_mm": 139.85881947638876,
+          "median_mm": 5.021075071019302,
+          "p95_mm": 470.6310329346997,
+          "undefined_or_invalid_predictions": 0
+        },
+        "recovery": {
+          "confirmed_selected_frame": 342,
+          "confirmed_source_frame": 342,
+          "consecutive_inputs": 5,
+          "first_selected_frame": 338,
+          "first_source_frame": 338,
+          "inputs_after_reappearance": 208
+        },
+        "threshold_m": 0.019646325799497474,
+        "tracking": {
+          "auc_0_to_0_1m": 0.6553057065217391,
+          "denominator": 736,
+          "failed_frames": 237,
+          "failure_rate": 0.3220108695652174,
+          "max_mm": 590.8864404907697,
+          "mean_mm": 121.90833329958556,
+          "median_mm": 4.676441386359381,
+          "p95_mm": 451.7292499107568,
+          "undefined_or_invalid_predictions": 0
+        },
+        "unhidden_tracking_secondary": {
+          "auc_0_to_0_1m": 0.6782577903682724,
+          "denominator": 706,
+          "failed_frames": 208,
+          "failure_rate": 0.29461756373937675,
+          "max_mm": 590.8864404907697,
+          "mean_mm": 120.61550484200508,
+          "median_mm": 4.5286228524507175,
+          "p95_mm": 456.75967677969436,
+          "undefined_or_invalid_predictions": 0
+        }
+      },
+      "run_id": "mustard_occlusion_tapnext_single",
+      "runtime_status": "completed",
+      "source_sha256": {
+        "per_frame": "aa241c669e5d80063f97c94a25ec5d97b38c68b0cbeea3da9151de805ff683ab",
+        "runtime_report": "15a7322a6e8216afe0e7918768b9b350cd69e0e3d173b86dd20bfadb774724c8"
+      },
+      "source_valid": true,
+      "timing": {
+        "FP_load_seconds": 6.4678317160000915,
+        "boundary": "Measured tracking frame wall: decode, synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes the frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization.",
+        "child_all_input_throughput": 7.217446354592815,
+        "child_boundary": "validation/import/load/registration/all frames/neural audit/whole-file hashes; excludes final report write",
+        "child_inputs_including_initialization": 737,
+        "child_wall_seconds": 102.11367896499996,
+        "complete_tracking_slots": 736,
+        "cuda_peak_allocated_bytes": 4558777856,
+        "cuda_peak_reserved_bytes": 6025117696,
+        "first_input_frame_wall_seconds": 4.1866023030002,
+        "first_input_frontend_call_seconds": 4.17223167599991,
+        "full_tracking_fps": 15.780340127839116,
+        "parent_all_input_throughput": 6.802448424522431,
+        "parent_inputs_including_initialization": 737,
+        "parent_wall_seconds": 108.34334257399996,
+        "point_backend_object_construction_seconds": 4.783800000041083e-05,
+        "registration_seconds": 1.7444070619999366,
+        "source_reported_boundary": "decode, synchronized original and actual secondary point calls, observed-depth fitting, CAD support proposal, preloss transitions, adaptive FP and per-frame evidence; registration/load separate; final frames journal rewrite excluded from per-frame wall",
+        "summed_complete_slot_wall_seconds": 46.64031282200153,
+        "timing_diagnostic_only": false,
+        "tracking_frame_wall_median_ms": 63.99609949994556,
+        "tracking_frame_wall_p95_ms": 69.57558200002723
+      },
+      "tracking_frames": 736
+    },
+    {
+      "arm": "tapnext_preloss",
+      "case_id": "mustard_occlusion",
+      "event_statistics": {
+        "all_qualified_states_tentative": true,
+        "availability_is_not_accuracy": true,
+        "birth_attempt_count": 1,
+        "birth_attempts": [
+          {
+            "attempt_index": 0,
+            "backend_called": true,
+            "frame_id": 83,
+            "query_count": 64,
+            "source_frame_id": 83,
+            "status": "pending"
+          }
+        ],
+        "identity_certified": false,
+        "input_denominator": 737,
+        "manager_state_tracking": {
+          "disabled": 0,
+          "idle": 82,
+          "missing": 0,
+          "pending": 3,
+          "ready": 651,
+          "retired": 0
+        },
+        "original_motion_availability": {
+          "first_post_intervention_available_frame": 338,
+          "post_intervention_denominator": 607,
+          "tracking_available": 158,
+          "tracking_denominator": 736
+        },
+        "ready_transitions": [
+          {
+            "cohort_id": 0,
+            "frame_id": 86,
+            "source_frame_id": 86
+          }
+        ],
+        "retirements": [],
+        "secondary_calls": {
+          "advance": 653,
+          "start": 1
+        },
+        "secondary_motion_availability": {
+          "first_post_intervention_available_frame": 130,
+          "post_intervention_denominator": 607,
+          "tracking_available": 109,
+          "tracking_denominator": 736
+        },
+        "secondary_raw_capture_states": {
+          "captured_current_return": 654
+        },
+        "secondary_raw_return_records": 654,
+        "selected_seed_source_tracking": {
+          "conflict": 4,
+          "fallback": 496,
+          "initialization": 0,
+          "missing": 0,
+          "original": 154,
+          "secondary": 82
+        },
+        "source_valid": true,
+        "tracking_denominator": 736
+      },
+      "input_frames": 737,
+      "intervention_failed_tracking_frames": 29,
+      "neural_returns_by_tracking_slot": {
+        "1": 736
+      },
+      "outside_intervention_failed_tracking_frames": 0,
+      "paired_initialization_status": "paired",
+      "paired_original_stream_status": "paired",
+      "primary_absolute_ADD": {
+        "all_original_CAD_vertices": 10983,
+        "diameter_m": 0.19646325799497472,
+        "finite_wrong_tracking": 29,
+        "initialization": {
+          "auc_0_to_0_1m": 0.975,
+          "denominator": 1,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 2.0466405196915063,
+          "mean_mm": 2.0466405196915063,
+          "median_mm": 2.0466405196915063,
+          "p95_mm": 2.0466405196915063,
+          "undefined_or_invalid_predictions": 0
+        },
+        "invalid_available_tracking": 0,
+        "missing_pose_tracking": 0,
+        "post_intervention_secondary": {
+          "auc_0_to_0_1m": 0.9612108731466227,
+          "denominator": 607,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 12.607582801008983,
+          "mean_mm": 3.885121489907122,
+          "median_mm": 3.6104901985797104,
+          "p95_mm": 6.651153040485942,
+          "undefined_or_invalid_predictions": 0
+        },
+        "recovery": {
+          "confirmed_selected_frame": 134,
+          "confirmed_source_frame": 134,
+          "consecutive_inputs": 5,
+          "first_selected_frame": 130,
+          "first_source_frame": 130,
+          "inputs_after_reappearance": 0
+        },
+        "threshold_m": 0.019646325799497474,
+        "tracking": {
+          "auc_0_to_0_1m": 0.9284171195652176,
+          "denominator": 736,
+          "failed_frames": 29,
+          "failure_rate": 0.03940217391304348,
+          "max_mm": 220.96716802571063,
+          "mean_mm": 9.76698183519105,
+          "median_mm": 3.545287975295125,
+          "p95_mm": 7.347253202182751,
+          "undefined_or_invalid_predictions": 0
+        },
+        "unhidden_tracking_secondary": {
+          "auc_0_to_0_1m": 0.9629745042492918,
+          "denominator": 706,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 12.607582801008983,
+          "mean_mm": 3.708940142579634,
+          "median_mm": 3.4568066373588087,
+          "p95_mm": 6.429989983492942,
+          "undefined_or_invalid_predictions": 0
+        }
+      },
+      "run_id": "mustard_occlusion_tapnext_preloss",
+      "runtime_status": "completed",
+      "source_sha256": {
+        "per_frame": "ea78d32bfc16b3d6d55f3ec8085058e590eeb6c8c70aebe8828438c3ebe9fca3",
+        "runtime_report": "865990ec0ca0c8ede44c4f96d0f9a793cccd23e26f3375b7c18033be3cf08599"
+      },
+      "source_valid": true,
+      "timing": {
+        "FP_load_seconds": 6.580946751000056,
+        "boundary": "Measured tracking frame wall: decode, synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes the frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization.",
+        "child_all_input_throughput": 4.341855403542463,
+        "child_boundary": "validation/import/load/registration/all frames/neural audit/whole-file hashes; excludes final report write",
+        "child_inputs_including_initialization": 737,
+        "child_wall_seconds": 169.74310093300005,
+        "complete_tracking_slots": 736,
+        "cuda_peak_allocated_bytes": 4558777856,
+        "cuda_peak_reserved_bytes": 6025117696,
+        "first_input_frame_wall_seconds": 4.156499234999956,
+        "first_input_frontend_call_seconds": 4.140643842000145,
+        "full_tracking_fps": 9.42099574556083,
+        "parent_all_input_throughput": 4.149581770483552,
+        "parent_inputs_including_initialization": 737,
+        "parent_wall_seconds": 177.60826048600006,
+        "point_backend_object_construction_seconds": 0.002723604000038904,
+        "registration_seconds": 1.760014376999834,
+        "source_reported_boundary": "decode, synchronized original and actual secondary point calls, observed-depth fitting, CAD support proposal, preloss transitions, adaptive FP and per-frame evidence; registration/load separate; final frames journal rewrite excluded from per-frame wall",
+        "summed_complete_slot_wall_seconds": 78.1233767509982,
+        "timing_diagnostic_only": false,
+        "tracking_frame_wall_median_ms": 111.60850550004398,
+        "tracking_frame_wall_p95_ms": 117.79689099995494
+      },
+      "tracking_frames": 736
+    },
+    {
+      "arm": "tapnext_single",
+      "case_id": "mustard_stride4",
+      "event_statistics": {
+        "all_qualified_states_tentative": true,
+        "availability_is_not_accuracy": true,
+        "birth_attempt_count": 0,
+        "birth_attempts": [],
+        "identity_certified": false,
+        "input_denominator": 185,
+        "manager_state_tracking": {
+          "disabled": 184,
+          "idle": 0,
+          "missing": 0,
+          "pending": 0,
+          "ready": 0,
+          "retired": 0
+        },
+        "original_motion_availability": {
+          "first_post_intervention_available_frame": null,
+          "post_intervention_denominator": 0,
+          "tracking_available": 168,
+          "tracking_denominator": 184
+        },
+        "ready_transitions": [],
+        "retirements": [],
+        "secondary_calls": {},
+        "secondary_motion_availability": {
+          "first_post_intervention_available_frame": null,
+          "post_intervention_denominator": 0,
+          "tracking_available": 0,
+          "tracking_denominator": 184
+        },
+        "secondary_raw_capture_states": {},
+        "secondary_raw_return_records": 0,
+        "selected_seed_source_tracking": {
+          "conflict": 0,
+          "fallback": 16,
+          "initialization": 0,
+          "missing": 0,
+          "original": 168,
+          "secondary": 0
+        },
+        "source_valid": true,
+        "tracking_denominator": 184
+      },
+      "input_frames": 185,
+      "intervention_failed_tracking_frames": 0,
+      "neural_returns_by_tracking_slot": {
+        "1": 184
+      },
+      "outside_intervention_failed_tracking_frames": 0,
+      "paired_initialization_status": "paired",
+      "paired_original_stream_status": "paired",
+      "primary_absolute_ADD": {
+        "all_original_CAD_vertices": 10983,
+        "diameter_m": 0.19646325799497472,
+        "finite_wrong_tracking": 0,
+        "initialization": {
+          "auc_0_to_0_1m": 0.975,
+          "denominator": 1,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 2.0466405196915063,
+          "mean_mm": 2.0466405196915063,
+          "median_mm": 2.0466405196915063,
+          "p95_mm": 2.0466405196915063,
+          "undefined_or_invalid_predictions": 0
+        },
+        "invalid_available_tracking": 0,
+        "missing_pose_tracking": 0,
+        "post_intervention_secondary": {
+          "auc_0_to_0_1m": null,
+          "denominator": 0,
+          "failed_frames": 0,
+          "failure_rate": null,
+          "max_mm": null,
+          "mean_mm": null,
+          "median_mm": null,
+          "p95_mm": null,
+          "undefined_or_invalid_predictions": 0
+        },
+        "recovery": null,
+        "threshold_m": 0.019646325799497474,
+        "tracking": {
+          "auc_0_to_0_1m": 0.9631521739130435,
+          "denominator": 184,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 6.938129576068407,
+          "mean_mm": 3.6927008037027873,
+          "median_mm": 3.4515678709518767,
+          "p95_mm": 5.812761195337736,
+          "undefined_or_invalid_predictions": 0
+        },
+        "unhidden_tracking_secondary": {
+          "auc_0_to_0_1m": 0.9631521739130435,
+          "denominator": 184,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 6.938129576068407,
+          "mean_mm": 3.6927008037027873,
+          "median_mm": 3.4515678709518767,
+          "p95_mm": 5.812761195337736,
+          "undefined_or_invalid_predictions": 0
+        }
+      },
+      "run_id": "mustard_stride4_tapnext_single",
+      "runtime_status": "completed",
+      "source_sha256": {
+        "per_frame": "6dac031f298c118a2f5c733ffae42663bbdec5865f23d7ded82b5e1c9e58b9bb",
+        "runtime_report": "9a80f701ca7aa5185c395cf20143383c0c03168945aeae0f5f8883185fcae36e"
+      },
+      "source_valid": true,
+      "timing": {
+        "FP_load_seconds": 6.552026436999995,
+        "boundary": "Measured tracking frame wall: decode, synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes the frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization.",
+        "child_all_input_throughput": 5.653365677179182,
+        "child_boundary": "validation/import/load/registration/all frames/neural audit/whole-file hashes; excludes final report write",
+        "child_inputs_including_initialization": 185,
+        "child_wall_seconds": 32.723869383999954,
+        "complete_tracking_slots": 184,
+        "cuda_peak_allocated_bytes": 4558777856,
+        "cuda_peak_reserved_bytes": 6025117696,
+        "first_input_frame_wall_seconds": 4.169881201999942,
+        "first_input_frontend_call_seconds": 4.155173418000004,
+        "full_tracking_fps": 15.4155147980038,
+        "parent_all_input_throughput": 5.032642408678779,
+        "parent_inputs_including_initialization": 185,
+        "parent_wall_seconds": 36.760012926999934,
+        "point_backend_object_construction_seconds": 4.6715000053154654e-05,
+        "registration_seconds": 1.7400303619999704,
+        "source_reported_boundary": "decode, synchronized original and actual secondary point calls, observed-depth fitting, CAD support proposal, preloss transitions, adaptive FP and per-frame evidence; registration/load separate; final frames journal rewrite excluded from per-frame wall",
+        "summed_complete_slot_wall_seconds": 11.93602694499873,
+        "timing_diagnostic_only": false,
+        "tracking_frame_wall_median_ms": 65.34108699997887,
+        "tracking_frame_wall_p95_ms": 68.0559192999226
+      },
+      "tracking_frames": 184
+    },
+    {
+      "arm": "tapnext_preloss",
+      "case_id": "mustard_stride4",
+      "event_statistics": {
+        "all_qualified_states_tentative": true,
+        "availability_is_not_accuracy": true,
+        "birth_attempt_count": 1,
+        "birth_attempts": [
+          {
+            "attempt_index": 0,
+            "backend_called": true,
+            "frame_id": 21,
+            "query_count": 64,
+            "source_frame_id": 84,
+            "status": "pending"
+          }
+        ],
+        "identity_certified": false,
+        "input_denominator": 185,
+        "manager_state_tracking": {
+          "disabled": 0,
+          "idle": 20,
+          "missing": 0,
+          "pending": 3,
+          "ready": 161,
+          "retired": 0
+        },
+        "original_motion_availability": {
+          "first_post_intervention_available_frame": null,
+          "post_intervention_denominator": 0,
+          "tracking_available": 168,
+          "tracking_denominator": 184
+        },
+        "ready_transitions": [
+          {
+            "cohort_id": 0,
+            "frame_id": 24,
+            "source_frame_id": 96
+          }
+        ],
+        "retirements": [],
+        "secondary_calls": {
+          "advance": 163,
+          "start": 1
+        },
+        "secondary_motion_availability": {
+          "first_post_intervention_available_frame": null,
+          "post_intervention_denominator": 0,
+          "tracking_available": 161,
+          "tracking_denominator": 184
+        },
+        "secondary_raw_capture_states": {
+          "captured_current_return": 164
+        },
+        "secondary_raw_return_records": 164,
+        "selected_seed_source_tracking": {
+          "conflict": 2,
+          "fallback": 0,
+          "initialization": 0,
+          "missing": 0,
+          "original": 166,
+          "secondary": 16
+        },
+        "source_valid": true,
+        "tracking_denominator": 184
+      },
+      "input_frames": 185,
+      "intervention_failed_tracking_frames": 0,
+      "neural_returns_by_tracking_slot": {
+        "1": 184
+      },
+      "outside_intervention_failed_tracking_frames": 0,
+      "paired_initialization_status": "paired",
+      "paired_original_stream_status": "paired",
+      "primary_absolute_ADD": {
+        "all_original_CAD_vertices": 10983,
+        "diameter_m": 0.19646325799497472,
+        "finite_wrong_tracking": 0,
+        "initialization": {
+          "auc_0_to_0_1m": 0.975,
+          "denominator": 1,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 2.0466405196915063,
+          "mean_mm": 2.0466405196915063,
+          "median_mm": 2.0466405196915063,
+          "p95_mm": 2.0466405196915063,
+          "undefined_or_invalid_predictions": 0
+        },
+        "invalid_available_tracking": 0,
+        "missing_pose_tracking": 0,
+        "post_intervention_secondary": {
+          "auc_0_to_0_1m": null,
+          "denominator": 0,
+          "failed_frames": 0,
+          "failure_rate": null,
+          "max_mm": null,
+          "mean_mm": null,
+          "median_mm": null,
+          "p95_mm": null,
+          "undefined_or_invalid_predictions": 0
+        },
+        "recovery": null,
+        "threshold_m": 0.019646325799497474,
+        "tracking": {
+          "auc_0_to_0_1m": 0.9628804347826088,
+          "denominator": 184,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 6.938129576068407,
+          "mean_mm": 3.715472288155264,
+          "median_mm": 3.386697149486641,
+          "p95_mm": 5.888595045519777,
+          "undefined_or_invalid_predictions": 0
+        },
+        "unhidden_tracking_secondary": {
+          "auc_0_to_0_1m": 0.9628804347826088,
+          "denominator": 184,
+          "failed_frames": 0,
+          "failure_rate": 0.0,
+          "max_mm": 6.938129576068407,
+          "mean_mm": 3.715472288155264,
+          "median_mm": 3.386697149486641,
+          "p95_mm": 5.888595045519777,
+          "undefined_or_invalid_predictions": 0
+        }
+      },
+      "run_id": "mustard_stride4_tapnext_preloss",
+      "runtime_status": "completed",
+      "source_sha256": {
+        "per_frame": "9c2e2ca0219f3dd970ca32de93847c720ed0223cb5b393be25b1b9086a09991e",
+        "runtime_report": "08681382caf61357f9c10f7923b334490cceb2a463a353c33611b9dcef07f517"
+      },
+      "source_valid": true,
+      "timing": {
+        "FP_load_seconds": 6.4811505610000495,
+        "boundary": "Measured tracking frame wall: decode, synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes the frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization.",
+        "child_all_input_throughput": 4.225677157875541,
+        "child_boundary": "validation/import/load/registration/all frames/neural audit/whole-file hashes; excludes final report write",
+        "child_inputs_including_initialization": 185,
+        "child_wall_seconds": 43.77996545600013,
+        "complete_tracking_slots": 184,
+        "cuda_peak_allocated_bytes": 4558777856,
+        "cuda_peak_reserved_bytes": 6025117696,
+        "first_input_frame_wall_seconds": 4.1642681579999135,
+        "first_input_frontend_call_seconds": 4.1483305930000824,
+        "full_tracking_fps": 8.985353940272313,
+        "parent_all_input_throughput": 3.8210377733917222,
+        "parent_inputs_including_initialization": 185,
+        "parent_wall_seconds": 48.41616622799984,
+        "point_backend_object_construction_seconds": 0.002755620000016279,
+        "registration_seconds": 1.7511247689999436,
+        "source_reported_boundary": "decode, synchronized original and actual secondary point calls, observed-depth fitting, CAD support proposal, preloss transitions, adaptive FP and per-frame evidence; registration/load separate; final frames journal rewrite excluded from per-frame wall",
+        "summed_complete_slot_wall_seconds": 20.47776873599969,
+        "timing_diagnostic_only": false,
+        "tracking_frame_wall_median_ms": 116.27945199995793,
+        "tracking_frame_wall_p95_ms": 119.51539104992435
+      },
+      "tracking_frames": 184
+    }
+  ],
+  "schema": "preloss_public_aggregates/1",
+  "timing_interpretation": {
+    "FP_load": "Measured FP model_setup duration (weights and setup); first run cache state differs from later runs.",
+    "child": "Fresh child validation/import/model load/registration/all inputs/all frames.json journal rewrites/audit/artifact hashing; excludes final report write. Throughput denominator includes frame zero (375/737/185 input slots).",
+    "first_frontend_call": "First input point frontend call includes lazy backend/model startup and actual first inference; not an isolated checkpoint-load measurement.",
+    "parent": "Per-run parent-observed launch-to-child-completion wall time, including model loading, per-frame journals and subprocess overhead. Throughput denominator includes frame zero. Not full six-run experiment duration.",
+    "point_backend_object_construction": "Object construction only; must not be described as complete point-model cold loading.",
+    "tracking_fps": "Tracking inputs only (frame zero excluded) / sum of measured frame wall times; includes synchronized point calls, fitting, support, adaptive FP and frame evidence. Excludes frames.json journal rewrite after EVERY frame, load, registration, first input, final journal rewrite and finalization. This is not end-to-end throughput.",
+    "warm_cold_caveat": "Fresh processes but uncontrolled filesystem/JIT/cache temperature and fixed order; no isolated cold-start benchmark, repeated trial variance, or production FPS claim."
+  },
+  "verification": {
+    "event_timing_pairing_receipt_sha256": "76e0da1f74547cac035f4b90ff1e92653e9319028530b8325de4b597d8c51e17",
+    "max_absolute_metric_difference_m": 3.3029134982598407e-15,
+    "metric_receipt_sha256": "bba4c635f79187a1d246092ddc11002c7b2c77c12f6592701b91ea7a00759e07",
+    "metric_slots_recomputed": 12970,
+    "receipt_sha256": "ec415e80c4644a71593b9a12ac50659a77b12f59b3efe76f7f6ddf020e8eb9ad",
+    "scope": "Independent actual metric and event/timing/pairing reviews; status applies to arithmetic and evidence consistency, not object identity or held-out generalization.",
+    "status": "verified_against_pinned_independent_reviews"
+  }
+}

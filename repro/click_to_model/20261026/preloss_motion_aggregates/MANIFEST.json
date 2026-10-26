@@ -1,0 +1,61 @@
+{
+  "GT_files_read_by_builder": false,
+  "files": [
+    {
+      "bytes": 7924,
+      "name": "README.md",
+      "sha256": "d9fee1af98571b2dad69e0c488f4d966a1f14a4603d80c029d8b8a794df27b06"
+    },
+    {
+      "bytes": 51240,
+      "name": "figures/absolute_add_trajectories.pdf",
+      "sha256": "2840b7862cd98159c92b0c3400bc33d87a3c26f8e8359b91908dc4a5d12d9b82"
+    },
+    {
+      "bytes": 391262,
+      "name": "figures/absolute_add_trajectories.png",
+      "sha256": "0505526901eb23cc3e5c6cb6ece0296c83baba2e9dc87814bea636bdcb3471a2"
+    },
+    {
+      "bytes": 205490,
+      "name": "figures/absolute_add_trajectories.svg",
+      "sha256": "946b6c491c5d449d231790e451b51ebe905c25dc908088ddf70d40de81ea69d7"
+    },
+    {
+      "bytes": 38255,
+      "name": "figures/failure_counts_and_tracking_speed.pdf",
+      "sha256": "2779175e9fd0b0f2b3650da9ee2cb677dd4e99c8b21b2ff6ba86d434ab077991"
+    },
+    {
+      "bytes": 271777,
+      "name": "figures/failure_counts_and_tracking_speed.png",
+      "sha256": "e37b51b20a1bd0da3621a571e855276e3b7b1ac3bf39867913e99b602596e804"
+    },
+    {
+      "bytes": 156136,
+      "name": "figures/failure_counts_and_tracking_speed.svg",
+      "sha256": "6aa1919e01765f1a312b880b9b9739d7b8dee0b20a136a25faf2d2adf99596c3"
+    },
+    {
+      "bytes": 5278,
+      "name": "per_case.csv",
+      "sha256": "04ad9ddde32a028d6736b012e6d3b0d437bacf41e2c4591bdee9e7ed58bab030"
+    },
+    {
+      "bytes": 3203,
+      "name": "raw_OBJ_sensitivity_metrics.csv",
+      "sha256": "daefb6d4d10e4a0ff5c59ff82439d47f79ec95ea611fe705acc7db6db84970ac"
+    },
+    {
+      "bytes": 129982,
+      "name": "summary.json",
+      "sha256": "c1d94e82c41c2e075bcad49d4f313f32a6f8b74d2595a194481f3ef7bb1976d9"
+    }
+  ],
+  "inference_executed_by_builder": false,
+  "input_file_count": 20,
+  "schema": "public_numeric_payload_manifest/1",
+  "source_code_in_payload": false,
+  "source_files_unchanged": true,
+  "verification_status": "verified_against_pinned_independent_reviews"
+}
