@@ -1,0 +1,5 @@
+backend_index,original_raster_pixels,reference_pixels,overlap,original_only,reference_only,different_face_in_overlap,original_ray_guard_violations,original_depth_difference_max_m,new_CPU_coverage_equal,new_CPU_face_ids_equal,new_CUDA_coverage_equal,new_CUDA_face_ids_equal,new_CUDA_uncertain_rays,new_CUDA_depth_error_max_m,new_CUDA_surface_error_max_m,new_CUDA_ray_error_max_m,new_CUDA_instrumented_seconds,new_CUDA_peak_allocated_bytes
+0,3500,3501,3498,2,3,203,177,0.0003369745615933173,True,True,True,True,0,2.1094237467877974e-15,1.3211653993039363e-14,0.0,1.517892195002787,65967616
+1,3555,3556,3554,1,2,175,161,0.008898026916838053,True,True,True,True,0,6.661338147750939e-16,2.220446049250313e-15,0.0,0.009812871998292394,101713408
+2,3556,3557,3556,0,1,202,175,0.004358563864829135,True,True,True,True,0,1.2212453270876722e-15,1.3322676295501878e-15,0.0,0.009676570000010543,105048576
+3,3558,3556,3556,2,0,193,162,0.007020679640782568,True,True,True,True,0,9.992007221626409e-16,4.218847493575595e-15,0.0,0.009786263999558287,101209600

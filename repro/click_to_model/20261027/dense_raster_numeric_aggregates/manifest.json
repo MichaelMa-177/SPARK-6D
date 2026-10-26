@@ -1,0 +1,17 @@
+{
+  "schema": "numeric_aggregate_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 1940,
+      "sha256": "0580895831fabf5b0d59341101b6f4e8a13cc9d84227334b06cda98e26d58b0f"
+    },
+    "per_candidate.csv": {
+      "bytes": 1048,
+      "sha256": "871fb1450acb039fa6eb64206f9a78c92c82d047718ab439c2fd47b6b72fc9bc"
+    },
+    "summary.json": {
+      "bytes": 4103,
+      "sha256": "d67cf40df83b8ec73ec5a32ef2516b6c3d07c24b51c434ea978723f694dfb4ee"
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "dense_raster_four_candidate_numeric_aggregates/1",
+  "scope": "Four fixed candidates of one real TLESS mesh; no pose-accuracy or physical-GT validation",
+  "GT_read": false,
+  "NN_calls": 0,
+  "production_modified": false,
+  "original_XYZ_guard_tolerance_m": 2e-06,
+  "tolerance_loosened": false,
+  "original_full_diagnostic": {
+    "status": "failed_first_batch",
+    "planned": 9072,
+    "computed": 0,
+    "unknown": 9072,
+    "originally_unavailable": 1512
+  },
+  "numerical_diagnosis": {
+    "foreground_pixels": 14169,
+    "original_guard_violations": 675,
+    "selected_triangle_noncoverage_pixels": 776,
+    "selected_face_intersections": 13393,
+    "contained_selected_faces_not_nearest": 2,
+    "nearest_face_same_intersections": 13391,
+    "guard_violations_are_all_outside_original_selected_face": true,
+    "same_triangle_interior_pixel_count": 0,
+    "old_oracle_extreme_is_outside_extrapolation": true
+  },
+  "whole_mesh_reference": {
+    "method": "Float64 Moller-Trumbore from recorded float32 camera-space vertices; rtree broad phase",
+    "vertices": 42134,
+    "faces": 84260,
+    "candidates": 4,
+    "fixed_full_face_ray_checks": 68,
+    "original_only_pixels": 5,
+    "reference_only_pixels": 6,
+    "different_face_overlap": 773,
+    "interpretation": "Finite numerical reference, not exact real arithmetic or physical truth"
+  },
+  "replacement_prototype": {
+    "method": "All projected triangle bounding boxes; float64 ray intersections and nearest-depth reduction",
+    "CPU_candidates_passed": 4,
+    "CUDA_candidates_passed": 4,
+    "author_analytic_groups": 8,
+    "independent_CPU_boundary_groups": 9,
+    "integer_overflow_bug_fixed_in_v2": true,
+    "old_source_and_counterexamples_preserved": true,
+    "near_far_crossing": "explicit failure",
+    "near_parallel": "explicit uncertainty channel",
+    "resource_overflow": "explicit failure without dropping triangles",
+    "complete_TLESS_matrix_run": false
+  },
+  "timing_note": "All four actual instrumented CUDA times are reported, including the first 1.52s call; these are not deployment FPS, steady-state benchmarks, or independent samples.",
+  "limitations": [
+    "One mesh and four nearby hypotheses only",
+    "No new neural inference or GT metric evaluation",
+    "No identity or acceptance rule",
+    "Original failed full-matrix denominator remains unknown",
+    "CPU and CUDA share a formula; separate NumPy all-mesh implementation is a numerical reference"
+  ],
+  "primary_source": "https://github.com/NVlabs/nvdiffrast/blob/253ac4fcea7de5f396371124af597e6cc957bfae/csrc/common/rasterize.cu#L68-L86",
+  "sources": {
+    "original_failed_full_diagnostic": {
+      "sha256": "d730935912ff994274fa3029878f3115df0bfd44ea613a2c141999f38aa4b06a",
+      "bytes": 4914
+    },
+    "original_four_candidate_probe": {
+      "sha256": "889bde76fc5b055df1b35de0649231238348c6c897d57d89215de1499dbf5601",
+      "bytes": 2018
+    },
+    "author_numerical_diagnosis": {
+      "sha256": "dd17747d688f8061ec272dfbe6c4ace939e57e11a2d4e61124f800432c0e797c",
+      "bytes": 3598
+    },
+    "independent_numerical_diagnosis": {
+      "sha256": "b26c17cec903ed19f93198887bc3fcf1f0cd87d4c47f46bad4d32f5a8a96b735",
+      "bytes": 23920
+    },
+    "whole_mesh_CPU_reference": {
+      "sha256": "522de722064db65a6cf2b3ce17633cb1fa9621337b984198bcacda7a1091eebe",
+      "bytes": 5020
+    },
+    "new_raster_source": {
+      "sha256": "a970166f6ee892c26683ad3aad9715ecb51b3a59c902818e23bfdf73bece144c",
+      "bytes": 10700
+    },
+    "new_raster_frozen_plan": {
+      "sha256": "8b96b4fc3eb6e2ac37945ea5772648e65e189e84e2cdb31b6a6e698d0597a639",
+      "bytes": 3718
+    },
+    "new_raster_CPU_result": {
+      "sha256": "d10ec4564d819f449f6b7190918b4277b9d7f9aee0db5d7fa212f449890e1b02",
+      "bytes": 3952
+    },
+    "new_raster_CUDA_result": {
+      "sha256": "6007c66f97264bc0cdf7a480fb85c1561c3eeb5ad706ef1775570ff4682dd82f",
+      "bytes": 4091
+    },
+    "new_raster_independent_CPU_review": {
+      "sha256": "8fe607d9d947a28cb1ab87077caa98551b5e2c746361463c73ee564cb43f3b13",
+      "bytes": 1637
+    }
+  }
+}
