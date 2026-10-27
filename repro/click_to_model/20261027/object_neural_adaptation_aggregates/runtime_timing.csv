@@ -1,0 +1,3 @@
+arm,inputs,tracking,neural_calls,parent_wall_seconds,child_wall_seconds,initialization_seconds,registration_seconds,admission_seconds,tracking_seconds,tracking_fps,latency_p50_ms,latency_p95_ms,original_parent_status,original_parent_returncode,original_child_status
+baseline,180,179,268,40.64973115199973,38.1747438099992,16.102191405996564,4.28746969999338,3.789458993000153,15.503586206992622,11.545715785375204,86.36866300366819,108.16958500654437,completed_static_software_pending_independent_review,0,completed
+adaptation,180,179,268,45.34396764799749,43.02558970600512,14.112698146003822,4.165506050005206,3.779822623000655,22.28331741301372,8.032915237991535,126.83617699804017,146.9562780985143,failed,1,failed

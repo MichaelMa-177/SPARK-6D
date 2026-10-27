@@ -1,0 +1,36 @@
+{
+  "schema": "object_adaptation_single_case_public_aggregates/1",
+  "case": "continuous_visible",
+  "world": "stay",
+  "inputs_per_arm": 180,
+  "tracking_per_arm": 179,
+  "actual_inferences": 2,
+  "paired_association_tables": 6,
+  "paired_threshold_tables": 42,
+  "threshold_count_rows": 336,
+  "continuous_error_rows": 36,
+  "original_parent_status": "failed",
+  "original_parent_returncode": 1,
+  "original_child_status": "failed",
+  "exact_raw_recovery_sha256": "41bff9049951c2458ac530a6befa7e20c89907c55daa5dae7118f2e96a39b099",
+  "four_blocked_pyc_probes": 4,
+  "recovery_scope": "Completed trajectory eligible for separate posthoc evaluation under this exact blocked-cache amendment. Original failed/exit1/denial records are preserved; none rewritten. No arbitrary failure or denial is waived.",
+  "recovery_limits": [
+    "Author runtime/raw adapter reuses previously independent frozen transfer checks with explicit attribution; this is not an independent new neural training or accuracy audit.",
+    "Original dense-helper module is absent from sys.modules; fallback is supported by its SHA gate, pinned caller and CPU importer replay, not original exec-code telemetry.",
+    "No optimizer step, gradient, rigid-fit or observed-normal geometry recomputation. Private-head byte/version chain and actual AMP head-output comparisons checked for every final callback.",
+    "Runtime mesh colors were not observed; inherited source/geometry/C scopes retained."
+  ],
+  "all_trust_flags_false": true,
+  "explicit_abstention_not_reported": true,
+  "verified_risk": null,
+  "limits": [
+    "Synthetic single development sequence, sequential single-run arms; no independent-frame confidence intervals or proven general speed/accuracy improvement.",
+    "Initial registration pose is byte-identical, subsequent actual trajectory differs. No historical pose replacement or GT-selected initialization.",
+    "Finite continuous-error statistics explicitly retain full N and unknown-pair count. Exact improvement signs may reflect tiny numerical changes; they are not significance tests.",
+    "Timing scopes overlap; adaptation_seconds is inside frame wall. Parent exit1 and final validation overhead remain in actual timing.",
+    "Only final callback head features/replays saved each frame; earlier callback features not independently replayed. Original model/head bytes and source assertions have their recorded scopes.",
+    "Two-frame proof1 failed at dtype crop before neural return; corrected proof2 can have nonzero float32 candidate differences while actual AMP output is exactly unchanged. Neither is a long-sequence accuracy result.",
+    "No raw poses, GT matrices, images, point trajectories or machine-local paths are included."
+  ]
+}

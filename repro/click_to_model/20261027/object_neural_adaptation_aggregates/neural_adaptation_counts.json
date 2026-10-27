@@ -1,0 +1,44 @@
+{
+  "private_translation_parameters": 1539,
+  "tracking_update_opportunities": 179,
+  "status_counts": {
+    "updated_tentative_head": 161,
+    "reset_to_pretrained": 18
+  },
+  "actual_updates": 161,
+  "AMP_nonzero_same_feature_frames": 160,
+  "AMP_selected_actual_exact_frames": 179,
+  "adaptation_seconds": 6.805835390005086,
+  "initial_pose_byte_exact": true,
+  "changed_tracking_pose_count": 177,
+  "unchanged_tracking_pose_count": 2,
+  "changed_neural_iteration_frames": 2,
+  "baseline_total_tracking_neural_calls": 268,
+  "adaptation_total_tracking_neural_calls": 268,
+  "original_model_unchanged": true,
+  "hooks_restored": true,
+  "head_evidence_scope": "All original raw FP callbacks checked; numerical head replay/capture exists only for final callback per frame. Within-frame version constancy of earlier callbacks relies on immutable observer source/assertion and recorded callback count, not saved per-callback head features.",
+  "two_frame_proofs": [
+    {
+      "name": "two_frame_proof_v1",
+      "source_sha256": "efa9f247a674ffe17d2ff5094ba82fe4c070154250f8f5c22aae9eabc4a88562",
+      "statement": "Two planned direct-refiner frames; first float64-K/float32-points crop failed before any actual network return/update. Original failure and untouched head retained."
+    },
+    {
+      "name": "two_frame_parent_v1",
+      "source_sha256": "c6104f03006d3f7a1aee83305f219a31edeb1433e00a61cbbf939f72d932f094",
+      "statement": "Original two-frame parent status retained: failed; no status rewrite."
+    },
+    {
+      "name": "two_frame_proof_v2",
+      "source_sha256": "0070e9e6c56655d03d2942eac0ac5772de2d14bf6a84b324e03e459e3e0a4634",
+      "statement": "Corrected direct-refiner K float32 path completed two actual frames and two accepted updates (versions0\u21921\u21922). Private/original same-feature AMP output was byte-exact with zero delta on both; frame0 private inactive, frame1 active. Three blocked pyc probes retained and separately classified; no production-preprocessing equivalence or accuracy claim."
+    },
+    {
+      "name": "two_frame_parent_v2",
+      "source_sha256": "9723ea4a4f378ad2c506f0e5e79982f82dd57239728753e0eba2f4cea10b7d3f",
+      "statement": "Original two-frame parent status retained: completed_interface_proof_only; no status rewrite."
+    }
+  ],
+  "scope": "Counts demonstrate actual bounded private-head execution and changed numerical outputs, not effective accuracy improvement or physical-instance identity."
+}

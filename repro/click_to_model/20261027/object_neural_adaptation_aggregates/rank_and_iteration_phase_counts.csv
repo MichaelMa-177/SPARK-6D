@@ -1,0 +1,13 @@
+arm,scope,N,full_rank,rank_unknown,neural_calls
+baseline,initialization,1,1,0,0
+baseline,all_inputs,180,156,0,268
+baseline,all_tracking,179,155,0,268
+baseline,before_partial,99,75,0,144
+baseline,partial_occlusion,30,30,0,74
+baseline,after_partial,50,50,0,50
+adaptation,initialization,1,1,0,0
+adaptation,all_inputs,180,156,0,268
+adaptation,all_tracking,179,155,0,268
+adaptation,before_partial,99,75,0,145
+adaptation,partial_occlusion,30,30,0,73
+adaptation,after_partial,50,50,0,50

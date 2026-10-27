@@ -1,0 +1,13 @@
+arm,scope,N,target,distractor,both,neither,unknown,qualified,missing,verified,explicit_abstentions,abstention_not_reported,verified_target_risk,adjacent_switch_count
+baseline,initialization,1,1,0,0,0,0,1,0,0,0,1,,0
+baseline,all_inputs,180,178,0,0,2,0,180,0,0,0,180,,0
+baseline,all_tracking,179,177,0,0,2,0,179,0,0,0,179,,0
+baseline,before_partial,99,97,0,0,2,0,99,0,0,0,99,,0
+baseline,partial_occlusion,30,30,0,0,0,0,30,0,0,0,30,,0
+baseline,after_partial,50,50,0,0,0,0,50,0,0,0,50,,0
+adaptation,initialization,1,1,0,0,0,0,1,0,0,0,1,,0
+adaptation,all_inputs,180,178,0,0,2,0,180,0,0,0,180,,0
+adaptation,all_tracking,179,177,0,0,2,0,179,0,0,0,179,,0
+adaptation,before_partial,99,97,0,0,2,0,99,0,0,0,99,,0
+adaptation,partial_occlusion,30,30,0,0,0,0,30,0,0,0,30,,0
+adaptation,after_partial,50,50,0,0,0,0,50,0,0,0,50,,0

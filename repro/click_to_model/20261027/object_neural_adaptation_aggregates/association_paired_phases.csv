@@ -1,0 +1,7 @@
+scope,N,target_to_target,target_to_distractor,target_to_both,target_to_neither,target_to_unknown,distractor_to_target,distractor_to_distractor,distractor_to_both,distractor_to_neither,distractor_to_unknown,both_to_target,both_to_distractor,both_to_both,both_to_neither,both_to_unknown,neither_to_target,neither_to_distractor,neither_to_both,neither_to_neither,neither_to_unknown,unknown_to_target,unknown_to_distractor,unknown_to_both,unknown_to_neither,unknown_to_unknown
+initialization,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+all_inputs,180,178,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0
+all_tracking,179,177,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0
+before_partial,99,97,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0
+partial_occlusion,30,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+after_partial,50,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
