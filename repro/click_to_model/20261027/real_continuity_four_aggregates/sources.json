@@ -1,0 +1,80 @@
+{
+  "comparison_sha256": "798053234a24dd41a5d803d94e020446b051afa4aeaaab5b9b6894b17996c64f",
+  "sources": [
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/comparison.json",
+      "bytes": 859752,
+      "sha256": "798053234a24dd41a5d803d94e020446b051afa4aeaaab5b9b6894b17996c64f"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/receipt.json",
+      "bytes": 1202,
+      "sha256": "7ee942b004c197c103f796c4028ff6d59f995c30308f1e23baca5318b80384de"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/frozen_plan.json",
+      "bytes": 540490,
+      "sha256": "60a553ea978757c9180f04a54ef9879692e115bb6ae5023628c472ce33e50bdb"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/protocol.json",
+      "bytes": 300922,
+      "sha256": "8532886b027b568e0190551bb70800de7744e4218528c9ebcfb2cdf312c955a4"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/raw_index.json",
+      "bytes": 2169,
+      "sha256": "b4c9c863a059a71f1de107b9ae8156a0e504e63ebb509bcb79408454e7e2ebd8"
+    },
+    {
+      "name": "20261027_real_continuity_four_case_runtime_v1/terminal_collection_v1.json",
+      "bytes": 13165,
+      "sha256": "06cd5de77efe0dfdd60415b847402e77a6a143cd95fa12bee55e8560b1cdd383"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/ycbv_000051_obj000017/per_frame.json",
+      "bytes": 2146147,
+      "sha256": "abf7a9a1496277401fc325264750d681710802e05e3366d72901c01716f4af9c"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/ycbv_000054_obj000019/per_frame.json",
+      "bytes": 2053102,
+      "sha256": "e72d9558126857cda52b402ea9b0910b45611d4b30cfe39d67fe99b8f1979309"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/ycbv_000057_obj000021/per_frame.json",
+      "bytes": 2001575,
+      "sha256": "40562d55ea965563da849db288c0629daa248d401d1f1620d89477c16d414c71"
+    },
+    {
+      "name": "20261027_real_continuity_four_posthoc_v1/evaluation_v1/ycbv_000058_obj000008/per_frame.json",
+      "bytes": 1838354,
+      "sha256": "a60809b0fc262e0ae0c7a30171e2ff3cec1b76a4963047ac46e1a05532151df6"
+    },
+    {
+      "name": "ycbv_000051_obj000017_raw_audit",
+      "bytes": 47258158,
+      "sha256": "e72851a9b332ae192ae0138d499f6cfa2749d6bd36e4c57c6bea1cfe1372dccb"
+    },
+    {
+      "name": "ycbv_000054_obj000019_raw_audit",
+      "bytes": 43405036,
+      "sha256": "1ecdaf2d5d2ff6f6fdbd8f3c354aa1ee813233a359c17d7eff47af75c70bd886"
+    },
+    {
+      "name": "ycbv_000057_obj000021_raw_audit",
+      "bytes": 44048073,
+      "sha256": "13bebd1197afe71a94981c4a6b40483ee2783ee7ff44965fb60e58e09b0840b0"
+    },
+    {
+      "name": "ycbv_000058_obj000008_raw_audit",
+      "bytes": 29682411,
+      "sha256": "b5c666f04e3cf818f8467610eea51f4fa52b2f3bec4be64ff7ccc3092ccb6635"
+    }
+  ],
+  "source_code_included": false,
+  "raw_poses_included": false,
+  "images_included": false,
+  "GT_poses_included": false,
+  "weights_included": false
+}

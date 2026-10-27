@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2358,
+      "sha256": "c55f6ff1244bc4df3c3056e5857ecd75db67aa7914cb1a606d79b4a7a9cc17a8"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 3067,
+      "sha256": "90c822d34aeb732b0b263e8e3ececd1ce0703951c6aa5fa62bc6b5a688571c27"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 11467,
+      "sha256": "898816a99c188e7eb2b19c24b1d91bb3feafa40484332ff722eb5847c9f9eafb"
+    },
+    {
+      "path": "thresholds.csv",
+      "bytes": 48504,
+      "sha256": "7f435179b6db112465f107651bcb5a582a27cc91214bf84b4afeac2507e20d6f"
+    }
+  ],
+  "scope": "complete numerical aggregates and descriptions only",
+  "repository": "MichaelMa-177/SPARK-6D",
+  "branch": "codex/click-to-model-20261022",
+  "prefix": "repro/click_to_model/20261027/real_continuity_four_aggregates/"
+}

@@ -1,0 +1,316 @@
+{
+  "schema": "real_four_continuity_numeric_aggregates/1",
+  "denominators": {
+    "cases": 4,
+    "inputs": 7526,
+    "tracking": 7522,
+    "initializations": 4,
+    "registration_candidates": 3024
+  },
+  "fixed_BOP19_tracking": 297,
+  "published_inputs": 6501,
+  "abstained_inputs": 1025,
+  "unknown_inputs": 0,
+  "complete_threshold_rows": 336,
+  "independently_recounted_populations": 1008,
+  "selected_pooled_metrics": [
+    {
+      "scope": "all_tracking",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": "0.1",
+      "N": 7522,
+      "published_count": 6497,
+      "candidate": {
+        "correct": 7492,
+        "wrong": 30,
+        "unknown": 0
+      },
+      "published": {
+        "correct": 6496,
+        "wrong": 1,
+        "unknown": 0
+      },
+      "abstained": {
+        "correct": 996,
+        "wrong": 29,
+        "unknown": 0
+      },
+      "coverage": 0.8637330497208189,
+      "published_risk_known": 0.00015391719255040788
+    },
+    {
+      "scope": "all_tracking",
+      "metric": "MSPD_640px",
+      "threshold_rule": "10.0",
+      "N": 7522,
+      "published_count": 6497,
+      "candidate": {
+        "correct": 6483,
+        "wrong": 1039,
+        "unknown": 0
+      },
+      "published": {
+        "correct": 5993,
+        "wrong": 504,
+        "unknown": 0
+      },
+      "abstained": {
+        "correct": 490,
+        "wrong": 535,
+        "unknown": 0
+      },
+      "coverage": 0.8637330497208189,
+      "published_risk_known": 0.07757426504540557
+    },
+    {
+      "scope": "all_tracking",
+      "metric": "ADD_m",
+      "threshold_rule": "<= 0.1D per object",
+      "N": 7522,
+      "published_count": 6497,
+      "candidate": {
+        "correct": 5594,
+        "wrong": 1928,
+        "unknown": 0
+      },
+      "published": {
+        "correct": 4909,
+        "wrong": 1588,
+        "unknown": 0
+      },
+      "abstained": {
+        "correct": 685,
+        "wrong": 340,
+        "unknown": 0
+      },
+      "coverage": 0.8637330497208189,
+      "published_risk_known": 0.2444205017700477
+    },
+    {
+      "scope": "fixed_BOP19_tracking",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": "0.1",
+      "N": 297,
+      "published_count": 268,
+      "candidate": {
+        "correct": 297,
+        "wrong": 0,
+        "unknown": 0
+      },
+      "published": {
+        "correct": 268,
+        "wrong": 0,
+        "unknown": 0
+      },
+      "abstained": {
+        "correct": 29,
+        "wrong": 0,
+        "unknown": 0
+      },
+      "coverage": 0.9023569023569024,
+      "published_risk_known": 0.0
+    },
+    {
+      "scope": "fixed_BOP19_tracking",
+      "metric": "MSPD_640px",
+      "threshold_rule": "10.0",
+      "N": 297,
+      "published_count": 268,
+      "candidate": {
+        "correct": 253,
+        "wrong": 44,
+        "unknown": 0
+      },
+      "published": {
+        "correct": 238,
+        "wrong": 30,
+        "unknown": 0
+      },
+      "abstained": {
+        "correct": 15,
+        "wrong": 14,
+        "unknown": 0
+      },
+      "coverage": 0.9023569023569024,
+      "published_risk_known": 0.11194029850746269
+    },
+    {
+      "scope": "fixed_BOP19_tracking",
+      "metric": "ADD_m",
+      "threshold_rule": "<= 0.1D per object",
+      "N": 297,
+      "published_count": 268,
+      "candidate": {
+        "correct": 223,
+        "wrong": 74,
+        "unknown": 0
+      },
+      "published": {
+        "correct": 198,
+        "wrong": 70,
+        "unknown": 0
+      },
+      "abstained": {
+        "correct": 25,
+        "wrong": 4,
+        "unknown": 0
+      },
+      "coverage": 0.9023569023569024,
+      "published_risk_known": 0.26119402985074625
+    }
+  ],
+  "cases": [
+    {
+      "case": "ycbv_000051_obj000017",
+      "inputs": 2008,
+      "tracking": 2007,
+      "published_inputs": 1374,
+      "abstained_inputs": 634,
+      "timing": {
+        "tracking_latency_sum_seconds": 376.0509471314581,
+        "tracking_latency_mean_seconds": 0.18736967968682516,
+        "runtime_report": {
+          "registration_seconds": 4.562974650005344,
+          "admission_seconds": 7.111408914002823,
+          "initialization_seconds": 23.963440474995878,
+          "tracking_seconds": 376.0509471314581,
+          "tracking_fps": 5.337042800475656,
+          "latency_p50_ms": 193.75265800044872,
+          "latency_p95_ms": 208.92300870182225,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "parent_process": {
+          "returncode": 0,
+          "timed_out": false,
+          "pid": 103087,
+          "timeout_seconds": 7200,
+          "termination_grace_seconds": 30
+        },
+        "parent_wall_seconds": 415.54076565799187,
+        "child_wall_seconds": 411.61714338100865,
+        "scope": "Instrumented frame latency excludes journal rewrites; child/parent scopes include their observed setup/journal. No deployment FPS claim."
+      },
+      "diameter_m": 0.20397300000000002,
+      "symmetry_count": 1
+    },
+    {
+      "case": "ycbv_000054_obj000019",
+      "inputs": 1928,
+      "tracking": 1927,
+      "published_inputs": 1588,
+      "abstained_inputs": 340,
+      "timing": {
+        "tracking_latency_sum_seconds": 386.08975319938327,
+        "tracking_latency_mean_seconds": 0.20035794146309457,
+        "runtime_report": {
+          "registration_seconds": 4.603445220986032,
+          "admission_seconds": 5.518099997003446,
+          "initialization_seconds": 22.02208095199603,
+          "tracking_seconds": 386.08975319938327,
+          "tracking_fps": 4.9910674500725865,
+          "latency_p50_ms": 198.94247900811024,
+          "latency_p95_ms": 219.73724789713737,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "parent_process": {
+          "returncode": 0,
+          "timed_out": false,
+          "pid": 103946,
+          "timeout_seconds": 7200,
+          "termination_grace_seconds": 30
+        },
+        "parent_wall_seconds": 422.2110599500011,
+        "child_wall_seconds": 418.2000548999931,
+        "scope": "Instrumented frame latency excludes journal rewrites; child/parent scopes include their observed setup/journal. No deployment FPS claim."
+      },
+      "diameter_m": 0.174746,
+      "symmetry_count": 2
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "inputs": 1871,
+      "tracking": 1870,
+      "published_inputs": 1820,
+      "abstained_inputs": 51,
+      "timing": {
+        "tracking_latency_sum_seconds": 371.59927492780844,
+        "tracking_latency_mean_seconds": 0.19871618980096709,
+        "runtime_report": {
+          "registration_seconds": 4.616160513993236,
+          "admission_seconds": 14.913962364997133,
+          "initialization_seconds": 32.19180886699178,
+          "tracking_seconds": 371.59927492780844,
+          "tracking_fps": 5.032302607057804,
+          "latency_p50_ms": 200.6127029962954,
+          "latency_p95_ms": 208.0912529527268,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "parent_process": {
+          "returncode": 0,
+          "timed_out": false,
+          "pid": 107603,
+          "timeout_seconds": 7200,
+          "termination_grace_seconds": 30
+        },
+        "parent_wall_seconds": 417.97600832900207,
+        "child_wall_seconds": 413.95269022700086,
+        "scope": "Instrumented frame latency excludes journal rewrites; child/parent scopes include their observed setup/journal. No deployment FPS claim."
+      },
+      "diameter_m": 0.10290300000000001,
+      "symmetry_count": 2
+    },
+    {
+      "case": "ycbv_000058_obj000008",
+      "inputs": 1719,
+      "tracking": 1718,
+      "published_inputs": 1719,
+      "abstained_inputs": 0,
+      "timing": {
+        "tracking_latency_sum_seconds": 327.5771450076718,
+        "tracking_latency_mean_seconds": 0.1906735419136623,
+        "runtime_report": {
+          "registration_seconds": 4.57392526800686,
+          "admission_seconds": 12.24596419199952,
+          "initialization_seconds": 30.333749903991702,
+          "tracking_seconds": 327.5771450076718,
+          "tracking_fps": 5.244566131009429,
+          "latency_p50_ms": 187.93350100168027,
+          "latency_p95_ms": 230.29911310222815,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "parent_process": {
+          "returncode": 0,
+          "timed_out": false,
+          "pid": 108607,
+          "timeout_seconds": 7200,
+          "termination_grace_seconds": 30
+        },
+        "parent_wall_seconds": 375.7222788549989,
+        "child_wall_seconds": 371.8017111700028,
+        "scope": "Instrumented frame latency excludes journal rewrites; child/parent scopes include their observed setup/journal. No deployment FPS claim."
+      },
+      "diameter_m": 0.114053,
+      "symmetry_count": 1
+    }
+  ],
+  "GT_posthoc_only": true,
+  "runtime_GT_used": false,
+  "claims": {
+    "accuracy_improvement": false,
+    "physical_instance_identity": false,
+    "heldout": false,
+    "CVPR_level_achieved": false
+  },
+  "caveats": [
+    "Single-arm absolute study; abstention does not change candidate poses",
+    "All original model vertex rows, official BOP metric implementations, exact fixed source frame mapping",
+    "Full-video annotations may be less reliable than separately fixed BOP19 targets",
+    "ADD lacks symmetry invariance; object19 ADD failures must be interpreted with MSSD/MSPD",
+    "Pooled rows are descriptive, temporally dependent, not independent statistical evidence",
+    "Instrumented timing scopes overlap; not deployment FPS"
+  ]
+}
