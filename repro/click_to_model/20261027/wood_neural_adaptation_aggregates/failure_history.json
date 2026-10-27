@@ -1,0 +1,11 @@
+{
+  "first_CPU_posthoc_status": "failed_before_GT_read",
+  "failure_class": "KeyError('metric_geometry')",
+  "GT_read": false,
+  "GPU_rerun": false,
+  "preserved_failure_sha256": "06d52e152eb26dd913337d4be3871be5d32f5017e9bd1ee0b8751354d9215b42",
+  "repair": "Versioned host_v2 obtains the unchanged fixed 0.237299m BOP diameter from frozen metadata and checks every old ADD threshold before any GT access.",
+  "final_CPU_posthoc_status": "completed",
+  "final_protocol_sha256": "0b5107d6c09674fac68c8ff790420aa1e8d2410aff7c021c44064d8a84b2021e",
+  "final_receipt_sha256": "64389bcb03ccbf08744be5a516bccc7692be6d6755172373763cef58ba19ab82"
+}

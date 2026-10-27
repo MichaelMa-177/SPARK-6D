@@ -1,0 +1,65 @@
+{
+  "schema": "wood_numeric_aggregate_provenance/1",
+  "sources": {
+    "posthoc_execution": {
+      "file": "receipt.json",
+      "bytes": 3392195,
+      "sha256": "64389bcb03ccbf08744be5a516bccc7692be6d6755172373763cef58ba19ab82"
+    },
+    "posthoc_comparison": {
+      "file": "comparison.json",
+      "bytes": 132836,
+      "sha256": "da2d0a6a0242a4f793aff62fb734e11601b87456a355aed25ee4390bba05b510"
+    },
+    "posthoc_per_frame": {
+      "file": "per_frame.json",
+      "bytes": 1302540,
+      "sha256": "8f095a1016888967ac501dfdd1c95f293ef397bbee8418d5759ed3a478ce7840"
+    },
+    "fixed_protocol": {
+      "file": "protocol_v2.json",
+      "bytes": 9967,
+      "sha256": "0b5107d6c09674fac68c8ff790420aa1e8d2410aff7c021c44064d8a84b2021e"
+    },
+    "baseline_per_frame": {
+      "file": "per_frame.json",
+      "bytes": 1302560,
+      "sha256": "b8171eec4a5a842fbb98b2c05fd55cdab279c7b34d43dfb500d5ae59edf7d1e0"
+    },
+    "baseline_summary": {
+      "file": "summary.json",
+      "bytes": 118976,
+      "sha256": "ab02f07d32434236f2bc945c04535e4890051bfb3c2af9efb018314f0a5f9294"
+    },
+    "actual_raw_audit": {
+      "file": "receipt.json",
+      "bytes": 44393865,
+      "sha256": "b976c06627297e5639b38540f351da5547e38a3042781bc6cb75ac2fbd561340"
+    },
+    "baseline_raw_audit": {
+      "file": "receipt.json",
+      "bytes": 37217220,
+      "sha256": "500ef80c180aa409223455d2860a1a35506734ba2bc3052e87110f5de28d9e4e"
+    },
+    "head_update_audit": {
+      "file": "head_updates.json",
+      "bytes": 880982,
+      "sha256": "26fd8ebb90e5640a12ea8b7e0240fee1049082698381420fea710ecc2bffd160"
+    },
+    "initialization_pairing": {
+      "file": "initialization_pairing.json",
+      "bytes": 52091,
+      "sha256": "853f39b82c9cce448b45ef4ae791b5c208b3d0431b0b9c4b81839d4ed62662aa"
+    },
+    "preserved_first_failure": {
+      "file": "failure.json",
+      "bytes": 775,
+      "sha256": "06d52e152eb26dd913337d4be3871be5d32f5017e9bd1ee0b8751354d9215b42"
+    },
+    "aggregate_review_source": {
+      "file": "review.py",
+      "bytes": 24295,
+      "sha256": "d0d7c3f1e0e835de2f272e8e0ca39d359796d01a3ecec48b73a6cf96485163bf"
+    }
+  }
+}

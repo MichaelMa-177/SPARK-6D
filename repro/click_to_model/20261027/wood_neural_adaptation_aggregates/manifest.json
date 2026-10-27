@@ -1,0 +1,52 @@
+{
+  "schema": "public_numeric_aggregate_manifest/1",
+  "target_github_path": "repro/click_to_model/20261027/wood_neural_adaptation_aggregates/",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3370,
+      "sha256": "3031c11a60e5a4bbd7b545b58a4f1c7b9bf7bfbb0ca9c0bcbc0d091281687a08"
+    },
+    {
+      "file": "continuous_errors.csv",
+      "bytes": 4785,
+      "sha256": "d155d990cfdf0a2b258def60a720c0ac840a487ca1f9fbb98c75e575c9675e56"
+    },
+    {
+      "file": "failure_history.json",
+      "bytes": 642,
+      "sha256": "9c45e78f31784704bcd628e43e939d16ce4545a9378a2042577d5468d7b77312"
+    },
+    {
+      "file": "neural_updates.json",
+      "bytes": 1524,
+      "sha256": "9253508c83177df2f9bcc77882e628155b9170d42862045339a2098166765031"
+    },
+    {
+      "file": "paired_transitions.csv",
+      "bytes": 5402,
+      "sha256": "e0e24b008fcc94be477e6f0fa4ace0b91df075754519ac018442835b23d44e4f"
+    },
+    {
+      "file": "source_hashes.json",
+      "bytes": 2156,
+      "sha256": "b3b8c233b1c9d173def01257895d5e518c76a62e1f2635ef044eab339a7f469b"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 12727,
+      "sha256": "8ec60107f097f5e6a88bcffc1df63c46b7f00d4f3071df88d52bde45b5f7633b"
+    },
+    {
+      "file": "threshold_counts.csv",
+      "bytes": 28089,
+      "sha256": "402628cf8a4c087e28c94473fa57892508e6735ab1ab3967ccb7a184df75b942"
+    },
+    {
+      "file": "timing.csv",
+      "bytes": 726,
+      "sha256": "ece06e12d37634baf133cac730a478586d555129b763eea925603b2c3b12f1a9"
+    }
+  ],
+  "payload_bytes": 59421
+}

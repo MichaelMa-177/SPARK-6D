@@ -1,0 +1,44 @@
+{
+  "schema": "wood_private_head_update_aggregates/1",
+  "tracking_denominator": 1828,
+  "status_counts": {
+    "updated_tentative_head": 1815,
+    "reset_to_pretrained": 13
+  },
+  "actual_updates": 1815,
+  "AMP_nonzero_same_feature_frames": 1815,
+  "AMP_selected_actual_exact_frames": 1828,
+  "frame1_initial_version": 0,
+  "final_version": 1828,
+  "maximum_f64_head_replay_error": 5.4483558914464325e-09,
+  "limitation": "All original raw FP callbacks checked; numerical head replay/capture exists only for final callback per frame. Within-frame version constancy of earlier callbacks relies on immutable observer source/assertion and recorded callback count, not saved per-callback head features.",
+  "private_parameters": 1539,
+  "contained_adaptation_seconds": 104.37594822496612,
+  "original_model_unchanged": true,
+  "method_hooks_restored": true,
+  "neural_call_counts": {
+    "sam_score": {
+      "neural_iteration_histogram": {
+        "2": 1664,
+        "3": 162,
+        "1": 2
+      },
+      "actual_neural_calls": 3816,
+      "parent_returncode": 0,
+      "child_status": "completed",
+      "denied_read_count": 0
+    },
+    "adaptation": {
+      "neural_iteration_histogram": {
+        "2": 1665,
+        "3": 161,
+        "1": 2
+      },
+      "actual_neural_calls": 3815,
+      "parent_returncode": 0,
+      "child_status": "completed",
+      "denied_read_count": 0
+    }
+  },
+  "efficacy": "1815 updates and nonzero AMP differences are actual execution evidence; they do not imply accuracy improvement."
+}
