@@ -1,0 +1,29 @@
+{
+  "schema": "aggregate_package_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 4638,
+      "sha256": "49181e186a2742814b16ae317fc05a3e62af3ffb3cbc4bfe0f211f8a9f184cec"
+    },
+    "paired_transitions.csv": {
+      "bytes": 13325,
+      "sha256": "200a2c183074202d2c7844440d158951a69eb66451d2d9015ee1145966ede31a"
+    },
+    "sources.json": {
+      "bytes": 3369,
+      "sha256": "402198a15d288dc2dace06a31763d7d1ee7ecc1f522c843907d33ddd0335b80d"
+    },
+    "summary.json": {
+      "bytes": 29864,
+      "sha256": "7b58f6bb24e17a35947cbd1659d0989fd79e45517d1bcc29f1a9b2176ca40746"
+    },
+    "thresholds.csv": {
+      "bytes": 41417,
+      "sha256": "f13834f59b7f63156689cd200e94d7dd1ae05c5df368b3ea99d4f60094dd0f7a"
+    }
+  },
+  "payload_file_count": 5,
+  "payload_bytes": 92613,
+  "manifest_self_hash_omitted": true,
+  "expected_total_file_count": 6
+}

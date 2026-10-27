@@ -1,0 +1,77 @@
+{
+  "schema": "birth180_public_sources/1",
+  "files": {
+    "posthoc_receipt": {
+      "bytes": 427952,
+      "sha256": "3c24d36a0fa000a141244bd10de0fde687f4d432916c512fd94a68b96dda63dd"
+    },
+    "posthoc_comparison": {
+      "bytes": 502090,
+      "sha256": "699b65d812c98511eb5f50c7936db8619115850085a077d7203a2f63e890d5a9"
+    },
+    "posthoc_frozen_plan": {
+      "bytes": 743942,
+      "sha256": "e3ef7b10c8f634528f853c31e167229c8c007a85ce1b2376de5800dde6e93b9a"
+    },
+    "posthoc_paired_counts": {
+      "bytes": 84174,
+      "sha256": "b957ae6418ec817153511567e6ae32b8850f12c1cf3cb55f8611438aa7bbf860"
+    },
+    "actual_initialization_candidate_pairing": {
+      "bytes": 374153,
+      "sha256": "f392421c5caebc7fbf326415db5844d44630ef3e318f9bee68647c2c4f88932d"
+    },
+    "birth_raw_receipt": {
+      "bytes": 3509629,
+      "sha256": "76fc2dfe505e0628826694eff833f29e2452f557980397d7db6da9524b20343f"
+    },
+    "baseline_raw_receipt": {
+      "bytes": 3523732,
+      "sha256": "e18a15200182281fb4a3685c2034a7596781303ffd5a8eebd0f7c925c28f6ae9"
+    },
+    "baseline_online_scalar_rows": {
+      "bytes": 246020,
+      "sha256": "34084612e1b2ed79e113fec237a8d48822ff884de16366748cd3c8871be13bf0"
+    },
+    "baseline_online_actual_publication": {
+      "bytes": 207865,
+      "sha256": "227d464163381cb117b9f465ec5dc219d35ed67eb65fbaf760b93ad8f88cf782"
+    },
+    "baseline_online_posthoc_summary": {
+      "bytes": 221769,
+      "sha256": "ac36bc917c80ad6d542315e603244e9d200b4eaf5290ddc129a451a0d44886a2"
+    },
+    "birth_v2_online_scalar_rows": {
+      "bytes": 246036,
+      "sha256": "57142a8d9e7c9b9c5d66122db439c6f332072ff2418b616501aa4356e99e57cc"
+    },
+    "birth_v2_online_actual_publication": {
+      "bytes": 287630,
+      "sha256": "d474c006861db81e20f48acea4fcf9bed77ad9ce9aa147a16214335cc83fcd9c"
+    },
+    "birth_v2_online_posthoc_summary": {
+      "bytes": 222436,
+      "sha256": "0fb7681eea8b5755a9373fa6f0863b6ebbbfff62277907fd9ccd2f061f02fb3a"
+    }
+  },
+  "export_script_sha256": "c8f073dd501cc65e6d94203e91c515873a252a3ac44aa42e864e01f0a0f47f98",
+  "source_and_input_pins_before_after_unchanged": true,
+  "inherited_truth_pin": {
+    "bytes": 263706,
+    "sha256": "fd746e948ce62040a9740a9890d9fb87f63d65d45f5be0ffc82e53f6353ee1f0"
+  },
+  "inherited_mesh_pin": {
+    "bytes": 37344,
+    "sha256": "758d6141a533b68dad5ea967c6d71519fcd9383dde771b65309ec8eb73e437c1"
+  },
+  "truth_and_mesh_read_by_this_export": false,
+  "scientific_source_pins": {
+    "20261027_multiframe_same_mesh_identity_posthoc_v1/host.py": "4d5108ccd85a1015972e47c87cb07a165bc6949f36aa37c06fbe99770d3ccf97",
+    "20261027_multiframe_same_mesh_identity_posthoc_v1/identity_metrics.py": "d2ae2e965c4eb93b486a0478164623cd9302e2a0d8ed60aa2ce8c8606fa6d5f5",
+    "20261027_identity_continuity_output_posthoc_v1/arrays.py": "60295faa95c72e84c8a186aa602f447403ccdf857f1654d4e0165240567501aa",
+    "20261027_continuous_posthoc_design_v1/metrics.py": "0fa0305375df5ed5a80ca4e35626acce8cc2e77a7bd9be206e4156deb1cdbf7a",
+    "20261026_tless_posthoc_design_v1/evaluator.py": "10a3a2416483394a4b7817b34db4203cbfc248907278ecef6635d0cc67d32ddf",
+    "20261027_preloss_translation_support_posthoc_v1/host.py": "96a1b08f09f662305c3e15a20801a1ae2fa8f38d805780b95e3d2bd0abcbc7a0"
+  },
+  "output_prefix": "repro/click_to_model/20261027/preloss_translation_support_aggregates/"
+}

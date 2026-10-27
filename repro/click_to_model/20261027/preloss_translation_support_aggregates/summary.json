@@ -1,0 +1,923 @@
+{
+  "schema": "birth180_public_aggregate/1",
+  "case": "continuous_visible",
+  "synthetic_development": true,
+  "two_fresh_actual_runs": true,
+  "input_denominator_per_arm": 180,
+  "tracking_denominator_per_arm": 179,
+  "initialization_denominator_per_arm": 1,
+  "runtime_and_source_clocks": "0..179; initialization=0, tracking=1..179; no alignment",
+  "world": "stay",
+  "association_rule": "Fixed persistent target and distractor; independent ADD <= 0.1D membership for each; target/distractor/both/neither/unknown. No nearest-GT selection.",
+  "model_vertex_rows": 386,
+  "model_faces": 768,
+  "diameter_m": 0.1649631473996541,
+  "declared_symmetry_count": 1,
+  "evaluation": "Full actual trajectories against identical previously frozen geometry and GT; no new GT computation or source-pose loading during this export.",
+  "arms": {
+    "baseline_online": {
+      "input_denominator": 180,
+      "tracking_denominator": 179,
+      "initializations": 1,
+      "all_seven_trust_flags_false": true,
+      "verified_count": 0,
+      "verified_risk": null,
+      "publication_scopes": {
+        "all_inputs": {
+          "denominator": 180,
+          "published": 162,
+          "abstained": 18,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 178,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 162,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        "tracking": {
+          "denominator": 179,
+          "published": 161,
+          "abstained": 18,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 177,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 161,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        "initialization": {
+          "denominator": 1,
+          "published": 1,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      },
+      "metric_summaries": {
+        "all_inputs": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.002660385425566039,
+              "median": 0.002059847020506912,
+              "maximum": 0.018592104557334604
+            },
+            "MSSD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.004202135755366088,
+              "median": 0.00294805518219019,
+              "maximum": 0.03572063671684566
+            },
+            "MSSD_over_diameter": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.02547317883785054,
+              "median": 0.017870992574165516,
+              "maximum": 0.2165370707331725
+            },
+            "MSPD_px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 1.906117013872048,
+              "median": 1.4653601861232284,
+              "maximum": 11.442345784515847
+            },
+            "MSPD_640px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 2.5414893518293975,
+              "median": 1.9538135814976376,
+              "maximum": 15.25646104602113
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.31116267478394943,
+              "median": 0.2930148849415858,
+              "maximum": 0.4742059161132556
+            },
+            "MSSD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.312876538023807,
+              "median": 0.29363010361248276,
+              "maximum": 0.4750460271016591
+            },
+            "MSSD_over_diameter": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 1.8966450565216548,
+              "median": 1.7799739410955153,
+              "maximum": 2.879710011538342
+            },
+            "MSPD_px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 167.6124328195867,
+              "median": 165.39349372862327,
+              "maximum": 309.3444803750469
+            },
+            "MSPD_640px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 223.4832437594489,
+              "median": 220.524658304831,
+              "maximum": 412.45930716672916
+            }
+          }
+        },
+        "tracking": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.002662753401678804,
+              "median": 0.00205949577907936,
+              "maximum": 0.018592104557334604
+            },
+            "MSSD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.004207945313288122,
+              "median": 0.002941877507818042,
+              "maximum": 0.03572063671684566
+            },
+            "MSSD_over_diameter": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.025508396145555997,
+              "median": 0.017833543759266383,
+              "maximum": 0.2165370707331725
+            },
+            "MSPD_px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 1.9078729249494812,
+              "median": 1.465200304568141,
+              "maximum": 11.442345784515847
+            },
+            "MSPD_640px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 2.543830566599308,
+              "median": 1.9536004060908545,
+              "maximum": 15.25646104602113
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.3112645912277377,
+              "median": 0.29311013853732687,
+              "maximum": 0.4742059161132556
+            },
+            "MSSD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.3129847582955497,
+              "median": 0.2937550978431078,
+              "maximum": 0.4750460271016591
+            },
+            "MSSD_over_diameter": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 1.8973010834794852,
+              "median": 1.7807316511210296,
+              "maximum": 2.879710011538342
+            },
+            "MSPD_px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 167.6249989830297,
+              "median": 165.42389789396026,
+              "maximum": 309.3444803750469
+            },
+            "MSPD_640px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 223.4999986440396,
+              "median": 220.565197191947,
+              "maximum": 412.45930716672916
+            }
+          }
+        },
+        "initialization": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.002236517701381143,
+              "median": 0.002236517701381143,
+              "maximum": 0.002236517701381143
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.003162224887321992,
+              "median": 0.003162224887321992,
+              "maximum": 0.003162224887321992
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.019169280758573975,
+              "median": 0.019169280758573975,
+              "maximum": 0.019169280758573975
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.5918089310115042,
+              "median": 1.5918089310115042,
+              "maximum": 1.5918089310115042
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 2.122411908015339,
+              "median": 2.122411908015339,
+              "maximum": 2.122411908015339
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29291963134584476,
+              "median": 0.29291963134584476,
+              "maximum": 0.29291963134584476
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29350510938185764,
+              "median": 0.29350510938185764,
+              "maximum": 0.29350510938185764
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.7792162310700013,
+              "median": 1.7792162310700013,
+              "maximum": 1.7792162310700013
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 165.36308956328628,
+              "median": 165.36308956328628,
+              "maximum": 165.36308956328628
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 220.48411941771502,
+              "median": 220.48411941771502,
+              "maximum": 220.48411941771502
+            }
+          }
+        }
+      },
+      "temporal": {
+        "temporary_abstention_spans": [
+          {
+            "start": 37,
+            "end_inclusive": 54,
+            "length": 18,
+            "recovered_at": 55
+          }
+        ],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      },
+      "partial_occlusion_scopes": {
+        "before_partial": {
+          "denominator": 99,
+          "candidate_association_counts": {
+            "target": 97,
+            "distractor": 0,
+            "both": 0,
+            "neither": 2,
+            "unknown": 0
+          }
+        },
+        "partial_occlusion": {
+          "denominator": 30,
+          "candidate_association_counts": {
+            "target": 30,
+            "distractor": 0,
+            "both": 0,
+            "neither": 0,
+            "unknown": 0
+          }
+        },
+        "after_partial": {
+          "denominator": 50,
+          "candidate_association_counts": {
+            "target": 50,
+            "distractor": 0,
+            "both": 0,
+            "neither": 0,
+            "unknown": 0
+          }
+        }
+      },
+      "timing": {
+        "report": {
+          "registration_seconds": 4.193588922003983,
+          "admission_seconds": 3.768919575995824,
+          "initialization_seconds": 14.95499272899906,
+          "tracking_seconds": 15.64006500900723,
+          "tracking_fps": 11.444965215739996,
+          "latency_p50_ms": 87.82332600094378,
+          "latency_p95_ms": 109.85710240056505,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "parent_wall_seconds": 40.96230098399974,
+        "child_wall_seconds": 38.22461900200142,
+        "parent_returncode": 0,
+        "timed_out": false,
+        "input_throughput_child": 4.709007040477639,
+        "input_throughput_parent": 4.394284395066324,
+        "timing_scope": "Instrumented frame/initialization/child/parent scopes; nested components are not additive. Cold/cache scheduling uncontrolled; not deployment FPS or a causal speedup claim.",
+        "tracking_latency_count": 179,
+        "tracking_latency_sum_seconds": 15.64006500900723
+      }
+    },
+    "birth_v2_online": {
+      "input_denominator": 180,
+      "tracking_denominator": 179,
+      "initializations": 1,
+      "all_seven_trust_flags_false": true,
+      "verified_count": 0,
+      "verified_risk": null,
+      "publication_scopes": {
+        "all_inputs": {
+          "denominator": 180,
+          "published": 163,
+          "abstained": 17,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 179,
+              "distractor": 0,
+              "both": 0,
+              "neither": 1,
+              "unknown": 0
+            },
+            "published": {
+              "target": 163,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 1,
+              "unknown": 0
+            }
+          }
+        },
+        "tracking": {
+          "denominator": 179,
+          "published": 162,
+          "abstained": 17,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 178,
+              "distractor": 0,
+              "both": 0,
+              "neither": 1,
+              "unknown": 0
+            },
+            "published": {
+              "target": 162,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 1,
+              "unknown": 0
+            }
+          }
+        },
+        "initialization": {
+          "denominator": 1,
+          "published": 1,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      },
+      "metric_summaries": {
+        "all_inputs": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.0025146884925351894,
+              "median": 0.002059161450786118,
+              "maximum": 0.017669259870572076
+            },
+            "MSSD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.0038990237729419506,
+              "median": 0.00294805518219019,
+              "maximum": 0.033921190808771505
+            },
+            "MSSD_over_diameter": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.023635726126732027,
+              "median": 0.017870992574165516,
+              "maximum": 0.20562890162728936
+            },
+            "MSPD_px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 1.7931563586786978,
+              "median": 1.4543665152053469,
+              "maximum": 11.165224198228199
+            },
+            "MSPD_640px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 2.3908751449049306,
+              "median": 1.939155353607129,
+              "maximum": 14.886965597637598
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.31135667560691455,
+              "median": 0.2930148849415858,
+              "maximum": 0.4742059161132556
+            },
+            "MSSD_m": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 0.31280121884190504,
+              "median": 0.29363010361248276,
+              "maximum": 0.4750460271016591
+            },
+            "MSSD_over_diameter": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 1.896188474654194,
+              "median": 1.7799739410955153,
+              "maximum": 2.879710011538342
+            },
+            "MSPD_px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 167.62010714460382,
+              "median": 165.39349372862327,
+              "maximum": 309.3444803750469
+            },
+            "MSPD_640px": {
+              "denominator": 180,
+              "known": 180,
+              "unknown": 0,
+              "mean": 223.49347619280508,
+              "median": 220.524658304831,
+              "maximum": 412.45930716672916
+            }
+          }
+        },
+        "tracking": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.002516242519301413,
+              "median": 0.002058827122492876,
+              "maximum": 0.017669259870572076
+            },
+            "MSSD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.003903139967833682,
+              "median": 0.002941877507818042,
+              "maximum": 0.033921190808771505
+            },
+            "MSSD_over_diameter": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.023660678335492687,
+              "median": 0.017833543759266383,
+              "maximum": 0.20562890162728936
+            },
+            "MSPD_px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 1.7942812046433192,
+              "median": 1.451078558661627,
+              "maximum": 11.165224198228199
+            },
+            "MSPD_640px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 2.392374939524425,
+              "median": 1.934771411548836,
+              "maximum": 14.886965597637598
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.3114596758541831,
+              "median": 0.29311013853732687,
+              "maximum": 0.4742059161132556
+            },
+            "MSSD_m": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 0.31290901833609525,
+              "median": 0.2937550978431078,
+              "maximum": 0.4750460271016591
+            },
+            "MSSD_over_diameter": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 1.8968419508753347,
+              "median": 1.7807316511210296,
+              "maximum": 2.879710011538342
+            },
+            "MSPD_px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 167.63271618137097,
+              "median": 165.42389789396026,
+              "maximum": 309.3444803750469
+            },
+            "MSPD_640px": {
+              "denominator": 179,
+              "known": 179,
+              "unknown": 0,
+              "mean": 223.51028824182794,
+              "median": 220.565197191947,
+              "maximum": 412.45930716672916
+            }
+          }
+        },
+        "initialization": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.002236517701381143,
+              "median": 0.002236517701381143,
+              "maximum": 0.002236517701381143
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.003162224887321992,
+              "median": 0.003162224887321992,
+              "maximum": 0.003162224887321992
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.019169280758573975,
+              "median": 0.019169280758573975,
+              "maximum": 0.019169280758573975
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.5918089310115042,
+              "median": 1.5918089310115042,
+              "maximum": 1.5918089310115042
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 2.122411908015339,
+              "median": 2.122411908015339,
+              "maximum": 2.122411908015339
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29291963134584476,
+              "median": 0.29291963134584476,
+              "maximum": 0.29291963134584476
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29350510938185764,
+              "median": 0.29350510938185764,
+              "maximum": 0.29350510938185764
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.7792162310700013,
+              "median": 1.7792162310700013,
+              "maximum": 1.7792162310700013
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 165.36308956328628,
+              "median": 165.36308956328628,
+              "maximum": 165.36308956328628
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 220.48411941771502,
+              "median": 220.48411941771502,
+              "maximum": 220.48411941771502
+            }
+          }
+        }
+      },
+      "temporal": {
+        "temporary_abstention_spans": [
+          {
+            "start": 37,
+            "end_inclusive": 53,
+            "length": 17,
+            "recovered_at": 54
+          }
+        ],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      },
+      "partial_occlusion_scopes": {
+        "before_partial": {
+          "denominator": 99,
+          "candidate_association_counts": {
+            "target": 98,
+            "distractor": 0,
+            "both": 0,
+            "neither": 1,
+            "unknown": 0
+          }
+        },
+        "partial_occlusion": {
+          "denominator": 30,
+          "candidate_association_counts": {
+            "target": 30,
+            "distractor": 0,
+            "both": 0,
+            "neither": 0,
+            "unknown": 0
+          }
+        },
+        "after_partial": {
+          "denominator": 50,
+          "candidate_association_counts": {
+            "target": 50,
+            "distractor": 0,
+            "both": 0,
+            "neither": 0,
+            "unknown": 0
+          }
+        }
+      },
+      "timing": {
+        "report": {
+          "registration_seconds": 4.207700930011924,
+          "admission_seconds": 3.7784779439971317,
+          "initialization_seconds": 14.487293223995948,
+          "tracking_seconds": 24.919486442930065,
+          "tracking_fps": 7.1831335854348755,
+          "latency_p50_ms": 138.16609799687285,
+          "latency_p95_ms": 167.9996858976665,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "parent_wall_seconds": 50.16519825599971,
+        "child_wall_seconds": 47.50616289000027,
+        "parent_returncode": 0,
+        "timed_out": false,
+        "input_throughput_child": 3.788982082530787,
+        "input_throughput_parent": 3.58814489442334,
+        "timing_scope": "Instrumented frame/initialization/child/parent scopes; nested components are not additive. Cold/cache scheduling uncontrolled; not deployment FPS or a causal speedup claim.",
+        "tracking_latency_count": 179,
+        "tracking_latency_sum_seconds": 24.919486442930065
+      }
+    }
+  },
+  "actual_initialization_pairing": {
+    "pairing_gates": {
+      "input_inventory_exact": true,
+      "planned_slots_exact": true,
+      "runtime_assets_exact": true,
+      "argv_equal_except_output": true
+    },
+    "initialization_checks": 29,
+    "initialization_byte_exact": 29,
+    "initialization_different": 0,
+    "candidate_denominator": 180,
+    "candidate_byte_exact": 162,
+    "candidate_different": 18,
+    "publication_transitions": {
+      "True -> True": 162,
+      "False -> False": 17,
+      "False -> True": 1
+    }
+  },
+  "frame54_counterpoint": {
+    "baseline_online": {
+      "target_errors": {
+        "MSSD_m": 0.004215760490570244,
+        "MSPD_px": 2.0115698218924813,
+        "ADD_m": 0.0020678449186419916,
+        "MSSD_over_diameter": 0.02555577143758524,
+        "MSPD_640px": 2.682093095856642
+      },
+      "pose_available": false
+    },
+    "birth_v2_online": {
+      "target_errors": {
+        "MSSD_m": 0.004431618758177665,
+        "MSPD_px": 2.115651433958469,
+        "ADD_m": 0.0022965195023403892,
+        "MSSD_over_diameter": 0.026864295620168056,
+        "MSPD_640px": 2.8208685786112917
+      },
+      "pose_available": true
+    }
+  },
+  "checks": {
+    "target_threshold_cells": 252,
+    "cells_per_arm": 126,
+    "paired_cells": 126,
+    "full_scalar_rows_checked": 360,
+    "actual_publication_rows_checked": 360,
+    "independent_aggregate_recount_exact": true,
+    "independent_geometry_recomputation": false
+  },
+  "limitations": [
+    "One known synthetic sequence with correlated frames; no held-out efficacy or physical identity proof.",
+    "No GT alignment or inference rerun; both actual candidate trajectories are evaluated completely against the identical fixed target/distractor truth.",
+    "Publication is tentative availability, not verified identity. Correct rejected, wrong published and unknown/null risk are retained.",
+    "Timing includes instrumentation and uncontrolled cold/cache effects; no causal speedup assertion.",
+    "Birth policy changes causal secondary support initialization; only one known synthetic development segment. This is not a general relocalization or identity-verification result.",
+    "At frame 54, publication resumes earlier but ADD is slightly worse; correct rejection under MSPD < 5 normalized pixels increases from 7 to 9."
+  ]
+}
