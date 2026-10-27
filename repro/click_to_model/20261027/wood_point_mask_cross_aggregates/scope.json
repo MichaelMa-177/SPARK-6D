@@ -1,0 +1,51 @@
+{
+  "schema": "wood_point_mask_cross_public_aggregates/1",
+  "sequence_count": 1,
+  "development_only": true,
+  "actual_runs": 3,
+  "input_frames_per_run": 1829,
+  "tracking_frames_per_run": 1828,
+  "fixed_BOP_tracking_targets": 75,
+  "initialization_separate": true,
+  "paired_table_rows": 126,
+  "summary_threshold_rows_independently_checked": 378,
+  "masks": {
+    "legacy_geometry": {
+      "working": 2,
+      "point": 2
+    },
+    "sam_score": {
+      "working": 1,
+      "point": 1
+    },
+    "point_mask_cross": {
+      "working": 1,
+      "point": 2
+    }
+  },
+  "same_current_SAM_registration_identity_gate": true,
+  "cross_changes_only_initial_query_and_original_depth_anchor_mask": true,
+  "correctness_boundary": {
+    "BOP": "<",
+    "ADD": "<=",
+    "ADD_threshold_m": 0.0237299
+  },
+  "all_outputs_tentative": true,
+  "physical_identity_verified": false,
+  "accepted_risk": null,
+  "independent_sample_count": null,
+  "interpretation": "MSPD<5 recovered partially from 283 to 303/1828, below original 360. ADD changes across original/SAM arms are dominated by declared symmetry representative and are not the primary benefit.",
+  "no_raw_poses_or_GT_matrices_or_tracks_or_images": true,
+  "timing": "Instrumentation/cold-load runs, not deployment speed. Tracking excludes initialization/final serialization; child/parent are inclusive overlapping clocks, never additive. Legacy original parent wall remains unknown after interruption.",
+  "geometry_scope": {
+    "vertex_rows": 8920,
+    "diameter_m": 0.237299,
+    "symmetry_samples": 8,
+    "continuous_exact_minimum": false,
+    "model_frame": "original BOP CAD metres",
+    "metric_surface": "all legacy original-model vertex rows"
+  },
+  "independent_aggregate_review_recomputed_GT_geometry": false,
+  "new_run_metric_errors_computed_with_existing_geometry_implementation": true,
+  "package_builder_wrote_GitHub": false
+}
