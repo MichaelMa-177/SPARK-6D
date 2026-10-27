@@ -1,0 +1,35 @@
+{
+  "schema": "synthetic_same_mesh_identity_public_aggregates/1",
+  "actual_neural_inferences": 2,
+  "actual_input_denominator": 360,
+  "actual_tracking_denominator": 358,
+  "actual_initializations": 2,
+  "inputs_per_case": 180,
+  "tracking_per_case": 179,
+  "reported_worlds": 3,
+  "world_score_rows": 540,
+  "alternate_world_rows_are_not_extra_observations": true,
+  "cases": [
+    "continuous_visible",
+    "hidden_identity_ambiguous"
+  ],
+  "model_vertices": 386,
+  "model_diameter_m": 0.1649631473996541,
+  "association_metric": "full-original-vertex ADD",
+  "association_comparison": "<=",
+  "association_diameter_fraction": 0.1,
+  "phase_count_rows": 22,
+  "independently_recomputed_existing_threshold_rows": 504,
+  "independently_recomputed_existing_phase_summaries": 19,
+  "checked_world_row_clocks": 540,
+  "independence_scope": "Distinct aggregate formulas from stored errors; no new GT reading or geometry recomputation. Same author as posthoc; not a separate research group replication.",
+  "limitations": [
+    "Two synthetic development streams, not real-object identity tracking evidence or a held-out benchmark.",
+    "Ambiguous stay/exchange worlds explain identical observed RGBD; the very same predicted poses were loaded once and evaluated twice. Do not pool these world counts or use independent-frame confidence intervals.",
+    "Exchange world has 77 distractor outputs including every one of 70 post-opening tracking frames. Zero adjacent identity switches is caused by the 47 neither-associated frames breaking the chain; it does not mean no identity error.",
+    "All seven actual trust flags remain false; explicit abstention is not reported. Unverified is not successful abstention, working pose coverage is not verified identity coverage, and empty verified risk is null.",
+    "Neither means a finite working pose misses both fixed ADD thresholds; it is not an unknown or a successful abstention. Unknown slots are retained.",
+    "Timings include instrumentation and use different overlapping scopes. Registration/admission are contained in initialization; parent/child/initialization/tracking values must not be added. Measured tracking FPS excludes final output serialization; parent-inclusive throughput includes startup and orchestration. Neither is deployment FPS.",
+    "No raw poses, GT matrices, point trajectories, images, model assets, or machine-local paths are included."
+  ]
+}
