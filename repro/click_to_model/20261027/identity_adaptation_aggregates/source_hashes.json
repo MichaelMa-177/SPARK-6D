@@ -1,0 +1,141 @@
+{
+  "schema": "numeric_aggregate_provenance/1",
+  "sources": {
+    "output_policy_execution": {
+      "file": "receipt.json",
+      "sha256": "9f1a340cb39ed6a4bed7a0a5e7c9705082b4ed72fc6e8b9aa68be76e83304510",
+      "bytes": 912380
+    },
+    "separate_scalar_numeric_review": {
+      "file": "receipt.json",
+      "sha256": "241ad3c7f6dc27c95195b3ff0171f4ce46472622522c50510456bd94b66f6463",
+      "bytes": 14040
+    },
+    "fixed_composition_plan": {
+      "file": "fixed_plan.json",
+      "sha256": "15f9e316cd69fd36ea368248eaa80d06295eb568958d137caddf78c55b38ae02",
+      "bytes": 93684
+    },
+    "completed_comparison_summary": {
+      "file": "summary.json",
+      "sha256": "f61dd66bea993a78a10b9136f76d166ac4a7aa7921ad7c05533f15b051435688",
+      "bytes": 9317
+    },
+    "complete_threshold_counts": {
+      "file": "threshold_counts.csv",
+      "sha256": "890f52eda777345e7c9a6e02cb485e846e04d9b9dc2c1173c645fc2dd87fa980",
+      "bytes": 40448
+    },
+    "numeric_per_arm_frame_source": {
+      "file": "per_frame.csv",
+      "sha256": "b1ae54c6a4472a76b69023de76c579a1cd5ca78e99f85293379596b987bcae59",
+      "bytes": 78284
+    },
+    "candidate_changes": {
+      "file": "candidate_changes.csv",
+      "sha256": "d16d098ba41e0b548c8712208a2afba4b907894d962beb405ab7ad8bcfad23ef",
+      "bytes": 69518
+    },
+    "error_statistics": {
+      "file": "error_statistics.csv",
+      "sha256": "e54fda84a10adb412cf7d79b00c563e60d397a9d0a559d5db36f451e9b31afb3",
+      "bytes": 7695
+    },
+    "frozen_code_or_protocol_0": {
+      "file": "run.py",
+      "sha256": "055c6f060f1b2a78b0c4357453b7b6671ff27ab23f19c017d2f0094f931d14d4",
+      "bytes": 16144
+    },
+    "frozen_code_or_protocol_1": {
+      "file": "PROTOCOL.md",
+      "sha256": "6653eaf72d4952546ccead07af6dd14e6ab7d6e5d759aa786d68b09fa913fe97",
+      "bytes": 2882
+    },
+    "frozen_code_or_protocol_2": {
+      "file": "continuity_v4.py",
+      "sha256": "75aa0f01509d8a2455ac1443bc4da4d259bfcfbec75a094708577423a8893c06",
+      "bytes": 16640
+    },
+    "frozen_code_or_protocol_3": {
+      "file": "arrays.py",
+      "sha256": "60295faa95c72e84c8a186aa602f447403ccdf857f1654d4e0165240567501aa",
+      "bytes": 5435
+    },
+    "frozen_code_or_protocol_4": {
+      "file": "compare.py",
+      "sha256": "3bdd4e95affc7731d0b4268f019bc2e64ef772bb7fe6048ee8e86f3b1ad41ed9",
+      "bytes": 45163
+    },
+    "raw_recovery": {
+      "file": "receipt.json",
+      "sha256": "41bff9049951c2458ac530a6befa7e20c89907c55daa5dae7118f2e96a39b099",
+      "bytes": 4224442
+    },
+    "baseline_raw": {
+      "file": "receipt.json",
+      "sha256": "852fb4aabc6f8ec74399d1c1513fa25743d812e30f34f719535b992afe5f8e62",
+      "bytes": 3690433
+    },
+    "policy_seal": {
+      "file": "receipt.json",
+      "sha256": "f23a6eb6da096a100e5c1ec3cde4e2f6510dc9ad217751c15ece6331568a72ea",
+      "bytes": 8675
+    },
+    "baseline_policy_evaluation": {
+      "file": "receipt.json",
+      "sha256": "3c3ee16f0a93cbc5e01a899c1bb3a40a734516eb642f93a16bc88e75ac1d64b3",
+      "bytes": 15072
+    },
+    "adaptation_evaluation": {
+      "file": "receipt.json",
+      "sha256": "cf73f13f53258d29256d1aefa31cf82195ff9afbe21901ecfdcb6c815757d745",
+      "bytes": 35432
+    },
+    "adaptation_comparison": {
+      "file": "comparison.json",
+      "sha256": "7a8e6afcef07734aa0693e9795a47b210811ebde4914aeb834f9f2126833e245",
+      "bytes": 48101
+    },
+    "adaptation_labels": {
+      "file": "per_frame.json",
+      "sha256": "2f423fe4a769ab19facf585f0466bd649b40d96708263175ece4ac2cb3bebd84",
+      "bytes": 246036
+    },
+    "baseline_labels": {
+      "file": "per_frame.json",
+      "sha256": "34084612e1b2ed79e113fec237a8d48822ff884de16366748cd3c8871be13bf0",
+      "bytes": 246020
+    },
+    "adaptation_original_plan": {
+      "file": "sequence_frozen_plan.json",
+      "sha256": "a86962e2726c6e34a80f83193ec858dbdb0fe602335ff477e2ece734807d96aa",
+      "bytes": 7995
+    },
+    "adaptation_original_execution": {
+      "file": "execution.json",
+      "sha256": "aded0daf6a7bae1c6c8b1c419aaec399861e9b81e5a2a5ee061acb6c3d6ebe76",
+      "bytes": 1839
+    },
+    "adaptation_original_child_receipt": {
+      "file": "child_receipt.json",
+      "sha256": "494a528ab037db4051ca8c2f90c11272abc40afe97fa218ae0f756656efeac39",
+      "bytes": 88713
+    },
+    "adaptation_original_denied_read_classification": {
+      "file": "receipt.json",
+      "sha256": "dd1ddde4e19df1ad398c25485d87ed66afc5473159b9e452f6441dab8737bdf5",
+      "bytes": 15953
+    },
+    "numeric_review_source": {
+      "file": "review.py",
+      "sha256": "92a13a263aa31fab04efc948da7b6d8f22179b7f2163c7324c4de62374faa5e4",
+      "bytes": 13057
+    },
+    "aggregate_builder": {
+      "file": "build.py",
+      "sha256": "51f55353d889244cae80ff20677ab5337a69ee6963ee4474861ffa14723dac62",
+      "bytes": 12102
+    }
+  },
+  "transitive_provenance": "Pinned raw/evaluation/replay receipts bind actual candidate files and source labels. No raw pose, GT, observation or executable source is exported."
+}

@@ -1,0 +1,595 @@
+{
+  "schema": "identity_gate_neural_adaptation_aggregates/1",
+  "status": "completed_fixed_gate_composition",
+  "case": "continuous_visible",
+  "world": "stay",
+  "unique_observed_input_frames": 180,
+  "unique_observed_tracking_frames": 179,
+  "actual_inference_traces": 2,
+  "output_combinations": 4,
+  "inputs_per_trace": 180,
+  "tracking_per_trace": 179,
+  "initializations_per_trace": 1,
+  "per_arm_numeric_rows": 360,
+  "these_are_not_360_independent_observations": true,
+  "full_threshold_rows": 252,
+  "headline_rows": 36,
+  "error_statistics_rows": 60,
+  "candidate_change_rows": 180,
+  "same_frozen_gate": true,
+  "gate_source_sha256": "75aa0f01509d8a2455ac1443bc4da4d259bfcfbec75a094708577423a8893c06",
+  "gate_config_unchanged": true,
+  "thresholds": [
+    {
+      "metric": "ADD_m",
+      "threshold": 0.01649631473996541,
+      "comparison": "<=",
+      "units": "m"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.05,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.1,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.15,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.2,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.25,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.3,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.35,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.4,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.45,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.5,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 5.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 10.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 15.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 20.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 25.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 30.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 35.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 40.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 45.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 50.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    }
+  ],
+  "all_publication_decisions_match_between_arms": true,
+  "all_metric_labels_known": true,
+  "all_seven_trust_flags_false": true,
+  "identity_verified_count": 0,
+  "arms": [
+    {
+      "arm": "baseline",
+      "case": "continuous_visible",
+      "world": "stay",
+      "input_denominator": 180,
+      "tracking_denominator": 179,
+      "publication_states": {
+        "tentative_continuous": 162,
+        "temporarily_unobservable": 18
+      },
+      "association_summaries": [
+        {
+          "scope": "all_inputs",
+          "denominator": 180,
+          "associations": {
+            "original": {
+              "target": 178,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 162,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "tracking",
+          "denominator": 179,
+          "associations": {
+            "original": {
+              "target": 177,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 161,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "initialization",
+          "denominator": 1,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      ],
+      "temporal": {
+        "temporary_abstention_spans": [
+          {
+            "start": 37,
+            "end_inclusive": 54,
+            "length": 18,
+            "recovered_at": 55
+          }
+        ],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      }
+    },
+    {
+      "arm": "neural_adaptation",
+      "case": "continuous_visible",
+      "world": "stay",
+      "input_denominator": 180,
+      "tracking_denominator": 179,
+      "publication_states": {
+        "tentative_continuous": 162,
+        "temporarily_unobservable": 18
+      },
+      "association_summaries": [
+        {
+          "scope": "all_inputs",
+          "denominator": 180,
+          "associations": {
+            "original": {
+              "target": 178,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 162,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "tracking",
+          "denominator": 179,
+          "associations": {
+            "original": {
+              "target": 177,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 161,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "initialization",
+          "denominator": 1,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      ],
+      "temporal": {
+        "temporary_abstention_spans": [
+          {
+            "start": 37,
+            "end_inclusive": 54,
+            "length": 18,
+            "recovered_at": 55
+          }
+        ],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      }
+    }
+  ],
+  "tracking_ADD": [
+    {
+      "arm": "baseline",
+      "variant": "original_candidate",
+      "full_denominator": 179,
+      "published_denominator": 179,
+      "known_metric_denominator": 179,
+      "mean_ADD_mm": 2.6627534016788035,
+      "median_ADD_mm": 2.05949577907936,
+      "maximum_ADD_mm": 18.592104557334604
+    },
+    {
+      "arm": "baseline",
+      "variant": "explicit_output_gate",
+      "full_denominator": 179,
+      "published_denominator": 161,
+      "known_metric_denominator": 161,
+      "mean_ADD_mm": 2.025737748850952,
+      "median_ADD_mm": 2.0302328118843396,
+      "maximum_ADD_mm": 2.9279274149122245
+    },
+    {
+      "arm": "neural_adaptation",
+      "variant": "original_candidate",
+      "full_denominator": 179,
+      "published_denominator": 179,
+      "known_metric_denominator": 179,
+      "mean_ADD_mm": 2.6777438334824155,
+      "median_ADD_mm": 2.057913948202125,
+      "maximum_ADD_mm": 17.795297312015062
+    },
+    {
+      "arm": "neural_adaptation",
+      "variant": "explicit_output_gate",
+      "full_denominator": 179,
+      "published_denominator": 161,
+      "known_metric_denominator": 161,
+      "mean_ADD_mm": 2.021115224626223,
+      "median_ADD_mm": 2.0260790139324043,
+      "maximum_ADD_mm": 2.9478924656448675
+    }
+  ],
+  "candidate_change_summary": {
+    "pose_bytes_changed_frames": 177,
+    "pose_bytes_unchanged_frames": 3,
+    "maximum_absolute_matrix_element_difference": 0.01691073179244995,
+    "maximum_candidate_translation_difference_m": 0.0015043789433922957,
+    "paired_error_changes": [
+      {
+        "scope": "all_inputs",
+        "metric": "ADD_m",
+        "denominator": 180,
+        "known_pairs": 180,
+        "improved": 150,
+        "worsened": 27,
+        "equal": 3,
+        "mean_delta": 1.4907151626925238e-05
+      },
+      {
+        "scope": "all_inputs",
+        "metric": "MSSD_m",
+        "denominator": 180,
+        "known_pairs": 180,
+        "improved": 145,
+        "worsened": 32,
+        "equal": 3,
+        "mean_delta": 2.577484579161557e-05
+      },
+      {
+        "scope": "all_inputs",
+        "metric": "MSSD_over_diameter",
+        "denominator": 180,
+        "known_pairs": 180,
+        "improved": 145,
+        "worsened": 32,
+        "equal": 3,
+        "mean_delta": 0.00015624608403700727
+      },
+      {
+        "scope": "all_inputs",
+        "metric": "MSPD_px",
+        "denominator": 180,
+        "known_pairs": 180,
+        "improved": 143,
+        "worsened": 34,
+        "equal": 3,
+        "mean_delta": -0.003912900778420472
+      },
+      {
+        "scope": "all_inputs",
+        "metric": "MSPD_640px",
+        "denominator": 180,
+        "known_pairs": 180,
+        "improved": 143,
+        "worsened": 34,
+        "equal": 3,
+        "mean_delta": -0.00521720103789398
+      },
+      {
+        "scope": "tracking",
+        "metric": "ADD_m",
+        "denominator": 179,
+        "known_pairs": 179,
+        "improved": 150,
+        "worsened": 27,
+        "equal": 2,
+        "mean_delta": 1.4990431803611971e-05
+      },
+      {
+        "scope": "tracking",
+        "metric": "MSSD_m",
+        "denominator": 179,
+        "known_pairs": 179,
+        "improved": 145,
+        "worsened": 32,
+        "equal": 2,
+        "mean_delta": 2.5918839343524034e-05
+      },
+      {
+        "scope": "tracking",
+        "metric": "MSSD_over_diameter",
+        "denominator": 179,
+        "known_pairs": 179,
+        "improved": 145,
+        "worsened": 32,
+        "equal": 2,
+        "mean_delta": 0.00015711896718805201
+      },
+      {
+        "scope": "tracking",
+        "metric": "MSPD_px",
+        "denominator": 179,
+        "known_pairs": 179,
+        "improved": 143,
+        "worsened": 34,
+        "equal": 2,
+        "mean_delta": -0.003934760559305503
+      },
+      {
+        "scope": "tracking",
+        "metric": "MSPD_640px",
+        "denominator": 179,
+        "known_pairs": 179,
+        "improved": 143,
+        "worsened": 34,
+        "equal": 2,
+        "mean_delta": -0.005246347412407354
+      },
+      {
+        "scope": "initialization",
+        "metric": "ADD_m",
+        "denominator": 1,
+        "known_pairs": 1,
+        "improved": 0,
+        "worsened": 0,
+        "equal": 1,
+        "mean_delta": 0.0
+      },
+      {
+        "scope": "initialization",
+        "metric": "MSSD_m",
+        "denominator": 1,
+        "known_pairs": 1,
+        "improved": 0,
+        "worsened": 0,
+        "equal": 1,
+        "mean_delta": 0.0
+      },
+      {
+        "scope": "initialization",
+        "metric": "MSSD_over_diameter",
+        "denominator": 1,
+        "known_pairs": 1,
+        "improved": 0,
+        "worsened": 0,
+        "equal": 1,
+        "mean_delta": 0.0
+      },
+      {
+        "scope": "initialization",
+        "metric": "MSPD_px",
+        "denominator": 1,
+        "known_pairs": 1,
+        "improved": 0,
+        "worsened": 0,
+        "equal": 1,
+        "mean_delta": 0.0
+      },
+      {
+        "scope": "initialization",
+        "metric": "MSPD_640px",
+        "denominator": 1,
+        "known_pairs": 1,
+        "improved": 0,
+        "worsened": 0,
+        "equal": 1,
+        "mean_delta": 0.0
+      }
+    ]
+  },
+  "candidate_matrix_difference_units": "maximum absolute raw matrix element: rotation entries dimensionless, translations metres; not an angle or a pure distance",
+  "failure_history": {
+    "original_parent_status": "failed",
+    "original_parent_returncode": 1,
+    "original_child_status": "failed",
+    "blocked_bytecode_cache_probes": 4,
+    "complete_raw_recovery_status": "passed_completed_trajectory_raw_with_blocked_pyc_probe_amendment",
+    "scope": "Only this exact completed180 trajectory/cache-classification amendment qualifies; original failed records unchanged."
+  },
+  "numerical_review": {
+    "status": "passed",
+    "scope": "Separate scalar/set implementation by original host author, not independent-author review.",
+    "threshold_rows": 252,
+    "numeric_rows": 360,
+    "published_values_match_actual_pose_bytes": true
+  },
+  "no_new_GPU_run_for_gate": true,
+  "candidate_and_future_recurrence_unchanged_by_gate": true,
+  "limitations": [
+    "One known synthetic development observation stream and one possible world, not held-out.",
+    "Candidate adaptation is a prior actual neural experiment; this composition is only a causal output-policy replay.",
+    "No new hidden-identity adaptation run was performed; full-occlusion identity remains unproven.",
+    "Abstention is not correct pose. Correct rejected candidates and coverage are included.",
+    "Conditional published-subset errors cannot replace whole-trajectory errors.",
+    "The gate never changes internal head updates or subsequent recurrence; no causal closed-loop benefit claimed.",
+    "No independent-frame confidence interval, deployment or physical-identity certification claim."
+  ]
+}

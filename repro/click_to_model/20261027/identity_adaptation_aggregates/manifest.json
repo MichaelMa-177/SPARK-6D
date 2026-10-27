@@ -1,0 +1,53 @@
+{
+  "schema": "public_numeric_aggregate_manifest/1",
+  "target_github_path": "repro/click_to_model/20261027/identity_adaptation_aggregates/",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 4493,
+      "sha256": "dc9f9627fd76c29aadefcd4d2affeaa7f97d4be87447e4c0a095220d6cf68208"
+    },
+    {
+      "file": "candidate_changes.csv",
+      "bytes": 69518,
+      "sha256": "d16d098ba41e0b548c8712208a2afba4b907894d962beb405ab7ad8bcfad23ef"
+    },
+    {
+      "file": "error_statistics.csv",
+      "bytes": 7695,
+      "sha256": "e54fda84a10adb412cf7d79b00c563e60d397a9d0a559d5db36f451e9b31afb3"
+    },
+    {
+      "file": "four_combinations.csv",
+      "bytes": 6172,
+      "sha256": "020567bea435a4f6e45e06e7254f29e332fd500cfc022567e55dc5cc88704ee4"
+    },
+    {
+      "file": "source_hashes.json",
+      "bytes": 5011,
+      "sha256": "ca744d398ab90626543145423946fc2bf91ef6bc4d1a0f834306a1975ca7c138"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 15747,
+      "sha256": "352819b58d7c7f6b6555a0c0330303126834fed26475f56dea968ba9828847bf"
+    },
+    {
+      "file": "threshold_counts.csv",
+      "bytes": 40448,
+      "sha256": "890f52eda777345e7c9a6e02cb485e846e04d9b9dc2c1173c645fc2dd87fa980"
+    }
+  ],
+  "payload_bytes": 149084,
+  "excludes": [
+    "raw poses",
+    "raw GT",
+    "images",
+    "masks",
+    "models",
+    "observations",
+    "logs",
+    "executable source",
+    "absolute local paths"
+  ]
+}
