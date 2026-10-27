@@ -1,0 +1,52 @@
+{
+  "schema": "measured_normal_three_arm_public_aggregates/1",
+  "arms": [
+    "baseline",
+    "fullmap_v2",
+    "sparse_v3"
+  ],
+  "inputs_per_arm": 360,
+  "tracking_per_arm": 358,
+  "actual_inferences": 6,
+  "distinct_observed_sequences": 2,
+  "alternate_world_views_per_arm": 3,
+  "alternate_worlds_not_independent": true,
+  "actual_pose_triplets": 360,
+  "three_arm_pose_bytes_exact": true,
+  "accuracy_gain": 0,
+  "tracking_iteration_changes": 0,
+  "sparse_matches_fullmap_actual_evidence": true,
+  "association_paired_tables": 66,
+  "metric_paired_tables": 378,
+  "rank_phase_rows": 42,
+  "timing_rows": 6,
+  "local_full_rank_tracking": {
+    "baseline": [
+      155,
+      147
+    ],
+    "fullmap_v2": [
+      98,
+      131
+    ],
+    "sparse_v3": [
+      98,
+      131
+    ]
+  },
+  "case_order": [
+    "continuous_visible",
+    "hidden_identity_ambiguous"
+  ],
+  "old_package_retained": true,
+  "old_aggregate_elapsed_erratum": "A prior aggregate receipt used a shadowed timer variable. Only that audit elapsed value is invalid; experimental timings and published numeric files are unaffected. This reviewer uses audit_perf_start, not a phase index.",
+  "limits": [
+    "Synthetic development, sequential single-run arms: timings are descriptive, with no randomized repetitions or independent-frame confidence intervals.",
+    "Rank diagnostics improve their observation basis, but actual three-arm poses and fixed accuracy remain unchanged. No solved-identity claim.",
+    "Full-map v2 overhead decreases substantially with sparse v3. Baseline-v3 differences are small/mixed by timing scope, not proven broad speed superiority.",
+    "Registration/admission/initialization/tracking/child/parent timings overlap; do not add them or claim deployment FPS.",
+    "No micro-kernel benchmark speed ratio is used as end-to-end FPS.",
+    "Ambiguous exchange world still follows the distractor on all 70 post-opening frames. Zero adjacent switches does not erase identity failure across neither gaps.",
+    "Unknown ranks, all unverified flags, absent explicit abstention, and empty verified risk=null are retained. No raw poses, GT matrices, point trajectories, images or local paths are included."
+  ]
+}
