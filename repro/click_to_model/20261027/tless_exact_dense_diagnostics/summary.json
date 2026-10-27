@@ -1,0 +1,1434 @@
+{
+  "schema": "full_TLESS_exact_dense_numeric_diagnostics/1",
+  "status": "completed_diagnostic_only",
+  "planned_trials": 12,
+  "available_trials": 10,
+  "planned_candidates": 9072,
+  "computed": 7560,
+  "unknown": 1512,
+  "originally_unavailable": 1512,
+  "new_uncertain_candidates": 0,
+  "GT_read": false,
+  "NN_calls": 0,
+  "verified_candidates": 0,
+  "acceptance_rule_changed": false,
+  "production_modified": false,
+  "metric_depth_tolerance": "Existing max(0.008 m, 0.035 * model diameter); unchanged",
+  "integer_XYZ_consistency_tolerance_m": 2e-06,
+  "prior_failed_diagnostic_replaced": false,
+  "prior_failed_diagnostic": {
+    "computed": 0,
+    "unknown": 9072
+  },
+  "evidence_partition_checks_passed": 7560,
+  "full_csv_prefix_equality_passed": true,
+  "first_batch_pose_and_camera_attributes_byte_equal": true,
+  "wall_seconds": 752.749465369001,
+  "timing_scope": "Instrumented full diagnostic including source checks, transfers and journals; not tracking FPS",
+  "counts_are_not_independent_samples": true,
+  "scope": "All original saved hypotheses; no fresh model inference, GT metric, selected pose or new acceptance threshold.",
+  "limitations": [
+    "Development inputs only",
+    "Dense evidence has not yet been shown to improve pose selection or tracking",
+    "All verified flags remain false",
+    "Candidate rows include within-image and within-mask dependencies",
+    "Near/far crossing, numerical uncertainty and resource failures remain explicit unsupported cases in the general prototype"
+  ],
+  "sources": {
+    "terminal_receipt_sha256": "43b67f76525b9a479fda2f3366d54f19de635e86a49104f14581a1d035ca28f5",
+    "plan_sha256": "1febbde35eaa57d112623b17a4e5bc089e1b360372a577645297ea066050ac1f",
+    "original_full_candidate_csv_sha256": "ee11b417901bc868549ebd45db5b10b91b5a4550a74a0da8bb600b327f8a3683",
+    "original_candidate_prefix_sha256": "3d5ee353412ec6eb21ce7339f08e42b9eddf7d71ef9b1730a8ab035564a4d7d0",
+    "summary_source_sha256": "188bff518aa75385f430801231b6851785e5da3ab39c099a04112144cb20f6ea"
+  },
+  "groups": [
+    {
+      "trial_index": 0,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 104,
+        "inconclusive": 148
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2303.0,
+        "median": 3166.0,
+        "maximum": 3690.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7729960768230759,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.1467447983560236,
+        "maximum": 0.9266311957434892
+      },
+      "normal_angle_median_degrees": {
+        "N": 141,
+        "minimum": 27.13686666575051,
+        "median": 36.52300763409935,
+        "maximum": 94.79520447058654
+      },
+      "click_states": {
+        "supported": 103,
+        "occluded": 149
+      }
+    },
+    {
+      "trial_index": 0,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 114,
+        "inconclusive": 138
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2337.0,
+        "median": 3220.0,
+        "maximum": 3580.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.8608012896776558,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.18697030618485475,
+        "maximum": 0.9256948383437322
+      },
+      "normal_angle_median_degrees": {
+        "N": 239,
+        "minimum": 29.81188659676814,
+        "median": 38.09316613330293,
+        "maximum": 82.06698275696303
+      },
+      "click_states": {
+        "supported": 116,
+        "occluded": 136
+      }
+    },
+    {
+      "trial_index": 0,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 36,
+        "inconclusive": 216
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2028.0,
+        "median": 2929.5,
+        "maximum": 3092.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.9150977648684071,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.16132802816875924,
+        "maximum": 0.5493850167722698
+      },
+      "normal_angle_median_degrees": {
+        "N": 250,
+        "minimum": 27.068831626482087,
+        "median": 41.49271317980365,
+        "maximum": 61.952548132141324
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 1,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 91,
+        "inconclusive": 161
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2271.0,
+        "median": 3199.5,
+        "maximum": 3688.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7438657817109144,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.1585033401881744,
+        "maximum": 0.9186991869918699
+      },
+      "normal_angle_median_degrees": {
+        "N": 143,
+        "minimum": 28.297245414949458,
+        "median": 36.35000034815821,
+        "maximum": 98.6834382461431
+      },
+      "click_states": {
+        "supported": 102,
+        "occluded": 150
+      }
+    },
+    {
+      "trial_index": 1,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 114,
+        "inconclusive": 138
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2337.0,
+        "median": 3220.0,
+        "maximum": 3580.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.8608012896776558,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.18697030618485475,
+        "maximum": 0.9256948383437322
+      },
+      "normal_angle_median_degrees": {
+        "N": 239,
+        "minimum": 29.81188659676814,
+        "median": 38.284108449427045,
+        "maximum": 82.06698275696303
+      },
+      "click_states": {
+        "supported": 116,
+        "occluded": 136
+      }
+    },
+    {
+      "trial_index": 1,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 252
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 1765.0,
+        "median": 2954.5,
+        "maximum": 3176.0
+      },
+      "visible_support_fraction": {
+        "N": 237,
+        "minimum": 0.0,
+        "median": 0.8981818181818182,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.04290187589643413,
+        "maximum": 0.24813306177868297
+      },
+      "normal_angle_median_degrees": {
+        "N": 161,
+        "minimum": 19.133866274063315,
+        "median": 47.01441241779007,
+        "maximum": 110.96120020689833
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 2,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 40,
+        "inconclusive": 212
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2662.0,
+        "median": 3659.0,
+        "maximum": 4024.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.8116554054054055,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.09980750115690984,
+        "maximum": 0.9211908931698775
+      },
+      "normal_angle_median_degrees": {
+        "N": 205,
+        "minimum": 17.866859514557127,
+        "median": 43.23084441995745,
+        "maximum": 65.22395596043744
+      },
+      "click_states": {
+        "supported": 48,
+        "occluded": 204
+      }
+    },
+    {
+      "trial_index": 2,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 65,
+        "inconclusive": 187
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2649.0,
+        "median": 3709.5,
+        "maximum": 4026.0
+      },
+      "visible_support_fraction": {
+        "N": 248,
+        "minimum": 0.0,
+        "median": 0.9448388550822628,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.19227621989666063,
+        "maximum": 0.9497122842131599
+      },
+      "normal_angle_median_degrees": {
+        "N": 221,
+        "minimum": 27.084673512948484,
+        "median": 38.045310948821836,
+        "maximum": 87.54303380620951
+      },
+      "click_states": {
+        "supported": 56,
+        "occluded": 196
+      }
+    },
+    {
+      "trial_index": 2,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 252
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2757.0,
+        "median": 4009.0,
+        "maximum": 4297.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.37846153846153846,
+        "median": 0.9076369170951322,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.028048420431059935,
+        "median": 0.06812847556224477,
+        "maximum": 0.12637785183286337
+      },
+      "normal_angle_median_degrees": {
+        "N": 8,
+        "minimum": 34.841614502692195,
+        "median": 65.86598422571612,
+        "maximum": 98.84043034332244
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 3,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 37,
+        "inconclusive": 215
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2651.0,
+        "median": 3652.0,
+        "maximum": 4034.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.8034291234001449,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.09465325076388353,
+        "maximum": 0.9234042553191489
+      },
+      "normal_angle_median_degrees": {
+        "N": 207,
+        "minimum": 6.010549381198929,
+        "median": 42.84324583917227,
+        "maximum": 69.71312937138774
+      },
+      "click_states": {
+        "supported": 39,
+        "occluded": 213
+      }
+    },
+    {
+      "trial_index": 3,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 62,
+        "inconclusive": 190
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2656.0,
+        "median": 3706.0,
+        "maximum": 4025.0
+      },
+      "visible_support_fraction": {
+        "N": 250,
+        "minimum": 0.0,
+        "median": 0.9467846303664141,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.19368125782523682,
+        "maximum": 0.9425430926804896
+      },
+      "normal_angle_median_degrees": {
+        "N": 226,
+        "minimum": 26.50757436325633,
+        "median": 38.110997132900664,
+        "maximum": 68.0805705030291
+      },
+      "click_states": {
+        "supported": 42,
+        "occluded": 200,
+        "no_model": 10
+      }
+    },
+    {
+      "trial_index": 3,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 252
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 2790.0,
+        "median": 4026.0,
+        "maximum": 4304.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.4139941690962099,
+        "median": 0.9185159895299875,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.03408545367258761,
+        "median": 0.06815667628658167,
+        "maximum": 0.12554669410856703
+      },
+      "normal_angle_median_degrees": {
+        "N": 6,
+        "minimum": 58.288396270564235,
+        "median": 68.55135087487325,
+        "maximum": 79.91583382544795
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 4,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 202,
+        "supported": 44,
+        "contradicted": 6
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 6225.0,
+        "median": 10391.0,
+        "maximum": 12509.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.13745201974044965,
+        "median": 0.6714012422616096,
+        "maximum": 0.9399747262005055
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.06779661016949153,
+        "median": 0.5471516808615893,
+        "maximum": 0.8740034999027805
+      },
+      "normal_angle_median_degrees": {
+        "N": 250,
+        "minimum": 12.340321884882073,
+        "median": 36.648830886755505,
+        "maximum": 74.37043311743425
+      },
+      "click_states": {
+        "supported": 195,
+        "occluded": 56,
+        "free_space": 1
+      }
+    },
+    {
+      "trial_index": 4,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 164,
+        "inconclusive": 62,
+        "contradicted": 26
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 6110.0,
+        "median": 10377.5,
+        "maximum": 12432.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.2023745277927685,
+        "median": 0.7054834527147622,
+        "maximum": 0.9528356818446488
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.08598570169425129,
+        "median": 0.544816812309096,
+        "maximum": 0.8693270735524257
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 27.464386193801715,
+        "median": 40.54403818870475,
+        "maximum": 74.57432248974075
+      },
+      "click_states": {
+        "supported": 180,
+        "occluded": 66,
+        "no_model": 6
+      }
+    },
+    {
+      "trial_index": 4,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 236,
+        "supported": 16
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 6555.0,
+        "median": 11524.5,
+        "maximum": 13742.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.05778588807785888,
+        "median": 0.8020562498219492,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.008153806540211141,
+        "median": 0.13821307626432322,
+        "maximum": 0.6358504958047292
+      },
+      "normal_angle_median_degrees": {
+        "N": 251,
+        "minimum": 10.834701317781121,
+        "median": 42.025509421538054,
+        "maximum": 130.67990673147744
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 5,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 200,
+        "supported": 45,
+        "contradicted": 7
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 6252.0,
+        "median": 10392.0,
+        "maximum": 12608.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.08251875426233235,
+        "median": 0.6754806898166391,
+        "maximum": 0.9422533737838686
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.036155378486055774,
+        "median": 0.5466672175774822,
+        "maximum": 0.8780464028075649
+      },
+      "normal_angle_median_degrees": {
+        "N": 249,
+        "minimum": 28.7226208047724,
+        "median": 36.73504428175311,
+        "maximum": 74.56271760996506
+      },
+      "click_states": {
+        "supported": 154,
+        "occluded": 97,
+        "free_space": 1
+      }
+    },
+    {
+      "trial_index": 5,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 163,
+        "inconclusive": 63,
+        "contradicted": 26
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 6091.0,
+        "median": 10378.0,
+        "maximum": 12437.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.2083712465878071,
+        "median": 0.7052408934538212,
+        "maximum": 0.9498776081128336
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.08480392156862746,
+        "median": 0.5409793126559801,
+        "maximum": 0.8681628291071602
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 29.29730716101961,
+        "median": 40.232951253675424,
+        "maximum": 74.27458520287543
+      },
+      "click_states": {
+        "supported": 131,
+        "occluded": 120,
+        "free_space": 1
+      }
+    },
+    {
+      "trial_index": 5,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 68,
+        "inconclusive": 184
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 7369.0,
+        "median": 11370.5,
+        "maximum": 13345.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.10397946084724005,
+        "median": 0.7816713198495404,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.015717473561657126,
+        "median": 0.17695927629396785,
+        "maximum": 0.7552040723570584
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 20.491890396352858,
+        "median": 38.99815052605588,
+        "maximum": 66.4774108668836
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 6,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 0,
+      "unknown": 252,
+      "original_sparse_status": {},
+      "projected_pixels": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "visible_support_fraction": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "raw_supported_over_projected": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "normal_angle_median_degrees": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "click_states": {}
+    },
+    {
+      "trial_index": 6,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 0,
+      "unknown": 252,
+      "original_sparse_status": {},
+      "projected_pixels": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "visible_support_fraction": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "raw_supported_over_projected": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "normal_angle_median_degrees": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "click_states": {}
+    },
+    {
+      "trial_index": 6,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 0,
+      "unknown": 252,
+      "original_sparse_status": {},
+      "projected_pixels": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "visible_support_fraction": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "raw_supported_over_projected": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "normal_angle_median_degrees": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "click_states": {}
+    },
+    {
+      "trial_index": 7,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 0,
+      "unknown": 252,
+      "original_sparse_status": {},
+      "projected_pixels": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "visible_support_fraction": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "raw_supported_over_projected": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "normal_angle_median_degrees": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "click_states": {}
+    },
+    {
+      "trial_index": 7,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 0,
+      "unknown": 252,
+      "original_sparse_status": {},
+      "projected_pixels": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "visible_support_fraction": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "raw_supported_over_projected": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "normal_angle_median_degrees": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "click_states": {}
+    },
+    {
+      "trial_index": 7,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 0,
+      "unknown": 252,
+      "original_sparse_status": {},
+      "projected_pixels": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "visible_support_fraction": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "raw_supported_over_projected": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "normal_angle_median_degrees": {
+        "N": 0,
+        "minimum": null,
+        "median": null,
+        "maximum": null
+      },
+      "click_states": {}
+    },
+    {
+      "trial_index": 8,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 108,
+        "supported": 114,
+        "contradicted": 30
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 9423.0,
+        "median": 14847.0,
+        "maximum": 17113.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.353494623655914,
+        "median": 0.6633378445758245,
+        "maximum": 0.9588129956510617
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.12624898730758843,
+        "median": 0.47155581578296113,
+        "maximum": 0.6010142543859649
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 22.438145336948104,
+        "median": 39.94724091196494,
+        "maximum": 56.70360897193113
+      },
+      "click_states": {
+        "supported": 152,
+        "no_model": 30,
+        "occluded": 54,
+        "free_space": 16
+      }
+    },
+    {
+      "trial_index": 8,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 109,
+        "supported": 112,
+        "contradicted": 31
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 9228.0,
+        "median": 14845.5,
+        "maximum": 17141.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.3505804311774461,
+        "median": 0.6663367206484936,
+        "maximum": 0.9624222762908894
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.13122141052775313,
+        "median": 0.4805525741253768,
+        "maximum": 0.6014919244456611
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 28.814082887220923,
+        "median": 40.49417075948638,
+        "maximum": 53.819699518583924
+      },
+      "click_states": {
+        "supported": 150,
+        "no_model": 29,
+        "occluded": 56,
+        "free_space": 17
+      }
+    },
+    {
+      "trial_index": 8,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 210,
+        "inconclusive": 42
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 8340.0,
+        "median": 15224.0,
+        "maximum": 16845.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.23229873908826382,
+        "median": 0.7610889073325562,
+        "maximum": 0.9831804281345565
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.10657470241406163,
+        "median": 0.4579863950131559,
+        "maximum": 0.7135805854528005
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 34.131283023340295,
+        "median": 42.39828487998422,
+        "maximum": 69.39175551000233
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 9,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 106,
+        "supported": 114,
+        "contradicted": 32
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 9498.0,
+        "median": 14835.5,
+        "maximum": 17123.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.40324658593146095,
+        "median": 0.6690707656875963,
+        "maximum": 0.9637991436356559
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.1263495387031342,
+        "median": 0.47912464590570286,
+        "maximum": 0.6014752370916755
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 27.087697811264107,
+        "median": 39.95317389023647,
+        "maximum": 59.598127288490275
+      },
+      "click_states": {
+        "supported": 190,
+        "occluded": 58,
+        "no_model": 2,
+        "free_space": 2
+      }
+    },
+    {
+      "trial_index": 9,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 109,
+        "supported": 112,
+        "contradicted": 31
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 9228.0,
+        "median": 14845.5,
+        "maximum": 17141.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.3505804311774461,
+        "median": 0.6663367206484936,
+        "maximum": 0.9624222762908894
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.13122141052775313,
+        "median": 0.4805525741253768,
+        "maximum": 0.6014919244456611
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 28.801037455308165,
+        "median": 40.4939054631406,
+        "maximum": 53.77935414328661
+      },
+      "click_states": {
+        "supported": 191,
+        "occluded": 56,
+        "no_model": 2,
+        "free_space": 3
+      }
+    },
+    {
+      "trial_index": 9,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 209,
+        "inconclusive": 43
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 8232.0,
+        "median": 15195.0,
+        "maximum": 16829.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.33281637717121587,
+        "median": 0.7626216685970404,
+        "maximum": 0.9691017964071856
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0748047964305633,
+        "median": 0.45099238049312207,
+        "maximum": 0.6755365969259937
+      },
+      "normal_angle_median_degrees": {
+        "N": 252,
+        "minimum": 34.01143520557498,
+        "median": 42.74683191526927,
+        "maximum": 72.2515989147096
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 10,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 118,
+        "inconclusive": 130,
+        "contradicted": 4
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 4637.0,
+        "median": 6662.0,
+        "maximum": 8330.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7707285098833963,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.39864580597964017,
+        "maximum": 0.7334037417018708
+      },
+      "normal_angle_median_degrees": {
+        "N": 242,
+        "minimum": 21.462876983645646,
+        "median": 40.18386075893221,
+        "maximum": 92.22331019104365
+      },
+      "click_states": {
+        "supported": 165,
+        "occluded": 64,
+        "free_space": 4,
+        "no_model": 19
+      }
+    },
+    {
+      "trial_index": 10,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 157,
+        "inconclusive": 89,
+        "contradicted": 6
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 4730.0,
+        "median": 6663.0,
+        "maximum": 8273.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7806587363659544,
+        "maximum": 0.9802212537713711
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.3990736785558384,
+        "maximum": 0.7480244520650067
+      },
+      "normal_angle_median_degrees": {
+        "N": 248,
+        "minimum": 8.545985297864807,
+        "median": 41.27851364379116,
+        "maximum": 96.48841723551537
+      },
+      "click_states": {
+        "supported": 152,
+        "free_space": 7,
+        "occluded": 66,
+        "no_model": 27
+      }
+    },
+    {
+      "trial_index": 10,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 193,
+        "supported": 59
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 4809.0,
+        "median": 7739.0,
+        "maximum": 10101.0
+      },
+      "visible_support_fraction": {
+        "N": 251,
+        "minimum": 0.0,
+        "median": 0.8253145817912657,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.0961501740110487,
+        "maximum": 0.7040790473777553
+      },
+      "normal_angle_median_degrees": {
+        "N": 211,
+        "minimum": 9.195762812340318,
+        "median": 40.781175835874265,
+        "maximum": 119.24512514714587
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    },
+    {
+      "trial_index": 11,
+      "mask_id": 0,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 101,
+        "inconclusive": 149,
+        "contradicted": 2
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 4333.0,
+        "median": 6688.5,
+        "maximum": 8399.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7622838292347008,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.38432919848174524,
+        "maximum": 0.730001500825454
+      },
+      "normal_angle_median_degrees": {
+        "N": 242,
+        "minimum": 16.435328355315516,
+        "median": 40.38234908929019,
+        "maximum": 99.56377268913768
+      },
+      "click_states": {
+        "supported": 160,
+        "occluded": 70,
+        "free_space": 21,
+        "no_model": 1
+      }
+    },
+    {
+      "trial_index": 11,
+      "mask_id": 1,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "supported": 160,
+        "inconclusive": 85,
+        "contradicted": 7
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 4717.0,
+        "median": 6666.0,
+        "maximum": 8279.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7795283434431652,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.39992377084202546,
+        "maximum": 0.7472102365719387
+      },
+      "normal_angle_median_degrees": {
+        "N": 245,
+        "minimum": 24.234902063592855,
+        "median": 41.147909232843276,
+        "maximum": 88.15805541907409
+      },
+      "click_states": {
+        "supported": 155,
+        "occluded": 62,
+        "free_space": 29,
+        "no_model": 6
+      }
+    },
+    {
+      "trial_index": 11,
+      "mask_id": 2,
+      "planned_candidates": 252,
+      "computed": 252,
+      "unknown": 0,
+      "original_sparse_status": {
+        "inconclusive": 199,
+        "supported": 53
+      },
+      "projected_pixels": {
+        "N": 252,
+        "minimum": 4642.0,
+        "median": 7717.5,
+        "maximum": 10011.0
+      },
+      "visible_support_fraction": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.7897199388957591,
+        "maximum": 1.0
+      },
+      "raw_supported_over_projected": {
+        "N": 252,
+        "minimum": 0.0,
+        "median": 0.17297671959257183,
+        "maximum": 0.6874862304472351
+      },
+      "normal_angle_median_degrees": {
+        "N": 245,
+        "minimum": 15.10384693839247,
+        "median": 47.6235833215509,
+        "maximum": 127.74359353059151
+      },
+      "click_states": {
+        "no_model": 252
+      }
+    }
+  ]
+}

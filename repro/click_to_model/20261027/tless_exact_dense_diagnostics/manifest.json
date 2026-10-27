@@ -1,0 +1,23 @@
+{
+  "schema": "numeric_aggregate_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 1549,
+      "sha256": "da02ac8766b62ab75d679993f7e74273dc908f0df45b7ba4745de3f75a14a09c"
+    },
+    "candidate_diagnostics.csv.gz": {
+      "bytes": 953254,
+      "sha256": "a5751b95d19dc50e7287b41cb643a5025dccdff4fe978395f4a0d9b72812c7d0"
+    },
+    "summary.json": {
+      "bytes": 35765,
+      "sha256": "84aabb97603e14037dc2dcc34998b7115960359519a98dc3aa47dea4466c12ba"
+    }
+  },
+  "decompressed_candidate_csv": {
+    "bytes": 3415684,
+    "sha256": "cf6ae1aac633c13a324d743e85265d8278fe799b06515b8476c0b8032bbc76b9",
+    "rows": 9072
+  },
+  "compression": "gzip, level 9, mtime=0; byte-exact decompression checked"
+}
