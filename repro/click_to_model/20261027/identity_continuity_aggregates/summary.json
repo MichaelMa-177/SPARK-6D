@@ -1,0 +1,509 @@
+{
+  "schema": "identity_continuity_public_aggregates/1",
+  "status": "numerical_evaluation_completed",
+  "unique_input_denominator": 360,
+  "unique_tracking_denominator": 358,
+  "actual_initializations": 2,
+  "label_rows": 540,
+  "label_tracking_rows": 537,
+  "alternate_hidden_worlds_are_not_independent": true,
+  "policy": "same frozen continuity_v4 causal output publication gate",
+  "candidate_and_future_recurrence_unchanged": true,
+  "full_threshold_rows": 378,
+  "headline_threshold_scope_variant_rows": 54,
+  "thresholds": [
+    {
+      "metric": "ADD_m",
+      "threshold": 0.01649631473996541,
+      "comparison": "<=",
+      "units": "m"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.05,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.1,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.15,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.2,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.25,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.3,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.35,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.4,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.45,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.5,
+      "comparison": "<",
+      "units": "diameter"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 5.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 10.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 15.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 20.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 25.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 30.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 35.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 40.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 45.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 50.0,
+      "comparison": "<",
+      "units": "normalized_640px"
+    }
+  ],
+  "all_metric_labels_known": true,
+  "all_seven_trust_flags_false": true,
+  "identity_verified_count": 0,
+  "new_GPU_run": false,
+  "worlds": [
+    {
+      "case": "continuous_visible",
+      "world": "stay",
+      "one_actual_output_stream": "continuous_visible",
+      "association_summaries": [
+        {
+          "scope": "all_inputs",
+          "denominator": 180,
+          "associations": {
+            "original": {
+              "target": 178,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 162,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "tracking",
+          "denominator": 179,
+          "associations": {
+            "original": {
+              "target": 177,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            },
+            "published": {
+              "target": 161,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 16,
+              "distractor": 0,
+              "both": 0,
+              "neither": 2,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "initialization",
+          "denominator": 1,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      ],
+      "temporal": {
+        "temporary_abstention_spans": [
+          {
+            "start": 37,
+            "end_inclusive": 54,
+            "length": 18,
+            "recovered_at": 55
+          }
+        ],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      }
+    },
+    {
+      "case": "hidden_identity_ambiguous",
+      "world": "stay",
+      "one_actual_output_stream": "hidden_identity_ambiguous",
+      "association_summaries": [
+        {
+          "scope": "all_inputs",
+          "denominator": 180,
+          "associations": {
+            "original": {
+              "target": 133,
+              "distractor": 0,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            },
+            "published": {
+              "target": 55,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 78,
+              "distractor": 0,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "tracking",
+          "denominator": 179,
+          "associations": {
+            "original": {
+              "target": 132,
+              "distractor": 0,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            },
+            "published": {
+              "target": 54,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 78,
+              "distractor": 0,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "initialization",
+          "denominator": 1,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      ],
+      "temporal": {
+        "temporary_abstention_spans": [],
+        "first_identity_loss_frame": 55,
+        "automatic_recovery_after_identity_loss": false
+      }
+    },
+    {
+      "case": "hidden_identity_ambiguous",
+      "world": "exchange",
+      "one_actual_output_stream": "hidden_identity_ambiguous",
+      "association_summaries": [
+        {
+          "scope": "all_inputs",
+          "denominator": 180,
+          "associations": {
+            "original": {
+              "target": 56,
+              "distractor": 77,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            },
+            "published": {
+              "target": 55,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 1,
+              "distractor": 77,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "tracking",
+          "denominator": 179,
+          "associations": {
+            "original": {
+              "target": 55,
+              "distractor": 77,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            },
+            "published": {
+              "target": 54,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 1,
+              "distractor": 77,
+              "both": 0,
+              "neither": 47,
+              "unknown": 0
+            }
+          }
+        },
+        {
+          "scope": "initialization",
+          "denominator": 1,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      ],
+      "temporal": {
+        "temporary_abstention_spans": [],
+        "first_identity_loss_frame": 55,
+        "automatic_recovery_after_identity_loss": false
+      }
+    }
+  ],
+  "causal_replay": [
+    {
+      "case": "continuous_visible",
+      "counts": {
+        "tentative_continuous": 162,
+        "temporarily_unobservable": 18
+      },
+      "tracking_counts": {
+        "tentative_continuous": 161,
+        "temporarily_unobservable": 18
+      },
+      "published_inputs": 162,
+      "published_tracking": 161,
+      "first_identity_loss_frame": null,
+      "transitions": [
+        {
+          "frame": 0,
+          "from_status": null,
+          "to_status": "tentative_continuous"
+        },
+        {
+          "frame": 37,
+          "from_status": "tentative_continuous",
+          "to_status": "temporarily_unobservable"
+        },
+        {
+          "frame": 55,
+          "from_status": "temporarily_unobservable",
+          "to_status": "tentative_continuous"
+        }
+      ]
+    },
+    {
+      "case": "hidden_identity_ambiguous",
+      "counts": {
+        "tentative_continuous": 55,
+        "identity_continuity_lost": 125
+      },
+      "tracking_counts": {
+        "tentative_continuous": 54,
+        "identity_continuity_lost": 125
+      },
+      "published_inputs": 55,
+      "published_tracking": 54,
+      "first_identity_loss_frame": 55,
+      "transitions": [
+        {
+          "frame": 0,
+          "from_status": null,
+          "to_status": "tentative_continuous"
+        },
+        {
+          "frame": 55,
+          "from_status": "tentative_continuous",
+          "to_status": "identity_continuity_lost"
+        }
+      ]
+    }
+  ],
+  "numerical_review": {
+    "status": "passed",
+    "kind": "separate scalar/set recomputation by original host author",
+    "threshold_rows": 378,
+    "numeric_rows": 540
+  },
+  "independent_peer_scope": "Seven synthetic API/continuity cases, including three preserved before-fix failures; not an independent accuracy experiment.",
+  "limits": [
+    "Synthetic known development fixtures; not held-out or a physical benchmark.",
+    "No proof of unique physical identity; local cue availability may follow a wrong correspondence.",
+    "Rejected correct candidates are explicitly counted; abstention never counts as correct.",
+    "No real secondary bridge occurred in these two streams; secondary behavior has synthetic test coverage only.",
+    "Point-free or locally flat textureless objects remain outside this point-cue prototype.",
+    "Two hidden truth worlds reuse the same one observed output stream; do not pool as independent samples.",
+    "Pure output-policy replay; no change to candidate generation, neural recurrence, or model parameters."
+  ]
+}

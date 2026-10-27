@@ -1,0 +1,43 @@
+{
+  "schema": "public_numeric_aggregate_manifest/1",
+  "target_github_path": "repro/click_to_model/20261027/identity_continuity_aggregates/",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3622,
+      "sha256": "0898e46f21b450e142db08511dd8f3a688114977585c19e629e8e97c80f28bb5"
+    },
+    {
+      "file": "per_world.csv",
+      "bytes": 8846,
+      "sha256": "1ee5ee193bde790eddd1cb7c0467cdff32aeb54f8f6e49d998490b9e6c9d4498"
+    },
+    {
+      "file": "source_hashes.json",
+      "bytes": 3625,
+      "sha256": "e573f58c11125fa410744825004a3fee408fb886cb9729b3571df2f6eed795a2"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 13082,
+      "sha256": "9f89e0f64a31483e7402b51b1d172dd829a8d61b006807d30bd7e1b44b438f17"
+    },
+    {
+      "file": "threshold_counts.csv",
+      "bytes": 59813,
+      "sha256": "483e22e3dfe26693356b40b6a397509644c26466ac1d428fe01e84dd7585952c"
+    }
+  ],
+  "payload_bytes": 88988,
+  "excludes": [
+    "raw poses",
+    "raw GT",
+    "images",
+    "masks",
+    "models",
+    "observations",
+    "logs",
+    "source code",
+    "absolute local paths"
+  ]
+}

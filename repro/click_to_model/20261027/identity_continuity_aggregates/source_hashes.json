@@ -1,0 +1,101 @@
+{
+  "schema": "numeric_aggregate_provenance/1",
+  "sources": {
+    "scalar_review": {
+      "file": "receipt.json",
+      "bytes": 19572,
+      "sha256": "a753094256fe4ee4995a7e8572d8d152cce8d06ee491570af8c2e47659292fa5"
+    },
+    "posthoc_execution": {
+      "file": "receipt.json",
+      "bytes": 15072,
+      "sha256": "3c3ee16f0a93cbc5e01a899c1bb3a40a734516eb642f93a16bc88e75ac1d64b3"
+    },
+    "posthoc_summary": {
+      "file": "summary.json",
+      "bytes": 11474,
+      "sha256": "c41459af59836d8a34ceca907c202f252b0cbf2e17a10852da9cf21c8c9ccdf9"
+    },
+    "full_threshold_counts": {
+      "file": "threshold_counts.csv",
+      "bytes": 59813,
+      "sha256": "483e22e3dfe26693356b40b6a397509644c26466ac1d428fe01e84dd7585952c"
+    },
+    "numeric_per_frame_source": {
+      "file": "per_frame.csv",
+      "bytes": 130564,
+      "sha256": "0e9ba17af5c0ee834645551f00e7b6702f7ecd996d99d10eae0ead0ba5118d4e"
+    },
+    "posthoc_plan": {
+      "file": "fixed_plan.json",
+      "bytes": 6322,
+      "sha256": "cff66e1ed5c9cb212d88c33499208061325286a47dfc30700c7c6b7e9050673e"
+    },
+    "final_policy_seal": {
+      "file": "receipt.json",
+      "bytes": 8675,
+      "sha256": "f23a6eb6da096a100e5c1ec3cde4e2f6510dc9ad217751c15ece6331568a72ea"
+    },
+    "gate_source": {
+      "file": "continuity_v4.py",
+      "bytes": 16640,
+      "sha256": "75aa0f01509d8a2455ac1443bc4da4d259bfcfbec75a094708577423a8893c06"
+    },
+    "causal_protocol": {
+      "file": "PROTOCOL.md",
+      "bytes": 4688,
+      "sha256": "f4eee7d0b46c2af3b044402bf9604c356f3ac1882761bcc95a1eacd1c3a75b7d"
+    },
+    "gate_independent_peer": {
+      "file": "receipt.json",
+      "bytes": 5982,
+      "sha256": "8112fb427b773c327e204b333ad09a4c3b51a1ffd2f2afc4ca53507ccca46df1"
+    },
+    "causal_replay": {
+      "file": "receipt.json",
+      "bytes": 1575681,
+      "sha256": "161501d8543670b776e12c1d7d6f3c4418fd62ad546cfac0777363483501497e"
+    },
+    "candidate_byte_identity": {
+      "file": "candidate_sources.json",
+      "bytes": 4386,
+      "sha256": "f267c8b8d7a15871b3bbe5fab64cf0f7c57f8850c0ea7666d2a46b7f4b2f26ce"
+    },
+    "full_independent_interface_review": {
+      "file": "receipt.json",
+      "bytes": 2965,
+      "sha256": "0c1b0e331170055d3af124d6a7da39c978cbe0a409b37ac40d59e2fd371f4a89"
+    },
+    "original_numeric_labels_continuous_visible_stay": {
+      "file": "per_frame.json",
+      "bytes": 246020,
+      "sha256": "34084612e1b2ed79e113fec237a8d48822ff884de16366748cd3c8871be13bf0"
+    },
+    "original_numeric_labels_hidden_identity_ambiguous_stay": {
+      "file": "per_frame.json",
+      "bytes": 245653,
+      "sha256": "d1559dc17a47e59b7b172e693dc45f75bc5ce22a7e90285e6f2423c13546c915"
+    },
+    "original_numeric_labels_hidden_identity_ambiguous_exchange": {
+      "file": "per_frame.json",
+      "bytes": 246357,
+      "sha256": "b1a6ed6fe572f04851a76463f0e7b91190067de6bfba64de97fca615c5965f2f"
+    },
+    "original_numeric_evaluation_receipt": {
+      "file": "receipt.json",
+      "bytes": 29926,
+      "sha256": "7683eee17f85bd703a23e7a2d87b99fe6d367fc64a496e709271e1318e125bb0"
+    },
+    "original_numeric_comparison": {
+      "file": "comparison.json",
+      "bytes": 4884,
+      "sha256": "30c7ac194ea1079b76a20169ac442060660517b06f661d126d3f7c216a371a57"
+    },
+    "aggregate_builder": {
+      "file": "build.py",
+      "bytes": 9957,
+      "sha256": "f59f7e4dd06d94813da3f315c141b255b8c720f170867465974eb5933a07fa46"
+    }
+  },
+  "transitive_provenance": "Execution/replay/raw receipt hashes bind the original prediction and evaluated-label files; raw poses, GT, and observations are excluded."
+}
