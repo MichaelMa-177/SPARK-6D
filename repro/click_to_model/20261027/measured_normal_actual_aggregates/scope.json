@@ -1,0 +1,57 @@
+{
+  "schema": "measured_normal_actual_public_aggregates/1",
+  "actual_input_denominator_per_arm": 360,
+  "actual_tracking_denominator_per_arm": 358,
+  "actual_runtime_inferences": 4,
+  "world_views_per_arm": 3,
+  "ambiguous_worlds_not_independent": true,
+  "paired_actual_poses": 360,
+  "actual_pose_dtype_shape_bytes_equal": true,
+  "pose_accuracy_gain": 0,
+  "per_frame_iteration_changes": 0,
+  "association_paired_tables": 22,
+  "target_metric_paired_tables": 126,
+  "rank_phase_rows": 28,
+  "timing_rows": 4,
+  "local_full_rank_tracking_baseline": [
+    155,
+    147
+  ],
+  "local_full_rank_tracking_measured": [
+    98,
+    131
+  ],
+  "case_order": [
+    "continuous_visible",
+    "hidden_identity_ambiguous"
+  ],
+  "same_GT_prefix_after_timing_fix": [
+    {
+      "case": "continuous_visible",
+      "world": "stay",
+      "byte_exact": true
+    },
+    {
+      "case": "hidden_identity_ambiguous",
+      "world": "stay",
+      "byte_exact": true
+    },
+    {
+      "case": "hidden_identity_ambiguous",
+      "world": "exchange",
+      "byte_exact": true
+    }
+  ],
+  "GT_recomputed_in_aggregate_check": false,
+  "failed_attempt_retained": true,
+  "failed_attempt_reason": "Posthoc timing lookup expected top-level child_receipt; actual raw files_read already bound the file. v2 reads exact binding; GPU never rerun for this fix.",
+  "limits": [
+    "Conditional local-rank diagnostic changes, not identity verification or a new accurate trajectory.",
+    "All 360 paired actual pose matrices are byte-identical and all 126 fixed metric migration tables are diagonal: no pose/accuracy gain.",
+    "Measured-normal control costs more in these instrumented runs. Parent/child/initialization/registration/admission/tracking scopes overlap and cannot be summed.",
+    "Ambiguous exchange world still follows the distractor on all 70 post-opening tracking frames; adjacent switch count zero does not erase wrong identity across neither gaps.",
+    "All trust flags remain false; no explicit abstention is reported; empty verified risk remains null.",
+    "Sparse v3 results are not included. A micro-kernel speed ratio is not end-to-end FPS.",
+    "Only two synthetic development streams. No independent-frame confidence interval, general tracking benefit, raw GT matrices, poses, trajectories, images or local paths in this package."
+  ]
+}
