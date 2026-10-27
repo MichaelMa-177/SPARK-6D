@@ -1,0 +1,170 @@
+{
+  "schema": "public_numeric_sources/1",
+  "sources": {
+    "online_raw_audit": {
+      "file": "receipt.json",
+      "bytes": 3523732,
+      "sha256": "e18a15200182281fb4a3685c2034a7596781303ffd5a8eebd0f7c925c28f6ae9"
+    },
+    "actual_baseline_pairing": {
+      "file": "initialization_and_candidates.json",
+      "bytes": 146434,
+      "sha256": "856d80fda78a010ece1a6f828f6d234670cb61b5f2d8a429765099db89bde1fb"
+    },
+    "historical_sparse_gate_comparison": {
+      "file": "historical_gate_comparison.json",
+      "bytes": 316880,
+      "sha256": "355f6e9a158a1911e6855997844b3e4815137fdd2f7bb5c8ac1a10498450d750"
+    },
+    "prior_gate_posthoc": {
+      "file": "receipt.json",
+      "bytes": 15072,
+      "sha256": "3c3ee16f0a93cbc5e01a899c1bb3a40a734516eb642f93a16bc88e75ac1d64b3"
+    },
+    "prior_scalar_review": {
+      "file": "receipt.json",
+      "bytes": 19572,
+      "sha256": "a753094256fe4ee4995a7e8572d8d152cce8d06ee491570af8c2e47659292fa5"
+    },
+    "prior_gate_posthoc_plan": {
+      "file": "fixed_plan.json",
+      "bytes": 6322,
+      "sha256": "cff66e1ed5c9cb212d88c33499208061325286a47dfc30700c7c6b7e9050673e"
+    },
+    "original_GT_evaluation_receipt": {
+      "file": "receipt.json",
+      "bytes": 29926,
+      "sha256": "7683eee17f85bd703a23e7a2d87b99fe6d367fc64a496e709271e1318e125bb0"
+    },
+    "original_GT_evaluation_comparison": {
+      "file": "comparison.json",
+      "bytes": 4884,
+      "sha256": "30c7ac194ea1079b76a20169ac442060660517b06f661d126d3f7c216a371a57"
+    },
+    "original_numeric_labels": {
+      "file": "per_frame.json",
+      "bytes": 246020,
+      "sha256": "34084612e1b2ed79e113fec237a8d48822ff884de16366748cd3c8871be13bf0"
+    },
+    "original_baseline_raw": {
+      "file": "receipt.json",
+      "bytes": 3690433,
+      "sha256": "852fb4aabc6f8ec74399d1c1513fa25743d812e30f34f719535b992afe5f8e62"
+    },
+    "prior_all_threshold_counts": {
+      "file": "threshold_counts.csv",
+      "bytes": 59813,
+      "sha256": "483e22e3dfe26693356b40b6a397509644c26466ac1d428fe01e84dd7585952c"
+    },
+    "prior_all_numeric_frames": {
+      "file": "per_frame.csv",
+      "bytes": 130564,
+      "sha256": "0e9ba17af5c0ee834645551f00e7b6702f7ecd996d99d10eae0ead0ba5118d4e"
+    },
+    "actual_parent_execution": {
+      "file": "execution.json",
+      "bytes": 1848,
+      "sha256": "f2a9b0b6593c1714ad53dec6131cf13938992723dab935e442405ee664875767"
+    },
+    "actual_child_execution": {
+      "file": "child_receipt.json",
+      "bytes": 85702,
+      "sha256": "f318eb0068edaf5f78ce899553d3eee48ce20c261f88719bac126cbe88f7bb17"
+    },
+    "actual_product_report": {
+      "file": "report.json",
+      "bytes": 52900,
+      "sha256": "5eb7309e400fdd2b1e8a2ac3b04d6586ddca6530c90af147566cc03f00140607"
+    },
+    "actual_online_output_policy": {
+      "file": "output_policy.json",
+      "bytes": 320647,
+      "sha256": "b52d09d870aef38edc1ba70fa7d4bbccbfd51394fc80f1cce25efac16b046304"
+    },
+    "actual_publication_rows": {
+      "file": "publication_frames.csv",
+      "bytes": 29232,
+      "sha256": "08a59ad7acefe5eca0faa039e9b790a060e03ac4d251f2fcfa0ac90eb146b632"
+    },
+    "full_CPU_1658": {
+      "file": "regression.json",
+      "bytes": 62023,
+      "sha256": "5a50844ded1f0b2a1163847883ba8f7777fd7671e7f24e1ef1a56e412347923b"
+    },
+    "preserved_full_CPU_v1_failure": {
+      "file": "regression.json",
+      "bytes": 62023,
+      "sha256": "168f8a355f71de3f31be181bd94d5a7d5402f79386939e9672d1b1c66d796323"
+    },
+    "runtime_author_v2": {
+      "file": "author_receipt_v2.json",
+      "bytes": 6490,
+      "sha256": "0a93b148a79aab675093783e9d506bc4dfe7c9a4913b2c810d375337fe8ff1c1"
+    },
+    "launcher_v2_amendment": {
+      "file": "amendment_v2.json",
+      "bytes": 1045,
+      "sha256": "d030f4d21ee16e4cfeadbea4871574780dc1aa3ab9af9f93b0a26205c07cf12c"
+    },
+    "preserved_launcher_counterexamples": {
+      "file": "coverage_counterexample_receipt.json",
+      "bytes": 2916,
+      "sha256": "3dc781f4dbe5df3e73d39282902d9919e7207e92bf1f9112cfba633456d91d34"
+    },
+    "final_frozen_plan": {
+      "file": "frozen_plan_v2.json",
+      "bytes": 177124,
+      "sha256": "373a388234ebf2752a7d5be6d90f79919576dbf9eb5cb8190d30975c26610c66"
+    },
+    "launcher_v1_source": {
+      "file": "launch.py",
+      "bytes": 18333,
+      "sha256": "0f9d05ad387c640ec568fe1d15136ee701e054d020755f281475ff2c0e790332"
+    },
+    "launcher_v2_source": {
+      "file": "launch_v2.py",
+      "bytes": 18471,
+      "sha256": "f92f9e49f8884f76596b37568939f37891eee1ea0518bdcaebcad4f7c0f0635b"
+    },
+    "preserved_launcher_v1_author": {
+      "file": "author_receipt.json",
+      "bytes": 4029,
+      "sha256": "0a7cff3aad4638bde9432dfc9750ee8e4c5b4e20f7692f32576fb191107cb41a"
+    },
+    "product_entry_source": {
+      "file": "run_click_to_model.py",
+      "bytes": 54728,
+      "sha256": "48640770bafbcce2f8f787949d1a57b70d2a198f18ad6815c02cb35bed3a18ae"
+    },
+    "online_adapter_source": {
+      "file": "identity_output.py",
+      "bytes": 8053,
+      "sha256": "20abfe5febda46273c182c566c5a1abbf179e3d05ce1a756b14927dc94c60b8e"
+    },
+    "frozen_gate_source": {
+      "file": "identity_continuity.py",
+      "bytes": 16640,
+      "sha256": "75aa0f01509d8a2455ac1443bc4da4d259bfcfbec75a094708577423a8893c06"
+    },
+    "original_baseline_plan": {
+      "file": "continuous_visible.json",
+      "bytes": 229177,
+      "sha256": "65b21e506aa1b9707808b23640bc59c8f2cd494e4c8316f6587cfeb165d27395"
+    },
+    "historical_sparse_replay": {
+      "file": "receipt.json",
+      "bytes": 1575681,
+      "sha256": "161501d8543670b776e12c1d7d6f3c4418fd62ad546cfac0777363483501497e"
+    },
+    "historical_sparse_raw": {
+      "file": "receipt.json",
+      "bytes": 3707054,
+      "sha256": "6b32a4491aea6ba021e3f2a4cb4006f2efcccfeae90020da889a8b4837c5d87c"
+    },
+    "aggregate_builder": {
+      "file": "build.py",
+      "bytes": 18111,
+      "sha256": "aab7826dae4fc2c3f64e8a4d263dd59ab145a350536d1329f857519f1a89b85a"
+    }
+  }
+}

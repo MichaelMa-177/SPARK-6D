@@ -1,0 +1,47 @@
+{
+  "schema": "public_numeric_manifest/1",
+  "target_github_path": "repro/click_to_model/20261027/continuity_online_aggregates/",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 3616,
+      "sha256": "f3a3d607a1b74da526aa87acd57b83413508198b1a47022d3a6ace139d2819f9"
+    },
+    {
+      "file": "per_frame.csv",
+      "bytes": 39350,
+      "sha256": "e16bef17af52710fe32f66dc5bb14470ac4ff9572256d05710bba501e69de24e"
+    },
+    {
+      "file": "source_hashes.json",
+      "bytes": 5997,
+      "sha256": "c670519cd79a18fdca58838aa528422d28204a9e8520d537a3962010e174f615"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 18492,
+      "sha256": "f97d72678fa017cd9fa92011ab5e198e261838c8d9ac82142e01483facbfac03"
+    },
+    {
+      "file": "threshold_counts.csv",
+      "bytes": 20124,
+      "sha256": "2c59ec0b650191d8bf66d09adca32d64886f9a45a4122f16c6e2fe0602196478"
+    },
+    {
+      "file": "timing.json",
+      "bytes": 1390,
+      "sha256": "4b3c93a9b419577abd7c99cd92783fbc0791733cd824c16f3ac7d0ec32bd0deb"
+    }
+  ],
+  "payload_bytes": 88969,
+  "excludes": [
+    "raw poses",
+    "raw GT",
+    "images",
+    "masks",
+    "model/weights",
+    "logs",
+    "source code",
+    "absolute local paths"
+  ]
+}

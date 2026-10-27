@@ -1,0 +1,20 @@
+{
+  "initialization_seconds": 14.95499272899906,
+  "registration_seconds": 4.193588922003983,
+  "admission_seconds": 3.768919575995824,
+  "tracking_frames": 179,
+  "tracking_seconds": 15.64006500900723,
+  "reported_tracking_fps": 11.444965215739996,
+  "latency_p50_ms": 87.82332600094378,
+  "latency_p95_ms": 109.85710240056505,
+  "child_wall_seconds": 38.22461900200142,
+  "parent_wall_seconds": 40.96230098399974,
+  "child_all_input_throughput_hz": 4.709007040477639,
+  "parent_all_input_throughput_hz": 4.394284395066324,
+  "tracking_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+  "initialization_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence",
+  "parent_and_child_scope": "Actual fresh process, all model loading and instrumentation included; parent also includes supervision and coverage checks. Throughput is not deployment inference FPS.",
+  "registration_admission_are_nested_in_initialization": true,
+  "cold_cache_controlled": false,
+  "comparative_speedup_claim": false
+}
