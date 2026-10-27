@@ -1,0 +1,624 @@
+{
+  "FoundationPose": {
+    "license": "Bundled NVIDIA research/evaluation-only license; preserve complete license and attribution notices",
+    "original_license_sha256": "0de51abc6b73e24724858239efc42cfeada5d9e7c911cf7eff077bd9a23dec62",
+    "repository": "https://github.com/NVlabs/FoundationPose",
+    "weights_source": "https://drive.google.com/drive/folders/1DFezOAD0oD1BblsXVxqDsl8fj0qzB82i"
+  },
+  "SAM2": {
+    "cctorch_license": {
+      "included": true,
+      "official_blob_sha1": "23da14a65aad4c5bac18061b80ae6040bb7d2c8c",
+      "scope": "License referenced by the retained connected_components.cu source; retained verbatim.",
+      "sha256": "687d4f65ffe399358b170e22572564a16689e496f85a79dc5385fccf6bbc9558"
+    },
+    "checkpoint_source": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_small.pt",
+    "compiled_extension_excluded": true,
+    "content_binding": {
+      "added_files": [
+        {
+          "bytes": 254,
+          "git_blob_sha1": "794311fd9854453b134c828c0cb241a7cfdbfc65",
+          "official_path": "MANIFEST.in",
+          "path": "third_party/sam2/MANIFEST.in",
+          "sha256": "969fc588abbd8d84b1e2b055eafd46573a317647d86c796a1e062983e17f9f33"
+        },
+        {
+          "bytes": 16249,
+          "git_blob_sha1": "85a7eb958bced5495ff990c2bcbe7d99662c660f",
+          "official_path": "README.md",
+          "path": "third_party/sam2/README.md",
+          "sha256": "eea69ee1042fb30933c5ca5019fbf0f6f9366cec5e792109281b5023a4f1589c"
+        },
+        {
+          "bytes": 120,
+          "git_blob_sha1": "f84317dbbfa6ba4f2d972cab2e2e0d0bdf07f003",
+          "official_path": "pyproject.toml",
+          "path": "third_party/sam2/pyproject.toml",
+          "sha256": "c58230f78769620dcd11d15824d491b049be8f542eeb875d2e8091be797ec3f3"
+        },
+        {
+          "bytes": 5051,
+          "git_blob_sha1": "78a634cddb19615c45601681ffbcd1f29af66f47",
+          "official_path": "setup.py",
+          "path": "third_party/sam2/setup.py",
+          "sha256": "9ca49a33def161d2cafa56ddef744178fa56d3219242bd8b69909904c2e63dff"
+        },
+        {
+          "bytes": 1566,
+          "git_blob_sha1": "23da14a65aad4c5bac18061b80ae6040bb7d2c8c",
+          "official_path": "LICENSE_cctorch",
+          "path": "third_party/sam2/LICENSE_cctorch",
+          "sha256": "687d4f65ffe399358b170e22572564a16689e496f85a79dc5385fccf6bbc9558"
+        }
+      ],
+      "cctorch_official_blob_evidence": {
+        "bytes": 1867,
+        "sha256": "5c1a2f56e9bf0d1abe60046262035b55372f37fbd1032799d037b3e985f3ecf0"
+      },
+      "content_correspondence_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "dereferenced_upstream_symlinks_exact": 4,
+      "historical_local_checkout_commit_inferred": false,
+      "official_repository": "https://github.com/facebookresearch/sam2",
+      "official_tree_evidence": {
+        "bytes": 247879,
+        "sha256": "56a4d7d78ca941aa2f4d89467ecfb875dedc7e941b86c566b78c74e3c6cea6b8"
+      },
+      "official_tree_url": "https://github.com/facebookresearch/sam2/tree/2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "original_paths_bound": 40,
+      "regular_files_exact": 36,
+      "scope": "Content equality to this official commit; no inference about historical local checkout identity.",
+      "source_binding_receipt": {
+        "bytes": 8554,
+        "sha256": "67cd4335a27e89834e2d8cfc8d6f2172fd06c3befcc682f556ece781a79d00f3"
+      }
+    },
+    "cpu_wheel_validation": {
+      "build_environment": "Existing research environment; dependencies were neither resolved nor installed.",
+      "clean_machine_validation": false,
+      "command": "SAM2_BUILD_CUDA=0 SAM2_BUILD_ALLOW_ERRORS=0 PIP_NO_INDEX=1 python -m pip wheel --no-deps --no-build-isolation --no-index --no-cache-dir --wheel-dir ./wheelhouse .",
+      "installed_environment_modified": false,
+      "license_files_exact": 2,
+      "model_or_GPU_validation": false,
+      "no_compiled_extension": true,
+      "python": "3.11.15",
+      "python_files_exact": 25,
+      "status": "isolated_cpu_wheel_built_and_contents_verified",
+      "wheel": {
+        "bytes": 119043,
+        "name": "sam_2-1.0-py3-none-any.whl",
+        "sha256": "df507c2c29b0c62694b5a91499354b0288192a93761feb99da617db711bbc8a2"
+      },
+      "wheel_closure_receipt": {
+        "bytes": 10285,
+        "sha256": "4ba1e82cf0b378d79cbfabf408c5cca37d84ff15f793fdf33373ed7fb42e457d"
+      },
+      "wheel_in_source_delivery": false,
+      "yaml_files_exact": 13
+    },
+    "license": {
+      "name": "Apache-2.0",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "missing_build_metadata": [],
+    "provenance": "The original 40-file runtime snapshot and five added official build/license files match the specified official commit contents; this does not establish the historical local Git checkout.",
+    "repository": "https://github.com/facebookresearch/sam2",
+    "source_files": {
+      "LICENSE": {
+        "bytes": 11357,
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      "LICENSE_cctorch": {
+        "bytes": 1566,
+        "sha256": "687d4f65ffe399358b170e22572564a16689e496f85a79dc5385fccf6bbc9558"
+      },
+      "MANIFEST.in": {
+        "bytes": 254,
+        "sha256": "969fc588abbd8d84b1e2b055eafd46573a317647d86c796a1e062983e17f9f33"
+      },
+      "README.md": {
+        "bytes": 16249,
+        "sha256": "eea69ee1042fb30933c5ca5019fbf0f6f9366cec5e792109281b5023a4f1589c"
+      },
+      "pyproject.toml": {
+        "bytes": 120,
+        "sha256": "c58230f78769620dcd11d15824d491b049be8f542eeb875d2e8091be797ec3f3"
+      },
+      "sam2/__init__.py": {
+        "bytes": 395,
+        "sha256": "b87ca1e95cd54b81766e8c74acf0e937952639529e40d2b4088693286f49419e"
+      },
+      "sam2/automatic_mask_generator.py": {
+        "bytes": 18461,
+        "sha256": "66df266dbe14412305ae3398f0ec1bb21b303a93216b102d767e6c4ee5d4c3d7"
+      },
+      "sam2/benchmark.py": {
+        "bytes": 2811,
+        "sha256": "9b7a3506b88842ec09031fb7cd0fc1d3fed82e137ce06dbca10495e6c180dda9"
+      },
+      "sam2/build_sam.py": {
+        "bytes": 6405,
+        "sha256": "856d64d71e44407401297b551884fb4cd1aba8082de0ff5fc60fac3dd42f094d"
+      },
+      "sam2/configs/sam2.1/sam2.1_hiera_b+.yaml": {
+        "bytes": 3650,
+        "sha256": "37d6c56b07a7f8d08baaa314315c60dc3aabe2edc66cd92bac6d1ed50038e788"
+      },
+      "sam2/configs/sam2.1/sam2.1_hiera_l.yaml": {
+        "bytes": 3798,
+        "sha256": "1dbd6cb6dfebeaf588c7006ee222c6efbfa9049a7ad472a3cdfb2f5d919e8107"
+      },
+      "sam2/configs/sam2.1/sam2.1_hiera_s.yaml": {
+        "bytes": 3761,
+        "sha256": "0f36b91e86e58d06c87e42997166212468b88b98b60e4d816d5e4d4d088b6f55"
+      },
+      "sam2/configs/sam2.1/sam2.1_hiera_t.yaml": {
+        "bytes": 3855,
+        "sha256": "f932eac1c6241e910031b2f000a81cd9f8a8d4896e2277ab5ffb721f378b188d"
+      },
+      "sam2/configs/sam2.1_training/sam2.1_hiera_b+_MOSE_finetune.yaml": {
+        "bytes": 11256,
+        "sha256": "d96919e157527116c3a80c6ec961151bda98e5eb988ae4dd85be6e7efbd2b51f"
+      },
+      "sam2/configs/sam2/sam2_hiera_b+.yaml": {
+        "bytes": 3548,
+        "sha256": "644d1a9aaa7e14183802246dee4f43627e067d77dd89f1f40d83657db18d038b"
+      },
+      "sam2/configs/sam2/sam2_hiera_l.yaml": {
+        "bytes": 3696,
+        "sha256": "0ee9f2037fd98489212bb0b78a56f33ac82eb177cf5e52c88be3714cb84eea26"
+      },
+      "sam2/configs/sam2/sam2_hiera_s.yaml": {
+        "bytes": 3659,
+        "sha256": "20e0ade957a4ab5e8138c93c346a8d8965c0b00d1a05fa0e79ce477985904188"
+      },
+      "sam2/configs/sam2/sam2_hiera_t.yaml": {
+        "bytes": 3753,
+        "sha256": "33399c73cd13bbc3d0c1cea843fa2fc255fdb20139fe07f042743e046ac46b6b"
+      },
+      "sam2/csrc/connected_components.cu": {
+        "bytes": 7808,
+        "sha256": "926c277e24f40609622bb4ce49912838d1c799e63edcccc1c75e65e701acd497"
+      },
+      "sam2/modeling/__init__.py": {
+        "bytes": 197,
+        "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+      },
+      "sam2/modeling/backbones/__init__.py": {
+        "bytes": 197,
+        "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+      },
+      "sam2/modeling/backbones/hieradet.py": {
+        "bytes": 10003,
+        "sha256": "03785581ca304d0451ae0df7a08ee0bf1e1dbe66fad285066e6b9ffc0d88d64f"
+      },
+      "sam2/modeling/backbones/image_encoder.py": {
+        "bytes": 4706,
+        "sha256": "16eaad232220386f510ca8dfab8655e63699977149a4daf9ce9c6f374e6777a9"
+      },
+      "sam2/modeling/backbones/utils.py": {
+        "bytes": 3007,
+        "sha256": "c4a0657db2a92bda2a7ff116cd4017f6b1c59af6408093d8874eb08a0df476ad"
+      },
+      "sam2/modeling/memory_attention.py": {
+        "bytes": 5509,
+        "sha256": "07358cb7f58ec3788e88ff4e6415f8a9d628a3963529d6e2c915494a5347c8e2"
+      },
+      "sam2/modeling/memory_encoder.py": {
+        "bytes": 5657,
+        "sha256": "73f7089ae5fdacdfcaaf3deca1ca6d9f84d89e7deb9cf97589622a9ef17ba42f"
+      },
+      "sam2/modeling/position_encoding.py": {
+        "bytes": 8980,
+        "sha256": "b51404718c0d38f381293c8e5e00a15d129651b7f09b1158002d8974a30967b5"
+      },
+      "sam2/modeling/sam/__init__.py": {
+        "bytes": 197,
+        "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+      },
+      "sam2/modeling/sam/mask_decoder.py": {
+        "bytes": 12657,
+        "sha256": "ca3523c58365574faddf1bfb54f374e4b4beba05127185ea2b17d22b916e099a"
+      },
+      "sam2/modeling/sam/prompt_encoder.py": {
+        "bytes": 7541,
+        "sha256": "4965ccb4a4504aa4d7246b2ad66ffeacd2626415c86a261dc1c65ffd8ae1d40d"
+      },
+      "sam2/modeling/sam/transformer.py": {
+        "bytes": 10761,
+        "sha256": "cda19052331e775190ce8b1159efcb828a4632d931a6d8bd4d47109f121782f1"
+      },
+      "sam2/modeling/sam2_base.py": {
+        "bytes": 46983,
+        "sha256": "69a46b44e8625f509791352bd09beaafe589cd7d872721384e63d37f9fdc6e41"
+      },
+      "sam2/modeling/sam2_utils.py": {
+        "bytes": 13173,
+        "sha256": "e35bbf13bc2e544a0272cd3f9539af38a752676ac3cd744be31cd8220afee804"
+      },
+      "sam2/sam2_hiera_b+.yaml": {
+        "bytes": 3548,
+        "sha256": "644d1a9aaa7e14183802246dee4f43627e067d77dd89f1f40d83657db18d038b"
+      },
+      "sam2/sam2_hiera_l.yaml": {
+        "bytes": 3696,
+        "sha256": "0ee9f2037fd98489212bb0b78a56f33ac82eb177cf5e52c88be3714cb84eea26"
+      },
+      "sam2/sam2_hiera_s.yaml": {
+        "bytes": 3659,
+        "sha256": "20e0ade957a4ab5e8138c93c346a8d8965c0b00d1a05fa0e79ce477985904188"
+      },
+      "sam2/sam2_hiera_t.yaml": {
+        "bytes": 3753,
+        "sha256": "33399c73cd13bbc3d0c1cea843fa2fc255fdb20139fe07f042743e046ac46b6b"
+      },
+      "sam2/sam2_image_predictor.py": {
+        "bytes": 19937,
+        "sha256": "f13e5f9d94e5c8d9d2c3622dab20c8f334c089ef2ee5ea8e199da7d332b029ba"
+      },
+      "sam2/sam2_video_predictor.py": {
+        "bytes": 58921,
+        "sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2"
+      },
+      "sam2/sam2_video_predictor_legacy.py": {
+        "bytes": 58777,
+        "sha256": "e0c054112f21bfa63620f2026c8bb2e0f4e284b138d09426a08d39f2e882c3f2"
+      },
+      "sam2/utils/__init__.py": {
+        "bytes": 197,
+        "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+      },
+      "sam2/utils/amg.py": {
+        "bytes": 12842,
+        "sha256": "b7b33090e2af72e04dbb815c8f32aff41a4ed1abf9668f62b59f1bdd640ca5d8"
+      },
+      "sam2/utils/misc.py": {
+        "bytes": 13090,
+        "sha256": "01600c01c161cd079d7106fb1d4da845cf91aa31ab2bcecaf8cb151b6d6d20a2"
+      },
+      "sam2/utils/transforms.py": {
+        "bytes": 4885,
+        "sha256": "ba3a64f4600c62f209206a6df3b40e3fcf133edae32fad658831bb0c2a6d1146"
+      },
+      "setup.py": {
+        "bytes": 5051,
+        "sha256": "9ca49a33def161d2cafa56ddef744178fa56d3219242bd8b69909904c2e63dff"
+      }
+    }
+  },
+  "TAPNext": {
+    "TF32": {
+      "cudnn": true,
+      "matmul": false
+    },
+    "checkpoint_source": "https://storage.googleapis.com/dm-tapnet/tapnextpp/tapnextpp_ckpt.pt",
+    "commit": "730cda1c730877cfedbe01bf87fb1cadb78a565d",
+    "license": {
+      "name": "Apache-2.0",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "source_url": "https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/LICENSE"
+    },
+    "precision": "float32",
+    "repository": "https://github.com/google-deepmind/tapnet",
+    "requires_clean_git_checkout": true,
+    "resolution": 256,
+    "source_files": {
+      "tapnet/__init__.py": {
+        "bytes": 1350,
+        "sha256": "35b29d7968272465e0f9cbb0d2c1035003ef96b140f4de7516eb85a047ec9ab3"
+      },
+      "tapnet/live_demo.py": {
+        "bytes": 6349,
+        "sha256": "77642d8aac212ce470e4642a9c60a92edd6b7e6ae6d026e1fa99d016a62c842c"
+      },
+      "tapnet/models/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/models/resnet.py": {
+        "bytes": 16702,
+        "sha256": "c20b9fd07191b921a5494af520f33be6fd916087182d31ac46660a984da233aa"
+      },
+      "tapnet/models/ssm_vit.py": {
+        "bytes": 31922,
+        "sha256": "5cb2572f2107003bf0217aabef846d6cbf4082084cea4f76f67cc13489c8f4ec"
+      },
+      "tapnet/models/tapir_model.py": {
+        "bytes": 45816,
+        "sha256": "77c1677fc303e6fc98f084111f9268ca2167473403468be5c741f528b411a453"
+      },
+      "tapnet/models/tapnet_model.py": {
+        "bytes": 9804,
+        "sha256": "61231dc822523db6cb16f166b0c3190267e2e30d422881535bad279b2623cce5"
+      },
+      "tapnet/models/tsm_resnet.py": {
+        "bytes": 15186,
+        "sha256": "fc798028a8ca3da3ca302c2fc090b9da91d67a3458dcbb6f5343a9ed71c9fbb1"
+      },
+      "tapnet/models/tsm_utils.py": {
+        "bytes": 8719,
+        "sha256": "b521ca10ebafaff496f7e9ef55759fff6ffc4c5fd2f3b235ae0e9b249480f037"
+      },
+      "tapnet/models/video_ssm_tracker.py": {
+        "bytes": 11286,
+        "sha256": "e3075aa1e56fcbb5faa1a3849f58b20ae33ca01a336792f655f3cf9d20a71f00"
+      },
+      "tapnet/pytorch_live_demo.py": {
+        "bytes": 6811,
+        "sha256": "2e9a84ef2a510d7ccaee0e92309b325f5dfe38c1e6bdef052bf5e2e1e386f7bb"
+      },
+      "tapnet/robotap/tapir_clustering.py": {
+        "bytes": 40809,
+        "sha256": "955fae3b583918004001ee88b62653d36088dddbcce7d90352d0a09218648aad"
+      },
+      "tapnet/tapnext/losses.py": {
+        "bytes": 5071,
+        "sha256": "110a1723b34b1637072f61380b6e5ad254a029f7539d052681b3786372206b88"
+      },
+      "tapnet/tapnext/pscan.py": {
+        "bytes": 3253,
+        "sha256": "7df34bf5e8318e81bb330ded14fc5e675e7485ea39fa9f0d77fa470f85796a2d"
+      },
+      "tapnet/tapnext/tapnext_lru_modules.py": {
+        "bytes": 15889,
+        "sha256": "2a475419c2f7c67db9acdf412108fb3b025d168f60e9e087fe35d65157adf64f"
+      },
+      "tapnet/tapnext/tapnext_torch.py": {
+        "bytes": 11773,
+        "sha256": "48072289b22439267b3a51eb4cde5e2f81f38c840b6c95b659d60032a07c691a"
+      },
+      "tapnet/tapnext/tapnext_torch_utils.py": {
+        "bytes": 13675,
+        "sha256": "e7eb78070b00b2ff60fbac702ba7e01731a337dbe0ed2c2834b1ba806937944f"
+      },
+      "tapnet/tapnext/torch_losses.py": {
+        "bytes": 4610,
+        "sha256": "8ce50000309a19d91959ea6772e98b4e3508c7296e7ed6581c68b5676058d046"
+      },
+      "tapnet/tapnextpp/augmentations/homography.py": {
+        "bytes": 5121,
+        "sha256": "dc5999f02db5b213ccc4a17255ddd762c7413f83f3a611adc1fdc2e7fc03f85a"
+      },
+      "tapnet/tapnextpp/augmentations/homography_visualization.py": {
+        "bytes": 2675,
+        "sha256": "2be0a0dac9b7047ade1fb771cdb0f854051da03f8f3c35f91f1347321f4cba00"
+      },
+      "tapnet/tapnextpp/augmentations/roll.py": {
+        "bytes": 6530,
+        "sha256": "686e55b093a3e090f450baf164942f7b2435f6db8c98571312e8bea1ee4fff7e"
+      },
+      "tapnet/tapnextpp/augmentations/roll_visualization.py": {
+        "bytes": 2614,
+        "sha256": "d4abde8964b60ac34b9218c956d45dcd4e10ced237a4f3a62d81384380c5c2f4"
+      },
+      "tapnet/tapnextpp/metrics/aj_rd.py": {
+        "bytes": 10270,
+        "sha256": "4b5f56bc04f4af5905108e999f1a79880cd7b1ae218e76b9a686c640d23b4c1b"
+      },
+      "tapnet/tapnextpp/votsp2026/model.py": {
+        "bytes": 6524,
+        "sha256": "e1219e2341c33e0f9124fe02d09a521ac7c91bc27505fcbebbf05741f825e46b"
+      },
+      "tapnet/tapnextpp/votsp2026/tracker.py": {
+        "bytes": 8517,
+        "sha256": "6a3d574658adba5e3f3c67e624813a7ce164f1c37b90daba9f2b00ffe996bfd2"
+      },
+      "tapnet/tapnextpp/votsp2026/utils.py": {
+        "bytes": 3883,
+        "sha256": "0336c526dc2b91244c3e5b803f84b65c6323ede138340a4107441a6b9c9fdbf8"
+      },
+      "tapnet/tapvid/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/tapvid/evaluation_datasets.py": {
+        "bytes": 24538,
+        "sha256": "90cd01e53e23f6d489d3a6cd840cfd93fed4c1a6f4a0dfd373933cc164f0e570"
+      },
+      "tapnet/tapvid/generate_tapvid.py": {
+        "bytes": 6786,
+        "sha256": "2341343f14a1d2e562bf83a387828448c7d0af39729760011570db47ccf6a53f"
+      },
+      "tapnet/tapvid/visualize.py": {
+        "bytes": 2260,
+        "sha256": "2175a15c49c33355387b983eb1cf3d9b36074810473753fb77f1f3e3d59865f8"
+      },
+      "tapnet/tapvid3d/annotation_generation/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/tapvid3d/annotation_generation/adt_utils.py": {
+        "bytes": 6427,
+        "sha256": "2435b8b742b883c496f84bd9a97a86f7e913bed49fae6ee2bf0ed249ebf8c0c1"
+      },
+      "tapnet/tapvid3d/annotation_generation/adt_v1v2_mappings.py": {
+        "bytes": 24024,
+        "sha256": "3f968ebfe08b8cc8313dfbc7008a5001a5a127f5e7bb9d4efba3270cdc482d97"
+      },
+      "tapnet/tapvid3d/annotation_generation/gcs_utils.py": {
+        "bytes": 3223,
+        "sha256": "2a18b092612381591f1440b575a8730cbc501d138b344eeaa255cbe2a4ba9a3f"
+      },
+      "tapnet/tapvid3d/annotation_generation/generate_adt.py": {
+        "bytes": 3308,
+        "sha256": "cdd4eae3d7ec468663258b5a76e2b0842e75ae8811b7319a0ca8762f35551f97"
+      },
+      "tapnet/tapvid3d/annotation_generation/generate_drivetrack.py": {
+        "bytes": 1903,
+        "sha256": "5acd2fbf52651ee4990eb5093f28456788a4efed09b4afa7b71eec88a5d516e1"
+      },
+      "tapnet/tapvid3d/annotation_generation/generate_pstudio.py": {
+        "bytes": 4184,
+        "sha256": "5d4812efc7d3b5239762479f6dbcb9f37253769339dbc04cee623d34d94752f7"
+      },
+      "tapnet/tapvid3d/evaluation/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/tapvid3d/evaluation/evaluate_model.py": {
+        "bytes": 10495,
+        "sha256": "13763ad46d4ffb2bb014c61c6ec7f908a2e6e278cfaa91d9c6849f5c176eaa38"
+      },
+      "tapnet/tapvid3d/evaluation/metrics.py": {
+        "bytes": 13519,
+        "sha256": "f83836ce6e6abc91c1902d9069eb63f9059d7f1e9dc220278bec386a319fbd30"
+      },
+      "tapnet/tapvid3d/splits/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/tapvid3d/splits/tapvid3d_splits.py": {
+        "bytes": 330077,
+        "sha256": "d2b9e5b9fd8a8442038cd8c56938d20b9264dca6cbbc33ff4c4e1f4f02ff94df"
+      },
+      "tapnet/torch/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/torch/nets.py": {
+        "bytes": 12032,
+        "sha256": "4961a8e4882e8c9ac219c4714f6f2c811cc1ab665a439d4d2e79942002a9517c"
+      },
+      "tapnet/torch/tapir_model.py": {
+        "bytes": 27917,
+        "sha256": "87c05fb17d48d0f4353a00b67c9d40d3a264e13e43d88e3f7b5829119845e3ba"
+      },
+      "tapnet/torch/utils.py": {
+        "bytes": 10477,
+        "sha256": "a4267b3a6bd8ecf2dfe5effacab9f7a43664dc5d08966c98f6a0cc68f5ccedd3"
+      },
+      "tapnet/training/experiment.py": {
+        "bytes": 14754,
+        "sha256": "19467a8fdeb45ae378323e9e02c7fcf4fbff3e4d5e87b2a01eb0b964be99ad10"
+      },
+      "tapnet/training/supervised_point_prediction.py": {
+        "bytes": 41417,
+        "sha256": "a870fce76ed64465b8cf384a9bb132756faed81ff843ce5cd6af370218a2c7e1"
+      },
+      "tapnet/training/task.py": {
+        "bytes": 7054,
+        "sha256": "a21d433b696e550ac68084d1a8aedfdca2c2c417e2d9f882f6618e6cd64805d9"
+      },
+      "tapnet/trajan/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/trajan/attention.py": {
+        "bytes": 6352,
+        "sha256": "6871c5bf9419ed20dbf0b497fc2621c730837c36dae12068b87197349b0ebe6f"
+      },
+      "tapnet/trajan/track_autoencoder.py": {
+        "bytes": 13569,
+        "sha256": "1de0060d3c72bc0679f00e518c4e19ac9bdf3019dbd2d8c96f79c3b2bf832d3e"
+      },
+      "tapnet/utils/__init__.py": {
+        "bytes": 656,
+        "sha256": "f7c8d8c66e2f93ac350ce82c03f02152ffc82524cd120ebc944c931b6ea879e1"
+      },
+      "tapnet/utils/experiment_utils.py": {
+        "bytes": 9125,
+        "sha256": "52f40ee50663f7c1289f41b8b4592eb212ef800c0fbba95b0551ac68ea7e5375"
+      },
+      "tapnet/utils/index_utils.py": {
+        "bytes": 4322,
+        "sha256": "b9ca8407a19fcce8fb2db87351dbfc95b65436a4362ee0ebd844201a3336b54a"
+      },
+      "tapnet/utils/model_utils.py": {
+        "bytes": 13264,
+        "sha256": "2dd9181c6c606fab748871eb0ecd718e545d6fa211d5b77bb4142de27cb1b5a6"
+      },
+      "tapnet/utils/optimizers.py": {
+        "bytes": 2801,
+        "sha256": "844ca909f2382274273d511cbb0e63782cb7e28ac38582b9c0eae8b73341b6f7"
+      },
+      "tapnet/utils/ssm_utils.py": {
+        "bytes": 4605,
+        "sha256": "732852b618ba0804b340bc6bd3447d490462860dbfad710418d4c8206be8193a"
+      },
+      "tapnet/utils/transforms.py": {
+        "bytes": 3198,
+        "sha256": "9d8360e39cc8f3d67ce9178bba2a9792583ef21b5ba8909d664818970dd75fcf"
+      },
+      "tapnet/utils/viz_utils.py": {
+        "bytes": 27559,
+        "sha256": "2b64d549fd50b615052659cb41942f4e034c1b1dee3a7a87f0d117c820864058"
+      }
+    }
+  },
+  "downloads_or_installation_performed": false,
+  "native_dependencies": {
+    "GPU": "CUDA toolkit/nvcc, matching PyTorch, PyTorch3D and nvdiffrast; no binary extensions included",
+    "SAM2": "Exact official setup.py/pyproject.toml/MANIFEST.in/README and CUDA source are included. The checked CPU wheel deliberately omits _C; building _C requires a matching CUDA/PyTorch toolchain and was not tested here. No claim that omitting the extension reproduces the audited GPU run.",
+    "mycpp": "Build locally with included build_all_conda.sh and mycpp/CMakeLists.txt; Eigen/Boost/pybind11/OpenMP required",
+    "optional_BundleSDF": "Not built or exercised by this mesh-conditioned path; optional import falls back when absent"
+  },
+  "observed_package_versions": {
+    "Pillow": "11.3.0",
+    "PyYAML": "6.0.3",
+    "einops": "0.8.2",
+    "h5py": "3.16.0",
+    "hydra-core": "1.3.2",
+    "iopath": "0.1.10",
+    "joblib": "1.5.3",
+    "kornia": "0.8.3",
+    "matplotlib": "3.11.1",
+    "numpy": "2.4.6",
+    "nvdiffrast": "0.4.0",
+    "omegaconf": "2.3.1",
+    "open3d": "0.19.0",
+    "opencv-python": "5.0.0.93",
+    "pandas": "2.3.3",
+    "plyfile": "1.1.5",
+    "psutil": "7.2.2",
+    "pytorch3d": "0.7.9",
+    "ruamel.yaml": "0.19.1",
+    "scipy": "1.17.1",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "tqdm": "4.70.0",
+    "transformations": "2026.1.18",
+    "trimesh": "5.0.0",
+    "warp-lang": "1.16.0"
+  },
+  "observed_versions_are_not_a_portable_environment_export": true,
+  "required_weight_and_configuration_files": [
+    {
+      "bytes": 708,
+      "included": false,
+      "required_location": "weights/2023-10-28-18-33-37/config.yml",
+      "sha256": "28a6ba94a33230ee5fc3c51939486281578b0972542bd9e38ca6123e75605686"
+    },
+    {
+      "bytes": 68220109,
+      "included": false,
+      "required_location": "weights/2023-10-28-18-33-37/model_best.pth",
+      "sha256": "774700586ddc435d408fc01c9809c43e151232936369dfbea0f0f964ba471d60"
+    },
+    {
+      "bytes": 778,
+      "included": false,
+      "required_location": "weights/2024-01-11-20-02-45/config.yml",
+      "sha256": "a79db4de3b95885dd5ae86833b37b8698a75dad81e87d1086cd50b2fcd8dda3f"
+    },
+    {
+      "bytes": 190229389,
+      "included": false,
+      "required_location": "weights/2024-01-11-20-02-45/model_best.pth",
+      "sha256": "81924d384bf5c26c646ee4783104982ae3d1e049c181c36641b6a7aeae494c26"
+    },
+    {
+      "bytes": 2532282370,
+      "included": false,
+      "required_location": "external/tapnextpp/tapnextpp_256_generation1774639633910846.pt",
+      "sha256": "cb96a43444ccb4fbdb25d800b88c7ba196179a526e78f01b021a16b1c1eff6da"
+    },
+    {
+      "bytes": 184416285,
+      "included": false,
+      "required_location": "third_party/sam2/checkpoints/sam2.1_hiera_small.pt",
+      "sha256": "6d1aa6f30de5c92224f8172114de081d104bbd23dd9dc5c58996f0cad5dc4d38"
+    }
+  ],
+  "schema": "reviewable_external_runtime_dependencies/2",
+  "status": "not_a_clean_machine_install_validation"
+}

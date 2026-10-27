@@ -1,0 +1,1197 @@
+{
+  "actual_imports": [
+    {
+      "module": "tools.run_click_to_model",
+      "path": "tools/run_click_to_model.py"
+    },
+    {
+      "module": "bundlesdf.mycuda",
+      "path": "bundlesdf/mycuda/__init__.py"
+    },
+    {
+      "module": "Utils",
+      "path": "Utils.py"
+    },
+    {
+      "module": "datareader",
+      "path": "datareader.py"
+    },
+    {
+      "module": "learning.datasets.pose_dataset",
+      "path": "learning/datasets/pose_dataset.py"
+    },
+    {
+      "module": "learning.datasets.h5_dataset",
+      "path": "learning/datasets/h5_dataset.py"
+    },
+    {
+      "module": "network_modules",
+      "path": "learning/models/network_modules.py"
+    },
+    {
+      "module": "learning.models.score_network",
+      "path": "learning/models/score_network.py"
+    },
+    {
+      "module": "stage_profiler",
+      "path": "stage_profiler.py"
+    },
+    {
+      "module": "learning.training.predict_score",
+      "path": "learning/training/predict_score.py"
+    },
+    {
+      "module": "learning.models.refine_network",
+      "path": "learning/models/refine_network.py"
+    },
+    {
+      "module": "learning.training.predict_pose_refine",
+      "path": "learning/training/predict_pose_refine.py"
+    },
+    {
+      "module": "pose_kalman",
+      "path": "pose_kalman.py"
+    },
+    {
+      "module": "estimater",
+      "path": "estimater.py"
+    },
+    {
+      "module": "pose_validity",
+      "path": "pose_validity.py"
+    },
+    {
+      "module": "rgbd_seed",
+      "path": "rgbd_seed.py"
+    },
+    {
+      "module": "initialization_admission",
+      "path": "initialization_admission.py"
+    },
+    {
+      "module": "tools.prepare_bop_click_frame",
+      "path": "tools/prepare_bop_click_frame.py"
+    },
+    {
+      "module": "adaptive_refinement",
+      "path": "adaptive_refinement.py"
+    },
+    {
+      "module": "quarantined_recovery",
+      "path": "quarantined_recovery.py"
+    },
+    {
+      "module": "click_to_model",
+      "path": "click_to_model.py"
+    },
+    {
+      "module": "click_initialization",
+      "path": "click_initialization.py"
+    },
+    {
+      "module": "tentative_tracking",
+      "path": "tentative_tracking.py"
+    },
+    {
+      "module": "relative_motion_refinement",
+      "path": "relative_motion_refinement.py"
+    },
+    {
+      "module": "tools.tentative_point_motion",
+      "path": "tools/tentative_point_motion.py"
+    },
+    {
+      "module": "tools.preloss_measured_anchors",
+      "path": "tools/preloss_measured_anchors.py"
+    },
+    {
+      "module": "tools.preloss_anchor_support",
+      "path": "tools/preloss_anchor_support.py"
+    },
+    {
+      "module": "measured_motion_session",
+      "path": "measured_motion_session.py"
+    },
+    {
+      "module": "tools.tapnext_stream",
+      "path": "tools/tapnext_stream.py"
+    },
+    {
+      "module": "identity_continuity",
+      "path": "identity_continuity.py"
+    },
+    {
+      "module": "identity_output",
+      "path": "identity_output.py"
+    }
+  ],
+  "base_github_commit": "bd7afc4e3155d4aea3180161c58063f8864ba177",
+  "base_github_commit_scope": "Historical SPARK repository comparison inherited from v1, not a current remote-head or SAM2 checkout claim.",
+  "case_scope": "mesh-conditioned tentative-preloss + SAM-score + online continuity",
+  "excluded": [
+    "results experiments",
+    "datasets",
+    "GT",
+    "images",
+    "weights",
+    "compiled binaries",
+    "git metadata",
+    "credentials",
+    "local environments"
+  ],
+  "excluded_observers": [
+    {
+      "module": "__main__",
+      "path": "results/click_to_model/20261027_continuity_online_runtime_v1/launch_v2.py"
+    },
+    {
+      "module": "tools.neural_return_audit",
+      "path": "tools/neural_return_audit.py"
+    },
+    {
+      "module": "__mp_main__",
+      "path": "results/click_to_model/20261027_continuity_online_runtime_v1/launch_v2.py"
+    }
+  ],
+  "explicit_report_source_count": 32,
+  "files": [
+    {
+      "bytes": 4352,
+      "git_blob_sha1": "6704932cd8979da01a39360783279b9c4b506305",
+      "github_blob_sha1": "6704932cd8979da01a39360783279b9c4b506305",
+      "github_status": "byte_identical",
+      "path": "LICENSE",
+      "role": "build_recipe_or_license",
+      "sha256": "0de51abc6b73e24724858239efc42cfeada5d9e7c911cf7eff077bd9a23dec62"
+    },
+    {
+      "bytes": 37639,
+      "git_blob_sha1": "c272216608b8aea799f84bca031e307e2b29e362",
+      "github_blob_sha1": "66b2bd29da73c0b4c0e5c1f08dd94cc5b86981eb",
+      "github_status": "different",
+      "path": "Utils.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "91ac96214dafeaf85d002971c29d72b49c96a4e9073c6071954283fbdf6adc4c"
+    },
+    {
+      "bytes": 4785,
+      "git_blob_sha1": "70aa3d48c1f2c55e3c575594735e064c65244179",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "adaptive_refinement.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "b946ecc27b67da5306a56145ecb9e8ac19c565a2a21132cbeff6105d6dd3a990"
+    },
+    {
+      "bytes": 708,
+      "git_blob_sha1": "b1b59fb309143ddde284431bfdb57d3b891d659a",
+      "github_blob_sha1": "b1b59fb309143ddde284431bfdb57d3b891d659a",
+      "github_status": "byte_identical",
+      "path": "build_all_conda.sh",
+      "role": "build_recipe_or_license",
+      "sha256": "28cd230a4599e59764144d850e3fd502349a2deab4c8e8407367f67fa0e309d2"
+    },
+    {
+      "bytes": 0,
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "github_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "github_status": "byte_identical",
+      "path": "bundlesdf/mycuda/__init__.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 11413,
+      "git_blob_sha1": "b3d0f6bd16c8c51c88ac8fc6f8cdb78428f30d07",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "click_initialization.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "c21afa2e49794598a227c7490ad624215463b515798461e187bf8b9d39fe41b3"
+    },
+    {
+      "bytes": 27475,
+      "git_blob_sha1": "0780b0c927e69b28976443080aa2a024137a621e",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "click_to_model.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "f4a85b54b44d62ce47bc31d209ca79d0d327cc1044cf357f85a273e43af69e2b"
+    },
+    {
+      "bytes": 20850,
+      "git_blob_sha1": "84694a66400ca73bae62204dad9ba22c0e64f4e1",
+      "github_blob_sha1": "1e92c267e2e895593a54327f7de99d780c25ccc1",
+      "github_status": "different",
+      "path": "datareader.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "b0b0febd9f5fbe43662b6012bc760550dfbddb9ff79ed384024d90f8cea47ce5"
+    },
+    {
+      "bytes": 444,
+      "git_blob_sha1": "79b3f4a8dfe046e2847a20f576598a9d0a8102dc",
+      "github_blob_sha1": "79b3f4a8dfe046e2847a20f576598a9d0a8102dc",
+      "github_status": "byte_identical",
+      "path": "environment.yml",
+      "role": "build_recipe_or_license",
+      "sha256": "4a4617b6477f31ed2305cad2d7018e305c18c66a29d5fbd80f9a29cb3f789303"
+    },
+    {
+      "bytes": 28716,
+      "git_blob_sha1": "b3f1d276f2f580a101e90354117c41825f6d4cde",
+      "github_blob_sha1": "a00aa0b9d9d5c012fa21a734f5ff96220ce287d0",
+      "github_status": "different",
+      "path": "estimater.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "47cf561dfb41ad00f47a4cdd73dcb7a95844409c84e98f729f08e490aa3021f9"
+    },
+    {
+      "bytes": 15709,
+      "git_blob_sha1": "37679c734f536b685c4cc29c7a17650e9329608b",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "fear_absolute_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "f04eeb325cf27199a8647b7e3e5da70a724a6976fface04c5b65786ed277eb89"
+    },
+    {
+      "bytes": 14851,
+      "git_blob_sha1": "10dc06424fa79ce4f1a2a3d713c5768296dc673f",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "fear_anchor_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "4eabb5a959ddb979c4244a57b91957a15a0490b804516fa274ecb7a075796c94"
+    },
+    {
+      "bytes": 21816,
+      "git_blob_sha1": "da07fc57d02a4a88e57cd20f505b60747b4b5584",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "fear_depth_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "4ff050f30deb6aa48c19d2340402f3253a75fd212b43abaf5fbb7d0e2ca65555"
+    },
+    {
+      "bytes": 19795,
+      "git_blob_sha1": "6593de9454ea22292cd8acd757078c4b0d01d104",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "fear_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "705ba99a208dfde41e56464f29fb065c0e3fa6be43b745e5e5ba9f47fdc92c7b"
+    },
+    {
+      "bytes": 18094,
+      "git_blob_sha1": "7decac33b746e36b11d8bd746c63114727af92b5",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "fear_tracker.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "f6c8bff657d2314daa0a34b4d3351a3a995521cb6cb193504ed51c289fcbba54"
+    },
+    {
+      "bytes": 18036,
+      "git_blob_sha1": "73ccf0ff0feb6dc52a3d98a86ebf57bd375254dd",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "flow_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "4b23513efc334137bb65ccf25af03117f21ca0dd2bb793df4c47ddcfc16992a1"
+    },
+    {
+      "bytes": 16640,
+      "git_blob_sha1": "e774f84260726ebcdbe7c765ae0c171f90abbc37",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "identity_continuity.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "75aa0f01509d8a2455ac1443bc4da4d259bfcfbec75a094708577423a8893c06"
+    },
+    {
+      "bytes": 8053,
+      "git_blob_sha1": "c9d93e036ba75ab21d2518bfd9d1e80bffb131a0",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "identity_output.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "20abfe5febda46273c182c566c5a1abbf179e3d05ce1a756b14927dc94c60b8e"
+    },
+    {
+      "bytes": 26827,
+      "git_blob_sha1": "d19b5ad9d72c43c7043c2c46aa1703518c63d281",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "initialization_admission.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "ee7c08d9f9ce2da7246e5256b43354e6ebeffa39f9bcc77833b8cf593af5f3c0"
+    },
+    {
+      "bytes": 28039,
+      "git_blob_sha1": "93e61dfccd38126ccc73f717b78193ecdbddcc62",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "initialization_session.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "a66058f910910be534ce12d530c90d686c2dfaa1d4e9bca8fe0f6baee9e3cfe9"
+    },
+    {
+      "bytes": 11708,
+      "git_blob_sha1": "61e5d528f33176bc9052fc2154b690dbafa445b1",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "learned_features.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "c07fde36f3b706d7fc15cdad6856df26ed49ccbc7723a2903c48f4e1b89c9888"
+    },
+    {
+      "bytes": 9294,
+      "git_blob_sha1": "9bb672987c935cabbfad0c8252f3bd21ffc2d3de",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "learned_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "72fee936cff30060d931b57674d8aaee9069b977565c25075f05c29136b2033b"
+    },
+    {
+      "bytes": 9820,
+      "git_blob_sha1": "a0f99b5d411972b208e8b92f042de6c8fb60e60d",
+      "github_blob_sha1": "a0f99b5d411972b208e8b92f042de6c8fb60e60d",
+      "github_status": "byte_identical",
+      "path": "learning/datasets/h5_dataset.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "8c58f5e5033dfe021b5282caedfb80aba6900a6987848e06f1720892b5f0c160"
+    },
+    {
+      "bytes": 4283,
+      "git_blob_sha1": "8e76ee4645731128daad385879b738ff58eee9fc",
+      "github_blob_sha1": "8e76ee4645731128daad385879b738ff58eee9fc",
+      "github_status": "byte_identical",
+      "path": "learning/datasets/pose_dataset.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "27c5312108718611d7d82bb601e58d59b2c4f0b93b75ab02bee652e810a3e60e"
+    },
+    {
+      "bytes": 4548,
+      "git_blob_sha1": "a0e4246628fcf60ab7b1cc44bca789892ac59bc6",
+      "github_blob_sha1": "a0e4246628fcf60ab7b1cc44bca789892ac59bc6",
+      "github_status": "byte_identical",
+      "path": "learning/models/network_modules.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "29a4875a35150c662a3604e88a7f102d2fa4de9d026a8ee07151e09e788a2e26"
+    },
+    {
+      "bytes": 2849,
+      "git_blob_sha1": "c2e399efc309f36129ad0365c940de71df443f60",
+      "github_blob_sha1": "c2e399efc309f36129ad0365c940de71df443f60",
+      "github_status": "byte_identical",
+      "path": "learning/models/refine_network.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "c024375d544352fbcb94698d792ec6fd017008ca5d093e71e747727ea59db709"
+    },
+    {
+      "bytes": 2832,
+      "git_blob_sha1": "fbf362ec0f9d95d4ecbd00ef0d64c6d5d903f9e7",
+      "github_blob_sha1": "fbf362ec0f9d95d4ecbd00ef0d64c6d5d903f9e7",
+      "github_status": "byte_identical",
+      "path": "learning/models/score_network.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "6cea9a7683def72b92e8c8328884e48fb6ca057ff480efab6d1328686b3ce926"
+    },
+    {
+      "bytes": 18975,
+      "git_blob_sha1": "c796d4d54adcec1e09154ea8b74ec6ee3033f149",
+      "github_blob_sha1": "c796d4d54adcec1e09154ea8b74ec6ee3033f149",
+      "github_status": "byte_identical",
+      "path": "learning/training/predict_pose_refine.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "5a3a9425745cbbdd7f854b8627f9e5b3234a626f76fa74c7a70e1baedbfba369"
+    },
+    {
+      "bytes": 10741,
+      "git_blob_sha1": "3fb49f2a9c052cb8d5988ebb833e2b3403124978",
+      "github_blob_sha1": "3fb49f2a9c052cb8d5988ebb833e2b3403124978",
+      "github_status": "byte_identical",
+      "path": "learning/training/predict_score.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "d39afac3587810133340fc0779a98d583fc8c61c713628eb509a065163cc37c0"
+    },
+    {
+      "bytes": 2930,
+      "git_blob_sha1": "9d689c65da3fd03e9a32b5df332fcdd70af9c67d",
+      "github_blob_sha1": "9d689c65da3fd03e9a32b5df332fcdd70af9c67d",
+      "github_status": "byte_identical",
+      "path": "learning/training/training_config.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "da0e1265e9b4c35624b599029050631d62fb201ad6c838e3b4d26af99adc27b2"
+    },
+    {
+      "bytes": 22967,
+      "git_blob_sha1": "64803efaccd26ed745dbb0cf9b14d9ab59a53579",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "measured_motion_session.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "22fc9aa4405ea011ef6d186541e90608beeaa512f3d257a2a89b438fe9947fdd"
+    },
+    {
+      "bytes": 7105,
+      "git_blob_sha1": "ae816b49aca95fc1eac78dc9dd283e4dcb4aebd8",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "meshless_initialization.py",
+      "role": "unchanged_import_dependency_of_entry_CPU_fixture_not_a_meshless_validation",
+      "sha256": "53321d24702344638022c8a64845c05caf359c051bfec3683737e576e375da0f"
+    },
+    {
+      "bytes": 645,
+      "git_blob_sha1": "7c8a9a5cca867d327b7495d98c5cf13bd15fcbe7",
+      "github_blob_sha1": "7c8a9a5cca867d327b7495d98c5cf13bd15fcbe7",
+      "github_status": "byte_identical",
+      "path": "mycpp/CMakeLists.txt",
+      "role": "build_recipe_or_license",
+      "sha256": "53aee630d869187ba47addf86142e211361774096d2543e4017460937884fb8f"
+    },
+    {
+      "bytes": 1132,
+      "git_blob_sha1": "41703f5b51039b47b2dfe863edde1b448cdff882",
+      "github_blob_sha1": "41703f5b51039b47b2dfe863edde1b448cdff882",
+      "github_status": "byte_identical",
+      "path": "mycpp/include/Utils.h",
+      "role": "build_recipe_or_license",
+      "sha256": "c5a9d3af06625c3bb966fcb514a71787964224aa546cfbbdaa7d5a71b303562a"
+    },
+    {
+      "bytes": 744,
+      "git_blob_sha1": "c1455d54b3fab9b602b1e68c4955001d6fc221b9",
+      "github_blob_sha1": "c1455d54b3fab9b602b1e68c4955001d6fc221b9",
+      "github_status": "byte_identical",
+      "path": "mycpp/src/Utils.cpp",
+      "role": "build_recipe_or_license",
+      "sha256": "466878738286fd787038c28d80ea801ef4e6756d5e38e551b456b6f121a17d17"
+    },
+    {
+      "bytes": 1935,
+      "git_blob_sha1": "6a415c317dcf7ac16d482d80d330b16a0f186e12",
+      "github_blob_sha1": "6a415c317dcf7ac16d482d80d330b16a0f186e12",
+      "github_status": "byte_identical",
+      "path": "mycpp/src/app/pybind_api.cpp",
+      "role": "build_recipe_or_license",
+      "sha256": "8567ae667cfe7657414effdd9995a76680052b865b09a6d4e37f2034f3fe3730"
+    },
+    {
+      "bytes": 6325,
+      "git_blob_sha1": "7557f60cb435b1a15d6b5f48d029a007e3d257a7",
+      "github_blob_sha1": "7557f60cb435b1a15d6b5f48d029a007e3d257a7",
+      "github_status": "byte_identical",
+      "path": "pose_kalman.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "af3f3e34753400c8ac7b9b64138a95e4e82c44b5555352eb1f5218b6260dd3e8"
+    },
+    {
+      "bytes": 25212,
+      "git_blob_sha1": "772e863edb5b247b1ba37ea916f4a56e76cca012",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "pose_validity.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "f0dfd6b25ec37d19f2b76db63c63abd9640b18f677488a8187409df2359bea45"
+    },
+    {
+      "bytes": 16593,
+      "git_blob_sha1": "027c9b0d66e5d413a5db35c4ff9d15473e65fac6",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "quarantined_recovery.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "fff1e6f2f23616d1aabda1a04cd95e3fc1e82da29b0b25362eb24c4cfea181d4"
+    },
+    {
+      "bytes": 7974,
+      "git_blob_sha1": "eb013684ab8cd088fc88dd443ce5aaaf63c7dd7c",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "relative_motion_refinement.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "6d98879a1c757b3b84aca40b83146aab962cc8d332692285c03969bca870ec1f"
+    },
+    {
+      "bytes": 938,
+      "git_blob_sha1": "4759280e49e75ffc8984b96966f762c49f853504",
+      "github_blob_sha1": "4759280e49e75ffc8984b96966f762c49f853504",
+      "github_status": "byte_identical",
+      "path": "requirements.txt",
+      "role": "build_recipe_or_license",
+      "sha256": "943c5ef618210ce2d95aa8123a62f550d4a0a0080c6a32d5d542f1c0a291fa87"
+    },
+    {
+      "bytes": 36491,
+      "git_blob_sha1": "9201d20aca5bf9f6fd6db9e8880ab55eb7639cd5",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "rgbd_seed.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "c45e53bc76f31559a7e35fb54831f5b59b353dd1891f29460cc31c51e5c388b9"
+    },
+    {
+      "bytes": 28117,
+      "git_blob_sha1": "87a6987b565f831b774ecccc41b1fb5dee96904d",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "robust_pose.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "36e8623c62f4cadefefaad4c6692dbd2cf7777d83bd4c004508615112e845506"
+    },
+    {
+      "bytes": 6699,
+      "git_blob_sha1": "c2276c09f3bebfe61fd9e1eac7d2ca868b1677bb",
+      "github_blob_sha1": "c2276c09f3bebfe61fd9e1eac7d2ca868b1677bb",
+      "github_status": "byte_identical",
+      "path": "stage_profiler.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "63fc0948e056efa21b468bb6bdd58ed231b837e258b0eed5c1ff848f021e12ec"
+    },
+    {
+      "bytes": 13010,
+      "git_blob_sha1": "a87627a602061b55968df5e87c21cd635ec765cd",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tentative_tracking.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "7e749fe00d7870c38750a366b68042294737b60bbc0edc40616ea4ccfec95c11"
+    },
+    {
+      "bytes": 7136,
+      "git_blob_sha1": "952397fb400652f0fd896273b9ccfd4059fb5480",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tests/test_identity_output.py",
+      "role": "bounded_CPU_entry_test",
+      "sha256": "73ffddabb2dfa3c785211ed78c54ccfd7540680390f94c8744d5cc9d13f41f6c"
+    },
+    {
+      "bytes": 7808,
+      "git_blob_sha1": "36e46b24fa55e43dca3c3f3d6de036affdb6cf7c",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tests/test_identity_output_entry.py",
+      "role": "bounded_CPU_entry_test",
+      "sha256": "a9939abb27c63460753c3c90fb35ad157062ddb74d625cacff0bdc7e8f3328c5"
+    },
+    {
+      "bytes": 12371,
+      "git_blob_sha1": "b9afcc0b92f739294a780721df877d69afaae232",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tests/test_measured_motion_session.py",
+      "role": "bounded_CPU_entry_test",
+      "sha256": "bada642809908b621e1f2e9925220a8d57b7b6eb9dd790f5c1b70f64c162f2f6"
+    },
+    {
+      "bytes": 27632,
+      "git_blob_sha1": "c2ffd1ac078ddd00f3f7bf73de64166430d34406",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tests/test_preloss_offline_entry.py",
+      "role": "bounded_CPU_entry_test",
+      "sha256": "cb8a5c66f423747f2015f65fc6808b170caf5bb8f022f87416f814407d379e67"
+    },
+    {
+      "bytes": 11357,
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/LICENSE",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 1566,
+      "git_blob_sha1": "23da14a65aad4c5bac18061b80ae6040bb7d2c8c",
+      "github_status": "not_compared_against_SPARK_remote_v2_addition",
+      "official_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "official_path": "LICENSE_cctorch",
+      "official_repository": "facebookresearch/sam2",
+      "path": "third_party/sam2/LICENSE_cctorch",
+      "role": "official_upstream_license",
+      "sha256": "687d4f65ffe399358b170e22572564a16689e496f85a79dc5385fccf6bbc9558"
+    },
+    {
+      "bytes": 254,
+      "git_blob_sha1": "794311fd9854453b134c828c0cb241a7cfdbfc65",
+      "github_status": "not_compared_against_SPARK_remote_v2_addition",
+      "official_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "official_path": "MANIFEST.in",
+      "official_repository": "facebookresearch/sam2",
+      "path": "third_party/sam2/MANIFEST.in",
+      "role": "official_upstream_build_metadata",
+      "sha256": "969fc588abbd8d84b1e2b055eafd46573a317647d86c796a1e062983e17f9f33"
+    },
+    {
+      "bytes": 16249,
+      "git_blob_sha1": "85a7eb958bced5495ff990c2bcbe7d99662c660f",
+      "github_status": "not_compared_against_SPARK_remote_v2_addition",
+      "official_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "official_path": "README.md",
+      "official_repository": "facebookresearch/sam2",
+      "path": "third_party/sam2/README.md",
+      "role": "official_upstream_build_metadata",
+      "sha256": "eea69ee1042fb30933c5ca5019fbf0f6f9366cec5e792109281b5023a4f1589c"
+    },
+    {
+      "bytes": 120,
+      "git_blob_sha1": "f84317dbbfa6ba4f2d972cab2e2e0d0bdf07f003",
+      "github_status": "not_compared_against_SPARK_remote_v2_addition",
+      "official_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "official_path": "pyproject.toml",
+      "official_repository": "facebookresearch/sam2",
+      "path": "third_party/sam2/pyproject.toml",
+      "role": "official_upstream_build_metadata",
+      "sha256": "c58230f78769620dcd11d15824d491b049be8f542eeb875d2e8091be797ec3f3"
+    },
+    {
+      "bytes": 395,
+      "git_blob_sha1": "0712dd03cb280ab94ba04f8a32aa8ddc8aa3db4a",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/__init__.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "b87ca1e95cd54b81766e8c74acf0e937952639529e40d2b4088693286f49419e"
+    },
+    {
+      "bytes": 18461,
+      "git_blob_sha1": "065e469e27c2d3af40d51d072031e828692c799b",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/automatic_mask_generator.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "66df266dbe14412305ae3398f0ec1bb21b303a93216b102d767e6c4ee5d4c3d7"
+    },
+    {
+      "bytes": 2811,
+      "git_blob_sha1": "6519534c8619e04b9a632859a5128ad2cee34c13",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/benchmark.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "9b7a3506b88842ec09031fb7cd0fc1d3fed82e137ce06dbca10495e6c180dda9"
+    },
+    {
+      "bytes": 6405,
+      "git_blob_sha1": "3a3bef1e566d86c3ba0fd75f425530bc6505e9bf",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/build_sam.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "856d64d71e44407401297b551884fb4cd1aba8082de0ff5fc60fac3dd42f094d"
+    },
+    {
+      "bytes": 3650,
+      "git_blob_sha1": "d7172f9b0b663aaaace97fed7e2a08db75150461",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "37d6c56b07a7f8d08baaa314315c60dc3aabe2edc66cd92bac6d1ed50038e788"
+    },
+    {
+      "bytes": 3798,
+      "git_blob_sha1": "23073ea7a95901be656b3c6d1a66ce8736ab7ad3",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_l.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "1dbd6cb6dfebeaf588c7006ee222c6efbfa9049a7ad472a3cdfb2f5d919e8107"
+    },
+    {
+      "bytes": 3761,
+      "git_blob_sha1": "fd8d40465b18b3de39b0a565aca712306306c4ed",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_s.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "0f36b91e86e58d06c87e42997166212468b88b98b60e4d816d5e4d4d088b6f55"
+    },
+    {
+      "bytes": 3855,
+      "git_blob_sha1": "e762aec932f26436d13798f3feb3ec82c360a943",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_t.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "f932eac1c6241e910031b2f000a81cd9f8a8d4896e2277ab5ffb721f378b188d"
+    },
+    {
+      "bytes": 11256,
+      "git_blob_sha1": "9b6faa79f47ee576faf007bffd23fb6649bd881d",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2.1_training/sam2.1_hiera_b+_MOSE_finetune.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "d96919e157527116c3a80c6ec961151bda98e5eb988ae4dd85be6e7efbd2b51f"
+    },
+    {
+      "bytes": 3548,
+      "git_blob_sha1": "0f435af02fc88e2d3b7bff06f8cf8013cc079c24",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_b+.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "644d1a9aaa7e14183802246dee4f43627e067d77dd89f1f40d83657db18d038b"
+    },
+    {
+      "bytes": 3696,
+      "git_blob_sha1": "1092802b1d24be6fedf78939f45b0d021d4ec560",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_l.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "0ee9f2037fd98489212bb0b78a56f33ac82eb177cf5e52c88be3714cb84eea26"
+    },
+    {
+      "bytes": 3659,
+      "git_blob_sha1": "174e414f1467d80e94a34e9525dc373058f8caaa",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_s.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "20e0ade957a4ab5e8138c93c346a8d8965c0b00d1a05fa0e79ce477985904188"
+    },
+    {
+      "bytes": 3753,
+      "git_blob_sha1": "121447aabd5318fac20efc2bc00d7c406ca26f01",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_t.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "33399c73cd13bbc3d0c1cea843fa2fc255fdb20139fe07f042743e046ac46b6b"
+    },
+    {
+      "bytes": 7808,
+      "git_blob_sha1": "ced21eb32eaaadb818d441c1322b99d1bf068f45",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/csrc/connected_components.cu",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "926c277e24f40609622bb4ce49912838d1c799e63edcccc1c75e65e701acd497"
+    },
+    {
+      "bytes": 197,
+      "git_blob_sha1": "5277f46157403e47fd830fc519144b97ef69d4ae",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/__init__.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+    },
+    {
+      "bytes": 197,
+      "git_blob_sha1": "5277f46157403e47fd830fc519144b97ef69d4ae",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/backbones/__init__.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+    },
+    {
+      "bytes": 10003,
+      "git_blob_sha1": "19ac77b61d8e1345a301686d39ef2ab6e4b035fb",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/backbones/hieradet.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "03785581ca304d0451ae0df7a08ee0bf1e1dbe66fad285066e6b9ffc0d88d64f"
+    },
+    {
+      "bytes": 4706,
+      "git_blob_sha1": "37e9266bc98596e97ca303118c910ed24f6cee2c",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/backbones/image_encoder.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "16eaad232220386f510ca8dfab8655e63699977149a4daf9ce9c6f374e6777a9"
+    },
+    {
+      "bytes": 3007,
+      "git_blob_sha1": "930b1b7622e7b0e7270120dcafccc242ef0f4f28",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/backbones/utils.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "c4a0657db2a92bda2a7ff116cd4017f6b1c59af6408093d8874eb08a0df476ad"
+    },
+    {
+      "bytes": 5509,
+      "git_blob_sha1": "0b07f9d87e3d8194ca5e11fc20f01604d591a59d",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/memory_attention.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "07358cb7f58ec3788e88ff4e6415f8a9d628a3963529d6e2c915494a5347c8e2"
+    },
+    {
+      "bytes": 5657,
+      "git_blob_sha1": "f60202dfaba87232c3870fb2101b5322a119d985",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/memory_encoder.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "73f7089ae5fdacdfcaaf3deca1ca6d9f84d89e7deb9cf97589622a9ef17ba42f"
+    },
+    {
+      "bytes": 8980,
+      "git_blob_sha1": "2241d4cf1a4495b4c67dc35cbed1c606357b9b7a",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/position_encoding.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "b51404718c0d38f381293c8e5e00a15d129651b7f09b1158002d8974a30967b5"
+    },
+    {
+      "bytes": 197,
+      "git_blob_sha1": "5277f46157403e47fd830fc519144b97ef69d4ae",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/sam/__init__.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+    },
+    {
+      "bytes": 12657,
+      "git_blob_sha1": "9bebc0366b2703ffcb80a44bfd19cce8339b4fed",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/sam/mask_decoder.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "ca3523c58365574faddf1bfb54f374e4b4beba05127185ea2b17d22b916e099a"
+    },
+    {
+      "bytes": 7541,
+      "git_blob_sha1": "c57876264b51f8c5236867359350e32d590efcb5",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/sam/prompt_encoder.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "4965ccb4a4504aa4d7246b2ad66ffeacd2626415c86a261dc1c65ffd8ae1d40d"
+    },
+    {
+      "bytes": 10761,
+      "git_blob_sha1": "f9fe9a3fbc5cce4f1abe8ee0ae3a8602bbe2ff1b",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/sam/transformer.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "cda19052331e775190ce8b1159efcb828a4632d931a6d8bd4d47109f121782f1"
+    },
+    {
+      "bytes": 46983,
+      "git_blob_sha1": "d9f4e515b0d161942bf2bb64560056b3efbe6dac",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/sam2_base.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "69a46b44e8625f509791352bd09beaafe589cd7d872721384e63d37f9fdc6e41"
+    },
+    {
+      "bytes": 13173,
+      "git_blob_sha1": "e16caae3a9a49e451b2d03d1ee60c47f8e9ed23c",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/modeling/sam2_utils.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "e35bbf13bc2e544a0272cd3f9539af38a752676ac3cd744be31cd8220afee804"
+    },
+    {
+      "bytes": 3548,
+      "git_blob_sha1": "0f435af02fc88e2d3b7bff06f8cf8013cc079c24",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_hiera_b+.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "644d1a9aaa7e14183802246dee4f43627e067d77dd89f1f40d83657db18d038b"
+    },
+    {
+      "bytes": 3696,
+      "git_blob_sha1": "1092802b1d24be6fedf78939f45b0d021d4ec560",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_hiera_l.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "0ee9f2037fd98489212bb0b78a56f33ac82eb177cf5e52c88be3714cb84eea26"
+    },
+    {
+      "bytes": 3659,
+      "git_blob_sha1": "174e414f1467d80e94a34e9525dc373058f8caaa",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_hiera_s.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "20e0ade957a4ab5e8138c93c346a8d8965c0b00d1a05fa0e79ce477985904188"
+    },
+    {
+      "bytes": 3753,
+      "git_blob_sha1": "121447aabd5318fac20efc2bc00d7c406ca26f01",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_hiera_t.yaml",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "33399c73cd13bbc3d0c1cea843fa2fc255fdb20139fe07f042743e046ac46b6b"
+    },
+    {
+      "bytes": 19937,
+      "git_blob_sha1": "41ce53af5924504c07216df52b2d2eefaeec7ae9",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_image_predictor.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "f13e5f9d94e5c8d9d2c3622dab20c8f334c089ef2ee5ea8e199da7d332b029ba"
+    },
+    {
+      "bytes": 58921,
+      "git_blob_sha1": "5a7e1a01c4d6e89db0453ce982ea8a31b16651c8",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_video_predictor.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2"
+    },
+    {
+      "bytes": 58777,
+      "git_blob_sha1": "c7e01ccf972491904b013526333826b337354db1",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/sam2_video_predictor_legacy.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "e0c054112f21bfa63620f2026c8bb2e0f4e284b138d09426a08d39f2e882c3f2"
+    },
+    {
+      "bytes": 197,
+      "git_blob_sha1": "5277f46157403e47fd830fc519144b97ef69d4ae",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/utils/__init__.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa"
+    },
+    {
+      "bytes": 12842,
+      "git_blob_sha1": "986842960cf5deca00614b7b1cde1ab77dad7e6e",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/utils/amg.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "b7b33090e2af72e04dbb815c8f32aff41a4ed1abf9668f62b59f1bdd640ca5d8"
+    },
+    {
+      "bytes": 13090,
+      "git_blob_sha1": "b65ee825732ff85137805be650edd4cbe8e6f6d4",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/utils/misc.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "01600c01c161cd079d7106fb1d4da845cf91aa31ab2bcecaf8cb151b6d6d20a2"
+    },
+    {
+      "bytes": 4885,
+      "git_blob_sha1": "cc17bebfab104b659c5469e8434cf357ae7e24b6",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "third_party/sam2/sam2/utils/transforms.py",
+      "role": "pinned_SAM2_runtime_source_snapshot",
+      "sha256": "ba3a64f4600c62f209206a6df3b40e3fcf133edae32fad658831bb0c2a6d1146"
+    },
+    {
+      "bytes": 5051,
+      "git_blob_sha1": "78a634cddb19615c45601681ffbcd1f29af66f47",
+      "github_status": "not_compared_against_SPARK_remote_v2_addition",
+      "official_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+      "official_path": "setup.py",
+      "official_repository": "facebookresearch/sam2",
+      "path": "third_party/sam2/setup.py",
+      "role": "official_upstream_build_metadata",
+      "sha256": "9ca49a33def161d2cafa56ddef744178fa56d3219242bd8b69909904c2e63dff"
+    },
+    {
+      "bytes": 14536,
+      "git_blob_sha1": "b7affa4cb1b5885bf674e34a1050170e4e101095",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/generate_click_mesh.py",
+      "role": "unchanged_import_dependency_of_entry_CPU_fixture_not_a_meshless_validation",
+      "sha256": "2dc8e09815abf5bc84c15d84c2878869ef687317a9a5142c13b357cde5e9ac63"
+    },
+    {
+      "bytes": 15144,
+      "git_blob_sha1": "5bb3053d0eda12dfeb3eed6e9de0c37cba2ababb",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/preloss_anchor_support.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "2602f2adbff491d4a077559559aa1624e58415dc2c83bbc30f059597000b7f97"
+    },
+    {
+      "bytes": 27629,
+      "git_blob_sha1": "70dd9f9e1965640a8706bee1ebdee870c15c4829",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/preloss_measured_anchors.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "2a384476dc06ef1519afdaa8278559fa27475dce53550dfab1dcade3bf690e0d"
+    },
+    {
+      "bytes": 14554,
+      "git_blob_sha1": "4ef77e88b07fdd6042f8446faefcdf43da35d8a8",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/prepare_bop_click_frame.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "e741e04679488d611ac60a7dca2a7c2bd86564402ff432880cb91c445222398a"
+    },
+    {
+      "bytes": 54728,
+      "git_blob_sha1": "359981d8d5a84b3782c97ec401c7286a360a012a",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/run_click_to_model.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "48640770bafbcce2f8f787949d1a57b70d2a198f18ad6815c02cb35bed3a18ae"
+    },
+    {
+      "bytes": 20949,
+      "git_blob_sha1": "13ca5119e04a6a9aaa062d7ed7cc6ced79d0f53a",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/run_meshless_click_to_model.py",
+      "role": "unchanged_import_dependency_of_entry_CPU_fixture_not_a_meshless_validation",
+      "sha256": "f9ebeae584542c8d982dc1e7b804c0a7c1ed699717849ef6ac4890a8a9deb637"
+    },
+    {
+      "bytes": 19714,
+      "git_blob_sha1": "65bd9d7785308b85672ddc552aae2ac3a1f80706",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/tapnext_stream.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "803f5c0d0fa57b3bd87523215479109bc76cf3fe5e920c0d8bb9a60b4c586cdd"
+    },
+    {
+      "bytes": 24063,
+      "git_blob_sha1": "52ec7f8988d72db7c47ec0dad7fc1c3a42b8e277",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "tools/tentative_point_motion.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "f855f8bffe195bc7b75ef64dce14f71ad68d0f12a21ea46e5541bc8db2638c24"
+    },
+    {
+      "bytes": 17932,
+      "git_blob_sha1": "bd266d22c727a0012a597945335c0d1bdabc0558",
+      "github_blob_sha1": null,
+      "github_status": "missing",
+      "path": "trusted_view_seed.py",
+      "role": "runtime_or_static_import_source",
+      "sha256": "ae410cac19d8218ea8cd06bea7c38a378ad6cf75bae444fbc17d149dd426262d"
+    }
+  ],
+  "original_source_files_preserved": 98,
+  "parent_snapshot_manifest": {
+    "bytes": 39678,
+    "sha256": "014eefa60a6b1817be30cb1f675dd81bfe0f4f213837abea11c0b95f81f43c35"
+  },
+  "sam2_cpu_wheel_validation": {
+    "build_environment": "Existing research environment; dependencies were neither resolved nor installed.",
+    "clean_machine_validation": false,
+    "command": "SAM2_BUILD_CUDA=0 SAM2_BUILD_ALLOW_ERRORS=0 PIP_NO_INDEX=1 python -m pip wheel --no-deps --no-build-isolation --no-index --no-cache-dir --wheel-dir ./wheelhouse .",
+    "installed_environment_modified": false,
+    "license_files_exact": 2,
+    "model_or_GPU_validation": false,
+    "no_compiled_extension": true,
+    "python": "3.11.15",
+    "python_files_exact": 25,
+    "status": "isolated_cpu_wheel_built_and_contents_verified",
+    "wheel": {
+      "bytes": 119043,
+      "name": "sam_2-1.0-py3-none-any.whl",
+      "sha256": "df507c2c29b0c62694b5a91499354b0288192a93761feb99da617db711bbc8a2"
+    },
+    "wheel_closure_receipt": {
+      "bytes": 10285,
+      "sha256": "4ba1e82cf0b378d79cbfabf408c5cca37d84ff15f793fdf33373ed7fb42e457d"
+    },
+    "wheel_in_source_delivery": false,
+    "yaml_files_exact": 13
+  },
+  "sam2_official_content_binding": {
+    "added_files": [
+      {
+        "bytes": 254,
+        "git_blob_sha1": "794311fd9854453b134c828c0cb241a7cfdbfc65",
+        "official_path": "MANIFEST.in",
+        "path": "third_party/sam2/MANIFEST.in",
+        "sha256": "969fc588abbd8d84b1e2b055eafd46573a317647d86c796a1e062983e17f9f33"
+      },
+      {
+        "bytes": 16249,
+        "git_blob_sha1": "85a7eb958bced5495ff990c2bcbe7d99662c660f",
+        "official_path": "README.md",
+        "path": "third_party/sam2/README.md",
+        "sha256": "eea69ee1042fb30933c5ca5019fbf0f6f9366cec5e792109281b5023a4f1589c"
+      },
+      {
+        "bytes": 120,
+        "git_blob_sha1": "f84317dbbfa6ba4f2d972cab2e2e0d0bdf07f003",
+        "official_path": "pyproject.toml",
+        "path": "third_party/sam2/pyproject.toml",
+        "sha256": "c58230f78769620dcd11d15824d491b049be8f542eeb875d2e8091be797ec3f3"
+      },
+      {
+        "bytes": 5051,
+        "git_blob_sha1": "78a634cddb19615c45601681ffbcd1f29af66f47",
+        "official_path": "setup.py",
+        "path": "third_party/sam2/setup.py",
+        "sha256": "9ca49a33def161d2cafa56ddef744178fa56d3219242bd8b69909904c2e63dff"
+      },
+      {
+        "bytes": 1566,
+        "git_blob_sha1": "23da14a65aad4c5bac18061b80ae6040bb7d2c8c",
+        "official_path": "LICENSE_cctorch",
+        "path": "third_party/sam2/LICENSE_cctorch",
+        "sha256": "687d4f65ffe399358b170e22572564a16689e496f85a79dc5385fccf6bbc9558"
+      }
+    ],
+    "cctorch_official_blob_evidence": {
+      "bytes": 1867,
+      "sha256": "5c1a2f56e9bf0d1abe60046262035b55372f37fbd1032799d037b3e985f3ecf0"
+    },
+    "content_correspondence_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "dereferenced_upstream_symlinks_exact": 4,
+    "historical_local_checkout_commit_inferred": false,
+    "official_repository": "https://github.com/facebookresearch/sam2",
+    "official_tree_evidence": {
+      "bytes": 247879,
+      "sha256": "56a4d7d78ca941aa2f4d89467ecfb875dedc7e941b86c566b78c74e3c6cea6b8"
+    },
+    "official_tree_url": "https://github.com/facebookresearch/sam2/tree/2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "original_paths_bound": 40,
+    "regular_files_exact": 36,
+    "scope": "Content equality to this official commit; no inference about historical local checkout identity.",
+    "source_binding_receipt": {
+      "bytes": 8554,
+      "sha256": "67cd4335a27e89834e2d8cfc8d6f2172fd06c3befcc682f556ece781a79d00f3"
+    }
+  },
+  "schema": "reviewable_source_snapshot/2",
+  "source_byte_modifications": 0,
+  "status": "prepared_not_published_SAM2_CPU_wheel_verified_not_clean_machine_verified",
+  "transitive_static_local_sources": [
+    "fear_absolute_pose.py",
+    "fear_anchor_pose.py",
+    "fear_depth_pose.py",
+    "fear_pose.py",
+    "fear_tracker.py",
+    "flow_pose.py",
+    "learned_features.py",
+    "learned_pose.py",
+    "robust_pose.py"
+  ]
+}

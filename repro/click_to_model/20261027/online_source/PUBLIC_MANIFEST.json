@@ -1,0 +1,663 @@
+{
+  "schema": "public_runtime_source_snapshot/1",
+  "target_github_path": "repro/click_to_model/20261027/online_source/",
+  "files": [
+    {
+      "path": "EXTERNAL_DEPENDENCIES.json",
+      "bytes": 25468,
+      "sha256": "3bdfbfacc42b7add789b162c46ece42794e23e191c039d87e3c6439c042e0c07",
+      "git_sha": "76fee61788ae9ffb73b3435242ea444f2b3a40aa"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 4352,
+      "sha256": "0de51abc6b73e24724858239efc42cfeada5d9e7c911cf7eff077bd9a23dec62",
+      "git_sha": "6704932cd8979da01a39360783279b9c4b506305"
+    },
+    {
+      "path": "PUBLICATION.md",
+      "bytes": 1781,
+      "sha256": "57805209a0814c04e803a12ad15ed30b80322c8b297ba7ab740c13217ff7dbb5",
+      "git_sha": "5b6625263d7f430bb9b71af16a6e4ae56c9e5180"
+    },
+    {
+      "path": "README_DELIVERY.md",
+      "bytes": 6643,
+      "sha256": "906272c5885de1b0b45afab6b72118182514ba0a04aa436fbe447076df2faf6b",
+      "git_sha": "eea9c5f8dba29b48aacaf3ac5bd4d17ea9bd59a8"
+    },
+    {
+      "path": "SOURCE_MANIFEST.json",
+      "bytes": 46066,
+      "sha256": "6958f690fe9a9b1aa0c4b3a872a1bced1f527fc2fe8d92bc9c6670f4bef28117",
+      "git_sha": "0211b08f85a5af240eff2c945c76a3c50425e8c6"
+    },
+    {
+      "path": "Utils.py",
+      "bytes": 37639,
+      "sha256": "91ac96214dafeaf85d002971c29d72b49c96a4e9073c6071954283fbdf6adc4c",
+      "git_sha": "c272216608b8aea799f84bca031e307e2b29e362"
+    },
+    {
+      "path": "adaptive_refinement.py",
+      "bytes": 4785,
+      "sha256": "b946ecc27b67da5306a56145ecb9e8ac19c565a2a21132cbeff6105d6dd3a990",
+      "git_sha": "70aa3d48c1f2c55e3c575594735e064c65244179"
+    },
+    {
+      "path": "build_all_conda.sh",
+      "bytes": 708,
+      "sha256": "28cd230a4599e59764144d850e3fd502349a2deab4c8e8407367f67fa0e309d2",
+      "git_sha": "b1b59fb309143ddde284431bfdb57d3b891d659a"
+    },
+    {
+      "path": "bundlesdf/mycuda/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "click_initialization.py",
+      "bytes": 11413,
+      "sha256": "c21afa2e49794598a227c7490ad624215463b515798461e187bf8b9d39fe41b3",
+      "git_sha": "b3d0f6bd16c8c51c88ac8fc6f8cdb78428f30d07"
+    },
+    {
+      "path": "click_to_model.py",
+      "bytes": 27475,
+      "sha256": "f4a85b54b44d62ce47bc31d209ca79d0d327cc1044cf357f85a273e43af69e2b",
+      "git_sha": "0780b0c927e69b28976443080aa2a024137a621e"
+    },
+    {
+      "path": "datareader.py",
+      "bytes": 20850,
+      "sha256": "b0b0febd9f5fbe43662b6012bc760550dfbddb9ff79ed384024d90f8cea47ce5",
+      "git_sha": "84694a66400ca73bae62204dad9ba22c0e64f4e1"
+    },
+    {
+      "path": "environment.yml",
+      "bytes": 444,
+      "sha256": "4a4617b6477f31ed2305cad2d7018e305c18c66a29d5fbd80f9a29cb3f789303",
+      "git_sha": "79b3f4a8dfe046e2847a20f576598a9d0a8102dc"
+    },
+    {
+      "path": "estimater.py",
+      "bytes": 28716,
+      "sha256": "47cf561dfb41ad00f47a4cdd73dcb7a95844409c84e98f729f08e490aa3021f9",
+      "git_sha": "b3f1d276f2f580a101e90354117c41825f6d4cde"
+    },
+    {
+      "path": "fear_absolute_pose.py",
+      "bytes": 15709,
+      "sha256": "f04eeb325cf27199a8647b7e3e5da70a724a6976fface04c5b65786ed277eb89",
+      "git_sha": "37679c734f536b685c4cc29c7a17650e9329608b"
+    },
+    {
+      "path": "fear_anchor_pose.py",
+      "bytes": 14851,
+      "sha256": "4eabb5a959ddb979c4244a57b91957a15a0490b804516fa274ecb7a075796c94",
+      "git_sha": "10dc06424fa79ce4f1a2a3d713c5768296dc673f"
+    },
+    {
+      "path": "fear_depth_pose.py",
+      "bytes": 21816,
+      "sha256": "4ff050f30deb6aa48c19d2340402f3253a75fd212b43abaf5fbb7d0e2ca65555",
+      "git_sha": "da07fc57d02a4a88e57cd20f505b60747b4b5584"
+    },
+    {
+      "path": "fear_pose.py",
+      "bytes": 19795,
+      "sha256": "705ba99a208dfde41e56464f29fb065c0e3fa6be43b745e5e5ba9f47fdc92c7b",
+      "git_sha": "6593de9454ea22292cd8acd757078c4b0d01d104"
+    },
+    {
+      "path": "fear_tracker.py",
+      "bytes": 18094,
+      "sha256": "f6c8bff657d2314daa0a34b4d3351a3a995521cb6cb193504ed51c289fcbba54",
+      "git_sha": "7decac33b746e36b11d8bd746c63114727af92b5"
+    },
+    {
+      "path": "flow_pose.py",
+      "bytes": 18036,
+      "sha256": "4b23513efc334137bb65ccf25af03117f21ca0dd2bb793df4c47ddcfc16992a1",
+      "git_sha": "73ccf0ff0feb6dc52a3d98a86ebf57bd375254dd"
+    },
+    {
+      "path": "identity_continuity.py",
+      "bytes": 16640,
+      "sha256": "75aa0f01509d8a2455ac1443bc4da4d259bfcfbec75a094708577423a8893c06",
+      "git_sha": "e774f84260726ebcdbe7c765ae0c171f90abbc37"
+    },
+    {
+      "path": "identity_output.py",
+      "bytes": 8053,
+      "sha256": "20abfe5febda46273c182c566c5a1abbf179e3d05ce1a756b14927dc94c60b8e",
+      "git_sha": "c9d93e036ba75ab21d2518bfd9d1e80bffb131a0"
+    },
+    {
+      "path": "initialization_admission.py",
+      "bytes": 26827,
+      "sha256": "ee7c08d9f9ce2da7246e5256b43354e6ebeffa39f9bcc77833b8cf593af5f3c0",
+      "git_sha": "d19b5ad9d72c43c7043c2c46aa1703518c63d281"
+    },
+    {
+      "path": "initialization_session.py",
+      "bytes": 28039,
+      "sha256": "a66058f910910be534ce12d530c90d686c2dfaa1d4e9bca8fe0f6baee9e3cfe9",
+      "git_sha": "93e61dfccd38126ccc73f717b78193ecdbddcc62"
+    },
+    {
+      "path": "learned_features.py",
+      "bytes": 11708,
+      "sha256": "c07fde36f3b706d7fc15cdad6856df26ed49ccbc7723a2903c48f4e1b89c9888",
+      "git_sha": "61e5d528f33176bc9052fc2154b690dbafa445b1"
+    },
+    {
+      "path": "learned_pose.py",
+      "bytes": 9294,
+      "sha256": "72fee936cff30060d931b57674d8aaee9069b977565c25075f05c29136b2033b",
+      "git_sha": "9bb672987c935cabbfad0c8252f3bd21ffc2d3de"
+    },
+    {
+      "path": "learning/datasets/h5_dataset.py",
+      "bytes": 9820,
+      "sha256": "8c58f5e5033dfe021b5282caedfb80aba6900a6987848e06f1720892b5f0c160",
+      "git_sha": "a0f99b5d411972b208e8b92f042de6c8fb60e60d"
+    },
+    {
+      "path": "learning/datasets/pose_dataset.py",
+      "bytes": 4283,
+      "sha256": "27c5312108718611d7d82bb601e58d59b2c4f0b93b75ab02bee652e810a3e60e",
+      "git_sha": "8e76ee4645731128daad385879b738ff58eee9fc"
+    },
+    {
+      "path": "learning/models/network_modules.py",
+      "bytes": 4548,
+      "sha256": "29a4875a35150c662a3604e88a7f102d2fa4de9d026a8ee07151e09e788a2e26",
+      "git_sha": "a0e4246628fcf60ab7b1cc44bca789892ac59bc6"
+    },
+    {
+      "path": "learning/models/refine_network.py",
+      "bytes": 2849,
+      "sha256": "c024375d544352fbcb94698d792ec6fd017008ca5d093e71e747727ea59db709",
+      "git_sha": "c2e399efc309f36129ad0365c940de71df443f60"
+    },
+    {
+      "path": "learning/models/score_network.py",
+      "bytes": 2832,
+      "sha256": "6cea9a7683def72b92e8c8328884e48fb6ca057ff480efab6d1328686b3ce926",
+      "git_sha": "fbf362ec0f9d95d4ecbd00ef0d64c6d5d903f9e7"
+    },
+    {
+      "path": "learning/training/predict_pose_refine.py",
+      "bytes": 18975,
+      "sha256": "5a3a9425745cbbdd7f854b8627f9e5b3234a626f76fa74c7a70e1baedbfba369",
+      "git_sha": "c796d4d54adcec1e09154ea8b74ec6ee3033f149"
+    },
+    {
+      "path": "learning/training/predict_score.py",
+      "bytes": 10741,
+      "sha256": "d39afac3587810133340fc0779a98d583fc8c61c713628eb509a065163cc37c0",
+      "git_sha": "3fb49f2a9c052cb8d5988ebb833e2b3403124978"
+    },
+    {
+      "path": "learning/training/training_config.py",
+      "bytes": 2930,
+      "sha256": "da0e1265e9b4c35624b599029050631d62fb201ad6c838e3b4d26af99adc27b2",
+      "git_sha": "9d689c65da3fd03e9a32b5df332fcdd70af9c67d"
+    },
+    {
+      "path": "measured_motion_session.py",
+      "bytes": 22967,
+      "sha256": "22fc9aa4405ea011ef6d186541e90608beeaa512f3d257a2a89b438fe9947fdd",
+      "git_sha": "64803efaccd26ed745dbb0cf9b14d9ab59a53579"
+    },
+    {
+      "path": "meshless_initialization.py",
+      "bytes": 7105,
+      "sha256": "53321d24702344638022c8a64845c05caf359c051bfec3683737e576e375da0f",
+      "git_sha": "ae816b49aca95fc1eac78dc9dd283e4dcb4aebd8"
+    },
+    {
+      "path": "mycpp/CMakeLists.txt",
+      "bytes": 645,
+      "sha256": "53aee630d869187ba47addf86142e211361774096d2543e4017460937884fb8f",
+      "git_sha": "7c8a9a5cca867d327b7495d98c5cf13bd15fcbe7"
+    },
+    {
+      "path": "mycpp/include/Utils.h",
+      "bytes": 1132,
+      "sha256": "c5a9d3af06625c3bb966fcb514a71787964224aa546cfbbdaa7d5a71b303562a",
+      "git_sha": "41703f5b51039b47b2dfe863edde1b448cdff882"
+    },
+    {
+      "path": "mycpp/src/Utils.cpp",
+      "bytes": 744,
+      "sha256": "466878738286fd787038c28d80ea801ef4e6756d5e38e551b456b6f121a17d17",
+      "git_sha": "c1455d54b3fab9b602b1e68c4955001d6fc221b9"
+    },
+    {
+      "path": "mycpp/src/app/pybind_api.cpp",
+      "bytes": 1935,
+      "sha256": "8567ae667cfe7657414effdd9995a76680052b865b09a6d4e37f2034f3fe3730",
+      "git_sha": "6a415c317dcf7ac16d482d80d330b16a0f186e12"
+    },
+    {
+      "path": "pose_kalman.py",
+      "bytes": 6325,
+      "sha256": "af3f3e34753400c8ac7b9b64138a95e4e82c44b5555352eb1f5218b6260dd3e8",
+      "git_sha": "7557f60cb435b1a15d6b5f48d029a007e3d257a7"
+    },
+    {
+      "path": "pose_validity.py",
+      "bytes": 25212,
+      "sha256": "f0dfd6b25ec37d19f2b76db63c63abd9640b18f677488a8187409df2359bea45",
+      "git_sha": "772e863edb5b247b1ba37ea916f4a56e76cca012"
+    },
+    {
+      "path": "quarantined_recovery.py",
+      "bytes": 16593,
+      "sha256": "fff1e6f2f23616d1aabda1a04cd95e3fc1e82da29b0b25362eb24c4cfea181d4",
+      "git_sha": "027c9b0d66e5d413a5db35c4ff9d15473e65fac6"
+    },
+    {
+      "path": "relative_motion_refinement.py",
+      "bytes": 7974,
+      "sha256": "6d98879a1c757b3b84aca40b83146aab962cc8d332692285c03969bca870ec1f",
+      "git_sha": "eb013684ab8cd088fc88dd443ce5aaaf63c7dd7c"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 938,
+      "sha256": "943c5ef618210ce2d95aa8123a62f550d4a0a0080c6a32d5d542f1c0a291fa87",
+      "git_sha": "4759280e49e75ffc8984b96966f762c49f853504"
+    },
+    {
+      "path": "rgbd_seed.py",
+      "bytes": 36491,
+      "sha256": "c45e53bc76f31559a7e35fb54831f5b59b353dd1891f29460cc31c51e5c388b9",
+      "git_sha": "9201d20aca5bf9f6fd6db9e8880ab55eb7639cd5"
+    },
+    {
+      "path": "robust_pose.py",
+      "bytes": 28117,
+      "sha256": "36e8623c62f4cadefefaad4c6692dbd2cf7777d83bd4c004508615112e845506",
+      "git_sha": "87a6987b565f831b774ecccc41b1fb5dee96904d"
+    },
+    {
+      "path": "stage_profiler.py",
+      "bytes": 6699,
+      "sha256": "63fc0948e056efa21b468bb6bdd58ed231b837e258b0eed5c1ff848f021e12ec",
+      "git_sha": "c2276c09f3bebfe61fd9e1eac7d2ca868b1677bb"
+    },
+    {
+      "path": "tentative_tracking.py",
+      "bytes": 13010,
+      "sha256": "7e749fe00d7870c38750a366b68042294737b60bbc0edc40616ea4ccfec95c11",
+      "git_sha": "a87627a602061b55968df5e87c21cd635ec765cd"
+    },
+    {
+      "path": "tests/test_identity_output.py",
+      "bytes": 7136,
+      "sha256": "73ffddabb2dfa3c785211ed78c54ccfd7540680390f94c8744d5cc9d13f41f6c",
+      "git_sha": "952397fb400652f0fd896273b9ccfd4059fb5480"
+    },
+    {
+      "path": "tests/test_identity_output_entry.py",
+      "bytes": 7808,
+      "sha256": "a9939abb27c63460753c3c90fb35ad157062ddb74d625cacff0bdc7e8f3328c5",
+      "git_sha": "36e46b24fa55e43dca3c3f3d6de036affdb6cf7c"
+    },
+    {
+      "path": "tests/test_measured_motion_session.py",
+      "bytes": 12371,
+      "sha256": "bada642809908b621e1f2e9925220a8d57b7b6eb9dd790f5c1b70f64c162f2f6",
+      "git_sha": "b9afcc0b92f739294a780721df877d69afaae232"
+    },
+    {
+      "path": "tests/test_preloss_offline_entry.py",
+      "bytes": 27632,
+      "sha256": "cb8a5c66f423747f2015f65fc6808b170caf5bb8f022f87416f814407d379e67",
+      "git_sha": "c2ffd1ac078ddd00f3f7bf73de64166430d34406"
+    },
+    {
+      "path": "third_party/sam2/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "git_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "third_party/sam2/LICENSE_cctorch",
+      "bytes": 1566,
+      "sha256": "687d4f65ffe399358b170e22572564a16689e496f85a79dc5385fccf6bbc9558",
+      "git_sha": "23da14a65aad4c5bac18061b80ae6040bb7d2c8c"
+    },
+    {
+      "path": "third_party/sam2/MANIFEST.in",
+      "bytes": 254,
+      "sha256": "969fc588abbd8d84b1e2b055eafd46573a317647d86c796a1e062983e17f9f33",
+      "git_sha": "794311fd9854453b134c828c0cb241a7cfdbfc65"
+    },
+    {
+      "path": "third_party/sam2/README.md",
+      "bytes": 16249,
+      "sha256": "eea69ee1042fb30933c5ca5019fbf0f6f9366cec5e792109281b5023a4f1589c",
+      "git_sha": "85a7eb958bced5495ff990c2bcbe7d99662c660f"
+    },
+    {
+      "path": "third_party/sam2/pyproject.toml",
+      "bytes": 120,
+      "sha256": "c58230f78769620dcd11d15824d491b049be8f542eeb875d2e8091be797ec3f3",
+      "git_sha": "f84317dbbfa6ba4f2d972cab2e2e0d0bdf07f003"
+    },
+    {
+      "path": "third_party/sam2/sam2/__init__.py",
+      "bytes": 395,
+      "sha256": "b87ca1e95cd54b81766e8c74acf0e937952639529e40d2b4088693286f49419e",
+      "git_sha": "0712dd03cb280ab94ba04f8a32aa8ddc8aa3db4a"
+    },
+    {
+      "path": "third_party/sam2/sam2/automatic_mask_generator.py",
+      "bytes": 18461,
+      "sha256": "66df266dbe14412305ae3398f0ec1bb21b303a93216b102d767e6c4ee5d4c3d7",
+      "git_sha": "065e469e27c2d3af40d51d072031e828692c799b"
+    },
+    {
+      "path": "third_party/sam2/sam2/benchmark.py",
+      "bytes": 2811,
+      "sha256": "9b7a3506b88842ec09031fb7cd0fc1d3fed82e137ce06dbca10495e6c180dda9",
+      "git_sha": "6519534c8619e04b9a632859a5128ad2cee34c13"
+    },
+    {
+      "path": "third_party/sam2/sam2/build_sam.py",
+      "bytes": 6405,
+      "sha256": "856d64d71e44407401297b551884fb4cd1aba8082de0ff5fc60fac3dd42f094d",
+      "git_sha": "3a3bef1e566d86c3ba0fd75f425530bc6505e9bf"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_b+.yaml",
+      "bytes": 3548,
+      "sha256": "644d1a9aaa7e14183802246dee4f43627e067d77dd89f1f40d83657db18d038b",
+      "git_sha": "0f435af02fc88e2d3b7bff06f8cf8013cc079c24"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_l.yaml",
+      "bytes": 3696,
+      "sha256": "0ee9f2037fd98489212bb0b78a56f33ac82eb177cf5e52c88be3714cb84eea26",
+      "git_sha": "1092802b1d24be6fedf78939f45b0d021d4ec560"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_s.yaml",
+      "bytes": 3659,
+      "sha256": "20e0ade957a4ab5e8138c93c346a8d8965c0b00d1a05fa0e79ce477985904188",
+      "git_sha": "174e414f1467d80e94a34e9525dc373058f8caaa"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2/sam2_hiera_t.yaml",
+      "bytes": 3753,
+      "sha256": "33399c73cd13bbc3d0c1cea843fa2fc255fdb20139fe07f042743e046ac46b6b",
+      "git_sha": "121447aabd5318fac20efc2bc00d7c406ca26f01"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml",
+      "bytes": 3650,
+      "sha256": "37d6c56b07a7f8d08baaa314315c60dc3aabe2edc66cd92bac6d1ed50038e788",
+      "git_sha": "d7172f9b0b663aaaace97fed7e2a08db75150461"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_l.yaml",
+      "bytes": 3798,
+      "sha256": "1dbd6cb6dfebeaf588c7006ee222c6efbfa9049a7ad472a3cdfb2f5d919e8107",
+      "git_sha": "23073ea7a95901be656b3c6d1a66ce8736ab7ad3"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_s.yaml",
+      "bytes": 3761,
+      "sha256": "0f36b91e86e58d06c87e42997166212468b88b98b60e4d816d5e4d4d088b6f55",
+      "git_sha": "fd8d40465b18b3de39b0a565aca712306306c4ed"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2.1/sam2.1_hiera_t.yaml",
+      "bytes": 3855,
+      "sha256": "f932eac1c6241e910031b2f000a81cd9f8a8d4896e2277ab5ffb721f378b188d",
+      "git_sha": "e762aec932f26436d13798f3feb3ec82c360a943"
+    },
+    {
+      "path": "third_party/sam2/sam2/configs/sam2.1_training/sam2.1_hiera_b+_MOSE_finetune.yaml",
+      "bytes": 11256,
+      "sha256": "d96919e157527116c3a80c6ec961151bda98e5eb988ae4dd85be6e7efbd2b51f",
+      "git_sha": "9b6faa79f47ee576faf007bffd23fb6649bd881d"
+    },
+    {
+      "path": "third_party/sam2/sam2/csrc/connected_components.cu",
+      "bytes": 7808,
+      "sha256": "926c277e24f40609622bb4ce49912838d1c799e63edcccc1c75e65e701acd497",
+      "git_sha": "ced21eb32eaaadb818d441c1322b99d1bf068f45"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/__init__.py",
+      "bytes": 197,
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa",
+      "git_sha": "5277f46157403e47fd830fc519144b97ef69d4ae"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/backbones/__init__.py",
+      "bytes": 197,
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa",
+      "git_sha": "5277f46157403e47fd830fc519144b97ef69d4ae"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/backbones/hieradet.py",
+      "bytes": 10003,
+      "sha256": "03785581ca304d0451ae0df7a08ee0bf1e1dbe66fad285066e6b9ffc0d88d64f",
+      "git_sha": "19ac77b61d8e1345a301686d39ef2ab6e4b035fb"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/backbones/image_encoder.py",
+      "bytes": 4706,
+      "sha256": "16eaad232220386f510ca8dfab8655e63699977149a4daf9ce9c6f374e6777a9",
+      "git_sha": "37e9266bc98596e97ca303118c910ed24f6cee2c"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/backbones/utils.py",
+      "bytes": 3007,
+      "sha256": "c4a0657db2a92bda2a7ff116cd4017f6b1c59af6408093d8874eb08a0df476ad",
+      "git_sha": "930b1b7622e7b0e7270120dcafccc242ef0f4f28"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/memory_attention.py",
+      "bytes": 5509,
+      "sha256": "07358cb7f58ec3788e88ff4e6415f8a9d628a3963529d6e2c915494a5347c8e2",
+      "git_sha": "0b07f9d87e3d8194ca5e11fc20f01604d591a59d"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/memory_encoder.py",
+      "bytes": 5657,
+      "sha256": "73f7089ae5fdacdfcaaf3deca1ca6d9f84d89e7deb9cf97589622a9ef17ba42f",
+      "git_sha": "f60202dfaba87232c3870fb2101b5322a119d985"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/position_encoding.py",
+      "bytes": 8980,
+      "sha256": "b51404718c0d38f381293c8e5e00a15d129651b7f09b1158002d8974a30967b5",
+      "git_sha": "2241d4cf1a4495b4c67dc35cbed1c606357b9b7a"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/sam/__init__.py",
+      "bytes": 197,
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa",
+      "git_sha": "5277f46157403e47fd830fc519144b97ef69d4ae"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/sam/mask_decoder.py",
+      "bytes": 12657,
+      "sha256": "ca3523c58365574faddf1bfb54f374e4b4beba05127185ea2b17d22b916e099a",
+      "git_sha": "9bebc0366b2703ffcb80a44bfd19cce8339b4fed"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/sam/prompt_encoder.py",
+      "bytes": 7541,
+      "sha256": "4965ccb4a4504aa4d7246b2ad66ffeacd2626415c86a261dc1c65ffd8ae1d40d",
+      "git_sha": "c57876264b51f8c5236867359350e32d590efcb5"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/sam/transformer.py",
+      "bytes": 10761,
+      "sha256": "cda19052331e775190ce8b1159efcb828a4632d931a6d8bd4d47109f121782f1",
+      "git_sha": "f9fe9a3fbc5cce4f1abe8ee0ae3a8602bbe2ff1b"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/sam2_base.py",
+      "bytes": 46983,
+      "sha256": "69a46b44e8625f509791352bd09beaafe589cd7d872721384e63d37f9fdc6e41",
+      "git_sha": "d9f4e515b0d161942bf2bb64560056b3efbe6dac"
+    },
+    {
+      "path": "third_party/sam2/sam2/modeling/sam2_utils.py",
+      "bytes": 13173,
+      "sha256": "e35bbf13bc2e544a0272cd3f9539af38a752676ac3cd744be31cd8220afee804",
+      "git_sha": "e16caae3a9a49e451b2d03d1ee60c47f8e9ed23c"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_hiera_b+.yaml",
+      "bytes": 3548,
+      "sha256": "644d1a9aaa7e14183802246dee4f43627e067d77dd89f1f40d83657db18d038b",
+      "git_sha": "0f435af02fc88e2d3b7bff06f8cf8013cc079c24"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_hiera_l.yaml",
+      "bytes": 3696,
+      "sha256": "0ee9f2037fd98489212bb0b78a56f33ac82eb177cf5e52c88be3714cb84eea26",
+      "git_sha": "1092802b1d24be6fedf78939f45b0d021d4ec560"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_hiera_s.yaml",
+      "bytes": 3659,
+      "sha256": "20e0ade957a4ab5e8138c93c346a8d8965c0b00d1a05fa0e79ce477985904188",
+      "git_sha": "174e414f1467d80e94a34e9525dc373058f8caaa"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_hiera_t.yaml",
+      "bytes": 3753,
+      "sha256": "33399c73cd13bbc3d0c1cea843fa2fc255fdb20139fe07f042743e046ac46b6b",
+      "git_sha": "121447aabd5318fac20efc2bc00d7c406ca26f01"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_image_predictor.py",
+      "bytes": 19937,
+      "sha256": "f13e5f9d94e5c8d9d2c3622dab20c8f334c089ef2ee5ea8e199da7d332b029ba",
+      "git_sha": "41ce53af5924504c07216df52b2d2eefaeec7ae9"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_video_predictor.py",
+      "bytes": 58921,
+      "sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2",
+      "git_sha": "5a7e1a01c4d6e89db0453ce982ea8a31b16651c8"
+    },
+    {
+      "path": "third_party/sam2/sam2/sam2_video_predictor_legacy.py",
+      "bytes": 58777,
+      "sha256": "e0c054112f21bfa63620f2026c8bb2e0f4e284b138d09426a08d39f2e882c3f2",
+      "git_sha": "c7e01ccf972491904b013526333826b337354db1"
+    },
+    {
+      "path": "third_party/sam2/sam2/utils/__init__.py",
+      "bytes": 197,
+      "sha256": "34bd8069c54764e7b8d73a78905dbe6467140a2f73170875128f6ca4d8cdd0aa",
+      "git_sha": "5277f46157403e47fd830fc519144b97ef69d4ae"
+    },
+    {
+      "path": "third_party/sam2/sam2/utils/amg.py",
+      "bytes": 12842,
+      "sha256": "b7b33090e2af72e04dbb815c8f32aff41a4ed1abf9668f62b59f1bdd640ca5d8",
+      "git_sha": "986842960cf5deca00614b7b1cde1ab77dad7e6e"
+    },
+    {
+      "path": "third_party/sam2/sam2/utils/misc.py",
+      "bytes": 13090,
+      "sha256": "01600c01c161cd079d7106fb1d4da845cf91aa31ab2bcecaf8cb151b6d6d20a2",
+      "git_sha": "b65ee825732ff85137805be650edd4cbe8e6f6d4"
+    },
+    {
+      "path": "third_party/sam2/sam2/utils/transforms.py",
+      "bytes": 4885,
+      "sha256": "ba3a64f4600c62f209206a6df3b40e3fcf133edae32fad658831bb0c2a6d1146",
+      "git_sha": "cc17bebfab104b659c5469e8434cf357ae7e24b6"
+    },
+    {
+      "path": "third_party/sam2/setup.py",
+      "bytes": 5051,
+      "sha256": "9ca49a33def161d2cafa56ddef744178fa56d3219242bd8b69909904c2e63dff",
+      "git_sha": "78a634cddb19615c45601681ffbcd1f29af66f47"
+    },
+    {
+      "path": "tools/generate_click_mesh.py",
+      "bytes": 14536,
+      "sha256": "2dc8e09815abf5bc84c15d84c2878869ef687317a9a5142c13b357cde5e9ac63",
+      "git_sha": "b7affa4cb1b5885bf674e34a1050170e4e101095"
+    },
+    {
+      "path": "tools/preloss_anchor_support.py",
+      "bytes": 15144,
+      "sha256": "2602f2adbff491d4a077559559aa1624e58415dc2c83bbc30f059597000b7f97",
+      "git_sha": "5bb3053d0eda12dfeb3eed6e9de0c37cba2ababb"
+    },
+    {
+      "path": "tools/preloss_measured_anchors.py",
+      "bytes": 27629,
+      "sha256": "2a384476dc06ef1519afdaa8278559fa27475dce53550dfab1dcade3bf690e0d",
+      "git_sha": "70dd9f9e1965640a8706bee1ebdee870c15c4829"
+    },
+    {
+      "path": "tools/prepare_bop_click_frame.py",
+      "bytes": 14554,
+      "sha256": "e741e04679488d611ac60a7dca2a7c2bd86564402ff432880cb91c445222398a",
+      "git_sha": "4ef77e88b07fdd6042f8446faefcdf43da35d8a8"
+    },
+    {
+      "path": "tools/run_click_to_model.py",
+      "bytes": 54728,
+      "sha256": "48640770bafbcce2f8f787949d1a57b70d2a198f18ad6815c02cb35bed3a18ae",
+      "git_sha": "359981d8d5a84b3782c97ec401c7286a360a012a"
+    },
+    {
+      "path": "tools/run_meshless_click_to_model.py",
+      "bytes": 20949,
+      "sha256": "f9ebeae584542c8d982dc1e7b804c0a7c1ed699717849ef6ac4890a8a9deb637",
+      "git_sha": "13ca5119e04a6a9aaa062d7ed7cc6ced79d0f53a"
+    },
+    {
+      "path": "tools/tapnext_stream.py",
+      "bytes": 19714,
+      "sha256": "803f5c0d0fa57b3bd87523215479109bc76cf3fe5e920c0d8bb9a60b4c586cdd",
+      "git_sha": "65bd9d7785308b85672ddc552aae2ac3a1f80706"
+    },
+    {
+      "path": "tools/tentative_point_motion.py",
+      "bytes": 24063,
+      "sha256": "f855f8bffe195bc7b75ef64dce14f71ad68d0f12a21ea46e5541bc8db2638c24",
+      "git_sha": "52ec7f8988d72db7c47ec0dad7fc1c3a42b8e277"
+    },
+    {
+      "path": "trusted_view_seed.py",
+      "bytes": 17932,
+      "sha256": "ae410cac19d8218ea8cd06bea7c38a378ad6cf75bae444fbc17d149dd426262d",
+      "git_sha": "bd266d22c727a0012a597945335c0d1bdabc0558"
+    }
+  ],
+  "source_payload_count": 107,
+  "source_payload_bytes": 1346589,
+  "preparation_manifest_sha256": "eef959e53c73289f3a2249b1f8b15ef0013c4ff7f72c7f304627effd18123d28",
+  "preparation_receipt_sha256": "3628afa6ff1120d4ba4f48e0c738143dae9f149f5aaf00b3edffa8b1d2b8cfc0",
+  "raw_online_audit_sha256": "e18a15200182281fb4a3685c2034a7596781303ffd5a8eebd0f7c925c28f6ae9",
+  "root_checks": {
+    "all_98_live_source_bytes_equal": true,
+    "five_official_additions_exact": true,
+    "all_106_manifest_files_exact": true,
+    "wheel_record_entries_verified": 44,
+    "wheel_python_exact": 25,
+    "wheel_yaml_exact": 13,
+    "wheel_license_exact": 2
+  },
+  "clean_install_verified": false
+}
