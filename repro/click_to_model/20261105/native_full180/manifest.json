@@ -1,0 +1,33 @@
+{
+  "schema": "native_full180_public_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 4650,
+      "sha256": "05c0653632955d1481b0f14daaba9f76f45a45fc3fc1c9e9a3675208ea4b0070"
+    },
+    "paired_transitions.csv": {
+      "bytes": 13329,
+      "sha256": "8cc0fd4bd1ea8b5a3a84757bb0f6869bcdd972a5e715f66973d1ebf1060ab9ec"
+    },
+    "phase_paired_transitions.csv": {
+      "bytes": 13516,
+      "sha256": "9e8fef277706dd210431b349aafb66bcfb516b31675e429e0f9b58047ae10161"
+    },
+    "phase_thresholds.csv": {
+      "bytes": 39522,
+      "sha256": "bbdad99c2d94e25290733f744518b7044d1d434ec69ba90e9a2a5d1d0f13f0f4"
+    },
+    "sources.json": {
+      "bytes": 4294,
+      "sha256": "eb81975469e5a9487c4bac370d2831c950cfd3f2d5dee7daf0fcc6c900180fa8"
+    },
+    "summary.json": {
+      "bytes": 90325,
+      "sha256": "4ca8ed02a86e4bd42e82015ed768793a8e341fd9f2bc5f99c1b67544beb4e26a"
+    },
+    "thresholds.csv": {
+      "bytes": 40226,
+      "sha256": "56f263a6e15f929f84d9e76a0bd6616c65668fca591b6b9e8a94e3ea0cd3e98a"
+    }
+  }
+}

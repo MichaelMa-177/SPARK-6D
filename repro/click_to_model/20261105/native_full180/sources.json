@@ -1,0 +1,99 @@
+{
+  "schema": "native_full180_public_sources/1",
+  "files": {
+    "posthoc_receipt": {
+      "bytes": 35830,
+      "sha256": "35388e2e5f76e821c9205c7f6bc245499b83cd1a145e92c7ba52c06df30b88cf"
+    },
+    "posthoc_comparison": {
+      "bytes": 603807,
+      "sha256": "b30050ad8ba096e9769697d2f21e55e46079394a3dd184bf33595b26889beb48"
+    },
+    "posthoc_frozen_plan": {
+      "bytes": 41576,
+      "sha256": "c3c548a75ce01dd77f04b5815e00099d73ed2349e36080a5ae43c80b71e75fdf"
+    },
+    "native_raw_receipt": {
+      "bytes": 6148747,
+      "sha256": "9246bffd3f746c1d8e3cd943a0378b8955aa0e0f68d5606fcaaccbfd71941dbe"
+    },
+    "baseline_raw_receipt": {
+      "bytes": 3523732,
+      "sha256": "e18a15200182281fb4a3685c2034a7596781303ffd5a8eebd0f7c925c28f6ae9"
+    },
+    "actual_initialization_pairing": {
+      "bytes": 130242,
+      "sha256": "6dfd9d592455ca51b70a4587c38a2a7e137d10fc8b15ad50f2ced08fed4f5b79"
+    },
+    "actual_native_intervention": {
+      "bytes": 740518,
+      "sha256": "b3b4819034506d0de35fb03a4dd4620d9b27e8d12d25cfc46a4899fc3135dbc6"
+    },
+    "preserved_cache_v1_raw_review": {
+      "bytes": 7162,
+      "sha256": "e7f6de9d23231e5351a3a968ae187078483afebb02a36ec101d74cfaf5b2e903"
+    },
+    "cache_fix_independent_review": {
+      "bytes": 12096,
+      "sha256": "99ebbfe3c3027ef19cfba6f60a185662fff64f6e8d52e1cdf2f443f635f8ab04"
+    },
+    "main_paired_counts": {
+      "bytes": 84178,
+      "sha256": "07c122a373f152268ba13306f223852ffe24a913bc51635e7fe0e8c986a80491"
+    },
+    "phase_paired_counts": {
+      "bytes": 84365,
+      "sha256": "2f699f9aad630befcdafd49b4f3f15891e9ba9b528054b2f8f4b23d811dad28e"
+    },
+    "native_raw_frames": {
+      "bytes": 161244,
+      "sha256": "7ada3980bfede49e0acd745107dd784a02a93d34ee88cf13fd6d922abde784ce"
+    },
+    "native_raw_callbacks": {
+      "bytes": 17579,
+      "sha256": "cd66e6ad73b904b52db29460a25283fa743e9c5c198c559c45e6fc8018aae6eb"
+    },
+    "baseline_online_scalar_rows": {
+      "bytes": 246020,
+      "sha256": "34084612e1b2ed79e113fec237a8d48822ff884de16366748cd3c8871be13bf0"
+    },
+    "baseline_online_actual_publication": {
+      "bytes": 207865,
+      "sha256": "227d464163381cb117b9f465ec5dc219d35ed67eb65fbaf760b93ad8f88cf782"
+    },
+    "baseline_online_posthoc_summary": {
+      "bytes": 266646,
+      "sha256": "b62ae20583ff56188a604e03f89d4cc93b5cbdc4337106639692e600a7c340af"
+    },
+    "native_full180_scalar_rows": {
+      "bytes": 246067,
+      "sha256": "c49e0a73567f67118e23adafa6b2da3cd3983445025811a40df7e17c69cb1210"
+    },
+    "native_full180_actual_publication": {
+      "bytes": 210364,
+      "sha256": "f6c5f7d80d7df7dddc9f5417c79574feda3936bdc388866e9826c8553ff874af"
+    },
+    "native_full180_posthoc_summary": {
+      "bytes": 266007,
+      "sha256": "b49bdd266b2c97767d626a969d2d4e5ba39200ef8e07d9a4ae9fc2ad8a5936bf"
+    }
+  },
+  "export_script_sha256": "2211d346ebe80006ffe5c275a598f83632972a2bbc132ebbff14b864e3baf253",
+  "source_and_input_pins_before_after_unchanged": true,
+  "inherited_truth_pin": {
+    "bytes": 263706,
+    "sha256": "fd746e948ce62040a9740a9890d9fb87f63d65d45f5be0ffc82e53f6353ee1f0"
+  },
+  "truth_mesh_images_weights_or_raw_pose_arrays_read_by_this_export": false,
+  "scalar_GT_derived_error_rows_read_for_aggregation": true,
+  "scientific_source_pins": {
+    "20261027_preloss_translation_support_posthoc_v1/host.py": "96a1b08f09f662305c3e15a20801a1ae2fa8f38d805780b95e3d2bd0abcbc7a0",
+    "20261027_multiframe_same_mesh_identity_posthoc_v1/host.py": "4d5108ccd85a1015972e47c87cb07a165bc6949f36aa37c06fbe99770d3ccf97",
+    "20261027_multiframe_same_mesh_identity_posthoc_v1/identity_metrics.py": "d2ae2e965c4eb93b486a0478164623cd9302e2a0d8ed60aa2ce8c8606fa6d5f5",
+    "20261027_identity_continuity_output_posthoc_v1/arrays.py": "60295faa95c72e84c8a186aa602f447403ccdf857f1654d4e0165240567501aa",
+    "20261027_continuous_posthoc_design_v1/metrics.py": "0fa0305375df5ed5a80ca4e35626acce8cc2e77a7bd9be206e4156deb1cdbf7a",
+    "20261026_tless_posthoc_design_v1/evaluator.py": "10a3a2416483394a4b7817b34db4203cbfc248907278ecef6635d0cc67d32ddf",
+    "20261105_native_full180_posthoc_v1/host.py": "e55a965b1ef77855ba93ac974731b66f8fdae822e6eba7117efbb3bb415da262"
+  },
+  "output_prefix": "repro/click_to_model/20261105/native_full180_aggregates/"
+}
