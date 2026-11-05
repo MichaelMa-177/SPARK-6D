@@ -1,0 +1,230 @@
+{
+  "schema": "native_real180_control_guard_numeric_summary/1",
+  "case": "ycbv_000054_obj000019",
+  "control": {
+    "current_gate": {
+      "current_permissions_replayed": 362,
+      "publications_replayed": 180,
+      "published_inputs": 174,
+      "abstained_inputs": 6,
+      "published_tracking": 173,
+      "abstained_tracking": 6,
+      "all_saved_decisions_and_arrays_exact": true,
+      "all_seven_trust_flags_false": true
+    },
+    "native": {
+      "callbacks": 362,
+      "committed_updates": 9,
+      "final_holder_version": 9,
+      "gradient_proposals": 15,
+      "gradient_rejections": 6,
+      "no_gradient_frames": 164,
+      "qualified_callbacks": 32,
+      "refused_callbacks": 330,
+      "refusal_reasons": {
+        "insufficient_disjoint_surface": 324,
+        "current_candidate_permission_absent": 6
+      },
+      "current_permission_refused_callbacks": 6,
+      "all_actual_effective_returns_bound_to_saved_poses": true,
+      "holder_t_plus_one_chain_valid": true,
+      "original_model_integrity_is_runtime_assertion": true
+    },
+    "temporal_counts": null,
+    "comparison": {
+      "visible_initialization_inputs_exact": true,
+      "visible_trajectory_state_exact": false,
+      "visible_trajectory_state_different": 315,
+      "control_migration_exact": false,
+      "trajectory_equality_required_for_raw_pass": false
+    },
+    "latency_descriptive": {
+      "tracking_count": 179,
+      "tracking_sum_seconds": 175.81079768479685,
+      "tracking_mean_seconds": 0.9821832272893679,
+      "parent_wall_seconds": 205.6245406329981,
+      "CPU_raw_audit_may_overlap_other_serial_GPU_cases": true
+    },
+    "raw_receipt_sha256": "c2aaf2cc7bd65c7caee4b74f7d3bf748dff54c7c7dd671ef729f0db63a4ca243",
+    "source_and_terminal_pins": {
+      "raw_script": {
+        "bytes": 18903,
+        "sha256": "4f544bd1af2baff2bf564f3126ae89c2790571ff41240305aab8692c05526db1"
+      },
+      "raw_helper": {
+        "bytes": 19846,
+        "sha256": "29c89e1215e743489b6b920780bb428075da1eaa0e8baf5ee03288ec8c7c23be"
+      },
+      "execution": {
+        "bytes": 780,
+        "sha256": "29e15e60016dd96509dc8acc5f86590a981d6b5f4467cd8a0d7b86199740d163"
+      },
+      "integration": {
+        "bytes": 158525,
+        "sha256": "498c2361346920492488141d88525c3a53795b7ec0299b7bccdc4f52284994be"
+      },
+      "frozen_plan": {
+        "bytes": 2506053,
+        "sha256": "425e4a616f9dfb802a4f3eb43f3b267cd5d56aace622412534668dd0c265aaf4"
+      },
+      "pairing": {
+        "bytes": 1374799,
+        "sha256": "e63df40fc0cdb6743f30d5a141c99244f21e173731942fb554a8494d1760d026"
+      }
+    }
+  },
+  "guard": {
+    "current_gate": {
+      "current_permissions_replayed": 362,
+      "publications_replayed": 180,
+      "published_inputs": 174,
+      "abstained_inputs": 6,
+      "published_tracking": 173,
+      "abstained_tracking": 6,
+      "all_saved_decisions_and_arrays_exact": true,
+      "all_seven_trust_flags_false": true
+    },
+    "native": {
+      "callbacks": 362,
+      "committed_updates": 8,
+      "final_holder_version": 8,
+      "gradient_proposals": 15,
+      "gradient_rejections": 7,
+      "no_gradient_frames": 164,
+      "qualified_callbacks": 32,
+      "refused_callbacks": 330,
+      "refusal_reasons": {
+        "insufficient_disjoint_surface": 324,
+        "current_candidate_permission_absent": 6
+      },
+      "current_permission_refused_callbacks": 6,
+      "all_actual_effective_returns_bound_to_saved_poses": true,
+      "holder_t_plus_one_chain_valid": true,
+      "original_model_integrity_is_runtime_assertion": true
+    },
+    "temporal_counts": {
+      "native_packets": 2158,
+      "measured_packets": 3143,
+      "causal_array_checks": 1587,
+      "refused_callbacks": 330,
+      "refused_callbacks_with_zero_private_calls": 330,
+      "qualified_callbacks": 32,
+      "available_surface_current_bindings": 32,
+      "current_permission_refused_callbacks": 6,
+      "causal_structure_checks": 1103,
+      "unqualified_callbacks": 330,
+      "native_callbacks": 362,
+      "committed_updates": 8,
+      "max_snapshot_tensor_bytes": 1656966,
+      "max_prepared_cache_tensor_bytes": 3311232,
+      "max_cache_plus_staged_snapshot_tensor_bytes": 3311232,
+      "history_checks": 2,
+      "history_private_forward_calls": 4,
+      "empty_history_frames": 7,
+      "history_rejected_checks": 1,
+      "history_veto_frames": 1,
+      "gradient_proposals": 15,
+      "current_accepted_proposals": 9,
+      "current_rejected_proposals": 6,
+      "final_holder_version": 8,
+      "no_gradient_frames": 164,
+      "publications_replayed": 180,
+      "current_permissions_replayed": 362
+    },
+    "comparison": {
+      "visible_initialization_inputs_exact": true,
+      "visible_trajectory_state_exact": false,
+      "visible_trajectory_state_different": 1069,
+      "control_migration_exact": null,
+      "trajectory_equality_required_for_raw_pass": false
+    },
+    "latency_descriptive": {
+      "tracking_count": 179,
+      "tracking_sum_seconds": 181.2589422230376,
+      "tracking_mean_seconds": 1.0126197889555173,
+      "parent_wall_seconds": 228.7591547579941,
+      "CPU_raw_audit_may_overlap_other_serial_GPU_cases": true
+    },
+    "raw_receipt_sha256": "4802a46635dfcba80c05c3ab0870e3518b8fd2e132c5e2bde395fd60f0f6d138",
+    "source_and_terminal_pins": {
+      "raw_script": {
+        "bytes": 18903,
+        "sha256": "4f544bd1af2baff2bf564f3126ae89c2790571ff41240305aab8692c05526db1"
+      },
+      "raw_helper": {
+        "bytes": 19846,
+        "sha256": "29c89e1215e743489b6b920780bb428075da1eaa0e8baf5ee03288ec8c7c23be"
+      },
+      "execution": {
+        "bytes": 778,
+        "sha256": "3ae6b48df6771a4f2afe20d3912379d300729eb23b9d63f8b38825dde1fbf60a"
+      },
+      "integration": {
+        "bytes": 158523,
+        "sha256": "296e6734a11ae1c9ac746c3b5fbd1aa8e42baf63dc41230b689e6e1c9b1dbb67"
+      },
+      "frozen_plan": {
+        "bytes": 2506053,
+        "sha256": "425e4a616f9dfb802a4f3eb43f3b267cd5d56aace622412534668dd0c265aaf4"
+      },
+      "pairing": {
+        "bytes": 1374804,
+        "sha256": "0cd3797f04785b12f85ad33d633787756daf845f262f05f3e9339c3721fb0207"
+      }
+    },
+    "temporal_coverage_summary": {
+      "coverage_counts": {
+        "no_gradient_unqualified_frame": 164,
+        "empty_history": 7,
+        "current_shadow_rejected_before_history": 6,
+        "checked_history": 2
+      },
+      "frames_with_history_check": 2,
+      "frames_without_history_check": 177,
+      "cache_budget_refusals": 0,
+      "replay_derived_clear_counter_before_final_cleanup": 495,
+      "clear_counter_derivation": "Initial epoch clear + each refused callback + each not-fully-qualified frame + any cache-budget refusal, as replayed by the causal audit. Publication omission empties staged cache without incrementing this source counter. No final close event exists.",
+      "max_committed_cache_entries": 2,
+      "max_committed_cache_tensor_bytes": 3311232
+    }
+  },
+  "observed_effects": {
+    "schema": "native_real180_control_guard_observed_effects/1",
+    "status": "completed_after_both_raw_gates",
+    "case": "ycbv_000054_obj000019",
+    "input_denominator": 180,
+    "tracking_denominator": 179,
+    "comparison": "bitwise exact; no tolerances or pose/holder repair",
+    "candidate_pose_frames_different": 6,
+    "publication_availability_frames_different": 0,
+    "jointly_published_frames": 174,
+    "jointly_published_pose_frames_different": 6,
+    "complete_publication_policy_rows_different_after_exact_epoch_normalization": 6,
+    "prepared_holder_signatures_different": 101,
+    "zero_observed_effect_on_saved_poses_publications_and_holders": false,
+    "script": {
+      "bytes": 4878,
+      "sha256": "c7d7ee7e4a0554ddf949fb7bebd43dc205bb138ee40cf24bd36463a633a90d76"
+    },
+    "normalization": "Only decision.epoch_id in each of 180 output_policy frame rows, after exact equality to that declared product path. No hash/numeric/other metadata normalization.",
+    "limitations": [
+      "Holder equality uses recorded version and head signatures; no original weights reloaded.",
+      "This records changes, not whether changes are more accurate. No GT, held-out or speed inference.",
+      "Zero observed effect here covers saved poses, publication decisions and holder signatures; full original neural state is not independently recomputed."
+    ],
+    "GT_read": false,
+    "GPU_run": false,
+    "all_read_artifacts_bound_to_completed_raw": true
+  },
+  "control_relocation": {
+    "raw_nonidentical_records": 315,
+    "additional_named_secondary_elapsed_differences": 315,
+    "remaining_scientific_differences": 0,
+    "original_record_preserved": true,
+    "classification": {
+      "bytes": 74621,
+      "sha256": "2fdf5948dc7c92bf9b5004935cb5c9c41b874262be7252b57347c28d2ea073cf"
+    }
+  },
+  "GT_read": false
+}

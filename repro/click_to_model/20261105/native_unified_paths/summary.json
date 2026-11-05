@@ -1,0 +1,100 @@
+{
+  "schema": "native_unified_aggregate_summary/1",
+  "status": "two_functional_paths_completed_and_minimally_verified",
+  "cases": [
+    {
+      "case": "existing_mesh",
+      "actual_run_completed": true,
+      "verification_status": "PASS_CAD_visible_initialization_pose_publication_pairing",
+      "inputs_completed": 30,
+      "tracking_frames_completed": 29,
+      "registration_masks": 3,
+      "registration_candidates": 756,
+      "native_callbacks": 45,
+      "committed_updates": 29,
+      "recorded_publication_decisions": 30,
+      "published_tentative_poses": 30,
+      "abstentions": 0,
+      "automatic_retries": 0,
+      "timeout": false,
+      "input_or_source_drift": false,
+      "identity_verified": false,
+      "absolute_orientation_verified": false,
+      "ground_truth_read": false,
+      "visible_pairing": {
+        "reference": "previous_completed_native_fixed30_entry",
+        "numeric_files": 13,
+        "delivered_mask_files": 4,
+        "validated_registration_bundles_across_two_runs": 6,
+        "numeric_comparisons": 383,
+        "structure_comparisons": 9,
+        "numeric_differences": 0,
+        "structure_differences": 0
+      }
+    },
+    {
+      "case": "meshless",
+      "actual_run_completed": true,
+      "verification_status": "PASS_meshless_native_consumption_and_metric_binding",
+      "inputs_completed": 30,
+      "tracking_frames_completed": 29,
+      "registration_masks": 1,
+      "registration_candidates": 252,
+      "native_callbacks": 29,
+      "committed_updates": 29,
+      "recorded_publication_decisions": 30,
+      "published_tentative_poses": 30,
+      "abstentions": 0,
+      "automatic_retries": 0,
+      "timeout": false,
+      "input_or_source_drift": false,
+      "identity_verified": false,
+      "absolute_orientation_verified": false,
+      "ground_truth_read": false,
+      "generated_input_binding": {
+        "first_frames_exposed_to_generation": 1,
+        "new_mesh_consumed": true,
+        "selected_mask_pixels_consumed": true,
+        "original_metric_ICP_acceptance_passed": true,
+        "mesh_units": "metres",
+        "mesh_frame": "object-local",
+        "binding_structure_checks": 2,
+        "binding_differences": 0,
+        "generated_shape_accuracy_evaluated": false,
+        "CAD_pose_alignment_applied": false
+      }
+    }
+  ],
+  "inventory": {
+    "files": 14379,
+    "bytes": 22720315742,
+    "unchanged_after_each_run": true
+  },
+  "verifier_attempts": {
+    "existing_mesh": {
+      "attempted": 2,
+      "failed_path_lookup": 1,
+      "successful": 1
+    },
+    "meshless": {
+      "attempted": 1,
+      "successful": 1
+    }
+  },
+  "retained_failure": {
+    "component": "first_CAD_CPU_verifier",
+    "type": "incorrect_delivered_mask_location",
+    "runtime_failure": false,
+    "GPU_rerun_due_to_this_failure": false,
+    "preserved": true,
+    "correction_scope": "One mask-location expression; numeric comparison and acceptance rules unchanged."
+  },
+  "limitations": [
+    "Two known development prefixes with different inputs and registration-candidate populations; not heldout evidence or an accuracy comparison.",
+    "Published poses remain tentative: physical identity, absolute orientation and general 6D pose accuracy were not established.",
+    "Generated mesh passed existing metric and input-consumption checks; generated shape accuracy, hidden surfaces and CAD-coordinate pose accuracy were not evaluated.",
+    "No GT was read for these runs or verifications. No independent neural-forward or gradient recomputation was performed by this minimal verifier.",
+    "Single-run nested timing includes loading, initialization, audit evidence and serialization at broader boundaries; not a matched speed benchmark.",
+    "The original failed CAD verifier attempt is retained. Only its incorrect delivered-mask location was corrected; the GPU run and numeric/acceptance criteria were unchanged."
+  ]
+}

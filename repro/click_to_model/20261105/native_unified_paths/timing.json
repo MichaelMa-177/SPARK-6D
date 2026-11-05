@@ -1,0 +1,94 @@
+{
+  "schema": "native_unified_aggregate_timing/1",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+    "software_versions": {
+      "torch": "2.6.0+cu124",
+      "numpy": "2.4.6",
+      "opencv": "5.0.0"
+    }
+  },
+  "boundaries": {
+    "tracking": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+    "initialization": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+  },
+  "cases": [
+    {
+      "case": "existing_mesh",
+      "parent": {
+        "preflight_inventory_seconds": 284.23555152199697,
+        "supervised_child_seconds": 150.84319921099814,
+        "postflight_inventory_seconds": 311.7692438499944,
+        "total_wall_seconds": 747.7330860199872,
+        "other_parent_overhead_seconds": 0.8850914369977545
+      },
+      "pipeline_recorded_wall_seconds": 146.32392020399857,
+      "serial_child_stages": [
+        {
+          "stage": "tracking",
+          "wall_seconds": null,
+          "status": "completed"
+        }
+      ],
+      "application": {
+        "initialization_seconds": 17.846793973003514,
+        "registration_seconds": 4.892270467011258,
+        "admission_seconds": 4.034237792002386,
+        "tracking_samples": 29,
+        "tracking_sum_seconds": 21.429434977006167,
+        "tracking_mean_seconds": 0.7389460336898679,
+        "tracking_p50_ms": 789.9282880098326,
+        "tracking_p95_ms": 1010.1722152001457
+      },
+      "final_successful_CPU_verification_seconds": 1.091386458996567
+    },
+    {
+      "case": "meshless",
+      "parent": {
+        "preflight_inventory_seconds": 343.1308596739982,
+        "supervised_child_seconds": 507.4955467069958,
+        "postflight_inventory_seconds": 75.78906505600025,
+        "total_wall_seconds": 927.0200150919991,
+        "other_parent_overhead_seconds": 0.604543655004818
+      },
+      "pipeline_recorded_wall_seconds": 493.5765387660067,
+      "serial_child_stages": [
+        {
+          "stage": "segmentation",
+          "wall_seconds": 180.9573884010024,
+          "status": "completed"
+        },
+        {
+          "stage": "generation",
+          "wall_seconds": 250.75423603798845,
+          "status": "completed"
+        },
+        {
+          "stage": "tracking",
+          "wall_seconds": 60.15017366199754,
+          "status": "completed"
+        }
+      ],
+      "application": {
+        "initialization_seconds": 21.993208945001243,
+        "registration_seconds": 3.5657304339983966,
+        "admission_seconds": 1.9626151529955678,
+        "tracking_samples": 29,
+        "tracking_sum_seconds": 21.54644065600587,
+        "tracking_mean_seconds": 0.7429807122760645,
+        "tracking_p50_ms": 709.6074480068637,
+        "tracking_p95_ms": 787.1298367972485
+      },
+      "final_successful_CPU_verification_seconds": 1.6178455039917026
+    }
+  ],
+  "interpretation": [
+    "Parent preflight, supervised child and postflight are sequential; other_parent_overhead is their residual to total wall time.",
+    "Pipeline wall, serial stages and application sub-stages are nested, use different boundaries, and must not be summed across levels.",
+    "The existing-mesh branch did not separately record full tracking-child stage wall time: null means unavailable, not zero.",
+    "Tracking samples include 29 post-initialization inputs; initialization includes registration and admission, so these are not additive.",
+    "Child budget excludes parent inventory hashing. Existing-mesh and generated-mesh supervised budgets were 600 and 1200 seconds, respectively.",
+    "Pipeline wall starts after its initial checkpoint validation; supervised child time also covers interpreter/import/early validation and final process completion.",
+    "Different input sequences, initialization masks, candidate counts and fresh environment/cache contexts prevent a cross-case speed claim."
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema": "native_real180_control_guard_numeric_summary/1",
+  "case": "ycbv_000051_obj000017",
+  "control": {
+    "current_gate": {
+      "current_permissions_replayed": 204,
+      "publications_replayed": 180,
+      "published_inputs": 180,
+      "abstained_inputs": 0,
+      "published_tracking": 179,
+      "abstained_tracking": 0,
+      "all_saved_decisions_and_arrays_exact": true,
+      "all_seven_trust_flags_false": true
+    },
+    "native": {
+      "callbacks": 204,
+      "committed_updates": 47,
+      "final_holder_version": 47,
+      "gradient_proposals": 77,
+      "gradient_rejections": 30,
+      "no_gradient_frames": 102,
+      "qualified_callbacks": 82,
+      "refused_callbacks": 122,
+      "refusal_reasons": {
+        "insufficient_disjoint_surface": 122
+      },
+      "current_permission_refused_callbacks": 0,
+      "all_actual_effective_returns_bound_to_saved_poses": true,
+      "holder_t_plus_one_chain_valid": true,
+      "original_model_integrity_is_runtime_assertion": true
+    },
+    "temporal_counts": null,
+    "comparison": {
+      "visible_initialization_inputs_exact": true,
+      "visible_trajectory_state_exact": true,
+      "visible_trajectory_state_different": 0,
+      "control_migration_exact": true,
+      "trajectory_equality_required_for_raw_pass": false
+    },
+    "latency_descriptive": {
+      "tracking_count": 179,
+      "tracking_sum_seconds": 125.11315940912755,
+      "tracking_mean_seconds": 0.698956197816355,
+      "parent_wall_seconds": 153.03943704899575,
+      "CPU_raw_audit_may_overlap_other_serial_GPU_cases": true
+    },
+    "raw_receipt_sha256": "3a2366795fba1e403531c4323a87d6cd6fccad184df74d8098580339c11d162f",
+    "source_and_terminal_pins": {
+      "raw_script": {
+        "bytes": 18903,
+        "sha256": "4f544bd1af2baff2bf564f3126ae89c2790571ff41240305aab8692c05526db1"
+      },
+      "raw_helper": {
+        "bytes": 19846,
+        "sha256": "29c89e1215e743489b6b920780bb428075da1eaa0e8baf5ee03288ec8c7c23be"
+      },
+      "execution": {
+        "bytes": 781,
+        "sha256": "5770710cd2cc2cd07b22aa0d0e879475c3db146e3e6dae2f20bc3dc98df7cd88"
+      },
+      "integration": {
+        "bytes": 115331,
+        "sha256": "9c6bb3b84f11c9a066564ff462df642a9aec99adf1cf8fc76078f23dc1f612d2"
+      },
+      "frozen_plan": {
+        "bytes": 2506053,
+        "sha256": "425e4a616f9dfb802a4f3eb43f3b267cd5d56aace622412534668dd0c265aaf4"
+      },
+      "pairing": {
+        "bytes": 1084922,
+        "sha256": "1c28814614a9640cde3b072aec524de4dbed7e649fb0922f94017482c9e0b0ea"
+      }
+    }
+  },
+  "guard": {
+    "current_gate": {
+      "current_permissions_replayed": 203,
+      "publications_replayed": 180,
+      "published_inputs": 180,
+      "abstained_inputs": 0,
+      "published_tracking": 179,
+      "abstained_tracking": 0,
+      "all_saved_decisions_and_arrays_exact": true,
+      "all_seven_trust_flags_false": true
+    },
+    "native": {
+      "callbacks": 203,
+      "committed_updates": 43,
+      "final_holder_version": 43,
+      "gradient_proposals": 77,
+      "gradient_rejections": 34,
+      "no_gradient_frames": 102,
+      "qualified_callbacks": 81,
+      "refused_callbacks": 122,
+      "refusal_reasons": {
+        "insufficient_disjoint_surface": 122
+      },
+      "current_permission_refused_callbacks": 0,
+      "all_actual_effective_returns_bound_to_saved_poses": true,
+      "holder_t_plus_one_chain_valid": true,
+      "original_model_integrity_is_runtime_assertion": true
+    },
+    "temporal_counts": {
+      "native_packets": 1375,
+      "measured_packets": 2770,
+      "qualified_callbacks": 81,
+      "available_surface_current_bindings": 81,
+      "causal_array_checks": 1067,
+      "refused_callbacks": 122,
+      "refused_callbacks_with_zero_private_calls": 122,
+      "causal_structure_checks": 957,
+      "native_callbacks": 203,
+      "max_snapshot_tensor_bytes": 1659756,
+      "max_prepared_cache_tensor_bytes": 3316182,
+      "max_cache_plus_staged_snapshot_tensor_bytes": 4972068,
+      "current_rejected_proposals": 30,
+      "gradient_proposals": 77,
+      "current_accepted_proposals": 47,
+      "committed_updates": 43,
+      "history_checks": 43,
+      "history_private_forward_calls": 86,
+      "empty_history_frames": 19,
+      "history_rejected_checks": 5,
+      "history_veto_frames": 4,
+      "unqualified_callbacks": 122,
+      "final_holder_version": 43,
+      "no_gradient_frames": 102,
+      "publications_replayed": 180,
+      "current_permissions_replayed": 203
+    },
+    "comparison": {
+      "visible_initialization_inputs_exact": true,
+      "visible_trajectory_state_exact": false,
+      "visible_trajectory_state_different": 3296,
+      "control_migration_exact": null,
+      "trajectory_equality_required_for_raw_pass": false
+    },
+    "latency_descriptive": {
+      "tracking_count": 179,
+      "tracking_sum_seconds": 137.50309765301063,
+      "tracking_mean_seconds": 0.7681737299050873,
+      "parent_wall_seconds": 177.186200052005,
+      "CPU_raw_audit_may_overlap_other_serial_GPU_cases": true
+    },
+    "raw_receipt_sha256": "374390f6e74d786952e79a6bd1ea0e9dc2c93dda56c8688a69c335273200c970",
+    "source_and_terminal_pins": {
+      "raw_script": {
+        "bytes": 18903,
+        "sha256": "4f544bd1af2baff2bf564f3126ae89c2790571ff41240305aab8692c05526db1"
+      },
+      "raw_helper": {
+        "bytes": 19846,
+        "sha256": "29c89e1215e743489b6b920780bb428075da1eaa0e8baf5ee03288ec8c7c23be"
+      },
+      "execution": {
+        "bytes": 777,
+        "sha256": "99f295872cee4ff14f79191023d41e70c7cdeb729a4302090890470956cd99d4"
+      },
+      "integration": {
+        "bytes": 115094,
+        "sha256": "9554d81ef580338ec37d72cb4599def40fc4e3a5476ccd65dff1adb68235b014"
+      },
+      "frozen_plan": {
+        "bytes": 2506053,
+        "sha256": "425e4a616f9dfb802a4f3eb43f3b267cd5d56aace622412534668dd0c265aaf4"
+      },
+      "pairing": {
+        "bytes": 1083928,
+        "sha256": "6ebe1fc7763251c07cb44fb203fa255619f9fa45dc55fd4b02c4767211d424c3"
+      }
+    },
+    "temporal_coverage_summary": {
+      "coverage_counts": {
+        "current_shadow_rejected_before_history": 30,
+        "checked_history": 28,
+        "no_gradient_unqualified_frame": 102,
+        "empty_history": 19
+      },
+      "frames_with_history_check": 28,
+      "frames_without_history_check": 151,
+      "cache_budget_refusals": 0,
+      "replay_derived_clear_counter_before_final_cleanup": 225,
+      "clear_counter_derivation": "Initial epoch clear + each refused callback + each not-fully-qualified frame + any cache-budget refusal, as replayed by the causal audit. Publication omission empties staged cache without incrementing this source counter. No final close event exists.",
+      "max_committed_cache_entries": 2,
+      "max_committed_cache_tensor_bytes": 3316182
+    }
+  },
+  "observed_effects": {
+    "schema": "native_real180_control_guard_observed_effects/1",
+    "status": "completed_after_both_raw_gates",
+    "case": "ycbv_000051_obj000017",
+    "input_denominator": 180,
+    "tracking_denominator": 179,
+    "comparison": "bitwise exact; no tolerances or pose/holder repair",
+    "candidate_pose_frames_different": 67,
+    "publication_availability_frames_different": 0,
+    "jointly_published_frames": 180,
+    "jointly_published_pose_frames_different": 67,
+    "complete_publication_policy_rows_different_after_exact_epoch_normalization": 67,
+    "prepared_holder_signatures_different": 157,
+    "zero_observed_effect_on_saved_poses_publications_and_holders": false,
+    "script": {
+      "bytes": 4878,
+      "sha256": "c7d7ee7e4a0554ddf949fb7bebd43dc205bb138ee40cf24bd36463a633a90d76"
+    },
+    "normalization": "Only decision.epoch_id in each of 180 output_policy frame rows, after exact equality to that declared product path. No hash/numeric/other metadata normalization.",
+    "limitations": [
+      "Holder equality uses recorded version and head signatures; no original weights reloaded.",
+      "This records changes, not whether changes are more accurate. No GT, held-out or speed inference.",
+      "Zero observed effect here covers saved poses, publication decisions and holder signatures; full original neural state is not independently recomputed."
+    ],
+    "GT_read": false,
+    "GPU_run": false,
+    "all_read_artifacts_bound_to_completed_raw": true
+  },
+  "control_relocation": {
+    "raw_nonidentical_records": 0,
+    "additional_named_secondary_elapsed_differences": 0,
+    "remaining_scientific_differences": 0,
+    "original_record_preserved": true,
+    "classification": {
+      "bytes": 2657,
+      "sha256": "949905b5a277bda762c66d332ed4038798220882864b63e306489fff150c17a3"
+    }
+  },
+  "GT_read": false
+}

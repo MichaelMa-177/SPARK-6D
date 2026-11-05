@@ -1,0 +1,28 @@
+{
+  "schema": "aggregate_package_manifest/1",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 1533,
+      "sha256": "af3f843f786670fa3442f4bb5acfd10e472e1c74675acab17b09c7746942564e"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 4090,
+      "sha256": "03fbed9ec4ee07b4d7f3ac41d7352a9b0d1469fddee44369478d1c41ede8e9b9"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 3914,
+      "sha256": "c466eda759c1da8f4ae4433b43a778b728b7ea6c7fb41446c91f93c1b26aedf3"
+    },
+    {
+      "name": "timing.json",
+      "bytes": 4187,
+      "sha256": "46068958e140211649b91557fad4eeb039064a3ed16f77282d13a1605a991237"
+    }
+  ],
+  "GT_read": false,
+  "source_code_included": false,
+  "raw_artifacts_included": false
+}

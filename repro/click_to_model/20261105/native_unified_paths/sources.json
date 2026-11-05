@@ -1,0 +1,115 @@
+{
+  "schema": "native_unified_aggregate_source_hashes/1",
+  "bindings": {
+    "existing_mesh_parent_terminal": {
+      "bytes": 3728,
+      "sha256": "ce12401bd4165e69c7e1cfd84daa540e478cbb5a65c5fade3bcd409134815ceb"
+    },
+    "existing_mesh_verification_receipt": {
+      "bytes": 455067,
+      "sha256": "277af116ebe96154c75de131dfb2cea81fdd78ce6d84dbd0616a8d4b3616bfa9"
+    },
+    "existing_mesh_pipeline_terminal": {
+      "bytes": 11191,
+      "sha256": "45802fecf5ba34a1c7f9fb312d0a757aa0b9452376c62b24b61aa11b3d533fc9"
+    },
+    "existing_mesh_tracking_terminal": {
+      "bytes": 31972,
+      "sha256": "d0009eaafca036c7983ed8d32cb6403f53877ab904f0d76db9884374fa7793d3"
+    },
+    "existing_mesh_native_terminal": {
+      "bytes": 21800,
+      "sha256": "32daac5098e908f4f48e38a790e59aa79e66f90679bb5af566e83604fb9d4bea"
+    },
+    "unified_wrapper": {
+      "bytes": 23156,
+      "sha256": "fb273ea89300dd0e44cecf385921b7416a3b9407b34917a6cf165319bb032170"
+    },
+    "native_wrapper": {
+      "bytes": 15118,
+      "sha256": "79fccbe4110436ed9a9d562c121ac0e7ef5422f35d29d62f9476c1d65ac84332"
+    },
+    "original_meshless_pipeline": {
+      "bytes": 20949,
+      "sha256": "f9ebeae584542c8d982dc1e7b804c0a7c1ed699717849ef6ac4890a8a9deb637"
+    },
+    "mesh_generation_adapter": {
+      "bytes": 14536,
+      "sha256": "2dc8e09815abf5bc84c15d84c2878869ef687317a9a5142c13b357cde5e9ac63"
+    },
+    "native_runtime_manifest": {
+      "bytes": 2256,
+      "sha256": "7a122c9a70de294decc93c73d002c6960b5d15b2d0ed9a431531caa7bca49f82"
+    },
+    "frozen_execution_plan": {
+      "bytes": 5548878,
+      "sha256": "0e35bc9d34278d761bf69f3bdee83e021c27dbddb0a227d43e94cd4a4878792d"
+    },
+    "meshless_parent_terminal": {
+      "bytes": 4507,
+      "sha256": "294418966ef52841ea46fb6ed6c58415380ec7d341b8fb574e4012dca544bde6"
+    },
+    "meshless_verification_receipt": {
+      "bytes": 160411,
+      "sha256": "ef9855e99e4996a295f519963514f815ad711d73f5f205801bd7d416b2a99c11"
+    },
+    "meshless_pipeline_terminal": {
+      "bytes": 26653,
+      "sha256": "fbcb248307d0f0b7c81ccbb56030cb4e6c9db95c945c4812514e259d8abf772b"
+    },
+    "meshless_tracking_terminal": {
+      "bytes": 28274,
+      "sha256": "e327fa417d6593e8d7f1a3fc78dd4e5277fda7304578b00c1d2d7b44580bc9d6"
+    },
+    "meshless_native_terminal": {
+      "bytes": 18013,
+      "sha256": "69dcf47e4a8344e276bf37674f46b6bb5fcceb2d0ed48e10c8075c094b1d7b2c"
+    },
+    "meshless_generation_terminal": {
+      "bytes": 7067,
+      "sha256": "f616bf6493cbb6f883b1c77cdd1ae2ea88d09d0f6489aeb8c1d6a8cf837b08c9"
+    },
+    "meshless_segmentation_terminal": {
+      "bytes": 2908,
+      "sha256": "a686468cfeea723852a82ec06a54ea9ba53d5be0f7284ecef26f6acee0151609"
+    },
+    "preserved_first_CAD_verifier_failure": {
+      "bytes": 226263,
+      "sha256": "1e074a878d01a6754bb2e9f994f63f00fbe61ae6f2925812ef98f5658cd675a2"
+    },
+    "verifier_v1": {
+      "bytes": 14395,
+      "sha256": "0e85d6e8b7127779728228b16e122caef820046ba9dc32cff86dc9389e947673"
+    },
+    "verifier_v2": {
+      "bytes": 14402,
+      "sha256": "68d9a4933751638f7d55f0eff69441d39379353c8bde7b9e2a94a60daf6233f2"
+    },
+    "verifier_real_mask_path_CPU_contract": {
+      "bytes": 4042,
+      "sha256": "704a654e9ff5b2c2b13e21d80bf42c15d571098fc0955c3046cbbbef0d165abd"
+    },
+    "execution_harness_author": {
+      "bytes": 5788,
+      "sha256": "63f1173cd39534e9f3389550e793ca41e7211fde67738895fb111cc620584145"
+    },
+    "execution_launch": {
+      "bytes": 18859,
+      "sha256": "fd1da5eb29f13de8e577071ecb94ae4d75314a38605a8716d214f718e2fa27df"
+    },
+    "execution_supervisor": {
+      "bytes": 6813,
+      "sha256": "e24d485cdce300556b886620ee9ae8cfb0088b0757c0df1099833acc55d59d50"
+    },
+    "execution_inventory": {
+      "bytes": 10219,
+      "sha256": "fbbed6cd3ed0a0f43d5adcceeb6adb993aae5d2cf12ab7a5dd9bd32cfaf4acf9"
+    },
+    "aggregate_exporter": {
+      "bytes": 13432,
+      "sha256": "6fe3ef5ec6f6c8b0eafc76262b20ed10b2b3cc5916905fa48afb4d298cd5d9bb"
+    }
+  },
+  "contents_included": false,
+  "original_paths_included": false
+}

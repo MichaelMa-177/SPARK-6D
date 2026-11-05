@@ -1,0 +1,75 @@
+{
+  "schema": "native_real180_numeric_public_package/1",
+  "raw_index": {
+    "bytes": 3230,
+    "sha256": "e5a0f0a43d4c9196abed934d76bf1759ddf6a858fcf8233badd50a97733ca85b"
+  },
+  "raw_receipts": {
+    "ycbv_000051_obj000017": {
+      "control": {
+        "bytes": 8945137,
+        "sha256": "3a2366795fba1e403531c4323a87d6cd6fccad184df74d8098580339c11d162f"
+      },
+      "guard": {
+        "bytes": 9038711,
+        "sha256": "374390f6e74d786952e79a6bd1ea0e9dc2c93dda56c8688a69c335273200c970"
+      }
+    },
+    "ycbv_000054_obj000019": {
+      "control": {
+        "bytes": 11371555,
+        "sha256": "c2aaf2cc7bd65c7caee4b74f7d3bf748dff54c7c7dd671ef729f0db63a4ca243"
+      },
+      "guard": {
+        "bytes": 11493473,
+        "sha256": "4802a46635dfcba80c05c3ab0870e3518b8fd2e132c5e2bde395fd60f0f6d138"
+      }
+    },
+    "ycbv_000057_obj000021": {
+      "control": {
+        "bytes": 11329284,
+        "sha256": "5b3e461ca1d20d06de624c0ec1107362a5565c1596e97dc970a6962bb692d09f"
+      },
+      "guard": {
+        "bytes": 11454220,
+        "sha256": "1e6f2d6996c6512abfb4cadc49efa3fe0a0663b780a4dbf34a421c6ef1e312fc"
+      }
+    },
+    "ycbv_000058_obj000008": {
+      "control": {
+        "bytes": 9570285,
+        "sha256": "b35b159ad6b6dd3e1abee2388f1128eef586d04926cea79a76cedda72555a23d"
+      },
+      "guard": {
+        "bytes": 9707752,
+        "sha256": "81c77ad2c6d879d483bbcf4fa153a4116a08a7e9b922015fd2748d1fea6d42ed"
+      }
+    }
+  },
+  "inputs_per_arm": 720,
+  "tracking_per_arm": 716,
+  "registration_candidates_per_case": 756,
+  "visible_initialization_arrays_per_case": 15,
+  "denied_or_missing_coverage": [
+    "External raw SAM logits and unsorted neural refiner/scorer call ledger absent from ordinary CLI; no old29-array parity claim.",
+    "No independent neural forward, autograd, gradient/shadow or original model-weight recomputation. Model-integrity booleans are runtime assertions.",
+    "Temporal historical losses/private-call counts/cache tensor bytes are runtime telemetry; FIFO/byte-budget causality is verified from that telemetry.",
+    "No independent GPU-memory measurement or final cache-close event; final cleanup is source reviewed.",
+    "Visible comparison differences count records, including added guard telemetry and runtime fields; use observed_effects for actual changed-pose/holder counts.",
+    "No GT accessed, no accuracy result, no physical identity proof, no held-out/CVPR claim, and no causal speed claim."
+  ],
+  "preserved_auditor_failures": [
+    "Original pairing reader required registration frame0 while actual registration frame_id is None.",
+    "pairing_v2 comparator rejected integer input-map keys; pairing_v3 explicitly names only prevalidated180 integer input keys. Original failures remain stored."
+  ],
+  "named_additional_timing_classification": {
+    "preloss_event": "/payload/event/fields/secondary_observation/fields/elapsed_seconds",
+    "selected_seed": "/payload/event/fields/secondary_observation/fields/elapsed_seconds",
+    "two_phase_observation_attempt": "/payload/event/secondary_observation/elapsed_seconds"
+  },
+  "GT_read": false,
+  "GPU_run": false,
+  "contains_raw_poses": false,
+  "contains_source": false,
+  "contains_images_or_weights": false
+}
