@@ -1,0 +1,99 @@
+{
+  "schema": "native_temporal_guard_fixed30_aggregate/1",
+  "status": "completed_raw_audited_zero_observed_intervention",
+  "population": {
+    "inputs_per_arm": 30,
+    "tracking_per_arm": 29,
+    "registration_candidates_per_arm": 756
+  },
+  "temporal": {
+    "causal_structure_checks": 181,
+    "causal_array_checks": 285,
+    "native_callbacks": 45,
+    "max_snapshot_tensor_bytes": 1664616,
+    "max_prepared_cache_tensor_bytes": 3329232,
+    "max_cache_plus_staged_snapshot_tensor_bytes": 4993848,
+    "history_checks": 55,
+    "history_private_forward_calls": 110,
+    "empty_history_frames": 1,
+    "history_rejected_checks": 0,
+    "history_veto_frames": 0,
+    "gradient_proposals": 29,
+    "current_accepted_proposals": 29,
+    "committed_updates": 29,
+    "final_holder_version": 29,
+    "publications_replayed": 30,
+    "current_permissions_replayed": 45
+  },
+  "history_frame_coverage": {
+    "empty_history": 1,
+    "checked_history": 28
+  },
+  "observed_cache_depth_histogram": {
+    "1": 1,
+    "2": 28
+  },
+  "causal_checks": {
+    "structural": 181,
+    "numeric_bindings": 285,
+    "current_permissions": 45,
+    "publications": 30
+  },
+  "observed_baseline_comparison": {
+    "numeric_checks": 383,
+    "numeric_different": 0,
+    "structure_checks": 792,
+    "structure_different": 0,
+    "zero_observed_effect_on_saved_numeric_and_original_events": true,
+    "additional_temporal_fields_independently_checked_before_comparison": true
+  },
+  "initial_pairing": {
+    "status": "paired_exact",
+    "backend_arrays": 15,
+    "registration_candidates": 756,
+    "RGB_depth_K_arrays": 90,
+    "initial_pose": true,
+    "initial_query_and_coordinate_events": true,
+    "old29_initialization_coverage_claimed": false,
+    "delivered_mask_file_pairs": 4,
+    "candidate_record_pairs": 3
+  },
+  "intervention": "All55 historical checks accepted; no update was vetoed. Saved candidates/publications, holder signatures and all original native/measured event fields remain identical after named nonsemantic normalization. Extra temporal fields were checked separately before comparison.",
+  "measured_history_scope": "Runtime check-loss and private-call telemetry independently checked for causal indices, logical acceptance and budgets; no independent neural or gradient recomputation.",
+  "actual_historical_veto_path_exercised": false,
+  "accuracy_improvement_claim": false,
+  "identity_claim": false,
+  "heldout_claim": false,
+  "GT_read": false,
+  "repeated_GT_posthoc_performed": false,
+  "reason_no_repeated_GT_posthoc": "Identical predictions and publication selection give identical deterministic metrics under the same already-fixed evaluator; additional GT scoring would add no accuracy evidence.",
+  "configuration": {
+    "capacity": 2,
+    "max_entry_bytes": 8388608,
+    "max_cache_bytes": 16777216,
+    "max_epoch_bytes": 4096,
+    "max_metadata_bytes": 65536
+  },
+  "latency_descriptive": {
+    "20261105_native_cli_actual_fixed30_attempt_v1": {
+      "tracking_seconds": 19.753895476009347,
+      "tracking_mean_seconds": 0.6811688095175638,
+      "tracking_count": 29
+    },
+    "20261105_native_temporal_guard_actual_fixed30_attempt_v1": {
+      "tracking_seconds": 21.101032658989425,
+      "tracking_mean_seconds": 0.7276218158272215,
+      "tracking_count": 29
+    }
+  },
+  "limits": [
+    "Historical losses/private-call counts/cache sizes are runtime telemetry; no cached snapshot, gradient or shadow tensor persisted for independent neural recomputation.",
+    "FIFO membership and tensor-payload budgets are checked from historical frame IDs and recorded snapshot sizes against previously qualified published frames; not an independent live GPU memory measurement.",
+    "No final cache-close event exists; close cleanup is source-reviewed only.",
+    "An empty cache supplies no historical validation. Zero observed vetoes do not exercise real refusal behavior.",
+    "Known synthetic development prefix, not held-out evidence; no accuracy or identity claim.",
+    "Same-output result makes a new GT score redundant; it does not establish guard accuracy improvement.",
+    "Ordinary CLI omits old external raw SAM logits and model-call ledger; original29 initialization-array coverage is not claimed.",
+    "Current gate replay reuses pinned production mathematics; no independent physical-identity proof."
+  ]
+}

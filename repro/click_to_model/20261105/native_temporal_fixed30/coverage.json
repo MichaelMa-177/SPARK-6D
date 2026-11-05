@@ -1,0 +1,38 @@
+{
+  "schema": "native_temporal_fixed30_coverage/1",
+  "status": "PASS_observed_causality_and_optional_cross_arm_parity",
+  "independent_reconstruction": [
+    "All actual current input RGB/depth/intrinsics match baseline30 slots byte-exact; all15 exposed registration bank arrays and actual initial pose agree.",
+    "Initial query/coordinate events, delivered masks and candidate records pair exactly, except explicitly measured registration durations.",
+    "Current frozen/effective permissions and publication decisions replayed using pinned gate; saved candidate/published arrays bind actual final native FP return.",
+    "Every callback consumes the holder committed before its frame; every next-holder and publication commit receipt agrees with current-and-historical acceptance. No fixed expected update count is used.",
+    "Each historical index is strictly earlier, same source order, previously qualified and published. FIFO cache reconstructed with capacity2 and recorded tensor-byte budgets.",
+    "Historical acceptance predicate is checked from recorded finite before/after/frozen losses and parameter norm with original zero slack; this validates telemetry consistency, not independently recomputed losses."
+  ],
+  "cache_metadata": "Recorded snapshot1,664,616B, maximum prepared/committed cache3,329,232B, maximum old-cache plus pending snapshot4,993,848B. Not process RSS or allocator peak.",
+  "absent_coverage": [
+    "No real history-veto frame occurred; the actual refusal path is not validated by this prefix.",
+    "Frame1 has empty history; it supplies no cross-frame validation.",
+    "No explicit final cache-close packet; cleanup is source-reviewed only.",
+    "Snapshot/gradient/shadow tensors are unavailable for independent recomputation.",
+    "External old SAM raw logits/model-call ledger is absent; original29-initialization-array coverage is not claimed."
+  ],
+  "comparison_normalization": [
+    "Only exact known product epoch/session/admission identity fields are normalized.",
+    "Per-event point/support/admission elapsed fields and independently reconstructed epoch/time-derived admission digests follow the previous CLI raw audit.",
+    "New proposal.current_update_accepted and proposal.temporal_guard fields are checked by the independent temporal reconstruction, then excluded solely from comparison to the older arm where they do not exist.",
+    "Numeric differences and output-selection differences would be reported without making causal validity depend on trajectory equality; the actual result has none."
+  ],
+  "source_review": {
+    "bytes": 3186,
+    "sha256": "1a5eb7b0517d68ca8bcd6b6105e6af4a4565a24f64ce6f7aadaee9e684057f83"
+  },
+  "raw_receipt": {
+    "bytes": 1992863,
+    "sha256": "bf0431586acd370a17648f70727648b390f6df0c5dee09610d60c9b8caa4abc7"
+  },
+  "initialization_supplement": {
+    "bytes": 6098,
+    "sha256": "869e2f7b9fa1c2070a85096b7cb27bd534ec6bad07e2bebb4ea1989bda5e9377"
+  }
+}

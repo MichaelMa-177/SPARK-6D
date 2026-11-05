@@ -1,0 +1,25 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2281,
+      "sha256": "181b28db2402b9430a4fd81c00738fd27c0488f72ca00588e5ef56dc85fa564a"
+    },
+    {
+      "path": "coverage.json",
+      "bytes": 2956,
+      "sha256": "0d306ba9282e280f1a3507cecbf5a38ba84eedea24283dbad4940bbc13f362bd"
+    },
+    {
+      "path": "source_hashes.json",
+      "bytes": 4067,
+      "sha256": "58cedb3dfeaf51080d6c82237a9f6df57b52b280c887b370547a9cd68a907dbf"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 4353,
+      "sha256": "d121c32c800df420b1e26e2dba776e55f1b5207126adbcfbca7683e89af44b91"
+    }
+  ],
+  "manifest_excludes_itself": true
+}

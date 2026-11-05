@@ -1,0 +1,70 @@
+{
+  "sha256": {
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_raw_v1/audit.py": {
+      "bytes": 19846,
+      "sha256": "29c89e1215e743489b6b920780bb428075da1eaa0e8baf5ee03288ec8c7c23be"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_raw_v1/source_review.json": {
+      "bytes": 3186,
+      "sha256": "1a5eb7b0517d68ca8bcd6b6105e6af4a4565a24f64ce6f7aadaee9e684057f83"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_raw_v1/initialization_supplement.json": {
+      "bytes": 6098,
+      "sha256": "869e2f7b9fa1c2070a85096b7cb27bd534ec6bad07e2bebb4ea1989bda5e9377"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_raw_v1/seal_public.py": {
+      "bytes": 10875,
+      "sha256": "09833f41d3835ca3a355ee705f41d22af1456184feef1674b535edfb2218ba6a"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_raw_v1/evaluation_v1/receipt.json": {
+      "bytes": 1992863,
+      "sha256": "bf0431586acd370a17648f70727648b390f6df0c5dee09610d60c9b8caa4abc7"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_actual_fixed30_attempt_v1/execution.json": {
+      "bytes": 543,
+      "sha256": "51e7dbfa9f919c071da219b0fdac81be11002efdd1be86cdd5cb86dd0ddf3811"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_actual_fixed30_attempt_v1/native_adaptation/native_integration.json": {
+      "bytes": 21816,
+      "sha256": "f733a736fec484ace91fbe2d4b241d1ad9735b148ac7065e1991cda6e4f3516b"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_actual_fixed30_attempt_v1/product/report.json": {
+      "bytes": 32050,
+      "sha256": "264f0fbdcf83ce99ed4be37f9549aa69eb46824f58587f975069bd44d791291b"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_actual_fixed30_attempt_v1/native_adaptation/native_integration.json": {
+      "bytes": 21805,
+      "sha256": "3927a25865ce5ae4d5910a6ff29d827e569e6ec84cc8ba9d9c942930eabc4676"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_actual_fixed30_attempt_v1/product/report.json": {
+      "bytes": 32017,
+      "sha256": "95c34a9b40a0f7e43b4582abe99e932aef04b65b7c0fa71f1fe97976a0c4711e"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/evaluation_v4/receipt.json": {
+      "bytes": 2171135,
+      "sha256": "cdf18753cabd1e076bec42452a1ff439302e071feb19c04d83e359458cd4b266"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_v1/guard.py": {
+      "bytes": 8807,
+      "sha256": "df61d9dd76f58ff44a446525cfac28b51ccc95580c37dcfba93620afd3d7f4d8"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_v1/attach.py": {
+      "bytes": 4913,
+      "sha256": "ab4db6eaa343d10582f28d0a63d470ee4863066f19dcaf1bdd57429b8eee2775"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_v1/run_native_temporal.py": {
+      "bytes": 533,
+      "sha256": "2d46e9312315b7e8d03887cb128d92f0d67a9649a39a17fd320ad3d9b72bcb22"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_v1/launch.py": {
+      "bytes": 5896,
+      "sha256": "082eafc594597e5fb5889c3548c488b42fbfc18d16a792640d17ce731d7aeec5"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_temporal_guard_v1/frozen_plan_v1.json": {
+      "bytes": 39553,
+      "sha256": "e0e591dbd0927f36729c3dcef7234820e16d264feefe454e73709c8ef7794b1f"
+    }
+  },
+  "source_code_included": false,
+  "poses_trajectories_GT_images_weights_or_logs_included": false
+}

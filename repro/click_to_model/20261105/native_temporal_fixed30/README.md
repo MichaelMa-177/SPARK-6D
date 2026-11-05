@@ -1,0 +1,11 @@
+# Temporal shadow guard: fixed30 actual control comparison
+
+**This run has zero observed intervention.** The temporal variant completed30 inputs/29 tracking frames with45 native callbacks and29 committed updates. It performed55 recorded historical objective checks with110 extra private forwards. Every historical check passed; none vetoed an update. The first tracking frame has empty history.
+
+All383 compared numerical artifacts and792 original event/structure comparisons remain exact against the ordinary native CLI control, after explicitly named nonsemantic normalization. Candidate/published poses and holder signatures are unchanged. No repeated GT evaluation was run: identical predictions and publication selection add no new accuracy evidence. This is not a demonstrated accuracy improvement or an actual test of the rejection path.
+
+The independent CPU audit reconstructs the temporal FIFO from previously published, fully qualified frames, checks strictly earlier frame/source IDs, verifies recorded tensor budgets and acceptance predicates, replays45 current permissions and30 publications, and binds actual native outputs to saved poses. It does not assume29 updates; that is the measured outcome. History losses, private-call counts and snapshot sizes remain runtime telemetry. Cached snapshot/gradient/shadow tensors were not persisted, so no independent neural recomputation or live GPU-memory measurement is claimed. The final cache-close behavior is source-reviewed, without a separate terminal cache packet.
+
+The cache holds at most2 prior objectives under the frozen8MiB/entry and16MiB committed tensor-payload budgets. Observed snapshot size is1,664,616 bytes; maximum committed/prepared cache is3,329,232 bytes; old cache plus pending snapshot reaches4,993,848 bytes. Model/current-objective/autograd scratch and allocator overhead are outside that bound.
+
+Timing is retained from one control and one treatment run. This known synthetic development prefix establishes observable execution and causality only. Next meaningful evaluation requires sequences with real vetoes and retained adverse outcomes. This package contains numerical aggregates, coverage limits and source hashes; no source code, poses, trajectories, GT, images, meshes, logs or weights.
