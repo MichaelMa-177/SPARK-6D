@@ -1,0 +1,19 @@
+{
+  "contents": "Numerical aggregates and hashes only",
+  "files": {
+    "README.md": {
+      "bytes": 1713,
+      "sha256": "6c4bbe01b6b8950b5f98855302d08baf175e0fdc31cfc00c62c64579d6eae50e"
+    },
+    "source_hashes.json": {
+      "bytes": 6275,
+      "sha256": "2286512096ce2e8c72cf0cf3ceaf104a54026635c47c5a3cc8390b2082f36978"
+    },
+    "summary.json": {
+      "bytes": 30299,
+      "sha256": "3288979b1b2b616b4019aa8c41d0bd76d77d07422030ded37d668505d6dacba3"
+    }
+  },
+  "schema": "sha256_package_manifest/1",
+  "self_excluded": true
+}

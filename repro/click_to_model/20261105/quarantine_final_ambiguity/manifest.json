@@ -1,0 +1,27 @@
+{
+  "schema": "numeric_public_package/1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3535,
+      "sha256": "25b421c609edfcc5723e48c9b17df0696a7e01272b66ae7c7d9f25896cc4bfa1"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2786,
+      "sha256": "20c09e8aec05178bffb6637be038aa1cea3ace52d6085f37467d4cd30160e463"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 61601,
+      "sha256": "a0f70c6f3b8d67f998a5fe86982f1fe6c6a3099a609dd0b4a1bdae0b9488775b"
+    }
+  ],
+  "files_excluding_manifest": 3,
+  "bytes_excluding_manifest": 67922,
+  "contains_raw_poses": false,
+  "contains_source_code": false,
+  "contains_images": false,
+  "contains_GT": false,
+  "contains_absolute_source_paths": false
+}

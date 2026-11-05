@@ -1,0 +1,177 @@
+{
+  "files": {
+    "control_0/execution": {
+      "bytes": 93212,
+      "sha256": "56a06f686e51a01eb293e358fa6a7f2a9296d61e32dbdde8a948d4432c73c6c7"
+    },
+    "control_0/independent_parity": {
+      "bytes": 2311246,
+      "sha256": "12527ea7727aacc6ee5093af81daf002683ce32c555f3d559716f34a6a6164d4"
+    },
+    "control_0/integration": {
+      "bytes": 21804,
+      "sha256": "c9ff868f091a546cd6331ffe15de3e34db5236c541ef5d89bb2a9aa183cc883b"
+    },
+    "control_0/latency_seconds_npy": {
+      "bytes": 360,
+      "sha256": "83661b9a298beecb9de162ab45ab87e7cad794bd62e1f6e1d73df8e9fc850113"
+    },
+    "control_0/native_plan": {
+      "bytes": 5338,
+      "sha256": "455620773aad61f9ab6acc26c6c68be0b9597f7af8c531faf38ebf4b7ca66fc5"
+    },
+    "control_0/report": {
+      "bytes": 32012,
+      "sha256": "24c67187eb6b576248d004638e9212243c86768ea4ef58cb59a9be89949928c5"
+    },
+    "control_1/execution": {
+      "bytes": 93401,
+      "sha256": "8dc86b37ca38c005fcd65f57b203da09db6d9a7ff445f2bfacd2a577dcc31da0"
+    },
+    "control_1/independent_parity": {
+      "bytes": 2311256,
+      "sha256": "d543678383e80f45e1a1fad0295ee7f8df9d57e26240a1042b7db95719062a03"
+    },
+    "control_1/integration": {
+      "bytes": 21804,
+      "sha256": "220237a60c3a89e4015e6c1b1f89da3cf15e53f136eedcdd301565ad1e660fe9"
+    },
+    "control_1/latency_seconds_npy": {
+      "bytes": 360,
+      "sha256": "8a09c82f4ff5ffd80e9dbad0444d2ca523ac8e4a1b6d7e35311953e53edd8c57"
+    },
+    "control_1/native_plan": {
+      "bytes": 5338,
+      "sha256": "0fe10f9cf0ab49e512307f2e527efb97b4df67a3f471fb6893a5108eb8a13259"
+    },
+    "control_1/report": {
+      "bytes": 32014,
+      "sha256": "8d81aaf03c068209e7aa671c02112373b9a5f8f912745df6d682756f5a91bf40"
+    },
+    "control_2/execution": {
+      "bytes": 93211,
+      "sha256": "0aed7909672bb007a50409fef10afea5ec801fc3672ce063d6402ef671cdec08"
+    },
+    "control_2/independent_parity": {
+      "bytes": 2311258,
+      "sha256": "3855d9e00bf3f0c26810316202d2de7fdd9baeb55f5be12e05959f1d0e00495b"
+    },
+    "control_2/integration": {
+      "bytes": 21804,
+      "sha256": "91bd111e5a399f1de19fb798f2a269cdb20cb99eb0ba106eb1b136ca6c698f13"
+    },
+    "control_2/latency_seconds_npy": {
+      "bytes": 360,
+      "sha256": "9fa1c7392f801141c6bc80576771a504c348cfdf7d4275552e9057d9d503a6e1"
+    },
+    "control_2/native_plan": {
+      "bytes": 5338,
+      "sha256": "1a7426accd01057f071896511701632000ad3d0d0536c5a6a920ee7de521ca39"
+    },
+    "control_2/report": {
+      "bytes": 32014,
+      "sha256": "a14ded867705b3154168ad696826fedea391ca3be84041ed0bcf675dedfba8ca"
+    },
+    "export_source": {
+      "bytes": 26845,
+      "sha256": "1b7a11e93eaf9e622fef95ccf01d7373a316a57798164fe5acdecda2499fa373"
+    },
+    "overlay_manifest": {
+      "bytes": 180750,
+      "sha256": "95652fe8b625577fa85226c468eb8571db7f29559e6c04c2f631761746339b98"
+    },
+    "parity_source/compare.py": {
+      "bytes": 9716,
+      "sha256": "fdfc24c6c7fa4372886816ff3b878446de8e88b6a6a8b24a5eec04999553a30c"
+    },
+    "parity_source/provenance.py": {
+      "bytes": 13332,
+      "sha256": "f532af7d554bb282e79ea1c902dc3c91108d9689a8ab5baa7e19c4da9a32971d"
+    },
+    "runtime_source/evidence_npz_storage.py": {
+      "bytes": 1873,
+      "sha256": "1b301846a61f1e19560768bb466c884ee3cf9796ed88ca24e08f5ee42294c047"
+    },
+    "runtime_source/measured_motion_session.py": {
+      "bytes": 23296,
+      "sha256": "00fa91fe5ae2cfbdd39b1bd572c9d892029b49a3bff59174871290f1027336af"
+    },
+    "six_run_protocol": {
+      "bytes": 108928,
+      "sha256": "c6c11f840ee730ce1c09047f7eefcf3a8d126e7060c1fcc26ca0166a6cb42b05"
+    },
+    "stored_0/execution": {
+      "bytes": 93201,
+      "sha256": "fb2cafe80290a936c42bd27cd068d9b730365d6db12f2a405b4d1e273ec45c47"
+    },
+    "stored_0/independent_parity": {
+      "bytes": 2307713,
+      "sha256": "d4d5245240cf58f1bd22067fa0138915041b4edbe67004e6210900a320fa3ea0"
+    },
+    "stored_0/integration": {
+      "bytes": 21803,
+      "sha256": "76c4fec99f76e7a798e39858d323c54ebf288c4f8d0fcc76724480b7d56bfa46"
+    },
+    "stored_0/latency_seconds_npy": {
+      "bytes": 360,
+      "sha256": "4a7b3296499dafc0afdb74b91b0c447131cc357a7505cfa922ba33d3d57226fa"
+    },
+    "stored_0/native_plan": {
+      "bytes": 5328,
+      "sha256": "c75109e2b58d2fcec695607d0c02ecf9761d2d017373e9dc4dccc1fba43eb7cc"
+    },
+    "stored_0/report": {
+      "bytes": 32010,
+      "sha256": "60a2110d3bfcb591c911c770cca62ea4d7a2831fa6f2b73054e3b3989de2762b"
+    },
+    "stored_1/execution": {
+      "bytes": 93204,
+      "sha256": "55af634da5b441986c0f90024fb940118f5076305b95b6298f9c1a0e34dd6cae"
+    },
+    "stored_1/independent_parity": {
+      "bytes": 2307721,
+      "sha256": "e52b10da276bf25351d41320d824463dc60edcb465460392132c48fbda494271"
+    },
+    "stored_1/integration": {
+      "bytes": 21803,
+      "sha256": "7aa0ec8971a4e534951815447e84dbcd9dc5e24debfb9d71211857bcb6953a87"
+    },
+    "stored_1/latency_seconds_npy": {
+      "bytes": 360,
+      "sha256": "3684531981397cc0b9efff40d5add8c1be322deba74d87195f43b96e5fd13171"
+    },
+    "stored_1/native_plan": {
+      "bytes": 5328,
+      "sha256": "51a5bf843e2051cb01a8191d2c9fbd070c996b0898258e8aaba6b27c664ef996"
+    },
+    "stored_1/report": {
+      "bytes": 32008,
+      "sha256": "cefc72eb765361f515884ee2d27e1c53e0dfbe2da01d60cd3e906454900ea559"
+    },
+    "stored_2/execution": {
+      "bytes": 93200,
+      "sha256": "0af4519de9f6d57e327af6b98264ff8a8b2304df0eb9c7fa5cf51287b248c616"
+    },
+    "stored_2/independent_parity": {
+      "bytes": 2307715,
+      "sha256": "a5dcb393e95764d525e7cc7ba71af5c8174596816b3640ce206aa63a06f706c3"
+    },
+    "stored_2/integration": {
+      "bytes": 21803,
+      "sha256": "aab28f0df1aec91b04663602f4c5c3895bd96ef728ec5aad3e5e27d1796b08cc"
+    },
+    "stored_2/latency_seconds_npy": {
+      "bytes": 360,
+      "sha256": "e3acc146a0b6ff09fe0226c34e0c988cb76aa023414eff30d544483b5f5eb61d"
+    },
+    "stored_2/native_plan": {
+      "bytes": 5328,
+      "sha256": "29fa77c3717c2814ccf6bceaee6160170083c7d65a95733e7dfa32c2199c81b9"
+    },
+    "stored_2/report": {
+      "bytes": 32012,
+      "sha256": "1b017e5ea8004507ce57c4b6b646226c4ecc2ae364b51eb8d533a9f6951ddcd7"
+    }
+  },
+  "schema": "native_storage_summary_source_hashes/1"
+}

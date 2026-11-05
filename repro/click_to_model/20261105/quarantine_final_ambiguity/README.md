@@ -1,0 +1,17 @@
+# Quarantine final-pose ambiguity: CPU regression result
+
+This package records eight fixed, paired CPU scenarios (48 planned input slots) and30 existing quarantine tests. The refiner is an explicit CPU test stub that adds a fixed signed translation to its current candidate. **No trained neural inference, GPU run, GT evaluation, physical re-identification evidence, or native recovery integration is claimed.**
+
+The original quarantine checked supplied competitors against the seed but not against the actual refined pose. In both signed away-direction counterexamples, an alternative about14mm from the seed passed the existing15mm equivalence bound; a6mm refinement then made their final separation about20mm while remaining within the existing8mm point-consistency bound. The original exported a confirmed snapshot after three frames. The isolated candidate rejects the newly ambiguous final pose before commit and preserves the actual failed callback return. No thresholds changed.
+
+Across the eight scenarios, original/candidate exports are8/5. The three stopped cases are positive-direction separation, negative-direction separation, and a competitor introduced after one pending observation. Both toward-direction controls, no competitor, an equivalent competitor, and a declared discrete-symmetry equivalent competitor still confirm. All30 original quarantine tests pass. These are mechanism checks, not a measured recovery success rate on real videos.
+
+`summary.json` retains all48 frame statuses, reasons, callback and return-presence flags, support counts, pre/post distances and per-scenario/export outcomes. The five inactive-chain slots are retained as `no_pending_chain`, not removed. Distances that were not observed or not applicable are null and carry explicit counts. Snapshot consumption was attempted only after frame3: export fields for earlier frames are null, not evidence of a failed export. The fixture independently checks alternative geometry on each planned input, including inactive-chain slots; this does not mean the inactive recovery module evaluated that input.
+
+**Index meaning:** `refined_alternative_checks.alternative_index` is the index in the candidate's retained **supported-alternative sublist**, not the index of the original supplied alternatives. The current fixtures have at most one supplied alternative. The source implementation is preserved unchanged in this export; the field is not silently relabeled as an original-input index.
+
+The patch only rechecks the supplied current-frame supported alternatives against the final symmetry-aligned pose. The extra-check bound is max_hypotheses−1; the tested default is8, hence at most7 here, not an API-hardcoded7. Unenumerated competitors and observationally indistinguishable impostors remain unresolved. Current native tracking does not invoke quarantine and retains its identity-loss latch. No production source or previously reported native output was changed.
+
+The first indented export exceeded the per-file70000-byte bound and was preserved locally without upload. This package uses compact JSON for the same statistical cells; the exporter verifies exact decoded equality with the first export, apart from the explicit configurable-bound clarification.
+
+The package contains only numerical/scalar summaries, test names/results, provenance hashes and this explanation. It contains no raw pose matrices, images, GT arrays, model/weights, source code, logs or source absolute paths. No CPU or GPU experiment was rerun during export.

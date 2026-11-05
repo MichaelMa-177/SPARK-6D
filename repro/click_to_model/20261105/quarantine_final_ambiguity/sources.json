@@ -1,0 +1,87 @@
+{
+  "schema": "quarantine_CPU_numeric_source_hashes/1",
+  "sources": [
+    {
+      "artifact": "candidate.py",
+      "bytes": 8745,
+      "sha256": "04c0b7f206786a04e68d5e4e296265048182bab8708b0de312b05800a1fb28ec"
+    },
+    {
+      "artifact": "check.py",
+      "bytes": 9139,
+      "sha256": "5bddabc1a475aad6d60d34ecc6d70dcd74445d97c6f6d04cd7e8e55a56c2ad2a"
+    },
+    {
+      "artifact": "cpu_v1/away_negative.json",
+      "bytes": 57595,
+      "sha256": "2bed5bd755ad2c4b9ee56fd0d91d9bf7f96e78892110d49300a7d1dc7fb24a7e"
+    },
+    {
+      "artifact": "cpu_v1/away_positive.json",
+      "bytes": 57623,
+      "sha256": "4a9dc3779627dacfa31b5882688f3da5c9055247d11f0880aa2e71c0bdbceb5f"
+    },
+    {
+      "artifact": "cpu_v1/competition_after_one_pending.json",
+      "bytes": 70124,
+      "sha256": "2771042ff3675cfeb705af4b143e3a808139826b4dd9692327f5236b85f2b9e0"
+    },
+    {
+      "artifact": "cpu_v1/discrete_equivalent_competitor.json",
+      "bytes": 94514,
+      "sha256": "012e702d0df54eaf7653272f24de405dbc1f789712325265757a236b2ab6d406"
+    },
+    {
+      "artifact": "cpu_v1/equivalent_competitor.json",
+      "bytes": 94384,
+      "sha256": "e4fd3d314186bd51d77445b78eae3a5676dcec27795c114aec20cd25efaaa702"
+    },
+    {
+      "artifact": "cpu_v1/legacy_tests.txt",
+      "bytes": 6151,
+      "sha256": "42f2d38521e232bf9520101cb4cdc21fb0244a0b6ebbb69c57d424c2db9dff49"
+    },
+    {
+      "artifact": "cpu_v1/no_competitor.json",
+      "bytes": 88274,
+      "sha256": "77032c833db671c5d530fa89015e058d7769debfa15c33a92ad44f64ba4ef650"
+    },
+    {
+      "artifact": "cpu_v1/receipt.json",
+      "bytes": 8184,
+      "sha256": "562d0ded06aa1340c37cb3849e115274fa21c10e9c878e9a3cc944d4ebb8cf60"
+    },
+    {
+      "artifact": "cpu_v1/toward_negative.json",
+      "bytes": 94413,
+      "sha256": "5f32a65c086c0167208ebb4a1bbdeac3e26f60b6ecee9ff2ce4a3c30d6d7b8f7"
+    },
+    {
+      "artifact": "cpu_v1/toward_positive.json",
+      "bytes": 94375,
+      "sha256": "846795c662f1b96f232b000866f6d16d798be90c6f692127edfca2ed4db6a3e7"
+    },
+    {
+      "artifact": "observe.diff",
+      "bytes": 2496,
+      "sha256": "b2baf47903bd75876c1049c7b30526691fa3ef8e049d551c7772d69fe025952a"
+    },
+    {
+      "artifact": "quarantined_recovery.py",
+      "bytes": 16593,
+      "sha256": "fff1e6f2f23616d1aabda1a04cd95e3fc1e82da29b0b25362eb24c4cfea181d4"
+    },
+    {
+      "artifact": "tests/test_quarantined_recovery.py",
+      "bytes": 31294,
+      "sha256": "2deceb6e885a9f0ed541aeaaaf7e5ca64d916b6f241511532cbd189ada0b940d"
+    }
+  ],
+  "exporter": {
+    "artifact": "export_v3.py",
+    "bytes": 16067,
+    "sha256": "a5098d55ba153d91745869a37071f2490ff58d542d00e0c7169053e0fc0fac3f"
+  },
+  "contains_source_code": false,
+  "contains_original_source_absolute_paths": false
+}
