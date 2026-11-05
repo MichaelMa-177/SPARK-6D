@@ -1,0 +1,218 @@
+{
+  "schema": "lossless_public_aggregate_shards/1",
+  "single_file_limit_bytes_exclusive": 70000,
+  "original_package_files": {
+    "README.md": {
+      "bytes": 6653,
+      "sha256": "a715e3e90d31e90bd0c29d0fb83371436ad98d253e0c372f7a00131044cd9af1"
+    },
+    "manifest.json": {
+      "bytes": 750,
+      "sha256": "f3bb0f13d9195198a1dac7cd368c0cc840ebd7a091c24b11f503036588fbd3ce"
+    },
+    "paired_transitions.csv": {
+      "bytes": 74834,
+      "sha256": "00740cc89f68d22a903792ce24c10491d92074140f64654ea837afbb7511f671"
+    },
+    "sources.json": {
+      "bytes": 3407,
+      "sha256": "99497953a8d7fa470db2e85c30203a261a793021def98546cd01b7450060141b"
+    },
+    "summary.json": {
+      "bytes": 3016945,
+      "sha256": "a2605b08c73a9405c23d267d2f4eb380b3d2d134243df434b505fd2e70f64cc0"
+    },
+    "threshold_counts.csv": {
+      "bytes": 416331,
+      "sha256": "aa04e3ab5657bf274a860bb36f46388d44b93f42ec568950c5a3049a92944956"
+    }
+  },
+  "original_manifest_sha256": "f3bb0f13d9195198a1dac7cd368c0cc840ebd7a091c24b11f503036588fbd3ce",
+  "summary": {
+    "original_root_key_order": [
+      "schema",
+      "status",
+      "denominators",
+      "definitions",
+      "variants",
+      "cases",
+      "review",
+      "interpretation",
+      "limitations"
+    ],
+    "metadata_file": "summary.metadata.json",
+    "schemas_file": "summary.schemas.json",
+    "cases": [
+      {
+        "index": 0,
+        "case": "ycbv_000051_obj000017",
+        "world": "observed",
+        "file": "summary.case00.json"
+      },
+      {
+        "index": 1,
+        "case": "ycbv_000054_obj000019",
+        "world": "observed",
+        "file": "summary.case01.json"
+      },
+      {
+        "index": 2,
+        "case": "ycbv_000057_obj000021",
+        "world": "observed",
+        "file": "summary.case02.json"
+      },
+      {
+        "index": 3,
+        "case": "ycbv_000058_obj000008",
+        "world": "observed",
+        "file": "summary.case03.json"
+      },
+      {
+        "index": 4,
+        "case": "continuous_visible",
+        "world": "stay",
+        "file": "summary.case04.json"
+      },
+      {
+        "index": 5,
+        "case": "hidden_identity_ambiguous",
+        "world": "stay",
+        "file": "summary.case05.json"
+      },
+      {
+        "index": 6,
+        "case": "hidden_identity_ambiguous",
+        "world": "exchange",
+        "file": "summary.case06.json"
+      },
+      {
+        "index": 7,
+        "case": "pooled_real",
+        "world": "observed",
+        "file": "summary.case07.json"
+      }
+    ],
+    "encoding": "Every object is {s: schema index, v: ordered encoded values}; schema columns supply original ordered keys. Arrays and JSON scalar types remain unchanged. Recursively zip columns with values, reconstruct cases in index order, and restore root key order."
+  },
+  "csv": {
+    "threshold_counts.csv": {
+      "header_utf8": "case,world,kind,scope,scope_defined,metric,threshold,comparison,variant,N,candidate_correct,candidate_wrong,candidate_unknown,published,abstained,published_correct,published_wrong,published_unknown,abstained_correct,abstained_wrong,abstained_unknown,coverage,abstention_over_all,published_correct_over_all,published_wrong_over_all,published_unknown_over_all,published_metric_known,risk_published_known,risk_lower,risk_upper_unknown_as_wrong,false_rejection_count,false_rejection_over_correct,correct_metric_rejection_count,correct_metric_rejection_over_wrong\r\n",
+      "original_data_rows": 2016,
+      "parts": [
+        {
+          "file": "threshold_counts.case00.part00.csv",
+          "case": "ycbv_000051_obj000017",
+          "world": "observed",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case01.part00.csv",
+          "case": "ycbv_000054_obj000019",
+          "world": "observed",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case02.part00.csv",
+          "case": "ycbv_000057_obj000021",
+          "world": "observed",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case03.part00.csv",
+          "case": "ycbv_000058_obj000008",
+          "world": "observed",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case04.part00.csv",
+          "case": "continuous_visible",
+          "world": "stay",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case05.part00.csv",
+          "case": "hidden_identity_ambiguous",
+          "world": "stay",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case06.part00.csv",
+          "case": "hidden_identity_ambiguous",
+          "world": "exchange",
+          "data_rows": 252
+        },
+        {
+          "file": "threshold_counts.case07.part00.csv",
+          "case": "pooled_real",
+          "world": "observed",
+          "data_rows": 252
+        }
+      ]
+    },
+    "paired_transitions.csv": {
+      "header_utf8": "case,world,kind,scope,scope_defined,metric,threshold,comparison,N,00_correct,00_wrong,00_unknown,01_correct,01_wrong,01_unknown,10_correct,10_wrong,10_unknown,11_correct,11_wrong,11_unknown\r\n",
+      "original_data_rows": 672,
+      "parts": [
+        {
+          "file": "paired_transitions.case00.part00.csv",
+          "case": "ycbv_000051_obj000017",
+          "world": "observed",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case01.part00.csv",
+          "case": "ycbv_000054_obj000019",
+          "world": "observed",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case02.part00.csv",
+          "case": "ycbv_000057_obj000021",
+          "world": "observed",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case03.part00.csv",
+          "case": "ycbv_000058_obj000008",
+          "world": "observed",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case04.part00.csv",
+          "case": "continuous_visible",
+          "world": "stay",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case05.part00.csv",
+          "case": "hidden_identity_ambiguous",
+          "world": "stay",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case06.part00.csv",
+          "case": "hidden_identity_ambiguous",
+          "world": "exchange",
+          "data_rows": 84
+        },
+        {
+          "file": "paired_transitions.case07.part00.csv",
+          "case": "pooled_real",
+          "world": "observed",
+          "data_rows": 84
+        }
+      ]
+    }
+  },
+  "original_file_copies": {
+    "README.md": "original_README.md",
+    "manifest.json": "original_manifest.json",
+    "sources.json": "sources.json"
+  },
+  "reconstruction": "Summary uses json.dumps(indent=2, ensure_ascii=True, allow_nan=False) plus one newline. CSV keeps the first part header once, then concatenates every part data row in declared order, preserving raw CRLF bytes. Copied originals are byte-identical.",
+  "evaluation_values_changed": false,
+  "protocol_changed": false,
+  "frame_rows_added": false,
+  "raw_GT_read": false,
+  "new_source_code_included": false
+}

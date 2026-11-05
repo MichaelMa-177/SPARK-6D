@@ -1,0 +1,37 @@
+{
+  "schema": "numeric_public_package/1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3559,
+      "sha256": "be123dd8ae3874f908c72f306d92f605f3a00718f877df1d58e2ca8b3d69c57b"
+    },
+    {
+      "path": "parity_counts.json",
+      "bytes": 5268,
+      "sha256": "c59dac23d569c4c4f80f2883be7e2c63e67e10d78d30b564325fa9dd4c6021e4"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2692,
+      "sha256": "7f55a82ae3295223d6e1ad7e7abf737c8251a485a0c344da385b5d9b7883de9f"
+    },
+    {
+      "path": "stage_timing.csv",
+      "bytes": 11774,
+      "sha256": "b3ccb5e575fad543b909fc905479277455d85fe898f4b6bd5bb59e316c5572d2"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 5302,
+      "sha256": "2d2e0f1c23e1497e6c7ce567fd26d75f95d39d2a3d45dcd4c97a4706679b3f53"
+    }
+  ],
+  "files_excluding_manifest": 5,
+  "bytes_excluding_manifest": 28595,
+  "max_file_bytes": 70000,
+  "contains_source": false,
+  "contains_pose_arrays": false,
+  "contains_GT": false,
+  "contains_images": false
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "complete_hash_microbenchmark_public/1",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 1205,
+      "sha256": "2c978fc8498c639501f1d119a9ab112e80722331ca42b52e424bf8eb0ecbfd55"
+    },
+    {
+      "name": "protocol_and_sources.json",
+      "bytes": 903,
+      "sha256": "7ee1b7e5a04704c3185730dc22c3796683f313df6415a855f867e5fe4b0a6d77"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 1201,
+      "sha256": "ff9f2d5de3ac742fe0d78fb92dbc2b4e08ac0d43d3d76a88571f21b98c716304"
+    }
+  ]
+}

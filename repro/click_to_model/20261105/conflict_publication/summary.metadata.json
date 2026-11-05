@@ -1,0 +1,68 @@
+{
+  "schema": "aggregate_publication_policy_development_v1",
+  "status": "completed_independent_existing_scalar_join",
+  "denominators": {
+    "unique_cases": 6,
+    "unique_inputs": 7886,
+    "unique_tracking": 7880,
+    "initializations": 6,
+    "real_inputs": 7526,
+    "real_tracking": 7522,
+    "synthetic_unique_inputs": 360,
+    "synthetic_unique_tracking": 358,
+    "synthetic_label_rows": 540,
+    "synthetic_label_tracking_rows": 537,
+    "label_rows": 8066,
+    "label_tracking_rows": 8059,
+    "real_BOP19_tracking": 297
+  },
+  "definitions": {
+    "label": "Finite metric under unchanged threshold iff working_output_qualified; otherwise unknown.",
+    "six_cells": "published/abstained crossed with correct/wrong/unknown; sum equals full fixed scope N.",
+    "coverage": "published/N",
+    "published_wrong_over_all": "published_wrong/N",
+    "published_correct_over_all": "published_correct/N",
+    "false_rejection": "abstained_correct",
+    "correct_metric_rejection": "abstained_wrong, not identity verification",
+    "risk_known": "published_wrong/(published_correct+published_wrong)",
+    "risk_lower": "published_wrong/published",
+    "risk_upper": "(published_wrong+published_unknown)/published",
+    "zero_denominator": "null",
+    "undefined_scope": "Synthetic BOP scope is undefined. N=0 is only an empty placeholder with defined=false and null rates; it is not a valid zero-error BOP evaluation.",
+    "paired": "2x2 baseline/research availability, each split by same raw candidate label; all cells sum to N.",
+    "pooling": "Pool real counts only, matching metric threshold grid indices; ADD uses each object original diameter. Synthetic worlds never pooled as independent streams."
+  },
+  "variants": [
+    "raw_candidate",
+    "baseline_publication",
+    "research_publication"
+  ],
+  "review": {
+    "independent_review_passed": true,
+    "peer_receipt": {
+      "bytes": 50832,
+      "sha256": "18b9e57e751dfa0c69f1357b335339dfa9b2d7100f09c6e1cc346cf766bf65d2"
+    },
+    "threshold_variant_rows": 2016,
+    "paired_threshold_scope_rows": 672,
+    "prior_baseline_exact_cells": 336
+  },
+  "interpretation": {
+    "publication_only": true,
+    "development_labels_previously_seen": true,
+    "trajectory_changed": false,
+    "new_geometry_evaluation": false,
+    "production_default_changed": false,
+    "heldout_claim": false,
+    "verified_claim": false,
+    "historical_synthetic_dual_live_branch_challenge": false
+  },
+  "limitations": [
+    "Exploratory rule motivated by known real development labels; not a blinded or held-out test.",
+    "Output-only decision replay on frozen trajectories; no new tracking, point-stream or FP causal improvement claim.",
+    "Candidate-based branch arbitration can pass a wrong candidate agreeing with one wrong stream; all trust flags stay false.",
+    "The synthetic same-appearance records have no real secondary bridge; unchanged results test regression, not the new conflict rule against impostors.",
+    "Stay/exchange labels refer to the same ambiguous input stream and cannot be counted as independent videos.",
+    "No threshold tuning, GT-selected frame filtering, symmetry permutation of fixed point correspondences or label-dependent branch selection."
+  ]
+}

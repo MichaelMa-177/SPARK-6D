@@ -1,0 +1,193 @@
+{
+  "schema": "native_fixed30_hash_parity_counts/1",
+  "arms": {
+    "original_hash": {
+      "reference": "20261027_native_dual_head_actual_attempt_fixed30_v1",
+      "numeric_counts": {
+        "initialization": {
+          "checked": 29,
+          "exact": 29,
+          "different": 0
+        },
+        "input": {
+          "checked": 90,
+          "exact": 90,
+          "different": 0
+        },
+        "candidate_pose": {
+          "checked": 30,
+          "exact": 30,
+          "different": 0
+        },
+        "publication": {
+          "checked": 62,
+          "exact": 62,
+          "different": 0
+        }
+      },
+      "numeric_checked": 211,
+      "numeric_different": 0,
+      "structure_counts": [
+        {
+          "field": "configuration",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "product_arguments_except_explicit_output_epoch",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "published_array_keys",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "all_output_decisions_only_epoch_normalized",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/frames",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/prepared_publications",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/holders",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/gradient_shadow_frames",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/effective_enabled",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/updates_enabled",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "original_model_signatures_and_constructed_configuration",
+          "exact": true,
+          "difference_count": 0
+        }
+      ],
+      "structure_checked": 11,
+      "structure_different": 0,
+      "prepared_update_rows": 29,
+      "compared_before_and_next_private_head_digest_signatures": 232,
+      "all_proposal_scalars_compared": true,
+      "all_consumed_files_unchanged": true
+    },
+    "batched_hash": {
+      "reference": "20261027_native_dual_head_actual_attempt_fixed30_v1",
+      "numeric_counts": {
+        "initialization": {
+          "checked": 29,
+          "exact": 29,
+          "different": 0
+        },
+        "input": {
+          "checked": 90,
+          "exact": 90,
+          "different": 0
+        },
+        "candidate_pose": {
+          "checked": 30,
+          "exact": 30,
+          "different": 0
+        },
+        "publication": {
+          "checked": 62,
+          "exact": 62,
+          "different": 0
+        }
+      },
+      "numeric_checked": 211,
+      "numeric_different": 0,
+      "structure_counts": [
+        {
+          "field": "configuration",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "product_arguments_except_explicit_output_epoch",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "published_array_keys",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "all_output_decisions_only_epoch_normalized",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/frames",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/prepared_publications",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/holders",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/gradient_shadow_frames",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/effective_enabled",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "intervention/updates_enabled",
+          "exact": true,
+          "difference_count": 0
+        },
+        {
+          "field": "original_model_signatures_and_constructed_configuration",
+          "exact": true,
+          "difference_count": 0
+        }
+      ],
+      "structure_checked": 11,
+      "structure_different": 0,
+      "prepared_update_rows": 29,
+      "compared_before_and_next_private_head_digest_signatures": 232,
+      "all_proposal_scalars_compared": true,
+      "all_consumed_files_unchanged": true
+    }
+  },
+  "comparisons_between_arms": "Both independently exact against the same original fixed30 reference for all reported fields; equality is transitive for these checked fields.",
+  "only_normalized_fields": [
+    "epoch_id",
+    "session_id",
+    "admission_id"
+  ],
+  "normalization_scope": "Only values exactly equal to the corresponding dedicated product path, in publication decision tree. No numeric fields normalized.",
+  "GT_read": false
+}

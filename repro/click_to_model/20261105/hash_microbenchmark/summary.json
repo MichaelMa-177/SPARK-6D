@@ -1,0 +1,45 @@
+{
+  "status": "completed",
+  "summary": {
+    "reference": {
+      "n": 30,
+      "mean_ms": 61.55765926666667,
+      "median_ms": 62.5555145,
+      "min_ms": 58.806692,
+      "max_ms": 63.265525,
+      "block_mean_ms": [
+        59.101798,
+        62.793244,
+        62.7779358
+      ]
+    },
+    "batched": {
+      "n": 30,
+      "mean_ms": 46.11899043333333,
+      "median_ms": 46.0592495,
+      "min_ms": 45.864697,
+      "max_ms": 46.891336,
+      "block_mean_ms": [
+        46.141466199999996,
+        46.0654956,
+        46.1500095
+      ]
+    }
+  },
+  "checkpoint_tensor_count": 134,
+  "checkpoint_bytes": 68175248,
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "torch_version": "2.6.0+cu124",
+  "cuda": "12.4",
+  "peak_allocated_bytes": 135818240,
+  "peak_reserved_bytes": 140509184,
+  "GT_read": false,
+  "neural_inference": false,
+  "limits": [
+    "One process, three alternating blocks per method; descriptive microbenchmark.",
+    "Checkpoint tensors only, not a live model or end-to-end speed/accuracy comparison.",
+    "Every full digest is recomputed; no caching or loss of state-byte coverage."
+  ],
+  "measurement_count_including_warmup": 78,
+  "all_digest_comparisons_exact": true
+}

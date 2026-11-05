@@ -1,0 +1,38 @@
+{
+  "sources": [
+    {
+      "file": "benchmark_gpu.py",
+      "bytes": 5139,
+      "sha256": "776c87d9c71986024b91b7a4304fdb96f21c789d46c1f71b3be847180f78d667"
+    },
+    {
+      "file": "batched_hash.py",
+      "bytes": 2369,
+      "sha256": "51a31fc23a030cbbd39f53d418fbc0ff9fad1e4e2ac1e6a9f73ea9ba3b29dfc5"
+    },
+    {
+      "file": "callback.py",
+      "bytes": 16099,
+      "sha256": "6d9dac728d0c19619283df2bc4f60331f28b2b139ae5717a9dac6a7c1a6414a5"
+    },
+    {
+      "file": "model_best.pth",
+      "bytes": 68220109,
+      "sha256": "774700586ddc435d408fc01c9809c43e151232936369dfbea0f0f964ba471d60"
+    }
+  ],
+  "batch_bound_bytes": 67108864,
+  "order": [
+    "reference",
+    "batched",
+    "batched",
+    "reference",
+    "reference",
+    "batched"
+  ],
+  "warmup_per_block": 3,
+  "measured_per_block": 10,
+  "same_full_checkpoint": true,
+  "GT_read": false,
+  "neural_inference": false
+}

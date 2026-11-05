@@ -1,0 +1,25 @@
+{
+  "schema": "aggregate_numeric_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 6653,
+      "sha256": "a715e3e90d31e90bd0c29d0fb83371436ad98d253e0c372f7a00131044cd9af1"
+    },
+    "paired_transitions.csv": {
+      "bytes": 74834,
+      "sha256": "00740cc89f68d22a903792ce24c10491d92074140f64654ea837afbb7511f671"
+    },
+    "sources.json": {
+      "bytes": 3407,
+      "sha256": "99497953a8d7fa470db2e85c30203a261a793021def98546cd01b7450060141b"
+    },
+    "summary.json": {
+      "bytes": 3016945,
+      "sha256": "a2605b08c73a9405c23d267d2f4eb380b3d2d134243df434b505fd2e70f64cc0"
+    },
+    "threshold_counts.csv": {
+      "bytes": 416331,
+      "sha256": "aa04e3ab5657bf274a860bb36f46388d44b93f42ec568950c5a3049a92944956"
+    }
+  }
+}

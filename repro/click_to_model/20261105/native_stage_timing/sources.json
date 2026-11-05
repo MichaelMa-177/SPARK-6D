@@ -1,0 +1,67 @@
+{
+  "schema": "numeric_public_sources/1",
+  "sources": [
+    {
+      "artifact": "20261105_native_timing_parity_v1/evaluation_reference_v1/receipt.json",
+      "bytes": 222672,
+      "sha256": "774f1314c9ed05d49c6a40d6b98fcf4271ad4630e531d4e66cc95c609404fb45"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_v2/native_intervention.json",
+      "bytes": 124694,
+      "sha256": "8ffc4771a22691debfb786e661ce3bfafe4514bdd20d95f0a18d58e4a95170d5"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_v2/execution.json",
+      "bytes": 1843,
+      "sha256": "0f25937254e33d9c7998fc395d6564d657f26e9e5c5a9c1d66eaab948ed8cd84"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_v2/product/report.json",
+      "bytes": 32000,
+      "sha256": "0644d465c6a7d01696d41b77c424777ef1f0a591dfa66b0890f3ebbef4cebc95"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_v2/timing.json",
+      "bytes": 16377400,
+      "sha256": "04e8efee1afb8e9b83aaf740abcdef8b2f71e633fba5830fffcd4411fb7083cc"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_v2/frozen_v1/frozen_plan.json",
+      "bytes": 13726,
+      "sha256": "eb8dfc378c99515c66a82998d8dc28630663a438de4fc48fc660db0ac6ca47c4"
+    },
+    {
+      "artifact": "20261105_native_timing_parity_v1/evaluation_batched_v1/receipt.json",
+      "bytes": 223260,
+      "sha256": "6326a0fb751444cf300ba6d17487d7f3aea090d5760ced45fbb8ed1503698ae1"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_batched_v1/native_intervention.json",
+      "bytes": 124694,
+      "sha256": "428dbd339d7ffbb9dce02e87ae4caabd8b6b915110e34e34c9acd5142789183b"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_batched_v1/execution.json",
+      "bytes": 1870,
+      "sha256": "61489d06199cefcd558436a374f8282cb58a0dee76debd06b53b5b395cab6381"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_batched_v1/product/report.json",
+      "bytes": 32028,
+      "sha256": "adc0e222338d2c21d336a118dfe922dc71a09f461a273983f29caf0c188096a8"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_batched_v1/timing.json",
+      "bytes": 4466025,
+      "sha256": "39620ffa4a44a18ade56624234d9891ec1088c067029d56a0d87fa2a3000bd89"
+    },
+    {
+      "artifact": "20261105_native_hash_batched_actual_v1/frozen_v1/frozen_plan.json",
+      "bytes": 14486,
+      "sha256": "06dca426f619aea2a9960a4563103c818f8f6eb7d4edf2cf7efd43dbfd5f9097"
+    }
+  ],
+  "analyzer_sha256": "5fe9e77ba3ec60d9c128e8444c63fb2be31707fa8f1dd8d6807434345845a0e6",
+  "exporter_sha256": "e5e34cbc8514056939f762bdad93759ec1067353b41e7d6fd217c484df8546b9"
+}
