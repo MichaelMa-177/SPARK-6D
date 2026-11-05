@@ -1,0 +1,72 @@
+{
+  "schema": "numeric_public_sources/1",
+  "sources": [
+    {
+      "artifact": "20261105_native_timing_matched_parity_v1/evaluation_reference_v1/receipt.json",
+      "bytes": 225041,
+      "sha256": "7c1bd127f40b961bd8714f7339eed85a234650363211aec740f5019b50909f43"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_reference_v1/native_intervention.json",
+      "bytes": 124694,
+      "sha256": "8ef43d97435999dadea3b3c0d115dbffbf522554aa23718a8ab9b6e9d24c131b"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_reference_v1/execution.json",
+      "bytes": 1899,
+      "sha256": "21c46a52627f8180df5b96002bf7d4c13e7a986c2a40db81b96a48682b63739d"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_reference_v1/product/report.json",
+      "bytes": 32059,
+      "sha256": "dc19ab1a40e2a2c2d017fc4e3fb5fded5e8649ba8e9e30dbcba5d51c3f1d727e"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_reference_v1/timing.json",
+      "bytes": 4465835,
+      "sha256": "1d9854d67f54f1163cc36866992e8ed2686a2bf0adeb381f066cdd9a6eed291f"
+    },
+    {
+      "artifact": "20261105_native_timing_matched_reference_v1/frozen_v1/frozen_plan.json",
+      "bytes": 14012,
+      "sha256": "ac2c6dee4812160cab659851227260556d6897ab88db90f9ac9dd4d845287b73"
+    },
+    {
+      "artifact": "20261105_native_timing_matched_parity_v1/evaluation_batched_v1/receipt.json",
+      "bytes": 224679,
+      "sha256": "a1a3186ee898997293692adfe86b1449817bc2e372cc29fcde37b1024a124805"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_batched_v1/native_intervention.json",
+      "bytes": 124694,
+      "sha256": "756ad65a4367aaae7dac05ae5f2f1a08b2dcb3eb57527c2777f215062e47008c"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_batched_v1/execution.json",
+      "bytes": 1891,
+      "sha256": "4d34bd113c20415266400c860c39f814e686d1b66ade9959804919bbfda37d4c"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_batched_v1/product/report.json",
+      "bytes": 32047,
+      "sha256": "e2f7bf818fe19dd46aacdf1144d9388c6e53c5d00895512cf415ed13a9747ac4"
+    },
+    {
+      "artifact": "20261105_native_timing_fixed30_attempt_matched_batched_v1/timing.json",
+      "bytes": 4465760,
+      "sha256": "8e883334caa2c361c4fdf6fd045b61e5d94e1272b3e841f44938439ac35be80e"
+    },
+    {
+      "artifact": "20261105_native_timing_matched_batched_v1/frozen_v1/frozen_plan.json",
+      "bytes": 14586,
+      "sha256": "4a628c79fd6af114e669e35d87070f8be00793708cf5d2872b305f68b73c2065"
+    },
+    {
+      "artifact": "20261105_native_timing_matched_parity_v1/calls_comparison_v1/receipt.json",
+      "bytes": 12339,
+      "sha256": "c2da5c187a46c627a1dc274d7855e12292df8bca190e58a22424259293fa90d0"
+    }
+  ],
+  "analyzer_sha256": "5fe9e77ba3ec60d9c128e8444c63fb2be31707fa8f1dd8d6807434345845a0e6",
+  "exporter_sha256": "860efa16889848e853b38df4014732b706d020c8c14f60dc0aafd8dcf168502f"
+}

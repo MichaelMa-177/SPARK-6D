@@ -1,0 +1,116 @@
+{
+  "schema": "native_fixed30_hash_timing_common_outer_observer_public/1",
+  "status": "completed_two_single_runs_exact_checked_parity_and_observer_topology",
+  "arms": {
+    "original_hash": {
+      "input_count": 30,
+      "tracking_count": 29,
+      "registration_candidates": 756,
+      "tracking": {
+        "tracking_count": 29,
+        "total_seconds": 20.235210705010104,
+        "mean_seconds": 0.6977658863796588,
+        "p50_seconds": 0.5806325969897443,
+        "p95_seconds": 1.0099370558047667,
+        "parent_wall_seconds": 45.01065849499719
+      },
+      "initialization_seconds": 14.505682431001333,
+      "registration_seconds": 4.183148458003416,
+      "admission_seconds": 3.7435598480078625,
+      "parent_wall_seconds": 45.01065849499719,
+      "GPU": "NVIDIA GeForce RTX 4070 SUPER",
+      "memory": {
+        "scope": "Whole child process including initialization/models/unchanged journals; no reset and no journal-only attribution",
+        "GPU_peak_allocated_bytes": 2749754368,
+        "GPU_peak_reserved_bytes": 5041553408,
+        "process_peak_rss_kib": 5743024,
+        "status": "recorded"
+      },
+      "committed_updates": 29,
+      "final_holders": [
+        {
+          "version": 29,
+          "poisoned": false,
+          "pending": false
+        }
+      ],
+      "callbacks": 45,
+      "unknown_permission_callbacks": 0,
+      "span_count": 12410,
+      "measurement_errors": 0,
+      "dropped_spans": 0,
+      "reported_tracking_fps": 1.433145442504327
+    },
+    "batched_hash": {
+      "input_count": 30,
+      "tracking_count": 29,
+      "registration_candidates": 756,
+      "tracking": {
+        "tracking_count": 29,
+        "total_seconds": 18.620153285984998,
+        "mean_seconds": 0.642074251240862,
+        "p50_seconds": 0.522044558005291,
+        "p95_seconds": 0.9507601811987115,
+        "parent_wall_seconds": 43.50948077099747
+      },
+      "initialization_seconds": 14.65628940500028,
+      "registration_seconds": 4.193515504011884,
+      "admission_seconds": 3.942758678997052,
+      "parent_wall_seconds": 43.50948077099747,
+      "GPU": "NVIDIA GeForce RTX 4070 SUPER",
+      "memory": {
+        "scope": "Whole child process including initialization/models/unchanged journals; no reset and no journal-only attribution",
+        "GPU_peak_allocated_bytes": 2749754368,
+        "GPU_peak_reserved_bytes": 5041553408,
+        "process_peak_rss_kib": 5740960,
+        "status": "recorded"
+      },
+      "committed_updates": 29,
+      "final_holders": [
+        {
+          "version": 29,
+          "poisoned": false,
+          "pending": false
+        }
+      ],
+      "callbacks": 45,
+      "unknown_permission_callbacks": 0,
+      "span_count": 12410,
+      "measurement_errors": 0,
+      "dropped_spans": 0,
+      "reported_tracking_fps": 1.5574522698386
+    }
+  },
+  "observed_delta_batched_minus_original_hash": {
+    "tracking_seconds": -1.6150574190251064,
+    "tracking_relative_change": -0.07981421308478043,
+    "parent_wall_seconds": -1.5011777239997173,
+    "parent_wall_relative_change": -0.033351605468437406,
+    "tracking_full_model_hash_seconds": -1.7117690209999994
+  },
+  "overlapping_selected_stage_counts": {
+    "original_hash": {
+      "evidence_sink_total inside surface_total": 90
+    },
+    "batched_hash": {
+      "evidence_sink_total inside surface_total": 90
+    }
+  },
+  "limits": [
+    "One serial run per arm on one fixed 30-input/29-tracking prefix; no repeat, confidence interval, randomized order, occlusion coverage, or general deployment speed claim.",
+    "All input, output and private-head signature checks are exact dtype/shape/bytes or exact scalar equality. No tolerance is used to pass differences.",
+    "This is a new pair with one common outer observer. Both arms omit only per-tensor full-model hash child spans while still executing all original full-model hashes and guards. Span count, every label call count, frame/callback IDs and parent topology are independently compared.",
+    "Full-model outer hash calls remain 221 overall and 220 in tracking. Both arms have the same recorded child-span coverage; full_model_tensor_copy_hash is absent in both.",
+    "Inclusive stages overlap. surface_total contains 90 evidence_sink_total spans in each arm; sink includes NPZ compression. Do not sum these stages.",
+    "CUDA event values are stream elapsed intervals including possible host gaps, not summed kernel times.",
+    "Tracking uses all 29 saved frame latencies; parent wall includes child startup, initialization and inherited source/asset gates. They are different timing boundaries.",
+    "Peak GPU allocation/reservation and process RSS cover the entire child, without resetting; initialization may determine the peak.",
+    "The original fixed30 reference was recorded earlier; exact checked output parity does not imply general determinism.",
+    "Private parameter evidence compares all before/next head digest signatures and full proposal scalar values; the audit does not independently rerun optimization.",
+    "Targeted parity and timing integrity do not replace full raw transfer/current-gate replay or GT accuracy evaluation. No GT was read.",
+    "No images, pose matrices, model, weights, raw GT, runtime source or logs are included in this public package."
+  ],
+  "GT_read": false,
+  "accuracy_improvement_claim": false,
+  "general_speed_improvement_claim": false
+}

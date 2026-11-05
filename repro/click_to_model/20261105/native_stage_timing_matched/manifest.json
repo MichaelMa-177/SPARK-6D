@@ -1,0 +1,42 @@
+{
+  "schema": "numeric_public_package/1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3811,
+      "sha256": "ea059ad0f26b0ca6b937ee3d5e513468b687c9570c57cf12d9cd3a460b6336df"
+    },
+    {
+      "path": "observer_counts.json",
+      "bytes": 10745,
+      "sha256": "4fa97967731ddb94c87ce91404150add50b2c1dbb66beceb89f262c31b064a1f"
+    },
+    {
+      "path": "parity_counts.json",
+      "bytes": 5268,
+      "sha256": "c59dac23d569c4c4f80f2883be7e2c63e67e10d78d30b564325fa9dd4c6021e4"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 3037,
+      "sha256": "388bd40156c9de3de4504f9812b113d1b12414d9f5a88ee94cec87b25245a014"
+    },
+    {
+      "path": "stage_timing.csv",
+      "bytes": 11508,
+      "sha256": "a3bdfe344be041143594eb24c252663186d9483116130475098a61106fe9a281"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 5404,
+      "sha256": "eaaa1aa6739d65540e923c24083296059b3d67238d685658345f723cf09c6cf7"
+    }
+  ],
+  "files_excluding_manifest": 6,
+  "bytes_excluding_manifest": 39773,
+  "max_file_bytes": 70000,
+  "contains_source": false,
+  "contains_pose_arrays": false,
+  "contains_GT": false,
+  "contains_images": false
+}

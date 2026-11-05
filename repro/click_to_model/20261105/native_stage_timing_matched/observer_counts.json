@@ -1,0 +1,522 @@
+{
+  "schema": "native_fixed30_matched_observer_comparison/1",
+  "status": "matched_calls_and_topology",
+  "reference_span_count": 12410,
+  "batched_span_count": 12410,
+  "label_scope_checks": 71,
+  "label_scope_differences": 0,
+  "label_scope_counts": [
+    {
+      "scope": "all",
+      "stage": "autograd_gradient",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "capture_tensor_clone",
+      "reference": 1018,
+      "batched": 1018,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "coordinator_emit",
+      "reference": 194,
+      "batched": 194,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "current_decode_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "evidence_sink_total",
+      "reference": 781,
+      "batched": 781,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "exact_ray_raster",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "full_model_state_hash",
+      "reference": 221,
+      "batched": 221,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "holder_guard",
+      "reference": 190,
+      "batched": 190,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "npz_compress_write",
+      "reference": 1142,
+      "batched": 1142,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "objective_construct_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "observed_normals_CPU",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "original_FP_crop_total",
+      "reference": 60,
+      "batched": 60,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "original_FP_model_forward",
+      "reference": 60,
+      "batched": 60,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "original_FP_predict_total",
+      "reference": 48,
+      "batched": 48,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "pack_payload",
+      "reference": 552,
+      "batched": 552,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "pose_to_CPU",
+      "reference": 270,
+      "batched": 270,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "private_effective_total",
+      "reference": 132,
+      "batched": 132,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "private_head_forward",
+      "reference": 177,
+      "batched": 177,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "private_head_state_hash",
+      "reference": 587,
+      "batched": 587,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "publication_total",
+      "reference": 30,
+      "batched": 30,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "session_step_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "shadow_check_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "shadow_proposal_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "surface_array_hash",
+      "reference": 1263,
+      "batched": 1263,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "surface_capture_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "surface_tensor_to_CPU",
+      "reference": 541,
+      "batched": 541,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "surface_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "tensor_copy_hash",
+      "reference": 4729,
+      "batched": 4729,
+      "exact": true
+    },
+    {
+      "scope": "all",
+      "stage": "training_loss_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "autograd_gradient",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "capture_tensor_clone",
+      "reference": 1018,
+      "batched": 1018,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "coordinator_emit",
+      "reference": 193,
+      "batched": 193,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "current_decode_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "evidence_sink_total",
+      "reference": 692,
+      "batched": 692,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "exact_ray_raster",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "full_model_state_hash",
+      "reference": 220,
+      "batched": 220,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "holder_guard",
+      "reference": 190,
+      "batched": 190,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "npz_compress_write",
+      "reference": 1007,
+      "batched": 1007,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "objective_construct_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "observed_normals_CPU",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "original_FP_crop_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "original_FP_model_forward",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "original_FP_predict_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "pack_payload",
+      "reference": 550,
+      "batched": 550,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "pose_to_CPU",
+      "reference": 269,
+      "batched": 269,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "private_effective_total",
+      "reference": 132,
+      "batched": 132,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "private_head_forward",
+      "reference": 177,
+      "batched": 177,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "private_head_state_hash",
+      "reference": 586,
+      "batched": 586,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "publication_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "session_step_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "shadow_check_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "shadow_proposal_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "surface_array_hash",
+      "reference": 1260,
+      "batched": 1260,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "surface_capture_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "surface_tensor_to_CPU",
+      "reference": 540,
+      "batched": 540,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "surface_total",
+      "reference": 45,
+      "batched": 45,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "tensor_copy_hash",
+      "reference": 4729,
+      "batched": 4729,
+      "exact": true
+    },
+    {
+      "scope": "tracking",
+      "stage": "training_loss_total",
+      "reference": 29,
+      "batched": 29,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "coordinator_emit",
+      "reference": 1,
+      "batched": 1,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "evidence_sink_total",
+      "reference": 89,
+      "batched": 89,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "full_model_state_hash",
+      "reference": 1,
+      "batched": 1,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "npz_compress_write",
+      "reference": 135,
+      "batched": 135,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "original_FP_crop_total",
+      "reference": 15,
+      "batched": 15,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "original_FP_model_forward",
+      "reference": 15,
+      "batched": 15,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "original_FP_predict_total",
+      "reference": 3,
+      "batched": 3,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "pack_payload",
+      "reference": 2,
+      "batched": 2,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "pose_to_CPU",
+      "reference": 1,
+      "batched": 1,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "private_head_state_hash",
+      "reference": 1,
+      "batched": 1,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "publication_total",
+      "reference": 1,
+      "batched": 1,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "surface_array_hash",
+      "reference": 3,
+      "batched": 3,
+      "exact": true
+    },
+    {
+      "scope": "outside_tracking",
+      "stage": "surface_tensor_to_CPU",
+      "reference": 1,
+      "batched": 1,
+      "exact": true
+    }
+  ],
+  "topology_exact": true,
+  "topology_difference_count": 0,
+  "comparison_topology_fields": [
+    "id",
+    "parent_id",
+    "label",
+    "frame_id",
+    "callback_ordinal"
+  ],
+  "excluded_from_topology_comparison": [
+    "measured_durations",
+    "metadata",
+    "error"
+  ],
+  "scope": "Duration-independent observer topology; numerical parity must separately pass against original fixed30."
+}
