@@ -1,0 +1,116 @@
+{
+  "schema": "depth_dropout_native_CPU_public_hashes/1",
+  "normalization": "logical roles only; no original local paths",
+  "sources": [
+    {
+      "role": "cpu_v2.receipt.json",
+      "bytes": 2547,
+      "sha256": "43231968d593b8d588b5d205cd7a4b6620f67b01495638671730edfecdcd4183"
+    },
+    {
+      "role": "cpu_v2.evidence.json",
+      "bytes": 218618,
+      "sha256": "00b5a8d3f784392fc2aabc527921342c02bfb5861f89bbb4b770a9e3fb403eee"
+    },
+    {
+      "role": "cpu_v1.failure.json",
+      "bytes": 5506,
+      "sha256": "c53a0d02cee4cf80ba2c843c616b58963e0b1f3101479fcc3a6b90ee1f68c0be"
+    },
+    {
+      "role": "cpu_v1.prefix.json",
+      "bytes": 27696,
+      "sha256": "5b217ccb314a1dc29a292f5a030b4d465420a53e9b2a85b9bcf7486ffe02b567"
+    },
+    {
+      "role": "candidate.patch",
+      "bytes": 5323,
+      "sha256": "28a40ff25aeb50013be2612c3735ea6597a9747076c45c00b5e01848c469bdf5"
+    },
+    {
+      "role": "materialization.json",
+      "bytes": 11665,
+      "sha256": "abedc77610ddfb1371946660772686a7761bef43ca2d79fa887fe176654001a3"
+    },
+    {
+      "role": "HANDOFF.md",
+      "bytes": 6135,
+      "sha256": "b12164ef111f99fc12884d1a4ce276aa0c8cfc01add70d0e1c9a92f5ac945b6d"
+    },
+    {
+      "role": "build.py",
+      "bytes": 7877,
+      "sha256": "8baaadc1edf1bb8c4fae9d2fc81b21a1f0458996189608da6e50508927851765"
+    },
+    {
+      "role": "check.py",
+      "bytes": 17222,
+      "sha256": "6fc07c8931e66e6d5f514c2cfc89ac40511fafc97a10f8563e9625bec5d9ed94"
+    },
+    {
+      "role": "native_adaptation_runtime.PACKAGE_MANIFEST.json",
+      "bytes": 2257,
+      "sha256": "d3780dd03017702a4de7a93319ce7d65ea4d888418a5bd03cffc5b515d9257f9"
+    },
+    {
+      "role": "native_adaptation_runtime.SOURCE_PROVENANCE.json",
+      "bytes": 15013,
+      "sha256": "69adeb77d5b801eb6748420d88e9410ffc30551ce17868555e4a47dec448201b"
+    },
+    {
+      "role": "native_adaptation_runtime.continuity_core.py",
+      "bytes": 28282,
+      "sha256": "a7be509ba768a6fae8db2e78afd811b2703381c61fc855f881a82fa97bf82021"
+    },
+    {
+      "role": "initial_draft.build.py",
+      "bytes": 7241,
+      "sha256": "bfc84cb102d8f41383b8cf7dfa9d28f47155064ef878ecae26e606b4d3bb369e"
+    },
+    {
+      "role": "initial_draft.check.py",
+      "bytes": 14909,
+      "sha256": "46d7e362af2b0edf6a88da2672ea2ced58513807ddd3d4baadcd674d4a4e4022"
+    },
+    {
+      "role": "initial_draft.candidate.patch",
+      "bytes": 4874,
+      "sha256": "21b74fd897987e99100122fabc9a05cbac794443183ad2d16bf683526bd27937"
+    },
+    {
+      "role": "initial_draft.materialization.json",
+      "bytes": 11665,
+      "sha256": "aee9aa05ba49c115b5f507a05f957674bc6d3e75ebd9f5a5a3e1655ff18da0db"
+    },
+    {
+      "role": "initial_draft.native_adaptation_runtime.PACKAGE_MANIFEST.json",
+      "bytes": 2257,
+      "sha256": "bf61d621ea3ca4d6ff4c6e20bc3aba1c1266580472b86e66499c196c981c1249"
+    },
+    {
+      "role": "initial_draft.native_adaptation_runtime.SOURCE_PROVENANCE.json",
+      "bytes": 15013,
+      "sha256": "69adeb77d5b801eb6748420d88e9410ffc30551ce17868555e4a47dec448201b"
+    },
+    {
+      "role": "initial_draft.native_adaptation_runtime.continuity_core.py",
+      "bytes": 28127,
+      "sha256": "d358d42cabb747bf00aa097eb91e55bd958bb7a092697722a98306857100c099"
+    },
+    {
+      "role": "independent_review.receipt",
+      "bytes": 22583,
+      "sha256": "8eabe2cdbf7f6127276bf42f6677046f29ba4d7be4889436279aa7a526338c8c"
+    },
+    {
+      "role": "frozen_base.package_manifest",
+      "bytes": 2256,
+      "sha256": "7a122c9a70de294decc93c73d002c6960b5d15b2d0ed9a431531caa7bca49f82"
+    },
+    {
+      "role": "frozen_base.continuity_core",
+      "bytes": 26150,
+      "sha256": "f6517f299012a8230b987023d31d10b12208fbee4a9d85640c8ec11297498b79"
+    }
+  ]
+}

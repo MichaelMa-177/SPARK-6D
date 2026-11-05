@@ -1,0 +1,29 @@
+{
+  "schema": "depth_dropout_native_CPU_public_manifest/1",
+  "payload_files": [
+    {
+      "name": "README.md",
+      "bytes": 2611,
+      "sha256": "903579a66c35b82032d4d6277fc1f3397ea5d255a66321ced43dba41c2de8e73"
+    },
+    {
+      "name": "frame_slots.json",
+      "bytes": 53918,
+      "sha256": "84f774428840072f575a451b314916f72a5d4245610ad71411513a2bccb805b0"
+    },
+    {
+      "name": "source_hashes.json",
+      "bytes": 3772,
+      "sha256": "d7e964ada93cac59f6facdbca9cdcc9ef34352c6b7a8dd445aaa9d8dbfe4316d"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 4228,
+      "sha256": "4fa300c1e4d3b442c42c1316e48d4d7cc2550769c4f096749d416efda5e80102"
+    }
+  ],
+  "contains_source": false,
+  "contains_raw_arrays": false,
+  "GT_read": false,
+  "uploaded": false
+}

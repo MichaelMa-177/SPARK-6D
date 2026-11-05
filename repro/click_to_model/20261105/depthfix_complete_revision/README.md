@@ -1,0 +1,9 @@
+# Complete depthfix revision: ordinary CAD30 regression
+
+A complete local revision integrates only the depth-dropout continuity fix: 192 copied source files and four existing resource links, with one runtime core changed plus its provenance and package manifest. Real imports, CLI help and existing-mesh/meshless dry-runs pass. The initial help checker mistake (expecting SystemExit where native help returns 0) is retained locally; it required no runtime change.
+
+The ordinary unified CLI then completed the original 30-input CAD development prefix without an injected depth gap. All 30 poses remain tentative and published, with 45 callbacks and 29 private updates. Against the previous complete-root run, 9,442 saved scientific arrays are byte-identical, four mask files match, all consumer decisions match after explicitly accounting for the four new cue diagnostics and epoch path, and the complete native summary matches. This is not a count of independent experiments.
+
+Tracking latency_seconds.npy and backend load_seconds are separately retained rather than required to match; there is no generic timing-field removal. Observed tracking totals were 15.917948 s before and 15.756030 s after. These two runs do not establish a speed improvement. The reader does not compare every raw JSON event or independently recompute neural forwards/gradients.
+
+The separate matched 12-frame depth-dropout pair exercised the same candidate core via an isolated package alias. This full-root run validates normal CLI integration, not another dropout or natural-occlusion experiment. New-root meshless has only a dry-run. Identity remains unverified, periodic aliases and held-out texture/symmetry robustness remain open. This package contains aggregates and hashes only, not source code, raw poses, images, models or GT.

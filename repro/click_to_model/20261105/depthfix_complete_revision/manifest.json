@@ -1,0 +1,18 @@
+{
+  "schema": "depthfix_complete_revision_public_manifest/1",
+  "payload_files": [
+    {
+      "name": "README.md",
+      "bytes": 1815,
+      "sha256": "78e08d579879bb349c2e80891a802b29e8110ffd9eb36a6fbbf56056a0ab1d5e"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 3405,
+      "sha256": "33c95652952038a18bf32651a8194a53b6dacb29c30a9abf7dbe41fe1b4be19b"
+    }
+  ],
+  "contains_source": false,
+  "contains_raw_poses": false,
+  "GT_read": false
+}

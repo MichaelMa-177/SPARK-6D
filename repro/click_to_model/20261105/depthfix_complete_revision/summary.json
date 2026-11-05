@@ -1,0 +1,86 @@
+{
+  "schema": "depthfix_complete_local_revision_GPU_validation/1",
+  "status": "PASS_actual_ordinary_CAD30_and_saved_scientific_arrays",
+  "planned_inputs": 30,
+  "completed_inputs": 30,
+  "published_inputs": 30,
+  "native_callbacks": 45,
+  "private_updates": 29,
+  "saved_scientific_arrays_compared": 9442,
+  "byte_equal_scientific_arrays": 9442,
+  "mask_files_byte_equal": 4,
+  "all_30_consumer_decisions_equal_except_named_new_diagnostics_and_epoch": true,
+  "complete_native_summary_equal": true,
+  "new_2D_cue_diagnostic_rows_retained": 30,
+  "source_inputs_unchanged": true,
+  "GPU_run": true,
+  "GT_read": false,
+  "timings": {
+    "base": {
+      "tracking_seconds": 15.91794811001455,
+      "registration_seconds": 4.47628075198736,
+      "initialization_seconds": 14.68464112599031
+    },
+    "depthfix": {
+      "tracking_seconds": 15.756030324017047,
+      "registration_seconds": 4.271128890002728,
+      "initialization_seconds": 14.087615646989434
+    }
+  },
+  "limitations": [
+    "One synthetic development CAD30 prefix without injected depth gap",
+    "Saved NPY/NPZ arrays and masks compared except the explicitly separate latency array; not every raw JSON event",
+    "Backend load_seconds explicitly recorded separately, no generic field removal",
+    "No independent neural forward/gradient recomputation",
+    "Descriptive single-run timings, not a speed comparison",
+    "This ordinary full-root regression has no injected depth gap; the separate matched dropout pair exercised the same candidate core under an isolated package alias.",
+    "New-root meshless path has CPU dry-run evidence only.",
+    "Physical identity, periodic aliases and broad texture/symmetry robustness remain unresolved."
+  ],
+  "source_hashes": [
+    {
+      "role": "SPARK-6D-click-model-depthfix-20261105/LOCAL_REVISION_MANIFEST.json",
+      "bytes": 163953,
+      "sha256": "42474e1ce69590759ce22b58488e8640a91f6d7823816f72dcdf4c3446e5a4a1"
+    },
+    {
+      "role": "SPARK-6D-click-model-depthfix-20261105/CPU_VALIDATION.json",
+      "bytes": 3281,
+      "sha256": "089125944a939df114a74780474e4958d322bf5139956ccbd5063a7fc4bee09e"
+    },
+    {
+      "role": "20261105_depthfix_revision_execution_v1/protocol.json",
+      "bytes": 81330,
+      "sha256": "ef2d01566b005bda2dd7ab296a88518ae240668c34ee937efbc90b80278cfa37"
+    },
+    {
+      "role": "attempt_v1/execution.json",
+      "bytes": 79684,
+      "sha256": "01cc7f6b9f3ebe4d2e40b6fd990e5182f28d254ea1d2b0268f10d161eb2f22ae"
+    },
+    {
+      "role": "20261105_depthfix_revision_verification_v1/verify.py",
+      "bytes": 9747,
+      "sha256": "f67ffb946ad4f0621f3ac38395f2784bad4abbee15d40721f0f114b8db7e69e3"
+    },
+    {
+      "role": "evaluation_v1/receipt.json",
+      "bytes": 486908,
+      "sha256": "775231ad9dcaef26ec4eb88c2ebf73d7f89de6777ebc81cf8448619f4c4b96c8"
+    },
+    {
+      "role": "20261105_depthfix_unified_cad30_actual_v1/pipeline.json",
+      "bytes": 11275,
+      "sha256": "aa783044366ad8cf534cb7fd8b0a34acea7deb488c46aa5ee4c4690b29ac6b37"
+    },
+    {
+      "role": "native_adaptation/native_integration.json",
+      "bytes": 21800,
+      "sha256": "07be3eb079f1726d842bc9187bb79be96fce07b7af7fac3bc6afbc166750dea4"
+    }
+  ],
+  "local_GPU_validation_sha256": "886640ce23954b7df1bdbc4dcba8043d6407e1535907b8cb4eb88ec99f9c5098",
+  "contains_source": false,
+  "contains_images": false,
+  "contains_raw_poses": false
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "depth_dropout_native_CPU_public_summary/1",
+  "status": "candidate_source_and_CPU_passed_GPU_unvalidated",
+  "runtime_fix_in_isolated_package": true,
+  "frozen_runtime_modified": false,
+  "scenario_pairs": 21,
+  "planned_slots": 126,
+  "arm_totals": {
+    "baseline": {
+      "planned_slots": 63,
+      "completed_decisions": 61,
+      "failed_inputs": 1,
+      "not_executed": 1,
+      "published": 29,
+      "private_allowed": 8,
+      "private_stub_calls": 8,
+      "neural_stub_calls": 40
+    },
+    "candidate": {
+      "planned_slots": 63,
+      "completed_decisions": 61,
+      "failed_inputs": 1,
+      "not_executed": 1,
+      "published": 32,
+      "private_allowed": 11,
+      "private_stub_calls": 11,
+      "neural_stub_calls": 40
+    }
+  },
+  "verdict": {
+    "intended_changed_scenarios": [
+      "one_frame_zero_depth",
+      "one_frame_nan_depth",
+      "depth_dropout_then_periodic_jump",
+      "gap_restored_bad_candidate"
+    ],
+    "unchanged_scenarios": [
+      "continuous_control",
+      "partial_depth_dropout",
+      "geometry_candidate_failure_only",
+      "one_frame_RGB_blank_visible",
+      "one_frame_RGB_occlusion_invisible",
+      "query_ID_reorder",
+      "periodic_jump_wrong_candidate",
+      "periodic_jump_matching_candidate",
+      "gap_only_7_visible",
+      "gap_duplicated_pixels",
+      "finite_depth_out_of_range",
+      "finite_depth_discontinuity",
+      "missing_and_finite_depth_conflict",
+      "negative_depth",
+      "missing_plus_out_of_range",
+      "missing_plus_infinite",
+      "RGB_lost_then_depth_gap"
+    ],
+    "periodic_alias_unresolved": true,
+    "candidate_gap_never_publishes_or_runs_private": true,
+    "recovery_requires_actual_current_fixed_anchor_fit": true
+  },
+  "default_configuration_exact": true,
+  "changed_runtime_functions": [
+    "cues",
+    "Branch.__init__",
+    "Branch.update"
+  ],
+  "independent_review": {
+    "status": "PASS_with_explicit_limits",
+    "checks": 80,
+    "count_unit": "mixed source/API/AST/boundary checks; not 80 scenarios",
+    "GPU_or_neural_outputs_reviewed": false
+  },
+  "changes": {
+    "RGB_cue": "in-bounds RGB gradient independent of current depth",
+    "new_missing_depth_only_connection": "zero/NaN samples; all other patch samples must satisfy original range and depth-jump bound",
+    "new_connection_minimum": "existing min_points=8 unique rounded pixels with adjacent-frame source/current RGB+visible+fixed-ID evidence",
+    "original_continuity_overlap_rule": "overlap>0 retained; 8 RGB gap cues does not imply 8 points overlap previous 3D/continuity mask",
+    "current_3D_mask": "explicit original source/current cue-valid depth masks plus original motion.valid_mask and source/visible/cue conditions; missing RGB cues excluded",
+    "permission": "unchanged current measured+candidate fixed-anchor fit+geometry+publication and not lost; no reset of lost",
+    "point_geometry_thresholds_lowered": false
+  },
+  "important_limits": [
+    "Only single-frame depth intervention validated on analytic CPU inputs.",
+    "No real TAP, frozen FP, private neural arithmetic, accuracy or identity-error rate evidence.",
+    "Periodic same-appearance alias remains: matching wrong correspondences can pass and permit private on both versions without a gap; candidate can also resume such a tentative alias after a depth-only gap. This is not physical identity verification.",
+    "No long-gap guarantee, production completion or CVPR-level result claimed."
+  ],
+  "previous_CPU_failure": {
+    "attempt": "cpu_v1",
+    "scenario_pairs": 18,
+    "planned_slots": 108,
+    "initial_input_failures": 36,
+    "underlying_failure_counts": {
+      "ValueError: cannot create an OBJECT array from memory buffer": 36
+    },
+    "final_checker_error": "continuous_control fixed source anchors",
+    "cause": "CPU harness omitted initial_pose_original required by actual native registration; both arms failed before tracking. Not observed source-anchor drift.",
+    "complete_source_snapshot_and_prefix_preserved": true,
+    "included_in_final_PASS_denominators": false
+  },
+  "actual_TAP": false,
+  "actual_FP": false,
+  "GPU_run": false,
+  "GT_read": false,
+  "native_GPU_integration_not_yet_validated": true
+}
