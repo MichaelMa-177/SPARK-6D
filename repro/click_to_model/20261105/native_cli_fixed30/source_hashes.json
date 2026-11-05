@@ -1,0 +1,71 @@
+{
+  "sha256": {
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/seal_public.py": {
+      "bytes": 13245,
+      "sha256": "2e6ca31401b5e9d16ec6efc2b320797b6ed76f06c4b7e0efb5056e9f44855786"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/audit_v4.py": {
+      "bytes": 22681,
+      "sha256": "1c0a541407e0809abf4310efd29f1de90fa8db6bf0cb794e0846b1e511cadfa6"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/audit.py": {
+      "bytes": 21857,
+      "sha256": "7a34faada70e8891d9f9f13176059ba6b99c42cfd883e4d8da27bc560c8e950d"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/audit_v2.py": {
+      "bytes": 21961,
+      "sha256": "45440c113e1fbf4ef6923b918b80630e5855d16e6016354d2be722e116cdd434"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/audit_v3.py": {
+      "bytes": 22342,
+      "sha256": "43d80587bcfb5f0a993f15fb4d89bf7f619ee873d5efd651553757b0a40ec38a"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/evaluation_v4/receipt.json": {
+      "bytes": 2171135,
+      "sha256": "cdf18753cabd1e076bec42452a1ff439302e071feb19c04d83e359458cd4b266"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_parity_v1/normalization_receipt.json": {
+      "bytes": 13028,
+      "sha256": "7916eadece1d734be22e22eebd6d1e219702ab63e029fb7fd482c5c588920adf"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_wrapper_v1/HANDOFF.json": {
+      "bytes": 7784,
+      "sha256": "5e68fd98646d05a61bfbbf50aeefb23ed5a432e68004bc04dbca57b710c77b1f"
+    },
+    "SPARK-6D-continuity-integration-20261027/tools/run_click_to_model_native.py": {
+      "bytes": 15118,
+      "sha256": "79fccbe4110436ed9a9d562c121ac0e7ef5422f35d29d62f9476c1d65ac84332"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_actual_fixed30_attempt_v1/execution.json": {
+      "bytes": 1113,
+      "sha256": "53c54686038d2fbed622e11b9fff01c8af43e21caca0f96f1169c9f9b63a1c32"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_actual_fixed30_attempt_v1/native_adaptation/native_integration.json": {
+      "bytes": 21805,
+      "sha256": "3927a25865ce5ae4d5910a6ff29d827e569e6ec84cc8ba9d9c942930eabc4676"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_actual_fixed30_attempt_v1/native_adaptation/native_plan.json": {
+      "bytes": 4369,
+      "sha256": "856cd4f31dedc4ce8969cefd809d938511fbab6b3e62108deb8fcde5733b4130"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261105_native_cli_actual_fixed30_attempt_v1/product/report.json": {
+      "bytes": 32017,
+      "sha256": "95c34a9b40a0f7e43b4582abe99e932aef04b65b7c0fa71f1fe97976a0c4711e"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261027_native_dual_head_actual_attempt_fixed30_v1/product/report.json": {
+      "bytes": 32033,
+      "sha256": "a88f89576417b380e82086a13f46936235f7c8c0cbdc2cf8ae975566d9ef07f1"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261027_native_dual_head_actual_attempt_fixed30_v1/native_intervention.json": {
+      "bytes": 124385,
+      "sha256": "72b1f5cceb95cb3d0fce5e8333079fb4771422edcd3c24f4c4f784b01e6bb125"
+    },
+    "SPARK-6D-continuity-integration-20261027/results/click_to_model/20261027_native_fixed30_raw_audit_v1/evaluation_v1/receipt.json": {
+      "bytes": 1195234,
+      "sha256": "27e3822b5743438c980e5e13cdb8027a44d830b71bab00d2ed6a6890eae1e334"
+    }
+  },
+  "source_code_included": false,
+  "poses_or_trajectories_included": false,
+  "GT_or_images_or_weights_included": false
+}

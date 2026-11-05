@@ -1,0 +1,26 @@
+{
+  "schema": "native_cli_public_manifest/1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2703,
+      "sha256": "4e5cc28951c3df644d944f0671e7d04257bee40befb17969078fe4194333f850"
+    },
+    {
+      "path": "normalization.json",
+      "bytes": 12738,
+      "sha256": "ff09638dd79f9e37425cb3e97efb90ab3fd60a00b26c829c166739c4c7bdf797"
+    },
+    {
+      "path": "source_hashes.json",
+      "bytes": 3993,
+      "sha256": "aed733367f99b8464ee7abffa4c1c30abd95d6dd6c4facf2898fe15c89820f53"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 4698,
+      "sha256": "4348c562603a1f0797909a251c065bf732d8de5e57687158b19361fc32f93ca5"
+    }
+  ],
+  "manifest_excludes_itself": true
+}

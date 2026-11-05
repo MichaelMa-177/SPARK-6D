@@ -1,0 +1,97 @@
+{
+  "schema": "native_cli_fixed30_public_summary/1",
+  "status": "PASS_observable_CLI_numeric_and_event_parity",
+  "population": {
+    "inputs_per_arm": 30,
+    "tracking_per_arm": 29,
+    "registration_candidates_per_arm": 756,
+    "native_callbacks_per_arm": 45,
+    "committed_updates_per_arm": 29,
+    "published_inputs_per_arm": 30
+  },
+  "coverage": {
+    "native_packet_pairs": 285,
+    "measured_packet_pairs": 496,
+    "packet_array_descriptor_pairs": 9059,
+    "validated_native_byte_descriptor_pairs": 3327,
+    "extra_numeric_checks": 621,
+    "numeric_differences": 0,
+    "structure_checks": 1152,
+    "structure_differences": 0,
+    "product_numeric_files_excluding_timing": 13,
+    "delivered_mask_files": 4,
+    "registration_backend_array_pairs": 15,
+    "independently_replayed_current_permissions_per_arm": 45,
+    "independently_replayed_publications_per_arm": 30,
+    "validated_commit_chain_steps_per_arm": 29,
+    "complete_typed_admission_digests": 2,
+    "typed_registration_bundle_digests": 6
+  },
+  "counts_are_comparison_observations_not_unique_statistical_samples": true,
+  "missing_old_observer_coverage": [
+    "Raw SAM float masks and logits from old external observer; delivered mask files and product scores remain available.",
+    "External unsorted registration refiner/scorer input-return ledger. All three exposed252-pose registration banks and scores are compared.",
+    "External complete model-call ledger and terminal model reload; runtime original-model integrity assertions remain telemetry.",
+    "Independent neural forward/autograd/gradient-shadow tensor recomputation. Exact stored feature/output/proposal/holder evidence is not such a recomputation."
+  ],
+  "original_29_initialization_and_211_array_count_claimed": false,
+  "normalization_summary": {
+    "raw_payload_different_packets": 705,
+    "raw_payload_difference_count": 1124,
+    "categories": {
+      "explicit_product_epoch": 1057,
+      "independently_reconstructed_epoch_time_digest": 7,
+      "explicit_measured_seconds": 60
+    },
+    "after_only_explicit_epoch_normalization": 67,
+    "after_verified_digest_and_named_time_normalization": 0,
+    "unclassified_difference_count": 0
+  },
+  "timing_descriptive": {
+    "20261027_native_dual_head_actual_attempt_fixed30_v1": {
+      "tracking_samples": 29,
+      "tracking_sum_seconds": 20.00190064702474,
+      "tracking_mean_seconds": 0.6897207119663704
+    },
+    "20261105_native_cli_actual_fixed30_attempt_v1": {
+      "tracking_samples": 29,
+      "tracking_sum_seconds": 19.753895476009347,
+      "tracking_mean_seconds": 0.6811688095175638
+    }
+  },
+  "timing_limit": "Separate historical and current runs with different external observer coverage; timing is descriptive only, not matched speedup or end-to-end production FPS.",
+  "accuracy_or_identity_claim": false,
+  "heldout_claim": false,
+  "all_seven_trust_flags_false": true,
+  "GT_read": false,
+  "new_source_included": false,
+  "preserved_auditor_attempts": [
+    {
+      "attempt": "evaluation_v1",
+      "result": "stopped",
+      "cause": "Auditor treated an ordinary bound public-return ndarray as a native-byte wrapper."
+    },
+    {
+      "attempt": "evaluation_v2",
+      "result": "stopped",
+      "cause": "Auditor asserted prepared instead of the actual prepared_not_committed state literal."
+    },
+    {
+      "attempt": "evaluation_v3",
+      "result": "621 numeric checks exact;61 structural differences",
+      "cause": "Auditor had not reconstructed60 saved publication records from separate numeric arrays;1 remaining field was model loading duration."
+    },
+    {
+      "attempt": "evaluation_v4",
+      "result": "PASS",
+      "cause": "Explicit persisted-schema handling; no runtime, threshold or numerical result changed."
+    }
+  ],
+  "limitations": [
+    "Ordinary CLI lacks old external SAM raw logits/float masks and external registration refiner/scorer input-return ledger; original29/211 coverage is not claimed.",
+    "All saved native events, numeric surfaces, private means, proposals and holder signatures are compared, but no independent neural forward, gradient recomputation or terminal weight reload is performed.",
+    "Current gate replay reuses pinned production mathematics; it does not establish physical identity or accuracy.",
+    "Explicit per-frame paths are normalized only for epoch/session/admission fields; measured time fields and independently reconstructed epoch/time-derived digests are itemized. No global hash/time removal.",
+    "Actual runtime uses a known synthetic development prefix, not held-out evidence. Timing is one separate run per arm with different observer coverage; not a speedup estimate."
+  ]
+}

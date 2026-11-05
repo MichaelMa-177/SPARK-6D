@@ -1,0 +1,443 @@
+{
+  "schema": "native_cli_normalization_counts/1",
+  "status": "PASS_every_original_payload_difference_classified",
+  "packet_pairs": {
+    "native": 285,
+    "measured": 496
+  },
+  "raw_payload_different_packets": 705,
+  "raw_payload_difference_count": 1124,
+  "categories": {
+    "explicit_product_epoch": 1057,
+    "independently_reconstructed_epoch_time_digest": 7,
+    "explicit_measured_seconds": 60
+  },
+  "after_only_explicit_epoch_normalization": 67,
+  "after_verified_digest_and_named_time_normalization": 0,
+  "field_histogram": [
+    {
+      "group": "measured",
+      "kind": "closed",
+      "path": "/payload/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "closed",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "fp_callback",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "measured",
+      "kind": "frame_input",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "frame_result",
+      "path": "/payload/diagnostics/admission_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "frame_result",
+      "path": "/payload/diagnostics/session_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "frame_result",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "initial_coordinate_check",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "initial_input",
+      "path": "/payload/configuration/refinement/admission_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "initial_input",
+      "path": "/payload/configuration/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "initial_input",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "initial_queries",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "input_name",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "neural_input",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "measured",
+      "kind": "neural_return",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "measured",
+      "kind": "original_motion",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "original_point_return",
+      "path": "/payload/observation/fields/elapsed_seconds",
+      "category": "explicit_measured_seconds",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "original_point_return",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "output_publication",
+      "path": "/payload/epoch_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "output_publication",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "preloss_event",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/all_registration_bundles/0/digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/all_registration_bundles/1/digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/all_registration_bundles/2/digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/bundles/0/content_digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/bundles/0/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/bundles/1/content_digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/bundles/1/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/bundles/2/content_digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/bundles/2/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/content_digest",
+      "category": "independently_reconstructed_epoch_time_digest",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/diagnostics/elapsed_seconds",
+      "category": "explicit_measured_seconds",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/payload/metadata/original_admission_assessment/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "registration",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "selected_seed",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "started",
+      "path": "/payload/diagnostics/admission_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "started",
+      "path": "/payload/diagnostics/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "started",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 1
+    },
+    {
+      "group": "measured",
+      "kind": "support_proposal",
+      "path": "/payload/proposal/fields/record/wall_seconds",
+      "category": "explicit_measured_seconds",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "support_proposal",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "measured",
+      "kind": "two_phase_observation_attempt",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "two_phase_observation_consumed",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "two_phase_publication_attempt",
+      "path": "/payload/epoch_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "measured",
+      "kind": "two_phase_publication_attempt",
+      "path": "/session_id",
+      "category": "explicit_product_epoch",
+      "count": 30
+    },
+    {
+      "group": "native",
+      "kind": "actual_surface_render",
+      "path": "/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "callback_decode",
+      "path": "/callback/surface/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "callback_decode",
+      "path": "/callback/surface/raster_diagnostic/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "callback_return",
+      "path": "/callback/surface/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "callback_return",
+      "path": "/callback/surface/raster_diagnostic/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "fixed_surface",
+      "path": "/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "fixed_surface",
+      "path": "/raster_diagnostic/epoch",
+      "category": "explicit_product_epoch",
+      "count": 45
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/callbacks/0/surface/epoch",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/callbacks/0/surface/raster_diagnostic/epoch",
+      "category": "explicit_product_epoch",
+      "count": 29
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/callbacks/1/surface/epoch",
+      "category": "explicit_product_epoch",
+      "count": 13
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/callbacks/1/surface/raster_diagnostic/epoch",
+      "category": "explicit_product_epoch",
+      "count": 13
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/callbacks/2/surface/epoch",
+      "category": "explicit_product_epoch",
+      "count": 3
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/callbacks/2/surface/raster_diagnostic/epoch",
+      "category": "explicit_product_epoch",
+      "count": 3
+    },
+    {
+      "group": "native",
+      "kind": "frame_terminal",
+      "path": "/epoch",
+      "category": "explicit_product_epoch",
+      "count": 29
+    }
+  ],
+  "v4_receipt_field_clarification": "raw_packet_differences_count in v4 is the count AFTER ONLY the explicit product-epoch normalization; this companion reports the original pre-normalization count.",
+  "packet_metadata": "kind/schema/sequence and every NPZ payload checksum/array descriptor were validated by v4; archive checksums are not scientific measurements.",
+  "other_explicit_representation_rules": [
+    "JSON tuples and lists follow the existing serialization contract when comparing replay output to persisted signatures.",
+    "Saved publication JSON references candidate/published arrays in published_poses.npz; auditor reconstructs these two fields from the exact referenced arrays and compares the complete result.",
+    "New terminal callback summaries retain ordinal/status/qualification/refusal_reason/private_forward_count/observable_rank. Four older terminal-only fields (autocast, cast_check, effective_exact_original_decode, effective_same_object_as_original_decode) are fully compared in the complete native events.",
+    "Report point_backend_provenance/load_seconds is separately normalized as a measured duration. No global hash or time-key removal occurs."
+  ],
+  "numeric_difference_count": 0,
+  "unclassified_difference_count": 0,
+  "source_receipt": {
+    "bytes": 2171135,
+    "sha256": "cdf18753cabd1e076bec42452a1ff439302e071feb19c04d83e359458cd4b266"
+  },
+  "script": {
+    "bytes": 13245,
+    "sha256": "2e6ca31401b5e9d16ec6efc2b320797b6ed76f06c4b7e0efb5056e9f44855786"
+  }
+}

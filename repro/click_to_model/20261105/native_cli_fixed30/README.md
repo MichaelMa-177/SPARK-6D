@@ -1,0 +1,13 @@
+# Ordinary native CLI: fixed30 observable-path parity
+
+The new explicit CLI completed30 inputs and29 tracking frames through the relocated native adaptation package. It produced45 native callbacks,29 committed private-head updates and30 tentative publications. No accuracy, physical-identity or held-out claim is made.
+
+All285 native event pairs and496 measured event pairs agree after the explicitly documented epoch, measured-duration and independently reconstructed digest handling. The auditor validates9,059 paired packet-array descriptors,3,327 paired native-byte descriptors,621 additional numerical checks and1,152 structural checks. These overlap; they are comparison observations, not independent samples. Both arms'45 current permissions and30 publication decisions were replayed with the pinned production gate. All observable numerical comparisons are exact by dtype, shape and bytes.
+
+The ordinary CLI does not install the older external SAM/model observer. Raw SAM logits and the external unsorted registration return ledger are therefore not available for the original29-array initialization audit. Delivered masks, all three252-pose registration banks, actual RGB/depth/intrinsics and point observations, candidate/publication poses, full native features and surface evidence, and stored update/holder fields are compared. This package does not claim the old211/29 coverage or independently recomputed gradients.
+
+`normalization.json` reports original payload differences before normalization and every changed field category. Bundle and full admission digests were independently reconstructed before their session/time differences were standardized. No global hash deletion was used. The v4 private receipt's `raw_packet_differences_count=67` is explicitly the count after epoch-only normalization; the public normalization file supplies the total before it. The metadata-only publication JSON was joined to its explicitly referenced numerical arrays before replay comparison.
+
+Earlier auditor attempts are retained. Two stopped on representation/schema assertions; a third completed with zero numerical differences and61 representation/time differences. The final audit handles only these explicit formats. No runtime, pose, scientific threshold or original experiment was edited.
+
+Timing is a single historical/current comparison with different external observer coverage. It is retained as descriptive data and does not establish a speedup. GPU parity covers this known synthetic30-frame prefix only. New runtime code remains local; this package contains aggregates, explanatory text and source hashes, without source code, poses, trajectories, GT, images, meshes, logs or weights.
