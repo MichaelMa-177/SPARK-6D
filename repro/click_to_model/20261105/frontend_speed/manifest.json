@@ -1,0 +1,25 @@
+{
+  "schema": "numeric_public_package_manifest/1",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2488,
+      "sha256": "6c77db29c5c2d91d0496aab05b48be3fdf5bfd0413e16b6581f05b291dbfca1e"
+    },
+    {
+      "path": "latency_by_repetition.csv",
+      "bytes": 5296,
+      "sha256": "437c60ae213c967312e913e68defcf4aeb9f609b811c8d39be0a8086a69bca23"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 4153,
+      "sha256": "47e5e97c678feba544da1cc99acee17a37c193a28abb3a940a0bfe7bde6e219f"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 28084,
+      "sha256": "1e53d499ce133380e1bb0e9c59221ab0a35f597ba67b99fbdf0360076162545b"
+    }
+  ]
+}

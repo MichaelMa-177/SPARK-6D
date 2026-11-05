@@ -1,0 +1,127 @@
+{
+  "schema": "paired_frontend_speed_public_sources/1",
+  "files": [
+    {
+      "name": "frozen_v1/plan.json",
+      "bytes": 60405,
+      "sha256": "3debb8e8331d7772b9e0d1d7307880a8a17b08e5048893dee75b40c6ae3f5a24"
+    },
+    {
+      "name": "benchmark.py",
+      "bytes": 16434,
+      "sha256": "014f0562a00113d0c0c4859f19e4077dada1bc7340d38c5334a30d0e4e699f8e"
+    },
+    {
+      "name": "check_cpu.py",
+      "bytes": 4148,
+      "sha256": "a4272c22e6594ba2def89a811e17b7abd9e384139f03943874f65e8423a18e32"
+    },
+    {
+      "name": "cpu_v2/receipt.json",
+      "bytes": 1205,
+      "sha256": "047c9d6051209b538526362e15b7e6e5f98ae16cd792ed590222e9030246b454"
+    },
+    {
+      "name": "root_review.json",
+      "bytes": 992,
+      "sha256": "ba307c9df1b748b9177b9f468d9876be39669feb43fe69b870ca1bf5330e4549"
+    },
+    {
+      "name": "PROTOCOL.md",
+      "bytes": 3785,
+      "sha256": "02d13e3a04b6c6cdb352b8e7030f676f81902daff591f19149ae00d5b44e5a1a"
+    },
+    {
+      "name": "export_aggregates.py",
+      "bytes": 12664,
+      "sha256": "3ad6eb3e938ff657cdfe1f229408e1dd4ab915de572f5f6f8fb00991c99031fb"
+    },
+    {
+      "name": "attempt_v2/execution.json",
+      "bytes": 13167,
+      "sha256": "3684fbfed36aac318d233b355e8f4c0550f38429d575c8d662443103e02ba836"
+    },
+    {
+      "name": "attempt_v2/job_00_cutie.json",
+      "bytes": 23962,
+      "sha256": "bcbfed421caab02120bb98f94b73f8459c3acb5cbe04e74fe96c5c69dabf9362"
+    },
+    {
+      "name": "attempt_v2/job_01_tapnextpp.json",
+      "bytes": 23504,
+      "sha256": "b9fc061928324799bfafb0a1ec46492c6760a2e5f9d8d11ad1644ba3a3da4983"
+    },
+    {
+      "name": "attempt_v2/job_02_tapnextpp.json",
+      "bytes": 23507,
+      "sha256": "ba547c8156470cc5d36709913af66db0cbf4d7122943eae88ea7ad8777f0ad17"
+    },
+    {
+      "name": "attempt_v2/job_03_cutie.json",
+      "bytes": 23974,
+      "sha256": "bacb34a4634122b1311260b0d4ef6b3a0e7fe009a66d2231b4cc39c8f5fde0cd"
+    },
+    {
+      "name": "attempt_v2/job_04_cutie.json",
+      "bytes": 23965,
+      "sha256": "43f70747ddd0d65824a67b7a6795fa7612050c41802975c6038e7c8f70df1641"
+    },
+    {
+      "name": "attempt_v2/job_05_tapnextpp.json",
+      "bytes": 23515,
+      "sha256": "db35f11f7c16bd1cc8fac69167bf759a5b7346dbaa79edc77f945bf77dabf571"
+    },
+    {
+      "name": "attempt_v1/execution.json",
+      "bytes": 8155,
+      "sha256": "cf70832a8874c9493b102c602a87eee38cc33fc9f23af2664764ee9ede61ac19"
+    },
+    {
+      "name": "attempt_v1/job_00_cutie.json",
+      "bytes": 20853,
+      "sha256": "da6447f859163ddca0ff7b386da241ce14e7e597ff4dc318a6db256aa4183629"
+    },
+    {
+      "name": "attempt_v1/job_01_tapnextpp.json",
+      "bytes": 20857,
+      "sha256": "0c7c3ef813659802be63537ee8a331e1c12176655f6b07b1fda810893d00c998"
+    },
+    {
+      "name": "attempt_v1/job_02_tapnextpp.json",
+      "bytes": 20857,
+      "sha256": "5c7ecc8b26b082eb2eb057d1093fcc349d00f0c117def811829b48d1bd2e087b"
+    },
+    {
+      "name": "attempt_v1/job_03_cutie.json",
+      "bytes": 20853,
+      "sha256": "5eee0e40772916c4a0677d9b061e10f6d58c8cf4cf6c76d1935c3d3cdb27ff25"
+    },
+    {
+      "name": "attempt_v1/job_04_cutie.json",
+      "bytes": 20853,
+      "sha256": "e82f6a7453348ff3b43a5be60dd922a9f9e80a095874089ef5afab87bb51e520"
+    },
+    {
+      "name": "attempt_v1/job_05_tapnextpp.json",
+      "bytes": 20857,
+      "sha256": "cf5836f5ca1d9c5f13af38d77e827038f334fa725397b16ba4ecf259d36bd94b"
+    }
+  ],
+  "weights": [
+    {
+      "name": "cutie-base-mega.pth",
+      "bytes": 140443788,
+      "sha256": "9c05402ee36d3a356fb72715d263ba7e1ea06ad3bada48c1306491792da43023"
+    },
+    {
+      "name": "tapnextpp_256_generation1774639633910846.pt",
+      "bytes": 2532282370,
+      "sha256": "cb96a43444ccb4fbdb25d800b88c7ba196179a526e78f01b021a16b1c1eff6da"
+    }
+  ],
+  "frozen_source_count": 136,
+  "frozen_RGB_count": 101,
+  "source_bindings_sha256": "1f96f8c2ca75dc94666bdb3dda4885c346bbc45e8bd398ce00387bd1375d81b7",
+  "input_bindings_sha256": "1b4f2c9630c83d658346690190b7b82c82e336c7b8ff1f3b0607edce3982455f",
+  "exact_prepared_plan_sha256": "3debb8e8331d7772b9e0d1d7307880a8a17b08e5048893dee75b40c6ae3f5a24"
+}

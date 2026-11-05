@@ -1,0 +1,35 @@
+{
+  "schema": "depth_control_aggregate_manifest/1",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 3400,
+      "sha256": "3f425bbccd7fc1590a6e2492765363d69cf9ba89c8aed5578fee9e4cebfafa22"
+    },
+    {
+      "name": "frame_directions.csv",
+      "bytes": 522,
+      "sha256": "a9e2f432c203f4af3bf65e7c1885cb89dce5a5a45e7b50821f5ddde1a6ce7205"
+    },
+    {
+      "name": "paired_transitions.csv",
+      "bytes": 12704,
+      "sha256": "231bd7ee1dfc6fb938233054ca0fcc04fc528ed4623b74b40f1a89b0a1a4b9bf"
+    },
+    {
+      "name": "sources.json",
+      "bytes": 2046,
+      "sha256": "cae6ce723ce37c8065880a483ef296f4e05f2a750f7606e4f2cddfaa8056997c"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 34767,
+      "sha256": "0e65c95ec851824b9f62c94f046689d0edfc75701402e47b6ff64835f1380bc0"
+    },
+    {
+      "name": "thresholds.csv",
+      "bytes": 31872,
+      "sha256": "92d77ae7c76373caa36c0baf2ab3014814367f1dae7b8bf5e10a24a8037add99"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "sanitized_source_hashes/1",
+  "sources": [
+    {
+      "name": "posthoc_comparison",
+      "bytes": 500666,
+      "sha256": "94f662f93cd4fcec9c31db457e668a7b1794db1e4da9b65ce1e84b4e6e2dc8c0"
+    },
+    {
+      "name": "posthoc_receipt",
+      "bytes": 1038,
+      "sha256": "90a94cf73969fc771a0b8c0ce2517e39abd1c1fae0b9352e60be0def46bd69d2"
+    },
+    {
+      "name": "posthoc_frozen_plan",
+      "bytes": 67744,
+      "sha256": "720a5be498851ec065da1cb1a206ac49fa7586314eb9c6f7b8b1f8b9a3c78442"
+    },
+    {
+      "name": "baseline_scalar_rows",
+      "bytes": 3173,
+      "sha256": "bd355e038c49f2e7f0f060f4e558e2f267c8f967f2baf39eb20cefd19757c529"
+    },
+    {
+      "name": "depth_seed_scalar_rows",
+      "bytes": 3171,
+      "sha256": "44da867ee028913ec8f44d8e4ad675d23b76624caa1b8b45aa2938c0da66316f"
+    },
+    {
+      "name": "posthoc_protocol",
+      "bytes": 76028,
+      "sha256": "d182c5a7de9dbedb0374f85404a46fdd8a5cb186174ac96b4d1ea766e643aa32"
+    },
+    {
+      "name": "posthoc_host",
+      "bytes": 22896,
+      "sha256": "68dfe8cf28df52013c454b1d3b64a43649df500248d587105c3d31853880fd77"
+    },
+    {
+      "name": "independent_exporter",
+      "bytes": 19742,
+      "sha256": "251e2eb59258bd1e36f27a98f9420f23232fe19bc17e3c20b06cddfb5657d15b"
+    },
+    {
+      "name": "baseline_raw_receipt",
+      "bytes": 44048073,
+      "sha256": "13bebd1197afe71a94981c4a6b40483ee2783ee7ff44965fb60e58e09b0840b0"
+    },
+    {
+      "name": "depth_seed_raw_receipt",
+      "bytes": 220612,
+      "sha256": "16d2e9245046d69df620d0e4c2549c992497e93a5ff939242368e832eb704e89"
+    },
+    {
+      "name": "initialization_pairing",
+      "bytes": 57181,
+      "sha256": "e1c8564e6d56b85afda71ee43556ce86a0f69c563b4652280414399f6c82f6cf"
+    },
+    {
+      "name": "actual_depth_iteration_evidence",
+      "bytes": 6046,
+      "sha256": "afd528e2735c171999b064fe46bb00299dea6669a4333428dc52c72cfdde725c"
+    }
+  ],
+  "paths_removed": true,
+  "no_source_files_in_package": true,
+  "no_raw_poses_or_GT_matrices_in_package": true
+}

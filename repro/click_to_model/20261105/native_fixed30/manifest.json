@@ -1,0 +1,25 @@
+{
+  "schema": "native_fixed30_public_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 3726,
+      "sha256": "7f8182e8bef0a393d006c6ed07ecfd4f7d1ee37a7b2ce82d8d04f6e7546f77aa"
+    },
+    "paired_transitions.csv": {
+      "bytes": 13031,
+      "sha256": "0ce3436d66c6df3eb0e0fd9c8446b288c55041556c0e06588c0092cf99a14106"
+    },
+    "sources.json": {
+      "bytes": 4020,
+      "sha256": "a05964759c307ab715ff70e8e067b4861f67cbd4f1d4cd300ee255b4960f64c3"
+    },
+    "summary.json": {
+      "bytes": 40371,
+      "sha256": "ca31887940a8a5ebad11dfcc0c1d7b4eb315078555f9070edcc94b16ff218732"
+    },
+    "thresholds.csv": {
+      "bytes": 36635,
+      "sha256": "821322a2f142b9351dc4a53d19d86b980c4f9eb5b057254b941bb6e477bca525"
+    }
+  }
+}

@@ -1,0 +1,1201 @@
+{
+  "schema": "native_fixed30_public_aggregate/1",
+  "case": "continuous_visible",
+  "synthetic_development": true,
+  "input_denominator_per_arm": 30,
+  "tracking_denominator_per_arm": 29,
+  "initialization_denominator_per_arm": 1,
+  "runtime_and_source_clocks": "Study 0..29; initialization=0, tracking=1..29. Baseline is exact prefix of previous180 run.",
+  "world": "stay",
+  "association_rule": "Fixed persistent target and distractor; independent ADD <= 0.1D membership for each. No nearest-GT selection.",
+  "model_vertex_rows": 386,
+  "model_faces": 768,
+  "diameter_m": 0.1649631473996541,
+  "declared_symmetry_count": 1,
+  "arms": {
+    "baseline_online_prefix": {
+      "input_denominator": 30,
+      "tracking_denominator": 29,
+      "initializations": 1,
+      "all_seven_trust_flags_false": true,
+      "verified_count": 0,
+      "verified_risk": null,
+      "publication_scopes": {
+        "all_inputs": {
+          "denominator": 30,
+          "published": 30,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 30,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 30,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        },
+        "tracking": {
+          "denominator": 29,
+          "published": 29,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 29,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 29,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        },
+        "initialization": {
+          "denominator": 1,
+          "published": 1,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      },
+      "metric_summaries": {
+        "all_inputs": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.0020361661840456366,
+              "median": 0.0020102879355298102,
+              "maximum": 0.002374111063391867
+            },
+            "MSSD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.0027813283352653806,
+              "median": 0.002636823898750541,
+              "maximum": 0.0042567201186955944
+            },
+            "MSSD_over_diameter": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.016860301098202815,
+              "median": 0.015984320985112765,
+              "maximum": 0.02580406706464501
+            },
+            "MSPD_px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 1.409359410920158,
+              "median": 1.3015468444439586,
+              "maximum": 2.1303945743496526
+            },
+            "MSPD_640px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 1.879145881226877,
+              "median": 1.7353957925919448,
+              "maximum": 2.84052609913287
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.23200298187586713,
+              "median": 0.2255302023728516,
+              "maximum": 0.29291963134584476
+            },
+            "MSSD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.232787038540702,
+              "median": 0.22605952897371645,
+              "maximum": 0.29350510938185764
+            },
+            "MSSD_over_diameter": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 1.411145714725798,
+              "median": 1.3703638208723365,
+              "maximum": 1.7792162310700013
+            },
+            "MSPD_px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 100.47660206956806,
+              "median": 96.84881312383797,
+              "maximum": 165.36308956328628
+            },
+            "MSPD_640px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 133.96880275942408,
+              "median": 129.13175083178396,
+              "maximum": 220.48411941771502
+            }
+          }
+        },
+        "tracking": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.002029257511034067,
+              "median": 0.002004732815413146,
+              "maximum": 0.002374111063391867
+            },
+            "MSSD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.0027681939714013595,
+              "median": 0.002599710085559319,
+              "maximum": 0.0042567201186955944
+            },
+            "MSSD_over_diameter": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.016780681109914153,
+              "median": 0.015759338534327517,
+              "maximum": 0.02580406706464501
+            },
+            "MSPD_px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 1.4030680481583873,
+              "median": 1.3011676502388911,
+              "maximum": 2.1303945743496526
+            },
+            "MSPD_640px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 1.8707573975445164,
+              "median": 1.7348902003185214,
+              "maximum": 2.84052609913287
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.22990240775621273,
+              "median": 0.22374133961814804,
+              "maximum": 0.2875064922254784
+            },
+            "MSSD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.23069331195997253,
+              "median": 0.2242302175848362,
+              "maximum": 0.28816213046383243
+            },
+            "MSSD_over_diameter": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 1.3984536279553081,
+              "median": 1.3592746084166092,
+              "maximum": 1.7468273066208282
+            },
+            "MSPD_px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 98.23913698357778,
+              "median": 94.80086286359959,
+              "maximum": 160.34883935604563
+            },
+            "MSPD_640px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 130.98551597810368,
+              "median": 126.40115048479944,
+              "maximum": 213.7984524747275
+            }
+          }
+        },
+        "initialization": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.002236517701381143,
+              "median": 0.002236517701381143,
+              "maximum": 0.002236517701381143
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.003162224887321992,
+              "median": 0.003162224887321992,
+              "maximum": 0.003162224887321992
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.019169280758573975,
+              "median": 0.019169280758573975,
+              "maximum": 0.019169280758573975
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.5918089310115042,
+              "median": 1.5918089310115042,
+              "maximum": 1.5918089310115042
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 2.122411908015339,
+              "median": 2.122411908015339,
+              "maximum": 2.122411908015339
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29291963134584476,
+              "median": 0.29291963134584476,
+              "maximum": 0.29291963134584476
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29350510938185764,
+              "median": 0.29350510938185764,
+              "maximum": 0.29350510938185764
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.7792162310700013,
+              "median": 1.7792162310700013,
+              "maximum": 1.7792162310700013
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 165.36308956328628,
+              "median": 165.36308956328628,
+              "maximum": 165.36308956328628
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 220.48411941771502,
+              "median": 220.48411941771502,
+              "maximum": 220.48411941771502
+            }
+          }
+        }
+      },
+      "temporal": {
+        "temporary_abstention_spans": [],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      },
+      "timing": {
+        "study_input_count": 30,
+        "study_tracking_count": 29,
+        "actual_run_input_count": 180,
+        "study_tracking_seconds": 2.5034345659660175,
+        "study_instrumented_tracking_fps": 11.58408547770833,
+        "study_latency_p50_ms": 82.13176799472421,
+        "study_latency_p95_ms": 99.02125960215925,
+        "actual_run_report": {
+          "registration_seconds": 4.193588922003983,
+          "admission_seconds": 3.768919575995824,
+          "initialization_seconds": 14.95499272899906,
+          "tracking_seconds": 15.64006500900723,
+          "tracking_fps": 11.444965215739996,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "actual_run_parent_wall_seconds": 40.96230098399974,
+        "actual_run_child_wall_seconds": 38.22461900200142,
+        "prefix_parent_wall_seconds": null,
+        "boundary": "Prefix tracking sums use the first 29 actual instrumented latencies. Baseline full180 parent/child walls are not prefix30 timings. Nested timing is not additive; uncontrolled cache/warmup and instrumentation preclude deployment FPS or causal speedup claims.",
+        "tracking_latency_count": 29
+      }
+    },
+    "native_fixed30": {
+      "input_denominator": 30,
+      "tracking_denominator": 29,
+      "initializations": 1,
+      "all_seven_trust_flags_false": true,
+      "verified_count": 0,
+      "verified_risk": null,
+      "publication_scopes": {
+        "all_inputs": {
+          "denominator": 30,
+          "published": 30,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 30,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 30,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        },
+        "tracking": {
+          "denominator": 29,
+          "published": 29,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 29,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 29,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        },
+        "initialization": {
+          "denominator": 1,
+          "published": 1,
+          "abstained": 0,
+          "unknown": 0,
+          "associations": {
+            "original": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "published": {
+              "target": 1,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            },
+            "abstained": {
+              "target": 0,
+              "distractor": 0,
+              "both": 0,
+              "neither": 0,
+              "unknown": 0
+            }
+          }
+        }
+      },
+      "metric_summaries": {
+        "all_inputs": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.0020141864280037625,
+              "median": 0.002002513092013751,
+              "maximum": 0.002371543578559125
+            },
+            "MSSD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.0027606354481832305,
+              "median": 0.002630992434562587,
+              "maximum": 0.0041629615297859674
+            },
+            "MSSD_over_diameter": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.0167348616445531,
+              "median": 0.015948970882499684,
+              "maximum": 0.025235706249592912
+            },
+            "MSPD_px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 1.398982573987506,
+              "median": 1.2984492245267225,
+              "maximum": 2.0827990114407733
+            },
+            "MSPD_640px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 1.8653100986500077,
+              "median": 1.7312656327022966,
+              "maximum": 2.7770653485876977
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.23200565979588048,
+              "median": 0.22552997458594587,
+              "maximum": 0.29291963134584476
+            },
+            "MSSD_m": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 0.23278424657516025,
+              "median": 0.2260593194167783,
+              "maximum": 0.29350510938185764
+            },
+            "MSSD_over_diameter": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 1.4111287899423794,
+              "median": 1.370362550546561,
+              "maximum": 1.7792162310700013
+            },
+            "MSPD_px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 100.49337342083486,
+              "median": 96.86294787820776,
+              "maximum": 165.36308956328628
+            },
+            "MSPD_640px": {
+              "denominator": 30,
+              "known": 30,
+              "unknown": 0,
+              "mean": 133.99116456111312,
+              "median": 129.15059717094368,
+              "maximum": 220.48411941771502
+            }
+          }
+        },
+        "tracking": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.0020065198323700596,
+              "median": 0.001999117801472491,
+              "maximum": 0.002371543578559125
+            },
+            "MSSD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.0027467875364887906,
+              "median": 0.0025906115840927516,
+              "maximum": 0.0041629615297859674
+            },
+            "MSSD_over_diameter": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.016650916157862725,
+              "median": 0.015704183782432997,
+              "maximum": 0.025235706249592912
+            },
+            "MSPD_px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 1.3923333892625405,
+              "median": 1.29727204464862,
+              "maximum": 2.0827990114407733
+            },
+            "MSPD_640px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 1.8564445190167205,
+              "median": 1.7296960595314932,
+              "maximum": 2.7770653485876977
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.2299051780182955,
+              "median": 0.2237400306771516,
+              "maximum": 0.2875064922254784
+            },
+            "MSSD_m": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 0.2306904237197569,
+              "median": 0.224228913458497,
+              "maximum": 0.28816213046383243
+            },
+            "MSSD_over_diameter": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 1.3984361195586683,
+              "median": 1.359266702854914,
+              "maximum": 1.7468273066208282
+            },
+            "MSPD_px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 98.25648665730205,
+              "median": 94.81551995008599,
+              "maximum": 160.34883935604563
+            },
+            "MSPD_640px": {
+              "denominator": 29,
+              "known": 29,
+              "unknown": 0,
+              "mean": 131.00864887640273,
+              "median": 126.42069326678131,
+              "maximum": 213.7984524747275
+            }
+          }
+        },
+        "initialization": {
+          "target_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.002236517701381143,
+              "median": 0.002236517701381143,
+              "maximum": 0.002236517701381143
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.003162224887321992,
+              "median": 0.003162224887321992,
+              "maximum": 0.003162224887321992
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.019169280758573975,
+              "median": 0.019169280758573975,
+              "maximum": 0.019169280758573975
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.5918089310115042,
+              "median": 1.5918089310115042,
+              "maximum": 1.5918089310115042
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 2.122411908015339,
+              "median": 2.122411908015339,
+              "maximum": 2.122411908015339
+            }
+          },
+          "distractor_errors": {
+            "ADD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29291963134584476,
+              "median": 0.29291963134584476,
+              "maximum": 0.29291963134584476
+            },
+            "MSSD_m": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 0.29350510938185764,
+              "median": 0.29350510938185764,
+              "maximum": 0.29350510938185764
+            },
+            "MSSD_over_diameter": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 1.7792162310700013,
+              "median": 1.7792162310700013,
+              "maximum": 1.7792162310700013
+            },
+            "MSPD_px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 165.36308956328628,
+              "median": 165.36308956328628,
+              "maximum": 165.36308956328628
+            },
+            "MSPD_640px": {
+              "denominator": 1,
+              "known": 1,
+              "unknown": 0,
+              "mean": 220.48411941771502,
+              "median": 220.48411941771502,
+              "maximum": 220.48411941771502
+            }
+          }
+        }
+      },
+      "temporal": {
+        "temporary_abstention_spans": [],
+        "first_identity_loss_frame": null,
+        "automatic_recovery_after_identity_loss": false
+      },
+      "timing": {
+        "study_input_count": 30,
+        "study_tracking_count": 29,
+        "actual_run_input_count": 30,
+        "study_tracking_seconds": 20.00190064702474,
+        "study_instrumented_tracking_fps": 1.4498622161846262,
+        "study_latency_p50_ms": 570.8197560015833,
+        "study_latency_p95_ms": 1009.9091906042304,
+        "actual_run_report": {
+          "registration_seconds": 4.340933578991098,
+          "admission_seconds": 3.8555213439976797,
+          "initialization_seconds": 14.692224463011371,
+          "tracking_seconds": 20.00190064702474,
+          "tracking_fps": 1.4498622161846262,
+          "timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "initialization_timing_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence"
+        },
+        "actual_run_parent_wall_seconds": 44.88224433698633,
+        "actual_run_child_wall_seconds": 42.20592743199086,
+        "prefix_parent_wall_seconds": 44.88224433698633,
+        "boundary": "Prefix tracking sums use the first 29 actual instrumented latencies. Baseline full180 parent/child walls are not prefix30 timings. Nested timing is not additive; uncontrolled cache/warmup and instrumentation preclude deployment FPS or causal speedup claims.",
+        "tracking_latency_count": 29
+      }
+    }
+  },
+  "paired_continuous_error_changes": {
+    "all_inputs": {
+      "target_errors": {
+        "ADD_m": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 27,
+          "increased": 1,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -2.1979756041873892e-05,
+          "minimum_treatment_minus_baseline": -0.00019390668871975027,
+          "maximum_treatment_minus_baseline": 2.962659134534535e-05
+        },
+        "MSSD_m": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -2.0692887082149928e-05,
+          "minimum_treatment_minus_baseline": -0.00013523528717388454,
+          "maximum_treatment_minus_baseline": 5.538227820612229e-05
+        },
+        "MSSD_over_diameter": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -0.00012543945364971448,
+          "minimum_treatment_minus_baseline": -0.0008197909006079501,
+          "maximum_treatment_minus_baseline": 0.00033572515485503183
+        },
+        "MSPD_px": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -0.010376836932651907,
+          "minimum_treatment_minus_baseline": -0.07242237010208363,
+          "maximum_treatment_minus_baseline": 0.03600792957694021
+        },
+        "MSPD_640px": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -0.013835782576869215,
+          "minimum_treatment_minus_baseline": -0.09656316013611166,
+          "maximum_treatment_minus_baseline": 0.04801057276925369
+        }
+      },
+      "distractor_errors": {
+        "ADD_m": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 11,
+          "increased": 17,
+          "equal": 2,
+          "mean_treatment_minus_baseline": 2.6779200133469903e-06,
+          "minimum_treatment_minus_baseline": -1.4456581932498214e-05,
+          "maximum_treatment_minus_baseline": 9.25387541924616e-05
+        },
+        "MSSD_m": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 11,
+          "increased": 17,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -2.791965541777223e-06,
+          "minimum_treatment_minus_baseline": -5.934639950558318e-05,
+          "maximum_treatment_minus_baseline": 8.37404557849919e-05
+        },
+        "MSSD_over_diameter": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 11,
+          "increased": 17,
+          "equal": 2,
+          "mean_treatment_minus_baseline": -1.6924783418533394e-05,
+          "minimum_treatment_minus_baseline": -0.00035975549958311426,
+          "maximum_treatment_minus_baseline": 0.0005076312928371518
+        },
+        "MSPD_px": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 28,
+          "equal": 2,
+          "mean_treatment_minus_baseline": 0.01677135126679422,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.09357079549511127
+        },
+        "MSPD_640px": {
+          "denominator": 30,
+          "known": 30,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 28,
+          "equal": 2,
+          "mean_treatment_minus_baseline": 0.0223618016890588,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.12476106066014836
+        }
+      }
+    },
+    "tracking": {
+      "target_errors": {
+        "ADD_m": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 27,
+          "increased": 1,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -2.2737678664007475e-05,
+          "minimum_treatment_minus_baseline": -0.00019390668871975027,
+          "maximum_treatment_minus_baseline": 2.962659134534535e-05
+        },
+        "MSSD_m": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -2.140643491256889e-05,
+          "minimum_treatment_minus_baseline": -0.00013523528717388454,
+          "maximum_treatment_minus_baseline": 5.538227820612229e-05
+        },
+        "MSSD_over_diameter": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -0.00012976495205142878,
+          "minimum_treatment_minus_baseline": -0.0008197909006079501,
+          "maximum_treatment_minus_baseline": 0.00033572515485503183
+        },
+        "MSPD_px": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -0.0107346588958468,
+          "minimum_treatment_minus_baseline": -0.07242237010208363,
+          "maximum_treatment_minus_baseline": 0.03600792957694021
+        },
+        "MSPD_640px": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 26,
+          "increased": 2,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -0.01431287852779574,
+          "minimum_treatment_minus_baseline": -0.09656316013611166,
+          "maximum_treatment_minus_baseline": 0.04801057276925369
+        }
+      },
+      "distractor_errors": {
+        "ADD_m": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 11,
+          "increased": 17,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 2.770262082772749e-06,
+          "minimum_treatment_minus_baseline": -1.4456581932498214e-05,
+          "maximum_treatment_minus_baseline": 9.25387541924616e-05
+        },
+        "MSSD_m": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 11,
+          "increased": 17,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -2.88824021563161e-06,
+          "minimum_treatment_minus_baseline": -5.934639950558318e-05,
+          "maximum_treatment_minus_baseline": 8.37404557849919e-05
+        },
+        "MSSD_over_diameter": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 11,
+          "increased": 17,
+          "equal": 1,
+          "mean_treatment_minus_baseline": -1.7508396639862128e-05,
+          "minimum_treatment_minus_baseline": -0.00035975549958311426,
+          "maximum_treatment_minus_baseline": 0.0005076312928371518
+        },
+        "MSPD_px": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 28,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.01734967372426988,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.09357079549511127
+        },
+        "MSPD_640px": {
+          "denominator": 29,
+          "known": 29,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 28,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.023132898299026344,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.12476106066014836
+        }
+      }
+    },
+    "initialization": {
+      "target_errors": {
+        "ADD_m": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSSD_m": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSSD_over_diameter": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSPD_px": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSPD_640px": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        }
+      },
+      "distractor_errors": {
+        "ADD_m": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSSD_m": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSSD_over_diameter": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSPD_px": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        },
+        "MSPD_640px": {
+          "denominator": 1,
+          "known": 1,
+          "unknown": 0,
+          "decreased": 0,
+          "increased": 0,
+          "equal": 1,
+          "mean_treatment_minus_baseline": 0.0,
+          "minimum_treatment_minus_baseline": 0.0,
+          "maximum_treatment_minus_baseline": 0.0
+        }
+      }
+    }
+  },
+  "adaptation_telemetry": {
+    "tracking_frames": 29,
+    "gradient_shadow_frames": 29,
+    "prepared_updates": 29,
+    "accepted_updates": 29,
+    "final_holder_version": 29,
+    "callback_count": 45,
+    "effective_changed_callbacks": 44,
+    "methods_restored": true,
+    "memory_observation": {
+      "scope": "Whole child process including initialization/models/unchanged journals; no reset and no journal-only attribution",
+      "GPU_peak_allocated_bytes": 2749754368,
+      "GPU_peak_reserved_bytes": 5041553408,
+      "process_peak_rss_kib": 5744612,
+      "status": "recorded"
+    },
+    "qualification_counts": {
+      "qualified": 45
+    },
+    "independently_recomputed_CUDA_gradients_or_shadow_losses": false,
+    "scope": "Source-verified actual telemetry, not an independent CUDA recomputation or GT accuracy metric."
+  },
+  "actual_initialization_pairing": {
+    "input_count": 30,
+    "candidate_denominator": 756,
+    "gates": {
+      "raw_SAM_three_masks_scores_logits": true,
+      "all_three_registration_banks": true,
+      "selected_actual_initial_pose_and_C": true,
+      "mesh_and_camera": true,
+      "all_prefix_RGB_depth_K_source_slots": true
+    },
+    "initialization_checks": 29,
+    "initialization_byte_exact": 29,
+    "initialization_different": 0
+  },
+  "previous_cache_failure": {
+    "preserved": true,
+    "original_shadow_validation_invalid": true,
+    "mechanism": "AMP cache reused old private cast weights inside nested autocast after SGD; apparent unchanged check loss did not validate updated parameters.",
+    "correction": "Private native_outputs autocast cache_enabled=False; original FP autocast and all optimizer/geometry thresholds unchanged.",
+    "scope": "Corrected CPU freshness proof and real short GPU runs precede this fixed30 run; previous failed validation remains excluded from accuracy evidence."
+  },
+  "checks": {
+    "target_threshold_cells": 252,
+    "cells_per_arm": 126,
+    "paired_cells": 126,
+    "full_scalar_rows_checked": 60,
+    "actual_publication_rows_checked": 60,
+    "tracking_latency_rows_checked": 58,
+    "independent_aggregate_recount_exact": true,
+    "independent_geometry_recomputation": false
+  },
+  "limitations": [
+    "One short known synthetic development prefix, correlated frames, not held out and not an identity-recovery test.",
+    "All thresholds/populations retained; abstention is not success and zero-publication risk is null.",
+    "Author host reuses frozen metric formulas; contract tests are not independent geometric verification.",
+    "Accepted head updates/native output changes are training telemetry, not GT performance.",
+    "Timing is instrumented and uncontrolled for cache/scheduling; baseline full180 parent wall is not a30 prefix wall.",
+    "29/29 tracking poses already pass the headline thresholds in both arms; a small mean error decrease does not increase headline success counts.",
+    "At least one tracking ADD worsens; all paired continuous-error changes are retained.",
+    "Instrumented tracking latency increases substantially. Different actual run lengths and instrumentation prevent a deployment FPS or causal speed estimate.",
+    "Shadow head tensors and per-parameter gradients were not saved; source-verified proposal telemetry is not independently recomputed CUDA shadow validation."
+  ]
+}

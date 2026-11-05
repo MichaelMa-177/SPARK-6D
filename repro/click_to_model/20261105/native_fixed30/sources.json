@@ -1,0 +1,91 @@
+{
+  "schema": "native_fixed30_public_sources/1",
+  "files": {
+    "posthoc_receipt": {
+      "bytes": 35872,
+      "sha256": "f1d25fd3013176c570f3beda84dddae1e8f79198d1d95dc21f459cc1125dbbe4"
+    },
+    "posthoc_comparison": {
+      "bytes": 263910,
+      "sha256": "c81e06c60fa2396081180f9fe0f65bed5f0fa10fac18dbec5adca226528817b6"
+    },
+    "posthoc_frozen_plan": {
+      "bytes": 40009,
+      "sha256": "6d8420033246f3d3b155ac9ebd3c552b58c7cf7c0f2e0034d031c6105ccdbd79"
+    },
+    "posthoc_paired_counts": {
+      "bytes": 83880,
+      "sha256": "b6af47e6d54e9fbf8c6e06d877cb0e81de8613a5380e0349ab6b70ceeb35c0e6"
+    },
+    "native_raw_receipt": {
+      "bytes": 1195267,
+      "sha256": "0561bee11a0de9991587c21eb1975e0ee163567a2c6b9adff67138e3817ee1c5"
+    },
+    "actual_initialization_pairing": {
+      "bytes": 65741,
+      "sha256": "c8c06dce8a8f0e1c2cc40a5d40781fde6fb014b6c7ab58ea7663b30aafee7088"
+    },
+    "baseline_raw_receipt": {
+      "bytes": 3523732,
+      "sha256": "e18a15200182281fb4a3685c2034a7596781303ffd5a8eebd0f7c925c28f6ae9"
+    },
+    "actual_native_intervention": {
+      "bytes": 124385,
+      "sha256": "72b1f5cceb95cb3d0fce5e8333079fb4771422edcd3c24f4c4f784b01e6bb125"
+    },
+    "cache_v1_raw_review": {
+      "bytes": 7162,
+      "sha256": "e7f6de9d23231e5351a3a968ae187078483afebb02a36ec101d74cfaf5b2e903"
+    },
+    "cache_fix_review": {
+      "bytes": 12096,
+      "sha256": "99ebbfe3c3027ef19cfba6f60a185662fff64f6e8d52e1cdf2f443f635f8ab04"
+    },
+    "posthoc_host_independent_review": {
+      "bytes": 2655,
+      "sha256": "fee0774969ad5d36288b74ea288b92f8f4946826ab360c302a104eeba545a05f"
+    },
+    "baseline_online_prefix_scalar_rows": {
+      "bytes": 40999,
+      "sha256": "722c973e0a8beb16e7e12fbaa42b358f5d8915c020cb68f7b4b31e61816137bc"
+    },
+    "baseline_online_prefix_actual_publication": {
+      "bytes": 34510,
+      "sha256": "aca5edb8470bf728bef4bd3c885efdf04d1cfff9872480bcfa115db0f6fad96b"
+    },
+    "baseline_online_prefix_posthoc_summary": {
+      "bytes": 114825,
+      "sha256": "1883fc5839ed5be2d5fb6dea394fd3bc8d8dc5ad267fa64b7f059315ed2ccdf0"
+    },
+    "native_fixed30_scalar_rows": {
+      "bytes": 41001,
+      "sha256": "184afef11e3a3993f783453395b3e3e180db8cc89c7346ff41239168942ba371"
+    },
+    "native_fixed30_actual_publication": {
+      "bytes": 34932,
+      "sha256": "2c046fc0354ec3ce14c3d9851753e08a7114dba44cc59af3525ef6cce43118e1"
+    },
+    "native_fixed30_posthoc_summary": {
+      "bytes": 114814,
+      "sha256": "677c6f97c49d53a34d799bd734559e51f041876730804f65be4feb7e6d9b735e"
+    }
+  },
+  "export_script_sha256": "94e676a11ceaa34d7972ff7f83fb8505605d1590452092d213d578acf9e7e174",
+  "source_and_input_pins_before_after_unchanged": true,
+  "inherited_truth_pin": {
+    "bytes": 263706,
+    "sha256": "fd746e948ce62040a9740a9890d9fb87f63d65d45f5be0ffc82e53f6353ee1f0"
+  },
+  "truth_mesh_images_weights_or_raw_pose_arrays_read_by_this_export": false,
+  "scalar_GT_derived_error_rows_read_for_aggregation": true,
+  "scientific_source_pins": {
+    "20261027_preloss_translation_support_posthoc_v1/host.py": "96a1b08f09f662305c3e15a20801a1ae2fa8f38d805780b95e3d2bd0abcbc7a0",
+    "20261027_multiframe_same_mesh_identity_posthoc_v1/host.py": "4d5108ccd85a1015972e47c87cb07a165bc6949f36aa37c06fbe99770d3ccf97",
+    "20261027_multiframe_same_mesh_identity_posthoc_v1/identity_metrics.py": "d2ae2e965c4eb93b486a0478164623cd9302e2a0d8ed60aa2ce8c8606fa6d5f5",
+    "20261027_identity_continuity_output_posthoc_v1/arrays.py": "60295faa95c72e84c8a186aa602f447403ccdf857f1654d4e0165240567501aa",
+    "20261027_continuous_posthoc_design_v1/metrics.py": "0fa0305375df5ed5a80ca4e35626acce8cc2e77a7bd9be206e4156deb1cdbf7a",
+    "20261026_tless_posthoc_design_v1/evaluator.py": "10a3a2416483394a4b7817b34db4203cbfc248907278ecef6635d0cc67d32ddf",
+    "20261105_native_fixed30_posthoc_v2/host.py": "398a8b118388cf0df1e10bd948aa58e2a6c05ab5ed0d8faa0442c7f2f3da531e"
+  },
+  "output_prefix": "repro/click_to_model/20261105/native_fixed30_aggregates/"
+}

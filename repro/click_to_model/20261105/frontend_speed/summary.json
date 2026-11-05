@@ -1,0 +1,872 @@
+{
+  "schema": "paired_frontend_speed_public_aggregates/1",
+  "current": {
+    "attempt": "attempt_v2",
+    "status": "completed",
+    "planned_jobs": 6,
+    "completed_jobs": 6,
+    "planned_inputs": 606,
+    "completed_inputs": 606,
+    "planned_primary_frames_per_arm": 270,
+    "jobs": [
+      {
+        "index": 0,
+        "repetition": 0,
+        "arm": "cutie",
+        "execution_status": "completed",
+        "planned_inputs": 101,
+        "completed_inputs": 101,
+        "parent_child_wall_seconds": 11.434609775009449,
+        "measured_primary_eligible": true,
+        "child_status": "completed",
+        "status_counts": {
+          "completed": 101
+        },
+        "error": null,
+        "model_load_seconds": 1.1526838900026632,
+        "cuda_initialize_seconds": 0.22758514899760485,
+        "peak_allocated_bytes": 357060096,
+        "peak_reserved_bytes": 631242752,
+        "sequence_wall_seconds": 6.412808635999681,
+        "runtime": {
+          "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+          "torch": "2.6.0+cu124",
+          "cuda": "12.4",
+          "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+          "numpy": "2.4.6",
+          "precision": "float32; AMP disabled",
+          "matmul_allow_tf32": false,
+          "cudnn_allow_tf32": true
+        },
+        "summaries": {
+          "initialization": {
+            "n": 1,
+            "total_seconds": 3.318846669004415,
+            "mean_ms": 3318.846669004415,
+            "p50_ms": 3318.846669004415,
+            "p95_ms": 3318.846669004415,
+            "p99_ms": 3318.846669004415,
+            "reciprocal_mean_fps": 0.3013094908358569
+          },
+          "warmup": {
+            "n": 10,
+            "total_seconds": 1.385639383996022,
+            "mean_ms": 138.5639383996022,
+            "p50_ms": 11.683980497764423,
+            "p95_ms": 708.8560852032956,
+            "p99_ms": 1162.9247490441778,
+            "reciprocal_mean_fps": 7.2168849381006845
+          },
+          "measured": {
+            "n": 90,
+            "total_seconds": 1.1488436209474457,
+            "mean_ms": 12.764929121638286,
+            "p50_ms": 12.0157314959215,
+            "p95_ms": 15.673562960728304,
+            "p99_ms": 17.565221120457863,
+            "reciprocal_mean_fps": 78.33964375915448
+          },
+          "all_tracking": {
+            "n": 100,
+            "total_seconds": 2.5344830049434677,
+            "mean_ms": 25.344830049434677,
+            "p50_ms": 12.0157314959215,
+            "p95_ms": 15.780102809367234,
+            "p99_ms": 30.685628833022818,
+            "reciprocal_mean_fps": 39.45577847827412
+          }
+        }
+      },
+      {
+        "index": 1,
+        "repetition": 0,
+        "arm": "tapnextpp",
+        "execution_status": "completed",
+        "planned_inputs": 101,
+        "completed_inputs": 101,
+        "parent_child_wall_seconds": 16.649542029001168,
+        "measured_primary_eligible": true,
+        "child_status": "completed",
+        "status_counts": {
+          "completed": 101
+        },
+        "error": null,
+        "model_load_seconds": 8.131431517002056,
+        "cuda_initialize_seconds": 0.1328570709883934,
+        "peak_allocated_bytes": 1466646016,
+        "peak_reserved_bytes": 1790967808,
+        "sequence_wall_seconds": 5.018679518994759,
+        "runtime": {
+          "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+          "torch": "2.6.0+cu124",
+          "cuda": "12.4",
+          "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+          "numpy": "2.4.6",
+          "precision": "float32; AMP disabled",
+          "matmul_allow_tf32": false,
+          "cudnn_allow_tf32": true
+        },
+        "summaries": {
+          "initialization": {
+            "n": 1,
+            "total_seconds": 0.4061048809962813,
+            "mean_ms": 406.1048809962813,
+            "p50_ms": 406.1048809962813,
+            "p95_ms": 406.1048809962813,
+            "p99_ms": 406.1048809962813,
+            "reciprocal_mean_fps": 2.462418076696687
+          },
+          "warmup": {
+            "n": 10,
+            "total_seconds": 0.4121005599590717,
+            "mean_ms": 41.21005599590717,
+            "p50_ms": 41.8158999964362,
+            "p95_ms": 42.0831591472961,
+            "p99_ms": 42.14606302557513,
+            "reciprocal_mean_fps": 24.26592189293109
+          },
+          "measured": {
+            "n": 90,
+            "total_seconds": 3.69592156202998,
+            "mean_ms": 41.06579513366645,
+            "p50_ms": 41.93708099774085,
+            "p95_ms": 43.67970815001172,
+            "p99_ms": 47.21062698721653,
+            "reciprocal_mean_fps": 24.35116614070338
+          },
+          "all_tracking": {
+            "n": 100,
+            "total_seconds": 4.108022121989052,
+            "mean_ms": 41.08022121989052,
+            "p50_ms": 41.910612999345176,
+            "p95_ms": 43.56851164702675,
+            "p99_ms": 47.186355187150184,
+            "reciprocal_mean_fps": 24.342614774328744
+          }
+        }
+      },
+      {
+        "index": 2,
+        "repetition": 1,
+        "arm": "tapnextpp",
+        "execution_status": "completed",
+        "planned_inputs": 101,
+        "completed_inputs": 101,
+        "parent_child_wall_seconds": 12.948876776004909,
+        "measured_primary_eligible": true,
+        "child_status": "completed",
+        "status_counts": {
+          "completed": 101
+        },
+        "error": null,
+        "model_load_seconds": 4.596308127001976,
+        "cuda_initialize_seconds": 0.1214925590029452,
+        "peak_allocated_bytes": 1466646016,
+        "peak_reserved_bytes": 1790967808,
+        "sequence_wall_seconds": 4.840085798990913,
+        "runtime": {
+          "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+          "torch": "2.6.0+cu124",
+          "cuda": "12.4",
+          "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+          "numpy": "2.4.6",
+          "precision": "float32; AMP disabled",
+          "matmul_allow_tf32": false,
+          "cudnn_allow_tf32": true
+        },
+        "summaries": {
+          "initialization": {
+            "n": 1,
+            "total_seconds": 0.20750214099825826,
+            "mean_ms": 207.50214099825826,
+            "p50_ms": 207.50214099825826,
+            "p95_ms": 207.50214099825826,
+            "p99_ms": 207.50214099825826,
+            "reciprocal_mean_fps": 4.819227383337668
+          },
+          "warmup": {
+            "n": 10,
+            "total_seconds": 0.42382747698866297,
+            "mean_ms": 42.3827476988663,
+            "p50_ms": 42.876750994764734,
+            "p95_ms": 46.72248939823476,
+            "p99_ms": 47.68761627856293,
+            "reciprocal_mean_fps": 23.594506120865525
+          },
+          "measured": {
+            "n": 90,
+            "total_seconds": 3.704586248990381,
+            "mean_ms": 41.162069433226456,
+            "p50_ms": 42.06113749387441,
+            "p95_ms": 47.13002344724373,
+            "p99_ms": 48.775970308779506,
+            "reciprocal_mean_fps": 24.29421099981891
+          },
+          "all_tracking": {
+            "n": 100,
+            "total_seconds": 4.128413725979044,
+            "mean_ms": 41.28413725979044,
+            "p50_ms": 42.08029749861453,
+            "p95_ms": 47.16605629437254,
+            "p99_ms": 48.7633982092666,
+            "reciprocal_mean_fps": 24.22237853021507
+          }
+        }
+      },
+      {
+        "index": 3,
+        "repetition": 1,
+        "arm": "cutie",
+        "execution_status": "completed",
+        "planned_inputs": 101,
+        "completed_inputs": 101,
+        "parent_child_wall_seconds": 5.87648515899491,
+        "measured_primary_eligible": true,
+        "child_status": "completed",
+        "status_counts": {
+          "completed": 101
+        },
+        "error": null,
+        "model_load_seconds": 0.5002000620006584,
+        "cuda_initialize_seconds": 0.12894104700535536,
+        "peak_allocated_bytes": 357060096,
+        "peak_reserved_bytes": 631242752,
+        "sequence_wall_seconds": 1.953989816000103,
+        "runtime": {
+          "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+          "torch": "2.6.0+cu124",
+          "cuda": "12.4",
+          "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+          "numpy": "2.4.6",
+          "precision": "float32; AMP disabled",
+          "matmul_allow_tf32": false,
+          "cudnn_allow_tf32": true
+        },
+        "summaries": {
+          "initialization": {
+            "n": 1,
+            "total_seconds": 0.18042092700488865,
+            "mean_ms": 180.42092700488865,
+            "p50_ms": 180.42092700488865,
+            "p95_ms": 180.42092700488865,
+            "p99_ms": 180.42092700488865,
+            "reciprocal_mean_fps": 5.5425942910320165
+          },
+          "warmup": {
+            "n": 10,
+            "total_seconds": 0.19962128400220536,
+            "mean_ms": 19.962128400220536,
+            "p50_ms": 11.845685003208928,
+            "p95_ms": 56.9752252478792,
+            "p99_ms": 84.4254394467862,
+            "reciprocal_mean_fps": 50.09485862183675
+          },
+          "measured": {
+            "n": 90,
+            "total_seconds": 1.0737111019843724,
+            "mean_ms": 11.930123355381916,
+            "p50_ms": 10.987331996147987,
+            "p95_ms": 15.046684251137776,
+            "p99_ms": 17.153682451171335,
+            "reciprocal_mean_fps": 83.82143002309193
+          },
+          "all_tracking": {
+            "n": 100,
+            "total_seconds": 1.2733323859865777,
+            "mean_ms": 12.733323859865777,
+            "p50_ms": 10.987331996147987,
+            "p95_ms": 15.106026252033187,
+            "p99_ms": 17.99264702567636,
+            "reciprocal_mean_fps": 78.53408984215855
+          }
+        }
+      },
+      {
+        "index": 4,
+        "repetition": 2,
+        "arm": "cutie",
+        "execution_status": "completed",
+        "planned_inputs": 101,
+        "completed_inputs": 101,
+        "parent_child_wall_seconds": 5.87657744900207,
+        "measured_primary_eligible": true,
+        "child_status": "completed",
+        "status_counts": {
+          "completed": 101
+        },
+        "error": null,
+        "model_load_seconds": 0.5007875189912738,
+        "cuda_initialize_seconds": 0.12351299700094387,
+        "peak_allocated_bytes": 357060096,
+        "peak_reserved_bytes": 631242752,
+        "sequence_wall_seconds": 1.959850874991389,
+        "runtime": {
+          "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+          "torch": "2.6.0+cu124",
+          "cuda": "12.4",
+          "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+          "numpy": "2.4.6",
+          "precision": "float32; AMP disabled",
+          "matmul_allow_tf32": false,
+          "cudnn_allow_tf32": true
+        },
+        "summaries": {
+          "initialization": {
+            "n": 1,
+            "total_seconds": 0.1808907380036544,
+            "mean_ms": 180.8907380036544,
+            "p50_ms": 180.8907380036544,
+            "p95_ms": 180.8907380036544,
+            "p99_ms": 180.8907380036544,
+            "reciprocal_mean_fps": 5.528199016910405
+          },
+          "warmup": {
+            "n": 10,
+            "total_seconds": 0.19194940201123245,
+            "mean_ms": 19.194940201123245,
+            "p50_ms": 11.386067009880207,
+            "p95_ms": 54.96029855203224,
+            "p99_ms": 82.42580771257055,
+            "reciprocal_mean_fps": 52.097062534296526
+          },
+          "measured": {
+            "n": 90,
+            "total_seconds": 1.086358381944592,
+            "mean_ms": 12.070648688273245,
+            "p50_ms": 11.08154150279006,
+            "p95_ms": 15.008892851619748,
+            "p99_ms": 15.992535752011463,
+            "reciprocal_mean_fps": 82.84558898408748
+          },
+          "all_tracking": {
+            "n": 100,
+            "total_seconds": 1.2783077839558246,
+            "mean_ms": 12.783077839558246,
+            "p50_ms": 11.08154150279006,
+            "p95_ms": 15.191093809698941,
+            "p99_ms": 18.10385900913425,
+            "reciprocal_mean_fps": 78.22842139828178
+          }
+        }
+      },
+      {
+        "index": 5,
+        "repetition": 2,
+        "arm": "tapnextpp",
+        "execution_status": "completed",
+        "planned_inputs": 101,
+        "completed_inputs": 101,
+        "parent_child_wall_seconds": 12.887862903997302,
+        "measured_primary_eligible": true,
+        "child_status": "completed",
+        "status_counts": {
+          "completed": 101
+        },
+        "error": null,
+        "model_load_seconds": 4.611816106989863,
+        "cuda_initialize_seconds": 0.12773246600409038,
+        "peak_allocated_bytes": 1466646016,
+        "peak_reserved_bytes": 1790967808,
+        "sequence_wall_seconds": 4.800129668990849,
+        "runtime": {
+          "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+          "torch": "2.6.0+cu124",
+          "cuda": "12.4",
+          "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+          "numpy": "2.4.6",
+          "precision": "float32; AMP disabled",
+          "matmul_allow_tf32": false,
+          "cudnn_allow_tf32": true
+        },
+        "summaries": {
+          "initialization": {
+            "n": 1,
+            "total_seconds": 0.20600689300044905,
+            "mean_ms": 206.00689300044905,
+            "p50_ms": 206.00689300044905,
+            "p95_ms": 206.00689300044905,
+            "p99_ms": 206.00689300044905,
+            "reciprocal_mean_fps": 4.854206504623223
+          },
+          "warmup": {
+            "n": 10,
+            "total_seconds": 0.4096463599562412,
+            "mean_ms": 40.96463599562412,
+            "p50_ms": 41.62925599666778,
+            "p95_ms": 43.63953175052302,
+            "p99_ms": 43.66035594983259,
+            "reciprocal_mean_fps": 24.411299543997433
+          },
+          "measured": {
+            "n": 90,
+            "total_seconds": 3.6799443638446974,
+            "mean_ms": 40.88827070938553,
+            "p50_ms": 41.3251899954048,
+            "p95_ms": 45.71263985126279,
+            "p99_ms": 47.259902011282975,
+            "reciprocal_mean_fps": 24.456891491144898
+          },
+          "all_tracking": {
+            "n": 100,
+            "total_seconds": 4.089590723800939,
+            "mean_ms": 40.895907238009386,
+            "p50_ms": 41.3251899954048,
+            "p95_ms": 45.66300635342486,
+            "p99_ms": 47.25020291094552,
+            "reciprocal_mean_fps": 24.452324634348304
+          }
+        }
+      }
+    ],
+    "descriptive_primary": {
+      "cutie": {
+        "n": 270,
+        "total_seconds": 3.30891310487641,
+        "mean_ms": 12.255233721764482,
+        "p50_ms": 11.657071503577754,
+        "p95_ms": 15.289106549607823,
+        "p99_ms": 17.293363449862227,
+        "reciprocal_mean_fps": 81.59779100940901
+      },
+      "tapnextpp": {
+        "n": 270,
+        "total_seconds": 11.080452174865059,
+        "mean_ms": 41.038711758759476,
+        "p50_ms": 41.87881499819923,
+        "p95_ms": 46.14831399885588,
+        "p99_ms": 47.44907884683926,
+        "reciprocal_mean_fps": 24.367236619861874
+      }
+    },
+    "total_wall_seconds": 66.89395076800429,
+    "GT_read": false
+  },
+  "previous_environment_failure": {
+    "attempt": "attempt_v1",
+    "status": "incomplete",
+    "planned_jobs": 6,
+    "completed_jobs": 0,
+    "planned_inputs": 606,
+    "completed_inputs": 0,
+    "planned_primary_frames_per_arm": 270,
+    "jobs": [
+      {
+        "index": 0,
+        "repetition": 0,
+        "arm": "cutie",
+        "execution_status": "failed",
+        "planned_inputs": 101,
+        "completed_inputs": 0,
+        "parent_child_wall_seconds": 9.52907350899477,
+        "measured_primary_eligible": false,
+        "child_status": "failed",
+        "status_counts": {
+          "blocked_before_stream": 101
+        },
+        "error": "RuntimeError: No CUDA GPUs are available",
+        "model_load_seconds": null,
+        "cuda_initialize_seconds": null,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null,
+        "sequence_wall_seconds": null,
+        "runtime": null,
+        "summaries": {
+          "initialization": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "warmup": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "measured": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "all_tracking": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          }
+        }
+      },
+      {
+        "index": 1,
+        "repetition": 0,
+        "arm": "tapnextpp",
+        "execution_status": "failed",
+        "planned_inputs": 101,
+        "completed_inputs": 0,
+        "parent_child_wall_seconds": 1.9677626699995017,
+        "measured_primary_eligible": false,
+        "child_status": "failed",
+        "status_counts": {
+          "blocked_before_stream": 101
+        },
+        "error": "RuntimeError: No CUDA GPUs are available",
+        "model_load_seconds": null,
+        "cuda_initialize_seconds": null,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null,
+        "sequence_wall_seconds": null,
+        "runtime": null,
+        "summaries": {
+          "initialization": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "warmup": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "measured": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "all_tracking": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          }
+        }
+      },
+      {
+        "index": 2,
+        "repetition": 1,
+        "arm": "tapnextpp",
+        "execution_status": "failed",
+        "planned_inputs": 101,
+        "completed_inputs": 0,
+        "parent_child_wall_seconds": 1.9675734789925627,
+        "measured_primary_eligible": false,
+        "child_status": "failed",
+        "status_counts": {
+          "blocked_before_stream": 101
+        },
+        "error": "RuntimeError: No CUDA GPUs are available",
+        "model_load_seconds": null,
+        "cuda_initialize_seconds": null,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null,
+        "sequence_wall_seconds": null,
+        "runtime": null,
+        "summaries": {
+          "initialization": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "warmup": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "measured": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "all_tracking": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          }
+        }
+      },
+      {
+        "index": 3,
+        "repetition": 1,
+        "arm": "cutie",
+        "execution_status": "failed",
+        "planned_inputs": 101,
+        "completed_inputs": 0,
+        "parent_child_wall_seconds": 1.9667567500000587,
+        "measured_primary_eligible": false,
+        "child_status": "failed",
+        "status_counts": {
+          "blocked_before_stream": 101
+        },
+        "error": "RuntimeError: No CUDA GPUs are available",
+        "model_load_seconds": null,
+        "cuda_initialize_seconds": null,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null,
+        "sequence_wall_seconds": null,
+        "runtime": null,
+        "summaries": {
+          "initialization": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "warmup": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "measured": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "all_tracking": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          }
+        }
+      },
+      {
+        "index": 4,
+        "repetition": 2,
+        "arm": "cutie",
+        "execution_status": "failed",
+        "planned_inputs": 101,
+        "completed_inputs": 0,
+        "parent_child_wall_seconds": 1.96715081599541,
+        "measured_primary_eligible": false,
+        "child_status": "failed",
+        "status_counts": {
+          "blocked_before_stream": 101
+        },
+        "error": "RuntimeError: No CUDA GPUs are available",
+        "model_load_seconds": null,
+        "cuda_initialize_seconds": null,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null,
+        "sequence_wall_seconds": null,
+        "runtime": null,
+        "summaries": {
+          "initialization": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "warmup": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "measured": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "all_tracking": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          }
+        }
+      },
+      {
+        "index": 5,
+        "repetition": 2,
+        "arm": "tapnextpp",
+        "execution_status": "failed",
+        "planned_inputs": 101,
+        "completed_inputs": 0,
+        "parent_child_wall_seconds": 1.9675873879896244,
+        "measured_primary_eligible": false,
+        "child_status": "failed",
+        "status_counts": {
+          "blocked_before_stream": 101
+        },
+        "error": "RuntimeError: No CUDA GPUs are available",
+        "model_load_seconds": null,
+        "cuda_initialize_seconds": null,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null,
+        "sequence_wall_seconds": null,
+        "runtime": null,
+        "summaries": {
+          "initialization": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "warmup": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "measured": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          },
+          "all_tracking": {
+            "n": 0,
+            "total_seconds": null,
+            "mean_ms": null,
+            "p50_ms": null,
+            "p95_ms": null,
+            "p99_ms": null,
+            "reciprocal_mean_fps": null
+          }
+        }
+      }
+    ],
+    "descriptive_primary": {
+      "cutie": {
+        "n": 0,
+        "total_seconds": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "reciprocal_mean_fps": null
+      },
+      "tapnextpp": {
+        "n": 0,
+        "total_seconds": null,
+        "mean_ms": null,
+        "p50_ms": null,
+        "p95_ms": null,
+        "p99_ms": null,
+        "reciprocal_mean_fps": null
+      }
+    },
+    "total_wall_seconds": 20.589532739002607,
+    "GT_read": false
+  },
+  "configuration": {
+    "source_RGB_shape": [
+      480,
+      640,
+      3
+    ],
+    "object_count": 1,
+    "query_count": 64,
+    "cutie_internal_resolution": [
+      480,
+      640
+    ],
+    "tapnextpp_internal_resolution": [
+      256,
+      256
+    ],
+    "precision": "float32; AMP disabled",
+    "compile": false,
+    "torch_num_threads": 1,
+    "cutie_memory": {
+      "mem_every": 5,
+      "max_mem_frames": 5,
+      "use_long_term": false
+    },
+    "first_frame_mask_only": true,
+    "GT_read": false
+  },
+  "timing_scope": "CUDA synchronize; perf_counter; original public frontend call; CUDA synchronize; perf_counter",
+  "includes": "RGB preprocessing, inference, CPU output transfer, original adapter validation/copies",
+  "excludes": "RGB decode, model loading, output persistence/hash, depth geometry, 6D refinement",
+  "limits": [
+    "Different tasks: Cutie full-resolution mask vs TAPNext++ 64 point coordinates/logits.",
+    "Same source RGB, existing native preprocessing retained: Cutie 640x480, TAPNext++ internal256.",
+    "One known development prefix; warm-state frontend latency is not total pipeline FPS or accuracy.",
+    "Three fresh-process repetitions with alternating order are descriptive, no confidence interval.",
+    "Query initialization is deterministic first-mask row-major quantiles, not a tuned tracking method.",
+    "Failed CUDA initialization attempts contain zero performance observations.",
+    "The prior environment failure and the subsequent complete attempt are preserved separately.",
+    "Reciprocal mean latency is descriptive module throughput, not end-to-end 6D FPS.",
+    "Pure-Python recount verifies reported numeric aggregates, not GPU timer hardware or model accuracy."
+  ]
+}

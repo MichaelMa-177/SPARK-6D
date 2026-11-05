@@ -1,0 +1,16 @@
+input_index,dataset_source_frame_id,initialization,metric,direction
+0,1,True,MSSD_m,unchanged
+0,1,True,MSPD_px,unchanged
+0,1,True,ADD_m,unchanged
+0,1,True,MSSD_over_diameter,unchanged
+0,1,True,MSPD_640px,unchanged
+1,2,False,MSSD_m,improved
+1,2,False,MSPD_px,improved
+1,2,False,ADD_m,improved
+1,2,False,MSSD_over_diameter,improved
+1,2,False,MSPD_640px,improved
+2,3,False,MSSD_m,improved
+2,3,False,MSPD_px,improved
+2,3,False,ADD_m,improved
+2,3,False,MSSD_over_diameter,improved
+2,3,False,MSPD_640px,improved
