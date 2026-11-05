@@ -1,0 +1,24 @@
+{
+  "schema": "depth_dropout_cue_public_manifest/1",
+  "payload_files": [
+    {
+      "name": "README.md",
+      "bytes": 2769,
+      "sha256": "eb3dd415372a58bac99021aad27686dd3418464cbefaff56203a73c75c83fdc2"
+    },
+    {
+      "name": "evidence.json",
+      "bytes": 52707,
+      "sha256": "adace58f0102d40a613e56920f8a56e35f716c877e0f71f3cdd5cba2c8b89f3d"
+    },
+    {
+      "name": "source_hashes.json",
+      "bytes": 2164,
+      "sha256": "3652242ee776cd05258a838f9c8a9690c400cd59bb108958e1a6390ba4c1cafa"
+    }
+  ],
+  "contains_source": false,
+  "contains_raw_data": false,
+  "contains_GT": false,
+  "uploaded": false
+}

@@ -1,0 +1,599 @@
+{
+  "schema": "native_shadow_fixed3_public_posthoc/1",
+  "status": "completed",
+  "study": "synthetic continuous_visible development case; frozen 4-second shadow attempt",
+  "population": {
+    "frames": [
+      5,
+      6,
+      7
+    ],
+    "frame_clock": "zero-based input_index = source_frame_id",
+    "arms": [
+      "main_raw_unpublished_candidate",
+      "shadow_raw_unpublished_candidate"
+    ],
+    "slots_per_arm": 3,
+    "total_slots": 6,
+    "computed_slots": 6,
+    "unknown_slots": 0,
+    "published_slots": 0,
+    "independent_trials": 1
+  },
+  "runtime_GT_read": false,
+  "posthoc_GT_read": true,
+  "posthoc_GT_first_open_utc": "2026-11-05T10:36:15.593935+00:00",
+  "GPU_run_by_posthoc": false,
+  "geometry": {
+    "vertex_count": 386,
+    "face_count": 768,
+    "diameter_m": 0.1649631473996541,
+    "symmetry_metadata": {},
+    "symmetry_transform_count": 1,
+    "coordinate_frame": "original_model_metres"
+  },
+  "definitions": {
+    "ADD_m": "Official BOP mean corresponding distance over all 386 original mesh vertices, metres",
+    "MSSD_m": "Official BOP maximum surface distance over full vertices and the sole declared identity symmetry, metres",
+    "MSSD_over_diameter": "MSSD_m / original full-vertex mesh diameter",
+    "MSPD_px": "Official BOP maximum projection distance at the actual 480-pixel image width",
+    "MSPD_640px": "MSPD_px * 640 / 480, inherited comparison convention",
+    "translation_m": "Official BOP te at original mesh origin, metres; not bbox-center error",
+    "rotation_deg": "Official BOP re degrees, trace(R_est @ inverse(R_GT)), clip before acos, no SVD repair",
+    "paired_delta": "shadow minus main; positive error delta means worse",
+    "association": "Fixed target ID 1 versus distractor ID 2 at ADD <= 0.1 diameter, posthoc only; does not certify physical identity"
+  },
+  "rows": [
+    {
+      "frame_id": 5,
+      "arm": "main_raw_unpublished_candidate",
+      "published": false,
+      "identity_verified": false,
+      "status": "computed",
+      "errors": {
+        "MSSD_m": 0.0025319413823839537,
+        "MSPD_px": 1.2708344002352252,
+        "ADD_m": 0.001891954520841863,
+        "MSSD_over_diameter": 0.015348527366841832,
+        "MSPD_640px": 1.6944458669803002,
+        "translation_m": 0.0018820388436232686,
+        "rotation_deg": 0.9904742825326419
+      },
+      "distractor_ADD_m": 0.2663985668328074,
+      "association_at_existing_ADD_threshold": "target",
+      "nearest_identity_is_posthoc_diagnostic_only": "target"
+    },
+    {
+      "frame_id": 6,
+      "arm": "main_raw_unpublished_candidate",
+      "published": false,
+      "identity_verified": false,
+      "status": "computed",
+      "errors": {
+        "MSSD_m": 0.0031967178054568553,
+        "MSPD_px": 1.5685595804288286,
+        "ADD_m": 0.0021251376662696363,
+        "MSSD_over_diameter": 0.019378375448379438,
+        "MSPD_640px": 2.0914127739051045,
+        "translation_m": 0.0018947586925199622,
+        "rotation_deg": 1.199544637974582
+      },
+      "distractor_ADD_m": 0.26143919967701046,
+      "association_at_existing_ADD_threshold": "target",
+      "nearest_identity_is_posthoc_diagnostic_only": "target"
+    },
+    {
+      "frame_id": 7,
+      "arm": "main_raw_unpublished_candidate",
+      "published": false,
+      "identity_verified": false,
+      "status": "computed",
+      "errors": {
+        "MSSD_m": 0.0027161416873462347,
+        "MSPD_px": 1.3509131085874768,
+        "ADD_m": 0.002004732815413146,
+        "MSSD_over_diameter": 0.0164651422463823,
+        "MSPD_640px": 1.8012174781166357,
+        "translation_m": 0.0019548393353924025,
+        "rotation_deg": 0.970921132435106
+      },
+      "distractor_ADD_m": 0.2564792769379052,
+      "association_at_existing_ADD_threshold": "target",
+      "nearest_identity_is_posthoc_diagnostic_only": "target"
+    },
+    {
+      "frame_id": 5,
+      "arm": "shadow_raw_unpublished_candidate",
+      "published": false,
+      "identity_verified": false,
+      "status": "computed",
+      "errors": {
+        "MSSD_m": 0.0025319413823839537,
+        "MSPD_px": 1.2708344002352252,
+        "ADD_m": 0.001891954520841863,
+        "MSSD_over_diameter": 0.015348527366841832,
+        "MSPD_640px": 1.6944458669803002,
+        "translation_m": 0.0018820388436232686,
+        "rotation_deg": 0.9904742825326419
+      },
+      "distractor_ADD_m": 0.2663985668328074,
+      "association_at_existing_ADD_threshold": "target",
+      "nearest_identity_is_posthoc_diagnostic_only": "target"
+    },
+    {
+      "frame_id": 6,
+      "arm": "shadow_raw_unpublished_candidate",
+      "published": false,
+      "identity_verified": false,
+      "status": "computed",
+      "errors": {
+        "MSSD_m": 0.0030770251840610955,
+        "MSPD_px": 1.5090243134020127,
+        "ADD_m": 0.0020955450162338115,
+        "MSSD_over_diameter": 0.01865280356591661,
+        "MSPD_640px": 2.0120324178693503,
+        "translation_m": 0.0019005542844508247,
+        "rotation_deg": 1.0918496057074243
+      },
+      "distractor_ADD_m": 0.2614249379419923,
+      "association_at_existing_ADD_threshold": "target",
+      "nearest_identity_is_posthoc_diagnostic_only": "target"
+    },
+    {
+      "frame_id": 7,
+      "arm": "shadow_raw_unpublished_candidate",
+      "published": false,
+      "identity_verified": false,
+      "status": "computed",
+      "errors": {
+        "MSSD_m": 0.0027363715756978757,
+        "MSPD_px": 1.3617932102160029,
+        "ADD_m": 0.002034716902436987,
+        "MSSD_over_diameter": 0.016587775020250453,
+        "MSPD_640px": 1.8157242802880038,
+        "translation_m": 0.0019984521095319134,
+        "rotation_deg": 0.9496680790491083
+      },
+      "distractor_ADD_m": 0.2564879260029371,
+      "association_at_existing_ADD_threshold": "target",
+      "nearest_identity_is_posthoc_diagnostic_only": "target"
+    }
+  ],
+  "mean_errors": {
+    "main_raw_unpublished_candidate": {
+      "ADD_m": 0.0020072750008415484,
+      "MSSD_m": 0.0028149336250623477,
+      "MSSD_over_diameter": 0.017064015020534524,
+      "MSPD_px": 1.3967690297505102,
+      "MSPD_640px": 1.8623587063340132,
+      "translation_m": 0.0019105456238452112,
+      "rotation_deg": 1.0536466843141101
+    },
+    "shadow_raw_unpublished_candidate": {
+      "ADD_m": 0.0020074054798375537,
+      "MSSD_m": 0.0027817793807143085,
+      "MSSD_over_diameter": 0.016863035317669632,
+      "MSPD_px": 1.3805506412844135,
+      "MSPD_640px": 1.840734188379218,
+      "translation_m": 0.0019270150792020022,
+      "rotation_deg": 1.0106639890963915
+    }
+  },
+  "paired": [
+    {
+      "frame_id": 5,
+      "shadow_minus_main": {
+        "ADD_m": 0.0,
+        "MSSD_m": 0.0,
+        "MSSD_over_diameter": 0.0,
+        "MSPD_px": 0.0,
+        "MSPD_640px": 0.0,
+        "translation_m": 0.0,
+        "rotation_deg": 0.0
+      }
+    },
+    {
+      "frame_id": 6,
+      "shadow_minus_main": {
+        "ADD_m": -2.9592650035824807e-05,
+        "MSSD_m": -0.00011969262139575974,
+        "MSSD_over_diameter": -0.0007255718824628263,
+        "MSPD_px": -0.059535267026815886,
+        "MSPD_640px": -0.07938035603575422,
+        "translation_m": 5.795591930862461e-06,
+        "rotation_deg": -0.10769503226715771
+      }
+    },
+    {
+      "frame_id": 7,
+      "shadow_minus_main": {
+        "ADD_m": 2.9984087023841085e-05,
+        "MSSD_m": 2.0229888351641027e-05,
+        "MSSD_over_diameter": 0.00012263277386815458,
+        "MSPD_px": 0.01088010162852604,
+        "MSPD_640px": 0.014506802171368127,
+        "translation_m": 4.3612774139510906e-05,
+        "rotation_deg": -0.0212530533859977
+      }
+    }
+  ],
+  "mean_shadow_minus_main": {
+    "ADD_m": 1.3047899600528157e-07,
+    "MSSD_m": -3.315424434803928e-05,
+    "MSSD_over_diameter": -0.00020097970286489172,
+    "MSPD_px": -0.01621838846609669,
+    "MSPD_640px": -0.02162451795479514,
+    "translation_m": 1.6469455356790978e-05,
+    "rotation_deg": -0.04298269521771858
+  },
+  "threshold_grid": [
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.05,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.1,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.15,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.2,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.25,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.3,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.35,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.4,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.45,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSSD_over_diameter",
+      "threshold": 0.5,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 5.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 10.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 15.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 20.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 25.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 30.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 35.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 40.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 45.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "MSPD_640px",
+      "threshold": 50.0,
+      "comparison": "<"
+    },
+    {
+      "metric": "ADD_m",
+      "threshold": 0.01649631473996541,
+      "comparison": "<="
+    }
+  ],
+  "threshold_counts_columns": [
+    "correct",
+    "wrong",
+    "unknown"
+  ],
+  "threshold_counts_by_arm": {
+    "main_raw_unpublished_candidate": [
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "shadow_raw_unpublished_candidate": [
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ]
+  },
+  "threshold_count_population": "All 3 evaluated raw candidates per arm, not published output coverage",
+  "main_findings": [
+    "Both arms pass all inherited thresholds on these three frames; neither publishes a pose or verifies identity",
+    "Frame 5 is identical; shadow ADD improves at frame 6 and worsens at frame 7",
+    "Mean ADD and translation error are slightly worse; mean MSSD, MSPD and rotation error are slightly better",
+    "This assesses geometric accuracy of frozen unpublished candidates, not identity recovery or broad improvement"
+  ],
+  "source_hashes": {
+    "generator": "150bbb9870e8cefca975960cb75fbd395bd2b9a81178bf4d1fa1c28cd37173ec",
+    "generation_proof": "d6aec3bea5dd26d46944f4d8a679caaae5a628de8ba069b8c087a1bb479b4490",
+    "legacy_protocol": "3bc245f51edd9752112b7ad210c3287cb518eaad471de996e499ae44a981fdcb",
+    "metrics": "0fa0305375df5ed5a80ca4e35626acce8cc2e77a7bd9be206e4156deb1cdbf7a",
+    "truth_contract": "d2ae2e965c4eb93b486a0478164623cd9302e2a0d8ed60aa2ce8c8606fa6d5f5",
+    "BOP_loader": "10a3a2416483394a4b7817b34db4203cbfc248907278ecef6635d0cc67d32ddf",
+    "BOP_dependencies": "2699487743b88338bf9e46a71667af45c81f52af082e48a3a3517161a21d0f53",
+    "raw_parity": "651832fb6d3ee90001891d03efb40222a1f914742d9c2556bfee83aecd4fb015",
+    "refiner_raw": "03b5146e09d46410538bb116363a35776a0bb2a0e0696544841b9a06953b384a",
+    "event_inventory": "d1102882fa571f1d1367a3f97fff24630e67a5b0d92a8f815bfd9959d1499e68",
+    "packet_reader": "5fe9e77ba3ec60d9c128e8444c63fb2be31707fa8f1dd8d6807434345845a0e6",
+    "posthoc_host": "8bce8ae582a056bf66f8f51796d70113d1a75cff36659b772bb98df4dcb92c58",
+    "posthoc_protocol": "31fea6d35a0d0373850c4d7738b954000ee5e6749d2772c769addf3cf7b65c14",
+    "posthoc_complete_local_summary": "f56056efca5359cc6c20c580de461af7fc22a258dad33ac039757a7161c62c62",
+    "posthoc_execution_receipt": "09fa2160ffb9a7a926a5c93a6b2cd65828739d92f1a2771d97c6e31322067180",
+    "posthoc_GT_gate_opened_record": "7cb9c31bf1e14b8fc6cfcf9b78a286c6eaf156f683cfeb744ba1558cf852817f",
+    "prepared_original_coordinate_metric_inputs": "838b21af8ed98f56c6424f48b83c594a84cde3b387d2504af0b2e8f03ee66790",
+    "original_mesh": "758d6141a533b68dad5ea967c6d71519fcd9383dde771b65309ec8eb73e437c1",
+    "ground_truth_continuous_visible": "fd746e948ce62040a9740a9890d9fb87f63d65d45f5be0ffc82e53f6353ee1f0",
+    "numeric_exporter": "9233dd8ff4e6b98ea4c3bc401332e599bf9cd46ee994e906ea17671cc2fc302f",
+    "official_BOP_misc": "44de1e832c10d8d50c3a6dd30161ea16ca484db91449d996aeb392bbde361547",
+    "official_BOP_pose_error": "290c4a2f040e73a920696c89747c1d5c874d2b3e969442e775663bcf1ce6d89c"
+  },
+  "limitations": [
+    "Three selected-by-fixed-shadow-protocol development frames, not independent samples or broad accuracy evidence",
+    "Declared gate-drop intervention, not natural occlusion",
+    "Neither arm published these poses",
+    "Metric success would not identify an observationally indistinguishable physical instance",
+    "One synthetic stream and three temporally dependent development frames; no statistical generalization",
+    "The 1-second attempt timed out; this is the separately declared 4-second diagnostic follow-up",
+    "The artificial gate-drop preserves actual point observations and differs from a natural identity loss",
+    "Main and shadow have no GT pose selection, alignment, coordinate repair or visibility filtering",
+    "Posthoc association to the synthetic target cannot authorize online publication or distinguish indistinguishable physical instances"
+  ]
+}

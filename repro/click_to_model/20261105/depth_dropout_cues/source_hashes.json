@@ -1,0 +1,66 @@
+{
+  "schema": "depth_dropout_cue_public_source_hashes/1",
+  "normalization": "logical role IDs; original paths omitted",
+  "sources": [
+    {
+      "role": "executed_source_00_check.py",
+      "bytes": 14967,
+      "sha256": "584fff0555196f4a68981910e48c45eb026ed8a7d3958393a9fd0ef271f0901f"
+    },
+    {
+      "role": "executed_source_01_test_measured_motion_session.py",
+      "bytes": 12371,
+      "sha256": "bada642809908b621e1f2e9925220a8d57b7b6eb9dd790f5c1b70f64c162f2f6"
+    },
+    {
+      "role": "executed_source_02_measured_motion_session.py",
+      "bytes": 23296,
+      "sha256": "00fa91fe5ae2cfbdd39b1bd572c9d892029b49a3bff59174871290f1027336af"
+    },
+    {
+      "role": "executed_source_03_identity_output.py",
+      "bytes": 8053,
+      "sha256": "20abfe5febda46273c182c566c5a1abbf179e3d05ce1a756b14927dc94c60b8e"
+    },
+    {
+      "role": "executed_source_04_tentative_point_motion.py",
+      "bytes": 24063,
+      "sha256": "f855f8bffe195bc7b75ef64dce14f71ad68d0f12a21ea46e5541bc8db2638c24"
+    },
+    {
+      "role": "executed_source_05_pose_validity.py",
+      "bytes": 25212,
+      "sha256": "f0dfd6b25ec37d19f2b76db63c63abd9640b18f677488a8187409df2359bea45"
+    },
+    {
+      "role": "executed_source_06_continuity_core.py",
+      "bytes": 26150,
+      "sha256": "f6517f299012a8230b987023d31d10b12208fbee4a9d85640c8ec11297498b79"
+    },
+    {
+      "role": "executed_source_07_two_phase.py",
+      "bytes": 10909,
+      "sha256": "5358e68453bf8ad45813ecd739c1044b02a9e2ff6b91560a8002af2d827e83fd"
+    },
+    {
+      "role": "executed_source_08_PACKAGE_MANIFEST.json",
+      "bytes": 2256,
+      "sha256": "7a122c9a70de294decc93c73d002c6960b5d15b2d0ed9a431531caa7bca49f82"
+    },
+    {
+      "role": "HANDOFF.md",
+      "bytes": 7015,
+      "sha256": "b203992d962f0c938b5148d058f77cc7a2cd4f53c7d50e16e2363a98ebe4e664"
+    },
+    {
+      "role": "cpu_v1.evidence.json",
+      "bytes": 52385,
+      "sha256": "ab534c82347beb3d883f7d806645b7e589d965afebb2539c75b17b83de6d8137"
+    },
+    {
+      "role": "cpu_v1.receipt.json",
+      "bytes": 1213,
+      "sha256": "8ef24eb23709d103e94a9ddca871106089071a02a3361e1ae7ca1bde1d472c65"
+    }
+  ]
+}

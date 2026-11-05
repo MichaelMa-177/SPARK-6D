@@ -1,0 +1,32 @@
+{
+  "schema": "native_shadow_public_manifest/1",
+  "payload_files": [
+    {
+      "name": "README.md",
+      "bytes": 2645,
+      "sha256": "19c3705c68c38bd6d32249613f9e7423f50999d2774bace72724b041aa9823bc"
+    },
+    {
+      "name": "frame_slots.json",
+      "bytes": 34869,
+      "sha256": "2b82477628d07e7e603445daf7762f6de5df27cef3767e164ec737461b749aa9"
+    },
+    {
+      "name": "source_hashes.json",
+      "bytes": 34785,
+      "sha256": "5c0794b3ff0625c3c8cb8324a020dd5ec9c75a8143cf3c19208cba6fca3b9fbf"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 12273,
+      "sha256": "6e8e8e620ccbd51c88200f8d7d611b7e04f4c7ac120aca1e800925cfb02af185"
+    }
+  ],
+  "payload_bytes": 84572,
+  "contains_source_code": false,
+  "contains_images": false,
+  "contains_poses_or_trajectories": false,
+  "contains_GT": false,
+  "contains_original_paths": false,
+  "uploaded_by_exporter": false
+}
