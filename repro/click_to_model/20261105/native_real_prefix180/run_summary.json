@@ -1,0 +1,527 @@
+{
+  "status": "completed_native_real180_paired_posthoc",
+  "denominators": {
+    "cases": 4,
+    "arms": 2,
+    "inputs_per_case_arm": 180,
+    "tracking_per_case_arm": 179,
+    "initializations_per_arm": 4,
+    "inputs_per_arm": 720,
+    "tracking_per_arm": 716,
+    "registration_candidates_per_arm": 3024,
+    "fixed_BOP19_inputs_per_arm": 45,
+    "fixed_BOP19_tracking_per_arm": 42,
+    "threshold_scope_arm_cells": 672,
+    "paired_threshold_scope_cells": 336
+  },
+  "cases": [
+    {
+      "case": "ycbv_000051_obj000017",
+      "denominators": {
+        "initialization": 1,
+        "all_inputs": 180,
+        "all_tracking": 179,
+        "fixed_BOP19_tracking": 7
+      },
+      "geometry": {
+        "original_vertex_rows": 8628,
+        "diameter_m": 0.20397300000000002,
+        "symmetry_count": 1,
+        "original_model_units": "mm multiplied once by .001",
+        "model_frame": "Original BOP, no new centering/GT alignment/pose repair"
+      },
+      "timing": {
+        "baseline": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 22.460520272958092,
+          "tracking_latency_mean_seconds": 0.12547776688803403,
+          "parent_wall_seconds": null,
+          "child_wall_seconds": null,
+          "wall_scope": "unobserved_original_prefix_wall",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 16184,
+            "sha256": "8dbd571455e8105d5d940098388550333cf6195742ffc51d057a3941bb5ffc83"
+          }
+        },
+        "native_private_head": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 126.93393712394754,
+          "tracking_latency_mean_seconds": 0.7091281403572488,
+          "parent_wall_seconds": 159.8489913180092,
+          "child_wall_seconds": 156.94764202000806,
+          "wall_scope": "actual_complete180_child_and_parent",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 1560,
+            "sha256": "546af58d937efd523dadf82b2be5db89fea47fe98441166de8edd9d46d1f3f86"
+          }
+        }
+      },
+      "raw_native_summary": {
+        "committed_updates": 47,
+        "final_holder_version": 47,
+        "actual_unknown_permission_callbacks": 0,
+        "native_callbacks": 204,
+        "limits": [
+          "CPU transfer/current-gate/holder audit, not independent neural or gradient computation.",
+          "Shadow head tensors and per-parameter gradients are not persisted; gradient/check losses are runtime scalar telemetry.",
+          "Original model unchanged is runtime hash assertion; no independent reload of unavailable terminal live model.",
+          "No GT or accuracy/identity assertion; all refusal/unknown callbacks remain counted.",
+          "Original real baseline used only for exact initialization and input prefix pairing; no trajectory substitution or inferred prefix parent wall."
+        ]
+      },
+      "actual_counts": {
+        "case": "ycbv_000051_obj000017",
+        "inputs": 180,
+        "tracking": 179,
+        "candidates": 756,
+        "initialization_exact": 29,
+        "input_arrays_exact": 540,
+        "published_inputs": 180,
+        "abstained_inputs": 0,
+        "published_tracking": 179,
+        "abstained_tracking": 0,
+        "callbacks": 204,
+        "qualification": {
+          "qualified": 82,
+          "refused": 122
+        },
+        "refusals": {
+          "insufficient_disjoint_surface": 122
+        },
+        "private_forward_count_distribution": {
+          "2": 82,
+          "0": 122
+        },
+        "effective_changed_callbacks": 79,
+        "gradient_proposals": 77,
+        "committed_updates": 47,
+        "final_holder_version": 47,
+        "unknown_permission_callbacks": 0,
+        "all_used_files_unchanged": true
+      },
+      "initialization_byte_exact": 29,
+      "baseline_prefix_all_scalar_fields_exact": true
+    },
+    {
+      "case": "ycbv_000054_obj000019",
+      "denominators": {
+        "initialization": 1,
+        "all_inputs": 180,
+        "all_tracking": 179,
+        "fixed_BOP19_tracking": 12
+      },
+      "geometry": {
+        "original_vertex_rows": 9825,
+        "diameter_m": 0.174746,
+        "symmetry_count": 2,
+        "original_model_units": "mm multiplied once by .001",
+        "model_frame": "Original BOP, no new centering/GT alignment/pose repair"
+      },
+      "timing": {
+        "baseline": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 31.624243450001813,
+          "tracking_latency_mean_seconds": 0.17667175111732858,
+          "parent_wall_seconds": null,
+          "child_wall_seconds": null,
+          "wall_scope": "unobserved_original_prefix_wall",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 15544,
+            "sha256": "e76a4e48c8709d7b57235ddf5fc232d0f429761a2e9c74817d1d3f8b2f66956f"
+          }
+        },
+        "native_private_head": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 178.35785802200553,
+          "tracking_latency_mean_seconds": 0.9964126146480756,
+          "parent_wall_seconds": 210.3647075379995,
+          "child_wall_seconds": 207.41084533499088,
+          "wall_scope": "actual_complete180_child_and_parent",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 1560,
+            "sha256": "415cdd86904c3536ec706b61f38a10a0489a35e4fec085c7dfa3b46d59a70ecd"
+          }
+        }
+      },
+      "raw_native_summary": {
+        "committed_updates": 9,
+        "final_holder_version": 9,
+        "actual_unknown_permission_callbacks": 6,
+        "native_callbacks": 362,
+        "limits": [
+          "CPU transfer/current-gate/holder audit, not independent neural or gradient computation.",
+          "Shadow head tensors and per-parameter gradients are not persisted; gradient/check losses are runtime scalar telemetry.",
+          "Original model unchanged is runtime hash assertion; no independent reload of unavailable terminal live model.",
+          "No GT or accuracy/identity assertion; all refusal/unknown callbacks remain counted.",
+          "Original real baseline used only for exact initialization and input prefix pairing; no trajectory substitution or inferred prefix parent wall."
+        ]
+      },
+      "actual_counts": {
+        "case": "ycbv_000054_obj000019",
+        "inputs": 180,
+        "tracking": 179,
+        "candidates": 756,
+        "initialization_exact": 29,
+        "input_arrays_exact": 540,
+        "published_inputs": 174,
+        "abstained_inputs": 6,
+        "published_tracking": 173,
+        "abstained_tracking": 6,
+        "callbacks": 362,
+        "qualification": {
+          "refused": 330,
+          "qualified": 32
+        },
+        "refusals": {
+          "insufficient_disjoint_surface": 324,
+          "current_candidate_permission_absent": 6
+        },
+        "private_forward_count_distribution": {
+          "0": 330,
+          "2": 32
+        },
+        "effective_changed_callbacks": 30,
+        "gradient_proposals": 15,
+        "committed_updates": 9,
+        "final_holder_version": 9,
+        "unknown_permission_callbacks": 6,
+        "all_used_files_unchanged": true
+      },
+      "initialization_byte_exact": 29,
+      "baseline_prefix_all_scalar_fields_exact": true
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "denominators": {
+        "initialization": 1,
+        "all_inputs": 180,
+        "all_tracking": 179,
+        "fixed_BOP19_tracking": 8
+      },
+      "geometry": {
+        "original_vertex_rows": 8455,
+        "diameter_m": 0.10290300000000001,
+        "symmetry_count": 2,
+        "original_model_units": "mm multiplied once by .001",
+        "model_frame": "Original BOP, no new centering/GT alignment/pose repair"
+      },
+      "timing": {
+        "baseline": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 31.588993490862777,
+          "tracking_latency_mean_seconds": 0.17647482397130043,
+          "parent_wall_seconds": null,
+          "child_wall_seconds": null,
+          "wall_scope": "unobserved_original_prefix_wall",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 15088,
+            "sha256": "60150df02a807bb489e20285b5281070d96e7ddd355f09078d55fed5b5762269"
+          }
+        },
+        "native_private_head": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 177.4886350750021,
+          "tracking_latency_mean_seconds": 0.991556620530738,
+          "parent_wall_seconds": 219.7861001979909,
+          "child_wall_seconds": 216.6036999700009,
+          "wall_scope": "actual_complete180_child_and_parent",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 1560,
+            "sha256": "9f69a3094f03bdf2820051ba1d1c0c081e85d093cbaee884aa080b26fc1d2cb2"
+          }
+        }
+      },
+      "raw_native_summary": {
+        "committed_updates": 26,
+        "final_holder_version": 26,
+        "actual_unknown_permission_callbacks": 0,
+        "native_callbacks": 358,
+        "limits": [
+          "CPU transfer/current-gate/holder audit, not independent neural or gradient computation.",
+          "Shadow head tensors and per-parameter gradients are not persisted; gradient/check losses are runtime scalar telemetry.",
+          "Original model unchanged is runtime hash assertion; no independent reload of unavailable terminal live model.",
+          "No GT or accuracy/identity assertion; all refusal/unknown callbacks remain counted.",
+          "Original real baseline used only for exact initialization and input prefix pairing; no trajectory substitution or inferred prefix parent wall."
+        ]
+      },
+      "actual_counts": {
+        "case": "ycbv_000057_obj000021",
+        "inputs": 180,
+        "tracking": 179,
+        "candidates": 756,
+        "initialization_exact": 29,
+        "input_arrays_exact": 540,
+        "published_inputs": 180,
+        "abstained_inputs": 0,
+        "published_tracking": 179,
+        "abstained_tracking": 0,
+        "callbacks": 358,
+        "qualification": {
+          "refused": 273,
+          "qualified": 85
+        },
+        "refusals": {
+          "insufficient_disjoint_surface": 273
+        },
+        "private_forward_count_distribution": {
+          "0": 273,
+          "2": 85
+        },
+        "effective_changed_callbacks": 83,
+        "gradient_proposals": 42,
+        "committed_updates": 26,
+        "final_holder_version": 26,
+        "unknown_permission_callbacks": 0,
+        "all_used_files_unchanged": true
+      },
+      "initialization_byte_exact": 29,
+      "baseline_prefix_all_scalar_fields_exact": true
+    },
+    {
+      "case": "ycbv_000058_obj000008",
+      "denominators": {
+        "initialization": 1,
+        "all_inputs": 180,
+        "all_tracking": 179,
+        "fixed_BOP19_tracking": 15
+      },
+      "geometry": {
+        "original_vertex_rows": 8268,
+        "diameter_m": 0.114053,
+        "symmetry_count": 1,
+        "original_model_units": "mm multiplied once by .001",
+        "model_frame": "Original BOP, no new centering/GT alignment/pose repair"
+      },
+      "timing": {
+        "baseline": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 25.396966395084746,
+          "tracking_latency_mean_seconds": 0.1418824938272891,
+          "parent_wall_seconds": null,
+          "child_wall_seconds": null,
+          "wall_scope": "unobserved_original_prefix_wall",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 13872,
+            "sha256": "58e30210ad0cb2b9e5fc75cd72757ccd369f90a9e0175ead7c9496bc5f643052"
+          }
+        },
+        "native_private_head": {
+          "tracking_latency_count": 179,
+          "source_latency_indices": [
+            0,
+            178
+          ],
+          "runtime_frames": [
+            1,
+            179
+          ],
+          "tracking_latency_sum_seconds": 145.98009857603756,
+          "tracking_latency_mean_seconds": 0.8155312769611037,
+          "parent_wall_seconds": 186.51598430199374,
+          "child_wall_seconds": 183.56739182599995,
+          "wall_scope": "actual_complete180_child_and_parent",
+          "frame_timing_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+          "latency_source_hash": {
+            "bytes": 1560,
+            "sha256": "8141191b6081557696b37bb4211c4cddbcde46ca63518b0071805557660678d4"
+          }
+        }
+      },
+      "raw_native_summary": {
+        "committed_updates": 123,
+        "final_holder_version": 123,
+        "actual_unknown_permission_callbacks": 0,
+        "native_callbacks": 246,
+        "limits": [
+          "CPU transfer/current-gate/holder audit, not independent neural or gradient computation.",
+          "Shadow head tensors and per-parameter gradients are not persisted; gradient/check losses are runtime scalar telemetry.",
+          "Original model unchanged is runtime hash assertion; no independent reload of unavailable terminal live model.",
+          "No GT or accuracy/identity assertion; all refusal/unknown callbacks remain counted.",
+          "Original real baseline used only for exact initialization and input prefix pairing; no trajectory substitution or inferred prefix parent wall."
+        ]
+      },
+      "actual_counts": {
+        "case": "ycbv_000058_obj000008",
+        "inputs": 180,
+        "tracking": 179,
+        "candidates": 756,
+        "initialization_exact": 29,
+        "input_arrays_exact": 540,
+        "published_inputs": 180,
+        "abstained_inputs": 0,
+        "published_tracking": 179,
+        "abstained_tracking": 0,
+        "callbacks": 246,
+        "qualification": {
+          "qualified": 239,
+          "refused": 7
+        },
+        "refusals": {
+          "insufficient_disjoint_surface": 7
+        },
+        "private_forward_count_distribution": {
+          "2": 239,
+          "0": 7
+        },
+        "effective_changed_callbacks": 238,
+        "gradient_proposals": 174,
+        "committed_updates": 123,
+        "final_holder_version": 123,
+        "unknown_permission_callbacks": 0,
+        "all_used_files_unchanged": true
+      },
+      "initialization_byte_exact": 29,
+      "baseline_prefix_all_scalar_fields_exact": true
+    }
+  ],
+  "raw_totals": {
+    "published_inputs": 714,
+    "abstained_inputs": 6,
+    "published_tracking": 710,
+    "abstained_tracking": 6,
+    "callbacks": 1170,
+    "gradient_proposals": 308,
+    "committed_updates": 205,
+    "unknown_permission_callbacks": 6
+  },
+  "proposal_outcomes": [
+    {
+      "case": "ycbv_000051_obj000017",
+      "tracking_slots": 179,
+      "gradient_proposals": 77,
+      "accepted": 47,
+      "rejected": 30,
+      "no_gradient_proposal": 102,
+      "no_gradient_reasons": {
+        "frame_contains_unqualified_callback": 102
+      },
+      "rejected_after_minus_before_loss_direction": {
+        "higher": 22,
+        "lower": 8
+      },
+      "counts_are_runtime_telemetry_not_independent_gradient_recomputation": true
+    },
+    {
+      "case": "ycbv_000054_obj000019",
+      "tracking_slots": 179,
+      "gradient_proposals": 15,
+      "accepted": 9,
+      "rejected": 6,
+      "no_gradient_proposal": 164,
+      "no_gradient_reasons": {
+        "frame_contains_unqualified_callback": 164
+      },
+      "rejected_after_minus_before_loss_direction": {
+        "higher": 5,
+        "lower": 1
+      },
+      "counts_are_runtime_telemetry_not_independent_gradient_recomputation": true
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "tracking_slots": 179,
+      "gradient_proposals": 42,
+      "accepted": 26,
+      "rejected": 16,
+      "no_gradient_proposal": 137,
+      "no_gradient_reasons": {
+        "frame_contains_unqualified_callback": 137
+      },
+      "rejected_after_minus_before_loss_direction": {
+        "lower": 6,
+        "higher": 10
+      },
+      "counts_are_runtime_telemetry_not_independent_gradient_recomputation": true
+    },
+    {
+      "case": "ycbv_000058_obj000008",
+      "tracking_slots": 179,
+      "gradient_proposals": 174,
+      "accepted": 123,
+      "rejected": 51,
+      "no_gradient_proposal": 5,
+      "no_gradient_reasons": {
+        "frame_contains_unqualified_callback": 5
+      },
+      "rejected_after_minus_before_loss_direction": {
+        "higher": 18,
+        "lower": 33
+      },
+      "counts_are_runtime_telemetry_not_independent_gradient_recomputation": true
+    }
+  ],
+  "all720_baseline_prefix_scalar_rows_exact": true,
+  "heldout_claim": false,
+  "identity_correctness_claim": false,
+  "limits": [
+    "Known real development prefixes; no heldout claim.",
+    "Native treatment changes actual trajectories. Paired scientific interpretation requires exact29-array initialization and all180 input RGB/depth/K byte checks.",
+    "CPU raw audit is a transfer/current-permission/holder check, not independent neural/gradient computation; retained runtime telemetry has these limits.",
+    "All unknowns, abstentions, capped/refused adaptation and adverse threshold changes remain visible.",
+    "Baseline and treatment timing is descriptive: original baselines were not simultaneous paired runs; single-thread CPU audit/preparation can overlap treatment GPU runs.",
+    "No new inference or GPU work is performed by this posthoc."
+  ]
+}

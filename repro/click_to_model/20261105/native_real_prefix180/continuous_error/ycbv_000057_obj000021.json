@@ -1,0 +1,665 @@
+{
+  "case": "ycbv_000057_obj000021",
+  "rows": [
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "initialization",
+      "metric": "MSSD_m",
+      "N": 1,
+      "comparable": 1,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 0,
+      "exact_equal": 1,
+      "baseline": {
+        "count": 1,
+        "mean": 0.004425872558620617,
+        "median": 0.004425872558620617,
+        "min": 0.004425872558620617,
+        "max": 0.004425872558620617
+      },
+      "native": {
+        "count": 1,
+        "mean": 0.004425872558620617,
+        "median": 0.004425872558620617,
+        "min": 0.004425872558620617,
+        "max": 0.004425872558620617
+      },
+      "native_minus_baseline": {
+        "count": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "initialization",
+      "metric": "MSPD_px",
+      "N": 1,
+      "comparable": 1,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 0,
+      "exact_equal": 1,
+      "baseline": {
+        "count": 1,
+        "mean": 4.092171117032782,
+        "median": 4.092171117032782,
+        "min": 4.092171117032782,
+        "max": 4.092171117032782
+      },
+      "native": {
+        "count": 1,
+        "mean": 4.092171117032782,
+        "median": 4.092171117032782,
+        "min": 4.092171117032782,
+        "max": 4.092171117032782
+      },
+      "native_minus_baseline": {
+        "count": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "initialization",
+      "metric": "ADD_m",
+      "N": 1,
+      "comparable": 1,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 0,
+      "exact_equal": 1,
+      "baseline": {
+        "count": 1,
+        "mean": 0.0036351512960561723,
+        "median": 0.0036351512960561723,
+        "min": 0.0036351512960561723,
+        "max": 0.0036351512960561723
+      },
+      "native": {
+        "count": 1,
+        "mean": 0.0036351512960561723,
+        "median": 0.0036351512960561723,
+        "min": 0.0036351512960561723,
+        "max": 0.0036351512960561723
+      },
+      "native_minus_baseline": {
+        "count": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "initialization",
+      "metric": "MSSD_over_diameter",
+      "N": 1,
+      "comparable": 1,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 0,
+      "exact_equal": 1,
+      "baseline": {
+        "count": 1,
+        "mean": 0.04301014118753211,
+        "median": 0.04301014118753211,
+        "min": 0.04301014118753211,
+        "max": 0.04301014118753211
+      },
+      "native": {
+        "count": 1,
+        "mean": 0.04301014118753211,
+        "median": 0.04301014118753211,
+        "min": 0.04301014118753211,
+        "max": 0.04301014118753211
+      },
+      "native_minus_baseline": {
+        "count": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "initialization",
+      "metric": "MSPD_640px",
+      "N": 1,
+      "comparable": 1,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 0,
+      "exact_equal": 1,
+      "baseline": {
+        "count": 1,
+        "mean": 4.092171117032782,
+        "median": 4.092171117032782,
+        "min": 4.092171117032782,
+        "max": 4.092171117032782
+      },
+      "native": {
+        "count": 1,
+        "mean": 4.092171117032782,
+        "median": 4.092171117032782,
+        "min": 4.092171117032782,
+        "max": 4.092171117032782
+      },
+      "native_minus_baseline": {
+        "count": 1,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_inputs",
+      "metric": "MSSD_m",
+      "N": 180,
+      "comparable": 180,
+      "unknown_pair": 0,
+      "native_error_lower": 10,
+      "native_error_higher": 32,
+      "exact_equal": 138,
+      "baseline": {
+        "count": 180,
+        "mean": 0.004728620554824761,
+        "median": 0.004627701195379971,
+        "min": 0.0022640230782716947,
+        "max": 0.008754957947115194
+      },
+      "native": {
+        "count": 180,
+        "mean": 0.004728894547129288,
+        "median": 0.004631365042075535,
+        "min": 0.0022640230782716947,
+        "max": 0.008754957947115194
+      },
+      "native_minus_baseline": {
+        "count": 180,
+        "mean": 2.739923045278003e-07,
+        "median": 0.0,
+        "min": -0.00013055378937176527,
+        "max": 4.629070184902599e-05
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_inputs",
+      "metric": "MSPD_px",
+      "N": 180,
+      "comparable": 180,
+      "unknown_pair": 0,
+      "native_error_lower": 12,
+      "native_error_higher": 30,
+      "exact_equal": 138,
+      "baseline": {
+        "count": 180,
+        "mean": 4.581907071666199,
+        "median": 4.435662349712439,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native": {
+        "count": 180,
+        "mean": 4.581735461974319,
+        "median": 4.4388343857756904,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native_minus_baseline": {
+        "count": 180,
+        "mean": -0.00017160969188014056,
+        "median": 0.0,
+        "min": -0.12690888073478135,
+        "max": 0.04517672614411339
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_inputs",
+      "metric": "ADD_m",
+      "N": 180,
+      "comparable": 180,
+      "unknown_pair": 0,
+      "native_error_lower": 20,
+      "native_error_higher": 22,
+      "exact_equal": 138,
+      "baseline": {
+        "count": 180,
+        "mean": 0.0035092327877351416,
+        "median": 0.003383604869259528,
+        "min": 0.0013825927159723437,
+        "max": 0.00684938961687094
+      },
+      "native": {
+        "count": 180,
+        "mean": 0.003509051494128955,
+        "median": 0.0033839395399425827,
+        "min": 0.001390335376854313,
+        "max": 0.00684938961687094
+      },
+      "native_minus_baseline": {
+        "count": 180,
+        "mean": -1.8129360618623696e-07,
+        "median": 0.0,
+        "min": -4.514732026925962e-05,
+        "max": 1.5295027714885313e-05
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "N": 180,
+      "comparable": 180,
+      "unknown_pair": 0,
+      "native_error_lower": 10,
+      "native_error_higher": 32,
+      "exact_equal": 138,
+      "baseline": {
+        "count": 180,
+        "mean": 0.04595221281036277,
+        "median": 0.044971489610409504,
+        "min": 0.022001526469312794,
+        "max": 0.08507971533497753
+      },
+      "native": {
+        "count": 180,
+        "mean": 0.04595487543734671,
+        "median": 0.04500709446833945,
+        "min": 0.022001526469312794,
+        "max": 0.08507971533497753
+      },
+      "native_minus_baseline": {
+        "count": 180,
+        "mean": 2.6626269839344623e-06,
+        "median": 0.0,
+        "min": -0.0012687073202118995,
+        "max": 0.00044984793299539944
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "N": 180,
+      "comparable": 180,
+      "unknown_pair": 0,
+      "native_error_lower": 12,
+      "native_error_higher": 30,
+      "exact_equal": 138,
+      "baseline": {
+        "count": 180,
+        "mean": 4.581907071666199,
+        "median": 4.435662349712439,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native": {
+        "count": 180,
+        "mean": 4.581735461974319,
+        "median": 4.4388343857756904,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native_minus_baseline": {
+        "count": 180,
+        "mean": -0.00017160969188014056,
+        "median": 0.0,
+        "min": -0.12690888073478135,
+        "max": 0.04517672614411339
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_tracking",
+      "metric": "MSSD_m",
+      "N": 179,
+      "comparable": 179,
+      "unknown_pair": 0,
+      "native_error_lower": 10,
+      "native_error_higher": 32,
+      "exact_equal": 137,
+      "baseline": {
+        "count": 179,
+        "mean": 0.004730311884412492,
+        "median": 0.004645741067298306,
+        "min": 0.0022640230782716947,
+        "max": 0.008754957947115194
+      },
+      "native": {
+        "count": 179,
+        "mean": 0.004730587407400287,
+        "median": 0.004653068760689436,
+        "min": 0.0022640230782716947,
+        "max": 0.008754957947115194
+      },
+      "native_minus_baseline": {
+        "count": 179,
+        "mean": 2.755229877933187e-07,
+        "median": 0.0,
+        "min": -0.00013055378937176527,
+        "max": 4.629070184902599e-05
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_tracking",
+      "metric": "MSPD_px",
+      "N": 179,
+      "comparable": 179,
+      "unknown_pair": 0,
+      "native_error_lower": 12,
+      "native_error_higher": 30,
+      "exact_equal": 137,
+      "baseline": {
+        "count": 179,
+        "mean": 4.584643026720017,
+        "median": 4.440128711074223,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native": {
+        "count": 179,
+        "mean": 4.584470458314775,
+        "median": 4.446472783200727,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native_minus_baseline": {
+        "count": 179,
+        "mean": -0.00017256840524259944,
+        "median": 0.0,
+        "min": -0.12690888073478135,
+        "max": 0.04517672614411339
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_tracking",
+      "metric": "ADD_m",
+      "N": 179,
+      "comparable": 179,
+      "unknown_pair": 0,
+      "native_error_lower": 20,
+      "native_error_higher": 22,
+      "exact_equal": 137,
+      "baseline": {
+        "count": 179,
+        "mean": 0.0035085293323813935,
+        "median": 0.003378838016712175,
+        "min": 0.0013825927159723437,
+        "max": 0.00684938961687094
+      },
+      "native": {
+        "count": 179,
+        "mean": 0.0035083470259617646,
+        "median": 0.003378838016712175,
+        "min": 0.001390335376854313,
+        "max": 0.00684938961687094
+      },
+      "native_minus_baseline": {
+        "count": 179,
+        "mean": -1.8230641962861817e-07,
+        "median": 0.0,
+        "min": -4.514732026925962e-05,
+        "max": 1.5295027714885313e-05
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_tracking",
+      "metric": "MSSD_over_diameter",
+      "N": 179,
+      "comparable": 179,
+      "unknown_pair": 0,
+      "native_error_lower": 10,
+      "native_error_higher": 32,
+      "exact_equal": 137,
+      "baseline": {
+        "count": 179,
+        "mean": 0.04596864896468027,
+        "median": 0.045146799095248005,
+        "min": 0.022001526469312794,
+        "max": 0.08507971533497753
+      },
+      "native": {
+        "count": 179,
+        "mean": 0.04597132646667527,
+        "median": 0.04521800881110789,
+        "min": 0.022001526469312794,
+        "max": 0.08507971533497753
+      },
+      "native_minus_baseline": {
+        "count": 179,
+        "mean": 2.6775019950178948e-06,
+        "median": 0.0,
+        "min": -0.0012687073202118995,
+        "max": 0.00044984793299539944
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_tracking",
+      "metric": "MSPD_640px",
+      "N": 179,
+      "comparable": 179,
+      "unknown_pair": 0,
+      "native_error_lower": 12,
+      "native_error_higher": 30,
+      "exact_equal": 137,
+      "baseline": {
+        "count": 179,
+        "mean": 4.584643026720017,
+        "median": 4.440128711074223,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native": {
+        "count": 179,
+        "mean": 4.584470458314775,
+        "median": 4.446472783200727,
+        "min": 2.194537777412341,
+        "max": 9.214653787959085
+      },
+      "native_minus_baseline": {
+        "count": 179,
+        "mean": -0.00017256840524259944,
+        "median": 0.0,
+        "min": -0.12690888073478135,
+        "max": 0.04517672614411339
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "fixed_BOP19_tracking",
+      "metric": "MSSD_m",
+      "N": 8,
+      "comparable": 8,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 2,
+      "exact_equal": 6,
+      "baseline": {
+        "count": 8,
+        "mean": 0.00488548657680886,
+        "median": 0.0045397443518299906,
+        "min": 0.0038595489181129992,
+        "max": 0.007043161763258794
+      },
+      "native": {
+        "count": 8,
+        "mean": 0.0048863903714128345,
+        "median": 0.0045397443518299906,
+        "min": 0.003860812701109521,
+        "max": 0.007043161763258794
+      },
+      "native_minus_baseline": {
+        "count": 8,
+        "mean": 9.037946039743765e-07,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 5.96657383527318e-06
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "fixed_BOP19_tracking",
+      "metric": "MSPD_px",
+      "N": 8,
+      "comparable": 8,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 2,
+      "exact_equal": 6,
+      "baseline": {
+        "count": 8,
+        "mean": 4.815020269379058,
+        "median": 4.432820367279089,
+        "min": 3.685287282623763,
+        "max": 7.455357786385674
+      },
+      "native": {
+        "count": 8,
+        "mean": 4.81584368639864,
+        "median": 4.432820367279089,
+        "min": 3.6865823796714636,
+        "max": 7.455357786385674
+      },
+      "native_minus_baseline": {
+        "count": 8,
+        "mean": 0.0008234170195822732,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.005292239108957375
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "fixed_BOP19_tracking",
+      "metric": "ADD_m",
+      "N": 8,
+      "comparable": 8,
+      "unknown_pair": 0,
+      "native_error_lower": 1,
+      "native_error_higher": 1,
+      "exact_equal": 6,
+      "baseline": {
+        "count": 8,
+        "mean": 0.0039071406072157715,
+        "median": 0.0037946373361392393,
+        "min": 0.002636580971058599,
+        "max": 0.0054356676967550685
+      },
+      "native": {
+        "count": 8,
+        "mean": 0.003907689315439828,
+        "median": 0.0037946373361392393,
+        "min": 0.0026362057359114437,
+        "max": 0.0054356676967550685
+      },
+      "native_minus_baseline": {
+        "count": 8,
+        "mean": 5.487082240563409e-07,
+        "median": 0.0,
+        "min": -3.752351471551611e-07,
+        "max": 4.764900939605889e-06
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "fixed_BOP19_tracking",
+      "metric": "MSSD_over_diameter",
+      "N": 8,
+      "comparable": 8,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 2,
+      "exact_equal": 6,
+      "baseline": {
+        "count": 8,
+        "mean": 0.04747661950389065,
+        "median": 0.044116734709677946,
+        "min": 0.037506670535484864,
+        "max": 0.06844466889457833
+      },
+      "native": {
+        "count": 8,
+        "mean": 0.04748540248013016,
+        "median": 0.044116734709677946,
+        "min": 0.03751895183920314,
+        "max": 0.06844466889457833
+      },
+      "native_minus_baseline": {
+        "count": 8,
+        "mean": 8.782976239510819e-06,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 5.7982506197810924e-05
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "scope": "fixed_BOP19_tracking",
+      "metric": "MSPD_640px",
+      "N": 8,
+      "comparable": 8,
+      "unknown_pair": 0,
+      "native_error_lower": 0,
+      "native_error_higher": 2,
+      "exact_equal": 6,
+      "baseline": {
+        "count": 8,
+        "mean": 4.815020269379058,
+        "median": 4.432820367279089,
+        "min": 3.685287282623763,
+        "max": 7.455357786385674
+      },
+      "native": {
+        "count": 8,
+        "mean": 4.81584368639864,
+        "median": 4.432820367279089,
+        "min": 3.6865823796714636,
+        "max": 7.455357786385674
+      },
+      "native_minus_baseline": {
+        "count": 8,
+        "mean": 0.0008234170195822732,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.005292239108957375
+      },
+      "sign_rule": "Exact stored finite scalar comparison; no epsilon or significance inference."
+    }
+  ]
+}

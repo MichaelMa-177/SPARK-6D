@@ -1,0 +1,327 @@
+{
+  "original_arm_cells": 672,
+  "original_paired_cells": 336,
+  "groups": [
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "baseline",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "native_private_head",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000051_obj000017",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "baseline",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "native_private_head",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000051_obj000017",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "baseline",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "native_private_head",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000051_obj000017",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "baseline",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000051_obj000017",
+      "arm": "native_private_head",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000051_obj000017",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "baseline",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "native_private_head",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000054_obj000019",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "baseline",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "native_private_head",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000054_obj000019",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "baseline",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "native_private_head",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000054_obj000019",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "baseline",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000054_obj000019",
+      "arm": "native_private_head",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000054_obj000019",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "baseline",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "native_private_head",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000057_obj000021",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "baseline",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "native_private_head",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "baseline",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "native_private_head",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000057_obj000021",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "baseline",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000057_obj000021",
+      "arm": "native_private_head",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000057_obj000021",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "baseline",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "native_private_head",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000058_obj000008",
+      "scope": "initialization",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "baseline",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "native_private_head",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000058_obj000008",
+      "scope": "all_inputs",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "baseline",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "native_private_head",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000058_obj000008",
+      "scope": "all_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "baseline",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "arm",
+      "case": "ycbv_000058_obj000008",
+      "arm": "native_private_head",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    },
+    {
+      "kind": "paired",
+      "case": "ycbv_000058_obj000008",
+      "scope": "fixed_BOP19_tracking",
+      "cells": 21
+    }
+  ],
+  "lossless_scope": "Every original per-case arm scope object and paired threshold object is preserved exactly in shard files; other comparison metadata is deliberately sanitized to remove local paths and matrices."
+}

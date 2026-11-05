@@ -1,0 +1,1245 @@
+{
+  "scope": "all_inputs",
+  "rows": [
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.05,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 477,
+            "wrong": 243,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 477,
+            "wrong": 237,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 0,
+            "wrong": 6,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.3319327731092437,
+          "published_risk_lower": 0.3319327731092437,
+          "published_risk_upper_unknown_as_wrong": 0.3319327731092437,
+          "false_rejection_count": 0,
+          "false_rejection_over_correct": 0.0
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 480,
+            "wrong": 240,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 480,
+            "wrong": 234,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 0,
+            "wrong": 6,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.3277310924369748,
+          "published_risk_lower": 0.3277310924369748,
+          "published_risk_upper_unknown_as_wrong": 0.3277310924369748,
+          "false_rejection_count": 0,
+          "false_rejection_over_correct": 0.0
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.1,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.15000000000000002,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.2,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.25,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.3,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.35000000000000003,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.4,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.45,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSSD_over_diameter",
+      "threshold_rule": 0.5,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 5.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 413,
+            "wrong": 307,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 413,
+            "wrong": 301,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 0,
+            "wrong": 6,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.4215686274509804,
+          "published_risk_lower": 0.4215686274509804,
+          "published_risk_upper_unknown_as_wrong": 0.4215686274509804,
+          "false_rejection_count": 0,
+          "false_rejection_over_correct": 0.0
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 415,
+            "wrong": 305,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 415,
+            "wrong": 299,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 0,
+            "wrong": 6,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.41876750700280113,
+          "published_risk_lower": 0.41876750700280113,
+          "published_risk_upper_unknown_as_wrong": 0.41876750700280113,
+          "false_rejection_count": 0,
+          "false_rejection_over_correct": 0.0
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 10.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 697,
+            "wrong": 23,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 691,
+            "wrong": 23,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.03221288515406162,
+          "published_risk_lower": 0.03221288515406162,
+          "published_risk_upper_unknown_as_wrong": 0.03221288515406162,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.00860832137733142
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 697,
+            "wrong": 23,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 691,
+            "wrong": 23,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.03221288515406162,
+          "published_risk_lower": 0.03221288515406162,
+          "published_risk_upper_unknown_as_wrong": 0.03221288515406162,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.00860832137733142
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 15.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 719,
+            "wrong": 1,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 713,
+            "wrong": 1,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0014005602240896359,
+          "published_risk_lower": 0.0014005602240896359,
+          "published_risk_upper_unknown_as_wrong": 0.0014005602240896359,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008344923504867872
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 719,
+            "wrong": 1,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 713,
+            "wrong": 1,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0014005602240896359,
+          "published_risk_lower": 0.0014005602240896359,
+          "published_risk_upper_unknown_as_wrong": 0.0014005602240896359,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008344923504867872
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 20.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 25.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 30.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 35.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 40.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 45.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "MSPD_640px",
+      "threshold_rule": 50.0,
+      "comparison": "<",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 720,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 714,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 6,
+            "wrong": 0,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.0,
+          "published_risk_lower": 0.0,
+          "published_risk_upper_unknown_as_wrong": 0.0,
+          "false_rejection_count": 6,
+          "false_rejection_over_correct": 0.008333333333333333
+        }
+      }
+    },
+    {
+      "scope": "all_inputs",
+      "metric": "ADD_m",
+      "threshold_rule": "0.1*object_diameter_m",
+      "comparison": "<=",
+      "N": 720,
+      "arms": {
+        "baseline": {
+          "candidate": {
+            "correct": 540,
+            "wrong": 180,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 540,
+            "wrong": 174,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 0,
+            "wrong": 6,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.24369747899159663,
+          "published_risk_lower": 0.24369747899159663,
+          "published_risk_upper_unknown_as_wrong": 0.24369747899159663,
+          "false_rejection_count": 0,
+          "false_rejection_over_correct": 0.0
+        },
+        "native_private_head": {
+          "candidate": {
+            "correct": 540,
+            "wrong": 180,
+            "unknown": 0
+          },
+          "published": {
+            "correct": 540,
+            "wrong": 174,
+            "unknown": 0
+          },
+          "abstained": {
+            "correct": 0,
+            "wrong": 6,
+            "unknown": 0
+          },
+          "published_count": 714,
+          "abstained_count": 6,
+          "publication_coverage": 0.9916666666666667,
+          "published_risk_known": 0.24369747899159663,
+          "published_risk_lower": 0.24369747899159663,
+          "published_risk_upper_unknown_as_wrong": 0.24369747899159663,
+          "false_rejection_count": 0,
+          "false_rejection_over_correct": 0.0
+        }
+      }
+    }
+  ],
+  "pooling": "Sum fixed per-case counts; ADD thresholds retain each original object diameter, not one global metre threshold."
+}

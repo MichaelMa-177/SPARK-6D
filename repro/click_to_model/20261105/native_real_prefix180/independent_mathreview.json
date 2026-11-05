@@ -1,0 +1,120 @@
+{
+  "status": "PASS_independent_terminal_aggregate_math_review",
+  "review_scope": "All terminal scalar aggregate formulas and consistency; no independent geometry or per-frame recount.",
+  "checked": {
+    "arm_threshold_scope_cells": 672,
+    "paired_threshold_scope_cells": 336,
+    "matrix_entries_checked": 19488,
+    "raw_case_counter_groups": 4
+  },
+  "fixed_denominators": {
+    "initialization": 4,
+    "all_inputs": 720,
+    "all_tracking": 716,
+    "fixed_BOP19_tracking": 42
+  },
+  "original_thresholds_preserved": true,
+  "full_scope_partitions_exact": true,
+  "all_matrices_reconstructed_from_joint_6x6": true,
+  "all_arm_marginals_exact": true,
+  "risk_denominators_and_nulls_exact": true,
+  "initializer_arms_equal": true,
+  "raw_counter_totals": {
+    "published_inputs": 714,
+    "abstained_inputs": 6,
+    "published_tracking": 710,
+    "abstained_tracking": 6,
+    "callbacks": 1170,
+    "gradient_proposals": 308,
+    "committed_updates": 205,
+    "unknown_permission_callbacks": 6,
+    "qualified_callbacks": 438,
+    "refused_callbacks": 732
+  },
+  "adverse_cell_counts": {},
+  "all_tracking_adverse_or_gross_regression_cells": [],
+  "timing_checks": [
+    {
+      "case": "ycbv_000051_obj000017",
+      "arm": "baseline",
+      "latency_samples": 179,
+      "latency_sum_seconds": 22.460520272958092,
+      "latency_mean_seconds": 0.12547776688803403,
+      "parent_wall_seconds": null,
+      "child_wall_seconds": null
+    },
+    {
+      "case": "ycbv_000051_obj000017",
+      "arm": "native_private_head",
+      "latency_samples": 179,
+      "latency_sum_seconds": 126.93393712394754,
+      "latency_mean_seconds": 0.7091281403572488,
+      "parent_wall_seconds": 159.8489913180092,
+      "child_wall_seconds": 156.94764202000806
+    },
+    {
+      "case": "ycbv_000054_obj000019",
+      "arm": "baseline",
+      "latency_samples": 179,
+      "latency_sum_seconds": 31.624243450001813,
+      "latency_mean_seconds": 0.17667175111732858,
+      "parent_wall_seconds": null,
+      "child_wall_seconds": null
+    },
+    {
+      "case": "ycbv_000054_obj000019",
+      "arm": "native_private_head",
+      "latency_samples": 179,
+      "latency_sum_seconds": 178.35785802200553,
+      "latency_mean_seconds": 0.9964126146480756,
+      "parent_wall_seconds": 210.3647075379995,
+      "child_wall_seconds": 207.41084533499088
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "arm": "baseline",
+      "latency_samples": 179,
+      "latency_sum_seconds": 31.588993490862777,
+      "latency_mean_seconds": 0.17647482397130043,
+      "parent_wall_seconds": null,
+      "child_wall_seconds": null
+    },
+    {
+      "case": "ycbv_000057_obj000021",
+      "arm": "native_private_head",
+      "latency_samples": 179,
+      "latency_sum_seconds": 177.4886350750021,
+      "latency_mean_seconds": 0.991556620530738,
+      "parent_wall_seconds": 219.7861001979909,
+      "child_wall_seconds": 216.6036999700009
+    },
+    {
+      "case": "ycbv_000058_obj000008",
+      "arm": "baseline",
+      "latency_samples": 179,
+      "latency_sum_seconds": 25.396966395084746,
+      "latency_mean_seconds": 0.1418824938272891,
+      "parent_wall_seconds": null,
+      "child_wall_seconds": null
+    },
+    {
+      "case": "ycbv_000058_obj000008",
+      "arm": "native_private_head",
+      "latency_samples": 179,
+      "latency_sum_seconds": 145.98009857603756,
+      "latency_mean_seconds": 0.8155312769611037,
+      "parent_wall_seconds": 186.51598430199374,
+      "child_wall_seconds": 183.56739182599995
+    }
+  ],
+  "real_GT_read": false,
+  "real_per_frame_scalar_read": false,
+  "pose_arrays_read": false,
+  "images_read": false,
+  "GPU_run": false,
+  "all_inputs_unchanged": true,
+  "reviewer_script_sha256": "5e454277a77298a6c1cd723832ff60ac37c4bd43d642a4063abadf414c27a0f1",
+  "elapsed_seconds": 0.037996902989107184,
+  "original_review_receipt_sha256": "c38fc7dee4a49b14fd13a7b4e1dcc7640613b75e7b4430fb2ee01ff1d3cf2e00",
+  "public_sanitization": "Local source paths and repeated file inventory omitted; numerical review results and original receipt hash retained."
+}

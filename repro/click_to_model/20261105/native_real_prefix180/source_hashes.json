@@ -1,0 +1,104 @@
+{
+  "sha256_sources": {
+    "posthoc_terminal_receipt": {
+      "bytes": 105053,
+      "sha256": "0572084e7d4f1ed349546ab1e1982e69f0318cf7d31cee0aef40956de9b62372"
+    },
+    "posthoc_comparison": {
+      "bytes": 2447193,
+      "sha256": "9cd97da72254175523371607700de995b56a6893acbdc2a7f7d16b91a2e8c87f"
+    },
+    "posthoc_protocol": {
+      "bytes": 381204,
+      "sha256": "a62d30a89ea1af63a65efc40a6017fb6dde38cf5a311168b363a7ef6a8c4827e"
+    },
+    "posthoc_host_source_hash_only": {
+      "bytes": 33288,
+      "sha256": "f962c419d0b7ad015701631746e783afe41f12e055980c7f229112f8b15d563d"
+    },
+    "root_review": {
+      "bytes": 1667,
+      "sha256": "57d115a3d1a9467816ba0e0837ff3f81a4a2ab3342464baf98e6a2b4ea56ef66"
+    },
+    "closed_label_input_gate": {
+      "bytes": 76783,
+      "sha256": "7311c3f4b60ec513c39d3ef4ad803e161b73a619f839931c7c7053a2c7d8bc1c"
+    },
+    "independent_raw_counts": {
+      "bytes": 5232,
+      "sha256": "4ce8523f633d41d90d13284421f6321250bf126bbd3c997e90618c728eded8a5"
+    },
+    "complete_raw_index": {
+      "bytes": 1416,
+      "sha256": "5e42d278338cbd16f71e8d3c130644b4a1b82226feec408445b9f039120abde8"
+    },
+    "ycbv_000051_obj000017_baseline_new_posthoc_scalar_labels": {
+      "bytes": 191707,
+      "sha256": "c602c5455cd1e35822bfa6ce59383e4dc0c936dd698348ab1f42ad910c248576"
+    },
+    "ycbv_000051_obj000017_native_private_head_new_posthoc_scalar_labels": {
+      "bytes": 191715,
+      "sha256": "429826a9fe171022ed443bdd3dd0ec4f73d7681c48b9ef164477306b6cc1a1b9"
+    },
+    "ycbv_000051_obj000017_raw_receipt": {
+      "bytes": 5705221,
+      "sha256": "b42f4a9b2a02a9cc724f634a59715f9949b83e7f34ffbdd3836ce52f4c29d023"
+    },
+    "ycbv_000051_obj000017_native_frame_audit": {
+      "bytes": 113242,
+      "sha256": "2e52170e1b08c9d853504d9684902f82af2e782cafcfdec5e8ac09db4ae08f3f"
+    },
+    "ycbv_000054_obj000019_baseline_new_posthoc_scalar_labels": {
+      "bytes": 191056,
+      "sha256": "5143038cf612d0ee965206ef31c5e75f209356b71635477b4d9e1653f911e64c"
+    },
+    "ycbv_000054_obj000019_native_private_head_new_posthoc_scalar_labels": {
+      "bytes": 191061,
+      "sha256": "095f1f0b6b077185fc3046d235392b0b0633905ca378353beaea7d3dfa20d611"
+    },
+    "ycbv_000054_obj000019_raw_receipt": {
+      "bytes": 7482014,
+      "sha256": "fd85fc13c975c67b519fe30b1e094ad34f55947f8d66c08953fdf210db85729a"
+    },
+    "ycbv_000054_obj000019_native_frame_audit": {
+      "bytes": 77854,
+      "sha256": "77d31ae87c0c0d95a2e3b34e83c5d9e353b16b46975d0a5cc5245c9242d17d33"
+    },
+    "ycbv_000057_obj000021_baseline_new_posthoc_scalar_labels": {
+      "bytes": 191517,
+      "sha256": "4d8aa487de385ac80bfb104b920749e76f303c4f8c89922c4c84680dc4341792"
+    },
+    "ycbv_000057_obj000021_native_private_head_new_posthoc_scalar_labels": {
+      "bytes": 191492,
+      "sha256": "281ff9e2495226a104a50b83db2437c5197dc06dbcb1c452a2db47e90dcd504b"
+    },
+    "ycbv_000057_obj000021_raw_receipt": {
+      "bytes": 7446539,
+      "sha256": "14562ba0245e65896774b4fd248c9f4af57897d5eb0c865de2b0cb5a96564c37"
+    },
+    "ycbv_000057_obj000021_native_frame_audit": {
+      "bytes": 93421,
+      "sha256": "72844169fef22b9ec6538c4a23ed9f85684cc6725934c8256fcf8532e3e66bce"
+    },
+    "ycbv_000058_obj000008_baseline_new_posthoc_scalar_labels": {
+      "bytes": 191547,
+      "sha256": "5e14fb883c54f9a2f0a6df316676d30bd16514404ce8579168bd89b1f4239afa"
+    },
+    "ycbv_000058_obj000008_native_private_head_new_posthoc_scalar_labels": {
+      "bytes": 191569,
+      "sha256": "0252d80c71f4d31e3da68d4fee89d40039f7b438ab77ba3a121e266cc72abe62"
+    },
+    "ycbv_000058_obj000008_raw_receipt": {
+      "bytes": 6167788,
+      "sha256": "29e0022314788e201a7022d50a81131f39307a665af4b9440dff8dc8b90d6849"
+    },
+    "ycbv_000058_obj000008_native_frame_audit": {
+      "bytes": 168221,
+      "sha256": "dfda57f35e900768303ae6f583f32a003c55ede73923738aa0a78f29aa034558"
+    }
+  },
+  "raw_GT_or_pose_bytes_read_by_builder": false,
+  "source_code_included": false,
+  "GT_matrices_or_pose_arrays_included": false,
+  "images_or_weights_included": false
+}
