@@ -1,0 +1,65 @@
+{
+  "files": {
+    "actual_29_latency_values": {
+      "bytes": 360,
+      "sha256": "c4c260ae5c849482d7292f537a883edb74d8ebb4e953917b28b52c153d4d5c4d"
+    },
+    "actual_native_integration": {
+      "bytes": 21789,
+      "sha256": "c89c75528811370f4c22acc5450cd216e1342bc2970b18b40fef80fe7e2d04e9"
+    },
+    "actual_publication_policy": {
+      "bytes": 53483,
+      "sha256": "97a98edc142a0f2d56a1c9914861e54c68b621d3e03a13ffc512bc90376a056f"
+    },
+    "actual_tracking_report": {
+      "bytes": 31933,
+      "sha256": "545ee97425be07661463af340e161c16f3c4246be51516ba5066d236dffaabf4"
+    },
+    "actual_unified_pipeline": {
+      "bytes": 11078,
+      "sha256": "d6444b78fd14ee59348f323521f3284a8bf79c295dff132d3faf0c96097a6672"
+    },
+    "codec_provenance_source": {
+      "bytes": 13332,
+      "sha256": "f532af7d554bb282e79ea1c902dc3c91108d9689a8ab5baa7e19c4da9a32971d"
+    },
+    "comparison_source": {
+      "bytes": 9979,
+      "sha256": "ba11eb2aa051feef9c13f818095e4f9ab69609f9818d048d8ebb95b960aae10d"
+    },
+    "frozen_actual_protocol": {
+      "bytes": 79728,
+      "sha256": "ffa704e646879095cdb186dc065fcccf64bf1d641fe4a79a0c3d4c51739b9363"
+    },
+    "independent_complete_parity": {
+      "bytes": 2325910,
+      "sha256": "1363e98a036959f178ae268061f194216d161b3b5f30de3030cf10f50751ea5a"
+    },
+    "materialization_manifest": {
+      "bytes": 195023,
+      "sha256": "530f5b73875e3ea42308f4721ca61686f563e5a4fb694b4edb3a9484c4fc9648"
+    },
+    "new_separate_GPU_validation": {
+      "bytes": 8217,
+      "sha256": "1bd0a0e5e30332bc3f7d07d03b6337b625cf12eeef3464e441f5c9125a01db19"
+    },
+    "original_CPU_validation": {
+      "bytes": 2683,
+      "sha256": "098db40cdf6bf9e2a3d00f9277554e5bdb5bab1a2cc5df96526a28677b7e8698"
+    },
+    "parent_execution": {
+      "bytes": 78088,
+      "sha256": "311a741a64d718ba6372133aad672d6c9e5f8661872119c1ec10ff86111223d0"
+    },
+    "parity_source": {
+      "bytes": 25305,
+      "sha256": "0669ec5a08661025aa149d61e56f450acdbf90ac648980cddcb9b99993332320"
+    },
+    "summary_export_source": {
+      "bytes": 18404,
+      "sha256": "0fdc9b24d747534fe93ef13066739383581e071d548c420b88a239509264a3c7"
+    }
+  },
+  "schema": "materialized_revision_public_artifact_hashes/1"
+}

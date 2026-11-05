@@ -1,0 +1,100 @@
+{
+  "actual_packet_archive_codecs": {
+    "measured": {
+      "archive_bytes": 17905050,
+      "archives_with_observable_member_codec": 434,
+      "compressed_member_bytes": 17385722,
+      "configured_mode": "numpy_default",
+      "empty_archives_without_observable_member_codec": 62,
+      "members": 3972,
+      "packets": 496,
+      "uncompressed_npy_bytes": 88177874
+    },
+    "native": {
+      "archive_bytes": 225723718,
+      "archives_with_observable_member_codec": 256,
+      "compressed_member_bytes": 225066312,
+      "configured_mode": "stored",
+      "empty_archives_without_observable_member_codec": 29,
+      "members": 5087,
+      "packets": 285,
+      "uncompressed_npy_bytes": 225066312
+    }
+  },
+  "all_identity_and_orientation_trust_flags_false": true,
+  "branch_validation": {
+    "existing_mesh": "Actual GPU 30-input run and complete observable parity passed.",
+    "meshless": "CPU dry-run only in this materialized revision; no new-root GPU claim."
+  },
+  "callbacks": 45,
+  "completed_inputs": 30,
+  "export_checks": {
+    "GPU_run": false,
+    "GT_read": false,
+    "latency_values_independently_reduced": 29,
+    "raw_pose_arrays_decoded": false
+  },
+  "final_holder_version": 29,
+  "limitations": [
+    "All 30 published outputs remain tentative_continuous. Identity, absolute orientation, and trusted-memory flags remain false; 29 private neural-holder commits do not promote identity trust.",
+    "Full saved observable-path parity is not independent neural/gradient recomputation, GT accuracy or physical identity proof. Missing external SAM logits/scorer observations remain outside the scope.",
+    "One existing-mesh 30-input development prefix has actual GPU execution plus full parity. The new revision meshless branch has CPU dry-run validation only; no new-root meshless GPU result is claimed.",
+    "Timing is one descriptive run with initialization, tracking, child and parent boundaries kept separate. No statistical significance, held-out generalization, deployment FPS or new speed conclusion.",
+    "Native ZIP_STORED is explicitly selected for this run. The default remains numpy_default; motion and other product writers retain default compression. Writes do not call fsync.",
+    "Codec counts and byte totals below cover native/motion packet archives, not the entire run directory. Empty archives have no member codec to observe and are counted separately."
+  ],
+  "observable_parity": {
+    "comparison_scope": "All saved observable numeric/product/packet values plus current permissions, publication decisions and holder chain.",
+    "delivered_mask_PNG_files_exact": 4,
+    "initialization_candidates": 756,
+    "initialization_mask_banks": 3,
+    "motion_packet_pairs": 496,
+    "native_packet_pairs": 285,
+    "numeric_checks": 621,
+    "numeric_differences": 0,
+    "product_numeric_files_excluding_timing_exact": 13,
+    "registration_candidates_per_bank": 252,
+    "structural_checks": 1146,
+    "structural_differences": 0
+  },
+  "private_holder_commits": 29,
+  "publication_status_counts": {
+    "tentative_continuous": 30
+  },
+  "published_outputs": 30,
+  "schema": "materialized_unified_stored_CAD30_public_summary/1",
+  "source_revision": {
+    "changed_from_measured_overlay": [
+      "tools/run_click_to_model_native_unified.py"
+    ],
+    "default_codec": "numpy_default",
+    "motion_codec": "numpy_default",
+    "original_materialization_and_CPU_receipts_modified": false,
+    "scientific_configuration_changed": false,
+    "selected_native_codec": "stored",
+    "source_files_verified": 192,
+    "unchanged_from_measured_overlay": 191
+  },
+  "status": "PASS_existing_mesh_CAD30_observable_parity",
+  "timing": {
+    "admission_seconds": 3.7733129620028194,
+    "child_supervision_wall_seconds": 47.26113957900088,
+    "initialization_boundary": "mesh/frame loading + first-frame mask/click + FP setup + complete candidate registration/assessment + current-input GFTT and tentative measured session startup + evidence serialization; no trusted-memory initialization + continuity decision and publication evidence",
+    "initialization_seconds": 14.68464112599031,
+    "mean_frame_seconds": 0.5488947624142948,
+    "p50_frame_seconds": 0.474655073005124,
+    "p95_frame_seconds": 0.7305342089966871,
+    "parent_wall_seconds": 50.02272451099998,
+    "reduction_method": "math.fsum and independent sorted linear percentile interpolation at (n-1)*p",
+    "registration_seconds": 4.47628075198736,
+    "repetitions": 1,
+    "report_absolute_comparison_tolerance_seconds": 1e-09,
+    "scope": "One descriptive actual run; no matched performance comparison or new speed/FPS conclusion.",
+    "tracking_boundary": "decode + shared measured-motion session + actual adaptive FP + CUDA sync; session evidence included, final output serialization excluded; current-frame continuity decision and publication evidence included",
+    "tracking_frames": 29,
+    "tracking_sum_seconds": 15.91794811001455,
+    "unified_pipeline_wall_seconds": 45.94422009099799
+  },
+  "tracking_frames": 29,
+  "trusted_memory_enabled": false
+}

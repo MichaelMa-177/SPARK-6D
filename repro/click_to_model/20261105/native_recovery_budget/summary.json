@@ -1,0 +1,15 @@
+{
+  "status": "completed_descriptive_workload_arithmetic",
+  "source_sha256": "c4c260ae5c849482d7292f537a883edb74d8ebb4e953917b28b52c153d4d5c4d",
+  "source_bytes": 360,
+  "script_sha256": "e27f58f5aab96c027565f5590a146612adf80bed6ce623c74f57622e63ed7d30",
+  "observed_mainloop_frames": 29,
+  "adjacent_two_frame_windows": 28,
+  "seconds_min": 0.926716250993195,
+  "seconds_mean": 1.0928168213223606,
+  "seconds_max": 1.4610416569921654,
+  "windows_over_one_second": 14,
+  "scope": "Arithmetic on ordinary non-recovery main-loop durations only. Not measured recovery duration, a strict lower bound, or evidence that recovery necessarily times out. Real neural positive control is still required.",
+  "GT_read": false,
+  "GPU_run": false
+}

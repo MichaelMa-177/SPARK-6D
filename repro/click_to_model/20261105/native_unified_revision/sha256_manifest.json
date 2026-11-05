@@ -1,0 +1,18 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 1712,
+      "sha256": "17923232a65da522b000f43ed83cd26a042e67b35470977e38d493f538356a93"
+    },
+    "source_hashes.json": {
+      "bytes": 2242,
+      "sha256": "8976b30506c9c7676a3ba43f4e9cda75ec9b01f007987e56cad46328e11f77a8"
+    },
+    "summary.json": {
+      "bytes": 5081,
+      "sha256": "0c1751b9799cd16d9ee2418d63dfd69a6154463d22fbe3777461013b578d58b4"
+    }
+  },
+  "schema": "sha256_package_manifest/1",
+  "self_excluded": true
+}
