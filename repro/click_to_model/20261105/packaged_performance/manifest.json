@@ -1,0 +1,21 @@
+{
+  "schema": "numeric_package_manifest/1",
+  "files": {
+    "README.md": {
+      "bytes": 1743,
+      "sha256": "11445059ee0649f0bafcaafaadc39aac331edd3aa69459d08cd973afeba2f318"
+    },
+    "hash_summary.json": {
+      "bytes": 1820,
+      "sha256": "d8599507847e60e9d44a354e629a5e92da091fe670fdaef9075e9c216a0c36cd"
+    },
+    "npz_summary.json": {
+      "bytes": 10366,
+      "sha256": "ee5cc93fe3fc1f5b1568f9fe6f52c241f82ba827f0919d23b6bdde650b529b6b"
+    },
+    "sources.json": {
+      "bytes": 2605,
+      "sha256": "0ed2bec5690cdd2e2e59e44c95dbcc74c54fb3148cc37ffdb0ce629d7fb78732"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "source_content_bindings/1",
+  "files": {
+    "control_execution": {
+      "bytes": 38655,
+      "sha256": "42042d2f8a2ed02ffabb726cb4f0a76da9b581f20e5de09bd9a476d2b401e575"
+    },
+    "control_observer": {
+      "bytes": 20082,
+      "sha256": "7fbb8385a1dcd5f9ef97aada5089dd0726ae59346abcc96a36dd530d09509f76"
+    },
+    "control_application_report": {
+      "bytes": 32021,
+      "sha256": "b11c62c2fe625e72067f23031a820ac970c746d90409ea608a0693fb8b826079"
+    },
+    "control_parity": {
+      "bytes": 2166361,
+      "sha256": "ceb0bbff61d9a6c6a6e09ea55976d9726e3771ad46ff7a714ad4c6045fb657fb"
+    },
+    "batched_execution": {
+      "bytes": 38656,
+      "sha256": "ff86f05125b42604c121be3f4a8f9f37fcead6046ae9a0ef7324d2e5a66436e1"
+    },
+    "batched_observer": {
+      "bytes": 20083,
+      "sha256": "29369a87c8f8e3131d97ca7533217277e0c4ca1fc3ac616c12c59a2a9e824b95"
+    },
+    "batched_application_report": {
+      "bytes": 32021,
+      "sha256": "a8946c22784a726f709500ebe74a73f59aff9f21c7ab7292e098bd1fdb65dab6"
+    },
+    "batched_parity": {
+      "bytes": 2166365,
+      "sha256": "0e06d7048ea6b566f981531bcfb152aa3e682c8b12777f8e1e564c2482cc7630"
+    },
+    "npz_benchmark_receipt": {
+      "bytes": 11084,
+      "sha256": "23453f57004781bc0547a5dc4816d0faf6d9e47315bb44b0d28dbaad166bf01e"
+    },
+    "npz_input_manifest": {
+      "bytes": 416724,
+      "sha256": "af2aa7feccb9da095ff4bdf904254fff625eaf0f57f8d8e8b08145b139f87319"
+    },
+    "npz_trials": {
+      "bytes": 2936276,
+      "sha256": "8d4f89a867235ef4e0ae403a36de3cd3bff6bf093cc22b356e256b71b42ef406"
+    },
+    "hash_protocol": {
+      "bytes": 13544,
+      "sha256": "60ff803cf2edb6ee17c458d9b190ccdb8d96aadbfcdd4d3cd447949fc164c5c8"
+    },
+    "hash_cpu_contracts": {
+      "bytes": 6378,
+      "sha256": "8a4f1e01f2444c2e9a05a49f6a45ebfe5938db7048d42b960d317bea503b33b7"
+    },
+    "hash_root_review": {
+      "bytes": 774,
+      "sha256": "854c2a57508039ebecfddcc42dfa506db6a894f0d9cf031f0b79eb42348f8e1d"
+    },
+    "npz_codec_source": {
+      "bytes": 1873,
+      "sha256": "1b301846a61f1e19560768bb466c884ee3cf9796ed88ca24e08f5ee42294c047"
+    },
+    "npz_benchmark_source": {
+      "bytes": 8836,
+      "sha256": "88234476ef3975482491a9f2756f414873a9053cc8b901039f68d69bb1e91eef"
+    },
+    "parity_source": {
+      "bytes": 5293,
+      "sha256": "cafc268e5831e7c0c8f918b896481dfb93ae5e6a7be0cca1bbbca9eebadb24ba"
+    },
+    "exporter_source": {
+      "bytes": 10949,
+      "sha256": "ce9c25a198b06fc37d143e22c5eaf4a22c7f1fe04610d7b6a7ed84209320ed56"
+    }
+  },
+  "absolute_local_paths_excluded": true
+}

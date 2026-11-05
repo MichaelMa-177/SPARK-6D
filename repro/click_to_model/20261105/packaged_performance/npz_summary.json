@@ -1,0 +1,317 @@
+{
+  "schema": "actual_npz_codec_summary/1",
+  "files": 787,
+  "members_per_round_method": 9435,
+  "rounds": [
+    {
+      "round": 0,
+      "methods": {
+        "numpy_default": {
+          "write_close_ns": 4838421526,
+          "readback_validate_ns": 2568718959,
+          "output_bytes": 235632177,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 787,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 217577334,
+              "write_close_ns": 4158724437,
+              "readback_validate_ns": 2000502071
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 149793,
+              "write_close_ns": 8823077,
+              "readback_validate_ns": 16582229
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 17905050,
+              "write_close_ns": 670874012,
+              "readback_validate_ns": 551634659
+            }
+          }
+        },
+        "deflate1": {
+          "write_close_ns": 4486519755,
+          "readback_validate_ns": 2567469459,
+          "output_bytes": 236499924,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 348,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 217866339,
+              "write_close_ns": 3990888723,
+              "readback_validate_ns": 2016335492
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 149952,
+              "write_close_ns": 8719198,
+              "readback_validate_ns": 16488989
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 18483633,
+              "write_close_ns": 486911834,
+              "readback_validate_ns": 534644978
+            }
+          }
+        },
+        "stored": {
+          "write_close_ns": 325363796,
+          "readback_validate_ns": 930698157,
+          "output_bytes": 314614588,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 91,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 225723718,
+              "write_close_ns": 190375878,
+              "readback_validate_ns": 563820132
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 193668,
+              "write_close_ns": 4696317,
+              "readback_validate_ns": 14522392
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 88697202,
+              "write_close_ns": 130291601,
+              "readback_validate_ns": 352355633
+            }
+          }
+        }
+      },
+      "source_load_ns": 2555763199,
+      "whole_round_wall_ns": 18869274176
+    },
+    {
+      "round": 1,
+      "methods": {
+        "numpy_default": {
+          "write_close_ns": 4840163919,
+          "readback_validate_ns": 2569165883,
+          "output_bytes": 235632177,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 787,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 217577334,
+              "write_close_ns": 4156750826,
+              "readback_validate_ns": 1998611020
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 149793,
+              "write_close_ns": 8805733,
+              "readback_validate_ns": 16385142
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 17905050,
+              "write_close_ns": 674607360,
+              "readback_validate_ns": 554169721
+            }
+          }
+        },
+        "deflate1": {
+          "write_close_ns": 4480615173,
+          "readback_validate_ns": 2562708351,
+          "output_bytes": 236499924,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 348,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 217866339,
+              "write_close_ns": 3982541324,
+              "readback_validate_ns": 2013358525
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 149952,
+              "write_close_ns": 8624361,
+              "readback_validate_ns": 16466848
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 18483633,
+              "write_close_ns": 489449488,
+              "readback_validate_ns": 532882978
+            }
+          }
+        },
+        "stored": {
+          "write_close_ns": 324693924,
+          "readback_validate_ns": 929967541,
+          "output_bytes": 314614588,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 91,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 225723718,
+              "write_close_ns": 190637611,
+              "readback_validate_ns": 562039070
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 193668,
+              "write_close_ns": 4886482,
+              "readback_validate_ns": 14601415
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 88697202,
+              "write_close_ns": 129169831,
+              "readback_validate_ns": 353327056
+            }
+          }
+        }
+      },
+      "source_load_ns": 2553215028,
+      "whole_round_wall_ns": 18855204139
+    },
+    {
+      "round": 2,
+      "methods": {
+        "numpy_default": {
+          "write_close_ns": 4869366040,
+          "readback_validate_ns": 2582977379,
+          "output_bytes": 235632177,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 787,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 217577334,
+              "write_close_ns": 4186542383,
+              "readback_validate_ns": 2014400361
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 149793,
+              "write_close_ns": 9034287,
+              "readback_validate_ns": 16669235
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 17905050,
+              "write_close_ns": 673789370,
+              "readback_validate_ns": 551907783
+            }
+          }
+        },
+        "deflate1": {
+          "write_close_ns": 4511668989,
+          "readback_validate_ns": 2581833114,
+          "output_bytes": 236499924,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 348,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 217866339,
+              "write_close_ns": 4015375133,
+              "readback_validate_ns": 2033352081
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 149952,
+              "write_close_ns": 8747854,
+              "readback_validate_ns": 16580948
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 18483633,
+              "write_close_ns": 487546002,
+              "readback_validate_ns": 531900085
+            }
+          }
+        },
+        "stored": {
+          "write_close_ns": 326839411,
+          "readback_validate_ns": 934926401,
+          "output_bytes": 314614588,
+          "files": 787,
+          "members": 9435,
+          "original_archive_equal": 91,
+          "groups": {
+            "native_sink": {
+              "files": 285,
+              "bytes": 225723718,
+              "write_close_ns": 194056129,
+              "readback_validate_ns": 567032985
+            },
+            "other_product": {
+              "files": 6,
+              "bytes": 193668,
+              "write_close_ns": 4707567,
+              "readback_validate_ns": 16483273
+            },
+            "motion_sink": {
+              "files": 496,
+              "bytes": 88697202,
+              "write_close_ns": 128075715,
+              "readback_validate_ns": 351410143
+            }
+          }
+        }
+      },
+      "source_load_ns": 2567702198,
+      "whole_round_wall_ns": 18985372359
+    }
+  ],
+  "trials": 7083,
+  "all_member_and_array_bytes_exact": true,
+  "independent_aggregate_and_order_reconstruction_passed": true,
+  "mean_write_close_seconds": {
+    "numpy_default": 4.849317161666667,
+    "deflate1": 4.492934639,
+    "stored": 0.325632377
+  },
+  "native_sink_mean_write_close_seconds": {
+    "numpy_default": 4.1673392153333335,
+    "deflate1": 3.996268393333333,
+    "stored": 0.19168987266666668
+  },
+  "proposed_native_only_stored": {
+    "status": "derived_storage_tradeoff_not_actual_online_run",
+    "additional_bytes": 8146384,
+    "total_bytes": 243778561,
+    "relative_size_increase": 0.034572459940392604,
+    "mean_native_write_seconds_saved": 3.975649342666667
+  },
+  "timing_scope": "write_close_ns includes synchronous serialization/compression and OS writes through ZIP close; no fsync. readback_validate_ns separately includes complete decompression, member hashes and dtype/shape/value validation. Source loading, log writing, archive checksum and deletion are excluded from method timers.",
+  "environment": {
+    "python": "3.11.15 | packaged by conda-forge | (main, Aug 11 2026, 10:26:29) [GCC 14.4.0]",
+    "numpy": "2.4.6",
+    "zlib": "1.3.2",
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35"
+  },
+  "GT_read": false,
+  "GPU_run": false,
+  "limits": [
+    "CPU storage microbenchmark, not end-to-end tracking or FPS.",
+    "No physical disk durability/flush measurement; other host work may overlap.",
+    "All members/ordering/dtypes/shapes/layout/value bytes and complete uncompressed NPY member bytes match; compressed archives and their hashes may differ.",
+    "Failures retain the current archive and all prior trial records; only successfully verified scratch archives are deleted.",
+    "Known concurrent GPU control experiment overlapped this CPU microbenchmark; exact interval attribution was not recorded.",
+    "Only native evidence is proposed for stored encoding; motion evidence and other output archives remain compressed. No online tracking benefit has yet been measured."
+  ]
+}

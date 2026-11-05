@@ -1,0 +1,49 @@
+{
+  "schema": "packaged_hash_actual_fixed30_summary/1",
+  "runs": {
+    "control": {
+      "inputs": 30,
+      "tracking_frames": 29,
+      "callbacks": 45,
+      "committed_updates": 29,
+      "tracking_seconds": 19.81127909597126,
+      "tracking_full_model_hash_seconds": 9.034478255,
+      "total_full_model_calls": 221,
+      "tracking_full_model_calls": 220,
+      "tensors_per_call": 134,
+      "parent_seconds": 42.630722215995775,
+      "child_supervision_seconds": 38.83239659800893,
+      "numeric_parity_checks": 621,
+      "structural_parity_checks": 1146,
+      "differences": 0,
+      "hooks_restored": true,
+      "source_input_drift": false,
+      "timeout": false,
+      "retries": 0
+    },
+    "batched": {
+      "inputs": 30,
+      "tracking_frames": 29,
+      "callbacks": 45,
+      "committed_updates": 29,
+      "tracking_seconds": 18.16609611704189,
+      "tracking_full_model_hash_seconds": 7.388413458,
+      "total_full_model_calls": 221,
+      "tracking_full_model_calls": 220,
+      "tensors_per_call": 134,
+      "parent_seconds": 39.09621727600461,
+      "child_supervision_seconds": 36.322648871006095,
+      "numeric_parity_checks": 621,
+      "structural_parity_checks": 1146,
+      "differences": 0,
+      "hooks_restored": true,
+      "source_input_drift": false,
+      "timeout": false,
+      "retries": 0
+    }
+  },
+  "observer_topology_identical": true,
+  "GT_read": false,
+  "timing_limitation": "Single control then batched pair. Control overlapped the CPU NPZ experiment; batched started after its terminal receipt. Timings are descriptive and confounded, not a causal speedup estimate.",
+  "scope": "Current packaged native CLI, same scientific arguments and full state checks; outputs compared against the original CLI. No robustness/accuracy gain or deployment FPS claim."
+}
